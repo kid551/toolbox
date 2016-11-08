@@ -240,7 +240,9 @@
       <xsl:apply-templates select="." mode="full_description"/>
       <BR/>
       <DIV NAME="list" ID="other">
-        <B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/><xsl:text disable-output-escaping="yes">
+        <p><B>Fields: </B>[ ]=<SMALL>Optional with Default Value</SMALL></p>
+      <code class="safs">
+      <xsl:text disable-output-escaping="yes">
 	  </xsl:text><xsl:text disable-output-escaping="yes">&lt;OL start="</xsl:text>
           <xsl:if test="/keyword_library/libraryType/@type = 'COMPONENT'">
               <xsl:text disable-output-escaping="yes">5" ></xsl:text>
@@ -274,9 +276,15 @@
             <xsl:text disable-output-escaping="yes">
 		  </xsl:text>
           </LI>
-          <BR/>
-          <xsl:text disable-output-escaping="yes"/>
-        </xsl:for-each><xsl:text disable-output-escaping="yes">&lt;/OL ></xsl:text><B>Examples:</B><BR/><xsl:text disable-output-escaping="yes"/><UL>
+        </xsl:for-each><xsl:text disable-output-escaping="yes">&lt;/OL ></xsl:text>
+        </code>
+        
+        <br />
+        
+        <p><B>Examples:</B></p>
+        
+        <code class="safs">
+		<xsl:text disable-output-escaping="yes"/><UL>
           <xsl:for-each select="./examples/example">
             <LI>
               <B>
@@ -286,12 +294,15 @@
               <xsl:text disable-output-escaping="yes"/>
               <xsl:apply-templates select="." mode="full_description"/>
             </LI>
-            <BR/>
-            <xsl:text disable-output-escaping="yes"/>
           </xsl:for-each>
         </UL>
+        </code>
+        
+        <br />
+        
         <xsl:call-template name="iconLegendLine"/>
-        <HR/></DIV>
+        <HR />
+      </DIV>
   </xsl:template>
 
 </xsl:stylesheet>

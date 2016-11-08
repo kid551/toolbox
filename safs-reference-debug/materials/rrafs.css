@@ -2,14 +2,14 @@
 
 #short_desc { 
 	font: 16px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; 
-	color: #000033;
+	color: #337ab7;
 	text-align: left;
 }
 
 
 
 #detail_desc { 
-	font: 16px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; 
+	font: 16px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
 	color: #000033;
 	text-align: left;
 }
