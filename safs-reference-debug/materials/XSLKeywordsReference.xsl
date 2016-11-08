@@ -240,7 +240,7 @@
       <xsl:apply-templates select="." mode="full_description"/>
       <BR/>
       <DIV NAME="list" ID="other">
-        <p><B>Fields: </B>[ ]=<SMALL>Optional with Default Value</SMALL></p>
+        <p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
       <code class="safs">
       <xsl:text disable-output-escaping="yes">
 	  </xsl:text><xsl:text disable-output-escaping="yes">&lt;OL start="</xsl:text>
