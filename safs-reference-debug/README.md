@@ -10,3 +10,7 @@ In order to debug the SAFS Reference Generation locally, you need to:
 Then, you can find the generated docs in `.\source\common\doc`, where you can do your modifications.
 
 After you modifying things, you only need to run `source\common\doc` again to update docs.
+
+### Notes
+
+For keywords reference modification, you need to modify code in `.\source\common\keywords\XSLKeywordsReference.xsl`.
