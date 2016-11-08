@@ -1,4 +1,4 @@
-### SAFS Reference Generation Debug
+# SAFS Reference Generation Debug
 
 In order to debug the SAFS Reference Generation locally, you need to:
 
