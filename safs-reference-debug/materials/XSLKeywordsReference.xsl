@@ -124,8 +124,8 @@
     	<thead class="thead-inverse">
     		<tr>
 		      <th>Keyword Name</th>
-		      <th>Supported Engines</th>
 		      <th>Description</th>
+		      <th>Supported Engines</th>
 		    </tr>
 		</thead>
 		<tbody>
@@ -168,18 +168,19 @@
             <xsl:text disable-output-escaping="yes">&lt;/A></xsl:text>
           </TD>
           
-          <TD width="12%" align="CENTER" >
-            <xsl:call-template name="keywordEngineLinks" />            
-          </TD>
-          
-          <xsl:text disable-output-escaping="yes">
-		  </xsl:text>
           <TD>
             <xsl:if test="starts-with(@deprecated,'Y')">Deprecated For:<xsl:value-of select="@deprecatedFor"/></xsl:if>
             <xsl:if test="not(starts-with(@deprecated,'Y'))">
               <xsl:value-of select="./description/short_desc"/>
             </xsl:if>
           </TD>
+          
+          <xsl:text disable-output-escaping="yes">
+		  </xsl:text>
+		  
+          <TD width="12%">
+            <xsl:call-template name="keywordEngineLinks" />            
+          </TD>               
           
         </TR>
   </xsl:template>
