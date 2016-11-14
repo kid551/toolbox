@@ -1,0 +1,164 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_FilterTextFile'></A>TIDComponent DDDriverFileCommands::<BIG>FilterTextFile</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Filter a text file based on the given parameters.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Filter a text file based on the given parameters.
+                 <p>
+                 This command can be used to process a text file based on the
+                 provided parameters, such as replacing text in a file that
+                 matches a specific pattern. This command is experimental.
+                 command name/parameters are subject to change without notice.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>
+<B>File</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The file to be filtered.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 The file to be filtered.
+                 This can be a full path, a relative path, or a file name.
+                 For relative path, it is appended to the project's path to
+                 build the full path of the file. For file name, the file
+                 is saved under the project's Datapool\Test directory. In
+                 any case the parent folder of the file must exist.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>FilterMode</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The filter mode.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 The filter mode.<br>
+                 "REGEXP" (Regular Expressions) is currently the only supported FILTERMODE that 
+                 actually filters anything.                   
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>FilterOptions</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Additional filter options.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Additional filter options.
+                 Depending on the filter mode, some filter options are required.
+                 <table border="1" cellspacing="1">
+<tr bgcolor="#C0C0C0" align="center"><td>FILTERMODE</td><td>FIELDS</td><td>COMMENTS</td></tr>
+<tr><td align="center">Default(empty)</td>
+<td align="center">(None)</td>
+<td>Default filtering. File is unchanged.</td></tr>
+<tr><td rowspan="3" align="center">"RegExp"</td>
+<td>5 - PATTERN (Required)</td>
+<td valign="top">REGEXP pattern to match for filtering. All occurrences of 
+                      text in a file that match regular expression PATTERN will be removed and 
+                      replaced with the REPLACE string (if any).</td></tr>
+<tr><td>6 - REPLACE (Optional)</td>
+<td>Default value for REPLACE is "" (empty string). This tells REGEXP to 
+                      remove matching PATTERN text from the file.  Specifying a REPLACE string 
+                      will remove matching PATTERN text from the file and insert the REPLACE string 
+                      in its place.</td></tr>
+<tr><td>7 - CASE (Optional)</td>
+<td>CASE specifies the case-sensitivity used when searching for matching 
+                      text in the file.  Use "CaseInsensitive" to ignore case when searching.<br>
+                      If not specified the default implementation is a CaseSensitive compare.</td></tr></table></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Encoding</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The encoding to use to read and write file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+				  If user doesn't provide this parameter, program will detect the encoding automatically.
+				  If no encoding is provided and detected, program will use system default encoding.<br>
+				  If user provide this paramter, FilterOptions must be present (can be blank).
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">C, FilterTextFile, C:\Temp\myfile.txt </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Performs the default filtering on C:\Temp\myfile.txt (does nothing).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">C, FilterTextFile, C:\Temp\myfile.txt, RegExp, "19\d\d BC", "Last Centry" </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Performs a case-sensitive regular expression filtering on C:\Temp\myfile.txt.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Performs a case-sensitive regular expression filtering on C:\Temp\myfile.txt.
+                 All occurrences of year "19xx BC" (case-sensitive) are replaced with "Last Centry".
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">C, FilterTextFile, myfile.txt, RegExp, "19\d\d BC", "Last Centry", CaseInsensitive </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Performs a case-insensitive regular expression filtering on Datapool\Test\myfile.txt.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Performs a case-insensitive regular expression filtering on Datapool\Test\myfile.txt.
+                 All occurrences of year "19xx BC" (case-insensitive) are replaced with "Last Centry".
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">C, FilterTextFile, Datapool\myfile.txt, RegExp, "19\d\d BC" </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Performs a case-sensitive regular expression filtering on Datapool\myfile.txt.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Performs a case-sensitive regular expression filtering on Datapool\myfile.txt.
+                 All occurrences of year "19xx BC" (case-sensitive) are removed.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">C, FilterTextFile, Datapool\myfile.txt, RegExp, "19\d\d BC", , , "UTF-8" </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Performs a case-sensitive regular expression filtering on Datapool\myfile.txt.
+                 File will be read and wrote by encoding "UTF-8".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Performs a case-sensitive regular expression filtering on Datapool\myfile.txt.
+                 All occurrences of year "19xx BC" (case-sensitive) are removed.
+                 File will be read and wrote by encoding "UTF-8".
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

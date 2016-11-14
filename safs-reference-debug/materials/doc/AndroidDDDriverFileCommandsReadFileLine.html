@@ -1,0 +1,55 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_ReadFileLine'></A>Android DDDriverFileCommands::<BIG>ReadFileLine</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+          Read a line from the file defined by file number                 and assign a string containing the line read to a DDV variable.
+        </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>
+<B>FileNumber</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              The file number of the file to be read from.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>
+<B>VariableName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Name of the DDV variable in which to store the line                 read from the file
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">
+            C, ReadFileLine, ^filenum , "^line"
+          </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Line is read from the file identified by the                 value in filenum and the string containing the line read                 assigned to the DDV variable line
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

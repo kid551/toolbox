@@ -1,0 +1,117 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_SaveTextFromGUI'></A>Selenium GenericMasterFunctions::<BIG>SaveTextFromGUI</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Incorporate OCR technology to detect the text on a GUI component and save the text to a text file.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Two open-source OCRs are integrated into SAFS. One is TesseractOCR (TOCR) at 
+             http://code.google.com/p/tesseract-ocr; the other GOCR at http://jocr.sourceforge.net. 
+             <p>
+             TOCR 2.0.4 and GOCR 0.48 are the latest release. They are available in SAFS and only 
+             support English. Both two OCR owners claim to support more languages in next release. Chinese, 
+             Japanese, and Korean are going to be supported in TOCR's next release 3.00.
+			</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>OutputFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The name of the text file used to store detected text.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              The name of the text file used to store detected text. By default, the files will be stored in 
+              the active "Test" directory. If you specify a relative path, the path will be relative to the 
+              project directory. The directory for a full or relative path must already exist.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>SubArea</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Optional app map subkey indicating partial image of the component to capture.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Optional app map subkey indicating partial image of the component to capture. Value of this app 
+             map reference must be in the format of a top-left and bottom-right pair, and can be either absolute 
+             coordinates or percentages ("x1,y1,x2,y2" or "x1%,y1%,x2%,y2%"). Coordinates are relative to the 
+             component, i.e. (0,0) and (0%,0%) are the minimum, and (COMPONENT_WIDTH, COMPONENT_HEIGHT) and 
+             (100%,100%) are the maximum. Values exceeding the minimun/ maximum are forced to the nearest 
+             limiting value. Absolute and percent values can be mixed, so "0,0,50%,50%" is valid. 
+             <p>
+             If this parameter is omitted with blank or empty string, full image of the component is captured 
+             (equivalent to "0,0,100%,100%"). 
+             </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>OCRId</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             OCRId indicating the OCR used to recognize text.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Two OCR engines are supported. "TOCR" will be taken as default if the parameter is blank.
+             "TOCR" stands for Tesseract OCR; "GOCR" stands for GOCR.
+             <p>
+             Note: Seems TOCR performs a bit better than GOCR (personal experience). 
+             </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>LangId</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Optional LangId representing the language in use for selected OCR to recognize text. 
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             For both TOCR and GOCR, only English is supported so far. Language Id takes standard language code, 
+             which can be gotten by calling Locale.ENGLISH.getLanguage(). 
+             <p><pre>
+				LangId      Language
+				"en"   ---  English
+				"cn"   ---  Chinese
+			 </pre></p>
+<p>
+             If LangId is not specified with blank or empty string, the language of System locale will be 
+             used as default. 
+             </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>ScaleRatio</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Optional ScaleRatio indicating the scale ratio for resizing the original image.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             To fit in font size and DPI required by OCR, SAFS needs to resize images before sending them 
+             to OCR engines. For screen-captured images with 96DPI, TOCR takes 1.9 as default; GOCR takes 1.5 
+             as default. You may try different ScaleRatio to find an appropriate value if default setting is 
+             unable to meet your requirement.
+             </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Window, Comp, SaveTextFromGUI, ocr.txt,   , TOCR, en, 2.0</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Detect the text in the full image of Comp using TOCR with English and ScaleRatio 2.0, 
+              then save the text to [project]\Datapool\test\ocr.txt.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

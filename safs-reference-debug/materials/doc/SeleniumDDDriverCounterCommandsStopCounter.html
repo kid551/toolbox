@@ -1,0 +1,66 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_StopCounter'></A>Selenium DDDriverCounterCommands::<BIG>StopCounter</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Create a new private counter or suspend counts in an existing private counter.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>If counterID is not already an active private counter, then 
+                 this routine will create a new private counter with the provided 
+                 counterID as its name.  The counter will be enabled for counting 
+                 of all status information at all test levels but will be suspended 
+                 from actually counting.</p>
+<p>If counterID identifies an existing counter, then this routine 
+                 will suspend counting within this counter.</p>
+<p>See <a href="ApplicationUtilities.htm" target="_blank">ApplicationUtilities</a> for more information on private counters.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>
+<B>counterID</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The unique name used to identify this private counter.  
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 These unique names are case-insensitive.  
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Description</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Any additional information for stopping this counter.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">C, StopCounter, "TestCase 124", "Done testing Login"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Create and/or suspend counts on a counter called "TestCase 124".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 If the counter does not exist, create it and enable counting 
+                 all status information but suspend all counting.  
+                 If the counter already exists, suspend counting within it.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

@@ -1,0 +1,93 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_GetREDelimitedField'></A>TestComplete DDDriverStringCommands::<BIG>GetREDelimitedField</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+          GetREDelimitedField, this command returns the requested field contained in the input string using the passed in regular expression as the delimiter(s).
+        </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>
+<B>InputString</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              The input string to analyze.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>
+<B>index</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+		    1-based index of the field to return from the input string.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>
+<B>RegExp</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              RegExp - This string contains a regular expression used as the delimiter(s). These should conform to the regular expressions defined in "java.util.regex.Pattern" documentation.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>
+<B>resultVar</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              resultVar contains the requested field from the input string.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">
+            C, GetREDelimitedField, "All is    well in      the  world", 4, "\s+", var
+          </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              This is equivalent to asking for one of the non-blank fields in the string. Variable 'var' should contain "in" after this is run. 
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">
+            C, GetREDelimitedField, "RedXXOrangeXXYellowXXGreenXXBlueXXIndigoXXViolet", 2, "XX", var
+          </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              This uses the string "XX" as the delimiter. Variable 'var' should contain "Orange" after this is run. 
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">
+            C, GetREDelimitedField, "a|b&amp;cd-efghi", 3, "[\|&amp;\-g]", var
+          </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              variable 'var' should contain "cd" after this is run. Fields in the string are: "a", "b", "cd", "ef", "hi".
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

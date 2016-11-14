@@ -1,0 +1,55 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_SelectPopupMenuID'></A>PopupMenuFunctions::<BIG>SelectPopupMenuID</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Select a menuItem via its menuID in the currently active popup menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Attempts to select a particular menuID in the currently 
+                active popup menu.  This is generally used when the menuitem is a bitmap 
+                or other item that does not have text.  This value can be retrieved from 
+                the the menu by index or by manual lookup from a menu structure output 
+                from MenuUtilities.
+                <p>
+                The routine first verifies that the specified menuitem exists
+                and exits with error if it does not.
+                If it does exist then the selection proceeds.</p>
+<p>
+                For RC and Win32 popups: The Window and Component references are not 
+                used and can be anything.  They just cannot be blank.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>MenuItemID</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The Windows menuID of the menuItem to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Anything, AtAll, SelectPopupMenuID, 1001</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Select the menuItem with menuID 1001 from the currently active popup menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Select the menuItem with menuID 1001 from the currently active popup menu.
+                <p>
+                For RC and Win32 popups: The Window and Component references are not 
+                used and can be anything.  They just cannot be blank.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

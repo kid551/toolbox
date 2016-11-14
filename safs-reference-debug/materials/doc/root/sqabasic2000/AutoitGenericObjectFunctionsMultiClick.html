@@ -1,0 +1,185 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_MultiClick'></A>Autoit GenericObjectFunctions::<BIG>MultiClick</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Multiple clicks on an object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>
+                By default, clicks on the center of the component 3 times.<br>
+                Use the optional ClickCount parameter to specify the desired number of clicks.<br>
+                We can also click on any part of an object, or any point relative to an object 
+                based on a provided x,y coordinate or other component-specific parameters.  
+                </p><p>
+                The object to be clicked is first given context and then the clicks are 
+                generated at the coordinates.  Thus, a subitem or object can be 
+                referenced by name even though it is only recognized via coordinates.
+                </p><p>
+                The optional coordinate lookup is done with the component name of the record AND 
+                Field #5 or by providing the literal text of the coordinates, where supported.</p>
+<p>
+                Typical Data Table records with relative references:</p>
+<p>
+                (1) t MainWindow MainWindow  MultiClick <br>
+                (2) t MainWindow MainWindow  MultiClick AnObject<br>
+                (3) t MainWindow FolderTree  MultiClick Node1  "4"<br>
+                (4) t MainWindow MainWindow  MultiClick "50,200" "3"<br>
+                (5) t MainWindow MainWindow  MultiClick "Coords=50,200" "2"</p>
+<p>
+                #1 above should click 3 times (default) at the center (default) of the MainWindow.
+                </p><p>
+                #2 above will contain an AnObject="3,10" entry in the MainWindow section 
+                of the Application Map to click 3 times (default) at x=3, y=10 in the MainWindow.
+                </p><p>
+                #3 above will contain a FolderTree entry in the MainWindow section with 
+                normal recognition information for it.  FolderTree will also have it's
+                own section in the Application Map in which there will be an entry like 
+                Node1="15,30".  This will tell the runtime to locate the FolderTree Generic 
+                object and click 3 times (default) at the coordinates specified by the reference.
+                </p><p>
+                #4 and #5 above show using literal text instead of an App Map entry to specify 
+                where to click relative to the item.  The item will be clicked 3 times and 2 times, 
+                respectively
+                </p><p>
+		Note: the TID supports this command using 
+		<a href="http://safsdev.sourceforge.net/sqabasic2000/SAFSImageBasedRecognition.htm" target="imagebased" alt="SAFS Image-Based Recognition Doc">Image-Based Testing</a> 
+		techniques and App Map entries as well as literal text coordinates.
+		</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>[ <B>AppMapSubkey</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                (Optional)Name of the AppMap subkey to lookup or the literal text to use for the clicks.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Without this we should click on the center of the object.
+                <p>Name of the AppMap subkey to lookup and use for the click.
+                We expect the AppMap or literal text to contain the item in the format "x,y":</p>
+<pre>
+                [FolderTree]
+                Node1="33,120"      OR
+                Node1="Coords=33,120"
+                ...
+                [AnHTMLImage]
+                AMappdedRegion=Coords=10,10
+                ANamedRegion=AreaName=TechSupport
+                AnIndexedRegion=AreaIndex=2
+                AnotherRegion=AreaID=Contact
+                </pre><p>  
+                The results from the lookup are appended to the "Coords=" string 
+                used by the Click command in Robot (only if necessary).  So any 
+                valid content used with the Click command can be part of 
+                this AppMap entry.</p>
+<p>
+                Both Fields #3 and #5 are used to locate the item in the App Map.
+                This routine does not specify an App Map so only the current Map
+                is used and it is expected to be valid.
+                </p>
+<p><b>Important TID note.</b> The <a href="http://safsdev.sourceforge.net/sqabasic2000/SAFSImageBasedRecognition.htm" target="imagebased" alt="SAFS Image-Based Recognition Doc">TID IBT implementation</a> supports using literal text in 
+                this parameter instead of an AppMapSubKey.  If the value retrieved from 
+                this field is NOT found to exist in the App Map as a Sub Key then it 
+                will be used as literal text as if it HAD been retrieved from the App Map.
+                </p><p>
+                Any coordinates provided for TID IBT are considered relative to the top-left (0,0) of the 
+                image or item found unless PointRelative and\or Hotspot information in the IBT recognition 
+                string change this initial relative point to be somewhere else.
+                </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>ClickCount</B> = 3 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                 Optional number of times (1 to N) to click the item.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Optional number of times (1 to N) to click the item.  The default if no value is provided is 3.  
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, MULTICLICK</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Click 3 times (default) on the center of the object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Click 3 times (default) on the center of the object.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, MULTICLICK, "", "4"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Click 4 times on the center of the object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Click 4 times on the center of the object.  
+               No AppMapSubKey or Literal Text is given to alter the relative coordinates for the click.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, MULTICLICK, AnObject</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Click 3 times (default) at relative x,y coordinates stored in "AnObject" in the App Map.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Field  5 : TQ String. An item in the App Map holding relative coordinates to click.<br>
+               This example shows "AnObject" which will be found in the App Map in the "WINDOW" section.    
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, MULTICLICK, ASubObject</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Click 3 times (default) at relative x,y coordinates stored in "ASubObject" in the App Map.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Field  5 : TQ String. An item in the App Map holding relative coordinates to click.<br>
+               This example shows "ASubObject" which will be found in the App Map in the "COMPONENT" section.    
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, MULTICLICK, 10;20</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Click 3 times (default) at coordinate 10,20 in the object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Field  5 : TQ String. The item does not exist in the app map so will be 
+               treated as literal text.  Note we allow semi-colon delimited coordinates 
+               to support the case when commas are used as field delimiters and cannot be 
+               used to delimit the X and Y coordinates.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, AnObject, MULTICLICK, "Coords=10;20", "4"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               4 clicks at coordinate 10,20 in the object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Field  5 : TQ String. The item does not exist in the app map so will be 
+               treated as literal text.  Note we allow semi-colon delimited coordinates 
+               to support the case when commas are used as field delimiters and cannot be 
+               used to delimit the X and Y coordinates.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

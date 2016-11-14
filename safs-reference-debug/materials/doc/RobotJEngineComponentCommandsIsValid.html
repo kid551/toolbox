@@ -1,0 +1,65 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_IsValid'></A>RobotJ EngineComponentCommands::<BIG>IsValid</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Does the component still exist as a valid object?</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Should return text "true" if the component is still valid. 
+                Return text "false" if it is not.
+            <p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p>
+<p>
+            The TestComplete Engine (TCAFS) also persists these values as SAFS variables.
+            </p><pre>            
+            ^TCAFS.Command    = [command]
+            ^TCAFS.StatusCode = [statuscode string]
+            ^TCAFS.StatusInfo = [statusinfo]
+            ^TCAFS.FullName   = [object.FullName] -- the TestObjects.FullName string--if command returns only 1 reference.
+            </pre></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows, getChildren, or one of the other 
+                        engine commands that return such references.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">E, IsValid, TheComponentReference</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Validate the existence of TheComponentReference.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns text "true" or "false".
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

@@ -1,0 +1,118 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_FilterImage'></A>Android DDDriverFileCommands::<BIG>FilterImage</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              	Filter out specific parts of an image.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+	        Filter out specific parts of an image and save to a new or existing image file.
+	        The filtered portions of the image are blacked out so as to remove dynamic visible
+	        content from the image.
+	        The available formats for the input and output files are BITMAP (*.bmp) and JPEG
+	        (*.jpg).
+	        <p><B>Specific Notes:</B><br>
+	        	This command requires that Java Advanced Imaging (JAI) be installed
+	                on the test machine.
+	        </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>
+<B>InputFilename</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                  The input image file (FULL PATH)
+                </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>
+<B>OutputFilename</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                  The output image file after filtering (FULL PATH)
+                </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The output image file after filtering (FULL PATH).  The output image may overwrite the 
+                  input image.
+                </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>FilterMode</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                  Mode by which the image is filtered
+                </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  Mode by which the image is filtered. Currently, the only supported FilterMode is COORD.
+                </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>Coords</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+	      		Required parameter for the COORD FilterMode that defines the rectangle(s) of the input image that are to be filtered out.
+	        </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+	                Required parameter for the COORD FilterMode that defines the rectangles of the input image that are to be filtered out.
+	                Value of this app map reference must be in the format of a
+	                top-left and bottom-right pair, and can be either absolute
+	                coordinates or percentages ("x1,y1,x2,y2" or "x1%,y1%,x2%,y2%").
+	                Coordinates are relative to the image, i.e. (0,0) and
+	                (0%,0%) are the minimum, and (image width, image height)
+	                and (100%,100%) are the maximum. Values exceeding the minimum/
+	                maximum are forced to the nearest limiting value. Absolute and
+	                percent values can be mixed, so "0,0,50%,50%" is valid.
+	                <p>
+	                Note: Java-based engines like RFT should support using either 
+	                a comma (,) or a semi-colon (;) as the Coords item separator.  
+	                Also, there should be a space char separating each set of
+	                rectangle coordinates.
+	                </p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">
+                C, FilterImage, "C:\in.jpg", "C:\out.jpg", COORD, 30;40;50;60 50%;30%;75%;50%
+              </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                 Filter input image file "C:\in.jpg" by blacking out 2 rectangles: 1) 30,40 to 50,60 and;
+                 2) from 50%,30% to 75%,50%.  Write output image to C:\out.jpg.
+                </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">
+                C_ FilterImage_ "C:\in.jpg"_ "C:\out.jpg"_ COORD_ 30,40,50,60
+              </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                 Filter input image file "C:\in.jpg" by blacking out 1 rectangles at 30,40 to 50,60.
+                 Write to output image file "C:\out.jpg".
+                </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

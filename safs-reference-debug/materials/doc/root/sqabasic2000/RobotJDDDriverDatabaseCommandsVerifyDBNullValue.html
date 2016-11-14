@@ -1,0 +1,132 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_VerifyDBNullValue'></A>RobotJ DDDriverDatabaseCommands::<BIG>VerifyDBNullValue</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Verifies the value of a field in a database table is NULL
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Verifies the value of a field in a database table is NULL.
+                 <p>
+                 Sometimes you have to check if a field's value is NULL. This
+                 NULL value is different from any other (even zero for numerics
+                 and null string for characters), so if you try to check it
+                 using VerifyDBValue() function, if will fail.
+                 </p><p>
+                 A table and field name are required. You also have to specify data source name,
+                 user id and password (the user id and password can be "" meaning not required).
+                 </p><p>
+                 A query condition can be included. It can be any 
+                 valid expression allowed by the WHERE clause of the SELECT sentence of the SQL driver
+                 you are using. For example: "CliBal &gt; 100000 and CliCat = 'C'".<br> 
+                 Including "where" in the expression itself is optional.  It will 
+                 be prefixed to the expression if it is not provided.
+                 </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>ADBAlias</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 not used
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>ATableAlias</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 not used
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>DBFieldName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Name of the FIELD within DBTableName used in the verification
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>DBTableName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Name of the TABLE to access within the DBSourceName</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>DBQueryCond</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Expression allowed by the WHERE clause of the SELECT sentence of the SQL driver
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 A query condition can be included, if not then ""
+                 must be supplied. It can be any 
+                 valid expression allowed by the WHERE clause of the SELECT sentence of the SQL driver
+                 you are using. For example: "CliBal &gt; 100000 and CliCat = 'C'".<br>
+                 "where" will be added to any expression if it is not provided.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>DBSourceName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Name of the Datasource containing the DBTable
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>UserID</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 UserID for accessing the Datasource (if required).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>Password</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Password for accessing the Datasource (if required).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>SQLStatus</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 SQL status code as a result of executing the query gets stored in this variable
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, VerifyDBNullValue, ADBAlias, ATableAlias, LASTNAME, Clients, "CID = 25", ContactDatabase, "", "", sqlStatusVariable</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Verify the LASTNAME field in the CLIENTS table in CONTACTDATABASE is NULL where the CID field = 25.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                  Verify the LASTNAME field in the CLIENTS table in CONTACTDATABASE is NULL for the first record 
+                  whose CID field = 25.  No UserID or Password was required for this access.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

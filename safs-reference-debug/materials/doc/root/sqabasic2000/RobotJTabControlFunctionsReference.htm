@@ -1,0 +1,401 @@
+<HTML xmlns="http://www.w3.org/TR/REC-html40"><HEAD>
+<TITLE>RobotJ TabControlFunctions</TITLE>
+<LINK rel="stylesheet" href="rrafs.css" type="text/css"/>
+</HEAD><BODY><DIV NAME="top" ID="top">
+		  <H3>RobotJ TabControlFunctions</H3>
+		  <SMALL>Last Updated:<script language="JavaScript">document.write(document.lastModified)</script></SMALL>
+<BR/>
+<BR/>
+<DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+              Actions for working with TabControl objects
+           </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</DIV>
+<BR/>
+		<DIV NAME="list" ID="list">
+		  <A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE cellspacing="3" border="1" cellpadding="2">
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ClickTab' HREF='#detail_ClickTab' >ClickTab</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Attempts to perform a standard Click on a particular Tab on the TabControl
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ClickTabContains' HREF='#detail_ClickTabContains' >ClickTabContains</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Attempts to perform a Click on a Tab according to a partial match of its text value.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_MakeSelection' HREF='#detail_MakeSelection' >MakeSelection</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Attempts to perform a standard Click on a particular Tab on the TabControl
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectTab' HREF='#detail_SelectTab' >SelectTab</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Attempts to perform a standard SelectTab on a particular Tab on the TabControl
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectTabIndex' HREF='#detail_SelectTabIndex' >SelectTabIndex</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Attempts to select a particular Tab by Index.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_UnverifiedClickTab' HREF='#detail_UnverifiedClickTab' >UnverifiedClickTab</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Attempts to perform an unverified Click on a particular Tab on the TabControl
+              </TD>
+</TR>
+</TABLE>
+<HR/>
+</DIV>
+		<DIV NAME="detail" ID="detail">
+		  <H3><A NAME='detail_ClickTab'></A>RobotJ TabControlFunctions::<BIG>ClickTab</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to perform a standard Click on a particular Tab on the TabControl
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Attempts to perform a standard Click on a particular Tab on the TabControl.
+                The routine will set the StepDriverTestInfo.statuscode and
+                log any pass/warning/fail info using the StepDriverTestInfo.fac LogFacility.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text on the tab to identify which tab to click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 TextValue is the case-sensitive text on the tab to identify which tab to click.
+                 *For Sheridan SSActiveTabs this will be treated as an AppMap reference to an item
+                  that contains coordinates in the form of "xcoord,ycoord".  The item will be 
+                  retrieved from the section in the AppMap with the Components name (Field #3).
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, TabControl, CLICKTAB, "StatsTab"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A single-click is performed on the "StatsTab" tab located on the TabControl object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p> 
+                  A single-click is performed on the "StatsTab" tab located on the TabControl object.
+                  For Sheridan SSActiveTabs this click location is determined by coordinates stored 
+                  in the AppMap.  Given the example, the AppMap will contain the following entry:</p>
+<p>
+                  [TabControl]<br>
+                  StatsTab="100, 12"</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_ClickTabContains'></A>RobotJ TabControlFunctions::<BIG>ClickTabContains</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Attempts to perform a Click on a Tab according to a partial match of its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p> 
+                Attempts to perform a Click on a Tab according to a partial match of its text value.
+                The routine will set the StepDriverTestInfo.statuscode and
+                log any pass/warning/fail info using the StepDriverTestInfo.fac LogFacility.</p>
+<p>Note: this keyword used to be UnverifiedClickTabContains, and it was renamed on 01/26/2011 due to conflict.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Partial case-sensitive text on the tab to identify which tab to click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 TextValue is the partial case-sensitive text on the tab to identify which tab to click.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, PropertiesWin, TabControl, ClickTabContains, "StatsTab"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A single-click is performed on the tab item whose name contains "StatsTab".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p> 
+                  A single-click is performed on the tab item whose name contains "StatsTab".</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_MakeSelection'></A>RobotJ TabControlFunctions::<BIG>MakeSelection</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to perform a standard Click on a particular Tab on the TabControl
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Attempts to perform a standard Click on a particular Tab on the TabControl.
+                The routine will set the StepDriverTestInfo.statuscode and
+                log any pass/warning/fail info using the StepDriverTestInfo.fac LogFacility.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text on the tab to identify which tab to click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 TextValue is the case-sensitive text on the tab to identify which tab to click.
+                 *For Sheridan SSActiveTabs this will be treated as an AppMap reference to an item
+                  that contains coordinates in the form of "xcoord,ycoord".  The item will be 
+                  retrieved from the section in the AppMap with the Components name (Field #3).
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, TabControl, MAKESELECTION, "StatsTab"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A single-click is performed on the "StatsTab" tab located on the TabControl object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p> 
+                  A single-click is performed on the "StatsTab" tab located on the TabControl object.
+                  For Sheridan SSActiveTabs this click location is determined by coordinates stored 
+                  in the AppMap.  Given the example, the AppMap will contain the following entry:</p>
+<p>
+                  [TabControl]<br>
+                  StatsTab="100, 12"</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SelectTab'></A>RobotJ TabControlFunctions::<BIG>SelectTab</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to perform a standard SelectTab on a particular Tab on the TabControl
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>
+                Attempts to perform a standard Selection on a particular Tab on the TabControl.
+                The routine will set the StepDriverTestInfo.statuscode and
+                log any pass/warning/fail info using the StepDriverTestInfo.fac LogFacility.</p><p>
+                Note, this routine will call the CLICK function to try 
+                default CLICK processing if it is not able to locate all 
+                the component properties it needs for success.</p><p>
+                This command has been provided for times when it might 
+                work and the other TabControl CLICK alternatives do not.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text on the tab to identify which tab to click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                TextValue is the case-sensitive text on the tab to identify which tab to click.
+                If the provided text value contains ampersands (for hotkey characters) then 
+                ampersands will be retained in the TabControl text for comparisons performed 
+                to identify the correct tab to click.  
+                Otherwise, ampersands are stripped out of the TabControl text to facilitate 
+                these comparisons.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, TabControl, SelectTab, "StatsTab"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A single-click is performed on the "StatsTab" tab located on the TabControl object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SelectTabIndex'></A>RobotJ TabControlFunctions::<BIG>SelectTabIndex</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to select a particular Tab by Index.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Attempts to select a particular Tab by Index.
+                The routine will set the StepDriverTestInfo.statuscode and
+                log any pass/warning/fail info using the StepDriverTestInfo.fac LogFacility.
+                <p>
+                For some engines, like Rational Robot, the user must know whether the indices of 
+                the TabControl are 0-based or 1-based and use the raw index number.  
+                </p>
+<p>
+                For Rational Functional Tester we attempt to enforce that all indices are 
+                1-based whenever possible.  Thus, the first tab would be specified as TabIndex=1 
+                even if the control itself uses 0-based tab indices.
+                </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TabIndex</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Index of the tab to click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                The index of the tab to click.  The user needs to know whether 
+                the TabControl indices are 0-based or 1-based.  SAFS for RFT attempts to 
+                allow the user to use 1-based indices for all controls.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, TabControl, SelectTabIndex, 2</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A single-click is performed on the 2nd tab of a 1-based TabControl.  
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                The 2nd tab of a 1-based TabControl will likely correspond to the 3rd 
+                tab of a 0-based TabControl.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_UnverifiedClickTab'></A>RobotJ TabControlFunctions::<BIG>UnverifiedClickTab</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to perform an unverified Click on a particular Tab on the TabControl
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Attempts to perform an unverified Click on a particular Tab on the TabControl.
+                The routine will set the StepDriverTestInfo.statuscode and
+                log any pass/warning/fail info using the StepDriverTestInfo.fac LogFacility.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text* on the tab to identify which tab to click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 TextValue is the case-sensitive text on the tab to identify which tab to click.
+                 *For Sheridan SSActiveTabs this will be treated as an AppMap reference to an item
+                  that contains coordinates in the form of "xcoord,ycoord".  The item will be 
+                  retrieved from the section in the AppMap with the Components name (Field #3).
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, TabControl, UnverifiedClickTab, "StatsTab"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A single-click is performed on the "StatsTab" tab located on the TabControl object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p> 
+                  A single-click is performed on the "StatsTab" tab located on the TabControl object.
+                  For Sheridan SSActiveTabs this click location is determined by coordinates stored 
+                  in the AppMap.  Given the example, the AppMap will contain the following entry:</p>
+<p>
+                  [TabControl]<br>
+                  StatsTab="100, 12"</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+		</BODY>
+</HTML>
+	

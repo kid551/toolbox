@@ -1,0 +1,95 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_SendEvent'></A>RobotJ GenericMasterFunctions::<BIG>SendEvent</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Send or trigger an "event" with 0 or more arguments.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             For objects or technologies that can be effectively event-driven, rather than GUI-driven.
+             <p>
+             The first implementation is in IBM Rational Functional Tester for Flex testing.  Many Flex objects 
+             respond to events, in addition to traditional GUI interaction.  Some Flex objects ONLY respond to 
+             events.  This is especially true of many custom Flex delegates.</p>
+<p>
+             The tester must know the events and arguments available for their particular object and technology. 
+             The generic nature for this command cannot generally know if a particular event or set of 
+             arguments is valid or not.  Thus, the implementation may not be able issue failures resulting from 
+             invalid events, arguments, or other issues not generating recognizable failure conditions.
+             </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>Event</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The potentially case-sensitive name of the event to send or trigger.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              Some technologies may enforce case-sensitivity for event names while others will not.  
+              The tester is responsible to ensure the event name is appropriate for the item(s) being tested.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>PARAM_N</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The first of 0 or more parameters needed for the event.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             This field will be blank or contain an empty string if no parameter value is to be sent.  
+             Otherwise, the field will contain an appropriate value as might be required or optional for 
+             the event being sent.
+             <p>
+             If the event accepts multiple parameters, then each parameter must be provided in a separate 
+             field in the test record.  All fields will be evaluated until no more fields are found to exist. 
+             All fields will be sent in the order they are provided.
+             </p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, Window, Comp, SendEvent, Close</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Issue a "Close" event that needs no parameters.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, Window, Comp, SendEvent, Change, Browse</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Issue a "Change" event and provide one parameter.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, Window, Comp, SendEvent, MyEvent, AnArg, 100, 200</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Issue a "MyEvent" event that accepts at least 3 parameters.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              Note all event parameters are provided in separate fields of the record.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

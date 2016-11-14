@@ -1,0 +1,112 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_GetSystemTime'></A>IOS DDDriverCommands::<BIG>GetSystemTime</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Assigns the string value of the current system time to a DDVariable. 
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Assigns the string value of the current system time to a DDVariable. 
+                This date is in the format HH:MM:SS, it is in AM-PM 12-hours
+                format (1-12) be default; If you set the second parameter 'GetMilitaryTime'
+                to True, the time will be 24-hours military format (0-23). Use military time
+                is recommanded, as am-pm time has confusion without AM or PM
+                (example: 18:00 and 06:00 will be both 06:00)                
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>
+<B>VariableName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The name of the variable to receive the System Time.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 The name of the variable to receive the System Time.
+                 Note, if you supply the name of the variable and include the leading 
+                 caret (^) symbol then the variable must be enclosed in quotes.
+                 Otherwise, that variable will be used like any other variable and the 
+                 substituted value of that variable will be interpretted as the name 
+                 of the variable you wish to use.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>GetMilitaryTime</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 If true, the converted time is in 24-hours military time format
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 If this is true, the converted time will be in 24-hours military time
+                 format (0-23). If this parameter is omitted, it is false be default,
+                 the converted time will be in AM-PM 12-hours format (1-12).
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">C, GetSystemTime, SystemTime</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Assigns system time to DDVariable ^SystemTime, the time will
+                 be in 12-hours format (1-12).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">C, GetSystemTime, "SystemTime"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Assigns system time to DDVariable ^SystemTime, the time will
+                 be in 12-hours format (1-12).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">C, GetSystemTime, "^SystemTime"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Assigns system time to DDVariable ^SystemTime, the time will
+                 be in 12-hours format (1-12).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">
+                 C, SetVariableValues, ^SystemTime="CurrentTime" <BR>
+                 C, GetSystemTime, ^SystemTime
+              </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Assigns system time to DDVariable ^CurrentTime, the time will
+                 be in 12-hours format (1-12).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">C, GetSystemTime, SystemMilitaryTime, True</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Assigns system time to DDVariable ^SystemMilitaryTime, the time will
+                 be in military format, 24-hours (0-23).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

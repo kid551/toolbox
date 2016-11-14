@@ -1,0 +1,136 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_VerifyPopupMenuItem'></A>RobotJ PopupMenuFunctions::<BIG>VerifyPopupMenuItem</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Verify the state of a menuItem found via its text in the currently active popup menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                The menuitem should be specified in the form 
+                "Menu-&gt;Menu-&gt;MenuItem   CTRL+V" with the full text, spaces(if any), and 
+                keyboard shortcut text (if any).  
+                <p>
+                Ampersands preceding underlined characters are optional.
+                The routine first verifies that the specified menuitem exists
+                and exits with error if it does not.</p>
+<p>
+                For RC and Win32 popups: The Window and Component references are not 
+                used and can be anything.  They just cannot be blank.</p>
+<p>
+                For Java popups: Valid recognition information for the Java window and 
+                "child" popup menu must be provided.</p>
+<p>
+                Also refer to <i>JavaMenuFunctions</i> for support specific to Java menus and 
+                popup menus.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>MenuItemText</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Menu-&gt;MenuItem hierarchy to the menuItem to verify.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Menu-&gt;MenuItem hierarchy string to identify which menuitem to verify.<br>
+                NOTE:SQA can only handle submenus up to 5 levels deep.
+                <p>
+                For RC and Win32 popups: The Window and Component references are not 
+                used and can be anything.  They just cannot be blank.</p>
+<p>
+                For Java popups: Valid recognition information for the Java window and 
+                "child" popup menu must be provided.</p>
+<p>
+                Also refer to <i>JavaMenuFunctions</i> for support specific to Java menus and 
+                popup menus.</p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>StateInfo</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Expected status string (or part thereof) to verify.  
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Note: this parameter is partial supported for RJ.</p>
+<p>
+                Expected status string (or part thereof) to verify.  
+                Ex:  "Enabled Checked"  OR  "Disabled Grayed"    etc.
+                Each item separated by a space will be evaluated separately so 
+                the order of the status items does not matter.  
+                These status items (listed below) currently ARE case-sensitive.</p>
+<p>
+                "Enabled"     "Grayed"      "BarBreak"                "Bitmap"
+                "Disabled"    "Ungrayed"    "Separator"               "Break"
+                "Checked"     "Hilited"     "Default"                 "Menu With N MenuItems"
+                "Unchecked"   "Unhilited"   "Normal" (not default)
+                </p>
+<p>
+                "Enabled"     "Grayed"      "Bitmap"
+                "Disabled"    "Ungrayed"    "Separator"
+                "Checked"     "Unchecked"   "Menu With N MenuItems" are supported by RJ.
+                </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Anything, AtAll, VerifyPopupMenuItem, "File", "Enabled Menu With 7 MenuItems"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Verify the File popup menuItem is a "Menu With 7 MenuItems" and is "Enabled" .
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Note: the STATEINFO parameter is partial supported for RJ.</p>
+                Verify the File popup menuItem is a "Menu With 7 MenuItems" and is "Enabled" .<br>
+                The full text must include any spaces and visible shortcut key combos that 
+                are displayed in the text of the menuItem.
+                <p>
+                For RC and Win32 popups: The Window and Component references are not 
+                used and can be anything.  They just cannot be blank.</p>
+<p>
+                For Java popups: Valid recognition information for the Java window and 
+                "child" popup menu must be provided.</p>
+<p>
+                Also refer to <i>JavaMenuFunctions</i> for support specific to Java menus and 
+                popup menus.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Anything, AtAll, VerifyPopupMenuItem, "&amp;View-&gt;&amp;Toolbars-&gt;P&amp;aint", "Disabled Unchecked"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Verify the Paint menuItem in View/Toolbars is "Disabled" and "Unchecked".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Verify the Paint menuItem in View/Toolbars is "Disabled" and "Unchecked".<br>
+                The full text must include any spaces and visible shortcut key combos that 
+                are displayed in the text of the menuItem.<br>
+                Ampersands (&amp;) indicating/preceding underlined characters are optional.
+                <p>
+                The Window and Component references are not used and can be anything.
+                They just cannot be blank.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, parentWindow, popupMenu, VerifyPopupMenuItem, "Weird-&gt;CheckBox", "Enabled"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""><b>RJ Usage:</b> Verify the CheckBox menuItem in Weird exists and it's status is "Enabled".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, parentWindow, popupWeirdMenu, VerifyPopupMenuItem, "CheckBox", "Enabled Unchecked"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""><b>RJ Usage:</b> Verify the CheckBox menuItem in Weird exists and it's status is "Enabled Unchecked".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

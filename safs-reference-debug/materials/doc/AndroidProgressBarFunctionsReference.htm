@@ -1,0 +1,309 @@
+<HTML xmlns="http://www.w3.org/TR/REC-html40"><HEAD>
+<TITLE>Android ProgressBarFunctions</TITLE>
+<LINK rel="stylesheet" href="rrafs.css" type="text/css"/>
+<LINK rel="stylesheet" href="bootstrap.css" type="text/css"/>
+</HEAD><BODY><DIV class="container content" NAME="top" ID="top">
+		  <H1>Android ProgressBarFunctions</H1>
+		  
+          Last Updated:<script language="JavaScript">document.write(document.lastModified)</script>
+<BR/>
+<BR/>
+<DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+              Actions for working with Progress Bar object.
+           </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              For Android progress bar, there are two modes indeterminate and determinate.
+              In indeterminate mode, the progress is ignored and the progress bar shows an infinite animation instead.
+              In this case, the keyword SetProgress will not work and GetProgress will return 0. These 2 keywords
+              only work for progress bar in determinate mode.<br><b>Note:</b>Keyword SetRating and GetRating will ONLY work for RatingBar object. RatingBar is a subclass
+                          of ProgressBar, so SetProgress and GetProgress can work for it.
+           </detailed_desc><BR/>
+		</DIV>
+<BR/>
+		<DIV NAME="list" ID="list">
+		  <A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE class="table">
+<thead class="thead-inverse">
+<tr>
+<th>Keyword Name</th>
+<th>Supported Engines</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetProgress' HREF='#detail_GetProgress' >GetProgress</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN>:<SPAN CLASS='domainMarker' TITLE='DEV Domain'>DEV</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Action to get progress of a progress bar component.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetRating' HREF='#detail_GetRating' >GetRating</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN>:<SPAN CLASS='domainMarker' TITLE='DEV Domain'>DEV</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Action to get rating of a rating bar component.Note:  Work ONLY for android.widget.RatingBar object.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetProgress' HREF='#detail_SetProgress' >SetProgress</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN>:<SPAN CLASS='domainMarker' TITLE='DEV Domain'>DEV</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Action to set progress for a progress bar component according to its value.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetRating' HREF='#detail_SetRating' >SetRating</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN>:<SPAN CLASS='domainMarker' TITLE='DEV Domain'>DEV</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Action to set rating for a rating bar component according to its value.Note:  Work ONLY for android.widget.RatingBar object.
+              </TD>
+		  </TR>
+</tbody>
+</TABLE>
+<HR/>
+</DIV>
+		<DIV NAME="detail" ID="detail">
+		  <H3><A NAME='detail_GetProgress'></A>Android ProgressBarFunctions::<BIG>GetProgress</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN>:<SPAN CLASS='domainMarker' TITLE='DEV Domain'>DEV</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to get progress of a progress bar component.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>VariableName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The variable VariableName will contain the progress of progress bar in percentage.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The variable VariableName will contain the progress of progress bar in percentage.
+                 If the current progress is 52%, this variable will be set to "52%".
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>IsPrimary</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 IsPrimary is boolean value (default is true). It indicates which indicator to get.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 IsPrimary is boolean value (default is true). It indicates which indicator to get.
+                 Android progress bar has 2 indicators, primary and secondary.
+                 If it is True or Yes, the primary indicator's progress will be got; otherwise the secondary's will be got.              
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ProgressBar, GetProgress, currentPrimaryProgress</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Get the progress of ProgressBar's primary indicator and set it to variable currentPrimaryProgress.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ProgressBar, GetProgress, currentSecondaryProgress, False</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Get the progress of ProgressBar's secondary indicator and set it to variable currentSecondaryProgress.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_GetRating'></A>Android ProgressBarFunctions::<BIG>GetRating</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN>:<SPAN CLASS='domainMarker' TITLE='DEV Domain'>DEV</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to get rating of a rating bar component.<br><b>Note:  </b>Work ONLY for android.widget.RatingBar object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>VariableName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The variable VariableName will contain the rating of rating bar.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The variable VariableName will contain the rating of rating bar.
+                 It will contain a float number which represents the rating (number of stars filled).
+                 If 5 stars are filled, then this variable will contain 5.0
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, RatingBar, GetRating, currentRating</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Get the rating of RatingBar and set it to variable currentRating.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SetProgress'></A>Android ProgressBarFunctions::<BIG>SetProgress</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN>:<SPAN CLASS='domainMarker' TITLE='DEV Domain'>DEV</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to set progress for a progress bar component according to its value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>ProgressValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 ProgressValue to set.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 ProgressValue to set. It can be a number between 0 and 1, or a percentage number like 52%.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>IsPrimary</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 IsPrimary is boolean value (default is true). It indicates which indicator to set.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 IsPrimary is boolean value (default is true). It indicates which indicator to set.
+                 Android progress bar has 2 indicators, primary and secondary.
+                 If it is True or Yes, the primary indicator will be set; otherwise the secondary will be set.              
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ProgressBar, SetProgress, "0.35"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The progress of ProgressBar's primary indicator is set to "35%" of its total value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ProgressBar, SetProgress, "59%", False</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The progress of ProgressBar's secondary indicator is set to "59%" of its total value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SetRating'></A>Android ProgressBarFunctions::<BIG>SetRating</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN>:<SPAN CLASS='domainMarker' TITLE='DEV Domain'>DEV</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to set rating for a rating bar component according to its value.<br><b>Note:  </b>Work ONLY for android.widget.RatingBar object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>RatingValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 RatingValue to set.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 RatingValue to set. It is a float number which represents the rating (number of stars filled).
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, RatingBar, SetRating, "3.5"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The rating of RatingBar is set to 3.5, 3.5 stars will be filled.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+		</DIV>
+</BODY>
+</HTML>
+	

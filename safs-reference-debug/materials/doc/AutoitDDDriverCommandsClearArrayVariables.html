@@ -1,0 +1,53 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_ClearArrayVariables'></A>Autoit DDDriverCommands::<BIG>ClearArrayVariables</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+              Clear storage of all SAFS variables containing a specific prefix.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              Users can use SAFSVARS to store pseudo-arrays simply by adding a numeric suffix to any vaiable name prefix.
+              <p>
+              For example:
+              </p><p>
+              TCAFS.UID.1<br>
+              TCAFS.UID.2<br>
+              TCAFS.UID.3<br></p><p>
+              This command allows you to clear/delete all such SAFSVARS array variables with a specific prefix.
+              </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>
+<B>ArrayName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The variable name prefix to use for the delete.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">C, ClearArrayVariables, "TCAFS.UID." </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Clear all SAFS variables starting with the "TCAFS.UID." prefix.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

@@ -1,0 +1,144 @@
+<HTML xmlns="http://www.w3.org/TR/REC-html40"><HEAD>
+<TITLE>ComboListBoxFunctions</TITLE>
+<LINK rel="stylesheet" href="rrafs.css" type="text/css"/>
+</HEAD><BODY><DIV NAME="top" ID="top">
+		  <H3>ComboListBoxFunctions</H3>
+		  <SMALL>Last Updated:<script language="JavaScript">document.write(document.lastModified)</script></SMALL>
+<BR/>
+<BR/>
+<DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+              Actions for ComboListBox objects
+           </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</DIV>
+<BR/>
+		<DIV NAME="list" ID="list">
+		  <A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE cellspacing="3" border="1" cellpadding="2">
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_Select' HREF='#detail_Select' >Select</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Select an item by its text value from an exposed combobox dropdown list.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectIndex' HREF='#detail_SelectIndex' >SelectIndex</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Select an item by its index from a combolistbox.
+              </TD>
+</TR>
+</TABLE>
+<HR/>
+</DIV>
+		<DIV NAME="detail" ID="detail">
+		  <H3><A NAME='detail_Select'></A>ComboListBoxFunctions::<BIG>Select</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Select an item by its text value from an exposed combobox dropdown list.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Select an item by its text value from an exposed combobox dropdown list.  
+                    This method requires that the list already be exposed via a ComboBox 
+                    Click command.  To combine both the Click and the Selection in a single
+                    command use the ComboBox Select command.</p>
+<p>
+                 We first test to make sure the item to select is actually in the list.
+                 If it is not, we report the failure and issue an ESCAPE character to 
+                 close the list.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The case-sensitive text item to select
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               TextValue should contain the case-sensitive text item to select.
+               You can enclose this text in double-quotes to ensure proper retrieval.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns=""> T, Window, ComboListBox, SELECT, "my text"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Select the item "my text" from the ComboListBox object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SelectIndex'></A>ComboListBoxFunctions::<BIG>SelectIndex</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Select an item by its index from a combolistbox.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Select an item by its index from a combolistbox.  
+                The list must already be exposed via a preceeding ComboBox Click.</p>
+<p>
+                The routine will attempt to see if the index exists in the list. 
+                It will fail if it cannot validate the index or cannot 
+                read the array of items.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>IndexValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The item index in the exposed list to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ComboListBox, SELECTINDEX, "1"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 This action attempts to Select item #1 from the exposed ComboListBox list.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+		</BODY>
+</HTML>
+	

@@ -1,0 +1,67 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_AppMapResolve'></A>Selenium DDDriverCommands::<BIG>AppMapResolve</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Enable and Disable support for embedded DDVariables in App Map strings.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 When enabled (ON), the App Map processor will resolve DDVariable references when 
+                 they are wrapped in curly braces {^varName} anywhere in the value portion of an 
+                 AppMap entry.  There should be no spaces anywhere between the curly braces or the 
+                 variable will be considered literal text and will not be resolved.
+                 <ul><code>
+		 ;these two items have no section identifier<br>
+		 ;they are part of an initial, unnamed section<br>
+		 AnItem  = A normal static value<br>
+		 NewItem = Another static value<br><br>
+		 [ASection]<br>
+		 AnItem = A normal static value<br>
+		 Item2  = Type=Component;Text={^text}<br>
+		 Item3  = Type=Window;Caption={^caption};\;Type=CheckBox;Text={^text}<br><p>
+		 The syntax for Item2 specifies that the value of the DDVariable ^text should be 
+		 retrieved and embedded in the value provided for Item2.
+		 </p><p>
+		 The syntax for Item3 specifies that the value of the DDVariables ^caption and 
+		 ^text should be retrieved and embedded in the value provided for Item3.
+		 </p></code></ul>
+<p>
+		 Support is currently provided via the SAFSMAPS service.
+		 </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>
+<B>Mode</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Enable("ON") or Disable("OFF") this feature.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">C, AppMapResolve, OFF</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Turn OFF the AppMapResolve feature which is ON by default.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

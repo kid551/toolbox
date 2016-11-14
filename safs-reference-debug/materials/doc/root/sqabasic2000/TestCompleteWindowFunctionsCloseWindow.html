@@ -1,0 +1,57 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_CloseWindow'></A>TestComplete WindowFunctions::<BIG>CloseWindow</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Sends a Close command to the active window.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><note><engines><engine vendor="Rational" tool="Robot" name="Robot" since="20030827" expectFailSupport="NO" expectWarnSupport="NO"><domains><domain name="WIN" expectFailSupport="NO" expectWarnSupport="NO"></domain></domains></engine></engines><value><p>This Window command has a problem in that it does not want to
+                use the same recognition methods used by the other Window commands (like
+                SetContext).  Particularly, it does not accept the Type=Window portion
+                of these recognition methods.  In addition, if the window is a child
+                window of a parent then it expects the ";ChildWindow" add-on in the 
+                recognition method.  The child may also need the parent as part of its
+                full recognition string like:</p>
+<p>
+                ChildWindow=Type=Window;&lt;parent rec&gt;;\;Caption=&lt;caption&gt;;ChildWindow</p>
+<p>
+                To handle these child windows, we parse the typical recognition method for 
+                our window and attempt to handle these issues.  Once SetContext has 
+                successfully set our window, we then remove any "Type=Window" substring 
+                if present and add the ";ChildWindow" substring if not present.</p>
+<p>
+                To take advantage of this, this routine must be called with the child
+                window as a component of the parent window like below:</p>
+<p>
+                t, ParentWindow, ChildWindow, CloseWindow</p>
+<p>
+                If the routine is called like either of the examples below then default
+                processing will occur.  This will merely SetContext on the provided 
+                Window and use "CurrentWindow" as the parameter to the command.</p>
+<p>
+                t, ParentWindow, ParentWindow, CloseWindow<br>
+                t, ChildWindow , ChildWindow , CloseWindow  (normally won't work)</p></value></note><note><engines><engine vendor="OpenQA" tool="Selenium" name="Selenium2.0" since="20140506" expectFailSupport="NO" expectWarnSupport="NO"><domains><domain name="HTML" expectFailSupport="NO" expectWarnSupport="NO"></domain></domains></engine></engines><value>Closes the "current" or "lastUsed" WebDriver associated with the found Window component.</value></note></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, CLOSEWINDOW</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Sends a CloseWindow command to the specified Window
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Sends a CloseWindow command to the specified Window
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

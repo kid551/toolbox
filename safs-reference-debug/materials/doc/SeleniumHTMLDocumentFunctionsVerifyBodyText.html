@@ -1,0 +1,93 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_VerifyBodyText'></A>Selenium HTMLDocumentFunctions::<BIG>VerifyBodyText</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Compares the visible doc text with that of a benchmark file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                The routine will automatically create a temporary ObjectData VP with a 
+                dummy baseline, capture the actual file, transfer it to active "Test" 
+                directory, and compare it with the benchmark.  The routine will then 
+                delete all significant remnants of the temporary ObjectData VP.
+                <p> 
+                This routine requires that the following two files exist in the 
+                DDE_RUNTIME directory:</p>
+<p> 
+                HTMLDocumentText.grd
+                HTMLDocumentText.vpm</p>
+<p>
+             The command may produce a WARNING if a diff tool for which we 
+             have no means to verify the results is configured for use.  
+             Consequently, if these warnings are expected, the user can use the 
+             "TW" test record type to avoid issuing these warnings.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>Benchmark</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Name of the benchmark file in the active "Bench" directory to 
+                use for the actual test file comparison.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Name of the benchmark file in the active "Bench" directory to 
+                use for the actual test file comparison.  This is the name 
+                only, no path information is expected.  If the file extension
+                is omitted then the default extension of ".TXT" will be used.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>FileEncoding</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Specify a character encoding to be used when opening a bench file.
+             If it is not specified, the system default file encoding will be used.
+             The encoding should be a valid string supported by Java; if it is not valid,
+             the system default file encoding will be used instead.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebPage, VERIFYBODYTEXT, BenchmarkFile.TXT</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Performs action compares text to the BenchmarkFile.TXT
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Field  5 : TQ String.  Filename of the Benchmark file in the active "Bench" directory. 
+                If no extension is provided then .TXT is assumed.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebPage, VERIFYBODYTEXT, BenchmarkFile.TXT, "UTF-8"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Performs action compares text to the BenchmarkFile.TXT
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Field  5 : TQ String.  Filename of the Benchmark file in the active "Bench" directory. 
+                If no extension is provided then .TXT is assumed.<BR>
+                Opening the bench file with "UTF-8" encoding.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

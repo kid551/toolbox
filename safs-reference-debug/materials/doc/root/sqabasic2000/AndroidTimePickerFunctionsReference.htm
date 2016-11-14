@@ -1,0 +1,137 @@
+<HTML xmlns="http://www.w3.org/TR/REC-html40"><HEAD>
+<TITLE>Android TimePickerFunctions</TITLE>
+<LINK rel="stylesheet" href="rrafs.css" type="text/css"/>
+</HEAD><BODY><DIV NAME="top" ID="top">
+		  <H3>Android TimePickerFunctions</H3>
+		  <SMALL>Last Updated:<script language="JavaScript">document.write(document.lastModified)</script></SMALL>
+<BR/>
+<BR/>
+<DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+              Actions for working with Time Picker object
+           </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</DIV>
+<BR/>
+		<DIV NAME="list" ID="list">
+		  <A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE cellspacing="3" border="1" cellpadding="2">
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetTime' HREF='#detail_GetTime' >GetTime</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN>:<SPAN CLASS='domainMarker' TITLE='DEV Domain'>DEV</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Action to get time from a time picker component and assign it to a variable.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetTime' HREF='#detail_SetTime' >SetTime</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN>:<SPAN CLASS='domainMarker' TITLE='DEV Domain'>DEV</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Action to set time for a time picker component according to its TimeValue.
+              </TD>
+</TR>
+</TABLE>
+<HR/>
+</DIV>
+		<DIV NAME="detail" ID="detail">
+		  <H3><A NAME='detail_GetTime'></A>Android TimePickerFunctions::<BIG>GetTime</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN>:<SPAN CLASS='domainMarker' TITLE='DEV Domain'>DEV</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to get time from a time picker component and assign it to a variable.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>VariableName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The name of variable to contain the time string of TimePicker.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The name of variable to contain the time string of TimePicker.
+                 The time string will be in format "HH:mm:ss", the hour is in military format (24-hour).
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, TimePicker, GetTime, currentTime</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The variable currentTime will contain the time string in format "HH:mm:ss",
+                the hour is in military format (24-hour).
+                If current time is "21:12:53", then currentTime will equal to "21:12:53".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SetTime'></A>Android TimePickerFunctions::<BIG>SetTime</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN>:<SPAN CLASS='domainMarker' TITLE='DEV Domain'>DEV</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to set time for a time picker component according to its TimeValue.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TimeValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 TimeValue to set.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TimeValue to set. It can be in format of "HH:mm:ss" or "HH:mm".
+                 The hour should be in military format (24-hour). For the second, it is ignored
+                 for now, as Android TimePicker doesn't support it yet.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, TimePicker, SetTime, "23:45:12"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The time of TimePicker is set to "23:45". The second 12 is ignored for now.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, TimePicker, SetTime, "7:56"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The time of TimePicker is set to "7:56".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+		</BODY>
+</HTML>
+	

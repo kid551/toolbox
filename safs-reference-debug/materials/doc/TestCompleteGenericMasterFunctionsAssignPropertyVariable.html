@@ -1,0 +1,120 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_AssignPropertyVariable'></A>TestComplete GenericMasterFunctions::<BIG>AssignPropertyVariable</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Assign the string value of an object property to a specific DDVariable
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Assign the string value of an object property to a specific DDVariable.<br>
+               Note, if you supply the name of the variable and include the leading
+               caret (^) symbol then the variable must be enclosed in quotes.
+               Otherwise, that variable will be used like any other variable and the
+               substituted value of that variable will be interpretted as the name
+               of the variable you wish to use.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>PropertyName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The case-sensitive name of the object property.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>
+<B>VariableName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The name of the variable to receive the property value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               The name of the variable to receive the property value.
+               Note, if you supply the name of the variable and include the leading
+               caret (^) symbol then the variable must be enclosed in quotes.
+               Otherwise, that variable will be used like any other variable and the
+               substituted value of that variable will be interpretted as the name
+               of the variable you wish to use.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>SuppressValue</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Set to "SUPPRESSVALUE" to prevent the logging of ugly multi-line property values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               The case-insensitive value "SUPPRESSVALUE" instructs the implementation to NOT 
+               log the recovered value of the property when logging its success.  This is generally 
+               useful when retrieving property values that are exceedingly long, or contain large volumes 
+               of text that will break-up the format or readability of the output log.
+              </detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN> : <value xmlns="">First implemented in May 2014 for TCAFS and might not be supported in all engines yet.</value><BR/>
+</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WindowID, WindowID, AssignPropertyVariable, Visible, AVariableName</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Assign the value of the "Visible" property of WindowID to DDVariable ^AVariableName.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WindowID, WindowID, AssignPropertyVariable, Visible, AVariableName, SUPPRESSVALUE</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Assign the value of the "Visible" property of WindowID to DDVariable ^AVariableName.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              When logging the success (or failure) of the command the actual value of the property 
+              should NOT be included in the messages.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WindowID, WindowID, AssignPropertyVariable, Visible, "AVariableName"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Assign the value of the "Visible" property of WindowID to DDVariable ^AVariableName.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WindowID, WindowID, AssignPropertyVariable, Visible, "^AVariableName"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Assign the value of the "Visible" property of WindowID to DDVariable ^AVariableName.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">C, SetVariableValues, ^AVariableName="NextVariableName" <br>
+                  T, WindowID, WindowID, AssignPropertyVariable, Visible, ^AVariableName</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Assign the value of the "Visible" property of WindowID to DDVariable ^NextVariableName.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

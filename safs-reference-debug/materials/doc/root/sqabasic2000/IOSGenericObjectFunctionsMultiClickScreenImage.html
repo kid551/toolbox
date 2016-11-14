@@ -1,0 +1,131 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_MultiClickScreenImage'></A>IOS GenericObjectFunctions::<BIG>MultiClickScreenImage</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Same as <a href="#detail_MultiClick" alt="Goto MultiClick">MULTICLICK</a>.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The keyword is simply provided as a means to differentiate 
+                Object-Based Testing from Image-Based Testing in your tests. 
+                However, this differentiation is not required.
+		<p>
+		Note: the TID supports this command using 
+		<a href="http://safsdev.sourceforge.net/sqabasic2000/SAFSImageBasedRecognition.htm" target="imagebased" alt="SAFS Image-Based Recognition Doc">Image-Based Testing</a> 
+		techniques and App Map entries as well as literal text coordinates.
+		</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>[ <B>AppMapSubkey</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                (Optional)Name of the AppMap subkey to lookup or the literal text to use for the clicks.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Same as <a href="#detail_MultiClick" alt="Goto MultiClick">MULTICLICK</a>.<br>
+                The keyword is simply provided as a means to differentiate 
+                Object-Based Testing from Image-Based Testing in your tests. 
+                However, this differentiation is not required.
+		<p>
+		Note: the TID supports this command using 
+		<a href="http://safsdev.sourceforge.net/sqabasic2000/SAFSImageBasedRecognition.htm" target="imagebased" alt="SAFS Image-Based Recognition Doc">Image-Based Testing</a> 
+		techniques and App Map entries as well as literal text coordinates.
+		</p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>ClickCount</B> = 3 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                 Optional number of times (1 to N) to click the item.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Optional number of times (1 to N) to click the item.  The default if no value is provided is 3.  
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, MULTICLICKSCREENIMAGE</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Click 3 times (default) on the center of the object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Click 3 times (default) on the center of the object.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, MULTICLICKSCREENIMAGE, "", "4"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Click 4 times on the center of the object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Click 4 times on the center of the object.  
+               No AppMapSubKey or Literal Text is given to alter the relative coordinates for the click.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, MULTICLICKSCREENIMAGE, AnObject</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Click 3 times (default) at relative x,y coordinates stored in "AnObject" in the App Map.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Field  5 : TQ String. An item in the App Map holding relative coordinates to click.<br>
+               This example shows "AnObject" which will be found in the App Map in the "WINDOW" section.    
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, MULTICLICKSCREENIMAGE, ASubObject</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Click 3 times (default) at relative x,y coordinates stored in "ASubObject" in the App Map.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Field  5 : TQ String. An item in the App Map holding relative coordinates to click.<br>
+               This example shows "ASubObject" which will be found in the App Map in the "COMPONENT" section.    
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, MULTICLICKSCREENIMAGE, 10;20</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Click 3 times (default) at coordinate 10,20 in the object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Field  5 : TQ String. The item does not exist in the app map so will be 
+               treated as literal text.  Note we allow semi-colon delimited coordinates 
+               to support the case when commas are used as field delimiters and cannot be 
+               used to delimit the X and Y coordinates.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, AnObject, MULTICLICKSCREENIMAGE, "Coords=10;20", "4"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               4 clicks at coordinate 10,20 in the object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Field  5 : TQ String. The item does not exist in the app map so will be 
+               treated as literal text.  Note we allow semi-colon delimited coordinates 
+               to support the case when commas are used as field delimiters and cannot be 
+               used to delimit the X and Y coordinates.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

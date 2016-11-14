@@ -1,0 +1,59 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_SelectMenuID'></A>WindowFunctions::<BIG>SelectMenuID</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Attempts to select a particular menuitem by menuID.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Attempts to select a particular menuitem by menuID.  This is generally 
+                used when the menuitem is a bitmap or other item that does not have 
+                text.  This value can be retrieved from the the menu by index or by 
+                manual lookup from a menu structure output from MenuUtilities.
+                The routine first verifies that the specified menuitem exists and exits 
+                with error if it does not.  If it does exist then the selection proceeds.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>MenuID</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                MenuID to identify which menuitem to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                MenuID to identify which menuitem to select.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, SELECTMENUID, 37</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               This actions selects menuid 37.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Field  5 : TQ String. numeric menu ID of the menu item to select.  
+                This is generally only used when the menu item has no displayed text.  
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

@@ -1,0 +1,295 @@
+<HTML xmlns="http://www.w3.org/TR/REC-html40"><HEAD>
+<TITLE>TestComplete PopupMenuFunctions</TITLE>
+<LINK rel="stylesheet" href="rrafs.css" type="text/css"/>
+<LINK rel="stylesheet" href="bootstrap.css" type="text/css"/>
+</HEAD><BODY><DIV class="container content" NAME="top" ID="top">
+		  <H1>TestComplete PopupMenuFunctions</H1>
+		  
+          Last Updated:<script language="JavaScript">document.write(document.lastModified)</script>
+<BR/>
+<BR/>
+<DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+              Actions for ACTIVE Popup Menus
+           </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+              Actions for ACTIVE Popup Menus.<br>
+              The popup menu must usually already be up and active for each of these Actions.
+              <p>
+              It is important to recognize certain issues with Popup menus, especially as 
+              we need to differentiate between Java popups and Win32 popups.</p>
+<p>
+              Win32 popup menus are generally found as the topmost active popup window.  
+              Because of this, we generally can just look for the topmost active popup 
+              window and we don't need any type of recognition information to locate it.</p>
+<p>
+              Java popup menus are generally NOT implemented as normal Win32 popup menus 
+              and we generally DO need to have window and component recognition information 
+              for Java popup menus.</p>
+<p>
+              For RC and Win32 popups: Unless otherwise indicated, the Window and Component 
+              references are not used and can be anything.  They just cannot be blank.</p>
+<p>
+              For Java popups: Unless otherwise indicated, valid recognition information for 
+              the Java window and "child" popup menu must be provided.</p>
+<p>
+              Also refer to <i>JavaMenuFunctions</i> for support specific to Java menus and 
+              popup menus.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+		<DIV NAME="list" ID="list">
+		  <A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE class="table">
+<thead class="thead-inverse">
+<tr>
+<th>Keyword Name</th>
+<th>Supported Engines</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectPopupMenuItem' HREF='#detail_SelectPopupMenuItem' >SelectPopupMenuItem</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='JAVA Domain'>JAV</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Select a menuItem via its text in the currently active popup menu.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectUnverifiedPopupMenuItem' HREF='#detail_SelectUnverifiedPopupMenuItem' >SelectUnverifiedPopupMenuItem</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Select a menuItem via its text in the currently active popup menu without verification.
+              </TD>
+		  </TR>
+</tbody>
+</TABLE>
+<HR/>
+</DIV>
+		<DIV NAME="detail" ID="detail">
+		  <H3><A NAME='detail_SelectPopupMenuItem'></A>TestComplete PopupMenuFunctions::<BIG>SelectPopupMenuItem</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='JAVA Domain'>JAV</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Select a menuItem via its text in the currently active popup menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Attempts to select a particular text string menuitem in the currently 
+                active popup menu.  The menuitem should be specified in the form 
+                "Menu-&gt;Menu-&gt;MenuItem   CTRL+V" with the full text, spaces(if any), and 
+                keyboard shortcut text (if any).  
+                <p>
+                Ampersands preceding underlined characters are optional.
+                The routine first verifies that the specified menuitem exists
+                and exits with error if it does not.
+                If it does exist then the selection proceeds using the MenuID retrieved
+                from the found menuitem.</p>
+<p>
+                For RC and Win32 popups: The Window and Component references are not 
+                used and can be anything.  They just cannot be blank.</p>
+<p>
+                For Java popups: Valid recognition information for the Java window and 
+                "child" popup menu must be provided.</p>
+<p>
+                Also refer to <i>JavaMenuFunctions</i> for support specific to Java menus and 
+                popup menus.</p>
+<p><b>TC Note:</b>Component can be the object who contains 'popup menu', or it
+                can be the 'context menu' object.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>MenuItemText</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Menu-&gt;MenuItem hierarchy to the menuItem to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Menu-&gt;MenuItem hierarchy string to identify which menuitem to select.<br>
+                NOTE:SQA can only handle submenus up to 5 levels deep.<br>
+				NOTE:For RJ implementation, this field is optional if the "child" is a "MenuItem"
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, Anything, AtAll, SelectPopupMenuItem, "File-&gt;Save   Ctrl+S"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Select the File/Save menuItem from the currently active popup menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Select the File/Save menuItem from the currently active popup menu.<br>
+                The full text must include any spaces and visible shortcut key combos that 
+                are displayed in the text of the menuItem.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, Anything, AtAll, SelectPopupMenuItem, "&amp;File-&gt;&amp;Save   Ctrl+S"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Select the File/Save menuItem from the currently active popup menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Select the File/Save menuItem from the currently active popup menu.<br>
+                The full text must include any spaces and visible shortcut key combos that 
+                are displayed in the text of the menuItem.<br>
+                Ampersands (&amp;) indicating/preceding underlined characters are optional.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, ParentWindow, popupMenu, SelectPopupMenuItem, "File-&gt;Save"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""><b>RJ Usage:</b> If File/Save menuItem exists in the currently active popup menu, then select it.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, ParentWindow, popupFileMenu, SelectPopupMenuItem, "Save"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""><b>RJ Usage:</b> If File/Save menuItem exists in the currently active popup menu, then select it.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, ParentWindow, popupSaveMenu, SelectPopupMenuItem</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""><b>RJ Usage:</b> If File/Save menuItem exists in the currently active popup menu, then select it.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SelectUnverifiedPopupMenuItem'></A>TestComplete PopupMenuFunctions::<BIG>SelectUnverifiedPopupMenuItem</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Select a menuItem via its text in the currently active popup menu without verification.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Attempts to select a particular text string menuitem in the currently 
+                active popup menu. This routine performs no verification prior to or
+                following the selection.  This may cause a Rational error if the Popup
+                Menu or selected menu item is not available. 
+                <p>The menuitem should be specified in the form 
+                "Menu-&gt;Menu-&gt;MenuItem   CTRL+V" with the full text, spaces(if any), and 
+                keyboard shortcut text (if any).</p>
+<p>
+                Ampersands preceding underlined characters are optional.
+                </p>
+<p>
+                For RC and Win32 popups: The Window and Component references are not 
+                used and can be anything.  They just cannot be blank.</p>
+<p><b>TC Note:</b>Component can be the object who contains 'popup menu', or it
+                can be the 'context menu' object.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>MenuItemText</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Menu-&gt;MenuItem hierarchy to the menuItem to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Menu-&gt;MenuItem hierarchy string to identify which menuitem to select.<br>
+                NOTE:SQA can only handle submenus up to 5 levels deep.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, Anything, AtAll, SelectUnverifiedPopupMenuItem, "File-&gt;Save   Ctrl+S"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Select the File/Save menuItem from the currently active popup menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Select the File/Save menuItem from the currently active popup menu.<br>
+                The full text must include any spaces and visible shortcut key combos that 
+                are displayed in the text of the menuItem.
+                <p>
+                For RC and Win32 popups: The Window and Component references are not 
+                used and can be anything.  They just cannot be blank.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, Anything, AtAll, SelectUnverifiedPopupMenuItem, "&amp;File-&gt;&amp;Save   Ctrl+S"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Select the File/Save menuItem from the currently active popup menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Select the File/Save menuItem from the currently active popup menu.<br>
+                The full text must include any spaces and visible shortcut key combos that 
+                are displayed in the text of the menuItem.<br>
+                Ampersands (&amp;) indicating/preceding underlined characters are optional.
+                <p>
+                For RC and Win32 popups: The Window and Component references are not 
+                used and can be anything.  They just cannot be blank.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, ParentWindow, popupMenu, SelectUnverifiedPopupMenuItem, "File-&gt;Save"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""><b>RJ Usage:</b> Select the File/Save menuItem from the currently active popup menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, ParentWindow, popupFileMenu, SelectUnverifiedPopupMenuItem, "Save"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""><b>RJ Usage:</b> Select the File/Save menuItem from the currently active popup menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+		</DIV>
+</BODY>
+</HTML>
+	

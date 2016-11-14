@@ -1,0 +1,119 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_SelectTextItemCoords'></A>Selenium ListViewFunctions::<BIG>SelectTextItemCoords</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Single click a text item at specific Coords.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>SelectTextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to select
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 SelectTextValue should contain the case-sensitive text item to select.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>Coords</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The explicit coordinates ("x,y") or an App Map reference to 
+                pre-defined coordinates.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                We first check to see if the field contains a reference to an 
+                App Map item.  If that cannot be found, we will assume the field 
+                contains explicit coordinates.
+                <p>We expect the coordinates in the format "x,y":</p>
+<p>
+                [MyListView]<br>
+                Center=5,120   OR<br>
+                Center=Coords=5,120 </p>
+<p>
+                The results from the lookup are appended to the "Coords=" string 
+                used by the Click command in Robot (if necessary).</p>
+<p>
+                Both Fields #3(component name) and #6(coords reference name) 
+                are used to locate the item in the App Map.
+                This routine does not specify an App Map so only the current Map
+                is used and it is expected to be valid.</p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns=""> T  WINDOW  MyList  SelectTextItemCoords  "AParticularUserID"  "5,20"   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Single Click "AParticularUserID" at specific coords.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns=""> T  WINDOW  MyList  SelectTextItemCoords  "AParticularUserID"  "5,20"  "Index=2"  </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Single Click the 2nd text item matching "AParticularUserID" at specific coords.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns=""> T  WINDOW  MyList SelectTextItemCoords  "AParticularUserID"  "Coords=5,20"   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Single Click "AParticularUserID" at specific coords.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns=""> T  WINDOW  MyList  SelectTextItemCoords  "AParticularUserID"  CENTER   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Single Click "AParticularUserID" at coords defined in the App Map
+                 in a [MyList] section.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Both Fields #3(component name) and #6(coords reference name) 
+                are used to locate the item in the App Map.
+                This routine does not specify an App Map so only the current Map
+                is used and it is expected to be valid.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

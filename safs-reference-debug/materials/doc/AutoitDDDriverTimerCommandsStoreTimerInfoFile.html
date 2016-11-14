@@ -1,0 +1,77 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_StoreTimerInfoFile'></A>Autoit DDDriverTimerCommands::<BIG>StoreTimerInfoFile</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                Well store the timer information in the given file, in csv format. Will use absolute path if given otherwise uses SAFS Project Directory.
+                <br>Information Stored:Name,Start,Stop,Duration,Timeout,Pass?
+                <dl>
+<dd>
+                    Name - Name of timer
+                  </dd>
+<dt>
+                    Start - Time of start
+                  </dt>
+<dd>
+                    Stop - Time of stop
+                  </dd>
+<dt>
+                    Duration - total elapsed time.
+                  </dt>
+<dt>
+                    Timeout - 
+                  </dt>
+<dt>
+                    Pass? - if the timer passed any verfiy commands.
+                  </dt>
+</dl>
+                Variable TimerStorageVariables can list additional variables to be stored in the file (comma delimited).
+                </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>
+<B>timerName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                        timerName (should be unique)
+                        </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>
+<B>fileLoc</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                        fileLoc is the location of the file to write (including filename). If an absolute path is given then it is used other wise the default path is SAFS Project Directory. If the file exists it is just appended to.
+                        </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">
+                    C, StoreTimerInfoFile, exampleTimer, "c:\temp\temp.csv"
+                    </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                        Will store exampleTimer information in the file located at c:\temp\temp.csv.
+                        </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

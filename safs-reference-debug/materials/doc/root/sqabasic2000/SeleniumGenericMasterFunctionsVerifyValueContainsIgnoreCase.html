@@ -1,0 +1,110 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_VerifyValueContainsIgnoreCase'></A>Selenium GenericMasterFunctions::<BIG>VerifyValueContainsIgnoreCase</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify that a string value contains a substring, ignoring case.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>Value</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The case-insensitive string value to verify.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  If this string is blank, the only possible match is
+                  if the SearchString is also blank.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>SearchString</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The case-insensitive value we expect the preceeding string to contain.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  If the SearchString is blank, that will match the searched 
+                  Value ONLY if that value is also blank.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>SuppressValue</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Set to "SUPPRESSVALUE" to prevent the logging of ugly multi-line values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               The case-insensitive value "SUPPRESSVALUE" instructs the implementation to NOT 
+               log the Value when logging.  This is generally 
+               useful with Values that are exceedingly long, or contain large volumes 
+               of text that will break-up the format or readability of the output log.
+              </detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN> : <SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN> : <value xmlns="">First implemented in May 2014 for TCAFS and might not be supported in all engines yet.</value><BR/>
+</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, anything, anything, VerifyValueContainsIgnoreCase, someString, someSubstring</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the "someString" string contains the substring "someSubstring".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, anything, anything, VerifyValueContainsIgnoreCase, "here i am", "re i"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the string "here i am" contains the substring "re i".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, anything, anything, VerifyValueContainsIgnoreCase, ^myVariable, "substr"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the variable ^myVariable contains the substring "substr".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, anything, anything, VerifyValueContainsIgnoreCase, "someString", ^myVariable</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the string "someString" contains the substring of variable ^myVariable.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, anything, anything, VerifyValueContainsIgnoreCase, ^yourVariable, ^myVariable</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the conents of ^yourVariable contains the contents of variable ^myVariable as a substring.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, anything, anything, VerifyValueContainsIgnoreCase, ^yourVariable, ^myVariable, "SuppressValue"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the conents of ^yourVariable contains the contents of variable ^myVariable as a substring.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">The SUPPRESSed Value argument will not be output into any logged messages.</detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

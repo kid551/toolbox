@@ -1,0 +1,91 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_DoubleClickCell'></A>FPSpreadFunctions::<BIG>DoubleClickCell</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to perform a double click on a table cell.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>
+                 The cell to double click is provided in separate row and col 
+                 parameters.  Missing parameters indicate index=1. The 
+                 indexes are 1-based.  That is, the first row is row 1.
+                 The first col is col 1.</p><p>
+		 The row headers, whether visible or not, are considered
+		 column 0.  The column headers, whether visible or not,
+		 are considered row 0.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>[ <B>row</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The 1-based logical row to double click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+             If no row is provided then row=1 is assumed.  Row=0 is used
+	     for column headers.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>col</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The 1-based logical col to double click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+             If no col is provided then col=1 is assumed.  Col=0 is used
+	     for row headers.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, AWindow, AGrid, DoubleClickCell</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to double click the first data cell in the first
+                 data row.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, AWindow, AGrid, DoubleClickCell, ^row=2, ^col=1</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to double click the first data cell in the second 
+                 data row.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Note, the DDVariables shown are not necessary but are 
+                 shown for clarity.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, AWindow, AGrid, DoubleClickCell, ^row=0, ^col=1</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to double click the first column header/label.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Note, the DDVariables shown are not necessary but are 
+                 shown for clarity.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

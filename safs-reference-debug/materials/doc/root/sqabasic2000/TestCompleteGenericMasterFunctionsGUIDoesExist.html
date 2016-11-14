@@ -1,0 +1,46 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_GUIDoesExist'></A>TestComplete GenericMasterFunctions::<BIG>GUIDoesExist</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Routine to verify the visual existence of a particular window and/or component.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Routine to verify the visual existence of a particular window and/or component.<br>
+               If the window(Field 2) and component(Field 3) are the same then we only
+               check for the existence of the window.  However, if the component is
+               actually a child of the window then we first check for the window and
+               then check for the component.
+               <p>
+               If a Window or Component is HIDDEN, it will be treated as if it Does NOT Exist.
+               The item must be VISIBLE to pass.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, AWindow, AWindow, GUIDoesExist</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Test for the Visible existence of AWindow
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, AWindow, AChild, GUIDoesExist</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Test for the Visible existence of AChild in AWindow
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

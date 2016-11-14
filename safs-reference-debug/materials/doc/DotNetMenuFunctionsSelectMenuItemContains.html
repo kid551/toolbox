@@ -1,0 +1,65 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_SelectMenuItemContains'></A>DotNetMenuFunctions::<BIG>SelectMenuItemContains</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to select a menuItem according to a partial match of its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 In RRAFS, this command will work on both JavaMenu items and 
+                 JavaPopupMenu items.<br>
+				 For RJ implementation: When Field5 is provided,
+									the routine first verifies that the specified menuitem exists and exits with error if it does not. 
+									If it does exist then the select found menuitem. 
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>[ <B>TextValue</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-insensitive substring of menuItem to select OR an App Map reference.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Parent-Child relationships are separated by "-&gt;"<br>
+                 Alternatively, the TextValue can be an App Map reference item 
+                 used in conjunction with the Component Name (field #3) that 
+                 allows us to store explicit menu item text in the App Map.<br>
+				 Note: RJ implementation: this field is required.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, FileMenu, SelectMenuItemContains, "exi"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+				Verify that the FileMenu contains partially path "exi", if exist then select it.
+			    For Example: If a path "Exit CTRL+X" exists in the FileMenu, then select it.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AMenu, SelectMenuItemContains, "f-&gt;exit"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+				Verify that the AMenu contains partially path "f-&gt;exit", if exist then select it.
+			    For Example: If a path "File-&gt;Exit CTRL+X" exists in the FileMenu, then select it.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

@@ -1,0 +1,73 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_VerifyCellValue'></A>Selenium HTMLTableFunctions::<BIG>VerifyCellValue</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                     Verify the value of a specific Cell.
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                     Attemps to verify the contents of a table cell on a webpage
+		     should the command not contain what cell to verify it will default
+		     to 1,1
+                   </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>ExpectedValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                     The Expected Value of the cell.
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                     The Expected Value of the cell, this will be used to compare with
+		     the actual value of the cell and logged as a pass or fail. This value
+		     is case sensitive and should acurately reflect the text string of the
+		     cell being tested.
+                   </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Cell</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                     This is the optional cell location to be tested
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                     This is the optional cell location to be tested, it will be assummed if 
+		     value is not present that the command is referencing cell 1,1
+                   </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, VerifyCellValue, ExpectedValue</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                     The value is verified at row 1, column 1.
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, VerifyCellValue, ExpectedValue, "2,2"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+			  The value is verified at row 2, column 2.
+			</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

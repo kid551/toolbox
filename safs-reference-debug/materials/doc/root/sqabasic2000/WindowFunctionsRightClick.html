@@ -1,0 +1,94 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_RightClick'></A>WindowFunctions::<SPAN ID="deprecated">RightClick</SPAN>  (deprecated for: <B>GenericObject RightClick</B>)   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Performs a right-click on any part of a Window based on a stored x,y coordinate.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>For components that are unrecognized, like ActiveToolbar menuitems, 
+                we can right click on these or any part of a Window based on a stored x,y 
+                coordinate.  The window containing the coordinate is first given 
+                context and then a right click is generated at the coordinate.  Thus, an item 
+                or object can be referenced by name even though it is only recognized
+                via coordinates.</p>
+<p>
+                The coordinate lookup is done with the component name of the record AND 
+                Field #5.</p>
+<p>
+                Typical Data Table records:</p>
+<p>
+                (1) t MainWindow MainWindow RightClick AnObject<br>
+                (2) t MainWindow  ToolItem  RightClick PrintTool</p>
+<p>
+                #1 above will contain an AnObject="3,10" entry in the MainWindow section 
+                of the Application Map to right click at x=3, y=10 in the MainWindow.</p>
+<p>
+                #2 above will contain a ToolItem entry in the MainWindow section with 
+                normal recognition information for it .  ToolItem will also have it's
+                own section in the Application Map in which there will be an entry like 
+                PrintTool="15,30".  This will tell Robot to locate the PrintTool Window 
+                object and right click at the coordinates specified by the reference.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>AppMapSubkey</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Name of the AppMap subkey to lookup and use for the right-click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Name of the AppMap subkey to lookup and use for the right-click.
+                We expect the AppMap to contain the item in the format "x,y":</p>
+<p>
+                [FileMenu]
+                Exit=33,120   OR
+                Exit=Coords=33,120 </p>
+<p>
+                The results from the lookup are appended to the "Coords=" string 
+                used by the Window Right_Click command in Robot (if necessary).  So any 
+                valid content used with the Window Right_Click command can be part of 
+                this AppMap entry.</p>
+<p>
+                Both Fields #3 and #5 are used to locate the item in the App Map.
+                This routine does not specify an App Map so only the current Map
+                is used and it is expected to be valid.</p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, RIGHTCLICK, AnObject</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A right-click is performed on the WINDOW at the location referenced in the App Map for AnObject.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                A reference identified in the Application Map identifying coordinates on which to right-click.
+                AnObject which will be found in the Application Map as a referenced item in the
+                MainWindow section.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, AnObject, RIGHTCLICK, ASubObject</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A right-click is performed on the WINDOW at the location referenced in the App Map.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                A reference identified in the Application Map identifying coordinates on which to right-click.
+                AnObject as a viable object in the MainWindow but that it also has its own section in the
+                Application Map which contains one or more named references like ASubObject which are used
+                for test.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

@@ -1,0 +1,1197 @@
+<HTML xmlns="http://www.w3.org/TR/REC-html40"><HEAD>
+<TITLE>Selenium ListBoxFunctions</TITLE>
+<LINK rel="stylesheet" href="rrafs.css" type="text/css"/>
+</HEAD><BODY><DIV NAME="top" ID="top">
+		  <H3>Selenium ListBoxFunctions</H3>
+		  <SMALL>Last Updated:<script language="JavaScript">document.write(document.lastModified)</script></SMALL>
+<BR/>
+<BR/>
+<DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+              Actions for working with ListBox objects
+           </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</DIV>
+<BR/>
+		<DIV NAME="list" ID="list">
+		  <A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE cellspacing="3" border="1" cellpadding="2">
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ActivatePartialMatch' HREF='#detail_ActivatePartialMatch' >ActivatePartialMatch</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Routine to DblClick and Verify an item according to a partial text match.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ActivateTextItem' HREF='#detail_ActivateTextItem' >ActivateTextItem</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Routine to DblClick and Verify an item according to its text value.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ActivateUnverifiedPartialMatch' HREF='#detail_ActivateUnverifiedPartialMatch' >ActivateUnverifiedPartialMatch</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                DblClicks an item according to a partial text match.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ActivateUnverifiedTextItem' HREF='#detail_ActivateUnverifiedTextItem' >ActivateUnverifiedTextItem</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Routine to DblClick an item according to its text value.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectAnotherTextItem' HREF='#detail_SelectAnotherTextItem' >SelectAnotherTextItem</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Routine to Control+Click and Verify a selection according to its text value.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectAnotherUnverifiedTextItem' HREF='#detail_SelectAnotherUnverifiedTextItem' >SelectAnotherUnverifiedTextItem</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Routine to Control+Click an item according to its text value.
+                 No post-select verification of the selection is performed.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectIndex' HREF='#detail_SelectIndex' >SelectIndex</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Select an item based on it's index in the list, starting from 1
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectPartialMatch' HREF='#detail_SelectPartialMatch' >SelectPartialMatch</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Routine to Click and Verify an item according to a partial text match.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectTextItem' HREF='#detail_SelectTextItem' >SelectTextItem</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Routine to Click and Verify a selection according to its text value.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectUnverifiedPartialMatch' HREF='#detail_SelectUnverifiedPartialMatch' >SelectUnverifiedPartialMatch</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Routine to Click an item according to a partial text match.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectUnverifiedTextItem' HREF='#detail_SelectUnverifiedTextItem' >SelectUnverifiedTextItem</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Routine to Click a selection according to its text value.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyItemUnselected' HREF='#detail_VerifyItemUnselected' >VerifyItemUnselected</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Verifies a particular case-sensitive text item is NOT selected.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyListContains' HREF='#detail_VerifyListContains' >VerifyListContains</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Verifies a particular list-item exists in the list (somewhere)
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyListContainsPartialMatch' HREF='#detail_VerifyListContainsPartialMatch' >VerifyListContainsPartialMatch</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Verifies a particular list-item substring exists in the list (somewhere)
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyListDoesNotContain' HREF='#detail_VerifyListDoesNotContain' >VerifyListDoesNotContain</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                     Verifies a particular list-item does NOT exists in the list (somewhere)
+                   </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyListDoesNotContainPartialMatch' HREF='#detail_VerifyListDoesNotContainPartialMatch' >VerifyListDoesNotContainPartialMatch</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                     Verifies a particular list-item substring does NOT exists in the list (somewhere)
+                   </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifySelectedItem' HREF='#detail_VerifySelectedItem' >VerifySelectedItem</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Verifies a particular case-sensitive text item is selected
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifySelectedPartialMatch' HREF='#detail_VerifySelectedPartialMatch' >VerifySelectedPartialMatch</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Verifies a particular case-sensitive item is selected 
+                based on a substring match.
+              </TD>
+</TR>
+</TABLE>
+<HR/>
+</DIV>
+		<DIV NAME="detail" ID="detail">
+		  <H3><A NAME='detail_ActivatePartialMatch'></A>Selenium ListBoxFunctions::<BIG>ActivatePartialMatch</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Routine to DblClick and Verify an item according to a partial text match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Routine to DblClick and Verify an item according to a partial text match.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive substring of node to DblClick and verify.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 TextValue should contain the case-sensitive substring to DblClick and verify.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ListBox, ActivatePartialMatch ,  "ATextSubstring"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 DblClicks the first item containing the substring in the ListBox.
+                 The selection is then verified as having occurred.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_ActivateTextItem'></A>Selenium ListBoxFunctions::<BIG>ActivateTextItem</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Routine to DblClick and Verify an item according to its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Routine to DblClick and Verify an item according to its text value.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to DblClick and verify.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 TextValue should contain the case-sensitive text item to DblClick and verify.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ListBox, ActivateTextItem ,  "AParticularUserID"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 DblClicks "AParticularUserID" in the ListBox object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Dblclicks "AParticularUserID" in the ListBox object.
+                 The current value of the selection is then verified.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_ActivateUnverifiedPartialMatch'></A>Selenium ListBoxFunctions::<BIG>ActivateUnverifiedPartialMatch</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                DblClicks an item according to a partial text match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>DblClicks an item according to a partial text match.</p>
+<p>The item is activated but no check is performed after
+                the selection to verify the selection was successful.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive substring of node to DblClick.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 TextValue should contain the case-sensitive substring to DblClick.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ListBox, ActivateUnverifiedPartialMatch ,  "ATextSubstring"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 DblClicks the first item containing the substring in the ListBox.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>DblClicks the first item containing the substring in the ListBox.</p>
+<p>No check is performed after the selection to verify success.  
+                 This is typically done for cases when the listbox is only temporary 
+                 in nature and disappears immediately upon a selection.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_ActivateUnverifiedTextItem'></A>Selenium ListBoxFunctions::<BIG>ActivateUnverifiedTextItem</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Routine to DblClick an item according to its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Routine to DblClick an item according to its text value.
+                 <p>No check is performed after the selection to verify success.  
+                 This is typically done for cases when the listbox is only temporary 
+                 in nature and disappears immediately upon a selection.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to DblClick.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 TextValue should contain the case-sensitive text item to DblClick.
+                 <p>No check is performed after the selection to verify success.  
+                 This is typically done for cases when the listbox is only temporary 
+                 in nature and disappears immediately upon a selection.</p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ListBox, ActivateUnverifiedTextItem ,  "AParticularUserID"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 DblClicks "AParticularUserID" in the ListBox object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Dblclicks "AParticularUserID" in the ListBox object.
+                 <p>No check is performed after the selection to verify success.  
+                 This is typically done for cases when the listbox is only temporary 
+                 in nature and disappears immediately upon a selection.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SelectAnotherTextItem'></A>Selenium ListBoxFunctions::<BIG>SelectAnotherTextItem</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Routine to Control+Click and Verify a selection according to its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                This adds selected items to items already selected.<br>
+                NOTE: This may not work in all environments (Java, Web, etc...)
+                <p>
+                For example, in Java, we can usually verify that an item exists 
+                in the list; but we do not seem to be able to verify if a newly 
+                added selection to multiple selections is actually selected.
+                </p>
+<p>
+                So, for Java, we will verify existence in the list, but we cannot 
+                verify the selection was successful--we will skip that last check.
+                </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to select and verify.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListBox, SelectAnotherTextItem ,  "AParticularUserID"   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Selects "AParticularUserID" from the ListBox object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Selects "AParticularUserID" from the ListBox object.  
+                 This adds to any existing items already selected.<br>
+                 When possible, we will also attempt to verify the added selection 
+                 was successful.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SelectAnotherUnverifiedTextItem'></A>Selenium ListBoxFunctions::<BIG>SelectAnotherUnverifiedTextItem</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Routine to Control+Click an item according to its text value.
+                 No post-select verification of the selection is performed.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Routine to Control+Click an item according to its text value.
+                No post-select verification of the selection is performed.  This selection 
+                is added to any items already selected.  <br>
+                NOTE: This may not work in all environments (Java, Web, etc...)
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListBox, SelectAnotherUnverifiedTextItem ,  "AParticularUserID"   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Selects "AParticularUserID" from the ListBox object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Selects "AParticularUserID" from the ListBox.  
+                 The item is selected and added to the rest of the items already selected.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SelectIndex'></A>Selenium ListBoxFunctions::<BIG>SelectIndex</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Select an item based on it's index in the list, starting from 1
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Select an item based on it's index in the list, starting from 1
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>Index</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Index of the text item to select, starting from 1
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Index of the text item to select, starting from 1
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListBox, SelectIndex ,  1   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Selects the first item in the list.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Selects the first item in the list.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SelectPartialMatch'></A>Selenium ListBoxFunctions::<BIG>SelectPartialMatch</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Routine to Click and Verify an item according to a partial text match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Routine to Click and Verify an item according to a partial text match.
+                <p>Note: for RobotJ, same as SelectUnverifiedPartialMatch</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive substring of node to select and verify.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 TextValue should contain the case-sensitive substring to select and verify.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListBox, SelectPartialMatch ,  "ATextSubstring"   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Clicks the first item containing the substring text in the ListBox.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Clicks the first item containing the substring text in the ListBox.
+                 After the selection we verify the item is selected.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SelectTextItem'></A>Selenium ListBoxFunctions::<BIG>SelectTextItem</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Routine to Click and Verify a selection according to its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Routine to Click and Verify a selection according to
+                its text value.
+                <p>Note: RobotJ also uses the identical keyword 'Select'</p>
+<p>Note: For RobotJ, there is no additional verify step in
+                the framework code, in other words, for
+                RobotJ, the SelectTextItem and
+                SelectUnverifiedTextItem keywords are identical
+                because RobotJ does all of the verification internally
+                and there is no control over that in it's api.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to select and verify.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 TextValue should contain the case-sensitive text item to select and verify.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListBox, SelectTextItem ,  "AParticularUserID"   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Selects "AParticularUserID" from the ListBox object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Selects "AParticularUserID" from the ListBox object and verifies
+                 the selection actually occurred.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SelectUnverifiedPartialMatch'></A>Selenium ListBoxFunctions::<BIG>SelectUnverifiedPartialMatch</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Routine to Click an item according to a partial text match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Routine to Click an item according to a partial text match.
+                 <p>No check is performed after the selection to verify success.  
+                 This is typically done for cases when the listbox is only temporary 
+                 in nature and disappears immediately upon a selection.</p>
+<p>Note: for RobotJ, same as SelectPartialMatch</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive substring of node to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 TextValue should contain the case-sensitive substring to select.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListBox, SelectUnverifiedPartialMatch ,  "ATextSubstring"   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Clicks the first item containing the substring text in the ListBox.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Clicks the first item containing the substring text in the ListBox.
+                 <p>No check is performed after the selection to verify success.  
+                 This is typically done for cases when the listbox is only temporary 
+                 in nature and disappears immediately upon a selection.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SelectUnverifiedTextItem'></A>Selenium ListBoxFunctions::<BIG>SelectUnverifiedTextItem</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Routine to Click a selection according to its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Routine to Click a selection according to its text value. 
+                 <p>No check is performed after the selection to verify success.  
+                 This is typically done for cases when the listbox is only temporary 
+                 in nature and disappears immediately upon a
+                selection.</p>
+<p>Note: RobotJ also uses the identical keyword 'SelectUnverified'</p>
+<p>Note: This is the default for RobotJ, in other words, for
+                RobotJ, the SelectTextItem and
+                SelectUnverifiedTextItem keywords are identical
+                because RobotJ does all of the verification internally
+                and there is no control over that in it's api.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 TextValue should contain the case-sensitive text item to select.
+                 <p>No check is performed after the selection to verify success.  
+                 This is typically done for cases when the listbox is only temporary 
+                 in nature and disappears immediately upon a selection.</p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListBox, SelectUnverifiedTextItem ,  "AParticularUserID"   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Selects "AParticularUserID" from the ListBox object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Selects "AParticularUserID" from the ListBox object.
+                 <p>No check is performed after the selection to verify success.  
+                 This is typically done for cases when the listbox is only temporary 
+                 in nature and disappears immediately upon a selection.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_VerifyItemUnselected'></A>Selenium ListBoxFunctions::<BIG>VerifyItemUnselected</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Verifies a particular case-sensitive text item is NOT selected.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Verifies a particular case-sensitive text item is NOT selected.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node that will be verified as unselected
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 TextValue should contain the case-sensitive text of the item that is expected to NOT be selected.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ListBox, VerifyItemUnselected,  "AParticularUserID"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Verifies that "AParticularUserID" is NOT selected in the ListBox.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_VerifyListContains'></A>Selenium ListBoxFunctions::<BIG>VerifyListContains</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Verifies a particular list-item exists in the list (somewhere)
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Verifies a particular list-item exists in the list (somewhere).  The comparison 
+                can be case-sensitive.  By default, it is not.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 String to look for in the list.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 String to look for in the list.  
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>CaseSensitive</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+	                 Optional "True" for case-sensitive search
+	              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+	                 Optional "True" for case-sensitive search.<br>
+	                 Robot (others?) also supports "CASE-SENSITIVE" in place of "TRUE" for this parameter.
+	              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ListBox, VerifyListContains, "ATextString", "True"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Verifies that the listbox contains somewhere an item equal to "ATextString"
+                 using a case-sensitive comparison.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ListBox, VerifyListContains, "ATextString", "Case-Sensitive"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Verifies that the listbox contains somewhere an item equal to "ATextString" using a 
+                 case-sensitive comparison.  The use of "CASE-SENSITIVE" literal text instead of 
+                 "TRUE" initially is implemented on Robot.  Other engines will support this as 
+                 developers can get in there and add it.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ListBox, VerifyListContains, "ATextString10", "False"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Verifies that the listbox contains somewhere an item equal to "ATextString10"
+                 case-insensitive search.  The "False" is not really necessary since the search 
+                 is not case-sensitive by default.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ListBox, VerifyListContains, "ATextString10"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+	                 Verifies that the listbox contains somewhere an item equal to "ATextString10" 
+	                 using a comparison that is not case-sensitive.
+	              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_VerifyListContainsPartialMatch'></A>Selenium ListBoxFunctions::<BIG>VerifyListContainsPartialMatch</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Verifies a particular list-item substring exists in the list (somewhere)
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Verifies a particular list-item substring exists in the list (somewhere).  The comparison 
+                can be case-sensitive.  By default, it is not.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 SubString to look for in the list.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 SubString to look for in the list.  
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>CaseSensitive</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+	                 Optional "True" for case-sensitive search
+	              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+	                 Optional "True" for case-sensitive search.<br>
+	                 Robot (others?) also supports "CASE-SENSITIVE" in place of "TRUE" for this parameter.
+	              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ListBox, VerifyListContainsPartialMatch, "Text", "True"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Verifies that the listbox contains somewhere an item containing the substring "Text"
+                 using a case-sensitive comparison.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ListBox, VerifyListContainsPartialMatch, "Text", "Case-Sensitive"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Verifies that the listbox contains somewhere an item containing the substring "Text" 
+                 using a case-sensitive comparison.  The use of "CASE-SENSITIVE" literal text instead of 
+                 "TRUE" initially is implemented in Robot.  Other engines will support this as 
+                 developers can add it.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ListBox, VerifyListContainsPartialMatch, "Text", "False"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Verifies that the listbox contains somewhere an item containing the substring "Text" 
+                 case-insensitive search.  The "False" is not really necessary since the search 
+                 is not case-sensitive by default.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ListBox, VerifyListContainsPartialMatch, "Text"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+	                 Verifies that the listbox contains somewhere an item containing the substring 
+	                 "Text" using a comparison that is not case-sensitive.
+	              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_VerifyListDoesNotContain'></A>Selenium ListBoxFunctions::<BIG>VerifyListDoesNotContain</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                     Verifies a particular list-item does NOT exists in the list (somewhere)
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                     Verifies a particular list-item does NOT exists in the list (somewhere).  
+                     The comparison can be case-sensitive.  It is NOT case-sensitive by default.
+                   </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                      String to look for in the list.
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                      String to look for in the list.
+                   </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>CaseSensitive</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+     	                 Optional "True" for case-sensitive search
+     	              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+     	                 Optional "True" for case-sensitive search.  Robot also supports the literal 
+     	                 string "CASE-SENSITIVE" instead of "TRUE".
+     	              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ListBox, VerifyListDoesNotContain, "ATextString", "True"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                      Verifies that the listbox does NOT contains somewhere an item equal to "ATextString"
+                      case-sensitive search.
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ListBox, VerifyListDoesNotContain, "ATextString", "Case-Sensitive"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                      Verifies that the listbox does NOT contains somewhere an item equal to "ATextString"
+                      case-sensitive search.  The "Case-Sensitive" literal text instead of "True" 
+                      may only be supported by Robot initially.
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ListBox, VerifyListDoesNotContain, "ATextString10", "False"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                      Verifies that the listbox does NOT contains somewhere an item equal to "ATextString10"
+                      case-insensitive search.  "False" is not really necessary as comparisons here 
+                      are NOT case-sensitive by default.
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ListBox, VerifyListDoesNotContain, "ATextString10"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+     	                 Verifies that the listbox does NOT contains somewhere an item equal to "ATextString10"
+     	                 case-insensitive search.
+     	              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_VerifyListDoesNotContainPartialMatch'></A>Selenium ListBoxFunctions::<BIG>VerifyListDoesNotContainPartialMatch</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                     Verifies a particular list-item substring does NOT exists in the list (somewhere)
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                     Verifies a particular list-item substring does NOT exists in the list (somewhere).  
+                     The comparison can be case-sensitive.  It is NOT case-sensitive by default.
+                   </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                      SubString to look for in the list.
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                      SubString to look for in the list.
+                   </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>CaseSensitive</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+     	                 Optional "True" for case-sensitive search
+     	              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+     	                 Optional "True" for case-sensitive search.  Robot also supports the literal 
+     	                 string "CASE-SENSITIVE" instead of "TRUE".
+     	              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ListBox, VerifyListDoesNotContainPartialMatch, "Text", "True"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                      Verifies that the listbox does NOT contain an item containg the substring "Text" 
+                      using a case-sensitive search.
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ListBox, VerifyListDoesNotContainPartialMatch, "String", "Case-Sensitive"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                      Verifies that the listbox does NOT contain an item containing the substring "String" 
+                      using a case-sensitive search.  The "Case-Sensitive" literal text instead of "True" 
+                      may only be supported by Robot initially.
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ListBox, VerifyListDoesNotContainPartialMatch, "String", "False"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                      Verifies that the listbox does NOT contain an item containing the substring "String" 
+                      using a case-insensitive search.  "False" is not really necessary as comparisons here 
+                      are NOT case-sensitive by default.
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ListBox, VerifyListDoesNotContainPartialMatch, "Text"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+     	                 Verifies that the listbox does NOT containan item containing the substring 
+     	                 "Text" using a case-insensitive search.
+     	              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_VerifySelectedItem'></A>Selenium ListBoxFunctions::<BIG>VerifySelectedItem</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Verifies a particular case-sensitive text item is selected
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Verifies a particular case-sensitive text item is selected
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node that will be verified as selected
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 TextValue should contain the case-sensitive text of the item expected to already be selected
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ListBox, VerifySelectedItem ,  "AParticularUserID"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Verifies that "AParticularUserID" is selected in the ListBox.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_VerifySelectedPartialMatch'></A>Selenium ListBoxFunctions::<BIG>VerifySelectedPartialMatch</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Verifies a particular case-sensitive item is selected 
+                based on a substring match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Verifies a particular case-sensitive item is selected
+                based on a substring match.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive substring of node that will be verified selected
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 TextValue should contain the case-sensitive substring of the item expected to already be selected
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ListBox, VerifySelectedPartialMatch ,  "ATextSubstring"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Verifies that the first item containing the substring is selected in the ListBox.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+		</BODY>
+</HTML>
+	

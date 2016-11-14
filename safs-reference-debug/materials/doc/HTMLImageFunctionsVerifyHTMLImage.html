@@ -1,0 +1,115 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_VerifyHTMLImage'></A>HTMLImageFunctions::<BIG>VerifyHTMLImage</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='WSupport' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to verify an HTMLImage on a webpage to a benchmark file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Attempts to perform a right click - save image/picture as command 
+                on the specified image and then run a binary file compare of the
+                file to a benchmark file.</p>
+<p>You can also optionally specify an x,y offset into 
+                the image for the right click to occur.</p>
+<p>
+             The command may produce a WARNING if a diff tool for which we 
+             have no means to verify the results is configured for use.  
+             Consequently, if these warnings are expected, the user can use the 
+             "TW" test record type to avoid issuing these warnings.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>BenchmarkFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Name of the Benchmark image file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>(REQUIRED) Name of the file to use for the image save-as command
+                and the benchmark file.  This can also be a full or relative path 
+                suitable for <a href="FileUtilities.htm#findsqafile">FindSQAFile</a>.  
+                If no full path or relative path is given then the benchmark file is 
+                expected to be found in the project's Datapool\Bench directory.</p>
+<p>The captured image will be stored in the project's Datapool\Test
+                project's Datapool/Test directory.  Any comparison difference will 
+                be stored in the project's Datapool\Dif directory.</p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Coords</B> = 3,3 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The explicit coordinates ("x,y") or an App Map reference to 
+                pre-defined coordinates.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                We first check to see if the field contains a reference to an 
+                App Map item.  If that cannot be found, we will assume the field 
+                contains explicit coordinates.
+                <p>We expect the coordinates in the format "x,y":</p>
+<pre>
+                [MyImage]
+                TopLeft=10,10
+                Center=Coords=25,25 
+                </pre><p>
+                The results from the lookup are appended to the "Coords=" string 
+                used by the Click command in Robot (if necessary).</p>
+<p>
+                Both Fields #3(component name) and #6(coords reference name) 
+                are used to locate the item in the App Map.
+                This routine does not specify an App Map so only the current Map
+                is used and it is expected to be valid.</p>
+<p>If this parameter is not provided, we will use default 
+                coordinates of 3,3 for the right click.</p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, myImage, VerifHTMLImage, ^bench=myImage.jpg</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to verify myImage on the webpage to the benchmark file myImage.jpg.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Attempts to perform a right click at the default image coordinates,  
+                use the 'save as' menuitem on myImage, and then run a binary file compare of the
+                file to a benchmark file myImage.jpg.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, myImage, VerifHTMLImage, ^bench=myImage.jpg, ^rightclick="Coords=15,15"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to verify myImage on the webpage to the benchmark file myImage.jpg.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Attempts to perform a right click at the provided image coordinates, 
+                use the 'save as' menuitem on myImage, then run a binary file compare of the
+                file to a benchmark file myImage.jpg.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, myImage, VerifHTMLImage, ^bench=myImage.jpg, ^rightclick=TopLeft</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to verify myImage on the webpage to the benchmark file myImage.jpg.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Attempts to perform a right click at the image coordinates found in 
+                the provided App Map key "TopLeft" under [MyImage].  It will then  
+                use the 'save as' menuitem on myImage, then run a binary file compare of the
+                file to a benchmark file myImage.jpg.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

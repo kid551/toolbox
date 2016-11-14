@@ -1,0 +1,51 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_AppMapChaining'></A>RobotJ DDDriverCommands::<BIG>AppMapChaining</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Enable and Disable support for App Map chaining.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+		 The SAFSMAPS service historically looked for values in the 'default' AppMap.  
+		 This is typically the last AppMap that was OPENed.  This service will now lookup 
+		 values in what is called the AppMap 'chain'.  This chain is simply a 
+		 Last-In-First-Out (LIFO) buffer of open AppMaps.  As an AppMap is OPENed it is 
+		 placed at the top of the search chain.  AppMaps already in the chain are moved 
+		 down the chain and searched in a LIFO order.  This allows a primary AppMap to 
+		 be OPENed that might contain many default and shared values while subsequently 
+		 opened AppMaps might have overriding entries, entries that build upon the 
+		 defaults, or contain locale-specific entries for things like NLS testing.
+		 <p>
+		 Support is currently provided via the SAFSMAPS service.
+		 </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Mode</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Enable("ON") or Disable("OFF") this feature.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, AppMapChaining, OFF</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Turn OFF the AppMapChaining feature which is ON by default.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

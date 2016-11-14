@@ -1,0 +1,400 @@
+<HTML xmlns="http://www.w3.org/TR/REC-html40"><HEAD>
+<TITLE>SSTreeFunctions</TITLE>
+<LINK rel="stylesheet" href="rrafs.css" type="text/css"/>
+<LINK rel="stylesheet" href="bootstrap.css" type="text/css"/>
+</HEAD><BODY><DIV class="container content" NAME="top" ID="top">
+		  <H1>SSTreeFunctions</H1>
+		  
+          Last Updated:<script language="JavaScript">document.write(document.lastModified)</script>
+<BR/>
+<BR/>
+<DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+              Actions for working with Sheridan Class=SSTree objects
+           </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+		<DIV NAME="list" ID="list">
+		  <A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE class="table">
+<thead class="thead-inverse">
+<tr>
+<th>Keyword Name</th>
+<th>Supported Engines</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_CollapseNode' HREF='#detail_CollapseNode' >CollapseNode</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Routine to DblClick a node according to its AppMap reference.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ExpandNode' HREF='#detail_ExpandNode' >ExpandNode</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Routine to DblClick a node according to its AppMap reference.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectNode' HREF='#detail_SelectNode' >SelectNode</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Routine to select a node according to its AppMap reference.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyExpandedState' HREF='#detail_VerifyExpandedState' >VerifyExpandedState</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Routine to verify the state of the Expanded property--True or False--
+                for the node with the provided text.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifySelectedText' HREF='#detail_VerifySelectedText' >VerifySelectedText</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Routine to verify the text of the currently selected node.
+              </TD>
+		  </TR>
+</tbody>
+</TABLE>
+<HR/>
+</DIV>
+		<DIV NAME="detail" ID="detail">
+		  <H3><A NAME='detail_CollapseNode'></A>SSTreeFunctions::<BIG>CollapseNode</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Routine to DblClick a node according to its AppMap reference.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Routine to DblClick a node according to its AppMap reference.  Because 
+                the SSTree is unsupported, this reference is the x,y coordinate of a 
+                GenericObject DblClick command in the form x,y (i.e. "25,10").
+                Because of the nature of the reference, we cannot check whether or 
+                not the node is collapsed/expanded before or after this routine or 
+                even if we clicked on the right node.  Verify the selection and 
+                expanded state of the node before and/or after to check.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>AppMapSubkey</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The named reference of the coordinates to expand/collapse
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The named reference of the coordinates to expand/collapse
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, DirectoryTree, COLLAPSENODE, MyNode</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A double-click will be performed to collapse the Node at x,y coordinate
+                indicated by the MyNode reference in the Application Map.               
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Field  5 : TQ String. A reference identified in the Application Map identifying coordinates
+                on which to double-click
+                A double-click will be performed to collapse the Node at x,y coordinate
+                indicated by the MyNode reference in the Application Map.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_ExpandNode'></A>SSTreeFunctions::<BIG>ExpandNode</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Routine to DblClick a node according to its AppMap reference.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Routine to DblClick a node according to its AppMap reference.  Because 
+                the SSTree is unsupported, this reference is the x,y coordinate of a 
+                GenericObject DblClick command in the form x,y (i.e. "25,10").
+                Because of the nature of the reference, we cannot check whether or 
+                not the node is collapsed/expanded before or after this routine or 
+                even if we clicked on the right node.  Verify the selection and 
+                expanded state of the node before and/or after to check.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>AppMapSubkey</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The named reference of the coordinates to expand/collapse
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The named reference of the coordinates to expand/collapse
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, DirectoryTree, EXPANDNODE, MyNode</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A double-click will be performed to expand the Node at x,y coordinate
+                indicated by the MyNode reference in the Application Map.               
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Field  5 : TQ String. A reference identified in the Application Map identifying coordinates
+                on which to double-click
+                A double-click will be performed to expand the Node at x,y coordinate
+                indicated by the MyNode reference in the Application Map.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SelectNode'></A>SSTreeFunctions::<BIG>SelectNode</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Routine to select a node according to its AppMap reference.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Routine to select a node according to its AppMap reference.  Because 
+                the SSTree is unsupported this reference is the x,y coordinate of a 
+                GenericObject Click command in the form x,y (i.e. "25,10").
+                Because of the nature of the reference, we cannot check whether or 
+                not the node is collapsed/expanded before or after this routine or 
+                even if we clicked on the right node.  Verify the selection and 
+                expanded state of the node before and/or after to check.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>AppMapSubkey</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The named reference of the coordinates to click
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The named reference of the coordinates to click
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, DirectoryTree, SELECTNODE, MyNode</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A single click will be performed to select the Node at x,y coordinate
+                indicated by the MyNode reference in the Application Map.               
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Field  5 : TQ String. A reference identified in the Application Map identifying coordinates
+                on which to click
+                A single click will be performed to select the Node at x,y coordinate
+                indicated by the MyNode reference in the Application Map.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_VerifyExpandedState'></A>SSTreeFunctions::<BIG>VerifyExpandedState</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Routine to verify the state of the Expanded property--True or False--
+                for the node with the provided text.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Routine to verify the state of the Expanded property--True or False--
+                for the node with the provided text.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Case-sensitive text of the node to check.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Case-sensitive text of the node to check.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>ExpectedState</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Expected State: "True" or "False" (not case-sensitive)
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Expected State: "True" or "False" (not case-sensitive)
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, DirectoryTree, VERIFYEXPANDEDSTATE, "My Node", "True"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action verifies "My Node" expanded property is True
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Field  5 : TQ String.  The case-sensitive text of the node to check.
+                Field  6 : Expected State: "True" or "False" (not case-sensitive) 
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_VerifySelectedText'></A>SSTreeFunctions::<BIG>VerifySelectedText</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Routine to verify the text of the currently selected node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Routine to verify the text of the currently selected node.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Case-sensitive text expected in the selected node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Case-sensitive text expected in the selected node.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, DirectoryTree, SELECTTEXTNODE, "My Node"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action verifies "My Node" is already selected in the DirectoryTree.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Field  5 : TQ String.  The case-sensitive text of the node we expect is already selected. 
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+		</DIV>
+</BODY>
+</HTML>
+	

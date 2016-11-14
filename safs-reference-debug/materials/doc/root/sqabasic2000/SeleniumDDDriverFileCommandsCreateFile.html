@@ -1,0 +1,89 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_CreateFile'></A>Selenium DDDriverFileCommands::<BIG>CreateFile</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+          Open a new file with the filename, mode and access provided.<BR><b>TID Note: </b>Three ways to create a file:
+			<ol>
+<li>Mode=Input, Access=Read</li>
+<li>Mode=Output, Access=Write</li>
+<li>Mode=Append, Access=Write</li>
+</ol></short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>FileName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              The full path file name of the file to be opened.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>Mode</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Mode to be used to create and open the file, Input, Output or Append.                    Random and Binary not supported
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>Access</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Access to be used to create and open the file. Read, Write or Read Write.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>FileNumberVariable</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              DDE Variable name of the variable to store the file number.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>FileNumber</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Optional File number to be used to open the file                       Otherwise next available file number is used
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">
+            C, CreateFile, "C:\Test\FileTest.txt", "Output", "Write","^test_filenum"
+          </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              CreateFile a new file FileTest.txt for Output and writing and store the                        file number in DDE variable ^test_filenum
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">
+            C, CreateFile, "C:\Test\FileTest.txt", "Output", "Write","^test_filenum", 8
+          </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              CreateFile a new file FileTest.txt for Output and Writing with the file number 8                    and store the file number 8 in DDE variable ^test_filenum
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

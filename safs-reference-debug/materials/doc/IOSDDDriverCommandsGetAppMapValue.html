@@ -1,0 +1,87 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_GetAppMapValue'></A>IOS DDDriverCommands::<BIG>GetAppMapValue</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Assign a DDVariable a value from an App Map.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+        Allows the extraction of an App Map item value into a DDVariable.  The user can optionally 
+        provide the App Map ID and Section from which the entry is sought.  The default is to 
+        retrieve the value from the default section in the default App Map.
+       </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>[ <B>AppMapID</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              The ID provided for the AppMap when OPENed.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              If this parameter is left empty then the default or "current" App Map is used.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Section</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              The Section within the App Map to locate the entry.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              If this parameter is left empty then the default App Map section is used.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>Item</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              The Item within the App Map to retrieve.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              This parameter cannot be left empty.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>varName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              The name of the variable to receive the value.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              This parameter cannot be left empty.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">C,  GetAppMapValue,  Classics.MAP,  MainWindow,  FileMenu,  menuRec</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Get the value for FileMenu from the Classics.MAP in the MainWindow section and 
+                 store it in the DDVariable named ^menuRec.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">C,  GetAppMapValue, , , FileMenu,  menuRec</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Get the value for FileMenu from the "current" App Map in the default section and 
+                 store it in the DDVariable named ^menuRec.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

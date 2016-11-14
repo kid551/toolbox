@@ -1,0 +1,90 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_UnCheckTextNode'></A>TreeViewFunctions::<BIG>UnCheckTextNode</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 UnChecks a node's state icon (checkbox) according to its associated text value. 
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Initially released with .NET support only.<br>
+                 This command might not function correctly when there
+                 are duplicate nodes in the tree.  However, we have made it possible to 
+                 attempt to select the Nth duplicate item with the optional MatchIndex 
+                 parameter for those trees which we can properly process.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of the node to be unchecked.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to be unchecked.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p>
+<p>
+                 If the field parameter data does not match one of these two forms then 
+                 the data is ignored and the default(first match) is used.
+                 </p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, UnCheckTextNode, "MyNode"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                UnChecks the first "MyNode" node state icon (checkbox) on the TreeView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, UnCheckTextNode, "MyNode", 3</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                UnChecks the 3rd duplicate "MyNode" node state icon (checkbox) on the TreeView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, UnCheckTextNode, "MyNode", "Index=3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                UnChecks the 3rd duplicate "MyNode" node state icon (checkbox) on the TreeView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

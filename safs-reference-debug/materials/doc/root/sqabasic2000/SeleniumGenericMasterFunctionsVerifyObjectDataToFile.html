@@ -1,0 +1,91 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_VerifyObjectDataToFile'></A>Selenium GenericMasterFunctions::<BIG>VerifyObjectDataToFile</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the current contents of an object's data with a benchmark file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>
+             Typically, benchmarks are stored in the Datapool\Bench directory.
+             In that event, only the filename.ext is needed.  Only an object that 
+             Robot can perform an ObjectData VP on can use this command.</p>
+<p>
+             The command will produce a TEST WARNING if the user has configured an 
+             alternate DIFF tool for which we have no means to compare the diff results.
+             If this WARNING is expected, the user should use the "TW" test record type.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>BenchmarkFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The name of the file used as the comparison benchmark.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             The name of the file used as the comparison benchmark.<br>
+             Typically, benchmarks are stored in the Datapool\Bench directory.
+             In that event, only the filename.ext is needed.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>FileEncoding</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Specify a character encoding to be used when opening a bench file.
+             If it is not specified, the system default file encoding will be used.
+             The encoding should be a valid string supported by Java; if it is not valid,
+             the system default file encoding will be used instead.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>FilterMode</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             (Future) Specify a file filter to use to process the text before comparison.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>FilterOptions</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             (Future) Specify filter options to use with the file filter.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Browser, HTMLTable, VerifyObjectDataToFile, aFilename.ext, , "", ""</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Verify the HTMLTable object data contents with the benchmark file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               The benchmark file is located within the Project at Datapool\Bench\aFilename.ext<br>
+               Note the unused reserved fields for FileFilter and FilterOptions.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Browser, HTMLTable, VerifyObjectDataToFile, aFilename.ext, "UTF-8"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Verify the HTMLTable object data contents with the benchmark file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               The benchmark file is located within the Project at Datapool\Bench\aFilename.ext<br>
+               The benchmark file will be opened with "UTF-8" file-encoding.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

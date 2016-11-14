@@ -1,0 +1,87 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_CallSuite'></A>Selenium DDDriverFlowCommands::<BIG>CallSuite</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Invoke a Suite table (from StepDriver or SuiteDriver)
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 You cannot use CallSuite in a CycleDriver test table.
+                 Since the Suite is executed as a driver command by SuiteDriver or 
+                 StepDriver and NOT as a CycleDriver test record, the call to the 
+                 Suite itself is not counted as a test pass or a test fail.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>
+<B>SuiteName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The name of the Suite to execute.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>[ <B>SuiteSeparator</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The field separator used by the Suite--if required.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 The field separator used by the Suite--if required.<br>
+                 Only necessary if the Suite uses a different field separator than 
+                 that already set for SuiteDriver.  Use an empty string or an empty 
+                 field to keep the field separator already in use.<br>
+                 Typically, all the tables use the same separator so this can usually 
+                 be left empty.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>ParameterName</B> = AValue ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 One or more parameter values to send to the suite--each in their own field.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">C, CallSuite, "MySuite" </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Invoke MySuite which does not require or expect parameters.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">C, CallSuite, "MySuite", ";" </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Invoke MySuite which uses a semi-colon as a field delimiter.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">C, CallSuite, "AnotherSuite", "", ^FName="John", ^LName="Smith"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Invoke AnotherSuite using the existing field separator and passing two parameters.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

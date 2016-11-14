@@ -1,0 +1,122 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_VerifyPopupMenu'></A>RobotJ PopupMenuFunctions::<BIG>VerifyPopupMenu</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Verify the complete status of the current popup menu with a benchmark file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Verify the complete status of the current popup menu with a benchmark file.<br>
+                Typically, benchmarks are stored in the Datapool\Bench directory.  
+                In that event, only the filename.ext is needed.  There is currently 
+                a limit of 32K allowed for this type of comparison.  <br>
+                The Window and Component objects are not validated and have no role.
+                The Window and Component strings can be any text, but they cannot be blank.
+                <p>
+                Due to the nature of the verification using a DOS file comparison, the popup 
+                menu will no longer be present after the verification and must be reactivated 
+                if additional popup menu activity is to occur.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>BenchmarkFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The name.ext of the file used as the comparison benchmark.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The name.ext of the file used as the comparison benchmark.<br>
+                Typically, benchmarks are stored in the Datapool\Bench directory.  
+                In that event, only the filename.ext is needed.  Otherwise, the 
+                full file path is needed.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>HeaderText</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Optional descriptive header line of text to match with the benchmark.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Optional header line of text to match with the benchmark.<br>
+                If the benchmark file was created with or contains an initial line 
+                of descriptive text then that line must be provided here for 
+                the comparison to be successful.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>ActualFile</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The optional name.ext of the file used for the captured menu status.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The optional name.ext of the file used for the captured menu status.<br>
+                Typically, actuals are stored in the Datapool\Test directory with the same 
+                name as the benchmark file.  Thus, you would normally leave this blank.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>DiffFile</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The optional name.ext of the file used to contain the differences found.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The optional name.ext of the file used to contain the differences found.<br>
+                Typically, diffs are stored in the Datapool\Dif directory with the same 
+                name as the benchmark file.  Thus, you would normally leave this blank.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Anything, AtAll, VerifyPopupMenu, BenchFile.ext </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Verify the popup menu against the BenchFile.ext benchark.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Verify the popup menu against the BenchFile.ext benchark.<br>
+                The Window and Component references are not used and can be anything.
+                They just cannot be blank.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Anything, AtAll, VerifyPopupMenu, BenchFile.ext, "Normal App State Menu" </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Verify the popup menu against the BenchFile.ext benchark with a header line of text.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Verify the popup menu against the BenchFile.ext benchark with a header line of text.<br>
+                This header line exists in the benchmark and thus must be included in the call.
+                <p>
+                The Window and Component references are not used and can be anything.
+                They just cannot be blank.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Anything, AtAll, VerifyPopupMenu, BenchFile.ext, "", TestFile.ext, DiffFile.ext </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Verify the popup menu against the BenchFile.ext using alternate output filenames.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Verify the popup menu against the BenchFile.ext using alternate output filenames.<br><p>
+                The Window and Component references are not used and can be anything.
+                They just cannot be blank.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

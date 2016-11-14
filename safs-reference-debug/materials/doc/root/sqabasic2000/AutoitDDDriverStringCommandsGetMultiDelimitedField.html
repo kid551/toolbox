@@ -1,0 +1,72 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_GetMultiDelimitedField'></A>Autoit DDDriverStringCommands::<BIG>GetMultiDelimitedField</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Given a sourceString of delimited fields, return the nth(FieldID) Field
+      in the record from startIndex.  The startIndex and fieldID are 1 based. </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><a>Returns a specific field from the source string found from
+        startindex to the end of the sourceString.  The field and index are 1-based.</a><a>The delimiter string can contain multiple characters and this string is treated
+      as a single delimiter.</a><a>For example, if delimiter = "-&gt;" then the fields of the sourceString 
+      are expected to be delimited by the full delimiter string as in:</a><a>"field1-&gt;field2-&gt;field3"</a></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>sourceString</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Source string in which to search for first delimited character</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>FieldID</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              The one based index of the field to find and return.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>StartIndex</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Integer (1-based) start position for search in sourceString</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>Delimiters</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              String list of delimiters to find</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>ResultVar</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""><p>Name of DDVariable that will receive the result.</p></short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, GetMultiDelimitedField, "a-&gt;b-&gt;c-&gt;d-&gt;e-&gt;f&gt;", 2, 5, "-&gt;", "field"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+			   Start from 5th posistion of string "a-&gt;b-&gt;c-&gt;d-&gt;e-&gt;f&gt;" to search the second tokens delimited by "-&gt;".
+			   Then it will save the token to the variable "field". In this example, the token found will be "c".
+           </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

@@ -1,0 +1,104 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_VerifyTextFileToFile'></A>Autoit GenericMasterFunctions::<BIG>VerifyTextFileToFile</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             Verify the current contents of a text file with a benchmark file (same as VerifyFileToFile).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Verify the current contents of a text file with a benchmark file (same as VerifyFileToFile).<br>
+             Typically, benchmarks are stored in the Datapool\Bench directory.  
+             Typically, files to test are stored in the Datapool\Test directory.  
+             In that event, the filename.ext is needed for both files.<br>
+             The Window and Component objects are not validated and have no role.
+             The Window and Component strings can be any text, but they cannot be blank.
+             <p>
+             The command may produce a WARNING if a diff tool for which we 
+             have no means to verify the results is configured for use.  
+             Consequently, if these warnings are expected, the user can use the 
+             "TW" test record type to avoid issuing these warnings.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>BenchmarkFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             File used as the comparison benchmark.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             File used as the comparison benchmark.<br>
+             This can be a full path, a relative path, or a file name. If
+             it is a filename, it is expected to be in the project's 
+             Datapool\Bench directory. If it is a relative path, 
+             FindSQAFile is used to located the file.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>ActualFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             File used as the comparison file under test.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             File used as the comparison file under test.<br>
+             This can be a full path, a relative path, or a file name. If
+             it is a relative path or a file name, the command will try to
+             find the file in the project's Datapool\Test directory.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>FilterMode</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             (Future) Specify a file filter to use to process the text before comparison.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>FilterOptions</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             (Future) Specify filter options to use with the file filter.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Browser, HTMLTable, VerifyTextFileToFile, bFilename.ext, aFilename.ext, "", ""</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Verify a test text file with the benchmark file (same as VerifyFileToFile).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Verify the test text file with the benchmark file (same as VerifyFileToFile).
+               The benchmark file is located within the Project at Datapool\Bench\bFilename.ext<br>
+               The test file is located within the Project at Datapool\Test\aFilename.ext<br>
+               Note the unused reserved fields for FileFilter and FilterOptions.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Anything, AtAll, VerifyTextFileToFile, c:\Dir\bFilename.ext, c:\Dir\aFilename.ext</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Verify a test text file with the benchmark file (same as VerifyFileToFile).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Verify the test text file with the benchmark file (same as VerifyFileToFile).<br>
+               The benchmark file is not located within the Project. It is at c:\Dir\bFilename.ext
+               The test file is not located within the Project. It is at c:\Dir\aFilename.ext
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

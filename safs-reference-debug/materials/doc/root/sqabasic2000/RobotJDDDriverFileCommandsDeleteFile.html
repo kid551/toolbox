@@ -1,0 +1,69 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_DeleteFile'></A>RobotJ DDDriverFileCommands::<BIG>DeleteFile</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+          Delete the file for the file name provided
+        </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>FileName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              The file name for the file to be deleted.  Normally, the full file path is specified. 
+              If a relative path is specified, it is relative to the project directory. 
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>NoVerify</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              String Equal to "NOVERIFY" if file is not verified prior to deleting.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">
+            C, DeleteFile, "Test1.txt"
+          </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Delete the file /Datapool/Test/Test1.txt
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">
+            C, DeleteFile, "C:/test/Test1.tst"
+          </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Delete the file Test1.txt in directory C:/test
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">
+            C, DeleteFile, "C:/test/Test1.tst", "NoVerify"
+          </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Delete the file Test1.txt in directory C:/test no file existence verification
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

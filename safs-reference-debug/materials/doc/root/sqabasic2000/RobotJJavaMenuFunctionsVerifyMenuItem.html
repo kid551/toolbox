@@ -1,0 +1,106 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_VerifyMenuItem'></A>RobotJ JavaMenuFunctions::<BIG>VerifyMenuItem</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Attempts to verify the a particular menuitem exists in a menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                The menuitem should be specified in the form 
+                "Menu-&gt;Menu-&gt;MenuItem   CTRL+V" with the full text (ampersands optional), 
+                spaces(if any), and keyboard shortcut text (if any).  
+                (The ampersands precede any character in the menuitem that is underlined.)
+                <p>
+                This command differs from the WindowFunction.VerifyMenuItem command because 
+                here we are actually seeking a JavaMenu component, not a Window that contains 
+                a menu.  Also, we do not currently verify any state information like the 
+                WindowFunctions.VerifyMenuItem command.
+                </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>MenuItemText</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Menu-&gt;MenuItem hierarchy string to identify which menuitem to find.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Menu-&gt;MenuItem hierarchy string to identify which menuitem to find.
+                This menu hierarchy IS case-sensitive<br>
+				TQ String. the full case-sensitive menu item path to select.  
+                Ampersands (&amp;) indicating/preceding underlined characters are optional.  
+                The text must include the full text including spaces and any visible shortcut key 
+                combinations displayed in the text of the menu item.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>ExpectedStatus</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Expected status string (or part thereof) of the menuitem. 
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Expected status string (or part thereof) to verify.
+				Only "Enabled" "Ungrayed" "Grayed" "Disabled" "Checked" "Unchecked" "Menu With N MenuItems" are supported now.  
+                <br>Ex: "Enabled Checked"         OR  "Grayed UnChecked"    etc.
+                <br>Each item separated by a space will be evaluated separately so 
+                the order of the status items does not matter.
+				Only the state information of interest needs to be specified.  
+                These status items ARE case-insensitive,space-delimited.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>indexPath</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The index for item of each level. It is 1-based.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The index for item of each level. It is 1-based.
+                 If there are several menuitem in the same level with same text, this
+                 parameter can be used to indicate which one is wanted.                 
+                 Parent-Child relationships are separated by "-&gt;".<br>
+                 Alternatively, the indexPath can be an App Map reference item 
+                 used in conjunction with the Component Name (field #3) that 
+                 allows us to store explicit indexes in the App Map.
+              </detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN> : <value xmlns="">This parameter is supported.</value><BR/>
+</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, JavaWindow, JavaMenu, VerifyMenuItem, "File"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               This action verifies that "File" exists in the menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, JavaWindow, JavaMenu, VerifyMenuItem, "Weird-&gt;CheckBox", "Enabled Checked"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               This action verifies that "Weird-&gt;CheckBox" exists with status "Enabled Checked" in the menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, AJMenu, VerifyMenuItem, "file-&gt;edit","Enabled", "1-&gt;2"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Verify that the 2th item 'edit' in 1th item 'file' in menubar exists and its status is 'Enabled'
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

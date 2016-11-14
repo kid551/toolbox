@@ -1,0 +1,3602 @@
+<HTML xmlns="http://www.w3.org/TR/REC-html40"><HEAD>
+<TITLE>TestComplete GenericMasterFunctions</TITLE>
+<LINK rel="stylesheet" href="rrafs.css" type="text/css"/>
+</HEAD><BODY><DIV NAME="top" ID="top">
+		  <H3>TestComplete GenericMasterFunctions</H3>
+		  <SMALL>Last Updated:<script language="JavaScript">document.write(document.lastModified)</script></SMALL>
+<BR/>
+<BR/>
+<DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Generic actions available for ALL types of Windows and Components.
+           </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</DIV>
+<BR/>
+		<DIV NAME="list" ID="list">
+		  <A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE cellspacing="3" border="1" cellpadding="2">
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_AssignPropertyVariable' HREF='#detail_AssignPropertyVariable' >AssignPropertyVariable</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+               Assign the string value of an object property to a specific DDVariable
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_CaptureObjectDataToFile' HREF='#detail_CaptureObjectDataToFile' >CaptureObjectDataToFile</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+             Copy the current contents of an object's data to a file.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_CapturePropertiesToFile' HREF='#detail_CapturePropertiesToFile' >CapturePropertiesToFile</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+             Copy all of the value properties a test object to a file.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_CapturePropertyToFile' HREF='#detail_CapturePropertyToFile' >CapturePropertyToFile</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+             Copy a propertie's value of a test object to to a file.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetGUIImage' HREF='#detail_GetGUIImage' >GetGUIImage</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+               Capture the screen shot of a GUI component and save it to a file
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetTextFromGUI' HREF='#detail_GetTextFromGUI' >GetTextFromGUI</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+             Incorporate OCR technology to detect the text on a GUI component and save the text to a variable.
+             </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GUIDoesExist' HREF='#detail_GUIDoesExist' >GUIDoesExist</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+               Routine to verify the visual existence of a particular window and/or component.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GUIDoesNotExist' HREF='#detail_GUIDoesNotExist' >GUIDoesNotExist</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+               Routine to verify the visual non-existence of a particular window and/or component.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_HoverMouse' HREF='#detail_HoverMouse' >HoverMouse</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Hover the mouse over an object.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_HoverScreenLocation' HREF='#detail_HoverScreenLocation' >HoverScreenLocation</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Hover the mouse over a specified screen location.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_InputCharacters' HREF='#detail_InputCharacters' >InputCharacters</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+                Sends literal text to the specified component.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_InputKeys' HREF='#detail_InputKeys' >InputKeys</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+                Sends keystrokes to the specified component.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_IsPropertyExist' HREF='#detail_IsPropertyExist' >IsPropertyExist</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+             Verify if object's property exists or not.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_LocateScreenImage' HREF='#detail_LocateScreenImage' >LocateScreenImage</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+               Store the location and dimensions of a component.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SaveTextFromGUI' HREF='#detail_SaveTextFromGUI' >SaveTextFromGUI</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+             Incorporate OCR technology to detect the text on a GUI component and save the text to a text file.
+             </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SendEvent' HREF='#detail_SendEvent' >SendEvent</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+             Send or trigger an "event" with 0 or more arguments.
+             </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetPropertyValue' HREF='#detail_SetPropertyValue' >SetPropertyValue</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+             Sets a value to the property of an object.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_TypeChars' HREF='#detail_TypeChars' >TypeChars</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+                Sends literal text keystrokes to whatever has keyboard focus.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_TypeEncryption' HREF='#detail_TypeEncryption' >TypeEncryption</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+                Sends secret-text (such as password) to whatever has keyboard focus.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_TypeKeys' HREF='#detail_TypeKeys' >TypeKeys</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+                Sends keystrokes to whatever has keyboard focus.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyBinaryFileToFile' HREF='#detail_VerifyBinaryFileToFile' >VerifyBinaryFileToFile</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+             Verify the current contents of a binary file with a benchmark file.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyClipboardToFile' HREF='#detail_VerifyClipboardToFile' >VerifyClipboardToFile</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+             Verify the current contents of the Windows clipboard with a benchmark file.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyFileToFile' HREF='#detail_VerifyFileToFile' >VerifyFileToFile</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+             Verify the current contents of a text file with a benchmark file (same as VerifyTextFileToFile).
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyGUIImageToFile' HREF='#detail_VerifyGUIImageToFile' >VerifyGUIImageToFile</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='WFSupport' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+               Verify the screen shot of a GUI component with a benchmark image file
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyProperty' HREF='#detail_VerifyProperty' >VerifyProperty</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+             Verify the value of a single object property
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyPropertyContains' HREF='#detail_VerifyPropertyContains' >VerifyPropertyContains</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+             Verify that the value of an object property contains a string
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyPropertyToFile' HREF='#detail_VerifyPropertyToFile' >VerifyPropertyToFile</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+             Verify the value of a single object property with a benchmark file
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyTextFileToFile' HREF='#detail_VerifyTextFileToFile' >VerifyTextFileToFile</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+             Verify the current contents of a text file with a benchmark file (same as VerifyFileToFile).
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyValueContains' HREF='#detail_VerifyValueContains' >VerifyValueContains</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+             Verify that a string value contains a substring
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyValueContainsIgnoreCase' HREF='#detail_VerifyValueContainsIgnoreCase' >VerifyValueContainsIgnoreCase</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+             Verify that a string value contains a substring, ignoring case.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyValueDoesNotContain' HREF='#detail_VerifyValueDoesNotContain' >VerifyValueDoesNotContain</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+             Verify that a string value does NOT contain a substring
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyValues' HREF='#detail_VerifyValues' >VerifyValues</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+             Verify that two string values are identical. Note: RobotJ
+             also uses identical keyword 'VerifyValueEquals'
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyValuesIgnoreCase' HREF='#detail_VerifyValuesIgnoreCase' >VerifyValuesIgnoreCase</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+             Verify that two string values are identical, ignoring case.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyValuesNotEqual' HREF='#detail_VerifyValuesNotEqual' >VerifyValuesNotEqual</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+             Verify that two string values are NOT identical.
+              </TD>
+</TR>
+</TABLE>
+<HR/>
+</DIV>
+		<DIV NAME="detail" ID="detail">
+		  <H3><A NAME='detail_AssignPropertyVariable'></A>TestComplete GenericMasterFunctions::<BIG>AssignPropertyVariable</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Assign the string value of an object property to a specific DDVariable
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Assign the string value of an object property to a specific DDVariable.<br>
+               Note, if you supply the name of the variable and include the leading
+               caret (^) symbol then the variable must be enclosed in quotes.
+               Otherwise, that variable will be used like any other variable and the
+               substituted value of that variable will be interpretted as the name
+               of the variable you wish to use.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>PropertyName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The case-sensitive name of the object property.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>VariableName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The name of the variable to receive the property value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               The name of the variable to receive the property value.
+               Note, if you supply the name of the variable and include the leading
+               caret (^) symbol then the variable must be enclosed in quotes.
+               Otherwise, that variable will be used like any other variable and the
+               substituted value of that variable will be interpretted as the name
+               of the variable you wish to use.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>SuppressValue</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Set to "SUPPRESSVALUE" to prevent the logging of ugly multi-line property values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               The case-insensitive value "SUPPRESSVALUE" instructs the implementation to NOT 
+               log the recovered value of the property when logging its success.  This is generally 
+               useful when retrieving property values that are exceedingly long, or contain large volumes 
+               of text that will break-up the format or readability of the output log.
+              </detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN> : <value xmlns="">First implemented in May 2014 for TCAFS and might not be supported in all engines yet.</value><BR/>
+</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WindowID, WindowID, AssignPropertyVariable, Visible, AVariableName</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Assign the value of the "Visible" property of WindowID to DDVariable ^AVariableName.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WindowID, WindowID, AssignPropertyVariable, Visible, AVariableName, SUPPRESSVALUE</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Assign the value of the "Visible" property of WindowID to DDVariable ^AVariableName.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              When logging the success (or failure) of the command the actual value of the property 
+              should NOT be included in the messages.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WindowID, WindowID, AssignPropertyVariable, Visible, "AVariableName"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Assign the value of the "Visible" property of WindowID to DDVariable ^AVariableName.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WindowID, WindowID, AssignPropertyVariable, Visible, "^AVariableName"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Assign the value of the "Visible" property of WindowID to DDVariable ^AVariableName.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, SetVariableValues, ^AVariableName="NextVariableName" <br>
+                  T, WindowID, WindowID, AssignPropertyVariable, Visible, ^AVariableName</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Assign the value of the "Visible" property of WindowID to DDVariable ^NextVariableName.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_CaptureObjectDataToFile'></A>TestComplete GenericMasterFunctions::<BIG>CaptureObjectDataToFile</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Copy the current contents of an object's data to a file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Only an object that Robot can perform an ObjectData VP 
+             on can use this command.  By default, the files will be
+             stored in the active "Test" directory.  If you specify a
+             relative path, the path will be relative to the project
+             directory.  The directory for a full or relative path 
+             must already exist.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>File</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The name of the file used to store the object data.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             The name of the file used to store the object data.
+             By default, the files will be
+             stored in the active "Test" directory.  If you specify a
+             relative path, the path will be relative to the project
+             directory.  The directory for a full or relative path 
+             must already exist.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>FileEncoding</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Specify a character encoding to be used when saving data to a file.
+             If it is not specified, the system default file encoding will be used.
+             The encoding should be a valid string supported by Java; if it is not valid,
+             the system default file encoding will be used instead.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>FilterMode</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             (Future) Specify a file filter to use to process the text before comparison.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>FilterOptions</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             (Future) Specify filter options to use with the file filter.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Browser, HTMLTable, CaptureObjectDataToFile, aFilename.ext, , "", ""</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Capture the HTMLTable object data contents to a file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Capture the HTMLTable object data contents to the 
+               Datapool\Test\aFilename.ext file.<br>
+               Note the unused reserved fields for FileFilter and FilterOptions.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Browser, HTMLTable, CaptureObjectDataToFile, myDirectory\aFilename.ext, , "", ""</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Capture the HTMLTable object data contents to a file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Capture the HTMLTable object data contents to the 
+               [project]\myDirectory\aFilename.ext file.<br>
+               Note the unused reserved fields for FileFilter and FilterOptions.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Browser, HTMLTable, CaptureObjectDataToFile, tableContent.ext</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Capture the HTMLTable object data contents to a file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Capture the HTMLTable object data contents,
+               save it to file tableContent.ext by the system default file encoding.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Browser, HTMLTable, CaptureObjectDataToFile, tableContent.ext, "UTF-8"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Capture the HTMLTable object data contents to a file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Capture the HTMLTable object data contents,
+               save it to file tableContent.ext by UTF-8 encoding.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_CapturePropertiesToFile'></A>TestComplete GenericMasterFunctions::<BIG>CapturePropertiesToFile</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Copy all of the value properties a test object to a file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Copy all of the value properties a test object to a file.
+             By default, the files will be
+             stored in the active "Test" directory.  If you specify a
+             relative path, the path will be relative to the project
+             directory.  The directory for a full or relative path must already exist.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>File</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The name of the file used to store the property list data.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             The name of the file used to store the property list data.
+             By default, the files will be
+             stored in the active "Test" directory.  If you specify a
+             relative path, the path will be relative to the project
+             directory.  The directory for a full or relative path 
+             must already exist.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>FileEncoding</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Specify a character encoding to be used when saving data to a file.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Specify a character encoding to be used when saving data to a file.
+             If it is not specified, the system default file encoding will be used.
+             The encoding should be a valid string supported by Java; if it is not valid,
+             the system default file encoding will be used instead.
+             <p>This parameter was added to this command in Nov 2011 as implemented for 
+             the Apple IOS engine and may not yet be supported in all engines otherwise 
+             supporting this command.</p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Window, Comp, CapturePropertiesToFile, aFilename.ext</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Capture the Comp properties to a file with comma as the delimiter.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Capture the Comp properties to a file with comma as the delimiter.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Window, Comp, CapturePropertiesToFile, aFilename.properties, "UTF-8"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Capture the Comp properties to a file with comma as the delimiter.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Capture the Comp properties to a file with comma as the delimiter.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_CapturePropertyToFile'></A>TestComplete GenericMasterFunctions::<BIG>CapturePropertyToFile</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Copy a propertie's value of a test object to to a file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Copy a propertie's value of a test object to to a file.
+			 The file will be stored in the active "Test" directory. 
+		     If you specify a relative path, the path will be relative 
+		     to the project directory.  The directory for a full or 
+		     relative path must already exist.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>PropertyName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The case-sensitive name of the object array property to verify.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>File</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The name of the file used to store the property list data.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             The name of the file used to store the property list data.
+             By default, the files will be
+             stored in the active "Test" directory.  If you specify a
+             relative path, the path will be relative to the project
+             directory.  The directory for a full or relative path 
+             must already exist.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>FileEncoding</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Specify a character encoding to be used when saving data to a file.
+             If it is not specified, the system default file encoding will be used.
+             The encoding should be a valid string supported by Java; if it is not valid,
+             the system default file encoding will be used instead.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Window, Comp, CapturePropertyToFile, propertyName, aFilename.ext</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Capture the value of Comp's property described by propertyName to a file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Capture the value of Comp's property described by propertyName to a file.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Window, Comp, CapturePropertyToFile, propertyName, aFilename.ext</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Capture the value of Comp's property described by propertyName to a file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Capture the value of Comp's property described by propertyName,
+               save it to file aFilename.ext by the system default file encoding.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Window, Comp, CapturePropertyToFile, propertyName, aFilename.ext, "UTF-8"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Capture the value of Comp's property described by propertyName to a file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Capture the value of Comp's property described by propertyName,
+               save it to file aFilename.ext by UTF-8 encoding.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetGUIImage'></A>TestComplete GenericMasterFunctions::<BIG>GetGUIImage</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Capture the screen shot of a GUI component and save it to a file
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Capture the screen shot of a GUI component and save it to a file.
+               The available formats for the output file are BITMAP (*.bmp) and JPEG
+               (*.jpg). 
+               For RJ and IBT engine, other formats like TIFF (*.tif), GIF (*.gif), 
+               PNG (*.png) and PNM (*.pnm) are also supported.
+               Optionally the user can specify part of the component to capture.
+               <p>
+               The specified GUI component/part must be in the viewing range of its 
+               containing window. If portion of the component is displayed in the 
+               window, only that portion will be captured; if the component falls
+               completely out of the viewing range of the window, the command will 
+               fail. The command makes no attempt to bring the component into view.
+               </p>
+<p><B>Robot Classic (RC) Specific Notes:</B><br>  
+               		1) This command may fail to execute if the user has turned off logging 
+              	 	to TestManager via the Robot tools setting.  You may have to enable 
+               		TestManager logging for the command to successfully execute.<br>
+               		2) This command requires that the TestManager Image Comparator tool is
+               		installed on the test machine. Machines having only the Robot Test Agent
+               		installed will not be able to use this command.<br>
+               		3) Due to a bug in Robot Classic, images captured using the Robot Classic
+			engine may differ in image size and/or file size from those captured using 
+			other supported engines.  Depending on the comparator used, rebenching
+               		your images may be necessary when migrating to another engine.
+               </p>
+<p><B>RobotJ (RJ) and IBT Specific Notes:</B><br>
+               		1)It requires that Java Advanced Imaging (JAI) be installed
+               		on the test machine<BR>
+               		2)It supports to save image in format TIFF (*.tif), GIF (*.gif), PNG (*.png)
+               		and PNM (*.pnm) 
+               </p>
+<p><B>Apple IOS specific Notes:</B><br>
+               UIAutomation captures all screenshots as PNG images, but SAFS copies and stores them 
+               into the image format desired (JPG, BMP, etc.). However, the rootname of the desired 
+               output image name must be unique to avoid UIAutomation generating indexed image names 
+               we will not be looking for.<br>
+               For example, specifying MyImage.JPG and later MyImage.BMP will cause UIAutomation to capture 
+               MyImage.PNG and MyImage1.PNG. When attempting to find MyImage.PNG captured for MyImage.BMP 
+               we will retrieve MyImage.PNG which is NOT the correct image capture for MyImage.BMP.
+               </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>OutputFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Path (with filename) to the output image file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              Path/file name of the output image file.
+              This can be a full path, a relative path or just a file name. If
+              relative, it is appended to the Datapool directory; if only a
+              file name without path, the file will be saved in Datapool\Test
+              directory. The extension of the file must be either .bmp or
+              .jpg. If not, .bmp is appended to this parameter to force a
+              BITMAP export.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>SubArea</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Optional app map subkey indicating partial image of the component to capture.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              Optional app map subkey indicating partial image of the component to capture.
+              Value of this app map reference must be in the format of a
+              top-left and bottom-right pair, and can be either absolute
+              coordinates or percentages ("x1,y1,x2,y2" or "x1%,y1%,x2%,y2%").
+              Coordinates are relative to the component, i.e. (0,0) and
+              (0%,0%) are the minimum, and (COMPONENT_WIDTH, COMPONENT_HEIGHT)
+              and (100%,100%) are the maximum. Values exceeding the minimun/
+              maximum are forced to the nearest limiting value. Absolute and
+              percent values can be mixed, so "0,0,50%,50%" is valid. If this
+              parameter is omitted, full image of the component is captured
+              (equivalent to "0,0,100%,100%").
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>FilteredAreas</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              "<b>Filter=</b>one or multiple areas" to filter the GUI image (or sub image of GUI if the parameter "SubArea" is present)
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              "<b>Filter=</b>one or multiple areas" to filter the GUI image (or sub image of GUI if the parameter "SubArea" is present)<br>
+              The area is in the same format described for the parameter "SubArea".<br>
+              Multiple areas are separated by a space character, such as "subarea1 subarea2 subarea3"<br>
+              The filtered-image will be covered by black color at filtered areas.<br>
+              Do NOT forget the prefix "Filter=", without it this parameter will be ignored.
+             </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, GetGUIImage, "C:\comp.bmp"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Save the full component image to BITMAP file "C:\comp.bmp".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, GetGUIImage, "Datapool\comp.jpg"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Save the full component image to JPEG file "&lt;project&gt;\Datapool\comp.jpg".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, GetGUIImage, "Datapool\Logs\comp.bmp", SUBAREA</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Save specified part of the component image.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              Save specified part of the component image.
+              Depending on the definition of SUBAREA in the app map, the command captures:<br>
+
+              UNDER [COMPONENT] IN APP MAP    PART OF COMPONENT<br>
+              ----------------------------    ---------------------<br>
+              SUBAREA="0,0,10,10"             top-left 10x10 square<br>
+              SUBAREA="0,80%,100%,100%"       bottom fifth<br></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, GetGUIImage, "Datapool\comp.jpg", "", "Filter=0;0;10;10"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Get the component image and filter some parts and save it.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Get the full component image and draw a "10*10 black quare" at the top-left, 
+             then save it to JPEG file "&lt;project&gt;\Datapool\comp.jpg".
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, GetGUIImage, "comp.jpg", "", "FilterMapKey"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Get the component image and filter some parts and save it.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Get the full component image, and draw "10x10 black square" at "top-left" and "10x15 black rectangle" at "60,60"
+             to make a filtered image, and save the filtered image.<br>
+              ----------------------------        Map           ---------------------<br>
+              [COMPONENT]<br>
+              FilterMapKey="Filter=0,0,10,10 60,60,10,15"<br></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetTextFromGUI'></A>TestComplete GenericMasterFunctions::<BIG>GetTextFromGUI</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Incorporate OCR technology to detect the text on a GUI component and save the text to a variable.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Two open-source OCRs are integrated into SAFS. One is TesseractOCR (TOCR) at 
+             http://code.google.com/p/tesseract-ocr; the other GOCR at http://jocr.sourceforge.net. 
+             <p>
+             TOCR 2.0.4 and GOCR 0.48 are the latest release. They are available in SAFS and only 
+             support English. Both two OCR owners claim to support more languages in next release. Chinese, 
+             Japanese, and Korean are going to be supported in TOCR's next release 3.00.
+			</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>VariableName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The name of the variable to receive detected text.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              The name of the variable to receive detected text. Note, if you supply the name of the variable 
+              and include the leading caret (^) symbol then the variable must be enclosed in quotes. Otherwise, 
+              that variable will be used like any other variable and the substituted value of that variable will 
+              be interpreted as the name of the variable you wish to use.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>SubArea</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Optional app map subkey indicating partial image of the component to capture.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Optional app map subkey indicating partial image of the component to capture. Value of this app 
+             map reference must be in the format of a top-left and bottom-right pair, and can be either absolute 
+             coordinates or percentages ("x1,y1,x2,y2" or "x1%,y1%,x2%,y2%"). Coordinates are relative to the 
+             component, i.e. (0,0) and (0%,0%) are the minimum, and (COMPONENT_WIDTH, COMPONENT_HEIGHT) and 
+             (100%,100%) are the maximum. Values exceeding the minimun/ maximum are forced to the nearest 
+             limiting value. Absolute and percent values can be mixed, so "0,0,50%,50%" is valid. 
+             <p>
+             If this parameter is omitted with blank or empty string, full image of the component is captured 
+             (equivalent to "0,0,100%,100%"). 
+             </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>OCRId</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             OCRId indicating the OCR used to recognize text.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Two OCR engines are supported. "TOCR" will be taken as default if the parameter is blank.
+             "TOCR" stands for Tesseract OCR; "GOCR" stands for GOCR.
+             <p>
+             Note: Seems TOCR performs a bit better than GOCR (personal experience). 
+             </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>LangId</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Optional LangId representing the language in use for selected OCR to recognize text. 
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             For both TOCR and GOCR, only English is supported so far. Language Id takes standard language code, 
+             which can be gotten by calling Locale.ENGLISH.getLanguage(). 
+             <p><pre>
+				LangId      Language
+				"en"   ---  English
+				"cn"   ---  Chinese
+			 </pre></p>
+<p>
+             If LangId is not specified with blank or empty string, the language of System locale will be 
+             used as default. 
+             </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>ScaleRatio</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Optional ScaleRatio indicating the scale ratio for resizing the original image.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             To fit in font size and DPI required by OCR, SAFS needs to resize images before sending them 
+             to OCR engines. For screen-captured images with 96DPI, TOCR takes 1.9 as default; GOCR takes 1.5 
+             as default. You may try different ScaleRatio to find an appropriate value if default setting is 
+             unable to meet your requirement.
+             </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Window, Comp, GetTextFromGUI, Var1,  , GOCR, en, </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Detect the text in the full image of Comp using GOCR with English and default ScaleRatio(1.5), 
+               then save it to variable Var1.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GUIDoesExist'></A>TestComplete GenericMasterFunctions::<BIG>GUIDoesExist</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Routine to verify the visual existence of a particular window and/or component.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Routine to verify the visual existence of a particular window and/or component.<br>
+               If the window(Field 2) and component(Field 3) are the same then we only
+               check for the existence of the window.  However, if the component is
+               actually a child of the window then we first check for the window and
+               then check for the component.
+               <p>
+               If a Window or Component is HIDDEN, it will be treated as if it Does NOT Exist.
+               The item must be VISIBLE to pass.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, AWindow, AWindow, GUIDoesExist</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Test for the Visible existence of AWindow
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, AWindow, AChild, GUIDoesExist</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Test for the Visible existence of AChild in AWindow
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GUIDoesNotExist'></A>TestComplete GenericMasterFunctions::<BIG>GUIDoesNotExist</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Routine to verify the visual non-existence of a particular window and/or component.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Routine to verify the visual non-existence of a particular window and/or component.<br>
+               If the window(Field 2) and component(Field 3) are the same then we only
+               check for the visual non-existence of the window.  However, if the component is
+               actually a child of the window then we first check for the visual existence of the
+               window and then check for the visual non-existence of the component.
+               <p>
+               If a Window or Component is HIDDEN, it will be treated as if it Does NOT Exist.
+               The item must not exist or be HIDDEN to pass.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, AWindow, AWindow, GUIDoesNotExist</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Test for the visual non-existence of AWindow
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, AWindow, AChild, GUIDoesNotExist</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Test for the visual non-existence of AChild in the visible AWindow
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_HoverMouse'></A>TestComplete GenericMasterFunctions::<BIG>HoverMouse</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Hover the mouse over an object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                By default, hover on the center of the component for 2000 milliseconds.
+                <p>We can also hover on any part of an object based on a stored x,y 
+                coordinate.  The object containing the coordinate is first given 
+                context and then the hover command is generated at the coordinate.  
+                Thus, an item or object can be referenced by name even though it is only 
+                recognized via coordinates.</p>
+<p>
+                The coordinate lookup is done with the component name of the record AND 
+                Field #5.</p>
+<p>
+                Typical Data Table records:</p>
+<p>
+                (1) t MainWindow Component HoverMouse           1000<br>
+                (2) t MainWindow MainWindow HoverMouse AnObject 2000<br>
+                (3) t MainWindow FolderTree HoverMouse Node1 3000</p>
+<p>
+                #1 above will contain a blank as it's 5th field and 1000 as 6th field, 
+                and it will hover at the center of the Component for 1000 milliseconds.</p>
+<p>
+                #2 above will contain an AnObject="3,10" entry in the MainWindow section 
+                of the Application Map to hover at x=3, y=10 in the MainWindow.</p>
+<p>
+                #3 above will contain a FolderTree entry in the MainWindow section with 
+                normal recognition information for it.  FolderTree will also have it's
+                own section in the Application Map in which there will be an entry like 
+                Node1="15,30".  This will tell Robot to locate the FolderTree Generic 
+                object and hover at the coordinates specified by the reference.</p></detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN> : <value xmlns="">
+					This command requires a version of Rational Robot that includes MousePause support (released 
+                	and patched in Robot v2003).  Though not required, you may also choose to enable this 
+                	functionality for Robot Recording (Tools-&gt;GUI Record Options...-&gt;General Tab).
+                </value><BR/>
+</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN> : <value xmlns="">
+					The optional parameter HoverTime doesn't take effect, so don't supply it.
+                </value><BR/>
+</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN> : <value xmlns="">
+					The optional parameter AppMapSubkey doesn't take effect, always hover at the center.
+                </value><BR/>
+</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>[ <B>AppMapSubkey</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                (Optional)Name of the AppMap subkey to lookup and use for the hover.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Without this we should hover on the center of the object.
+                <p>Name of the AppMap subkey to lookup and use for the hover.
+                We expect the AppMap to contain the item in the format "x,y":</p>
+<p>
+                [Component]<br>
+                Node1="33,120"      OR<br>
+                Node1="Coords=33,120"	OR<br>
+                Node1="Icon" (or whatever is appropriate)</p>
+<p>  
+                The results from the lookup are appended to the "Coords=" string 
+                used by the hover command in Robot (if necessary).  So any 
+                valid content used with the hover command can be part of 
+                this AppMap entry.</p>
+<p>
+                Both Fields #3 and #5 are used to locate the item in the App Map.
+                This routine does not specify an App Map so only the current Map
+                is used and it is expected to be valid.</p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>HoverTime</B> = 2000 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+	                (Optional)Number of milliseconds to hover.
+	              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+	                If not specified, the mouse will hover for 2000 milliseconds over the object,
+	              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, HoverMouse</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Hover the mouse over the center of WINDOW for 2000 milliseconds.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Hover the mouse over the center of WINDOW for 2000 milliseconds.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, AnObject, HoverMouse, "Coords=200,400"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+	       Hover the mouse over coordinates 200,400 of AnObject for 2000 milliseconds.
+	      </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+	       Hover the mouse over coordinates 200,400 of AnObject for 2000 milliseconds.
+	      </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, AnObject, HoverMouse, ASubObject, 1000</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Hover the mouse over an x,y coordinate indicated by the ASubObject reference in
+               the Application Map for 1000 milliseconds.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Field  5 : TQ String. A reference identified in the Application Map identifying coordinates
+               on which to hover.
+               This example shows AnObject as a viable object in the WINDOW but that it also has its own
+               section in the Application Map which contains one or more named references like
+               ASubObject which are used for test.   
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, AnObject, HoverMouse, , 3000</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+	       Hover the mouse over the center of AnObject for 3000 milliseconds.
+	      </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+	       Hover the mouse over the center of AnObject for 3000 milliseconds.
+	      </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_HoverScreenLocation'></A>TestComplete GenericMasterFunctions::<BIG>HoverScreenLocation</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Hover the mouse over a specified screen location.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Hover the mouse over a specified screen location.
+                <p>We can hover on any screen location based on stored x,y 
+                coordinates or hardcoded literal values. The Window:Component fields 
+                can be anything at all and will be ignored if they do not exist in the app map, 
+                or if the retrieved app map data does not contain coordinate data. 
+                Thus, an item or object can be referenced by name even though it is only 
+                known via coordinates.
+                </p><p>
+                If the Window:Component AppMap lookup does NOT contain coordinate data and is ignored, then 
+                the AppMapSubKey field is REQUIRED and is expected to contain a reference or literal 
+                text containing absolute screen coordinates.
+                </p><p>
+                If the Window:Component AppMap lookup DOES contain coordinate data, this data is treated as 
+                the absolute screen coordinates to be used.  The AppMapSubKey field becomes OPTIONAL and 
+                coordinate data in the field is treated as a relative offset added to the absolute values 
+                found for the Window:Component.
+                </p><p>
+                Any AppMapSubKey lookup is done with the Component name in the record AND 
+                Field #5.</p>
+<p>
+                Typical Data Table records:</p>
+<p>
+                (1) t MainWindow Component HoverScreenLocation           1000<br>
+                (2) t MainWindow MainWindow HoverScreenLocation AnObject 2000<br>
+                (3) t MainWindow MainWindow HoverScreenLocation 50,80 3000<br>
+                (4) t AnyWin AnyComp HoverScreenLocation Node1 3000</p>
+<p>
+                #1 above will contain a blank as it's 5th field and 1000 as 6th field. Because the AppMapSubKey 
+                field is blank, the [MainWindow] section of the AppMap MUST have a Component item with valid 
+                absolute screen coordinate data. The mouse cursor will hover at the specified Component location 
+                for 1000 milliseconds.</p>
+<p>
+                #2 above will contain an AnObject="Coords=50,80" entry in the [MainWindow] section 
+                of the AppMap. If there is a MainWindow component in the AppMap with valid screen coordinates 
+                then the mouse cursor will hover with a relative offset of 50,80 from those absolute screen 
+                coordinates. Otherwise, the mouse will hover at absolute screen coordinates 50,80.</p>
+<p>
+                #3 If there is a MainWindow component in the [MainWindow] section of the AppMap with valid screen 
+                coordinates then the mouse cursor will hover with a relative offset of 50,80 from those absolute 
+                screen coordinates. Otherwise, the mouse will hover at absolute screen coordinates 50,80.</p>
+<p>
+                #4 above will contain no valid AnyWin:AnyComp coordinate data and 
+                those fields will be ignored.  However, Node1 MUST exist in the 
+                Application Map [AnyComp] section to provide absolute screen coordinates.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>[ <B>AppMapSubkey</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                (Sometimes Optional)Name of the AppMap subkey to lookup and use for the hover.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Without this there MUST be absolute screen coordinates stored in the AppMap 
+                for the Window:Component specified.
+                <p>
+                Name of the AppMap subkey to lookup and use for the hover.  
+                We expect the AppMap to contain the coordinates in the following supported formats:
+                </p><p><pre>
+                [Component]
+                Node1="33,120"        (comma-delimited)      OR
+                Node1="33;120"        (semi-colon delimited) OR
+                Node1="33 120"        (space-delimited)      OR
+                Node1="Coords=33,120" (comma-delimited)      OR
+                Node1="Coords=33;120" (semi-colon delimited) OR
+                Node1="Coords=33 120" (space-delimited)
+                </pre></p><p>
+                Both Fields #3 and #5 are used to locate the item in the App Map.
+                This routine does not specify an App Map so only the current Map
+                is used and it is expected to be valid.</p>
+<p>
+                This field can instead contain the literal text of any absolute or relative coordinates 
+                in the same formats as shown above. </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>HoverTime</B> = 2000 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+	                (Optional)Number of milliseconds to hover.
+	              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+	                If not specified, the mouse will hover at the specified coordinates for 2000 milliseconds.
+	              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, HoverScreenLocation</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Hover the mouse at specified WINDOW coordinates for 2000 milliseconds.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Hover the mouse at screen coordinates specified for the Window item stored in the 
+               [Window] section of the current AppMap.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, AnObject, HoverScreenLocation, "Coords=200,400"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+	       Hover the mouse at coordinates 200,400 for 2000 milliseconds.
+	      </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+	       Hover the mouse at coordinates 200,400 for 2000 milliseconds.  This assumes AnObject 
+	       is NOT an item in the [Window] section of the current AppMap with valid coordinate data.
+	      </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, AnObject, HoverScreenLocation, ASubObject, 1000</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Hover the mouse using x,y screen coordinates stored in the ASubObject reference in the 
+               [AnObject] section of the current AppMap for 1000 milliseconds.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               ASubObject reference found in the AppMap [AnObject] section stores screen coordinates
+               on which to hover.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, AnObject, HoverScreenLocation, , 3000</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+	       Hover the mouse over the Window:AnObject screen coordinates for 3000 milliseconds.
+	      </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+	       Because no AppMapSubKey is provided the AnObject item MUST exist in the [WINDOW] section 
+	       of the current AppMap and it MUST contain valid screen coordinate data.
+	      </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_InputCharacters'></A>TestComplete GenericMasterFunctions::<BIG>InputCharacters</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                Sends literal text to the specified component.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Sends literal text to the specified component.
+                The InputChars command does not convert or interpret any special
+                characters like InputKeys (InputKeystrokes) does.
+                <p>
+                Some engines cannot set keyboard focus to the component.  
+                These engines will require the component already have keyboard focus before 
+                calling this command.
+                </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                String of keystrokes to send.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                String of keystrokes to send.
+                For RRAFS(RC): consult the documentation on the SQA InputChars command  This
+                routine sends the provided string unmodified to the InputChars
+                command.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, INPUTCHARACTERS, "Some Text to Input"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               This action sends "Some Text to Input" as keystrokes to the COMPONENT object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Field  5 : TQ String. Case-sensitive text to send to the specified component.
+                The text will be sent as literal text, unmodified by the command
+                Note: Only valid for components that accept windows keyboard input
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_InputKeys'></A>TestComplete GenericMasterFunctions::<BIG>InputKeys</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                Sends keystrokes to the specified component.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Sends keystrokes to the specified component.
+                <p>
+                Some engines cannot set keyboard focus to the component.  
+                These engines will require the component already have keyboard focus before 
+                calling this command.
+                </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                String of keystrokes to send.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                String of keystrokes to send.
+                For RRAFS (RC): consult the documentation on the SQA InputKeys command for
+                syntax information for special characters and keys.  This
+                routine sends the provided string unmodified to the InputKeys
+                command.
+		<p>
+		Note: the TID supports this command using 
+		<a href="http://safsdev.sourceforge.net/doc/org/safs/tools/input/CreateUnicodeMap.html" target="reference" alt="SAFS InputKeys Support Doc">InputKeys Support</a>.
+		</p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, INPUTKEYS, "Some Text to Input"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               This action sends "Some Text to Input" as keystrokes to the COMPONENT object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Field  5 : TQ String. case-sensitive text to send to the specified component.</p>
+<p><pre>Some Special Characters:
+                {Enter}= ENTER key
+                {Tab} = TAB key
+                ^ = CONTROL Key with another key ( "^S" = CONTROL + s)
+                %= ALT  Key with another key ("%F" = ALT + F)
+                + = SHIFT key with another key ("+{Enter}" = SHIFT + ENTER)
+                </pre></p>
+<p>Currently, we pass-thru to the underlying implementation (Rational SQABasic).
+                Any future implementations will also use the same syntax.
+                Note: Only valid for components that accept windows keyboard input</p>
+<p><b>Important Abbot note.</b> Presently, no special character handling is in place.
+                If using the Abbot engine the keys will be sent litterally without interpretation.
+                For example, {TAB} would be sent as those exact characters NOT the <i>tab</i> key.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_IsPropertyExist'></A>TestComplete GenericMasterFunctions::<BIG>IsPropertyExist</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify if object's property exists or not.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>PropertyName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The case-sensitive name of the object property to verify.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>PropertyExistVariable</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The variable to store 'true' or 'false' to indicate if the property exist or not.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Window, Component, IsPropertyExist, Visible, existVar</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             If the "Visible" property of Component exist, variable existVar will contain 'true';
+             Otherwise, existVar will contain 'false'.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_LocateScreenImage'></A>TestComplete GenericMasterFunctions::<BIG>LocateScreenImage</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Store the location and dimensions of a component.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Store the location and dimensions of a component.
+               The component can be <a href="http://safsdev.sourceforge.net/sqabasic2000/SAFSImageBasedRecognition.htm" target="_blank" alt="SAFS Image-Based Testing Info">SAFS IBT</a>, RJ, Selenium object.<br>
+               The information is stored in a collection of variables using the variable root name provided. 
+               <p>
+               The following variables are set by this command:</p>
+<p>
+<ul>
+               rootname=x y w h [space delimited values]<br>
+               rootname.x=x<br>
+               rootname.y=y<br>
+               rootname.w=w<br>
+               rootname.h=h<br></ul></p></detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN> : <value xmlns="">
+					Currently in IBT, all coordinates are relative to the screen and not to any 
+					parent window location or other client area.
+                </value><BR/>
+</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>VariableName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The root name of the collection of variables to receive the location and dimensions.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>WhomRelativeTo</B> = screen ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             This parameter decides the coordinates stored in VariableName is relative to the screen or the parent window.
+             'screen' means they are relative to the screen; 'parent' means they are relative to the parent window.
+             The parameter is curently available in RJ only. 
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WindowID, WindowID, LocateScreenImage, AVariableName</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Stores the following variable values:<p>
+<ul>
+             AVariableName=x y w h [space delimited values]<br>
+             AVariableName.x=x<br>
+             AVariableName.y=y<br>
+             AVariableName.w=w<br>
+             AVariableName.h=h<br></ul></p></short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, SetVariableValues, ^AVariableName="NextVariableName" <br>
+                  T, WindowID, WindowID, LocateScreenImage, ^AVariableName</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Stores the following variable values:<p>
+<ul>
+             NextVariableName=x y w h [space delimited values]<br>
+             NextVariableName.x=x<br>
+             NextVariableName.y=y<br>
+             NextVariableName.w=w<br>
+             NextVariableName.h=h<br></ul></p></short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, ParentWindow, Component, LocateScreenImage, AVariableName, parent</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             AVariableName stores the coordinates that are relative to the left-top point of the ParentWindow:<p>
+<ul>
+             AVariableName=x y w h [space delimited values]<br>
+             AVariableName.x=x<br>
+             AVariableName.y=y<br>
+             AVariableName.w=w<br>
+             AVariableName.h=h<br></ul></p></short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SaveTextFromGUI'></A>TestComplete GenericMasterFunctions::<BIG>SaveTextFromGUI</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Incorporate OCR technology to detect the text on a GUI component and save the text to a text file.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Two open-source OCRs are integrated into SAFS. One is TesseractOCR (TOCR) at 
+             http://code.google.com/p/tesseract-ocr; the other GOCR at http://jocr.sourceforge.net. 
+             <p>
+             TOCR 2.0.4 and GOCR 0.48 are the latest release. They are available in SAFS and only 
+             support English. Both two OCR owners claim to support more languages in next release. Chinese, 
+             Japanese, and Korean are going to be supported in TOCR's next release 3.00.
+			</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>OutputFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The name of the text file used to store detected text.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              The name of the text file used to store detected text. By default, the files will be stored in 
+              the active "Test" directory. If you specify a relative path, the path will be relative to the 
+              project directory. The directory for a full or relative path must already exist.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>SubArea</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Optional app map subkey indicating partial image of the component to capture.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Optional app map subkey indicating partial image of the component to capture. Value of this app 
+             map reference must be in the format of a top-left and bottom-right pair, and can be either absolute 
+             coordinates or percentages ("x1,y1,x2,y2" or "x1%,y1%,x2%,y2%"). Coordinates are relative to the 
+             component, i.e. (0,0) and (0%,0%) are the minimum, and (COMPONENT_WIDTH, COMPONENT_HEIGHT) and 
+             (100%,100%) are the maximum. Values exceeding the minimun/ maximum are forced to the nearest 
+             limiting value. Absolute and percent values can be mixed, so "0,0,50%,50%" is valid. 
+             <p>
+             If this parameter is omitted with blank or empty string, full image of the component is captured 
+             (equivalent to "0,0,100%,100%"). 
+             </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>OCRId</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             OCRId indicating the OCR used to recognize text.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Two OCR engines are supported. "TOCR" will be taken as default if the parameter is blank.
+             "TOCR" stands for Tesseract OCR; "GOCR" stands for GOCR.
+             <p>
+             Note: Seems TOCR performs a bit better than GOCR (personal experience). 
+             </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>LangId</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Optional LangId representing the language in use for selected OCR to recognize text. 
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             For both TOCR and GOCR, only English is supported so far. Language Id takes standard language code, 
+             which can be gotten by calling Locale.ENGLISH.getLanguage(). 
+             <p><pre>
+				LangId      Language
+				"en"   ---  English
+				"cn"   ---  Chinese
+			 </pre></p>
+<p>
+             If LangId is not specified with blank or empty string, the language of System locale will be 
+             used as default. 
+             </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>ScaleRatio</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Optional ScaleRatio indicating the scale ratio for resizing the original image.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             To fit in font size and DPI required by OCR, SAFS needs to resize images before sending them 
+             to OCR engines. For screen-captured images with 96DPI, TOCR takes 1.9 as default; GOCR takes 1.5 
+             as default. You may try different ScaleRatio to find an appropriate value if default setting is 
+             unable to meet your requirement.
+             </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Window, Comp, SaveTextFromGUI, ocr.txt,   , TOCR, en, 2.0</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Detect the text in the full image of Comp using TOCR with English and ScaleRatio 2.0, 
+              then save the text to [project]\Datapool\test\ocr.txt.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SendEvent'></A>TestComplete GenericMasterFunctions::<BIG>SendEvent</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Send or trigger an "event" with 0 or more arguments.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             For objects or technologies that can be effectively event-driven, rather than GUI-driven.
+             <p>
+             The first implementation is in IBM Rational Functional Tester for Flex testing.  Many Flex objects 
+             respond to events, in addition to traditional GUI interaction.  Some Flex objects ONLY respond to 
+             events.  This is especially true of many custom Flex delegates.</p>
+<p>
+             The tester must know the events and arguments available for their particular object and technology. 
+             The generic nature for this command cannot generally know if a particular event or set of 
+             arguments is valid or not.  Thus, the implementation may not be able issue failures resulting from 
+             invalid events, arguments, or other issues not generating recognizable failure conditions.
+             </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>Event</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The potentially case-sensitive name of the event to send or trigger.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              Some technologies may enforce case-sensitivity for event names while others will not.  
+              The tester is responsible to ensure the event name is appropriate for the item(s) being tested.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>PARAM_N</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The first of 0 or more parameters needed for the event.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             This field will be blank or contain an empty string if no parameter value is to be sent.  
+             Otherwise, the field will contain an appropriate value as might be required or optional for 
+             the event being sent.
+             <p>
+             If the event accepts multiple parameters, then each parameter must be provided in a separate 
+             field in the test record.  All fields will be evaluated until no more fields are found to exist. 
+             All fields will be sent in the order they are provided.
+             </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Window, Comp, SendEvent, Close</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Issue a "Close" event that needs no parameters.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Window, Comp, SendEvent, Change, Browse</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Issue a "Change" event and provide one parameter.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Window, Comp, SendEvent, MyEvent, AnArg, 100, 200</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Issue a "MyEvent" event that accepts at least 3 parameters.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              Note all event parameters are provided in separate fields of the record.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SetPropertyValue'></A>TestComplete GenericMasterFunctions::<BIG>SetPropertyValue</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Sets a value to the property of an object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Routine to set a value to the property of an object.</p>.
+	     <p>The routine expects that the given object already has Context or Focus.
+		It also expects that Global StepDriverTestInfo contains all the information
+		it needs to perform its function.</p>
+<p>The routine will set the StepDriverTestInfo.statuscode and log any pass/fail info 
+		using the StepDriverTestInfo.fac LogFacility.</p>
+<p>RJ implementation directly modifies the object in the software under test;therefore, it should be done with extreme care.
+		Avoid using setPropertyValue whenever possible because it allows you to modify the software under test in ways that a typical user cannot.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>ObjectPropertyName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The name of the property of the object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             The name of the property of the object.  This property will have the value set.<br></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>PropertyValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The value to set the property to.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Browser, RadioButton, SetPropertyValue, "checked", True, ""</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               This example sets the checked property of the RadioButton object to true.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_TypeChars'></A>TestComplete GenericMasterFunctions::<BIG>TypeChars</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                Sends literal text keystrokes to whatever has keyboard focus.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Sends literal text keystrokes to whatever has keyboard focus.
+                The TypeChars command does not convert or interpret any special
+                characters like InputKeys or TypeKeys do.
+                <p>
+                No attempt is made to locate any specific window or component.  
+                Keystrokes are simply sent to the system.
+                </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                String of keystrokes to send.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Anything, At All, TYPECHARS, "Some Text to Input"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               This action sends "Some Text to Input" as unmodified keystrokes to the system.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Field  5 : TQ String. Case-sensitive text to send.
+                The text will be sent as literal text, unmodified by the command.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_TypeEncryption'></A>TestComplete GenericMasterFunctions::<BIG>TypeEncryption</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                Sends secret-text (such as password) to whatever has keyboard focus.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                User needs to provide the path to the "encrypted text" and the path
+                to the "private key".
+              </detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><value xmlns="">
+        			This keyword is only for secure machine in which the user/users responsible 
+					for the safety and security of the private key are the only ones with 
+					access to the machine.  The private key should NEVER be stored in 
+					a more public location where unauthorized users may gain access to it.<br></value><BR/>
+</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><value xmlns="">
+        			To generate public key and private key, use following command:<br>
+        			java org.safs.RSA -gen -out outputfile<br>
+        			the outputfile will contain both keys, user should store them separatly in 2
+        			files, keep the private key secret!!!<br></value><BR/>
+</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><value xmlns="">
+        			To encrypt the plain-text, use following command:<br>
+        			java org.safs.RSA -encrypt -data data/file -key publickey/file -out outputfile<br>
+        			the outputfile will contain the encrypted text.<br></value><BR/>
+</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>EncryptedDataFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                The full path of the file where the "encrypted data" is stored.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>PrivateKeyFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                The full path of the file where the "private key" is stored.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>
+                This file should be kept VERY SECRECT, only the authorized users can access it.
+                </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Anything, At All, TypeEncryption, "C:\safs\passwords\application.pass", "D:\secretPath\private.key" </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Decrypt the data stored in file "C:\safs\passwords\application.pass" and 
+               input the decrypted-data as unmodified keystrokes to the system.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The text will be sent as literal text, unmodified by the command.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_TypeKeys'></A>TestComplete GenericMasterFunctions::<BIG>TypeKeys</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                Sends keystrokes to whatever has keyboard focus.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Sends keystrokes to whatever has keyboard focus.
+                <p>
+                No attempt is made to locate any specific window or component.  
+                Keystrokes are simply sent to the system.
+                </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                String of keystrokes to send.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                String of keystrokes to send.
+		Note: the TID supports this command using 
+		<a href="http://safsdev.sourceforge.net/doc/org/safs/tools/input/CreateUnicodeMap.html" target="reference" alt="SAFS InputKeys Support Doc">InputKeys Support</a>.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Anything, At All, TYPEKEYS, "%F{ENTER}"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               This action sends "ALT + F" then the ENTER key to the system.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Field  5 : TQ String. case-sensitive text to send.</p>
+<p><pre>Some Special Characters:
+                {Enter}= ENTER key
+                {Tab} = TAB key
+                ^ = CONTROL Key with another key ( "^S" = CONTROL + s)
+                %= ALT  Key with another key ("%F" = ALT + F)
+                + = SHIFT key with another key ("+{Enter}" = SHIFT + ENTER)
+                </pre></p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_VerifyBinaryFileToFile'></A>TestComplete GenericMasterFunctions::<BIG>VerifyBinaryFileToFile</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             Verify the current contents of a binary file with a benchmark file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Verify the current contents of a binary file with a benchmark file.<br>
+             Typically, benchmarks are stored in the Datapool\Bench directory.  
+             Typically, files to test are stored in the Datapool\Test directory.  
+             In that event, the filename.ext is needed for both files.<br>
+             The Window and Component objects are not validated and have no role.
+             The Window and Component strings can be any text, but they cannot be blank.
+             <p>
+             The command may produce a WARNING if a diff tool for which we 
+             have no means to verify the results is configured for use.  
+             Consequently, if these warnings are expected, the user can use the 
+             "TW" test record type to avoid issuing these warnings.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>BenchmarkFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             File used as the comparison benchmark.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             File used as the comparison benchmark.<br>
+             This can be a full path, a relative path, or a file name. If
+             it is a filename, it is expected to be in the project's 
+             Datapool\Bench directory. If it is a relative path, 
+             FindSQAFile is used to located the file.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>ActualFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             File used as the comparison file under test.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             File used as the comparison file under test.<br>
+             This can be a full path, a relative path, or a file name. If
+             it is a relative path or a file name, the command will try to
+             find the file in the project's Datapool\Test directory.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>FilterMode</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Specify a filter to use to process the file content before comparison.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Specify a filter to use to process the file content before comparison.<br>
+                "TOLERANCE", valid if the 2 binary files are images, this represents BitTolerance.<br></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>FilterOptions</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Specify filter options to use with the filter.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Specify filter options to use with the filter.<br>
+                If the filter is "TOLERANCE", this value should be an integer between 0 and 100.
+                100 means only 100% match, 2 images will be considered matched;
+                0 means even no bits match, 2 images will be considered matched.<br></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Browser, HTMLTable, VerifyBinaryFileToFile, bFilename.ext, aFilename.ext, "", ""</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Verify a test binary file with the benchmark file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Verify the test binary file with the benchmark file.
+               The benchmark file is located within the Project at Datapool\Bench\bFilename.ext<br>
+               The test file is located within the Project at Datapool\Test\aFilename.ext<br>
+               Note the unused reserved fields for FileFilter and FilterOptions.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Anything, AtAll, VerifyBinaryFileToFile, c:\Dir\bFilename.ext, c:\Dir\aFilename.ext</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Verify a test text file with the benchmark file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Verify the test text file with the benchmark file.<br>
+               The benchmark file is not located within the Project. It is at c:\Dir\bFilename.ext
+               The test file is not located within the Project. It is at c:\Dir\aFilename.ext
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Anything, AtAll, VerifyBinaryFileToFile, c:\Dir\bFilename.png, c:\Dir\aFilename.png, "Tolerance", "90"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Verify a test image file with the benchmark image file, with bit-tolerance as 90%.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Verify a test image file with the benchmark image file, with bit-tolerance as 90%.
+               If the 2 image files have 90% bits matched, then the verification will succeed.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_VerifyClipboardToFile'></A>TestComplete GenericMasterFunctions::<BIG>VerifyClipboardToFile</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the current contents of the Windows clipboard with a benchmark file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Verify the current contents of the Windows clipboard with a benchmark file.<br>
+             Typically, benchmarks are stored in the Datapool\Bench directory.
+             In that event, only the filename.ext is needed.  There is currently
+             a limit of 32K allowed for this type of comparison.  <br>
+             The Window and Component objects are not validated and have no role.
+             The Window and Component strings can be any text, but they cannot be blank.
+             <p>
+             The command will produce a TEST WARNING if the user has configured an 
+             alternate DIFF tool for which we have no means to compare the diff results.
+             If this WARNING is expected, the user should use the "TW" test record type.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>BenchmarkFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The name of the file used as the comparison benchmark.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             The name of the file used as the comparison benchmark.<br>
+             Typically, benchmarks are stored in the Datapool\Bench directory.
+             In that event, only the filename.ext is needed.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>FilterMode</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             (Future) Specify a file filter to use to process the text before comparison.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>FilterOptions</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             (Future) Specify filter options to use with the file filter.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Browser, HTMLTable, VerifyClipboardToFile, aFilename.ext, "", ""</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Verify the current clipboard contents with the benchmark file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Verify the current clipboard with the benchmark file.<br>
+               The benchmark file is located within the Project at Datapool\Bench\aFilename.ext<br>
+               Note the unused reserved fields for FileFilter and FilterOptions.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Anything, AtAll, VerifyClipboardToFile, c:\Dir\aFilename.ext</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Verify the current clipboard contents with the benchmark file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Verify the current clipboard with the benchmark file.<br>
+               The benchmark file is not located within the Project. It is at c:\Dir\aFilename.ext
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_VerifyFileToFile'></A>TestComplete GenericMasterFunctions::<BIG>VerifyFileToFile</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             Verify the current contents of a text file with a benchmark file (same as VerifyTextFileToFile).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Verify the current contents of a text file with a benchmark file (same as VerifyTextFileToFile).<br>
+             Typically, benchmarks are stored in the Datapool\Bench directory.  
+             Typically, files to test are stored in the Datapool\Test directory.  
+             In that event, the filename.ext is needed for both files.<br>
+             The Window and Component objects are not validated and have no role.
+             The Window and Component strings can be any text, but they cannot be blank.
+             <p>
+             The command may produce a WARNING if a diff tool for which we 
+             have no means to verify the results is configured for use.  
+             Consequently, if these warnings are expected, the user can use the 
+             "TW" test record type to avoid issuing these warnings.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>BenchmarkFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             File used as the comparison benchmark.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             File used as the comparison benchmark.<br>
+             This can be a full path, a relative path, or a file name. If
+             it is a filename, it is expected to be in the project's 
+             Datapool\Bench directory. If it is a relative path, 
+             FindSQAFile is used to located the file.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>ActualFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             File used as the comparison file under test.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             File used as the comparison file under test.<br>
+             This can be a full path, a relative path, or a file name. If
+             it is a relative path or a file name, the command will try to
+             find the file in the project's Datapool\Test directory.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>FilterMode</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             (Future) Specify a file filter to use to process the text before comparison.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>FilterOptions</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             (Future) Specify filter options to use with the file filter.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Browser, HTMLTable, VerifyFileToFile, bFilename.ext, aFilename.ext, "", ""</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Verify a test text file with the benchmark file (same as VerifyTextFileToFile).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Verify the test text file with the benchmark file (same as VerifyTextFileToFile).
+               The benchmark file is located within the Project at Datapool\Bench\bFilename.ext<br>
+               The test file is located within the Project at Datapool\Test\aFilename.ext<br>
+               Note the unused reserved fields for FileFilter and FilterOptions.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Anything, AtAll, VerifyFileToFile, c:\Dir\bFilename.ext, c:\Dir\aFilename.ext</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Verify a test text file with the benchmark file (same as VerifyTextFileToFile).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Verify the test text file with the benchmark file (same as VerifyTextFileToFile).<br>
+               The benchmark file is not located within the Project. It is at c:\Dir\bFilename.ext
+               The test file is not located within the Project. It is at c:\Dir\aFilename.ext
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_VerifyGUIImageToFile'></A>TestComplete GenericMasterFunctions::<BIG>VerifyGUIImageToFile</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='WFSupport' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Verify the screen shot of a GUI component with a benchmark image file
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Verify the screen shot of a GUI component with a benchmark image file.<br>
+               The benchmark file must reside in the &lt;project&gt;\Datapool\Bench folder.
+               Only BMP and JPG files can be used as the benchmark. If the extension
+               of the bench file is not BMP or JPG, it is considered a BMP file.  
+               For RJ and IBT engine, other formats like TIFF (*.tif), GIF (*.gif), 
+               PNG (*.png) and PNM (*.pnm) are also supported.
+               Optionally the user can specify part of the component to verify.<br>
+               The specified GUI component/part must be in the viewing range of its 
+               containing window. If portion of the component is displayed in the 
+               window, only that portion will be captured; if the component falls 
+               completely out of the viewing range of the window, the command will 
+               fail. The command makes no attemp to bring the component into view.
+             <p>
+             NOTE: the command may fail to execute if the user has turned off logging 
+             to TestManager via the Robot tools setting.  You may have to enable TestManager
+             logging for the command to successfully execute.</p>
+<p>
+             The command may produce a WARNING if a diff tool for which we 
+             have no means to verify the results is configured for use.  
+             Consequently, if these warnings are expected, the user can use the 
+             "TW" test record type to avoid issuing these warnings.</p>
+<p>
+	    This command requires that TestManager Image Comparator tool is
+	    installed on the machine. Machines having only the Robot Test Agent
+	    installed will not be able to usee this command.
+             </p>
+<p><B>RobotJ (RJ) and IBT Specific Notes:</B><br>
+               		1)It requires that Java Advanced Imaging (JAI) be installed
+               		on the test machine<BR>
+               		2)It supports to save image in format TIFF (*.tif), GIF (*.gif), PNG (*.png)
+               		and PNM (*.pnm) 
+               </p>
+<p><B>Apple IOS specific Notes:</B><br>
+               UIAutomation captures all screenshots as PNG images, but SAFS copies and stores them 
+               into the image format desired (JPG, BMP, etc.). However, the rootname of the desired 
+               output image name must be unique to avoid UIAutomation generating indexed image names 
+               we will not be looking for.<br>
+               For example, specifying MyImage.JPG and later MyImage.BMP will cause UIAutomation to capture 
+               MyImage.PNG and MyImage1.PNG. When attempting to find MyImage.PNG captured for MyImage.BMP 
+               we will retrieve MyImage.PNG which is NOT the correct image capture for MyImage.BMP.
+               </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>BenchmarkFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Name of the benchmark image file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              Name of the benchmark image file.
+              Relative paths suitable for FindSQAFile can be used. Normally,
+              the Benchmark file would reside in the Project's Datapool\Bench
+              directory. A test file with the same name would be created in
+              the Datapool\Test folder. The resulting dif file with .txt
+              extension would be saved under the Datapool\Dif folder. The
+              extension of the benchmark file should be .bmp or .jpg. If not,
+              it is considered a BMP file, i.e. the test file would have a
+              .bmp extension.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>SubArea</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Optional app map subkey indicating partial image of the component to verify.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              Optional app map subkey indicating partial image of the component to verify.
+              Value of this app map reference must be in the format of a
+              top-left and bottom-right pair, and can be either absolute
+              coordinates or percentages ("x1,y1,x2,y2" or "x1%,y1%,x2%,y2%").
+              Coordinates are relative to the component, i.e. (0,0) and
+              (0%,0%) are the minimum, and (COMPONENT_WIDTH, COMPONENT_HEIGHT)
+              and (100%,100%) are the maximum. Values exceeding the minimun/
+              maximum are forced to the nearest limiting value. Absolute and
+              percent values can be mixed, so "0,0,50%,50%" is valid. If this
+              parameter is omitted, full image of the component is captured
+              (equivalent to "0,0,100%,100%").
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>PercentageTolerance</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The percentage of bits need to be matched.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+	            The percentage of bits need to be matched. it is between 0 and 100.<br>
+	            100 means only all bits of images match, the images will be considered matched.<br>
+	            0 means even no bits matche, the images will be considered matched.<br></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>UUIDFlag</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             "UUID=False" to make Test/Actuals Filenames the same as the Benchmark.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              If "UUID=False" is present, and the Engine defaults to appending Universally Unique IDs to 
+              the filenames stored as runtime Test/Actuals, then this setting will prevent the appending of those 
+              UUIDs to the runtime Test/Actual filename. Essentially, the Test/Actual filename will generally be 
+              given the same filename as the benchmark.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>FilteredAreas</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              "<b>Filter=</b>one or multiple areas" to filter the GUI image (or sub image of GUI if the parameter "SubArea" is present)
+              and it will also be used to filter the bench image before comparing. If there are some differences, the diff image
+              will be made between these 2 filtered images (not the acutal and bench image).
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              "<b>Filter=</b>one or multiple areas" to filter the GUI image (or sub image of GUI if the parameter "SubArea" is present)
+              and it will also be used to filter the bench image before comparing. If there are some differences, the diff image
+              will be made between these 2 filtered images (not the acutal and bench image).<br>
+              The area is in the same format described for the parameter "SubArea".<br>
+              Multiple areas are separated by a space character, such as "subarea1 subarea2 subarea3"<br>
+              The actual-image and bench-image will be covered by black color at filtered areas.<br>
+              Do NOT forget the prefix "Filter=", without it this parameter will be ignored.
+             </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, VerifyGUIImageToFile, "comp.bmp"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the full component image with BITMAP file "&lt;project&gt;\Datapool\Bench\comp.bmp".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, VerifyGUIImageToFile, "comp.bmp", "", "", "UUID=False"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the full component image with BITMAP file "&lt;project&gt;\Datapool\Bench\comp.bmp".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              If the runtime GUIImage is to be saved to the Test/Actuals directory it should NOT have 
+              a Universally Unique ID appended to the filename.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, VerifyGUIImageToFile, "comp.jpg"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the full component image with JPEG file "&lt;project&gt;\Datapool\Bench\comp.jpg"
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, VerifyGUIImageToFile, "comp.jpg", "", 95</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the full component image with JPEG file "&lt;project&gt;\Datapool\Bench\comp.jpg"<br>
+             If 95% of bits match, then the verification will pass.<br></short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, VerifyGUIImageToFile, "comp.bmp", SUBAREA</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify specified part of the component image with a bench file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              Verify specified part of the component image with a bench file
+              Depending on the definition of SUBAREA in the app map, the command verifies:<br>
+
+              UNDER [COMPONENT] IN APP MAP    PART OF COMPONENT<br>
+              ----------------------------    ---------------------<br>
+              SUBAREA="0,0,10,10"             top-left 10x10 square<br>
+              SUBAREA="0,80%,100%,100%"       bottom fifth<br></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, VerifyGUIImageToFile, "comp.jpg", "", "", "", "Filter=0;0;10;10 60;60;10;15"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Filter specified parts of the component image and of a bench file, and verify 2-filtered images.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Get the full component image, and draw "10x10 black square" at "top-left" and "10x15 black rectangle" at "60,60"
+             to make a filtered image, then get the image of JPEG file "&lt;project&gt;\Datapool\Bench\comp.jpg"
+             and filter it the same way, finally compare these 2 filtered images.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, VerifyGUIImageToFile, "comp.jpg", "", "", "", "FilterMapKey"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Filter specified parts of the component image and of a bench file, and verify 2-filtered images.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Get the full component image, and draw "10x10 black square" at "top-left" and "10x15 black rectangle" at "60,60"
+             to make a filtered image, then get the image of JPEG file "&lt;project&gt;\Datapool\Bench\comp.jpg"
+             and filter it the same way, finally compare these 2 filtered images.<br>
+              ----------------------------       Map            ---------------------<br>
+              [COMPONENT]<br>
+              FilterMapKey="Filter=0,0,10,10 60,60,10,15"<br></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_VerifyProperty'></A>TestComplete GenericMasterFunctions::<BIG>VerifyProperty</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the value of a single object property
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>PropertyName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The case-sensitive name of the object property to verify.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>ExpectedValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The case-sensitive value we expect to get from the object property.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>CaseInsensitive</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Values of "CASE-INSENSITIVE", "CASEINSENSITIVE", and "FALSE" will cause the 
+             comparison of the property value and the expected value to ignore case.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WindowID, WindowID, VerifyProperty, Visible, True, ^CASESENSITIVE="False"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the "Visible" property of WindowID has the value "True" but ignore case when 
+             making the comparison.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WindowID, CheckboxID, VerifyProperty, State, "Unchecked"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the "State" property of CheckboxID has the case-sensitive value "Unchecked".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_VerifyPropertyContains'></A>TestComplete GenericMasterFunctions::<BIG>VerifyPropertyContains</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify that the value of an object property contains a string
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>PropertyName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The case-sensitive name of the object property to verify.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>SearchString</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The case-sensitive value we expect the object property to contain.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>CaseInsensitive</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Values of "CASE-INSENSITIVE", "CASEINSENSITIVE", and "FALSE" will cause the 
+             comparison of the property value and the expected value to ignore case.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WindowID, WindowID, VerifyPropertyContains, Value, someSubstring, ^CaseSensitive="False"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the "Vaule" property of WindowID contains the substring "someSubstring".  
+             The comparison will not be case-sensitive.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WindowID, CheckboxID, VerifyPropertyContains, State, "Unc"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the "State" property of CheckboxID contains the case-sensitive substring "Unc".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_VerifyPropertyToFile'></A>TestComplete GenericMasterFunctions::<BIG>VerifyPropertyToFile</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the value of a single object property with a benchmark file
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Verify the value of a single object property with a benchmark file.<br>
+             Typically, benchmarks are stored in the Datapool\Bench directory.
+             In that event, only the filename.ext is needed.  There is currently
+             a limit of 32K allowed for this type of comparison.
+             <p>
+             The command will produce a TEST WARNING if the user has configured an 
+             alternate DIFF tool for which we have no means to compare the diff results.
+             If this WARNING is expected, the user should use the "TW" test record type.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>PropertyName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The case-sensitive name of the object property to verify.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>BenchmarkFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The name of the file used as the comparison benchmark.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             The name of the file used as the comparison benchmark.<br>
+             Typically, benchmarks are stored in the Datapool\Bench directory.
+             In that event, only the filename.ext is needed.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>FileEncoding</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Specify a character encoding to be used when opening a bench file.
+             If it is not specified, the system default file encoding will be used.
+             The encoding should be a valid string supported by Java; if it is not valid,
+             the system default file encoding will be used instead.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>FilterMode</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             (Future) Specify a file filter to use to process the text before comparison.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>FilterOptions</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             (Future) Specify filter options to use with the file filter.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Browser, HTMLTable, VerifyPropertyToFile, "innerText", aFilename.ext, , "", ""</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Verify the "innerText" property of HTMLTable with the benchmark file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Verify the "innerText" property of HTMLTable with the benchmark file.<br>
+               The benchmark file is located within the Project at Datapool\Bench\aFilename.ext<br>
+               Note the unused reserved fields for FileFilter and FilterOptions.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Browser, HTMLTable, VerifyPropertyToFile, "innerText", c:\Dir\aFilename.ext</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Verify the "innerText" property of HTMLTable with the benchmark file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Verify the "innerText" property of HTMLTable with the benchmark file.<br>
+               The benchmark file is not located within the Project. It is at c:\Dir\aFilename.ext
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Browser, HTMLTable, VerifyPropertyToFile, "innerText", c:\Dir\aFilename.ext, "UTF-8"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Verify the "innerText" property of HTMLTable with the benchmark file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Verify the "innerText" property of HTMLTable with the benchmark file.<br>
+               The benchmark file is not located within the Project. It is at c:\Dir\aFilename.ext<br>
+               The benchmark file will be opened with "UTF-8" file-encoding.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_VerifyTextFileToFile'></A>TestComplete GenericMasterFunctions::<BIG>VerifyTextFileToFile</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             Verify the current contents of a text file with a benchmark file (same as VerifyFileToFile).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Verify the current contents of a text file with a benchmark file (same as VerifyFileToFile).<br>
+             Typically, benchmarks are stored in the Datapool\Bench directory.  
+             Typically, files to test are stored in the Datapool\Test directory.  
+             In that event, the filename.ext is needed for both files.<br>
+             The Window and Component objects are not validated and have no role.
+             The Window and Component strings can be any text, but they cannot be blank.
+             <p>
+             The command may produce a WARNING if a diff tool for which we 
+             have no means to verify the results is configured for use.  
+             Consequently, if these warnings are expected, the user can use the 
+             "TW" test record type to avoid issuing these warnings.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>BenchmarkFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             File used as the comparison benchmark.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             File used as the comparison benchmark.<br>
+             This can be a full path, a relative path, or a file name. If
+             it is a filename, it is expected to be in the project's 
+             Datapool\Bench directory. If it is a relative path, 
+             FindSQAFile is used to located the file.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>ActualFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             File used as the comparison file under test.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             File used as the comparison file under test.<br>
+             This can be a full path, a relative path, or a file name. If
+             it is a relative path or a file name, the command will try to
+             find the file in the project's Datapool\Test directory.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>FilterMode</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             (Future) Specify a file filter to use to process the text before comparison.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>FilterOptions</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             (Future) Specify filter options to use with the file filter.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Browser, HTMLTable, VerifyTextFileToFile, bFilename.ext, aFilename.ext, "", ""</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Verify a test text file with the benchmark file (same as VerifyFileToFile).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Verify the test text file with the benchmark file (same as VerifyFileToFile).
+               The benchmark file is located within the Project at Datapool\Bench\bFilename.ext<br>
+               The test file is located within the Project at Datapool\Test\aFilename.ext<br>
+               Note the unused reserved fields for FileFilter and FilterOptions.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Anything, AtAll, VerifyTextFileToFile, c:\Dir\bFilename.ext, c:\Dir\aFilename.ext</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Verify a test text file with the benchmark file (same as VerifyFileToFile).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Verify the test text file with the benchmark file (same as VerifyFileToFile).<br>
+               The benchmark file is not located within the Project. It is at c:\Dir\bFilename.ext
+               The test file is not located within the Project. It is at c:\Dir\aFilename.ext
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_VerifyValueContains'></A>TestComplete GenericMasterFunctions::<BIG>VerifyValueContains</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify that a string value contains a substring
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>Value</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The case-sensitive string value to verify.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  If this string is blank, the only possible match is
+                  if the SearchString is also blank.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>SearchString</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The case-sensitive value we expect the preceeding string to contain.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  If the SearchString is blank, that will match the searched 
+                  Value ONLY if that value is also blank.
+                  Note: not true for RobotJ version.  In RobotJ
+             version, if SearchString is blank, then it will always
+             match.  If you want to see if both strings are blank, use
+             the keyword 'VerifyValues' instead.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>SuppressValue</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Set to "SUPPRESSVALUE" to prevent the logging of ugly multi-line values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               The case-insensitive value "SUPPRESSVALUE" instructs the implementation to NOT 
+               log the Value when logging.  This is generally 
+               useful with Values that are exceedingly long, or contain large volumes 
+               of text that will break-up the format or readability of the output log.
+              </detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN> : <SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN> : <value xmlns="">First implemented in May 2014 for TCAFS and might not be supported in all engines yet.</value><BR/>
+</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, anything, anything, VerifyValueContains, someString, someSubstring</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the "someString" string contains the substring "someSubstring".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, anything, anything, VerifyValueContains, "here i am", "re i"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the string "here i am" contains the substring "re i".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, anything, anything, VerifyValueContains, ^myVariable, "substr"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the variable ^myVariable contains the substring "substr".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, anything, anything, VerifyValueContains, "someString", ^myVariable</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the string "someString" contains the substring of variable ^myVariable.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, anything, anything, VerifyValueContains, ^yourVariable, ^myVariable</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the conents of ^yourVariable contains the contents of variable ^myVariable as a substring.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, anything, anything, VerifyValueContains, ^yourVariable, ^myVariable, "SuppressValue"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the conents of ^yourVariable contains the contents of variable ^myVariable as a substring.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">The SUPPRESSed Value argument will not be output into any logged messages.</detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_VerifyValueContainsIgnoreCase'></A>TestComplete GenericMasterFunctions::<BIG>VerifyValueContainsIgnoreCase</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify that a string value contains a substring, ignoring case.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>Value</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The case-insensitive string value to verify.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  If this string is blank, the only possible match is
+                  if the SearchString is also blank.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>SearchString</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The case-insensitive value we expect the preceeding string to contain.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  If the SearchString is blank, that will match the searched 
+                  Value ONLY if that value is also blank.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>SuppressValue</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Set to "SUPPRESSVALUE" to prevent the logging of ugly multi-line values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               The case-insensitive value "SUPPRESSVALUE" instructs the implementation to NOT 
+               log the Value when logging.  This is generally 
+               useful with Values that are exceedingly long, or contain large volumes 
+               of text that will break-up the format or readability of the output log.
+              </detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN> : <SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN> : <value xmlns="">First implemented in May 2014 for TCAFS and might not be supported in all engines yet.</value><BR/>
+</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, anything, anything, VerifyValueContainsIgnoreCase, someString, someSubstring</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the "someString" string contains the substring "someSubstring".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, anything, anything, VerifyValueContainsIgnoreCase, "here i am", "re i"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the string "here i am" contains the substring "re i".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, anything, anything, VerifyValueContainsIgnoreCase, ^myVariable, "substr"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the variable ^myVariable contains the substring "substr".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, anything, anything, VerifyValueContainsIgnoreCase, "someString", ^myVariable</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the string "someString" contains the substring of variable ^myVariable.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, anything, anything, VerifyValueContainsIgnoreCase, ^yourVariable, ^myVariable</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the conents of ^yourVariable contains the contents of variable ^myVariable as a substring.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, anything, anything, VerifyValueContainsIgnoreCase, ^yourVariable, ^myVariable, "SuppressValue"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the conents of ^yourVariable contains the contents of variable ^myVariable as a substring.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">The SUPPRESSed Value argument will not be output into any logged messages.</detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_VerifyValueDoesNotContain'></A>TestComplete GenericMasterFunctions::<BIG>VerifyValueDoesNotContain</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify that a string value does NOT contain a substring
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>Value</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The case-sensitive string value to verify.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  If this string is blank, the compare value should NOT be blank.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>SearchString</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The case-sensitive value we do NOT want to find in the provided Value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  If the SearchString is blank, success if Value is NOT blank.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>SuppressValue</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Set to "SUPPRESSVALUE" to prevent the logging of ugly multi-line values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               The case-insensitive value "SUPPRESSVALUE" instructs the implementation to NOT 
+               log the Value when logging.  This is generally 
+               useful with Values that are exceedingly long, or contain large volumes 
+               of text that will break-up the format or readability of the output log.
+              </detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN> : <SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN> : <value xmlns="">First implemented in May 2014 for TCAFS and might not be supported in all engines yet.</value><BR/>
+</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Anything, AtAll, VerifyValueDoesNotContain, "someString", "another"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the "someString" Value does NOT contain the substring "another".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Anything, AtAll, VerifyValueDoesNotContain, ^myVariable, "substr"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the variable ^myVariable does NOT contain the substring "substr".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Anything, AtAll, VerifyValueDoesNotContain, "someString", ^myVariable</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the string "someString" does NOT contain the substring contained in variable ^myVariable.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Anything, AtAll, VerifyValueDoesNotContain, "someString", ^myVariable, "SuppressValue"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the string "someString" does NOT contain the substring contained in variable ^myVariable.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">The SUPPRESSed Value argument will not be output into any logged messages.</detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_VerifyValues'></A>TestComplete GenericMasterFunctions::<BIG>VerifyValues</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify that two string values are identical. Note: RobotJ
+             also uses identical keyword 'VerifyValueEquals'
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>Value1</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              A case-sensitive string value to compare.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  If this string is blank, the only possible match is
+                  if Value2 is also blank.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>Value2</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             A case-sensitive value to compare.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  If this string is blank, the only possible match is
+                  if Value1 is also blank.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>SuppressValue</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Set to "SUPPRESSVALUE" to prevent the logging of ugly multi-line values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               The case-insensitive value "SUPPRESSVALUE" instructs the implementation to NOT 
+               log the Value when logging.  This is generally 
+               useful with Values that are exceedingly long, or contain large volumes 
+               of text that will break-up the format or readability of the output log.
+              </detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN> : <SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN> : <value xmlns="">First implemented in May 2014 for TCAFS and might not be supported in all engines yet.</value><BR/>
+</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, anything, anything, VerifyValues, ^myVariable, "astring"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the variable ^myVariable matches the string "astring".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, anything, anything, VerifyValues, "astring", ^myVariable</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the variable ^myVariable matches the string "astring".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, anything, anything, VerifyValues, ^yourVariable, ^myVariable</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the value of ^yourVariable matches the value of variable ^myVariable.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, anything, anything, VerifyValues, ^yourVariable, ^myVariable, "SuppressValue"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the value of ^yourVariable matches the value of variable ^myVariable.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">The SUPPRESSed Value argument will not be output into any logged messages.</detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_VerifyValuesIgnoreCase'></A>TestComplete GenericMasterFunctions::<BIG>VerifyValuesIgnoreCase</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify that two string values are identical, ignoring case.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>Value1</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              A case-insensitive string value to compare.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  If this string is blank, the only possible match is
+                  if Value2 is also blank.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>Value2</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             A case-insensitive value to compare.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  If this string is blank, the only possible match is
+                  if Value1 is also blank.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>SuppressValue</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Set to "SUPPRESSVALUE" to prevent the logging of ugly multi-line values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               The case-insensitive value "SUPPRESSVALUE" instructs the implementation to NOT 
+               log the Value when logging.  This is generally 
+               useful with Values that are exceedingly long, or contain large volumes 
+               of text that will break-up the format or readability of the output log.
+              </detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN> : <SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN> : <value xmlns="">First implemented in May 2014 for TCAFS and might not be supported in all engines yet.</value><BR/>
+</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, anything, anything, VerifyValuesIgnoreCase, ^myVariable, "aSTring"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the variable ^myVariable matches the string "aSTring", ignoring case.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, anything, anything, VerifyValuesIgnoreCase, "asTRing", ^myVariable</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the variable ^myVariable matches the string "asTRing", ignoring case.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, anything, anything, VerifyValuesIgnoreCase, ^yourVariable, ^myVariable</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the value of ^yourVariable matches the value of variable ^myVariable, ignoring case.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, anything, anything, VerifyValuesIgnoreCase, ^yourVariable, ^myVariable, "SuppressValue"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the value of ^yourVariable matches the value of variable ^myVariable, ignoring case.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_VerifyValuesNotEqual'></A>TestComplete GenericMasterFunctions::<BIG>VerifyValuesNotEqual</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify that two string values are NOT identical.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>Value1</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              A case-sensitive string value to compare.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  If this string is blank, the only possible success is
+                  if Value2 is NOT blank.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>Value2</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             A case-sensitive value to compare.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  If this string is blank, the only possible success is
+                  if Value1 is NOT blank.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>SuppressValue</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Set to "SUPPRESSVALUE" to prevent the logging of ugly multi-line values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               The case-insensitive value "SUPPRESSVALUE" instructs the implementation to NOT 
+               log the Value when logging.  This is generally 
+               useful with Values that are exceedingly long, or contain large volumes 
+               of text that will break-up the format or readability of the output log.
+              </detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN> : <SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN> : <value xmlns="">First implemented in May 2014 for TCAFS and might not be supported in all engines yet.</value><BR/>
+</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Anything, AtAll, VerifyValuesNotEqual, ^myVariable, "astring"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the variable ^myVariable does NOT match the string "astring".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Anything, AtAll, VerifyValuesNotEqual, "astring", ^myVariable</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the variable ^myVariable does NOT match the string "astring".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Anything, AtAll, VerifyValuesNotEqual, ^yourVariable, ^myVariable</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the value of ^yourVariable does NOT match the value of variable ^myVariable.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Anything, AtAll, VerifyValuesNotEqual, ^yourVariable, ^myVariable, "SUPPRESSVALUE"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the value of ^yourVariable does NOT match the value of variable ^myVariable.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">The SUPPRESSed Value argument will not be output into any logged messages.</detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+		</BODY>
+</HTML>
+	

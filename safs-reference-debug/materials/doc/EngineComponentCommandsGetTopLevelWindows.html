@@ -1,0 +1,76 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_GetTopLevelWindows'></A>EngineComponentCommands::<BIG>GetTopLevelWindows</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Return references to all known top-level items (Windows).</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The engine can only return references to those top-level items it has 
+                knowledge of.  Not all engines can see all items. 
+                For example, Selenium only looks for Web clients.  Some engines may only look for 
+                Java clients, etc..  Some engines can see other top-level items that are not 
+                Windows--like Processes, or Threads, etc...
+                <p>
+                The engine's array of objects will be returned as a delimited list of fields. 
+                The first character in the String will identify the separator used between 
+                each reference.  If no top level windows were found then the engine will return 
+                an empty string.
+                </p>
+<p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p>
+<p>
+            The TestComplete Engine (TCAFS) also persists these values as SAFS variables.
+            </p><pre>            
+            ^TCAFS.Command    = [command]
+            ^TCAFS.StatusCode = [statuscode string]
+            ^TCAFS.StatusInfo = [statusinfo]
+            ^TCAFS.UID.Count  = [Number of UID References created last]
+            ^TCAFS.UID.1      = [First UID Reference created]
+            ^TCAFS.UID.n      = [UID Reference number n]            
+            </pre></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">E, GetTopLevelWindows</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get references to all known top-level items.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Sample return strings:
+                        <p>
+                        Example 1: ",Ref1,Ref2,Ref3"
+                        Example 2: ""
+                        </p><p>
+                        The first character in Example 1 (a comma in this case) signifies that the 
+                        list of references will be separated by commas.  The references 
+                        then follow.
+                        </p><p>
+                        Example 2 shows no top-level items are visible to the engine.
+                        </p></detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

@@ -1,0 +1,436 @@
+<HTML xmlns="http://www.w3.org/TR/REC-html40"><HEAD>
+<TITLE>Autoit WindowFunctions</TITLE>
+<LINK rel="stylesheet" href="rrafs.css" type="text/css"/>
+<LINK rel="stylesheet" href="bootstrap.css" type="text/css"/>
+</HEAD><BODY><DIV class="container content" NAME="top" ID="top">
+		  <H1>Autoit WindowFunctions</H1>
+		  
+          Last Updated:<script language="JavaScript">document.write(document.lastModified)</script>
+<BR/>
+<BR/>
+<DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+              Actions for working with Window objects
+           </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+		<DIV NAME="list" ID="list">
+		  <A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE class="table">
+<thead class="thead-inverse">
+<tr>
+<th>Keyword Name</th>
+<th>Supported Engines</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_CloseWindow' HREF='#detail_CloseWindow' >CloseWindow</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='AutoIT'>AUT</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Sends a Close command to the active window.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_Maximize' HREF='#detail_Maximize' >Maximize</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='AutoIT'>AUT</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Sends a WMaximize command to the active window.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_Minimize' HREF='#detail_Minimize' >Minimize</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='AutoIT'>AUT</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Sends a WMinimize command to the active window.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_Restore' HREF='#detail_Restore' >Restore</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='AutoIT'>AUT</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Sends a RestorePos command to the active window.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetPosition' HREF='#detail_SetPosition' >SetPosition</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='AutoIT'>AUT</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Sends a SetPosition command to the window to set the position, size, and status of the window.
+              </TD>
+		  </TR>
+</tbody>
+</TABLE>
+<HR/>
+</DIV>
+		<DIV NAME="detail" ID="detail">
+		  <H3><A NAME='detail_CloseWindow'></A>Autoit WindowFunctions::<BIG>CloseWindow</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='AutoIT'>AUT</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Sends a Close command to the active window.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><note><engines><engine vendor="Rational" tool="Robot" name="Robot" since="20030827" expectFailSupport="NO" expectWarnSupport="NO"><domains><domain name="WIN" expectFailSupport="NO" expectWarnSupport="NO"></domain></domains></engine></engines><value><p>This Window command has a problem in that it does not want to
+                use the same recognition methods used by the other Window commands (like
+                SetContext).  Particularly, it does not accept the Type=Window portion
+                of these recognition methods.  In addition, if the window is a child
+                window of a parent then it expects the ";ChildWindow" add-on in the 
+                recognition method.  The child may also need the parent as part of its
+                full recognition string like:</p>
+<p>
+                ChildWindow=Type=Window;&lt;parent rec&gt;;\;Caption=&lt;caption&gt;;ChildWindow</p>
+<p>
+                To handle these child windows, we parse the typical recognition method for 
+                our window and attempt to handle these issues.  Once SetContext has 
+                successfully set our window, we then remove any "Type=Window" substring 
+                if present and add the ";ChildWindow" substring if not present.</p>
+<p>
+                To take advantage of this, this routine must be called with the child
+                window as a component of the parent window like below:</p>
+<p>
+                t, ParentWindow, ChildWindow, CloseWindow</p>
+<p>
+                If the routine is called like either of the examples below then default
+                processing will occur.  This will merely SetContext on the provided 
+                Window and use "CurrentWindow" as the parameter to the command.</p>
+<p>
+                t, ParentWindow, ParentWindow, CloseWindow<br>
+                t, ChildWindow , ChildWindow , CloseWindow  (normally won't work)</p></value></note><note><engines><engine vendor="OpenQA" tool="Selenium" name="Selenium2.0" since="20140506" expectFailSupport="NO" expectWarnSupport="NO"><domains><domain name="HTML" expectFailSupport="NO" expectWarnSupport="NO"></domain></domains></engine></engines><value>Closes the "current" or "lastUsed" WebDriver associated with the found Window component.</value></note></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, CLOSEWINDOW</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Sends a CloseWindow command to the specified Window
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Sends a CloseWindow command to the specified Window
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_Maximize'></A>Autoit WindowFunctions::<BIG>Maximize</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='AutoIT'>AUT</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Sends a WMaximize command to the active window.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Sends a WMaximize command to the active window.</p>
+<p>
+                This Window command has a problem in that it does not want to
+                use the same recognition methods used by the other Window commands (like
+                SetContext).  Particularly, it does not accept the Type=Window portion
+                of these recognition methods.  In addition, if the window is a child
+                window of a parent then it expects the ";ChildWindow" add-on in the 
+                recognition method.  The child may also need the parent as part of its
+                full recognition string like:</p>
+<p>
+                ChildWindow=Type=Window;&lt;parent rec&gt;;\;Caption=&lt;caption&gt;;ChildWindow</p>
+<p> 
+                To handle these child windows, we parse the typical recognition method for 
+                our window and attempt to handle these issues.  Once SetContext has 
+                successfully set our window, we then remove any "Type=Window" substring 
+                if present and add the ";ChildWindow" substring if not present.</p>
+<p>
+                To take advantage of this, this routine must be called with the child
+                window as a component of the parent window like below:</p>
+<p>
+                t, ParentWindow, ChildWindow, Maximize</p>
+<p>
+                If the routine is called like either of the examples below then default
+                processing will occur.  This will merely SetContext on the provided 
+                Window and use "CurrentWindow" as the parameter to the command.</p>
+<p>
+                t, ParentWindow, ParentWindow, Maximize<br>
+                t, ChildWindow , ChildWindow , Maximize   (normally won't work)</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, MAXIMIZE</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Sends a Maximize command to the specified Window.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Sends a Maximize command to the specified Window.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_Minimize'></A>Autoit WindowFunctions::<BIG>Minimize</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='AutoIT'>AUT</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Sends a WMinimize command to the active window.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Sends a WMinimize command to the active window.</p>
+<p>
+                This Window command has a problem in that it does not want to
+                use the same recognition methods used by the other Window commands (like
+                SetContext).  Particularly, it does not accept the Type=Window portion
+                of these recognition methods.  In addition, if the window is a child
+                window of a parent then it expects the ";ChildWindow" add-on in the 
+                recognition method.  The child may also need the parent as part of its
+                full recognition string like:</p>
+<p>
+                ChildWindow=Type=Window;&lt;parent rec&gt;;\;Caption=&lt;caption&gt;;ChildWindow</p>
+<p>
+                To handle these child windows, we parse the typical recognition method for 
+                our window and attempt to handle these issues.  Once SetContext has 
+                successfully set our window, we then remove any "Type=Window" substring 
+                if present and add the ";ChildWindow" substring if not present.</p>
+<p>
+                To take advantage of this, this routine must be called with the child
+                window as a component of the parent window like below:</p>
+<p>
+                t, ParentWindow, ChildWindow, Minimize</p>
+<p>
+                If the routine is called like either of the examples below then default
+                processing will occur.  This will merely SetContext on the provided 
+                Window and use "CurrentWindow" as the parameter to the command.</p>
+<p>
+                t, ParentWindow, ParentWindow, Minimize<br>
+                t, ChildWindow , ChildWindow , Minimize   (normally won't work)</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, MINIMIZE</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Sends a Minimize command to the specified Window.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Sends a Minimize command to the specified Window.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_Restore'></A>Autoit WindowFunctions::<BIG>Restore</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='AutoIT'>AUT</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Sends a RestorePos command to the active window.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Sends a RestorePos command to the active window.</p>
+<p>
+                This Window command has a problem in that it does not want to
+                use the same recognition methods used by the other Window commands (like
+                SetContext).  Particularly, it does not accept the Type=Window portion
+                of these recognition methods.  In addition, if the window is a child
+                window of a parent then it expects the ";ChildWindow" add-on in the 
+                recognition method.  The child may also need the parent as part of its
+                full recognition string like:</p>
+<p>
+                ChildWindow=Type=Window;&lt;parent rec&gt;;\;Caption=&lt;caption&gt;;ChildWindow</p>
+<p>
+                To handle these child windows, we parse the typical recognition method for 
+                our window and attempt to handle these issues.  Once SetContext has 
+                successfully set our window, we then remove any "Type=Window" substring 
+                if present and add the ";ChildWindow" substring if not present.</p>
+<p>
+                To take advantage of this, this routine must be called with the child
+                window as a component of the parent window like below:</p>
+<p>
+                t, ParentWindow, ChildWindow, Restore</p>
+<p>
+                If the routine is called like either of the examples below then default
+                processing will occur.  This will merely SetContext on the provided 
+                Window and use "CurrentWindow" as the parameter to the command.</p>
+<p>
+                t, ParentWindow, ParentWindow, Restore<br>
+                t, ChildWindow , ChildWindow , Restore      (normally won't work)</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, RESTORE</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Sends a Restore command to the specified Window.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Sends a Restore command to the specified Window.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SetPosition'></A>Autoit WindowFunctions::<BIG>SetPosition</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='AutoIT'>AUT</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Sends a SetPosition command to the window to set the position, size, and status of the window.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Sends a SetPosition command to the window to set the position, size, 
+                and status of the window.  The position, size, and status information 
+                is stored in the app map as a subitem in the section for the window.
+                The information should be in the format of:</p>
+<p>
+                "0,0,640,480;Status=NORMAL"    OR
+                "Coords=0,0,640,480;Status=NORMAL"</p>
+<p>
+                That example positions the window at 0,0; sizes it to 640 x 480, and
+                sets it's status to NORMAL.  Valid values for STATUS are:</p>
+<p>
+                NORMAL, MINIMIZED, and MAXIMIZED</p>
+<p>
+                The Window SetPosition command has a problem in that it does not want to
+                use the same recognition methods used by the other Window commands (like
+                SetContext).  Particularly, it does not accept the Type=Window portion
+                of these recognition methods.  In addition, if the window is a child
+                window of a parent then it expects the ";ChildWindow" add-on in the 
+                recognition method.  The child may also need the parent as part of its
+                full recognition string like:</p>
+<p>
+                ChildWindow=Type=Window;&lt;parent rec&gt;;\;Caption=&lt;caption&gt;;ChildWindow</p>
+<p>
+                To handle these child windows, we parse the typical recognition method for 
+                our window and attempt to handle these issues.  Once SetContext has 
+                successfully set our window, we then remove any "Type=Window" substring 
+                if present and add the ";ChildWindow" substring if not present.</p>
+<p>
+                To take advantage of this, this routine must be called with the child
+                window as a component of the parent window like below:</p>
+<p>
+                t, ParentWindow, ChildWindow, SetPosition, ChildPositionReference</p>
+<p>
+                If the routine is called like either of the examples below then default
+                processing will occur.  This will merely SetContext on the provided 
+                Window and use "CurrentWindow" as the parameter to SetPosition.</p>
+<p>
+                t, ParentWindow, ParentWindow, SetPosition, ParentPosition<br>
+                t, ChildWindow , ChildWindow , SetPosition, ChildPosition   (normally won't work)</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>PresetReference</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                String specifying a preset reference in the Application for the position, size, and state of the Window.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                String specifying a preset reference in the Application for the position, size, and state of the Window.
+                command.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, SETPOSITION, Preset1</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Preset1 specifies a preset reference in the Application for the position, size, and state of the Window.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Field  5 : TQ String specifying a preset reference in the Application for the position,
+                size, and state of the Window.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+		</DIV>
+</BODY>
+</HTML>
+	

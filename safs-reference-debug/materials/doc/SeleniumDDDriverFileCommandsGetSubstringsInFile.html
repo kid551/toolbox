@@ -1,0 +1,97 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_GetSubstringsInFile'></A>Selenium DDDriverFileCommands::<BIG>GetSubstringsInFile</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                  Extract dynamic substrings from a file using regular expressions.
+               </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>
+                  This command opens the file, reads it line by line, and sets DDVariables (based on rootname) for each occurrence of string identified by the substring formed between regexstart and regexstop (1 match per line, currently).  regexstart and regexstop must both be valid, non-empty strings or no matching substrings will be found.
+                  </p><p>
+                  Fully qualified filename is opened and read line by line.  
+                  Each line is parsed, searching for a match to the substring formed between regexstart and regexstop.
+                  </p><p>
+                  When a match is found, the string between regexstart and regexstop is saved in a newly created DDVariable based on rootname and the number of occurrences.  There will be one DDVariable for each match found and a unique "Count" variable specifying how many matches were found.
+                  </p><p>
+                  The rootname is used as a base to build the DDVariable names which contain the located substring(s) and Count.  For example, if rootname is "Chart" and two substring matches are found, then 2 DDVariables are created to store those substrings and another is created to store the count of matches: 
+                  </p>
+<ol>
+<li>DDVariable Chart1 contains the first substring, and</li>
+<li>DDVariable Chart2 contains the second substring. </li>
+<li>DDVariable ChartCount contains the number of matches found. </li>
+</ol></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>
+<B>file</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                  Fully-qualified filename
+               </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>
+<B>regexstart</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                  The starting regular expression.  Should not be empty.
+               </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>
+<B>regexstop</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                  The stopping regular expression.  Should not be empty.
+               </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>
+<B>rootname</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                  The root name of the returned variable(s).  
+               </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The rootname is used as a base to build the DDVariable names which contain the located substring(s).  For example, if rootname is "Chart" and two substring matches are found, then 2 DDVariables are created to store those substrings and another is created to store the count of matches: 
+                  <ol>
+<li>DDVariable Chart1 contains the first substring, and</li>
+<li>DDVariable Chart2 contains the second substring. </li>
+<li>DDVariable ChartCount contains the number of matches found. </li>
+</ol></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">C GetSubstringsInFile ^file=^fullfilename ^regexstart="img id=""idChart" ^regexstop="""" ^rootname="Chart"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                  Assuming 2 strings are found in file, this command will create:<br>
+                    DDVariable Chart1, which contains the first substring, and <br>
+                    DDVariable Chart2, which contains the second substring. <br>
+                    DDVariable ChartCount, which contains the count of matches found.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

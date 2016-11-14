@@ -1,0 +1,90 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_GetFiles'></A>TestComplete DDDriverFileCommands::<BIG>GetFiles</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+          Search the directory provided for files according to possible attribute and write the list of filenames found into the output file.
+        </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Directory</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              The full name of the directory to be searched for files.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>FileName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Full file path and name of the file to store list of                  files found in the directory
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>FileAttributes</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Optional File Attributes parameter specifying file attributes to select with Dir directory 
+              search command. Default if unspecified is normal files. It may be any combination of them.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Search directory using following file attributes. Default value is 0 - normal file.</p>
+<p>0  - Normal file, returns only files without other attributes set</p>
+<p>1  - Read Only file</p>
+<p>2  - Hidden file</p>
+<p>4  - System file (Window OS Only)</p>
+<p>8  - Volume Label (Exclusive, if set, no other attribute counts.)</p>
+<p>16 - Directory</p>
+<p>32 - Archive file (Windows OS: attrib with 'A'; Other OS: file suffix is .jar, .tar, .rar, .gz etc.)</p>
+<p>The values in the table can be added together to select multiple attributes.</p>
+<p>For example, to list hidden and system files in addition to normal files set FileAttributes to 6 (6=2+4).</p>
+<p></p>
+<p>If FileAttributes is set to 8 (Volume Label), then returns the volume label of the drive specified in the pathname$,
+                 or of the current drive if drive is not explicitly specified.</p>
+<p>If volume label attribute is set, all other attributes are ignored.</p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">
+            C, GetFiles, "C:/Test", "D:/Test/filelist.txt", "16"
+          </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""><p>Directory C:/Test is searched for files with normal and directory attributes set
+                 and list of files found is written to file D:/Test/filelist.txt</p></short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">
+            C, GetFiles, "C:/Test", "D:/Test/filelist.txt"
+          </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Directory C:/Test is searched and list of files found is                 written to file D:/Test/filelist.txt
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">
+            C, GetFiles,"^directory", "^file_list"
+          </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Directory defined in ^directory DDV variable searched and                  list of files found is written to file identified by                  ^file_List DDV variable
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

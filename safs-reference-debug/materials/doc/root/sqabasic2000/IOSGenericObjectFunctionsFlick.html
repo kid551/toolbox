@@ -1,0 +1,149 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_Flick'></A>IOS GenericObjectFunctions::<BIG>Flick</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A user-defined flick or swipe on a touchscreen object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The user would use this command if they need to customize parameters like:
+                <ul>
+<li>Number of fingers used: default=1,</li>
+<li>Start and ending offsets within the object: defaults=90;50;10;50</li>
+<li>How long (in seconds) to complete the flick from start to end: default=1.</li>
+</ul></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>[ <B>AppMapSubKey</B> = 90;50;10;50 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                 Optional AppMap SubKey (or literal text) containing x1,y1,x2,y2 flick offsets within the object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Without this we should perform a default right-to-left Flick.
+                 <p>Name of the AppMap subkey to lookup and use for the command.
+                 We expect the AppMap or literal text to contain the item in the format "x1,y1,x2,y2":</p>
+<pre>
+                 [ComponentName]
+                 OffsetName="0;0;100;100"
+                 </pre><p>  
+                 Both Fields #3 (Component Name) and #5 (Offset Name) are used to locate the item in the App Map.
+                 This routine does not specify an App Map so only the current Map is used and it is expected to be valid.
+                 </p><p>
+                 If no such App Map lookup exists, then we will assume the field contains the offset value directly.
+                 </p><p>                 
+                 Offsets are "relative" to the object.  Each value should be an integer 0-100 representing 
+                 the relative percentage where 0 is the minimum (left or top) and 100 is the maximum width or height 
+                 of the object.  Thus: 0,0,100,100 represents a flick from the topleft corner to the bottomright 
+                 corner of the object.
+		         </p><p>
+		         Engines should attempt to support offsets separated by different characters.  
+		         The most common separators that should be supported would be:
+		         <ul>
+<li>"," (comma) Example: "0,0,100,100" (topleft to bottomright)</li>
+<li>";" (semi-colon) Example: "100;0;0;100" (topright to bottomleft)</li>
+<li>" " (space) Example: "0 50 100 50" (leftcenter to rightcenter)</li>
+</ul>
+</p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>Duration</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                 Optional number of seconds (0 to N) to press on the object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Optional number of seconds (0 to N) to press on the item.  The default value is 1.  
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>Touches</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                 Optional number of touches or fingers to use.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Optional number of touches or fingers to use.  The default value is 1.  
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>Repeat</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                 Optional number of times to repeat the operation.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Optional number of times to repeat the operation.  
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, Flick</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               A simple flick on the object, from right-to-left with one touch/finger taking 1 second.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               A simple flick on the object, from right-to-left with one touch/finger taking 1 second.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, MainApp, MyTree, Flick, TopRightToBottom</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               A flick on the MyTree object using AppMapped offsets with one touch/finger taking 1 second.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               A flick on the MyTree object with one touch/finger taking 1 second. The AppMap is intended to 
+               contains something like below:
+               <p><pre>
+               [MyTree]
+               TopRightToBottom="90;0;90;100"
+               </pre></p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, MainApp, MyTree, Flick, TopRightToBottom, 3</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               A flick on the MyTree object using AppMapped offsets with one touch/finger taking 3 second.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               A flick on the MyTree object using AppMapped offsets with one touch/finger taking 3 second.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, MainApp, MyTree, Flick, "", "", 2</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               A simple right-to-left flick on the MyTree object taking 1 second with 2 fingers.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               A simple right-to-left flick on the MyTree object taking 1 second with 2 fingers.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, MainApp, MyTree, Flick, "", "", "", 3</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               3 simple right-to-left flicks on the MyTree object taking 1 second each.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               3 simple right-to-left flicks on the MyTree object taking 1 second each.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

@@ -1,0 +1,48 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_GetTopLevelCount'></A>Android EngineComponentCommands::<BIG>GetTopLevelCount</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN>:<SPAN CLASS='domainMarker' TITLE='DEV Domain'>DEV</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the number of visible top-level items (Windows?) for the engine.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Returns the number of visible top-level items, or 0.  Not all engines can see all items. 
+                For example, Selenium only looks for Web clients.  Some engines may only look for 
+                Java clients, etc..  Some engines can see other top-level items that are not 
+                Windows--like Processes, or Threads, etc...
+            <p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p>
+<p>
+            The TestComplete Engine (TCAFS) also persists these values as SAFS variables.
+            </p><pre>            
+            ^TCAFS.Command    = [command]
+            ^TCAFS.StatusCode = [statuscode string]
+            ^TCAFS.StatusInfo = [statusinfo]
+            </pre></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, GetTopLevelCount</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the number of top-level items visible to the engine.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns the count of top-level items or 0 if the engine "sees" no top-level items.
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

@@ -1,0 +1,100 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_ClickButtonText'></A>ToolBarFunctions::<BIG>ClickButtonText</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Routine to Click on the specified Button.Key (Text) value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Routine to Click on the specified Button.Key (Text) value.  
+                The user has an optional parameter to specify that the provided 
+                text is case-insensitive.  The routine will also verify that the 
+                button is in the clicked or selected state upon completion.<br>
+                Use ClickUnverifiedButtonText if this post-click verification should 
+                be skipped.<br></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>ButtonTextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of the toolbar button to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Case-sensitive text of the toolbar button to select.<br><b>RJ Note:</b> This parameter may be a path like "a-&gt;b-&gt;c"
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>CaseInsensitive</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 "1", "CaseInsensitive", or "Case-Insensitive" to match button text in a case-insensitive manner.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>Coordination</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+				A position within the toolbar button, the mouse will be click there. 
+				<br><b>RJ Note:</b> This parameter is special for RJ implementation.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ToolBar, ClickButtonText,  "AParticularButtonText"   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Performs a standard single-click on the "AParticularButtonText" button on the ToolBar object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Performs a standard single-click on the "AParticularButtonText" button on the ToolBar object. 
+                 The routine will also verify that the button is in the clicked or selected state.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns=""> T, WINDOW, ToolBar, ClickButtonText,  "aparticularbuttontext", CaseInsensitive   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Performs a standard single-click on the "AParticularButtonText" button on the ToolBar object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Performs a standard single-click on the "AParticularButtonText" button on the ToolBar object. 
+                 The routine will also verify that the button is in the clicked or selected state.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns=""> T, WINDOW, ToolBar, ClickButtonText,  "parent-&gt;child", CaseInsensitive   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Performs a standard single-click on the path "parent-&gt;child" on the ToolBar object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Performs a standard single-click on the path "parent-&gt;child" on the ToolBar object. 
+                 The routine will also verify that the button is in the clicked or selected state.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns=""> T, WINDOW, ToolBar, ClickButtonText,  "AButtonText", , "55;8"   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Performs a standard single-click on the position (55,8) of button whose text is "AButtonText" on the ToolBar object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

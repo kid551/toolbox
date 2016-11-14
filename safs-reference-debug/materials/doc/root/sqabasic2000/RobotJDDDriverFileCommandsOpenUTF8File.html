@@ -1,0 +1,97 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_OpenUTF8File'></A>RobotJ DDDriverFileCommands::<BIG>OpenUTF8File</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+          Open an existing UTF-8 file with the filename, mode and access provided.<br><b>TID Note: </b>Multiple ways to open a file:
+			<ol>
+<li>Mode=Input, Access=Read</li>
+<li>Mode=Output, Access=Write</li>
+<li>Mode=Append, Access=Write</li>
+<li>Mode=AppendRaw, Access=Write</li>
+</ol></short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>FileName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              The full path file name of the UTF-8 file to be opened.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>Mode</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Mode to be used to open the file, Input, Output, Append, and AppendRaw.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+            Text Files only.  Random Access and Binary files are not supported.
+            <p>Append Mode generally rewrites existing file contents with a NEWLINE between textual lines--stripping out OS-specific newline characters and making the file the same regardless of the platform.
+            </p><p>
+            AppendRaw Mode rewrites existing file contents without modification before appending any new data to the file.
+            </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>Access</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Access to be used to open the UTF-8 file. Read, Write or Read Write.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>FileNumberVariable</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              DDE Variable name of the variable to store the file number.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>FileNumber</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Optional File number to be used to open the UTF-8 file, 
+              otherwise, next available file number is used.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">
+            C, OpenUTF8File, "C:\Test\FileTestUTF8.txt", "Input", "Read","test_filenum"
+          </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Open the existing UTF-8 file FileTestUTF8.txt for Input and reading and 
+              store the file number in DDE variable ^test_filenum
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">
+            C, OpenUTF8File, "C:\Test\FileTestUTF8.txt", "Output", "Write","test_filenum",8
+          </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Open the UTF-8 file FileTestUTF8.txt for Output and Writing with the file number 8 
+              and store the file number 8 in DDE variable ^test_filenum
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

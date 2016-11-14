@@ -1,0 +1,3025 @@
+<HTML xmlns="http://www.w3.org/TR/REC-html40"><HEAD>
+<TITLE>TestComplete TreeViewFunctions</TITLE>
+<LINK rel="stylesheet" href="rrafs.css" type="text/css"/>
+<LINK rel="stylesheet" href="bootstrap.css" type="text/css"/>
+</HEAD><BODY><DIV class="container content" NAME="top" ID="top">
+		  <H1>TestComplete TreeViewFunctions</H1>
+		  
+          Last Updated:<script language="JavaScript">document.write(document.lastModified)</script>
+<BR/>
+<BR/>
+<DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+              Actions for working with TreeView objects
+           </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><br><b>RJ Implementation:</b>
+					For each command, the 5th parameter "TextValue" must be given as full path with separator "-&gt;". Example: "Parent-&gt;Child"
+			</detailed_desc><BR/>
+		</DIV>
+<BR/>
+		<DIV NAME="list" ID="list">
+		  <A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE class="table">
+<thead class="thead-inverse">
+<tr>
+<th>Keyword Name</th>
+<th>Supported Engines</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_CaptureTreeDataToFile' HREF='#detail_CaptureTreeDataToFile' >CaptureTreeDataToFile</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>
+             Copy the current contents of a tree[branch] to a file.
+             </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ClickPartial' HREF='#detail_ClickPartial' >ClickPartial</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Action to click a node according to a partial match of its text value.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ClickTextNode' HREF='#detail_ClickTextNode' >ClickTextNode</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Action to click a node according to its text value.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ClickUnverifiedTextNode' HREF='#detail_ClickUnverifiedTextNode' >ClickUnverifiedTextNode</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Action to (almost) blindly click a text node.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_Collapse' HREF='#detail_Collapse' >Collapse</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Action to collapse a node according to its text value.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_CollapsePartial' HREF='#detail_CollapsePartial' >CollapsePartial</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Action to collapse a node according to a partial match of its text value.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_CollapseTextNode' HREF='#detail_CollapseTextNode' >CollapseTextNode</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Action to collapse a node according to its text value. Use Collapse instead.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_DoubleClickPartial' HREF='#detail_DoubleClickPartial' >DoubleClickPartial</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Action to double click a node according to a partial match of its text value.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_DoubleClickTextNode' HREF='#detail_DoubleClickTextNode' >DoubleClickTextNode</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Action to double click a node according to its text value.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_DoubleClickUnverifiedTextNode' HREF='#detail_DoubleClickUnverifiedTextNode' >DoubleClickUnverifiedTextNode</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Action to (almost) blindly activate (double-click) a text node.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_Expand' HREF='#detail_Expand' >Expand</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Action to expand a node according to its text value.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ExpandPartial' HREF='#detail_ExpandPartial' >ExpandPartial</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Action to expand a node according to a partial match of text value.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ExpandTextNode' HREF='#detail_ExpandTextNode' >ExpandTextNode</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Action to expand a node according to its text value. Use Expand instead.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_RightClickPartial' HREF='#detail_RightClickPartial' >RightClickPartial</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Action to right click a node according to a partial match of its text value.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_RightClickTextNode' HREF='#detail_RightClickTextNode' >RightClickTextNode</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Action to right click a node according to its text value.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_RightClickUnverifiedTextNode' HREF='#detail_RightClickUnverifiedTextNode' >RightClickUnverifiedTextNode</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Action to (almost) blindly right-click a text node.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_Select' HREF='#detail_Select' >Select</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Action to select a node according to its text value.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectPartial' HREF='#detail_SelectPartial' >SelectPartial</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Action to select a node according to a partial match of its text value.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectPartialTextNode' HREF='#detail_SelectPartialTextNode' >SelectPartialTextNode</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Action to select a node according to a partial match of its text value.
+                 Performs selection as if CTRL key were held down during selection.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectPartialTextNodeSpecial' HREF='#detail_SelectPartialTextNodeSpecial' >SelectPartialTextNodeSpecial</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>
+               Holds down either Ctrl or Shift while making an item selection with emulating either a Left or Right mouse click.
+               The Selection is made according to a partial match of its text value.
+            </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectTextNode' HREF='#detail_SelectTextNode' >SelectTextNode</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Action to select a node according to its text value. 
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectTextNodeSpecial' HREF='#detail_SelectTextNodeSpecial' >SelectTextNodeSpecial</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>
+               Holds down either Ctrl or Shift while making an item selection with emulating either a Left or Right mouse click.
+            </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectUnverifiedTextNode' HREF='#detail_SelectUnverifiedTextNode' >SelectUnverifiedTextNode</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Action to (almost) blindly click a text node.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A ID="linkdeprecated" NAME='list_SelectUnverifiedTextNodeRightClick' HREF='#detail_SelectUnverifiedTextNodeRightClick' >SelectUnverifiedTextNodeRightClick</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Deprecated For:RightClickUnverifiedTextNode</TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetTreeContainsNode' HREF='#detail_SetTreeContainsNode' >SetTreeContainsNode</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>
+             		Sets a user-defined variable with the result of whether a tree contains the provided node.
+             	</TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyNodeUnselected' HREF='#detail_VerifyNodeUnselected' >VerifyNodeUnselected</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Action to verify a particular text node is NOT selected.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifySelectedNode' HREF='#detail_VerifySelectedNode' >VerifySelectedNode</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Action to verify a particular text node is selected.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyTreeContainsNode' HREF='#detail_VerifyTreeContainsNode' >VerifyTreeContainsNode</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>
+             		Verify that a tree contains the provided node.
+             	</TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyTreeContainsPartialMatch' HREF='#detail_VerifyTreeContainsPartialMatch' >VerifyTreeContainsPartialMatch</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>
+             	Verify that a tree contains the provided node according to a partial match of the node's text value.
+             	</TD>
+		  </TR>
+</tbody>
+</TABLE>
+<HR/>
+</DIV>
+		<DIV NAME="detail" ID="detail">
+		  <H3><A NAME='detail_CaptureTreeDataToFile'></A>TestComplete TreeViewFunctions::<BIG>CaptureTreeDataToFile</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Copy the current contents of a tree[branch] to a file.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>The search of the path to the node is expected to be a case-sensitive 
+             exact match of each node.  Use 'PartialMatchTreeDataToFile' if you 
+             wish to specify case-insensitive substring matches for tree nodes.             
+             </p>
+             By default, the files will be
+             stored in the active "Test" directory.  If you specify a
+             relative path, the path will be relative to the project
+             directory.  The directory for a full or relative path 
+             must already exist.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>File</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The name of the file used to store the tree data.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             The name of the file used to store the tree data.
+             By default, the files will be
+             stored in the active "Test" directory.  If you specify a
+             relative path, the path will be relative to the project
+             directory.  The directory for a full or relative path 
+             must already exist.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Branch</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+	                	The full name of the tree branch to capture.
+	                </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+	                	The full name of the tree branch to capture.  If omitted, all 
+	                	branches/nodes are captured.
+		        	<br><br>The search of the path to the node is expected to be a case-sensitive 
+		        	exact match of each node.  Use 'PartialMatchTreeDataToFile' if you 
+		        	wish to specify case-insensitive substring matches for tree nodes.             
+                        </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>IndentMark</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+		        	The character(s) to use in the output file to indent the tree nodes from the 
+		        	parent tree branches.
+		        </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+		         	The character(s) to use in the output file to indent the tree nodes from the 
+		        	parent tree branches.  If omitted, a tab character is used.
+              		</detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>FileEncoding</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Specify a character encoding to be used when saving data to a file.
+			 If it is not specified, the system default file encoding will be used.
+             The encoding should be a valid string supported by Java; if it is not valid,
+             the system default file encoding will be used instead.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>[ <B>FilterMode</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             (Future) Specify a file filter to use to process the text before comparison.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>[ <B>FilterOptions</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             (Future) Specify filter options to use with the file filter.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, Browser, aTreeView, CaptureTreeDataToFile, aFilename.ext</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Capture the complete nodeset of aTreeView to a file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Data is stored in 
+               [project]\Datapool\Test\aFilename.ext file using tab chars to indent the nodes and branches.
+               Because no Branch was specified, the data for the whole tree is captured.<br>
+               Note the unused reserved fields for FileFilter and FilterOptions were omitted.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, Browser, aJavaTree, CaptureTreeDataToFile, myDirectory\aFilename.ext, "Parent Bank-&gt;Branch Banking and Trust", "_"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Capture the data contents from 'Parent Bank-&gt;Branch Banking and Trust' to a file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Data is stored in 
+               [project]\myDirectory\aFilename.ext file using "_" chars to indent the nodes and branches.
+               Because a Branch was specified, only nodes from that branch are captured.<br>
+               Note the unused reserved fields for FileFilter and FilterOptions were omitted.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, Browser, aTreeView, CaptureTreeDataToFile, aFilename.ext, , , "UTF-8"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Capture the complete nodeset of aTreeView to a file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Capture the complete nodeset of aTreeView to a file.<BR>
+               Writing file with "UTF-8" encoding.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_ClickPartial'></A>TestComplete TreeViewFunctions::<BIG>ClickPartial</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to click a node according to a partial match of its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Partial matching is accomplished through case-insensitive substring 
+                 matching.  Each delimited node of the provided TextValue 
+                 is compared against the object data using this partial match comparison.
+                 <p>
+                 We have also made it possible to attempt to select the Nth duplicate 
+                 item with the optional MatchIndex parameter for those trees which we 
+                 can properly process.  Only the final node provided in the TextValue 
+                 hierarchy is evaluated for duplicity.  Intermediate nodes are always found 
+                 on a "first match" basis.
+                 </p></detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN> : <value xmlns="">Parameter text is case-sensitive substring of the tree node.</value><BR/>
+</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-Insensitive text of node to click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-insensitive text of the node to click.
+                 Parent-Child relationships are separated by "-&gt;"
+                 For each level, a text comparison is performed. If the node 
+                 contains the requested substring anywhere in its text, then 
+                 that node is considered a match.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p>
+<p>
+                 If the field parameter data does not match one of these two forms then 
+                 the data is ignored and the default(first match) is used.
+                 </p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, ClickPartial, "parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Click the first node with the substring "parent"--ignoring text case.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, ClickPartial, "parent", "3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Click the 3rd node with the substring "parent"--ignoring text case.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, ClickPartial, "parent", "Index=3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Click the 3rd node with the substring "parent"--ignoring text case.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, ClickPartial, "parent-&gt;child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Click the 1st child node containing substring "child" under a parent node 
+                containing substring "parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, ClickPartial, "parent-&gt;child", "3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Click the 3rd child node containing substring "child" under a parent node 
+                containing substring "parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_ClickTextNode'></A>TestComplete TreeViewFunctions::<BIG>ClickTextNode</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to click a node according to its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 We have also made it possible to attempt to select the Nth duplicate 
+                 item with the optional MatchIndex parameter for those trees which we 
+                 can properly process.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to click.
+                 Parent-Child relationships are separated by "-&gt;"
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p>
+<p>
+                 If the field parameter data does not match one of these two forms then 
+                 the data is ignored and the default(first match) is used.
+                 </p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, ClickTextNode, "Parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Clicks the first "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, ClickTextNode, "Parent", "3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Clicks the 3rd "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, ClickTextNode, "Parent", "Index=3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Clicks the 3rd "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, ClickTextNode, "Parent-&gt;Child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Clicks the first "Child" node found under first "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, ClickTextNode, "Parent-&gt;Child", "3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Clicks the 3rd "Child" node found under first "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_ClickUnverifiedTextNode'></A>TestComplete TreeViewFunctions::<BIG>ClickUnverifiedTextNode</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to (almost) blindly click a text node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 No attempt is made to verify that the node exists 
+                 prior to the selection.  No attempt to verify the node 
+                 has been properly selected after the selection.
+                 <p>
+                 It should be noted that a click requires the full 
+                 hierarchical path to the node to be selected.  Parent 
+                 child branches are delimited with '-&gt;' as in:<br>
+                    Parent-&gt;branch-&gt;leaf </p>
+<p>
+                 We have also made it possible to attempt to select the Nth duplicate 
+                 item with the optional MatchIndex parameter for those trees which we 
+                 can properly process.
+                 </p></detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN> : <value xmlns="">Implementation verifies the existence of the node, does NOT verify if it is selected.</value><BR/>
+</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of the node to be clicked
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to be clicked
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p>
+<p>
+                 If the field parameter data does not match one of these two forms then 
+                 the data is ignored and the default(first match) is used.
+                 </p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, ClickUnverifiedTextNode, "MyParent-&gt;MyBranch-&gt;MyNode"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Single click the first "MyNode" node on the TreeView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, ClickUnverifiedTextNode, "MyParent-&gt;MyBranch-&gt;MyNode", "3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Single click the 3rd duplicate "MyNode" node on the TreeView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, ClickUnverifiedTextNode, "MyParent-&gt;MyBranch-&gt;MyNode", "Index=3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Single click the 3rd duplicate "MyNode" node on the TreeView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_Collapse'></A>TestComplete TreeViewFunctions::<BIG>Collapse</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to collapse a node according to its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 We have also made it possible to attempt to select the Nth duplicate 
+                 item with the optional MatchIndex parameter for those trees which we 
+                 can properly process.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to collapse
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to collapse.
+                 Parent-Child relationships are separated by "-&gt;"
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p>
+<p>
+                 If the field parameter data does not match one of these two forms then 
+                 the data is ignored and the default(first match) is used.
+                 </p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, Collapse, "Parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Collapses the first "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, Collapse, "Parent", "3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Collapses the 3rd duplicate "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, Collapse, "Parent", "Index=3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Collapses the 3rd duplicate "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, Collapse, "Parent-&gt;Child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action collapses the "Child" node found under "Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, Collapse, "Parent-&gt;Child", "3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Collapses the 3rd duplicate "Child" node found under "Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_CollapsePartial'></A>TestComplete TreeViewFunctions::<BIG>CollapsePartial</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to collapse a node according to a partial match of its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Partial matching is accomplished through case-insensitive substring 
+                 matching.  Each delimited node of the provided TextValue 
+                 is compared against the object data using this partial match comparison.
+                 <p>
+                 We have also made it possible to attempt to select the Nth duplicate 
+                 item with the optional MatchIndex parameter for those trees which we 
+                 can properly process.  Only the final node provided in the TextValue 
+                 hierarchy is evaluated for duplicity.  Intermediate nodes are always found 
+                 on a "first match" basis.
+                 </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-Insensitive text of node to collapse
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-insensitive text of the node to collapse.
+                 Parent-Child relationships are separated by "-&gt;"
+                 For each level, a text comparison is performed. If the node 
+                 contains the requested substring anywhere in its text, then 
+                 that node is considered a match.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p>
+<p>
+                 If the field parameter data does not match one of these two forms then 
+                 the data is ignored and the default(first match) is used.
+                 </p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, CollapsePartial, "parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Collapse the first node with the substring "parent"--ignoring text case.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, CollapsePartial, "parent", "3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Collapse the 3rd node with the substring "parent"--ignoring text case.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, CollapsePartial, "parent", "Index=3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Collapse the 3rd node with the substring "parent"--ignoring text case.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, CollapsePartial, "parent-&gt;child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Collapse the 1st child node containing substring "child" under a parent node 
+                containing substring "parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, CollapsePartial, "parent-&gt;child", "3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Collapse the 3rd child node containing substring "child" under a parent node 
+                containing substring "parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_CollapseTextNode'></A>TestComplete TreeViewFunctions::<BIG>CollapseTextNode</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to collapse a node according to its text value. Use Collapse instead.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 This command might not function correctly when there
+                 are duplicate nodes in the tree.  However, we have made it possible to 
+                 attempt to select the Nth duplicate item with the optional MatchIndex 
+                 parameter for those trees which we can properly process.
+				 <br><b>RJ Implementation:</b> Works the same as command <b>Collapse</b>.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to collapse
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to collapse
+				 <br><b>RJ Implementation:</b>TextValue must be given as full path with separator "-&gt;". Example: "Parent-&gt;Child"
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p>
+<p>
+                 If the field parameter data does not match one of these two forms then 
+                 the data is ignored and the default(first match) is used.
+                 </p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, COLLAPSETEXTNODE, "MyNode"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Collapses the first "MyNode" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, COLLAPSETEXTNODE, "MyNode", 3</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Collapses the 3rd duplicate "MyNode" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, COLLAPSETEXTNODE, "MyNode", "Index=3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Collapses the 3rd duplicate "MyNode" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_DoubleClickPartial'></A>TestComplete TreeViewFunctions::<BIG>DoubleClickPartial</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to double click a node according to a partial match of its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Partial matching is accomplished through case-insensitive substring 
+                 matching.  Each delimited node of the provided TextValue 
+                 is compared against the object data using this partial match comparison.
+                 <p>
+                 We have also made it possible to attempt to select the Nth duplicate 
+                 item with the optional MatchIndex parameter for those trees which we 
+                 can properly process.  Only the final node provided in the TextValue 
+                 hierarchy is evaluated for duplicity.  Intermediate nodes are always found 
+                 on a "first match" basis.
+                 </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-Insensitive text of node to double click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-insensitive text of the node to double click.
+                 Parent-Child relationships are separated by "-&gt;"
+                 For each level, a text comparison is performed. If the node 
+                 contains the requested substring anywhere in its text, then 
+                 that node is considered a match.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p>
+<p>
+                 If the field parameter data does not match one of these two forms then 
+                 the data is ignored and the default(first match) is used.
+                 </p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, DoubleClickPartial, "parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Double-Click the first node with the substring "parent"--ignoring text case.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, DoubleClickPartial, "parent", "3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Double-Click the 3rd node with the substring "parent"--ignoring text case.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, DoubleClickPartial, "parent", "Index=3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Double-Click the 3rd node with the substring "parent"--ignoring text case.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, DoubleClickPartial, "parent-&gt;child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Double-Click the 1st child node containing substring "child" under a parent node 
+                containing substring "parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, DoubleClickPartial, "parent-&gt;child", "3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Double-Click the 3rd child node containing substring "child" under a parent node 
+                containing substring "parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_DoubleClickTextNode'></A>TestComplete TreeViewFunctions::<BIG>DoubleClickTextNode</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to double click a node according to its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 We have also made it possible to attempt to select the Nth duplicate 
+                 item with the optional MatchIndex parameter for those trees which we 
+                 can properly process.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to double click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to double click.
+                 Parent-Child relationships are separated by "-&gt;"
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p>
+<p>
+                 If the field parameter data does not match one of these two forms then 
+                 the data is ignored and the default(first match) is used.
+                 </p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, DoubleClickTextNode, "Parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Double-click the 1st "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, DoubleClickTextNode, "Parent", 3</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Double-click the 3rd duplicate "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, DoubleClickTextNode, "Parent", "Index=3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Double-click the 3rd duplicate "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, DoubleClickTextNode, "Parent-&gt;Child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Double-click the 1st "Child" node found under "Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, DoubleClickTextNode, "Parent-&gt;Child", 3</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Double-click the 3rd duplicate "Child" node found under "Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_DoubleClickUnverifiedTextNode'></A>TestComplete TreeViewFunctions::<BIG>DoubleClickUnverifiedTextNode</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to (almost) blindly activate (double-click) a text node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 No attempt is made to verify that the node exists 
+                 prior to the selection.  No attempt to verify the node 
+                 has been properly selected after the selection.
+                 <p>
+                 It should be noted that a click requires the full 
+                 hierarchical path to the node to be selected.  Parent 
+                 child branches are delimited with '-&gt;' as in:<br>
+                    Parent-&gt;branch-&gt;leaf </p>
+<p>
+                 We have also made it possible to attempt to select the Nth duplicate 
+                 item with the optional MatchIndex parameter for those trees which we 
+                 can properly process.
+                 </p></detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN> : <value xmlns="">Implementation verifies the existence of the node, does NOT verify if it is selected.</value><BR/>
+</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of the node to be clicked
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to be clicked
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p>
+<p>
+                 If the field parameter data does not match one of these two forms then 
+                 the data is ignored and the default(first match) is used.
+                 </p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, DoubleClickUnverifiedTextNode, "MyParent-&gt;MyBranch-&gt;MyNode"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Activate (double-click) the first "MyNode" node on the TreeView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, DoubleClickUnverifiedTextNode, "MyParent-&gt;MyBranch-&gt;MyNode", "3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Activate (double-click) the 3rd duplicate "MyNode" node on the TreeView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, DoubleClickUnverifiedTextNode, "MyParent-&gt;MyBranch-&gt;MyNode", "Index=3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Activate (double-click) the 3rd duplicate "MyNode" node on the TreeView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_Expand'></A>TestComplete TreeViewFunctions::<BIG>Expand</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to expand a node according to its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 We have also made it possible to attempt to select the Nth duplicate 
+                 item with the optional MatchIndex parameter for those trees which we 
+                 can properly process.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to expand
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to expand.
+                 Parent-Child relationships are separated by "-&gt;"
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p>
+<p>
+                 If the field parameter data does not match one of these two forms then 
+                 the data is ignored and the default(first match) is used.
+                 </p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, Expand, "Parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Expands the first "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, Expand, "Parent", 3</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Expands the 3rd duplicate "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, Expand, "Parent", "Index=3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Expands the 3rd duplicate "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, Expand, "Parent-&gt;Child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action expands the "Child" node found under "Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_ExpandPartial'></A>TestComplete TreeViewFunctions::<BIG>ExpandPartial</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to expand a node according to a partial match of text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Partial matching is accomplished through case-insensitive substring 
+                 matching.  Each delimited node of the provided TextValue 
+                 is compared against the object data using this partial match comparison.
+                 <p>
+                 We have also made it possible to attempt to select the Nth duplicate 
+                 item with the optional MatchIndex parameter for those trees which we 
+                 can properly process.  Only the final node provided in the TextValue is 
+                 evaluated for duplicity.  Intermediate nodes are always found on a 
+                 "first match" basis.
+                 </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-Insensitive text of node to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-insensitive text of the node.
+                 Parent-Child relationships are separated by "-&gt;".
+                 For each level, a text comparison is performed. If the node 
+                 contains the requested substring anywhere in its text, then 
+                 that node is considered a match.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p>
+<p>
+                 If the field parameter data does not match one of these two forms then 
+                 the data is ignored and the default(first match) is used.
+                 </p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, ExpandPartial, "parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Expands the first node with the substring "parent"--ignoring text case.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, ExpandPartial, "parent", "3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Expands the 3rd node with the substring "parent"--ignoring text case.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, ExpandPartial, "parent", "Index=3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Expands the 3rd node with the substring "parent"--ignoring text case.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, ExpandPartial, "parent-&gt;child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Expands the 1st child node containing substring "child" under a parent node 
+                containing substring "parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, ExpandPartial, "parent-&gt;child", "3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Expands the 3rd child node containing substring "child" under a parent node 
+                containing substring "parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_ExpandTextNode'></A>TestComplete TreeViewFunctions::<BIG>ExpandTextNode</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to expand a node according to its text value. Use Expand instead.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 This command might not function correctly when there
+                 are duplicate nodes in the tree.  However, we have made it possible to 
+                 attempt to select the Nth duplicate item with the optional MatchIndex 
+                 parameter for those trees which we can properly process.
+				 <br><b>RJ Implementation:</b> Works the same as command <b>Expand</b>.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to expand
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to expand.
+				 <br><b>RJ Implementation:</b>TextValue must be given as full path with separator "-&gt;". Example: "Parent-&gt;Child"
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p>
+<p>
+                 If the field parameter data does not match one of these two forms then 
+                 the data is ignored and the default(first match) is used.
+                 </p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, EXPANDTEXTNODE, "MyNode"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Expands the first "MyNode" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, EXPANDTEXTNODE, "MyNode", "3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Expands the 3rd node with duplicate text "MyNode".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, EXPANDTEXTNODE, "MyNode", "Index=3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Expands the 3rd node with duplicate text "MyNode".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_RightClickPartial'></A>TestComplete TreeViewFunctions::<BIG>RightClickPartial</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to right click a node according to a partial match of its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Partial matching is accomplished through case-insensitive substring 
+                 matching.  Each delimited node of the provided TextValue 
+                 is compared against the object data using this partial match comparison.
+                 <p>
+                 We have also made it possible to attempt to select the Nth duplicate 
+                 item with the optional MatchIndex parameter for those trees which we 
+                 can properly process.  Only the final node provided in the TextValue 
+                 hierarchy is evaluated for duplicity.  Intermediate nodes are always found 
+                 on a "first match" basis.
+                 </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-Insensitive text of node to right click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-insensitive text of the node to right click.
+                 Parent-Child relationships are separated by "-&gt;"
+                 For each level, a text comparison is performed. If the node 
+                 contains the requested substring anywhere in its text, then 
+                 that node is considered a match.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p>
+<p>
+                 If the field parameter data does not match one of these two forms then 
+                 the data is ignored and the default(first match) is used.
+                 </p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, RightClickPartial, "parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Right-Click the first node with the substring "parent"--ignoring text case.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, RightClickPartial, "parent", "3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Right-Click the 3rd node with the substring "parent"--ignoring text case.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, RightClickPartial, "parent", "Index=3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Right-Click the 3rd node with the substring "parent"--ignoring text case.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, RightClickPartial, "parent-&gt;child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Right-Click the 1st child node containing substring "child" under a parent node 
+                containing substring "parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, RightClickPartial, "parent-&gt;child", "3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Right-Click the 3rd child node containing substring "child" under a parent node 
+                containing substring "parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_RightClickTextNode'></A>TestComplete TreeViewFunctions::<BIG>RightClickTextNode</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to right click a node according to its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 It should be noted that a right click requires the full 
+                 hierarchical path to the node to be selected.  Parent 
+                 child branches are delimited with '-&gt;' as in:
+                    Parent-&gt;branch-&gt;leaf
+                 <p>
+                 We have also made it possible to attempt to select the Nth duplicate 
+                 item with the optional MatchIndex parameter for those trees which we 
+                 can properly process.
+                 </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of the node to be clicked
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to be clicked
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p>
+<p>
+                 If the field parameter data does not match one of these two forms then 
+                 the data is ignored and the default(first match) is used.
+                 </p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, RightClickTextNode, "MyParent-&gt;MyBranch-&gt;MyNode"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Single right-click the first "MyNode" node on the TreeView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, RightClickTextNode, "MyParent-&gt;MyBranch-&gt;MyNode", "3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Single right-click the 3rd duplicate "MyNode" node on the TreeView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, RightClickTextNode, "MyParent-&gt;MyBranch-&gt;MyNode", "Index=3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Single right-click the 3rd duplicate "MyNode" node on the TreeView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_RightClickUnverifiedTextNode'></A>TestComplete TreeViewFunctions::<BIG>RightClickUnverifiedTextNode</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to (almost) blindly right-click a text node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 No attempt is made to verify that the node exists 
+                 prior to the selection.  No attempt to verify the node 
+                 has been properly selected after the selection.
+                 <p>
+                 It should be noted that a click requires the full 
+                 hierarchical path to the node to be selected.  Parent 
+                 child branches are delimited with '-&gt;' as in:<br>
+                    Parent-&gt;branch-&gt;leaf </p>
+<p>
+                 We have also made it possible to attempt to select the Nth duplicate 
+                 item with the optional MatchIndex parameter for those trees which we 
+                 can properly process.
+                 </p></detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN> : <value xmlns="">Implementation verifies the existence of the node, does NOT verify if it is selected.</value><BR/>
+</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of the node to be clicked
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to be clicked
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p>
+<p>
+                 If the field parameter data does not match one of these two forms then 
+                 the data is ignored and the default(first match) is used.
+                 </p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, RightClickUnverifiedTextNode, "MyParent-&gt;MyBranch-&gt;MyNode"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Single Right-Click the first "MyNode" node on the TreeView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, RightClickUnverifiedTextNode, "MyParent-&gt;MyBranch-&gt;MyNode", "3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Single Right-Click the 3rd duplicate "MyNode" node on the TreeView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, RightClickUnverifiedTextNode, "MyParent-&gt;MyBranch-&gt;MyNode", "Index=3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Single Right-Click the 3rd duplicate "MyNode" node on the TreeView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_Select'></A>TestComplete TreeViewFunctions::<BIG>Select</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to select a node according to its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 We have also made it possible to attempt to select the Nth duplicate 
+                 item with the optional MatchIndex parameter for those trees which we 
+                 can properly process.
+				 <br><b>RJ Implementation:</b> Works the same as command <b>Click</b>.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to select.
+                 Parent-Child relationships are separated by "-&gt;"
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p>
+<p>
+                 If the field parameter data does not match one of these two forms then 
+                 the data is ignored and the default(first match) is used.
+                 </p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, Select, "Parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Selects the 1st "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, Select, "Parent", 3</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Selects the 3rd duplicate "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, Select, "Parent", "Index=3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Selects the 3rd duplicate "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, Select, "Parent-&gt;Child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Selects the first "Child" node found under "Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, Select, "Parent-&gt;Child", "3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Selects the 3rd duplicate "Child" node found under "Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SelectPartial'></A>TestComplete TreeViewFunctions::<BIG>SelectPartial</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to select a node according to a partial match of its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Partial matching is accomplished through case-insensitive substring 
+                 matching.  Each delimited node of the provided TextValue 
+                 is compared against the object data using this partial match comparison.
+                 <p>
+                 We have also made it possible to attempt to select the Nth duplicate 
+                 item with the optional MatchIndex parameter for those trees which we 
+                 can properly process.  Only the final node provided in the TextValue 
+                 hierarchy is evaluated for duplicity.  Intermediate nodes are always found 
+                 on a "first match" basis.
+                 </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-Insensitive text of node to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-insensitive text of the node to select.
+                 Parent-Child relationships are separated by "-&gt;"
+                 For each level, a text comparison is performed. If the node 
+                 contains the requested substring anywhere in its text, then 
+                 that node is considered a match.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p>
+<p>
+                 If the field parameter data does not match one of these two forms then 
+                 the data is ignored and the default(first match) is used.
+                 </p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, SelectPartial, "parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Select the first node with the substring "parent"--ignoring text case.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, SelectPartial, "parent", "3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Select the 3rd node with the substring "parent"--ignoring text case.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, SelectPartial, "parent", "Index=3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Select the 3rd node with the substring "parent"--ignoring text case.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, SelectPartial, "parent-&gt;child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Select the 1st child node containing substring "child" under a parent node 
+                containing substring "parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, SelectPartial, "parent-&gt;child", "3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Select the 3rd child node containing substring "child" under a parent node 
+                containing substring "parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SelectPartialTextNode'></A>TestComplete TreeViewFunctions::<BIG>SelectPartialTextNode</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to select a node according to a partial match of its text value.
+                 Performs selection as if CTRL key were held down during selection.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-Insensitive text of node to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-insensitive text of the node to select.
+                 Parent-Child relationships are separated by "-&gt;"
+                 For each level, a text comparison is performed. If the node 
+                 contains the requested substring anywhere in its text, then 
+                 that node is considered a match.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, AJTree, SelectPartialTextNode, "parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the "My New Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AJTree, SelectPartialTextNode, "parent-&gt;child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the "My Stepchild" node found under "My New Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SelectPartialTextNodeSpecial'></A>TestComplete TreeViewFunctions::<BIG>SelectPartialTextNodeSpecial</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Holds down either Ctrl or Shift while making an item selection with emulating either a Left or Right mouse click.
+               The Selection is made according to a partial match of its text value.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>This keyword can be used to select multiple items.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-Insensitive text (can be a part of whole text) of node to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-insensitive text (can be a part of whole text) of the node to select.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p>
+<p>
+                 If the field parameter data does not match one of these two forms then 
+                 the data is ignored and the default(first match) is used.
+                 </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>SpecialKey</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               The special key command used in the row selection.
+	           For now, only Control and Shift are supported.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>
+<B>MouseClick</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+	           The type of mouse click needed.
+		       For now, only Left and Right are supported.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, SelectPartialTextNodeSpecial, "parent", , Shift, Left</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Make mouse-left-click on the first node with the substring "parent"--ignoring text case,
+                in the same time the key 'Shift' is pressed down.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, SelectPartialTextNodeSpecial, "parent", , Control, Left</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Make mouse-left-click on the first node with the substring "parent"--ignoring text case,
+                in the same time the key 'Ctrl' is pressed down.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SelectTextNode'></A>TestComplete TreeViewFunctions::<BIG>SelectTextNode</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to select a node according to its text value. 
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 This command might not function correctly when there
+                 are duplicate nodes in the tree.  However, we have made it possible to 
+                 attempt to select the Nth duplicate item with the optional MatchIndex 
+                 parameter for those trees which we can properly process.
+				 <br><b>RJ Implementation:</b> Works the same as command <b>Select</b>.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of the node to be selected.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to be selected.
+  				 <br><b>RJ Implementation:</b>TextValue must be given as full path with separator "-&gt;". Example: "Parent-&gt;Child"
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p>
+<p>
+                 If the field parameter data does not match one of these two forms then 
+                 the data is ignored and the default(first match) is used.
+                 </p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, SELECTTEXTNODE, "MyNode"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Selects the first "MyNode" node on the TreeView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, SELECTTEXTNODE, "MyNode", 3</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Selects the 3rd duplicate "MyNode" node on the TreeView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, SELECTTEXTNODE, "MyNode", "Index=3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Selects the 3rd duplicate "MyNode" node on the TreeView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SelectTextNodeSpecial'></A>TestComplete TreeViewFunctions::<BIG>SelectTextNodeSpecial</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Holds down either Ctrl or Shift while making an item selection with emulating either a Left or Right mouse click.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>This keyword can be used to select multiple items.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to select.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p>
+<p>
+                 If the field parameter data does not match one of these two forms then 
+                 the data is ignored and the default(first match) is used.
+                 </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>SpecialKey</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               The special key command used in the row selection.
+	           For now, only Control and Shift are supported.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>
+<B>MouseClick</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+	           The type of mouse click needed.
+		       For now, only Left and Right are supported.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, SelectTextNodeSpecial, "Parent", , Shift, Left</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Make mouse-left-click on the first node with the text "Parent" exactly matched,
+                in the same time the key 'Shift' is pressed down.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATreeView, SelectTextNodeSpecial, "Parent", , Control, Left</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Make mouse-left-click on the first node with the text "Parent" exactly matched,
+                in the same time the key 'Ctrl' is pressed down.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SelectUnverifiedTextNode'></A>TestComplete TreeViewFunctions::<BIG>SelectUnverifiedTextNode</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to (almost) blindly click a text node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 No attempt is made to verify that the node exists 
+                 prior to the selection.  No attempt to verify the node 
+                 has been properly selected after the selection.
+                 <p>
+                 It should be noted that a click requires the full 
+                 hierarchical path to the node to be selected.  Parent 
+                 child branches are delimited with '-&gt;' as in:<br>
+                    Parent-&gt;branch-&gt;leaf </p>
+<p>
+                 We have also made it possible to attempt to select the Nth duplicate 
+                 item with the optional MatchIndex parameter for those trees which we 
+                 can properly process.
+                 </p></detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN> : <value xmlns="">Implementation verifies the existence of the node, does NOT verify if it is selected.</value><BR/>
+</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of the node to be clicked
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to be clicked
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p>
+<p>
+                 If the field parameter data does not match one of these two forms then 
+                 the data is ignored and the default(first match) is used.
+                 </p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, SelectUnverifiedTextNode, "MyParent-&gt;MyBranch-&gt;MyNode"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Single click the first "MyNode" node on the TreeView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, SelectUnverifiedTextNode, "MyParent-&gt;MyBranch-&gt;MyNode", "3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Single click the 3rd duplicate "MyNode" node on the TreeView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, SelectUnverifiedTextNode, "MyParent-&gt;MyBranch-&gt;MyNode", "Index=3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Single click the 3rd duplicate "MyNode" node on the TreeView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SelectUnverifiedTextNodeRightClick'></A>TestComplete TreeViewFunctions::<SPAN ID="deprecated">SelectUnverifiedTextNodeRightClick</SPAN>  (deprecated for: <B>RightClickUnverifiedTextNode</B>)</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Skips many pre- and post-verification checks for right-clicks.
+                 Deprecated. Use RightClick instead.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 We have also made it possible to attempt to select the Nth duplicate 
+                 item with the optional MatchIndex parameter for those trees which we 
+                 can properly process.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of the node to be clicked
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to be clicked
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p>
+<p>
+                 If the field parameter data does not match one of these two forms then 
+                 the data is ignored and the default(first match) is used.
+                 </p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, SelectUnverifiedTextNodeRightClick, "MyParent-&gt;MyBranch-&gt;MyNode"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Single right-click the first "MyNode" node on the TreeView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, SelectUnverifiedTextNodeRightClick, "MyParent-&gt;MyBranch-&gt;MyNode", "3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Single right-click the 3rd duplicate "MyNode" node on the TreeView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SetTreeContainsNode'></A>TestComplete TreeViewFunctions::<BIG>SetTreeContainsNode</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             		Sets a user-defined variable with the result of whether a tree contains the provided node.
+             	</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>The search of the path to the node is expected to be a case-sensitive 
+             		exact match of each node.  Use 'SetTreeContainsPartialMatch' if you 
+             		wish to specify case-insensitive substring matches for tree nodes.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>Node</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             				The name of the node to verify.
+              			</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+							The search of the path to the node is expected to be a case-sensitive 
+							exact match of each node.  Use 'SetTreeContainsPartialMatch' if you 
+							wish to specify case-insensitive substring matches for tree nodes.
+							<br><b>RJ Implementation:</b>TextValue must be given as full path with separator "-&gt;". Example: "Parent-&gt;Child"
+              			</detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>ResultVar</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+	             			The name of the variable which gets assigned the result.
+	              		</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+	             			The value of 'TRUE' indicates the node was found in the tree, and 'FALSE'
+	             			indicates that the node was not found in the tree.
+	              		</detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, Browser, aTreeView, SetTreeContainsNode, "Parent Bank-&gt;Branch Banking and Trust", isFound</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               			Variable isFound will be set to 'TRUE' if the node 'Parent Bank-&gt;Branch Banking and Trust' 
+               			is found in aTreeView.  If not found, isFound will be set to 'FALSE'.
+              			</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_VerifyNodeUnselected'></A>TestComplete TreeViewFunctions::<BIG>VerifyNodeUnselected</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to verify a particular text node is NOT selected.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to be verified NOT selected
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to be verified NOT selected
+				 <br><b>RJ Implementation:</b>TextValue must be given as full path with separator "-&gt;". Example: "Parent-&gt;Child"				 
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, VERIFYNODEUNSELECTED, "MyNode"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action verifies the "MyNode" node on the TreeView object is NOT selected
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_VerifySelectedNode'></A>TestComplete TreeViewFunctions::<BIG>VerifySelectedNode</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to verify a particular text node is selected.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to be verified selected
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to be verified selected
+				 <br><b>RJ Implementation:</b>TextValue must be given as full path with separator "-&gt;". Example: "Parent-&gt;Child"				  
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, VERIFYSELECTEDNODE, "MyNode"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action verifies the "MyNode" node on the TreeView object is selected
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_VerifyTreeContainsNode'></A>TestComplete TreeViewFunctions::<BIG>VerifyTreeContainsNode</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             		Verify that a tree contains the provided node.
+             	</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>The search of the path to the node is expected to be a case-sensitive 
+             		exact match of each node.  Use 'VerifyTreeContainsPartialMatch' if you 
+             		wish to specify case-insensitive substring matches for tree nodes.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>Node</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             		The name of the node to verify.
+              	</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             		The search of the path to the node is expected to be a case-sensitive 
+	     		exact match of each node.  Use 'VerifyTreeContainsPartialMatch' if you 
+	     		wish to specify case-insensitive substring matches for tree nodes.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, Browser, aTreeView, VerifyTreeContainsNode, "Parent Bank-&gt;Branch Banking and Trust"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               		Verify the node 'Parent Bank-&gt;Branch Banking and Trust' is found in aTreeView.
+              	</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_VerifyTreeContainsPartialMatch'></A>TestComplete TreeViewFunctions::<BIG>VerifyTreeContainsPartialMatch</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             	Verify that a tree contains the provided node according to a partial match of the node's text value.
+             	</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>The search of the path to the node is expected to be a case-insensitive 
+             		substring match of each node.  Use 'VerifyTreeContainsNode' if you 
+             		wish to specify case-sensitive substring matches for tree nodes.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>Node</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             		The name of the node to verify.
+              	</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             		The search of the path to the node is expected to be a case-insensitive 
+			substring match of each node.  Use 'VerifyTreeContainsNode' if you 
+             		wish to specify case-sensitive substring matches for tree nodes.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, Browser, aTreeView, VerifyTreeContainsNode, "parent-&gt;branch"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               		Verify that a child node of 'parent' containing 'branch' is found in aTreeView.
+              	</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+			Thus, this could be a match for 'Parent Bank-&gt;Branch Banking and Trust'.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+		</DIV>
+</BODY>
+</HTML>
+	

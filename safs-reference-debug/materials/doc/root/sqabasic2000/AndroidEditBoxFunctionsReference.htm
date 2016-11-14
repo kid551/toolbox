@@ -1,0 +1,262 @@
+<HTML xmlns="http://www.w3.org/TR/REC-html40"><HEAD>
+<TITLE>Android EditBoxFunctions</TITLE>
+<LINK rel="stylesheet" href="rrafs.css" type="text/css"/>
+</HEAD><BODY><DIV NAME="top" ID="top">
+		  <H3>Android EditBoxFunctions</H3>
+		  <SMALL>Last Updated:<script language="JavaScript">document.write(document.lastModified)</script></SMALL>
+<BR/>
+<BR/>
+<DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+              Actions for working with EditBox objects
+           </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</DIV>
+<BR/>
+		<DIV NAME="list" ID="list">
+		  <A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE cellspacing="3" border="1" cellpadding="2">
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetTextCharacters' HREF='#detail_SetTextCharacters' >SetTextCharacters</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN>:<SPAN CLASS='domainMarker' TITLE='DEV Domain'>DEV</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+            Set the text of the editbox
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetTextValue' HREF='#detail_SetTextValue' >SetTextValue</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN>:<SPAN CLASS='domainMarker' TITLE='DEV Domain'>DEV</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Set the text of the editbox
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetUnverifiedTextCharacters' HREF='#detail_SetUnverifiedTextCharacters' >SetUnverifiedTextCharacters</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN>:<SPAN CLASS='domainMarker' TITLE='DEV Domain'>DEV</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+            Set the text of the editbox
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetUnverifiedTextValue' HREF='#detail_SetUnverifiedTextValue' >SetUnverifiedTextValue</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN>:<SPAN CLASS='domainMarker' TITLE='DEV Domain'>DEV</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Set the text of the editbox without verification
+              </TD>
+</TR>
+</TABLE>
+<HR/>
+</DIV>
+		<DIV NAME="detail" ID="detail">
+		  <H3><A NAME='detail_SetTextCharacters'></A>Android EditBoxFunctions::<BIG>SetTextCharacters</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN>:<SPAN CLASS='domainMarker' TITLE='DEV Domain'>DEV</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+            Set the text of the editbox
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                This action sets the text of the editbox.
+                It verifies we can read the property, sets the text value and then 
+                verifies that the property has been set to that value.
+                This routine uses only the literal text provided.  It does not attempt 
+                to convert or interpret the text provided as special characters.  To 
+                do that, see the SetTextValue command.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>[ <B>TextValue</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The text that will be typed into the EditBox.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+             TextValue will be the text that will be typed into the Editbox.
+                 Quoted text may be used to ensure proper expected value retrieval.
+                 There is also no check for a missing field because that would be
+                 the same as specifying no text ("")--which is valid.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, EditBox, SETTEXTCHARACTERS,  "MyPassword"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             "MyPassword" is typed into the Editbox. 
+                 Note: NO special character processing occurs. Literal text is sent unmodified. 
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SetTextValue'></A>Android EditBoxFunctions::<BIG>SetTextValue</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN>:<SPAN CLASS='domainMarker' TITLE='DEV Domain'>DEV</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Set the text of the editbox
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>This action sets the text of the editbox.  This version allows the use 
+                of special character combinations and substrings to identify specific 
+                keyboard keys.  These are the same special characters and interpretation 
+                used for Robot's InputKeys command and the Windows Scripting Host.</p>
+<p>
+                ~^+%{( are primarily the characters that induce special processing.</p>
+<p>
+                The routine verifies we can read the text property, sets the text value 
+                and will verify that the property has been set to that value *IF* none 
+                of the special characters exist in the provided text value.  If those 
+                special characters exist, then no post-set verification will occur.</p>
+<p>
+                If you do not want to have any characters converted or interpretted as 
+                special characters then you need to use the SetTextCharacters command.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>[ <B>TextValue</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The text that will be typed into the EditBox and verified.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 TextValue will be the text that will be typed into the Editbox.
+                 Quoted text may be used to ensure proper expected value retrieval.
+                 There is also no check for a missing field because that would be
+                 the same as specifying no text ("")--which is valid.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, EditBox, SetTextValue,  "MyPassword"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             "MyPassword" is typed into the Editbox and verified.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SetUnverifiedTextCharacters'></A>Android EditBoxFunctions::<BIG>SetUnverifiedTextCharacters</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN>:<SPAN CLASS='domainMarker' TITLE='DEV Domain'>DEV</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+            Set the text of the editbox
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                This action sets the text of the editbox.
+                This routine uses only the literal text provided.  It does not attempt 
+                to convert or interpret the text provided as special characters.  To 
+                do that, see the SetTextValue commands.<br>
+                No attempt to verify the EditBox value is performed.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>[ <B>TextValue</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The text that will be typed into the EditBox.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 TextValue will be the text that will be typed into the Editbox.
+                 Quoted text may be used to ensure proper expected value retrieval.
+                 There is also no check for a missing field because that would be
+                 the same as specifying no text ("")--which is valid.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, EditBox, SetUnverifiedTextCharacters,  "My+(Password)"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+              "My+(Password)" is typed into the Editbox without modification. <br>
+              Note: NO special character processing occurs.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SetUnverifiedTextValue'></A>Android EditBoxFunctions::<BIG>SetUnverifiedTextValue</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN>:<SPAN CLASS='domainMarker' TITLE='DEV Domain'>DEV</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Set the text of the editbox without verification
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>This action sets the text of the editbox.  This version allows the use 
+                of special character combinations and substrings to identify specific 
+                keyboard keys.  These are the same special characters and interpretation 
+                used for Robot's InputKeys command and the Windows Scripting Host.</p>
+<p>
+                The routine does not verify that the property has been set to that 
+                value.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>[ <B>TextValue</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The text that will be typed into the EditBox.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 TextValue will be the text that will be typed into the Editbox.
+                 Quoted text may be used to ensure proper expected value retrieval.
+                 There is also no check for a missing field because that would be
+                 the same as specifying no text ("")--which is valid.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, EditBox, SetUnverifiedTextValue,  "MyPassword"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             "MyPassword" is typed into the Editbox. No verification occurs.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+		</BODY>
+</HTML>
+	

@@ -1,0 +1,83 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_OnGUIExistsGotoBlockID'></A>IOS DDDriverFlowCommands::<BIG>OnGUIExistsGotoBlockID</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                 Goto the named block in the current table if a GUI component exists.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>
+<B>BlockID</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                 The name of the block to Goto.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>
+<B>WindowID</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                 A Window reference from the app map.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>
+<B>ComponentID</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                 A reference from the app map for the Component within the Window.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 A reference from the app map for the Component within the Window.
+                 If the Window is the item of interest then both the WindowID and
+                 ComponentID will be the same.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>TimeOut</B> = 15 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                 Timeout value in seconds before exiting automatically (no branch).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">C, OnGUIExistsGotoBlockID, "WindowExists", AWindow, AWindow </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                 Goto the block named "WindowExists" if AWindow becomes valid in 15 seconds.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">C, OnGUIExistsGotoBlockID, "ButtonExists", AWindow, AButton, 10 </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                 Goto the block named "ButtonExists" if AButton on AWindow becomes valid
+                 in 10 seconds.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

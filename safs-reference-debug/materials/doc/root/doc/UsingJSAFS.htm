@@ -1,0 +1,177 @@
+<HTML>
+<HEAD>
+<TITLE>
+Using JSAFS
+</TITLE>
+</HEAD>
+<BODY>
+<center><H1>Using JSAFS, the Java API for SAFS</H1></center>
+<p>
+<hr>
+Author: Carl Nagle<br/>
+ Since: MAR 30, 2006<br/>
+Update: JUL 01, 2016
+<p>
+Copyright, SAS Institute
+<a href="http://www.sas.com" target="altwin">http://www.sas.com</a><br/>
+<a href="http://www.opensource.org/licenses/gpl-license.php" target="altwin">General Public License (GPL)</a>:&nbsp;
+http://www.opensource.org/licenses/gpl-license.php<br/>
+<hr>
+<a name="top"/>
+<P>
+JSAFS Developers should refer to: <a href="http://safsdev.sourceforge.net/doc/javadoc.html" target="_blank">SAFS JavaDoc</a>.<small>(<a href="https://github.com/SAFSDEV/Core/tree/master/src/" target="_blank">Src</a>)</small><br/>
+Key documentation of interest therein are the packages for:
+<p><ul>
+<li><a href="http://safsdev.sourceforge.net/doc/org/safs/model/commands/package-summary.html" target="_api">org.safs.model.commands</a>&nbsp;<small>(<a href="https://github.com/SAFSDEV/Core/tree/master/src/org/safs/model/commands/" target="_blank">Src</a>)</small>
+<li><a href="http://safsdev.sourceforge.net/doc/org/safs/model/components/package-summary.html" target="_api">org.safs.model.components</a>&nbsp;<small>(<a href="https://github.com/SAFSDEV/Core/tree/master/src/org/safs/model/components/" target="_blank">Src</a>)</small>
+<li><a href="http://safsdev.sourceforge.net/doc/org/safs/model/examples/advanced/package-summary.html" target="_api">org.safs.model.examples.advanced</a>&nbsp;<small>(<a href="https://github.com/SAFSDEV/Core/tree/master/src/org/safs/model/examples/advanced/" target="_blank">Src</a>)</small>
+<li><a href="http://safsdev.sourceforge.net/doc/org/safs/model/tools/package-summary.html" target="_api">org.safs.model.tools</a>&nbsp;<small>(<a href="https://github.com/SAFSDEV/Core/tree/master/src/org/safs/model/tools/" target="_blank">Src</a>)</small>
+</ul>
+<p>
+<a href="http://safsdev.sourceforge.net/sqabasic2000/SetupJSAFS.README.htm" target="_blank" alt"JSAFS Install and Setup Instructions" title="JSAFS Install and Setup Instructions">Installation and setup of Instructions for JSAFS</a>.
+<p>
+The source and class files for the JSAFS API are provided in <b><i>safsmodel.jar</i></b>.<br/>
+Note, also, the documentation for the <a href="http://safsdev.sourceforge.net/doc/org/safs/tools/drivers/JSAFSDriver.html" target="_api">JSAFSDriver</a>&nbsp;<small>(<a href="https://github.com/SAFSDEV/Core/tree/master/src/org/safs/tools/drivers/JSAFSDriver.java" target="_blank">Src</a>)</small>--intended for Advanced Runtime frameworks and scenarios (discussed later).
+<p>
+<hr>
+<a name="background"/>
+<small><a href="#top">Back To Top</a>, <a href="#advancedruntime">Advanced Runtime Development</a></small>
+<H3><i>What exactly is JSAFS?</i></H3>
+
+JSAFS is a Java API for writing tool-independent tests that can be executed in the SAFS environment. &nbsp;The SAFS environment provides these key test automation features not readily available in one package anywhere else:
+<p>
+<ul><dl>
+
+<dt><b>SAFSLOGS</b> and <b>Debug Logs</b>
+
+<p><dd>Advanced centralized logging available for all processes running on the machine.<br/>
+	All test services, test drivers, test engines, and custom processes--whether they are Java, C/C++, COM, .Net, Perl, Python, VBScript, Ruby, etc...all can write to one or more common test logs and Debug Logs. &nbsp;All testing tools and processes--including those executing on remote devices like Android and iPhone also write to these same logs. &nbsp;Logs can be written in both Text and XML formats as well as being visible in some tools' Consoles.
+
+<p><dt><b>SAFSMAPS</b>
+
+<p><dd>Advanced centralized mapping (INI/Properties) storage for all processes running on the machine.<br/>
+	All test services, test drivers, test engines, and custom processes--whether they are Java, C/C++, COM, .Net, Perl, Python, VBScript, Ruby, etc...all can access the stored mappings. &nbsp;SAFSMAPS also integrates with SAFSVARS for dynamic embedded variable resolution to allow non-static values to be created and retrieved at runtime. &nbsp;Maps and their values can be "chained"--allowing seemless lookup for localization/NLS values across multiple map files.
+
+<p><dt><b>SAFSVARS</b>
+
+<p><dd>Advanced centralized variables storage for all processes running on the machine.<br/>
+	All test services, test drivers, test engines, and custom processes--whether they are Java, C/C++, COM, .Net, Perl, Python, VBScript, Ruby, etc...all can read and write shared variable values. &nbsp;SAFSVARS also integrates with SAFSMAPS to provide "constants" stored in Map files. &nbsp;SAFSVARS provides variable values to SAFSMAPS at runtime for dynamic embedded variable resolution of non-static map values.
+
+<p><dt><b>Advanced NLS/Localization Support</b>
+
+<p><dd>The "chaining" of mutliple SAFSMAPS Map files combined with SAFSVARS variable embedding in mapped values provides outstanding support for "write once run everywhere" when it comes to testing an application across multiple languages or configurations. &nbsp;A "generic" Map file containing no language dependencies can be chained to an English-language map file, or a Chinese Map file, or any other Map file needed for the particular test configuration/language being tested. &nbsp;These can also be dynamically swapped in and out at runtime via Driver Commands.
+
+<p><dt><b>Tool-independent Interface to Common Test Automation Tools</b>
+
+<p><dd>JSAFS provides a Java API for common test automation actions and activities regardless of which test automation tool is going to be used to actually run them. &nbsp;A JSAFS test can be used to drive IBM Rational Functional Tester, SmartBear Test Complete, SAFS/Robotium Remote Control for Android, Apple SDK iOS UIAutomation, and any other test automation tool made available as a SAFS execution engine. &nbsp;Because this is one common API for all testing tools, the tester or developer is able to migrate from one tool to another as needed without having to learn each new test tool IDE or API.
+
+</dl></ul>
+<p>
+With this "<a href="#advancedruntime">Advanced Runtime</a>", the Java code *is* the test and it contains runtime calls to the SAFS framework to accomplish tool-independent test activities. &nbsp;There generally are no SAFS test tables created and all testing is driven from the developer's independent JSAFS-enabled Java program sending test records to the running engine(s).
+<p>
+<ul><b>The Java "program" and the tests that ultimately result from it are not tied to any specific execution engine or automation tool. &nbsp;The developer can use any testing tool supported by SAFS. &nbsp;These are SAFS tool-independent tests!</b>
+</ul><p>
+While the JSAFS API is provided for Java test development, the code or applications to be tested are not limited to Java clients.&nbsp; You can develop tests for:
+<p>
+<ul>
+<li>Java,
+<li>Web, REST
+<li>.NET,
+<li>Flex,
+<li>C\C++,
+<li>Windows(Native)
+<li>COM,
+<li>jUnit,API
+<li>Android Devices
+<li>Virtually any environment a SAFS execution engine can support.
+</ul>
+<p>
+The most common SAFS engines (testing tools) in use are:
+<p>
+<ul>
+<li>SAFS Driver Commands (SDC),
+<li>Selenium 2.0 WebDriver,
+<li>SmartBear Test Complete�,
+<li>IBM Rational Functional Tester�,
+<li>AutoIt,
+<li>jUnit
+<li>Cucumber
+<li>Groovy/Spock
+<li>SAFS Image-Based Testing (IBT)
+<li>SeInterpreter/SeBuilder/SeleniumIDE Scripts
+<li>Android SDK SAFS/Robotium Remote Control,
+<p>
+Some other engine possibilities are:
+<p>
+<li>HP QuickTest Professional�,
+<li>WSH VBScript,
+<li>WSH JavaScript,
+<li>Perl,
+<li>Python,
+<li>Ruby,
+<li>Almost any 3rd party automation tool or suite...
+</ul>
+<p>
+
+<H3><i>Why use JSAFS?</i></H3>
+
+<p>
+JSAFS attempts to engage Java-savvy developers and testers exploiting tools like Eclipse allowing them to develop tool-independent SAFS tests in a familiar development environment (IDE). &nbsp;It allows them to code tests that are still independent of the testing tools used at runtime while leveraging the Java IDE to provide a wealth of information and documentation for the JSAFS API and the SAFS Keyword implementations--the <a href="http://safsdev.sourceforge.net/sqabasic2000/SAFSReference.php" target="_blank">SAFS Reference</a>.
+<p>
+The detailed information provided in the SAFS Reference is encapsulated into Java functions with JavaDoc. &nbsp;Thus, the Java IDE is able to present this information to the developer in a context-sensitive manner via the auto-complete, tooltips and popups they already know. &nbsp;Every SAFS command is available as a "callable" function. &nbsp;Documentation for commands, component types, available functions, and parameters are available in the IDE, as shown below.
+<p>
+<center><b>Sample Eclipse IDE Snapshot</b>:
+<p>
+<img border="1" src="jsafs_ide.gif" alt="Eclipse IDE Snapshot"/></center>
+<p>
+
+
+<H3><i>How would I use JSAFS?</i></H3>
+
+
+The SAFS framework has been designed from the ground up with an open architecture. &nbsp;It is a collection of testing tools and utilities connected together through a SAFS-defined protocol using <a href="http://staf.sourceforge.net" target="_blank">STAF</a>.
+<p>
+Java is an especially well-supported interface into SAFS which means Java developers using JSAFS have nearly endless possibilities for how they can exploit SAFS. &nbsp;Other programming languages like VBScript, Perl, and C\C++ are also well supported, but do not (yet) have a comprehensive API interface to SAFS like JSAFS.
+<p>
+While "traditional" SAFS execution has engaged a multi-process STAF service architecture allowing multiple different tools and languages to be used simultaneously, there is the availability of SAFS being operated as a single-process "embedded" service architecture within a single Java JVM--no STAF. &nbsp;This is only viable in an all-Java runtime in which the test, the runtime engine(s), and the testing services are all Java-based. An example of this is our SeleniumPlus tool using Selenium 2.0 WebDriver Java bindings and all Java-based tools and services.
+<p>
+<b>Integrating with other non-JSAFS assets:</b><br/>
+JSAFS tests do not have to live in a JSAFS-only world.&nbsp; There may be developers writing JSAFS tests (Java) in their environments that must integrate with and have dependencies on SAFS test tables  developed in Access, Excel, TextPad, or some other test table development tools.
+<p>
+It is possible for a traditional SAFS test with test tables to invoke the <A href="http://safsdev.sourceforge.net/sqabasic2000/SAFSReference.php?rt=C&lib=DDDriverFlowCommands&cmd=CallJUnit" target="_blank" title="CallJUnit Driver Command Doc">CallJUnit Driver Command</a> to execute any number of Java-based JUnit tests. &nbsp;And these JUnit tests have full access to the available SAFS services and runtime engines through multiple mechanisms--including the latest <a href="http://safsdev.sourceforge.net/doc/org/safs/model/tools/Runner.html" target="_blank" title="org.safs.model.tools.Runner JavaDoc" alt="org.safs.model.tools.Runner JavaDoc">org.safs.model.tools.Runner</a>&nbsp;<small>(<a href="https://github.com/SAFSDEV/Core/tree/master/src/org/safs/model/tools/Runner.java" target="_blank">Src</a>)</small>.
+<p>
+We also may soon support the execution of any arbitrary Java class or Method via future commands like CallJava. &nbsp;These too will have access to that same Runner class for exploiting the use of SAFS services and engines.
+<p>
+<hr>
+<a name="advancedruntime"/>
+
+<small><a href="#top">Back To Top</a>, <a href="#background">Background Info</a></small>
+
+
+<H2><i>JSAFS Advanced Runtime Development</i></H2>
+
+
+Because JSAFS is a Java API, and because the SAFS Core is almost entirely Java-based, we are starting to see Java developers and testers coding their test logic in Java and foregoing the use of the SAFS test table processor <a href="http://safsdev.sourceforge.net/doc/org/safs/tools/drivers/SAFSDRIVER.html" alt="Standard SAFS Driver Class" target="_blank">SAFS DRIVER</a>&nbsp;<small>(<a href="https://github.com/SAFSDEV/Core/tree/master/src/org/safs/tools/drivers/SAFSDRIVER.java" target="_blank">Src</a>)</small> altogether. &nbsp;This is exactly the mode of test development and execution offered in our SeleniumPlus tool wrapping Selenium 2.0 WebDriver support as a SAFS Test Engine.
+<p>
+In other cases, some developer/testers are writing custom test drivers (and sometimes whole frameworks!) in Java. &nbsp;However, this Java code is still tool-independent and the tests still migrate from one testing tool to another as readily as any other SAFS test deployed as traditional test tables.
+<p>
+One possible (but rarely used) mechanism for using JSAFS in this way is for the new custom Java class to be a direct subclass of <a href="http://safsdev.sourceforge.net/doc/org/safs/tools/drivers/SAFSDRIVER.html" alt="SAFS Driver Class" target="_blank">SAFSDRIVER</a>&nbsp;<small>(<a href="https://github.com/SAFSDEV/Core/tree/master/src/org/safs/tools/drivers/SAFSDRIVER.java" target="_blank">Src</a>)</small>, or its superclass: <a href="http://safsdev.sourceforge.net/doc/org/safs/tools/drivers/DefaultDriver.html" alt="Standard SAFS Driver Class" target="_blank">DefaultDriver</a>&nbsp;<small>(<a href="https://github.com/SAFSDEV/Core/tree/master/src/org/safs/tools/drivers/DefaultDriver.java" target="_blank">Src</a>)</small>. &nbsp;By doing this, the developer inherits all the core startup and initialization capabilities of SAFSDRIVER--including the startup of required SAFS services and engines. &nbsp; In addition, the custom SAFS driver has easy API access to all the SAFS services for handling variables, appmaps, NLS, and logging. &nbsp;The new driver will also inherit the running <a href="http://safsdev.sourceforge.net/sqabasic2000/UsingSAFSMonitor.htm" alt="SAFS Monitor Doc" target="_blank">SAFS Monitor</a> allowing the tester or developer to Pause, Resume, Step, and Shutdown a running test, if desired.
+<p>
+<center><b>SAFS Monitor for Runtime Debugging</b>:
+<p>
+<img src="SAFSMonitor.jpg" alt="SAFS Monitor Application"/></center>
+<p>
+However, it is also possible to merely add a comparable <a href="http://safsdev.sourceforge.net/doc/org/safs/tools/drivers/JSAFSDriver.html" alt="JSAFS Driver Class" target="_blank">JSAFSDriver</a>&nbsp;<small>(<a href="https://github.com/SAFSDEV/Core/tree/master/src/org/safs/tools/drivers/JSAFSDriver.java" target="_blank">Src</a>)</small> object to any Java class or testing framework. &nbsp;The developer still acquires all the core startup and initialization capabilities of the standard SAFS Drivers--including the startup of required SAFS services and engines. &nbsp; The custom driver will still have access to the <a href="http://safsdev.sourceforge.net/sqabasic2000/UsingSAFSMonitor.htm" alt="SAFS Monitor Doc" target="_blank">SAFS Monitor</a> allowing the tester or developer to Pause, Resume, Step, and Shutdown a running test--assuming the developer exploits these features in their code. &nbsp;In addition, the JSAFSDriver provides convenient API access to all the SAFS services for handling variables, appmaps, NLS, logging, and expression handling.
+<p>
+Lastly, as mentioned in the previous section, if the developer's Java class is invoked or instantiated by some other mechanism provided by an already running SAFS test--like the <A href="http://safsdev.sourceforge.net/sqabasic2000/SAFSReference.php?rt=C&lib=DDDriverFlowCommands&cmd=CallJUnit" target="_blank" title="CallJUnit Driver Command Doc">CallJUnit Driver Command</a>, then the Java class can gain access to all services and runtime engines via the latest <a href="http://safsdev.sourceforge.net/doc/org/safs/model/tools/Runner.html" target="_blank" title="org.safs.model.tools.Runner JavaDoc" alt="org.safs.model.tools.Runner JavaDoc">org.safs.model.tools.Runner</a>&nbsp;<small>(<a href="https://github.com/SAFSDEV/Core/tree/master/src/org/safs/model/tools/Runner.java" target="_blank">Src</a>)</small>.
+<p>
+Commented example(s) can be found on GitHub at <a href="https://github.com/SAFSDEV/Core/tree/master/src/org/safs/model/examples" target="_blank" title="JSAFS Examples JavaDoc">SAFS JSAFS Model Examples</a>.
+<p>
+The working examples with sourcecode are also provided in the <a href="http://safsdev.sourceforge.net/doc/org/safs/model/examples/advanced/package-summary.html" alt="JSAFS Advanced Examples Doc" target="_blank">org.safs.model.examples.advanced</a> package. &nbsp;The sourcecode can be found in the <b>safsmodel.jar</b> file in a SAFS\lib directory following the <a href="http://safsdev.sourceforge.net/sqabasic2000/SetupSAFS.README.htm" target="_blank" alt"SAFS Install Instructions" title="SAFS Install Instructions">installation and setup of SAFS</a>.  Also refer to additional <a href="http://safsdev.sourceforge.net/sqabasic2000/SetupJSAFS.README.htm" target="_blank" alt"JSAFS Developer Instructions" title="JSAFS Developer Instructions">developer instructions for JSAFS</a>.
+<p>
+The <a href="http://safsdev.sourceforge.net/doc/org/safs/tools/drivers/JSAFSDriver.html" alt="JSAFS Driver Class" target="_blank">JSAFSDriver</a>&nbsp;<small>(<a href="https://github.com/SAFSDEV/Core/tree/master/src/org/safs/tools/drivers/JSAFSDriver.java" target="_blank">Src</a>)</small> main(String[] args) sourcecode can also act as <a href="jsafs_advanced_example.txt" target="_blank" alt="Sample Advanced Runtime Java Code"/>an example</a> since it is a functional self-test of the class itself:
+<p>
+<hr>
+<a name="bottom"/>
+<small><a href="#top">Back To Top</a>, <a href="#background">Background Info</a></small>
+</BODY></HTML>

@@ -1,0 +1,103 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_AssignCellContainsTextRow'></A>HTMLTableFunctions::<BIG>AssignCellContainsTextRow</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                  Assigns a user-defined variable a row # based on partial matching cell values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The cell value from the specified column in the found row is also assigned to 
+                  a variable derived from the user-defined variable name.
+                  <p>
+                  The cell value comparisons are not case-senstive, and provided values can be substrings 
+                  of the actual cell value in the table.
+                  </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>Var</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The variable which gets assigned the row found.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The variable which gets assigned the row found. If not found then it will get a zero 
+                length string.  This variable also is the rootname for the variable that will receive 
+                the cell text value once the row # is identified.  The cell value variable will be the  
+                user-defined variable +".Value".
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>Col</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell column # or header value, identifying the column for extracting the 
+                cell value into variable +".Value".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a field header. 
+                If no match is found, it will expect the value to be a valid 1-based column number.
+                  <p>
+                  The field header comparisons are not case-senstive, and provided values can be substrings 
+                  of the actual header value in the table.
+                  </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>ColN</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A 1-based cell column #, or header value, identifying the column to locate the VALUEN below.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a field header. 
+                If no match is found, it will expect the value to be a valid 1-based column number.  
+                This must be accompanied by the next parameter, 'ValueN', and as many of the
+                ColN/ValueN parameter pairs can be supplied as desired in order to match for a row 
+                based on cell contents.
+                <p>
+                The field header comparisons are not case-senstive, and provided values can be substrings 
+                of the actual header value in the table.
+                </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>ValueN</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A Value to search for in the 'COLN' column.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                These values can be partial substrings and are not case-sensitive.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, AssignCellContainsTextRow, Variable, "Date","Time", "09:58 AM", "Change","Change #2","Revision", "2"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                Assigns the variable "Variable" the first row # satisfying the matching colN/valueN values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  Also assigns variable "Variable.Value" the cell value found in the "Date" column at the 
+                  matching row.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

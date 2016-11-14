@@ -1,0 +1,212 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_StartWebBrowser'></A>TestComplete DDDriverCommands::<BIG>StartWebBrowser</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Launch a new web browser and optionally load a document into it.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><b>Windows TID, SDC, and RFT Support:</b><br>
+              This command in the above engines now supports using the System default browser. 
+              By default, the System default browser will be used to launch the URL.  (Previous 
+              versions of this command were unfortunately hardcoded to use Internet Explorer only.)
+              <p>
+              In addition, the tester can set a SAFS variable directly or through ApplicationConstants 
+              to provide the full path to an alternate browser executable.  By setting and clearing 
+              this variable the tester can switch between using the System default browser and an 
+              alternate browser dynamically during runtime.
+              </p><p>
+              Variable Name: <b>SAFSWebBrowserPath</b></p>
+<ul><pre><b>Sample SAFS variable usage:</b>	
+
+;Set an alternate browser to use:
+C, SetVariableValues, ^SAFSWebBrowserPath="C:\Program Files\Mozilla Firefox\firefox.exe"
+			
+;Clear to return to System default browser:
+C, SetVariableValues, ^SAFSWebBrowserPath=""
+			
+<b>Sample ApplicationConstants usage:</b>
+			
+;provide a value used for all browser launches
+[ApplicationConstants]
+...
+SAFSWebBrowserPath="C:\Program Files\Mozilla Firefox\firefox.exe"
+</pre>
+</ul>
+		(Note: if the tester ever "sets" or clears the SAFS variable then 
+		     any ApplicationConstants setting is no longer used.)<br><b>Selenium Note:</b>The parameters from 4 are specially for Selenium 2.0 (WebDriver) for now.<br>
+		 					 The parameters from 8 are extra parameter settings for Selenium 2.0 (WebDriver), they appear as pair(key, value),
+		 					 for example #8 is the key, #9 is the value; #10 is the key, #11 is the value; and so on.
+		 					 you can specify extra parameters as many as wanted if they are supported.<br></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>[ <B>URL</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 URL of a web resource to load in the new browser instance.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 This field can be empty which may produce different results in different browsers.  
+                 When using the system default browser on Windows, this empty field will typically 
+                 generate a blank web page, or an "about:blank" page.
+                 <p>
+                 Some browsers, like Internet Explorer, support other URLs like "about:home"--
+                 which will launch the browser and display whatever the Home page is set to.  However, 
+                 not all browsers support this.
+                 </p><p>
+                 For consistency, it is usually necessary to include the full URL syntax--including 
+                 the protocol portion of the URL (http://, https://, ftp://, etc..).
+                 </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>WindowTag</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 A WindowTag or Browser ID to call the new browser instance. </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 This Tag might be used by some test tools to track specific browser instances, 
+                 but not all test tools are able to support this type of browser Tagging.<br><B>SE2</B>The indentifier used to store the webdriver for the opened browser. It can be used to
+		switch between opened browsers or close one of them.
+		</detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>BrowserName</B> = firefox ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""><B>SE2</B>The browser to open. It can be "explorer", "chrome" or "firefox". "firefox" is default.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>timeout</B> = 15 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""><B>SE2</B>Specifies the amount of time the selenium web driver should wait 
+				when searching for an element if it is not immediately present.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>IsRemoteBrowser</B> = true ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""><B>SE2</B>True = use Selenium RemoteDriver.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">True = use Selenium RemoteDriver.  Otherwise, use the FirefoxDriver, 
+		ChromeDriver or InternetExplorerDriver.<br>
+		This parameter is ignored now for SE2 as it always uses a RemoteDriver.
+             </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>ExtraParamKey</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""><B>SE2</B>The extra parameter key. You can use one of 
+				<a href="http://safsdev.sourceforge.net/doc/org/safs/selenium/webdriver/lib/SelectBrowser.html#getExtraParameterKeys()" target="reference" alt="Extra parameter keys">Extra parameter keys</a>.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>ExtraParamValue</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""><B>SE2</B>The value of the extra parameter indicated by ExtraParamKey above.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, StartWebBrowser </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Launch a new browser with no special ID and no URL to load.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, StartWebBrowser, "", WebBrowser</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Launch a new browser with a WindowTag of WebBrowser and no URL to load.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, StartWebBrowser, "http://aUrl.jsp", WebBrowser</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Launch a new browser with a WindowTag of WebBrowser and a URL to load.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, StartWebBrowser, "http://aUrl.jsp"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""><B>SE2</B>Launch a new firefox browser with a URL to load.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, StartWebBrowser, "http://aUrl.jsp", "", "FirstTestPage", "firefox", 20</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""><B>SE2</B>Launch a new firefox browser with a URL to load, this browser will be stored with ID 'FirstTestPage'
+                 and on this page the search of webelement has a timeout of 20 seconds.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, StartWebBrowser, "http://aUrl.jsp", "", "FirstTestPage", "firefox", 20, "", "KEY_PROXY_SETTING", "proxy-server:80"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""><B>SE2</B>Launch a new firefox browser with a URL to load, this browser will be stored with ID 'FirstTestPage'
+                 and on this page the search of webelement has a timeout of 20 seconds, and the internet proxy server 
+                 has been set to "proxy-server:80" for this browser.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, StartWebBrowser, "http://www.google.com", "", "GoogleMain", "firefox", 20, "", "FirefoxProfile", "myprofile"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""><B>SE2</B>Launch a new firefox browser with custom profile "myprofile" 
+                 (<a href="https://support.mozilla.org/en-US/kb/profile-manager-create-and-remove-firefox-profiles">Create custom profile</a>), Google page will be loaded, 
+                 this browser will be stored with ID 'GoogleMain' and on this page the search of webelement has a timeout of 20 seconds.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, StartWebBrowser, "http://www.google.com", "", "GoogleMain", "chrome", 20, "", "user-data-dir", "c:\chrome_custom_data"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""><B>SE2</B>Launch a new chrome browser with custom data pool "c:\chrome_custom_data" 
+                 (<a href="http://www.chromium.org/developers/creating-and-using-profiles">Create custom data pool</a>), Google page will be loaded, 
+                 this browser will be stored with ID 'GoogleMain' and on this page the search of webelement has a timeout of 20 seconds.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, StartWebBrowser, "http://www.google.com", "", "GoogleMain", "chrome", 20, "", "user-data-dir", "C:\Users\xxx\AppData\Local\Google\Chrome\User Data"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""><B>SE2</B>Launch a new chrome browser with default data pool "C:\Users\xxx\AppData\Local\Google\Chrome\User Data" using the recent chrome user
+                 (chrome://version/, see "Profile Path"), Google page will be loaded, 
+                 this browser will be stored with ID 'GoogleMain' and on this page the search of webelement has a timeout of 20 seconds.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, StartWebBrowser, "http://www.google.com", "", "GoogleMain", "chrome", 20, "", "user-data-dir", "C:\Users\xxx\AppData\Local\Google\Chrome\User Data", "profile-directory", "Profile 1"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""><B>SE2</B>Launch a new chrome browser with default data pool "C:\Users\xxx\AppData\Local\Google\Chrome\User Data" using the first chrome user
+                 (chrome://version/, see "Profile Path"), Google page will be loaded, 
+                 this browser will be stored with ID 'GoogleMain' and on this page the search of webelement has a timeout of 20 seconds.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, StartWebBrowser, "http://www.google.com", "", "GoogleMain", "chrome", 20, "", "excludeSwitches", "disable-component-update; ignore-certificate-errors"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""><B>SE2</B>Launch a new chrome browser with temporary data pool and with option '--disable-component-update' and '--ignore-certificate-errors' excluded,
+                 (chrome://version/, see "Profile Path"), Google page will be loaded, 
+                 this browser will be stored with ID 'GoogleMain' and on this page the search of webelement has a timeout of 20 seconds.<br>
+                 The value "disable-component-update; ignore-certificate-errors" can also be separated by comma if semicolon conflicts with your test-record-separator
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

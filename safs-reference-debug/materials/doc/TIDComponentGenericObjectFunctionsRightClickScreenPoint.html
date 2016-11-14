@@ -1,0 +1,65 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_RightClickScreenPoint'></A>TIDComponent GenericObjectFunctions::<SPAN ID="deprecated">RightClickScreenPoint</SPAN>  (deprecated for: <B>GenericObject RightClickScreenLocation</B>)</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                (Deprecated) RightClick a specified screen location.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                (Deprecated) RightClick a specified screen location. See <a href="#detail_RightClickScreenLocation">RightClickScreenLocation</a> 
+                for the preferred method to click on screen coordinates.
+                <p>
+                We can click on any screen location based on literal text x,y 
+                coordinates retrieved from Field #5.  Window and Component names and App Map entries are 
+                completely ignored.  So the user can put anything in those fields that might help test readability.  
+                </p><p>
+                It is not recommended to hardcode screen coordinates in the test table in this way.
+                </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>Coords</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The hardcoded X,Y screen coordinates--or the result of an expression--that provides the 
+                absolute screen coordinates to click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The coordinates must be in the following supported formats:
+                <p><pre>
+                "33,120"        (comma-delimited)      OR
+                "33;120"        (semi-colon delimited) OR
+                "33 120"        (space-delimited)
+                </pre></p><p>
+		Note the "Coords=" prefix is NOT supported for this deprecated command.
+		</p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, BogusWin, BogusComp, RightClickScreenPoint, 33;120</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               RightClick at screen coordinates 33,120.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               RightClick at screen coordinates 33,120
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

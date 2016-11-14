@@ -1,0 +1,153 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_DragTo'></A>GenericObjectFunctions::<BIG>DragTo</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+            A left mouse drag is performed from one object to another object based
+            on the offsets values.
+        </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Drag will be performed from component (from-component) to another
+                to-component. Offsets value are the drag object select location. The
+                location (drag and release) calucate by X and Y percentage
+                cordination. DragTo also supports sub item of component and sub item
+                of to-component.</p>
+<p> The coordination specify by offsets value. First two values are
+                for from-component and another are for to-component.</p></detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><value xmlns="">
+            Offsets can be 50%,50%,50%,50% or 50%;50%;50%;50%<br>
+            T, WINDOW,COMPONENT, DRAGTO, ToWINDOW,ToCOMPONENT,"50%,50%,50%,50%"
+            Where first 50%,50% are COMPONENT or their subitem's X and Y location
+            and second 50%,50% are ToCOMPONENT or their subitem's X and Y
+            location.
+          </value><BR/>
+</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>ToWindow</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">ToWindow object.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">ToWindow recognition string define into AppMap.</detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>ToComponent</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">ToComponent object.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">ToComponent recognition string define into AppMap.</detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Offsets</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Drag and release location of from-component and to-component. 
+                Offsets syntax will be "50%,50%,70%,70%"", where first two percentages are for from-component 
+                and second two are for to-component. If offsets are not specified then center will be used.<br>
+                Default value, both components center.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN> : <value xmlns="">The parameter 'Offsets' can be also given in pixel, like '20, 20, 70, 90'; or even in mix format, like "50%, 50%, 70, 90".</value><BR/>
+</DIV>
+		  </LI>
+<LI>[ <B>FromSubItem</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Text of from-component's sub item.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">FromSubItem as text. e.g tree node or list item or any sub main component's item.</detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN> : <value xmlns="">NOT supported yet.</value><BR/>
+</DIV>
+		  </LI>
+<LI>[ <B>ToSubItem</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Text of to-component's sub item.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">ToSubItem as text. e.g tree node or list item or any sub main component item.</detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN> : <value xmlns="">NOT supported yet.</value><BR/>
+</DIV>
+		  </LI>
+<LI>[ <B>Pause</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Pause time in millisecond to hold the button before releasing.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The default pause time is 800 milliseconds, which may not enough for the AUT to react.
+                User could provide a larger value according to his needs.
+              </detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN> : <value xmlns="">Initially implemented, may not be supported for other engines.</value><BR/>
+</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW,COMPONENT, DRAGTO, ToWINDOW,ToCOMPONENT</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+		   A left mouse drag will be performed from component (COMPONENT) to to-component (ToCOMPONENT).
+		  </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+		   Drag the component from center and  release on to-component's center.   
+		  </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW,COMPONENT, DRAGTO, ToWINDOW,ToCOMPONENT,"50%,50%,50%,50%"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 A left mouse drag will be performed from component(X=50% and Y=50%) to to-component(X=50% and Y=50%).
+                </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Field  7 : "50%,50%,50%,50%" first two 50%s for component (COMPONENT) and another for to-component (ToCOMPONENT) drag and release point. User can use "," or ";" as separator to separate X and Y. example "50%,50%,50%,50%" or 50%;50%;50%;50%". 
+                </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW,COMPONENT, DRAGTO, WINDOW,COMPONENT,"50%;50%;75%;75%"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+		   A left mouse drag will be performed to resize the component (COMPONENT) from 50% to 75% size.
+		  </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+		  Resize the component from (X=50%, y=50%) to X=75% and Y=75%. 
+		  </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW,COMPONENT, DRAGTO, ToWINDOW,ToCOMPONENT,"50%,50%,50%,50%","FromSubItem"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+		   A left mouse drag will be performed from FromSubItem (COMPONENT's sub item) to to-component (ToCOMPONENT) using offsets(50%,50%,50%,50%).
+		  </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+		   Field  8 : FromSubItem of COMPONENT. It is useful when TreeNode or List Item drag to to-component. 
+		  </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW,COMPONENT, DRAGTO, ToWINDOW,ToCOMPONENT,50%,50%,50%,50%,"FromSubItem","ToSubItem"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+		   A left mouse drag will be performed from FromSubItem (COMPONENT's sub item) to ToSubItem (ToCOMPONENT's sub item).
+		  </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+		   Field  8 and 9: FromSubItem is a subitem of COMPONENT and ToSubItem is a subitem of ToCOMPONENT. It is useful when TreeNode or List Item drag to subitem of to-component. e.g DragTo tree node to list item. 
+		  </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

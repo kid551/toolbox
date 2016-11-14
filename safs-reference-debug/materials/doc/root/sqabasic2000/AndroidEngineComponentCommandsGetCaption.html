@@ -1,0 +1,52 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_GetCaption'></A>Android EngineComponentCommands::<BIG>GetCaption</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN>:<SPAN CLASS='domainMarker' TITLE='DEV Domain'>DEV</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the Caption of a component, if any.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Normally, this is only valid for window or child window components.  
+                If no caption is present, or the component does not support captions, the 
+                engine should return "<a href="http://safsdev.sourceforge.net/doc/constant-values.html#org.safs.tools.drivers.DriverConstant.SAFS_NULL" target="_blank">&lt;SAFS_NULL&gt;</a>".
+            <p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows, getMatchingParentObject, 
+                        or one of the other engine commands that return such references.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, GetCaption, TheComponentReference</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the Caption of the TheComponentReference.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns the String caption or "&lt;SAFS_NULL&gt;" if no caption was available.
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

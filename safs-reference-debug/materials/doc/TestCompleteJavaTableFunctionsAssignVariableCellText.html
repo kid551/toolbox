@@ -1,0 +1,116 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_AssignVariableCellText'></A>TestComplete JavaTableFunctions::<BIG>AssignVariableCellText</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN><SPAN CLASS='domainMarker' TITLE='JAVA Domain'>JAV</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Attempts to extract a particular cell value and assign 
+                it to the provided variable name.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Note, if you supply the name of the variable and include the leading
+               caret (^) symbol then the variable must be enclosed in quotes.
+               Otherwise, that variable will be used like any other variable and the
+               substituted value of that variable will be interpretted as the name
+               of the variable you wish to use.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>VariableName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The name of the variable to receive the property value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               The name of the variable to receive the property value.
+               Note, if you supply the name of the variable and include the leading
+               caret (^) symbol then the variable must be enclosed in quotes.
+               Otherwise, that variable will be used like any other variable and the
+               substituted value of that variable will be interpretted as the name
+               of the variable you wish to use.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Row</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell row # in the row/col specification or a unique row value in column 1.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a cell value
+                in column 1.  If no match is found, it will expect the value to be a valid 
+                1-based row number.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Col</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell column # in the row/col specification or column header text.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a field header. 
+                If no match is found, it will expect the value to be a valid 
+                1-based column number.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, JavaWin, JTable, AssignVariableCellText, AVariableName</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Assign the value of cell 1,1 in JTable to DDVariable ^AVariableName.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, JavaWin, JTable, AssignVariableCellText, "AVariableName", 1 , 1 </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Assign the value of cell 1,1 in JTable to DDVariable ^AVariableName.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, JavaWin, JTable, AssignVariableCellText, "^AVariableName", 4, "Field5"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Assign the value of cell 4, Field5 in JTable to DDVariable ^AVariableName.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The column is determined by matching the text "Field5" to the 
+                  field headers in the JTable.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">C, SetVariableValues, ^AVariableName="NextVariableName" <br>
+                  T, JavaWin, JTable, AssignVariableCellText, ^AVariableName, "ADatum", 5</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Assign the value of cell ADatum,5 in JTable to DDVariable ^NextVariableName.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The row is determined by matching the text "ADatum" to the first cell in 
+                  column 1 in the JTable that contains "ADatum".
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

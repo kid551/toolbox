@@ -1,0 +1,65 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_SetPropertyValue'></A>GenericMasterFunctions::<BIG>SetPropertyValue</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Sets a value to the property of an object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Routine to set a value to the property of an object.</p>.
+	     <p>The routine expects that the given object already has Context or Focus.
+		It also expects that Global StepDriverTestInfo contains all the information
+		it needs to perform its function.</p>
+<p>The routine will set the StepDriverTestInfo.statuscode and log any pass/fail info 
+		using the StepDriverTestInfo.fac LogFacility.</p>
+<p>RJ implementation directly modifies the object in the software under test;therefore, it should be done with extreme care.
+		Avoid using setPropertyValue whenever possible because it allows you to modify the software under test in ways that a typical user cannot.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>ObjectPropertyName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The name of the property of the object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             The name of the property of the object.  This property will have the value set.<br></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>PropertyValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The value to set the property to.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, Browser, RadioButton, SetPropertyValue, "checked", True, ""</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               This example sets the checked property of the RadioButton object to true.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

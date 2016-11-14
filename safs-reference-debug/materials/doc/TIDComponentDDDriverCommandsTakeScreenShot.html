@@ -1,0 +1,111 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_TakeScreenShot'></A>TIDComponent DDDriverCommands::<BIG>TakeScreenShot</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Take screenshot and save it to a file on test machine.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Take screenshot and save it to a file on test machine.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>
+<B>FileName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The file to store the screeshot. (For Android Engine, the screenshot is device/emulator's)
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 The file to store the screeshot. (For Android Engine, the screenshot is device/emulator's)
+                 It can be a full path name;
+                 If it is only a filename, the image will be stored to sub directory "test" of your project; 
+                 If it is a filename including path-separator, it will be concatanated to the "datapool" of
+                 your project to create a fullpath file.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Rotatable</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 For other Engine, this parameter will be ignored.
+                 For Android Engine, if the android application is rotatable, you set this parameter to True. The default is True.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 For other Engine, this parameter will be ignored.
+                 For Android Engine, if the android application is rotatable, that is to say the application will adjust its direction
+                 and keep upstraight when you rotate your device. If the android application is rotatable and this
+                 parameter is set to False, the screenshot maybe upside down.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>SubArea</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Optional sbuarea indicating partial image of the screen to capture.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             	  Optional sbuarea indicating partial image of the screen to capture.
+	              The value must be in the format of a
+	              top-left and bottom-right pair, and can be either absolute
+	              coordinates or percentages ("x1,y1,x2,y2" or "x1%,y1%,x2%,y2%").
+	              Coordinates are relative to the screen, i.e. (0,0) and
+	              (0%,0%) are the minimum, and (SCREEN_WIDTH, SCREEN_HEIGHT)
+	              and (100%,100%) are the maximum. Values exceeding the minimun/
+	              maximum are forced to the nearest limiting value. Absolute and
+	              percent values can be mixed, so "0,0,50%,50%" is valid. If this
+	              parameter is omitted, full image of the screen is captured
+	              (equivalent to "0,0,100%,100%").
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">C, TakeScreenShot, "screenshot.png", Yes </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Get the screenshot and save the image to file YourTestProject\Datapool\Test\screenshot.png
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">C, TakeScreenShot, "d:\temp\image\screenshot.png", No </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Get the screenshot and save the image to file d:\temp\image\screenshot.png
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">C, TakeScreenShot, "image\screenshot.png" </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Get the screenshot and save the image to file YourTestProject\Datapool\image\screenshot.png
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">C, TakeScreenShot, "screenshotPart.png", , "0;0;50%;50%" </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Get part of the screenshot and save the image to file YourTestProject\Datapool\Test\screenshotPart.png
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

@@ -1,0 +1,51 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_GetLevel'></A>RobotJ EngineComponentCommands::<BIG>GetLevel</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the Z-order of a component--usually a Window.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+	    	Level is generally considered to be the Z-Order information of the object--where in 
+		the Window Z-Order the object (usually a Window) resides.
+		Level is combined with another recognition method when the other method does not uniquely identify 
+		the windows. For example, if there are multiple windows with the same caption, and Caption is the 
+		recognition method being used. The Level qualifier specifies which one of the similarly-identified 
+		windows should be targeted for the action, based on the Windows' Z-Order. The first window is a
+		ssigned "Level=1", the second "Level=2", and so on. Level serves as a clarifier only and is used 		
+		only after all other methods have been attempted.
+		<p>
+		If the Level cannot be determined then the engine should return -1.
+		</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows, getMatchingParentObject, or one of the other 
+                        engine commands that return such references.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, GetLevel, TheComponentReference</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the Level (Z-Order) of the TheComponentReference.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns the 1-based Level or -1 if the Level could not be determined.
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

@@ -1,0 +1,46 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_ClearAppMapCache'></A>DDDriverCommands::<BIG>ClearAppMapCache</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Clear the internal application map cache.
+          </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+             Engines often maintain an internal cache for AppMap data.
+             In RobotJ, there exists a cache of
+             TestObject objects, that cache is cleared by this command
+             so that the recognition string algorithm has to be re-run
+             the next time a window or component is to be recognized.
+             This is useful for cases when a dialog pops up, goes
+             away, then pops up again.  The cached version of the
+             dialog or it's components may not correspond to the new 
+             instance.  This command lets a tester clear the cache when
+             this kind of condition may arrise.
+             (Future: instruct the safsmaps service
+             to reload it's application map data)
+          </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, ClearAppMapCache</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             clear the appmap cache
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

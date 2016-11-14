@@ -1,0 +1,2310 @@
+<HTML xmlns="http://www.w3.org/TR/REC-html40">
+<HEAD>
+<TITLE>
+        SAFS IOS Quick Reference
+        </TITLE>
+<LINK rel="stylesheet" href="rrafs.css" type="text/css"/>
+</HEAD>
+<BODY id="bg_color">
+<DIV NAME="top" ID="top">
+<CENTER>
+<H1>
+	  SAFS IOS Quick Reference
+	  </H1>
+<SMALL>
+          Last Updated:<script language="JavaScript">document.write(document.lastModified)</script>
+</SMALL>
+</CENTER>
+<P/>
+        Goto: 
+        <A href="#drivercommands">Driver Commands</A>, 
+        <A href="#componentfunctions">Component Functions</A>, 
+        <A href="#enginecommands">Engine Commands</A>, 
+        <A href="RRAFSReference.htm">Detailed Reference Doc</A>
+<HR/>
+<A name="drivercommands"/>
+<B><BIG>DRIVER COMMANDS</BIG></B>
+<P/>
+<P/><A HREF='DDDriverCommandsReference.htm'>DDDriverCommands</A><A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE col="3" width="100%" cellpadding="2" border="1">
+<TR>
+<TD width="30%" nowrap="true">AppMapChaining</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Enable and Disable support for App Map chaining.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">AppMapResolve</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Enable and Disable support for embedded DDVariables in App Map strings.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">AssignClipboardVariable</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Copy the clipboard contents to a DDVariable.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">CallRemote</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Execute a command on an external system / application.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">CaptureMousePositionOnScreen</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Capture the location of the mouse pointer relative to the screen and save the x and y components into variables.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">ClearAllVariables</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Clear storage of all DDVariables.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">ClearArrayVariables</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Clear storage of all SAFS variables containing a specific prefix.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">ClearClipboard</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Clear the contents of the Window's clipboard.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">CloseApplication</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Close a named application process launched with LaunchApplication.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">CloseApplicationMap</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>By map ID, Close a opened Application Map in map chain.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">CopyVariableValueEx</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Copy the value of a (dynamic) DDVariable to another.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">Delay</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Delay for a specified number of milliseconds.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">Expressions</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Enable and Disable enhanced expressions.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetAppMapValue</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Assign a DDVariable a value from an App Map.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetMillisBetweenRecords</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Get the pause between two records, and assigns the value to a DDVariable.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetRegistryKeyValue</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Assign the value of the specified Registry Key to a variable.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetSystemDate</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Assigns the string value of the system date to a DDVariable.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetSystemDateTime</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Assigns the string value of the system datetime to a DDVariable.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetSystemTime</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Assigns the string value of the current system time to a DDVariable.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetVersion</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Get the engine VERSION</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">LaunchApplication</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Identify and Launch a specified application</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">NotifyAndWait</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Display a user-defined message dialog and wait until dismissed.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">Pause</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Pause for a specified number of seconds.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">SaveClipboardToFile</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Save the clipboard contents to a text file.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">SendEmail</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Send email notification with attachments.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">SetApplicationMap</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Provide the Application Map for the DDE to use</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">SetBenchDirectory</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Set/Change the directory in which the framework will find benchmark files by default.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">SetClipboard</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Set the clipboard contents to a string.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">SetDifDirectory</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Set/Change the directory in which the framework will locate file compare differences.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">SetImageDebug</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Enable/Disable verbose debug log output and high-res failure snapshots.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">SetImageFuzzyMatching</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Enable/Disable Image-Based Testing Fuzzy Matching.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">SetMillisBetweenRecords</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Set the pause between two records.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">SetMultipleThreadSearch</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Turn on or trun off the multi-thread-search way to search an image.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">SetProjectDirectory</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Set/Change the framework project directory.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">SetRootVerifyDirectory</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Set/Change the Bench, Test, and Dif directories to be subdirectories off of the provided path.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">SetTestDirectory</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Set/Change the directory in which the framework will find test files (captured "actuals") by default.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">SetVariableValueEx</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Set the value of a DDVariable</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">SetVariableValues</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Preset the value of one or more DDVariables</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">StartWebBrowser</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Launch a new web browser and optionally load a document into it.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">TakeScreenShot</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Take screenshot and save it to a file on test machine.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">UseAbbotFunctions</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Enable/Disable the switch to "prefer" ABBOT Functions over any other engine functions.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">UseDroidFunctions</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Enable/Disable the switch to "prefer" Droid Functions over the current engine functions (like Robot Classic).</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">UseIOSFunctions</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Enable/Disable the switch to "prefer" IOS Functions over any other engine functions.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">UseQTPFunctions</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Enable/Disable the switch to "prefer" QTP Functions over any other engine functions.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">UseRobotJFunctions</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Enable/Disable the switch to "prefer" RobotJ Hook Component Functions over Robot Classic Component Functions.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">UseSAFSFunctions</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Enable/Disable the switch to "prefer" SAFS (SDC) Functions over the current engine functions (like Robot Classic).</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">UseSeleniumFunctions</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Enable/Disable the switch to "prefer" Selenium Functions over the current engine functions (like Robot Classic).</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">UseTestCompleteFunctions</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Enable/Disable the switch to "prefer" TestComplete (TCAFS) Functions over any other engine functions.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">VerifyClipboardToFile</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Verify the current contents of the Windows clipboard with a benchmark file.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">Version</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Specify the table format VERSION</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">WaitForGUI</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Wait for a Window or Window Component to become valid.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">WaitForGUIGone</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Wait for a Window or Window Component to become invalid.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">WaitForRegistryKeyExists</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Wait for a Registry Key to become valid.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">WaitForRegistryKeyValue</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Wait for a specific Registry KeyValue to match an expected value.</TD>
+</TR>
+</TABLE>
+<P/><A HREF='DDDriverCounterCommandsReference.htm'>DDDriverCounterCommands</A><A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE col="3" width="100%" cellpadding="2" border="1">
+<TR>
+<TD width="30%" nowrap="true">DeleteCounter</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Delete any existing private counter with the provided counterID.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">LogCounterInfo</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Log the specified counter's info in the active log(s) of the current Log Facility.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">ResetCounter</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Create a new private counter or reset counts in an existing private counter.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">ResumeStatusCounts</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Resume counting on ALL status counters--both public/global and private.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">SetCounterMode</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Create a new private counter or modify the mode of an existing private counter.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">StartCounter</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Create a new private counter or start an existing stopped private counter.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">StartCycle</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Begin tracking status on a user-defined item.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">StartProcedure</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Begin tracking status on a user-defined item.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">StartRequirement</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Begin tracking status on a user-defined item.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">StartSuite</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Begin tracking status on a user-defined item.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">StartTestcase</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Begin tracking status on a user-defined TestCase.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">StopCounter</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Create a new private counter or suspend counts in an existing private counter.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">StopCycle</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Stop tracking status on a user-defined item.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">StopProcedure</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Stop tracking status on a user-defined item.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">StopRequirement</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Stop tracking status on a user-defined item.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">StopSuite</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Stop tracking status on a user-defined item.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">StopTestcase</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Stop tracking status on a user-defined TestCase.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">StoreCounterInfo</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Store the current values of the named counter into unique DDVariables.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">SuspendStatusCounts</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Suspend counting on ALL status counters--both public/global and private.</TD>
+</TR>
+</TABLE>
+<P/><A HREF='DDDriverDatabaseCommandsReference.htm'>DDDriverDatabaseCommands</A><A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE col="3" width="100%" cellpadding="2" border="1">
+<TR>
+<TD width="30%" nowrap="true">CopyDBTableColumnToFile</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>This routine will copy the contents of one or more DBTable column(s) to a file.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">CopyDBTableToFile</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>This routine will copy the contents of a DBTable to a file.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">DeleteDBTableRecords</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Deletes records in a database table</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">ExecSQLQuery</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Executes the query provided in a queryStr on the database table.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetDBTableColumnCount</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Executes the query in a specified database table and returns the total column count.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetDBTableRowCount</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Executes the query in a database table.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetDBValue</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Executes the query and returns the case-sensitive value as result of the execution.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">SetJdbcDriver</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>set Jdbc Driver</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">VerifyDatabaseNullValue</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Verifies the value of a field in a database table is NULL</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">VerifyDatabaseValue</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Verifies the case-sensitive value of a field in a database table</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">VerifyDBNullValue</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Verifies the value of a field in a database table is NULL</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">VerifyDBValue</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Verifies the case-sensitive value of a field in a database table</TD>
+</TR>
+</TABLE>
+<P/><A HREF='DDDriverDebugCommandsReference.htm'>DDDriverDebugCommands</A><A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE col="3" width="100%" cellpadding="2" border="1">
+<TR>
+<TD width="30%" nowrap="true">Breakpoints</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Enable and Disable Breakpoint Debugging.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">CommandDebug</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Enable and Disable (C)Command Debugging.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">RecordsDebug</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Enable and Disable debugging of ALL record types.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">TestDebug</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Enable and Disable (T)Test Record Debugging.</TD>
+</TR>
+</TABLE>
+<P/><A HREF='DDDriverFileCommandsReference.htm'>DDDriverFileCommands</A><A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE col="3" width="100%" cellpadding="2" border="1">
+<TR>
+<TD width="30%" nowrap="true">CloseFile</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Close the open file with the file number provided</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">CopyFile</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Copy the specified filename to the target filename.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">CopyMatchingFiles</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Copy multiple files/sub-directories, based on matching the provided pattern, from one directory to another.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">CreateDirectory</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Create the directory for the provided directory pathname</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">CreateFile</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Open a new file with the filename, mode and access provided.TID Note: Three ways to create a file: Mode=Input, Access=ReadMode=Output, Access=WriteMode=Append, Access=Write</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">DeleteDirectory</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Delete the directory for the provided directory pathname</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">DeleteDirectoryContents</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Delete the contents (files and sub-directories) of a provided directory and optionally, the directory itself.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">DeleteFile</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Delete the file for the file name provided</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">FilterImage</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Filter out specific parts of an image.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">FilterTextFile</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Filter a text file based on the given parameters.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">FindSqaFile</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Find the file for the SQA relative path and file name provided. If a full file path is provided the file will be located using the full file path and name.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetFileDateTime</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Determine the date and time the file created/last changed/last accessed for file name provided and assign it to a DDV variable.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetFileProtections</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Save the file attributes for the file name to the variable provided.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetFiles</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Search the directory provided for files according to possible attribute and write the list of filenames found into the output file.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetFileSize</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Determine the file size for file name provided and assign it to a DDV variable.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetINIFileValue</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Get value from INI file.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetStringCountInFile</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Count the number of occurrences of a target string in a File.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetSubstringsInFile</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Extract dynamic substrings from a file using regular expressions.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetTextFromImage</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Incorporate OCR technology to detect the text in an image file and save the text to a variable.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">IfExistDir</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>If the specified directory exists, then execute the following driver command.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">IfExistFile</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>If the specified file exists, then execute the following driver command.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">IsEndOfFile</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>If the specified file is at the end of file, a 'variable' gets true assigned, otherwise it gets false</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">OpenFile</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Open an existing file with the filename, mode and access provided.TID Note: Multiple ways to open a file: Mode=Input, Access=ReadMode=Output, Access=WriteMode=Append, Access=WriteMode=AppendRaw, Access=Write</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">OpenUTF8File</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Open an existing UTF-8 file with the filename, mode and access provided.TID Note: Multiple ways to open a file: Mode=Input, Access=ReadMode=Output, Access=WriteMode=Append, Access=WriteMode=AppendRaw, Access=Write</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">PrintToFile</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Write output to a sequential file already opened for writing.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">ReadFileChars</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Read the number of characters from the file defined by file number and assign a string containing the characters read to a DDV variable.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">ReadFileLine</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Read a line from the file defined by file number and assign a string containing the line read to a DDV variable.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">RenameFile</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Rename the file from the old file name to the new filename</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">SaveTextFromImage</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Incorporate OCR technology to detect the text in an image file and save the text to a text file.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">SetFileProtections</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Change the file attribute for the file name provided to the value of the new file protection provided.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">WriteFileChars</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Write the specified number of characters to a file already opened for writing.</TD>
+</TR>
+</TABLE>
+<P/><A HREF='DDDriverFlowCommandsReference.htm'>DDDriverFlowCommands</A><A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE col="3" width="100%" cellpadding="2" border="1">
+<TR>
+<TD width="30%" nowrap="true">CallCycle</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Invoke a Cycle table (from StepDriver or SuiteDriver)</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">CallJUnit</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Invoke one or more JUnit tests using the provided Class name(s).</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">CallScript</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Invoke a custom script with passed parameters/variables, if desired.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">CallStep</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Invoke a Step table from within another Step table (from StepDriver).</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">CallSuite</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Invoke a Suite table (from StepDriver or SuiteDriver)</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">ExitCycle</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Exit the currently running Step, Suite, and/or Cycle table.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">ExitSuite</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Exit the currently running Step and/or Suite table.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">ExitTable</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Exit the currently running Step, Suite, or Cycle table.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GotoBlockID</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Goto a named block in the current table.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">OnContainsGotoBlockID</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Goto the named block in the current table if value2 is contained within value1.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">OnDirectoryExistGotoBlockID</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Goto the named block in the current table if the directory exists.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">OnDirectoryNotExistGotoBlockID</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Goto the named block in the current table if the Directory does not exist.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">OnEqualGotoBlockID</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Goto the named block in the current table if two values are equal.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">OnFileExistGotoBlockID</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Goto the named block in the current table if the file exists.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">OnFileNotExistGotoBlockID</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Goto the named block in the current table if the file does not exist.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">OnGreaterThanGotoBlockID</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Goto the named block in the current table if value1 is greater than value2.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">OnGUIExistsGotoBlockID</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Goto the named block in the current table if a GUI component exists.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">OnGUINotExistGotoBlockID</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Goto the named block in the current table if a GUI component does not exist.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">OnInRangeGotoBlockID</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Goto named block if value1 is between value2 and value3.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">OnLessThanGotoBlockID</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Goto the named block if value1 is less than value2.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">OnNotContainsGotoBlockID</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Goto the named block in the current table if value2 is NOT a substring of value1.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">OnNotEqualGotoBlockID</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Goto the named block in the current table if two values are not equal.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">OnNotGreaterThanGotoBlockID</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Goto the named block in the current table if value1 is NOT greater than value2.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">OnNotInRangeGotoBlockID</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Goto the named block in the current table if value1 is not between value2 and value3.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">OnNotLessThanGotoBlockID</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Goto the named block if value1 is NOT less than value2.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">OnRegistryKeyExistGotoBlockID</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='WSupport' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='WSupport' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Goto the named block in the current table if the Registry Key exists.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">OnRegistryKeyNotExistGotoBlockID</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='WSupport' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='WSupport' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Goto the named block in the current table if the Registry Key does not exist.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">SetExitTableBlock</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Set or clear the name of a block to execute when the ExitTable command is encountered.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">SetGeneralScriptFailureBlock</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Set or clear the name of a block to execute when GeneralScriptFailure occurs.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">SetInvalidFileIOBlock</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Set or clear the name of a block to execute when InvalidFileIO occurs.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">SetNoScriptFailureBlock</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Set or clear the name of a block to execute when NoScriptFailure occurs.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">SetScriptNotExecutedBlock</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Set or clear the name of a block to execute when ScriptNotExecuted occurs.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">SetScriptWarningBlock</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Set or clear the name of a block to execute when ScriptWarning occurs.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">UseLocalFlowControl</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>When TRUE then flow control block IDs have current table scope only.</TD>
+</TR>
+</TABLE>
+<P/><A HREF='DDDriverLogCommandsReference.htm'>DDDriverLogCommands</A><A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE col="3" width="100%" cellpadding="2" border="1">
+<TR>
+<TD width="30%" nowrap="true">LogFailureOK</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Log an EXPECTED failure message.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">LogMessage</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Log a generic message</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">LogTestFailure</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Log a FAILURE message. Also increments appropriate counters.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">LogTestSuccess</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Log a SUCCESS/OK message. Also increments appropriate counters.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">LogTestWarning</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Log a WARNING message. Also increments appropriate counters.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">LogWarningOK</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Log an EXPECTED WARNING message.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">ResumeLogging</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Resume suspended logging.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">SuspendLogging</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Suspend all logging.</TD>
+</TR>
+</TABLE>
+<P/><A HREF='DDDriverStringCommandsReference.htm'>DDDriverStringCommands</A><A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE col="3" width="100%" cellpadding="2" border="1">
+<TR>
+<TD width="30%" nowrap="true">CleanString</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>CleanString, for each char in string: if ((char .gt. 31) and (char .lt. 127)) keep it, otherwise turn it into a space</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">Compare</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Compares two strings and returns an integer specifying the result of the comparison. The java version uses String.equals() for comparison so the result will be either 'true' or 'false'</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">Concatenate</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Concatenate String1 with String2 and returns concatenated string.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetField</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>GetField, get a field out of a string using specified delimiter(s). Note that any leading or trailing whitespaces are still present.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetFieldCount</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>GetFieldCount, Finds the count of all fields within the inputRecord found from startindex to the end of the inputRecord.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetFixedWidthField</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>GetFixedWidthField, Given an Input of fixed-width fields, return the nth(FieldID) Field in the record.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetMultiDelimitedField</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Given a sourceString of delimited fields, return the nth(FieldID) Field in the record from startIndex. The startIndex and fieldID are 1 based.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetMultiDelimitedFieldCount</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Finds the count of all fields within the inputRecord found from startindex to the end of the inputRecord. The field and index are 1-based.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetNextDelimiterIndex</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>GetNextDelimiterIndex, Finds the index of the first character matching one of the provided delimiter characters. The search begins at startindex within the inputRecord.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetREDelimitedField</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>GetREDelimitedField, this command returns the requested field contained in the input string using the passed in regular expression as the delimiter(s).</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetREDelimitedFieldCount</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>GetREDelimitedFieldCount, this command returns the number of fields contained in the input string using the passed in regular expression as the delimiter(s).</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetSubstringsInString</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Extract dynamic substring from a string using regular expressions.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetSystemEnviron</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>GetSystemEnviron, get a system environment variable value</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetSystemUser</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Get the USERID of the currently logged on user as stored in System Environment variables.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetTrimmedField</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>GetTrimmedField, get a trimmed field out of a string using specified delimiter(s).</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">Index</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Returns the position of the first occurrence of one string within another string. -1 if not found at all</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">Left</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Returns a string of a specified number of characters copied from the beginning of another string.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">LeftTrim</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>A new string trimmed of leading tabs and spaces.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">Length</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Returns the length of a string or variable.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">Replace</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Replace 'find' substring with 'replace' substring</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">Right</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Returns a string of a specified number of characters copied from the end of another string.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">RightTrim</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>A new string trimmed of trailing tabs and spaces.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">SubString</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Returns a portion of a string based on character index.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">ToLowerCase</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Returns a copy of a string, with all letters converted to lowercase.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">ToUpperCase</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Returns a copy of a string after converting all letters to uppercase.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">Trim</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>A new string trimmed of leading and trailing tabs and spaces.</TD>
+</TR>
+</TABLE>
+<P/><A HREF='DDDriverTimerCommandsReference.htm'>DDDriverTimerCommands</A><A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE col="3" width="100%" cellpadding="2" border="1">
+<TR>
+<TD width="30%" nowrap="true">ResetTimer</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Reset a "stopped" timer for reuse.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">StartTimer</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Will start a unique timer.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">StopTimer</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Will end a unique timer and perform a verify test if a value was supplied at start time.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">StoreTimerInfo</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Well store the timer information in the given variable. Information stored: .elapsed - Amount of seconds that has passed. .startTime - Time that the timer was started. .endTime - Time that the timer was stopped. .failures - Number of failures that happened on the timer (based on verify commands).</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">StoreTimerInfoFile</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Well store the timer information in the given file, in csv format. Will use absolute path if given otherwise uses SAFS Project Directory. Information Stored:Name,Start,Stop,Duration,Timeout,Pass? Name - Name of timer Start - Time of start Stop - Time of stop Duration - total elapsed time. Timeout - Pass? - if the timer passed any verfiy commands. Variable TimerStorageVariables can list additional variables to be stored in the file (comma delimited).</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">VerifyElapsedTimeInRange</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Well verify that a timer was in the range of the given values.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">VerifyElapsedTimeIsLess</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Well verify that a timer was less then the given value.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">VerifyElapsedTimeIsMore</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Well verify that a timer was greater then the given value.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">VerifyTimer</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Well verify that a timer was less then the given value.</TD>
+</TR>
+</TABLE>
+<HR/>
+<A name="componentfunctions"/>
+<B><BIG>COMPONENT FUNCTIONS</BIG></B><BR/>
+<SMALL><A href="#top">(back to top)</A></SMALL>
+<P/>
+<P/><A HREF='GenericMasterFunctionsReference.htm'>GenericMasterFunctions</A><A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE col="3" width="100%" cellpadding="2" border="1">
+<TR>
+<TD width="30%" nowrap="true">AssignPropertyVariable</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Assign the string value of an object property to a specific DDVariable</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">CapturePropertiesToFile</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Copy all of the value properties a test object to a file.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">CapturePropertyToFile</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Copy a propertie's value of a test object to to a file.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetGUIImage</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Capture the screen shot of a GUI component and save it to a file</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GetTextFromGUI</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Incorporate OCR technology to detect the text on a GUI component and save the text to a variable.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GUIDoesExist</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Routine to verify the visual existence of a particular window and/or component.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">GUIDoesNotExist</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Routine to verify the visual non-existence of a particular window and/or component.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">HoverMouse</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Hover the mouse over an object.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">HoverScreenLocation</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Hover the mouse over a specified screen location.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">InputCharacters</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Sends literal text to the specified component.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">InputKeys</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Sends keystrokes to the specified component.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">LocateScreenImage</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Store the location and dimensions of a component.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">SaveTextFromGUI</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Incorporate OCR technology to detect the text on a GUI component and save the text to a text file.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">TypeChars</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Sends literal text keystrokes to whatever has keyboard focus.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">TypeEncryption</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Sends secret-text (such as password) to whatever has keyboard focus.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">TypeKeys</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Sends keystrokes to whatever has keyboard focus.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">VerifyBinaryFileToFile</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Verify the current contents of a binary file with a benchmark file.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">VerifyFileToFile</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Verify the current contents of a text file with a benchmark file (same as VerifyTextFileToFile).</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">VerifyGUIImageToFile</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Verify the screen shot of a GUI component with a benchmark image file</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">VerifyPropertiesToFile</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Compare/Verify ALL of the value properties of a test object with a benchmark file.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">VerifyProperty</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Verify the value of a single object property</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">VerifyPropertyContains</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Verify that the value of an object property contains a string</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">VerifyPropertyToFile</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Verify the value of a single object property with a benchmark file</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">VerifyTextFileToFile</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Verify the current contents of a text file with a benchmark file (same as VerifyFileToFile).</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">VerifyValueContains</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Verify that a string value contains a substring</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">VerifyValueContainsIgnoreCase</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Verify that a string value contains a substring, ignoring case.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">VerifyValueDoesNotContain</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Verify that a string value does NOT contain a substring</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">VerifyValues</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Verify that two string values are identical. Note: RobotJ also uses identical keyword 'VerifyValueEquals'</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">VerifyValuesIgnoreCase</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Verify that two string values are identical, ignoring case.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">VerifyValuesNotEqual</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Verify that two string values are NOT identical.</TD>
+</TR>
+</TABLE>
+<P/><A HREF='GenericObjectFunctionsReference.htm'>GenericObjectFunctions</A><A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE col="3" width="100%" cellpadding="2" border="1">
+<TR>
+<TD width="30%" nowrap="true">Click</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>A single click on an object.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">ClickScreenImage</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Same as Click.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">ClickScreenLocation</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Click a specified screen location.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">ClickScreenPoint</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>(Deprecated) Click a specified screen location.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">CtrlClick</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>A CTRL-click on an object.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">CtrlClickScreenImage</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Same as CtrlClick.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">CtrlRightClick</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>A CTRL-Right click on an object.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">CtrlRightClickScreenImage</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Same as CtrlRightClick.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">DoubleClick</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>A double click on an object.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">DoubleClickScreenImage</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Same as DoubleClick.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">DoubleClickScreenLocation</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>DoubleClick a specified screen location.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">DoubleClickScreenPoint</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>(Deprecated) DoubleClick a specified screen location.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">DoubleTap</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>A double-tap on a touchscreen object. Use keyword "DoubleClick" syntax and parameters.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">Flick</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>A user-defined flick or swipe on a touchscreen object.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">FlickDown</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>A flick or swipe on a touchscreen object from top-to-bottom.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">FlickLeft</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>A flick or swipe on a touchscreen object from right-to-left.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">FlickRight</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>A flick or swipe on a touchscreen object from left-to-right.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">FlickUp</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>A flick or swipe on a touchscreen object from bottom-to-top.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">LeftDrag</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>A left mouse drag is performed on the object based on the stored coordinates.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">MultiClick</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Multiple clicks on an object.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">MultiClickScreenImage</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Same as MULTICLICK.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">Press</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Press a touchscreen object for a number of seconds--0 seconds by default.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">RightClick</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>A right click on an object.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">RightClickScreenImage</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Same as RightClick.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">RightClickScreenLocation</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>RightClick a specified screen location.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">RightClickScreenPoint</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>(Deprecated) RightClick a specified screen location.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">RightDrag</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>A right mouse drag is performed on the object based on the stored coordinates.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">ShiftClick</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>A SHIFT click on an object.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">ShiftClickScreenImage</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Same as ShiftClick.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">Tap</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>A single Tap on a touchscreen object. Use keyword "Click" syntax and parameters.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">TwoFingerTap</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>A two-finger tap on a touchscreen object.</TD>
+</TR>
+</TABLE>
+<P/><A HREF='WindowFunctionsReference.htm'>WindowFunctions</A><A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE col="3" width="100%" cellpadding="2" border="1">
+<TR>
+<TD width="30%" nowrap="true">PinchClose</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Perform a shrinking "zoom out" operation on a touchscreen device supporting the feature.</TD>
+</TR>
+<TR>
+<TD width="30%" nowrap="true">PinchOpen</TD>
+<TD width="12%" nowrap="true" align="CENTER"><TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Perform an expanding "zoom in" operation on a touchscreen device supporting the feature.</TD>
+</TR>
+</TABLE>
+<HR/>
+<A name="enginecommands"/>
+<B><BIG>ENGINE COMMANDS</BIG></B>
+<P/>
+</DIV>
+<HR/>
+        Goto: 
+        <A href="#drivercommands">Driver Commands</A>, 
+        <A href="#componentfunctions">Component Functions</A>, 
+        <A href="#enginecommands">Engine Commands</A>, 
+        <A href="RRAFSReference.htm">Detailed Reference Doc</A>
+</BODY>
+</HTML>

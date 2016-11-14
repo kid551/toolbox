@@ -1,0 +1,2592 @@
+<HTML xmlns="http://www.w3.org/TR/REC-html40"><HEAD>
+<TITLE>Selenium HTMLTableFunctions</TITLE>
+<LINK rel="stylesheet" href="rrafs.css" type="text/css"/>
+<LINK rel="stylesheet" href="bootstrap.css" type="text/css"/>
+</HEAD><BODY><DIV class="container content" NAME="top" ID="top">
+		  <H1>Selenium HTMLTableFunctions</H1>
+		  
+          Last Updated:<script language="JavaScript">document.write(document.lastModified)</script>
+<BR/>
+<BR/>
+<DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+              Actions for working with HTMLTable objects
+           </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>
+                NOTE: The RobotJ version has enabled *ALL* of the
+                keywords available to the JavaTableFunctions. See that
+                documentation for a description of those keywords.
+                The only differences are thus:  The columns cannot be
+                named, but must evaluate to a numerical value.
+                </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+		<DIV NAME="list" ID="list">
+		  <A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE class="table">
+<thead class="thead-inverse">
+<tr>
+<th>Keyword Name</th>
+<th>Supported Engines</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ActivateCell' HREF='#detail_ActivateCell' >ActivateCell</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Attempts to perform a double click on a Table cell.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_AssignCellContainsTextRow' HREF='#detail_AssignCellContainsTextRow' >AssignCellContainsTextRow</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                  Assigns a user-defined variable a row # based on partial matching cell values.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_AssignCellTextRow' HREF='#detail_AssignCellTextRow' >AssignCellTextRow</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                  Assigns a user-defined variable a row # based on matching cell values.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_AssignVariableCellText' HREF='#detail_AssignVariableCellText' >AssignVariableCellText</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Attempts to extract a particular cell value and assign 
+                it to the provided variable name.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_CaptureFuzzyRangeToFile' HREF='#detail_CaptureFuzzyRangeToFile' >CaptureFuzzyRangeToFile</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Saves a range of values to the specified file.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_CaptureRangeToFile' HREF='#detail_CaptureRangeToFile' >CaptureRangeToFile</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Saves a range of values to the specified file.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ClickCell' HREF='#detail_ClickCell' >ClickCell</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Click on a cell specified by row and column.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_DoubleClickCell' HREF='#detail_DoubleClickCell' >DoubleClickCell</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Attempts to perform a double click on a cell in a Table.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_RightClickCell' HREF='#detail_RightClickCell' >RightClickCell</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Attempts to perform a right click on a cell in a Table.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectCell' HREF='#detail_SelectCell' >SelectCell</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Same as ClickCell.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectCellContainsTextFind' HREF='#detail_SelectCellContainsTextFind' >SelectCellContainsTextFind</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                  Attempts to select a particular cell by finding the row based on cell values.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectCellText' HREF='#detail_SelectCellText' >SelectCellText</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Attempts to select a particular cell.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectCellTextFind' HREF='#detail_SelectCellTextFind' >SelectCellTextFind</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                  Attempts to select a particular cell by finding the row based on cell values.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectFuzzyCellText' HREF='#detail_SelectFuzzyCellText' >SelectFuzzyCellText</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Attempts to select a particular cell.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectFuzzyCellTextFind' HREF='#detail_SelectFuzzyCellTextFind' >SelectFuzzyCellTextFind</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Attempts to select a particular cell by finding the row based on fuzzy cell values.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyCellEditable' HREF='#detail_VerifyCellEditable' >VerifyCellEditable</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Verifies whether the specified cell is editable.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyCellText' HREF='#detail_VerifyCellText' >VerifyCellText</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Attempts to verify a particular cell value.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyCellTextContains' HREF='#detail_VerifyCellTextContains' >VerifyCellTextContains</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Attempts to verify a particular cell value.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyCellTextFind' HREF='#detail_VerifyCellTextFind' >VerifyCellTextFind</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Attempts to verify a particular cell by finding the row based on cell values.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyCellValue' HREF='#detail_VerifyCellValue' >VerifyCellValue</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                     Verify the value of a specific Cell.
+                   </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyColumnLabel' HREF='#detail_VerifyColumnLabel' >VerifyColumnLabel</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Attempts to verify a particular column's label when given a column number.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyFuzzyCellText' HREF='#detail_VerifyFuzzyCellText' >VerifyFuzzyCellText</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Attempts to verify a particular cell value.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyFuzzyCellTextContains' HREF='#detail_VerifyFuzzyCellTextContains' >VerifyFuzzyCellTextContains</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Attempts to verify a particular cell value.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyFuzzyCellTextFind' HREF='#detail_VerifyFuzzyCellTextFind' >VerifyFuzzyCellTextFind</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Attempts to verify a particular cell by finding the row based on fuzzy cell values.
+              </TD>
+		  </TR>
+</tbody>
+</TABLE>
+<HR/>
+</DIV>
+		<DIV NAME="detail" ID="detail">
+		  <H3><A NAME='detail_ActivateCell'></A>Selenium HTMLTableFunctions::<BIG>ActivateCell</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Attempts to perform a double click on a Table cell.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Clicks on a particular row/column of the table. 
+                The default location is Row=1, Col=1 unless either parameter 
+                is specified otherwise.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>[ <B>Row</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell row in the row/col specification.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>[ <B>Col</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell column in the row/col specification.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, ActivateCell</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Click the cell at row,col cell 1,1.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, ActivateCell, 3, 4</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Click the cell at row,col cell 3,4.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_AssignCellContainsTextRow'></A>Selenium HTMLTableFunctions::<BIG>AssignCellContainsTextRow</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                  Assigns a user-defined variable a row # based on partial matching cell values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The cell value from the specified column in the found row is also assigned to 
+                  a variable derived from the user-defined variable name.
+                  <p>
+                  The cell value comparisons are not case-senstive, and provided values can be substrings 
+                  of the actual cell value in the table.
+                  </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>Var</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The variable which gets assigned the row found.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The variable which gets assigned the row found. If not found then it will get a zero 
+                length string.  This variable also is the rootname for the variable that will receive 
+                the cell text value once the row # is identified.  The cell value variable will be the  
+                user-defined variable +".Value".
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>Col</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell column # or header value, identifying the column for extracting the 
+                cell value into variable +".Value".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a field header. 
+                If no match is found, it will expect the value to be a valid 1-based column number.
+                  <p>
+                  The field header comparisons are not case-senstive, and provided values can be substrings 
+                  of the actual header value in the table.
+                  </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>ColN</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A 1-based cell column #, or header value, identifying the column to locate the VALUEN below.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a field header. 
+                If no match is found, it will expect the value to be a valid 1-based column number.  
+                This must be accompanied by the next parameter, 'ValueN', and as many of the
+                ColN/ValueN parameter pairs can be supplied as desired in order to match for a row 
+                based on cell contents.
+                <p>
+                The field header comparisons are not case-senstive, and provided values can be substrings 
+                of the actual header value in the table.
+                </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>ValueN</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A Value to search for in the 'COLN' column.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                These values can be partial substrings and are not case-sensitive.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, AssignCellContainsTextRow, Variable, "Date","Time", "09:58 AM", "Change","Change #2","Revision", "2"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                Assigns the variable "Variable" the first row # satisfying the matching colN/valueN values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  Also assigns variable "Variable.Value" the cell value found in the "Date" column at the 
+                  matching row.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_AssignCellTextRow'></A>Selenium HTMLTableFunctions::<BIG>AssignCellTextRow</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                  Assigns a user-defined variable a row # based on matching cell values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The cell value from the specified column in the found row is also assigned to 
+                  a variable derived from the user-defined variable name.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>Var</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The variable which gets assigned the row found.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The variable which gets assigned the row found. If not found then it will get a zero 
+                length string.  This variable also is the rootname for the variable that will receive 
+                the cell text value once the row # is identified.  The cell value variable will be this 
+                user-defined variable +".Value".
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>Col</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell column # or header value, identifying the column for extracting the 
+                cell value into variable +".Value".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a field header. 
+                If no match is found, it will expect the value to be a valid 1-based column number.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>ColN</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A 1-based cell column #, or header value, identifying the column to locate the VALUEN below.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a field header. 
+                If no match is found, it will expect the value to be a valid 1-based column number.  
+                This must be accompanied by the next parameter, 'ValueN', and as many of the
+                ColN/ValueN parameter pairs can be supplied as desired in order to match for a row 
+                based on cell contents.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>ValueN</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A Value to search for in the 'COLN' column
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                These values are case-sensitive and must consititute an exact match.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, AssignCellTextRow, Variable, "Date","Time", "09:58 AM", "Change","Change #2","Revision", "2"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                Assigns the variable "Variable" the first row # satisfying the matching colN/valueN values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  Also assigns variable "Variable.Value" the cell value found in the "Date" column at the 
+                  matching row.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_AssignVariableCellText'></A>Selenium HTMLTableFunctions::<BIG>AssignVariableCellText</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Attempts to extract a particular cell value and assign 
+                it to the provided variable name.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Note, if you supply the name of the variable and include the leading
+               caret (^) symbol then the variable must be enclosed in quotes.
+               Otherwise, that variable will be used like any other variable and the
+               substituted value of that variable will be interpretted as the name
+               of the variable you wish to use.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>VariableName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The name of the variable to receive the property value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               The name of the variable to receive the property value.
+               Note, if you supply the name of the variable and include the leading
+               caret (^) symbol then the variable must be enclosed in quotes.
+               Otherwise, that variable will be used like any other variable and the
+               substituted value of that variable will be interpretted as the name
+               of the variable you wish to use.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Row</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell row # in the row/col specification.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                RJ: Does not yet support using a unique row value in column 1 as a row identifier.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Col</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell column # in the row/col specification.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                RJ: Does not yet support using a unique col header value as a column identifier.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, AssignVariableCellText, AVariableName</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Assign the value of cell 1,1 to DDVariable ^AVariableName.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, AssignVariableCellText, "AVariableName", 1 , 1 </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Assign the value of cell 1,1 to DDVariable ^AVariableName.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, AssignVariableCellText, "^AVariableName", ^row=4, ^col="5"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Assign the value of cell 4,5 to DDVariable ^AVariableName.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">C, SetVariableValues, ^AVariableName="NextVariableName" <br>
+                  T, WebBrowser, WebTable, AssignVariableCellText, ^AVariableName, ^row="5", ^col=2</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Assign the value of cell 5,2 to DDVariable ^NextVariableName.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_CaptureFuzzyRangeToFile'></A>Selenium HTMLTableFunctions::<BIG>CaptureFuzzyRangeToFile</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Saves a range of values to the specified file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                "Fuzzy" matches come into play when using header field text 
+                or column1 row text to specify row and column identities.  The 
+                specified text does NOT have to be an exact match--it is NOT 
+                case-sensitive and can be just a substring of the desired value 
+                in the table.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>FileName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The name of the file to receive the data.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The data will be output as TAB delimited values.
+                  The filename is usually just the short filename.ext 
+                  and as such will be stored in the project's Datapool\Test 
+                  directory.  <br>
+                  If you specify a relative path, the path 
+                  is relative to the project's root directory.  "Datapool" 
+                  is a subdirectory of that root directory.<br>
+                  Any specified full or relative path must already exist.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Row</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell row # in the row/col specification or a unique row 
+                value in column 1.  
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a cell value
+                in column 1.  If no match is found, it will expect the value to be a valid 
+                1-based row number.  This command allows for case-insensitive 
+                substring matches for row text when used in place of an actual row index.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Col</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell column # in the row/col specification or column header text.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a field header. 
+                If no match is found, it will expect the value to be a valid 
+                1-based column number.  This command allows for case-insensitive 
+                substring matches for header text when used in place of an actual column index.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Rows</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The number of rows to capture.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                If there are not enough rows to satisfy the request then we 
+                will obviously only capture up to the last available row.<br>
+                If the parameter is not provided, all subsequent rows from 
+                the specified starting row are captured.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Columns</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The number of columns to capture.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                If there are not enough columns to satisfy the request then we 
+                will obviously only capture up to the last available column.<br>
+                If the parameter is not provided, all subsequent columns from 
+                the specified starting column are captured.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>FileEncoding</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Specify a character encoding to be used when saving data to a file.
+			 If it is not specified, the system default file encoding will be used.
+             The encoding should be a valid string supported by Java; if it is not valid,
+             the system default file encoding will be used instead.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>[ <B>FilterMode</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                (FUTURE) A file filter to use when processing the text values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>[ <B>FilterOptions</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                (FUTURE) Filter options to use with the file filter.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, CaptureFuzzyRangeToFile, AFileName.txt</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                  Saves the entire table into &lt;project&gt;\Datapool\Test\AFileName.txt
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, CaptureFuzzyRangeToFile, AFileName.txt, 1 , 1 </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                  Saves the entire table into &lt;project&gt;\Datapool\Test\AFileName.txt
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, CaptureFuzzyRangeToFile, AFileName.txt, 4, "field5", 2, 5</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                  Saves a 2 rows by 5 columns range of cells starting at cell 4, Field5.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The starting column is determined by fuzzy matching the text "field5" to the 
+                  field headers in the WebTable.  The captured table values are saved into 
+                  &lt;project&gt;\Datapool\Test\AFileName.txt
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, CaptureFuzzyRangeToFile, AFileName.txt, "datum", 5, , 2</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                  Saves a range of all remaining rows by 2 columns wide starting at cell "ADatum", "Field5".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The starting row is determined by seeking the first cell in column 1 in the 
+                  WebTable that contains substring "datum".  The "5" also shows up 
+                  as a substring match to the column header "Field5".  So be cautious, here.
+                  No ROWS parameter was provided. Thus, all subsequest rows from the 2 columns are captured.
+                  The values are saved into &lt;project&gt;\Datapool\Test\AFileName.txt
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, CaptureFuzzyRangeToFile, AFileName.txt, , , , , "UTF-8"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                  Saves the entire table into &lt;project&gt;\Datapool\Test\AFileName.txt
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  Saves the entire table into &lt;project&gt;\Datapool\Test\AFileName.txt<BR>
+                  Writing file with "UTF-8" encoding.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_CaptureRangeToFile'></A>Selenium HTMLTableFunctions::<BIG>CaptureRangeToFile</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Saves a range of values to the specified file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>FileName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The name of the file to receive the data.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The data will be output as TAB delimited values.
+                  The filename is usually just the short filename.ext 
+                  and as such will be stored in the project's Datapool\Test 
+                  directory.  <br>
+                  If you specify a relative path, the path 
+                  is relative to the project's root directory.  "Datapool" 
+                  is a subdirectory of that root directory.<br>
+                  Any specified full or relative path must already exist.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Row</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell row # in the row/col specification or a unique row value in column 1.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a cell value
+                in column 1.  If no match is found, it will expect the value to be a valid 
+                1-based row number.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Col</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell column # in the row/col specification or column header text.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a field header. 
+                If no match is found, it will expect the value to be a valid 
+                1-based column number.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Rows</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The number of rows to capture.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                If there are not enough rows to satisfy the request then we 
+                will obviously only capture up to the last available row.<br>
+                If the parameter is not provided, all subsequent rows from 
+                the specified starting row are captured.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Columns</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The number of columns to capture.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                If there are not enough columns to satisfy the request then we 
+                will obviously only capture up to the last available column.<br>
+                If the parameter is not provided, all subsequent columns from 
+                the specified starting column are captured.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>FileEncoding</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Specify a character encoding to be used when saving data to a file.
+			 If it is not specified, the system default file encoding will be used.
+             The encoding should be a valid string supported by Java; if it is not valid,
+             the system default file encoding will be used instead.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>[ <B>FilterMode</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                (FUTURE) A file filter to use when processing the text values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>[ <B>FilterOptions</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                (FUTURE) Filter options to use with the file filter.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, CaptureRangeToFile, AFileName.txt</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                  Saves the entire table into &gt;project&gt;\Datapool\Test\AFileName.txt
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, CaptureRangeToFile, AFileName.txt, 1 , 1 </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                  Saves the entire table into &lt;project&gt;\Datapool\Test\AFileName.txt
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, CaptureRangeToFile, AFileName.txt, 4, "Field5", 2, 5</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                  Saves a 2 rows by 5 columns range of cells starting at cell 4, Field5.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The starting column is determined by matching the text "Field5" to the 
+                  field headers in the WebTable.  The values are saved into 
+                  &lt;project&gt;\Datapool\Test\AFileName.txt
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, CaptureRangeToFile, AFileName.txt, "ADatum", 5, , 2</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                  Saves a range of all remaining rows by 2 columns wide starting at cell "ADatum", 5.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The starting row is determined by matching the text "ADatum" to the first cell in 
+                  column 1 in the WebTable that contains "ADatum".  Since no ROWS parameter 
+                  was provided, all subsequest rows from the 2 columns are captured.
+                  The values are saved into &lt;project&gt;\Datapool\Test\AFileName.txt
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, CaptureRangeToFile, AFileName.txt, , , , , "UTF-8"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                  Saves the entire table into &gt;project&gt;\Datapool\Test\AFileName.txt
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+      			  Saves the entire table into &gt;project&gt;\Datapool\Test\AFileName.txt<BR>
+      			  Writing file with "UTF-8" encoding.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_ClickCell'></A>Selenium HTMLTableFunctions::<BIG>ClickCell</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Click on a cell specified by row and column.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Click on a cell specified by row and column
+                parameters.
+                <p>
+                Note, for the RobotJ version, (and maybe other engines
+                as well), the row and column values are true to the TR
+                and TD elements of the web page, so if a TR or TD has
+                no text in it, then it may seem confusing. In other
+                words, a table may only seem to have lets say 5
+                columns, but there may actually be more based on the
+                contents of the cells.
+                </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>Row</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The row of the cell to click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The cell is fully defined by the intersection of
+                the row and column values.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>Col</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The column of the cell to click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The cell is fully defined by the intersection of
+                the row and column values.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, ClickCell, 1, 3</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A single-click is performed on the WebTable at row 1, column 3.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_DoubleClickCell'></A>Selenium HTMLTableFunctions::<BIG>DoubleClickCell</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Attempts to perform a double click on a cell in a Table.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Clicks on a particular row/column of the table. 
+                The default location is Row=1, Col=1 unless either parameter 
+                is specified otherwise.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>[ <B>Row</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell row in the row/col specification.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>[ <B>Col</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell column in the row/col specification.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, DoubleClickCell</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Click the cell at row,col cell 1,1.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, DoubleClickCell, 3, 4</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Click the cell at row,col cell 3,4.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_RightClickCell'></A>Selenium HTMLTableFunctions::<BIG>RightClickCell</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Attempts to perform a right click on a cell in a Table.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Right clicks on a particular row/column of the table. 
+                The default location is Row=1, Col=1 unless either parameter 
+                is specified otherwise.
+                <p>
+                RJ: CFHTMLTable gets this support from subclassing CFTable.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>[ <B>Row</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell row in the row/col specification.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>[ <B>Col</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell column in the row/col specification.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, RightClickCell</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Right click the cell at row,col cell 1,1.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, RightClickCell, 3, 4</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Right click the cell at row,col cell 3,4.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SelectCell'></A>Selenium HTMLTableFunctions::<BIG>SelectCell</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Same as ClickCell.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Clicks on a particular row/column of the table. 
+                The default location is Row=1, Col=1 unless either parameter 
+                is specified otherwise.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>[ <B>Row</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell row in the row/col specification.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>[ <B>Col</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell column in the row/col specification.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, SelectCell</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Click the cell at row,col cell 1,1.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, SelectCell, 3, 4</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Click the cell at row,col cell 3,4.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SelectCellContainsTextFind'></A>Selenium HTMLTableFunctions::<BIG>SelectCellContainsTextFind</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                  Attempts to select a particular cell by finding the row based on cell values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  This is the same as SelectFuzzyCellTextFind.<br>
+                  The row # for the cell is also assigned to a user-defined variable.
+                  The parameter values are not case-sensitive, and can be substrings of the actual 
+                  table values.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>Var</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The variable which gets assigned the row found.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The variable which gets assigned the row found. If not
+                found then it will get a zero length string
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>Col</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell column # or header value, identifying the column for the select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a field header. 
+                If no match is found, it will expect the value to be a valid 1-based column number.
+                <p>
+                These comparisons are not case-sensitive and can be substrings of the actual table text.
+                </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>ColN</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A 1-based cell column #, or header value, identifying the column to locate the VALUEN below.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a field header. 
+                If no match is found, it will expect the value to be a valid 1-based column number.  
+                This must be accompanied by the next parameter, 'ValueN', and as many of the
+                ColN/ValueN parameter pairs can be supplied as desired in order to match for a row 
+                based on cell contents.
+                <p>
+                These comparisons are not case-sensitive and can be substrings of the actual table text.
+                </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>ValueN</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A Value to search for in the 'COLN' column
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The values are not case-sensitive and can be substrings of the actual table text.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, SelectCellContainsTextFind, Variable, "Date","Time", "09:58 AM", "Change","Change #2","Revision", "2"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                Selects the cell in the first row matching the colN/valueN values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  Selects the "Date" cell in the row matching the colN/valueN
+                  values: "Time"/"09:58 AM", "Change"/"Change #2", "Revision"/"2".
+                  The variable 'Variable' will be assigned the matching row number.
+                  <p>
+                  These comparisons are not case-sensitive and can be substrings of the actual table text.
+                  </p></detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SelectCellText'></A>Selenium HTMLTableFunctions::<BIG>SelectCellText</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Attempts to select a particular cell.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>[ <B>Row</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell row # in the row/col specification or a unique row value in column 1.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a cell value
+                in column 1.  If no match is found, it will expect the value to be a valid 
+                1-based row number.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Col</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell column # in the row/col specification or column header text.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a field header. 
+                If no match is found, it will expect the value to be a valid 
+                1-based column number.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, SelectCellText</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Selects cell 1,1 in WebTable.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  Default row and column indices substituted for missing parameters.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, SelectCellText, 1 , 1 </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Selects cell 1,1 in WebTable.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, SelectCellText, 4, "Field5"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Selects cell 4, Field5 in WebTable.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The column is determined by matching the text "Field5" to the 
+                  field headers in the WebTable.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, SelectCellText, "ADatum", 5</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Selects cell ADatum,5 in WebTable.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The row is determined by matching the text "ADatum" to the first cell in 
+                  column 1 in the WebTable that contains "ADatum".
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SelectCellTextFind'></A>Selenium HTMLTableFunctions::<BIG>SelectCellTextFind</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                  Attempts to select a particular cell by finding the row based on cell values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The row # for the cell is also assigned to a user-defined variable.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>Var</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The variable which gets assigned the row found.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The variable which gets assigned the row found. If not
+                found then it will get a zero length string
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>Col</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell column # or header value, identifying the column for the select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a field header. 
+                If no match is found, it will expect the value to be a valid 1-based column number.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>ColN</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A 1-based cell column #, or header value, identifying the column to locate the VALUEN below.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a field header. 
+                If no match is found, it will expect the value to be a valid 1-based column number.  
+                This must be accompanied by the next parameter, 'ValueN', and as many of the
+                ColN/ValueN parameter pairs can be supplied as desired in order to match for a row 
+                based on cell contents.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>ValueN</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A Value to search for in the 'COLN' column
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, SelectCellTextFind, Variable, "Date","Time", "09:58 AM", "Change","Change #2","Revision", "2"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                Selects the cell in the first row matching the colN/valueN values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  Selects the "Date" cell in the row matching the colN/valueN
+                  values: "Time"/"09:58 AM", "Change"/"Change #2", "Revision"/"2".
+                  The variable 'Variable' will be assigned the matching row number.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SelectFuzzyCellText'></A>Selenium HTMLTableFunctions::<BIG>SelectFuzzyCellText</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Attempts to select a particular cell.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                "Fuzzy" matches come into play when using header field text 
+                or column1 row text to specify row and column identities.  The 
+                specified text does NOT have to be an exact match--it is NOT 
+                case-sensitive and can be just a substring of the desired value 
+                in the table.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>[ <B>Row</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell row # in the row/col specification or a unique row value in column 1.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a cell value
+                in column 1.  If no match is found, it will expect the value to be a valid 
+                1-based row number.  This command allows for case-insensitive substring 
+                matches for row text when used in place of an actual row index.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Col</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell column # in the row/col specification or column header text.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a field header. 
+                If no match is found, it will expect the value to be a valid 
+                1-based column number.  This command allows for case-insensitive substring 
+                matches for header text when used in place of an actual column index.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, SelectFuzzyCellText</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Selects cell 1,1 in WebTable.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  Default row and column indices substituted for missing parameters.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, SelectFuzzyCellText, 1 , 1 </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Selects cell 1,1 in WebTable.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, SelectFuzzyCellText, 4, "field5"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Selects cell 4, "Field5" in WebTable.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The column is determined by case-insensitive comparing the text "field5" to the 
+                  field headers in the WebTable.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, SelectFuzzyCellText, "datum", 5</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Selects cell ADatum,Field5 in WebTable.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The row is determined by seeking the first cell in column 1 in the 
+                  WebTable that contains substring "datum".  The "5" also shows up 
+                  as a substring match to the column header "Field5".  So be cautious, here.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SelectFuzzyCellTextFind'></A>Selenium HTMLTableFunctions::<BIG>SelectFuzzyCellTextFind</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Attempts to select a particular cell by finding the row based on fuzzy cell values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                This is the same as SelectCellContainsTextFind.<br>
+                "Fuzzy" matches come into play when using header field text 
+                or column1 row text to specify row and column identities.  The 
+                specified column/cell text does NOT have to be an exact match--it is NOT 
+                case-sensitive and can be just a substring of the desired value 
+                in the table.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>Var</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The variable which gets assigned the row found.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The variable which gets assigned the row found. If not
+                found then it will get a zero length string
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>Col</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell column # in the row/col specification or fuzzy column header text.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to fuzzy-match any provided value with a field header. 
+                If no match is found, it will expect the value to be a valid 
+                1-based column number.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>ColN</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A 1-based cell column # in the row/col specification or fuzzy column header text.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to fuzzy-match any provided value with a field header. 
+                If no match is found, it will expect the value to be a valid 
+                1-based column number.  This must be accompanied by
+                the next parameter, 'ValueN', and as many of the
+                ColN/ValueN parameter pairs can be supplied as desired
+                in order to match for a row based on cell contents.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>ValueN</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A Value to search for in a cell under the 'ColN' column
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                A Value to search for in a cell under the 'ColN' column
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, SelectFuzzyCellTextFind, Variable, "Da","Ti", "09:58 AM", "Cha","Change #2","Rev", "2"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                Selects the cell in the row matching the colN/valueN values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  Selects the "Da" cell in the row fuzzy-matching the colN/valueN
+                  values: "Ti"/"09:58 AM", "Cha"/"Change #2", "Rev"/"2".
+                  The variable 'Variable' will be assigned the
+                  matching row number.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_VerifyCellEditable'></A>Selenium HTMLTableFunctions::<BIG>VerifyCellEditable</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Verifies whether the specified cell is editable.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+	        RJ: Invokes the "editCellAt" method on a specific cell.
+		That method returns a boolean which is used for the verification.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>Row</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+	    The 1-based cell row in the row/col specification.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>
+<B>Col</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+	       The 1-based cell column in the row/col specification.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>
+<B>ExpectedValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+	         The case-insensitive value we expect for the editable value ("true" or"false").
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, VerifyCellEditable, "2", "3", "true"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                Verifies that the cell in 2,3 is editable.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_VerifyCellText'></A>Selenium HTMLTableFunctions::<BIG>VerifyCellText</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Attempts to verify a particular cell value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>BenchValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The case-sensitive expected value for the specified cell.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>[ <B>Row</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell row # in the row/col specification.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                RJ: Does not yet support using a row value in Column 1 as a row identifier.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Col</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell column # in the row/col specification.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                RJ: Does not yet support using a column header value as a column identifier.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, VerifyCellText, FirstCellValue</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Compares the value of cell 1,1 to bench text "FirstCellValue".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  Default row and column indices substituted for missing parameters.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, VerifyCellText, "FirstCellValue", 1 , 1 </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Compares the value of cell 1,1 to bench text "FirstCellValue".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, VerifyCellText, "BenchValue", ^row=4, ^col="5"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Compares the value of cell 4,5 to bench text "BenchValue".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, VerifyCellText, "BenchData", ^row="5", ^col=2</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Compares the value of cell 5,2 to bench text "BenchData".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_VerifyCellTextContains'></A>Selenium HTMLTableFunctions::<BIG>VerifyCellTextContains</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Attempts to verify a particular cell value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                The value comparison is NOT case-sensitive and can be a substring.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>BenchValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                  The expected value for the specified cell.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The value can be a substring of the full expected 
+                  value and is NOT case-sensitive.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Row</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell row # in the row/col specification.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                RJ: Does not yet support using a unique row value in Column 1 as a row specifier.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Col</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell column # in the row/col specification.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                RJ: Does not yet support using a unique column header value as a column specifier.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, VerifyCellTextContains, FirstCellValue</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Matches the "FirstCellValue" value of cell 1,1 to bench text "FirstCellValue".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  In this case, they happen to be an exact match.  Default row and 
+                  column indices are used for missing parameters.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, VerifyCellTextContains, "firstcell", 1 , 1 </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Matches the "FirstCellValue" value of cell 1,1 to bench text "firstcell".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  "firstcell" is a valid substring match since it is not case-sensitive.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, VerifyCellTextContains, "bench", ^row=4, ^col="5"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Matches the "BenchValue" value of cell 4,5 to bench text "bench".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  "bench" is a valid substring match since it is not case-sensitive.<br></detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_VerifyCellTextFind'></A>Selenium HTMLTableFunctions::<BIG>VerifyCellTextFind</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Attempts to verify a particular cell by finding the row based on cell values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>BenchValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The case-sensitive expected value for the specified cell.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>
+<B>Var</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The variable which gets assigned the row found.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The variable which gets assigned the row found. If not
+                found then it will get a zero length string
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>Col</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell column # in the row/col specification or column header text.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a field header. 
+                If no match is found, it will expect the value to be a valid 
+                1-based column number.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>ColN</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A 1-based cell column # in the row/col specification or column header text.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a field header. 
+                If no match is found, it will expect the value to be a valid 
+                1-based column number.  This must be accompanied by
+                the next parameter, 'ValueN', and as many of the
+                ColN/ValueN parameter pairs can be supplied as desired
+                in order to match for a row based on cell contents.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>ValueN</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A Value to search for in a cell under the 'ColN' column
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                A Value to search for in a cell under the 'ColN' column
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, VerifyCellTextFind, "10/09/2003", Variable, "Date","Time", "09:58 AM", "Change","Change #2","Revision", "2"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                Verifies the cell in the row matching the colN/valueN values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  Verifies the "Date" cell in the row matching the colN/valueN
+                  values: "Time"/"09:58 AM", "Change"/"Change #2", "Revision"/"2" is equal "10/09/2003".
+                  The variable 'Variable' will be assigned the
+                  matching row number.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_VerifyCellValue'></A>Selenium HTMLTableFunctions::<BIG>VerifyCellValue</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                     Verify the value of a specific Cell.
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                     Attemps to verify the contents of a table cell on a webpage
+		     should the command not contain what cell to verify it will default
+		     to 1,1
+                   </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>ExpectedValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                     The Expected Value of the cell.
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                     The Expected Value of the cell, this will be used to compare with
+		     the actual value of the cell and logged as a pass or fail. This value
+		     is case sensitive and should acurately reflect the text string of the
+		     cell being tested.
+                   </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Cell</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                     This is the optional cell location to be tested
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                     This is the optional cell location to be tested, it will be assummed if 
+		     value is not present that the command is referencing cell 1,1
+                   </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, VerifyCellValue, ExpectedValue</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                     The value is verified at row 1, column 1.
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, VerifyCellValue, ExpectedValue, "2,2"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+			  The value is verified at row 2, column 2.
+			</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_VerifyColumnLabel'></A>Selenium HTMLTableFunctions::<BIG>VerifyColumnLabel</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Attempts to verify a particular column's label when given a column number.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Verifies a column label when given the column number.  It currently
+		does NOT work with columns with multi-line names.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>ColLabel</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The case-insensitive expected value for the specified column label.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>
+<B>ColNumber</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based column number of the label that needs verified.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, VerifyColumnLabel, "Foo", "4"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                Verifies that the 4th column in the table has the label "Foo".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, VerifyColumnLabel, "Foo SecondFoo", "4"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                Verifies that the 4th column in the table has the label "Foo SecondFoo"
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  This will verify correctly if the column label is all on one line, but if
+		  "Foo" is on one line, and "SecondFoo" is on a separate line, this verification
+		  will not work.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_VerifyFuzzyCellText'></A>Selenium HTMLTableFunctions::<BIG>VerifyFuzzyCellText</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Attempts to verify a particular cell value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                "Fuzzy" matches come into play when using header field text 
+                or column1 row text to specify row and column identities.  The 
+                specified text does NOT have to be an exact match--it is NOT 
+                case-sensitive and can be just a substring of the desired value 
+                in the table.<br>
+                The Benchmark must be exact, however.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>BenchValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The case-sensitive expected value for the specified cell.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>[ <B>Row</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell row # in the row/col specification or a unique row value in column 1.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a cell value
+                in column 1.  If no match is found, it will expect the value to be a valid 
+                1-based row number.  This command allows for case-insensitive substring 
+                matches for row text when used in place of an actual row index.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Col</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell column # in the row/col specification or column header text.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a field header. 
+                If no match is found, it will expect the value to be a valid 
+                1-based column number.  This command allows for case-insensitive substring 
+                matches for header text when used in place of an actual column index.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, VerifyFuzzyCellText, FirstCellValue</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Compares the value of cell 1,1 in WebTable to bench Text "FirstCellValue".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  Default row and column indices substituted for missing parameters.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, VerifyFuzzyCellText, "FirstCellValue", 1 , 1 </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Compares the value of cell 1,1 in WebTable to bench text "FirstCellValue".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, VerifyFuzzyCellText, ABenchValue, 4, "field5"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Compares the value of cell 4, "Field5" in WebTable to bench text "ABenchValue".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The column is determined by case-insensitive comparing the text "field5" to the 
+                  field headers in the WebTable.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, VerifyFuzzyCellText, ^ABenchValue, "datum", 5</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Compares the value of cell ADatum,Field5 in WebTable to bench text in variable ^ABenchValue.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The row is determined by seeking the first cell in column 1 in the 
+                  WebTable that contains substring "datum".  The "5" also shows up 
+                  as a substring match to the column header "Field5".  So be cautious, here.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_VerifyFuzzyCellTextContains'></A>Selenium HTMLTableFunctions::<BIG>VerifyFuzzyCellTextContains</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Attempts to verify a particular cell value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                "Fuzzy" matches come into play when using header field text 
+                or column1 row text to specify row and column identities.  The 
+                specified text does NOT have to be an exact match--it is NOT 
+                case-sensitive and can be just a substring of the desired value 
+                in the table.<br>
+                The Benchmark comparison is NOT case-sensitive and can be a substring.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>BenchValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                  The expected value for the specified cell.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The value can be a substring of the full expected 
+                  value and is NOT case-sensitive.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Row</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell row # in the row/col specification or a unique row value in column 1.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a cell value
+                in column 1.  If no match is found, it will expect the value to be a valid 
+                1-based row number.  This command allows for case-insensitive substring 
+                matches for row text when used in place of an actual row index.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Col</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell column # in the row/col specification or column header text.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a field header. 
+                If no match is found, it will expect the value to be a valid 
+                1-based column number.  This command allows for case-insensitive substring 
+                matches for header text when used in place of an actual column index.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, VerifyFuzzyCellTextContains, FirstCellValue</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Matches the "FirstCellValue" value of cell 1,1 in WebTable to bench text "FirstCellValue".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  Default row and column indices substituted for missing parameters.<br>
+                  This also happens to be an exact text match.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, VerifyFuzzyCellTextContains, "firstcell", 1 , 1 </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Matches the "FirstCellValue" value of cell 1,1 in WebTable to bench text "firstcell".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  "firstcell" is a matching substring of the retrieved cell value.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, VerifyFuzzyCellTextContains, bench, 4, "field5"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Matches the "ABenchValue" value of cell 4, "Field5" in WebTable to bench text "bench".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The column is determined by case-insensitive comparing the text "field5" to the 
+                  field headers in the WebTable.  "bench" is a matching substring of the retrieved cell value.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, VerifyFuzzyCellText, bench, "datum", 5</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Matches the "ABenchValue" value of cell ADatum,Field5 in WebTable to bench text "bench".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The row is determined by seeking the first cell in column 1 in the 
+                  WebTable that contains substring "datum".  The "5" also shows up 
+                  as a substring match to the column header "Field5".  So be cautious, here.<br>
+                  "bench" is a matching substring of the retrieved cell value.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_VerifyFuzzyCellTextFind'></A>Selenium HTMLTableFunctions::<BIG>VerifyFuzzyCellTextFind</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Attempts to verify a particular cell by finding the row based on fuzzy cell values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                "Fuzzy" matches come into play when using header field text 
+                or column1 row text to specify row and column identities.  The 
+                specified column/cell text does NOT have to be an exact match--it is NOT 
+                case-sensitive and can be just a substring of the desired value 
+                in the table.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>BenchValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The case-sensitive expected value for the specified cell.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>
+<B>Var</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The variable which gets assigned the row found.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The variable which gets assigned the row found. If not
+                found then it will get a zero length string
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>Col</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell column # in the row/col specification or fuzzy column header text.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to fuzzy-match any provided value with a field header. 
+                If no match is found, it will expect the value to be a valid 
+                1-based column number.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>ColN</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A 1-based cell column # in the row/col specification or fuzzy column header text.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to fuzzy-match any provided value with a field header. 
+                If no match is found, it will expect the value to be a valid 
+                1-based column number.  This must be accompanied by
+                the next parameter, 'ValueN', and as many of the
+                ColN/ValueN parameter pairs can be supplied as desired
+                in order to match for a row based on cell contents.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>ValueN</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A Value to search for in a cell under the 'ColN' column
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                A Value to search for in a cell under the 'ColN' column
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, VerifyFuzzyCellTextFind, "10/09/2003", Variable, "Da","Ti", "09:58 AM", "Cha","Change #2","Rev", "2"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                Verifies the cell in the row matching the colN/valueN values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  Verifies the "Da" cell in the row fuzzy-matching the colN/valueN
+                  values: "Ti"/"09:58 AM", "Cha"/"Change #2", "Rev"/"2" is equal "10/09/2003".
+                  The variable 'Variable' will be assigned the
+                  matching row number.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+		</DIV>
+</BODY>
+</HTML>
+	

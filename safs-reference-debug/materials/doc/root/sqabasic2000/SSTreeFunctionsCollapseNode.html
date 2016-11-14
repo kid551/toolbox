@@ -1,0 +1,57 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_CollapseNode'></A>SSTreeFunctions::<BIG>CollapseNode</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Routine to DblClick a node according to its AppMap reference.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Routine to DblClick a node according to its AppMap reference.  Because 
+                the SSTree is unsupported, this reference is the x,y coordinate of a 
+                GenericObject DblClick command in the form x,y (i.e. "25,10").
+                Because of the nature of the reference, we cannot check whether or 
+                not the node is collapsed/expanded before or after this routine or 
+                even if we clicked on the right node.  Verify the selection and 
+                expanded state of the node before and/or after to check.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>AppMapSubkey</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The named reference of the coordinates to expand/collapse
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The named reference of the coordinates to expand/collapse
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, DirectoryTree, COLLAPSENODE, MyNode</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A double-click will be performed to collapse the Node at x,y coordinate
+                indicated by the MyNode reference in the Application Map.               
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Field  5 : TQ String. A reference identified in the Application Map identifying coordinates
+                on which to double-click
+                A double-click will be performed to collapse the Node at x,y coordinate
+                indicated by the MyNode reference in the Application Map.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

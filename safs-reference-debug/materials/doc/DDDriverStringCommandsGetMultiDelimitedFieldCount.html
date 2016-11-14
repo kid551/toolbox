@@ -1,0 +1,77 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_GetMultiDelimitedFieldCount'></A>DDDriverStringCommands::<BIG>GetMultiDelimitedFieldCount</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Finds the count of all fields within the inputRecord found from
+        startindex to the end of the inputRecord.  The field and index are 1-based.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><a>Finds the count of all fields within the inputRecord found from
+        startindex to the end of the inputRecord.  The field and index are 1-based.</a><a>Blank fields count The next field starts at the next
+        character index even if that char is also a delimiter.
+        If the last character in the inputRecord is a delimiter, then the
+        field it terminates is the last field in the inputRecord.</a><a>Field #1 index is always the same as startindex--even if the character at 
+      the startindex position is a delimiter.</a><a>The delimiter string can contain multiple characters and this string is treated
+      as a single delimiter.</a><a>For example, if delimiter = "-&gt;" then the fields of the inputRecord 
+      are expected to be delimited by the full delimiter string as in:</a><a>"field1-&gt;field2-&gt;field3"</a></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>
+<B>String1</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Source String in which to search for first delimited character</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>
+<B>StartIndex</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Integer (1-based) start position for search in inputRecord</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>
+<B>Delimiters</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              String list of delimiters to find</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>
+<B>ResultVar</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""><p>Name of DDVariable to receive the result</p></short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">C, GetMultiDelimitedFieldCount, string1, index, delimiter,  "result"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 ^result = number of fields counted starting at index as seperated by delimiter
+                 delimeter can be more than 1 character
+           </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

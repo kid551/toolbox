@@ -1,0 +1,111 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_VerifyMenuItemContains'></A>JavaMenuFunctions::<BIG>VerifyMenuItemContains</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Attempts to verify the existence of a menuitem found by partial text match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Attempts to verify the existence of a menuitem found by partial text match.
+                The menuitem should be specified in the form "Menu-&gt;Menu-&gt;MenuItem".  
+                (Optional ampersands precede any character in the menuitem that is underlined.)
+                <p>
+                This command differs from the WindowFunction.VerifyMenuItemContains command because 
+                here we are actually seeking a JavaMenu component, not a Window that contains 
+                a menu.  Also, we do not currently verify any state information like the 
+                WindowFunctions.VerifyMenuItemContains command.
+                </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>MenuItemText</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Menu-&gt;MenuItem hierarchy string to identify which menuitem to find.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Menu-&gt;MenuItem hierarchy string to identify which menuitem to find.
+                This menu hierarchy IS case-sensitive<br>
+				TQ String. the case-sensitive menu item path to select.  
+                Ampersands (&amp;) indicating/preceding underlined characters are optional.
+				The text can be any substring of the full text including spaces and any visible shortcut key 
+                combinations displayed in the text of the menu item.  
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>ExpectedStatus</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Expected status string (or part thereof) of the menuitem. 
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Expected status string (or part thereof) to verify.
+				Only "Enabled" "Ungrayed" "Grayed" "Disabled" "Checked" "Unchecked" "Menu With N MenuItems" are supported now.  
+                <br>Ex: "Enabled Checked"         OR  "Grayed UnChecked"    etc.
+                <br>Each item separated by a space will be evaluated separately so 
+                the order of the status items does not matter.
+				Only the state information of interest needs to be specified.  
+                These status items ARE case-insensitive,space-delimited.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>indexPath</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The index for item of each level. It is 1-based.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The index for item of each level. It is 1-based.
+                 If there are several menuitem in the same level with same text, this
+                 parameter can be used to indicate which one is wanted.                 
+                 Parent-Child relationships are separated by "-&gt;".<br>
+                 Alternatively, the indexPath can be an App Map reference item 
+                 used in conjunction with the Component Name (field #3) that 
+                 allows us to store explicit indexes in the App Map.
+              </detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN> : <value xmlns="">This parameter is supported.</value><BR/>
+</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, JavaWindow, JavaMenu, VerifyMenuItemContains, "Fil-&gt;Sav"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+				Verify that the JavaMenu contains partially path "Fil-&gt;Sav".
+			    For Example: If a path "File-&gt;Save" exists in the JavaMenu, then the verification is ok.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, JavaWindow, JavaMenu, VerifyMenuItemContains, "Fil-&gt;Sav","Enabled"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+				Verify that the JavaMenu contains partially path "Fil-&gt;Sav" and it's status is "Enabled".
+			    For Example: If a path "File-&gt;Save" exists in the JavaMenu and it's status is "Enabled", then the verification is ok.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, AJMenu, VerifyMenuItemContains, "fi-&gt;e","Enabled", "1-&gt;2"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Verify that the partially matched 2th item 'e' in 1th item 'fi' in menubar exists and its status is 'Enabled'
+                For Example: If two pathes "File-&gt;Edit" and "File-&gt;Exit" exist in the menubar AJMenu, the path
+                "File-&gt;Exit" will be found, and if its status is "Enabled", then the verification is ok.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

@@ -1,0 +1,114 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_FindRowNumber'></A>FPSpreadFunctions::<BIG>FindRowNumber</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='WSupport' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             Search specified columns for the specified text.  Assign the
+	     matching row number to the given variable.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+	     Multiple (column, search text) pairs can be used as parameters
+	     to find the matching row.
+
+             The search column and the search text parameters should have
+	     the same number of parameters and are expected to work in
+	     parallel (the first search text is looked for in the first
+	     column listed).
+
+	     The column name and search text parameters, if more than one,
+	     use the delimiter specified to show the separation in the string.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>rowVarName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The name of the variable to store the row number into.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>startingRow</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The row to use to begin the search.  Defaults to row 1.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>searchColumns</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The string of column names where you want to search.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+             You can have just a single column name, or multiple column
+	     names separated by the specified delimiter.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>searchText</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The string of search strings used to search in each specified
+	     column names.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+             The number of search strings you have should be equal to the
+	     number of search columns that you have.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>DELIMITER</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             Delimiter used by the search columns and search text to separate
+	     the different columns/text.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, AWindow, AGrid, FindRowNumber, "foo", "", "Name", "Bar", "|"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Searches for the word "Bar" starting on row 1, in column
+		 "Name" of the given grid.  The returned row number is
+		 stored in the variable foo.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, AWindow, AGrid, FindRowNumber, "foo", "10", "Name|City", "Bar|Pittsburgh", "|"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Searches for the word "Bar" starting on row 10, in column
+		 "Name" of the given grid.  If found, it continues on the
+		 same row to search for "Pittsburgh" in the column "City".
+		 If that is found, the row number is stored in teh variable
+		 foo.  If either column does not match the search text,
+		 nothing is stored in foo and the next row is considered.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

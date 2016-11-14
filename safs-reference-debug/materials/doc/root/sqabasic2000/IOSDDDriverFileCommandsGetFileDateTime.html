@@ -1,0 +1,125 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_GetFileDateTime'></A>IOS DDDriverFileCommands::<BIG>GetFileDateTime</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+          Determine the date and time the file created/last changed/last accessed for file name provided and assign it to a DDV variable.
+        </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Determine the date and time the file created/last changed/last accessed 
+                for file name provided and assign it to a DDV variable.
+                This date is in the format MM-DD-YYYY HH:MM:SS, it is in AM-PM 12-hours
+                format (1-12) be default; If you set the third parameter 'GetMilitaryTime'
+                to True, the time will be 24-hours military format (0-23). Use military time
+                is recommanded, as am-pm time has confusion without AM or PM
+                (example: 18:00 and 06:00 will be both 06:00)
+                You can get different date and time by providing a different value to the fourth
+                optional parameter DateTimeType.
+        </detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><value xmlns=""><b>For Operating System other than Windows, only "lastModified" time is supported.</b></value><BR/>
+</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>FileName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              The file path and file name of the file to get the file date and time.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>FileDateVariable</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Name of the DDV variable to be used to store the file date and time
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>GetMilitaryTime</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 If true, the converted time is in 24-hours military time format
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 If this is true, the converted time will be in 24-hours military time
+                 format (0-23). If this parameter is omitted, it is false be default,
+                 the converted time will be in AM-PM 12-hours format (1-12).
+                 If not provided, by default it is false.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>DateTimeType</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 You can get different date and time by providing a different value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 You have 3 options:
+                 <ol>
+<li><b>Created</b>:			get the created date and time for the file</li>
+<li><b>LastModified</b>:	get the last modified date and time for the file</li>
+<li><b>LastAccessed</b>:	get the last accessed date and time for the file</li>
+</ol>
+                 If not provided, by default it is "LastModified".
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">
+            C, GetFileDateTime, "Test1.txt" , "^filedate"
+          </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Date and time of last change to  Project/Datapool/Test1.txt is determined and assigned to the DDV variable filedate.
+              The time format is '12-hours am-pm'.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">
+            C, GetFileDateTime, "C:\Test1.txt" , "^filedate"
+          </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Date and time of last change to  C:\Test1.txt is obtained and assigned to the DDV variable filedate.
+              The time format is '12-hours am-pm'.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">
+            C, GetFileDateTime, "C:\Test1.txt" , "^filedate", true, "Created"
+          </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Date and time of created to  C:\Test1.txt is obtained and assigned to the DDV variable filedate.
+              The time format is '24-hours military time' (0-23).
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">
+            C, GetFileDateTime, "C:\Test1.txt" , "^filedate", , "LastAccessed"
+          </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Date and time of last accessed to  C:Test1.txt is obtained and assigned to the DDV variable filedate.
+              The time format is '12-hours am-pm'.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

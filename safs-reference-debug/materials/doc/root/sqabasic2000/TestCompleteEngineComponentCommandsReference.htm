@@ -1,0 +1,641 @@
+<HTML xmlns="http://www.w3.org/TR/REC-html40"><HEAD>
+<TITLE>TestComplete EngineComponentCommands</TITLE>
+<LINK rel="stylesheet" href="rrafs.css" type="text/css"/>
+</HEAD><BODY><DIV NAME="top" ID="top">
+		  <H3>TestComplete EngineComponentCommands</H3>
+		  <SMALL>Last Updated:<script language="JavaScript">document.write(document.lastModified)</script></SMALL>
+<BR/>
+<BR/>
+<DIV NAME="list" ID="short_desc"><short_desc xmlns="">Engine commands for components.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>
+            These commands are generally for interrogating engines about 
+            the Windows and Components they can find.  These are not normally 
+            used during testing.  (But they can be used during testing like any 
+            other command record.)  
+            </p><p>
+            For example, these commands are heavily 
+            used by 
+            <a href="http://safsdev.sourceforge.net/doc/org/safs/tools/drivers/STAFProcessContainer.html" target="_blank">STAFProcessContainer</a> 
+            during test design time.
+            </p><p>
+            Each engine command has different parameters 
+            as described in its documentation.  For reference, the 
+            first fields of ALL Engine Command test records are defined 
+            below:</p>
+<p>
+            Field #1 -- "E" = ENGINE COMMAND record type specifier.
+            </p><p>
+            Field #2 -- The Engine Command keyword.
+            </p><p>
+            Example:
+            </p><p><code>E, GetTopLevelWindows</code></p><p>
+            Engine Command parameters must be placed in the test record 
+            in the field position specified in the documentation.  
+            Some parameters are optional.  However, the field associated 
+            with that parameter must be honored.  If you wish to skip an 
+            optional parameter you must still provide an empty field for 
+            that parameter.</p>
+<p>
+            Example:</p><code>E, SomeCommand, Value1, Value2, , , Value5</code><p>
+            The above example shows two optional fields after Value2 
+            which are given no value(skipped).</p>
+<p>
+            Engine commands that return a value do so in the 
+            <b>SAFS/Hook/statusinfo</b> variable of SAFSVARS which is populated 
+            via TestRecordData.statusinfo.
+            </p><p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p>
+<p>
+            The TestComplete Engine (TCAFS) also persists these values as SAFS variables.
+            </p><pre>            
+            ^TCAFS.Command    = [command]
+            ^TCAFS.StatusCode = [statuscode string]
+            ^TCAFS.StatusInfo = [statusinfo]
+            ^TCAFS.FullName   = [object.FullName] -- the TestObjects.FullName string--if command returns only 1 reference.
+            ^TCAFS.UID.Count  = [Number of UID References created last]
+            ^TCAFS.UID.1      = [First UID Reference created]
+            ^TCAFS.UID.n      = [UID Reference number n]            
+            </pre>
+<p>
+            The TestRecordData.statuscode is set to 
+            <a href="http://safsdev.sourceforge.net/doc/constant-values.html#org.safs.tools.drivers.DriverConstant.STATUS_NO_SCRIPT_FAILURE" target="_blank">NO_SCRIPT_FAILURE</a> 
+            if the engine supports and processes the command. This is true even if the 
+            command results in an empty, missing, or null return value.  
+            </p><p><a href="http://safsdev.sourceforge.net/doc/constant-values.html#org.safs.tools.drivers.DriverConstant.STATUS_SCRIPT_NOT_EXECUTED" target="_blank">SCRIPT_NOT_EXECUTED</a> 
+            should be returned in TestRecordData.statuscode if the engine does not support 
+            the command.
+            </p>
+<p>
+            Note that the full availablility of all Engine Commands may be  
+            spread across several files.  Together, all of these files define 
+            all the Engine Commands available to the core framework.</p></detailed_desc><BR/>
+		</DIV>
+</DIV>
+<BR/>
+		<DIV NAME="list" ID="list">
+		  <A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE cellspacing="3" border="1" cellpadding="2">
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ClearReferenceCache' HREF='#detail_ClearReferenceCache' >ClearReferenceCache</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Clear the Object reference cache used in a remote engine.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetCurrentWindow' HREF='#detail_GetCurrentWindow' >GetCurrentWindow</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Return a reference to the top-most active (Window) with focus.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetTopLevelCount' HREF='#detail_GetTopLevelCount' >GetTopLevelCount</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Get the number of visible top-level items (Windows?) for the engine.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetTopLevelWindows' HREF='#detail_GetTopLevelWindows' >GetTopLevelWindows</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Return references to all known top-level items (Windows).</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_IsEnabled' HREF='#detail_IsEnabled' >IsEnabled</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Is the component Enabled (vs. disabled)? </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_IsShowing' HREF='#detail_IsShowing' >IsShowing</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Is the component visible?</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_IsTopLevelPopupContainer' HREF='#detail_IsTopLevelPopupContainer' >IsTopLevelPopupContainer</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Is the component a top-level Popup Container? </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_IsValid' HREF='#detail_IsValid' >IsValid</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Does the component still exist as a valid object?</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetActiveWindow' HREF='#detail_SetActiveWindow' >SetActiveWindow</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Make the component the active (topmost?) Window or Component.</TD>
+</TR>
+</TABLE>
+<HR/>
+</DIV>
+		<DIV NAME="detail" ID="detail">
+		  <H3><A NAME='detail_ClearReferenceCache'></A>TestComplete EngineComponentCommands::<BIG>ClearReferenceCache</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Clear the Object reference cache used in a remote engine.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Clear the Object reference cache used in a remote engine. 
+                When a driver or controller requests a unique reference for a remote Object the Object and a String 
+                Key are stored in an internal cache in the remote engine.  This command instructs the remote engine 
+                to clear its internal cache of Objects and Keys.
+            </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, ClearReferenceCache</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Clear the Object reference cache used in the remote engine.
+                    </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetCurrentWindow'></A>TestComplete EngineComponentCommands::<BIG>GetCurrentWindow</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Return a reference to the top-most active (Window) with focus.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p>
+<p>
+            The TestComplete Engine (TCAFS) also persists these values as SAFS variables.
+            </p><pre>            
+            ^TCAFS.Command    = [command]
+            ^TCAFS.StatusCode = [statuscode string]
+            ^TCAFS.StatusInfo = [statusinfo]
+            ^TCAFS.FullName   = [object.FullName] -- the TestObjects.FullName string--if command returns only 1 reference.
+            ^TCAFS.UID.Count  = [Number of UID References created last]
+            ^TCAFS.UID.1      = [First UID Reference created]
+            </pre></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, GetCurrentWindow</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get a reference to the top-most active Window with focus.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Sample return strings:
+                        <p>
+                        Example 1: "Ref1"
+                        Example 2: ""
+                        </p><p>
+                        Example 2 shows no top-level item was visible to the engine.
+                        </p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetTopLevelCount'></A>TestComplete EngineComponentCommands::<BIG>GetTopLevelCount</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the number of visible top-level items (Windows?) for the engine.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Returns the number of visible top-level items, or 0.  Not all engines can see all items. 
+                For example, Selenium only looks for Web clients.  Some engines may only look for 
+                Java clients, etc..  Some engines can see other top-level items that are not 
+                Windows--like Processes, or Threads, etc...
+            <p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p>
+<p>
+            The TestComplete Engine (TCAFS) also persists these values as SAFS variables.
+            </p><pre>            
+            ^TCAFS.Command    = [command]
+            ^TCAFS.StatusCode = [statuscode string]
+            ^TCAFS.StatusInfo = [statusinfo]
+            </pre></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, GetTopLevelCount</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the number of top-level items visible to the engine.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns the count of top-level items or 0 if the engine "sees" no top-level items.
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetTopLevelWindows'></A>TestComplete EngineComponentCommands::<BIG>GetTopLevelWindows</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Return references to all known top-level items (Windows).</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The engine can only return references to those top-level items it has 
+                knowledge of.  Not all engines can see all items. 
+                For example, Selenium only looks for Web clients.  Some engines may only look for 
+                Java clients, etc..  Some engines can see other top-level items that are not 
+                Windows--like Processes, or Threads, etc...
+                <p>
+                The engine's array of objects will be returned as a delimited list of fields. 
+                The first character in the String will identify the separator used between 
+                each reference.  If no top level windows were found then the engine will return 
+                an empty string.
+                </p>
+<p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p>
+<p>
+            The TestComplete Engine (TCAFS) also persists these values as SAFS variables.
+            </p><pre>            
+            ^TCAFS.Command    = [command]
+            ^TCAFS.StatusCode = [statuscode string]
+            ^TCAFS.StatusInfo = [statusinfo]
+            ^TCAFS.UID.Count  = [Number of UID References created last]
+            ^TCAFS.UID.1      = [First UID Reference created]
+            ^TCAFS.UID.n      = [UID Reference number n]            
+            </pre></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, GetTopLevelWindows</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get references to all known top-level items.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Sample return strings:
+                        <p>
+                        Example 1: ",Ref1,Ref2,Ref3"
+                        Example 2: ""
+                        </p><p>
+                        The first character in Example 1 (a comma in this case) signifies that the 
+                        list of references will be separated by commas.  The references 
+                        then follow.
+                        </p><p>
+                        Example 2 shows no top-level items are visible to the engine.
+                        </p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_IsEnabled'></A>TestComplete EngineComponentCommands::<BIG>IsEnabled</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Is the component Enabled (vs. disabled)? </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Should return text "true" if the component is Enabled. 
+                Return text "false" if it is not.
+            <p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p>
+<p>
+            The TestComplete Engine (TCAFS) also persists these values as SAFS variables.
+            </p><pre>            
+            ^TCAFS.Command    = [command]
+            ^TCAFS.StatusCode = [statuscode string]
+            ^TCAFS.StatusInfo = [statusinfo]
+            ^TCAFS.FullName   = [object.FullName] -- the TestObjects.FullName string--if command returns only 1 reference.
+            </pre></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows, getChildren, or one of the other 
+                        engine commands that return such references.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, IsEnabled, TheComponentReference</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Check the Enabled state of TheComponentReference.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns text "true" or "false".
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_IsShowing'></A>TestComplete EngineComponentCommands::<BIG>IsShowing</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Is the component visible?</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Returns text "true" if the component is set to be visible.
+                Returns text "false" if the component is set to be hidden or 
+                otherwise is not visible.
+            <p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p>
+<p>
+            The TestComplete Engine (TCAFS) also persists these values as SAFS variables.
+            </p><pre>            
+            ^TCAFS.Command    = [command]
+            ^TCAFS.StatusCode = [statuscode string]
+            ^TCAFS.StatusInfo = [statusinfo]
+            ^TCAFS.FullName   = [object.FullName] -- the TestObjects.FullName string--if command returns only 1 reference.
+            </pre></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows, getChildren, or one of the other 
+                        engine commands that return such references.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, IsShowing, TheComponentReference</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Checks the visibility of TheComponentReference.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns text "true" or "false".
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_IsTopLevelPopupContainer'></A>TestComplete EngineComponentCommands::<BIG>IsTopLevelPopupContainer</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Is the component a top-level Popup Container? </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Should return text "true" if the component is. Return text "false" if it is not.
+                Different domains or environs will have different classes or types that are Popup Windows or 
+                Popup containers.
+            <p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p>
+<p>
+            The TestComplete Engine (TCAFS) also persists these values as SAFS variables.
+            </p><pre>            
+            ^TCAFS.Command    = [command]
+            ^TCAFS.StatusCode = [statuscode string]
+            ^TCAFS.StatusInfo = [statusinfo]
+            ^TCAFS.FullName   = [object.FullName] -- the TestObjects.FullName string--if command returns only 1 reference.
+            </pre></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows, getChildren, or one of the other 
+                        engine commands that return such references.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, IsTopLevelPopupContainer, TheComponentReference</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Is TheComponentReference a PopupWindow or Popup container.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns text "true" or "false".
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_IsValid'></A>TestComplete EngineComponentCommands::<BIG>IsValid</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Does the component still exist as a valid object?</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Should return text "true" if the component is still valid. 
+                Return text "false" if it is not.
+            <p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p>
+<p>
+            The TestComplete Engine (TCAFS) also persists these values as SAFS variables.
+            </p><pre>            
+            ^TCAFS.Command    = [command]
+            ^TCAFS.StatusCode = [statuscode string]
+            ^TCAFS.StatusInfo = [statusinfo]
+            ^TCAFS.FullName   = [object.FullName] -- the TestObjects.FullName string--if command returns only 1 reference.
+            </pre></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows, getChildren, or one of the other 
+                        engine commands that return such references.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, IsValid, TheComponentReference</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Validate the existence of TheComponentReference.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns text "true" or "false".
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SetActiveWindow'></A>TestComplete EngineComponentCommands::<BIG>SetActiveWindow</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Make the component the active (topmost?) Window or Component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Normally, this is only valid for window or child window components.  
+                There is currently nothing defined to be returned by this command.
+            <p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p>
+<p>
+            The TestComplete Engine (TCAFS) also persists these values as SAFS variables.
+            </p><pre>            
+            ^TCAFS.Command    = [command]
+            ^TCAFS.StatusCode = [statuscode string]
+            ^TCAFS.StatusInfo = [statusinfo]
+            ^TCAFS.FullName   = [object.FullName] -- the TestObjects.FullName string--if command returns only 1 reference.
+            </pre></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows, getChildren, or one of the other 
+                        engine commands that return such references.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, SetActiveWindow, TheComponentReference</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Set TheComponentReference to be the active/topmost Window.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+		</BODY>
+</HTML>
+	

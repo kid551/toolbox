@@ -1,0 +1,66 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_CompareStoredProperties'></A>WindowFunctions::<SPAN ID="deprecated">CompareStoredProperties</SPAN>  (deprecated for: <B>GenericObject CompareStoredProperties</B>)</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Performs a WindowVP CompareProperties on an object.  
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Performs a WindowVP CompareProperties on an object.  
+                The benchmark VP must already exist and be an asset of the currently 
+                running script.</p>
+<p>
+                To make an existing VP an asset of the current script,
+                the existing script, e.g.,</p>
+<p>
+                MADHATTERScript.MyObjectVP.base.OBP</p>
+<p>
+                can be copied and renamed to</p>
+<p>
+                MyDDScript.MyObjectVP.base.OBP</p>
+<p>
+                where MyDDScript is the name of the current script.</p>
+<p>
+                The name of the actual VP, MyObjectVP, cannot be altered.</p>
+<p>
+                Example 1: Perform a WindowVP on a given window</p>
+<p>
+                t, MainWindow, MainWindow, CompareStoredProperties, MainSetupVP1</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>VPAsset</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Name of the pre-existing VP asset stored in the currently running script.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, COMPARESTOREDPROPERTIES, "AStoredVP"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action performs a WindowVP CompareProperties on the WINDOW object against "AStoredVP".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                This action performs a WindowVP CompareProperties on the WINDOW object against "AStoredVP".
+                The name of the stored CompareProperties VP which must exist as an asset of the currently running script.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

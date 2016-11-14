@@ -1,0 +1,112 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_VerifyClipboardVP'></A>GenericMasterFunctions::<BIG>VerifyClipboardVP</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Verify the current contents of the Windows clipboard using a Robot ClipboardVP.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Verify the current contents of the Windows clipboard using a Robot ClipboardVP.<br>
+               The benchmark VP must already exist as an asset of the currently running script.
+               <p>
+               If the provided VP is NOT a reference in the AppMap then a standard VP compare
+               will occur with the typical VP parameter value like "VP=StoredVP".<br>
+               However, if you wish to modify the ClipboardVP parameter values, such as
+               specifying that the expected result = FAIL, then you must make an entry
+               in the AppMap under the Component name to provide these modified parameters.</p>
+<p>
+               The Window and Component objects are not validated and normally have no role.
+               The Window and Component strings can normally be any text, but they cannot be blank.<br>
+               However, the Component must be a valid section in the AppMap if we wish to store
+               modified VP parameter settings.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>VPName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The name of the ClipboardVP from the currently running script.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, Nonsense, NonsenseToo, VerifyClipboardVP, ClipboardContentsVP</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Verify the current contents of the Windows clipboard using the stored Robot ClipboardVP "ClipboardContentsVP".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Verify the current contents of the Windows clipboard using the stored Robot ClipboardVP "ClipboardContentsVP".<br>
+               No AppMap references for the ClipboardContentsVP performs a normal comparison.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, Browser, Browser, VerifyClipboardVP, BrowserContentsVP</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Verify the current contents of the Windows clipboard using the stored Robot ClipboardVP "BrowserContentsVP".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Verify the current contents of the Windows clipboard using the stored Robot ClipboardVP "BrowserContentsVP".<br>
+               If "BrowserContentsVP" is NOT in the AppMap then a VP compare will occur
+               with the typical VP parameter value like VP=BrowserContentsVP.
+               <p>
+               However, if you wish to modify the ClipboardVP parameter values, such as
+               specifying that the expected result = FAIL, then you must make an entry
+               in the AppMap under the Component name to add these modified parameters.
+               </p><code>
+               AppMap Example for Example #1:
+
+               [Browser]
+               Browser=Type=Window....
+               ...
+               BrowserContentsVP=ExpectedResult=FAIL;Wait=1,5
+               </code></detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, Browser, HTMLTable, VerifyClipboardVP, TableContentsVP</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Verify the current contents of the Windows clipboard using the stored Robot ClipboardVP "TableContentsVP".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Verify the current contents of the Windows clipboard using the stored Robot ClipboardVP "TableContentsVP".<br>
+               If "TableContentsVP" is NOT in the AppMap then a VP compare will occur
+               with the typical VP parameter value like VP=TableContentsVP.
+               <p>
+               However, if you wish to modify the ClipboardVP parameter values, such as
+               specifying that the expected result = FAIL, then you must make an entry
+               in the AppMap under the Component name to add these modified parameters.
+               </p><code>
+               AppMap Example for Example #2:
+
+               [Browser]
+               Browser=Type=Window....
+               HTMLTable=Type=HTMLTable....
+
+               [HTMLTable]
+               TableContentsVP=ExpectedResult=FAIL;Wait=1,5
+               </code></detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

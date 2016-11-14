@@ -1,0 +1,73 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_SelectIndex'></A>Selenium ComboBoxFunctions::<BIG>SelectIndex</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+					Select an item by its index from a combobox.
+				</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+					Select an item by its index from a combobox.
+					This method combines the initial Click required to expose the list
+					of items and then the subsequent selection of the item from the list.
+					<br>
+					The routine will first attempt to see if the index exists in the list
+					and should provide a warning if it cannot find the item or cannot
+					read the list of items. The routine will then attempt the selection.
+					<br></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>IndexValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							The item index in the drop down list to select.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+							Some combo lists are 0-based (start with 0). Some are 1-based (start with 1).
+							The user will have to determine the index base for their particular combo list.
+							<br>
+							It would appear that HTML Combo lists are 1-based.
+						</detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>ForceRefresh</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							Force refreshing to update stale element after selection.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN> : <value xmlns="">First implemented in March 2016 for Selenium2.0 and
+								might not be supported in all engines yet.
+							</value><BR/>
+</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ComboBox, SELECTINDEX, "1"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							This action attempts to Click AND Select item #1 from the ComboBox list.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ComboBox, SELECTINDEX, "1", "true"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							This action attempts to Click AND Select item #1 from the ComboBox
+							list, and force refreshing after selection.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

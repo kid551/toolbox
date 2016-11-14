@@ -1,0 +1,1950 @@
+<HTML xmlns="http://www.w3.org/TR/REC-html40"><HEAD>
+<TITLE>DotNetTreeFunctions</TITLE>
+<LINK rel="stylesheet" href="rrafs.css" type="text/css"/>
+</HEAD><BODY><DIV NAME="top" ID="top">
+		  <H3>DotNetTreeFunctions</H3>
+		  <SMALL>Last Updated:<script language="JavaScript">document.write(document.lastModified)</script></SMALL>
+<BR/>
+<BR/>
+<DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+              Actions for working with .NET Tree objects
+           </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</DIV>
+<BR/>
+		<DIV NAME="list" ID="list">
+		  <A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE cellspacing="3" border="1" cellpadding="2">
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_CaptureTreeDataToFile' HREF='#detail_CaptureTreeDataToFile' >CaptureTreeDataToFile</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+             Copy the current contents of a tree[branch] to a file.
+             </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ClickTextNode' HREF='#detail_ClickTextNode' >ClickTextNode</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Action to click a node according to its text value.  Currently, this component function 
+                 is for Trees and works differently than documented in TreeViewFunctions (though that 
+                 functionality may be added in the near future).
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ClickUnverifiedTextNode' HREF='#detail_ClickUnverifiedTextNode' >ClickUnverifiedTextNode</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Action to blindly click a node according to its text value.  Currently, this component function 
+                 is for Trees and may work differently than documented in TreeViewFunctions.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A ID="linkdeprecated" NAME='list_Collapse' HREF='#detail_Collapse' >Collapse</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Deprecated For:CollapseTextNode</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_CollapsePartialTextNode' HREF='#detail_CollapsePartialTextNode' >CollapsePartialTextNode</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Action to collapse a node according to a partial match of its text value.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_CollapseTextNode' HREF='#detail_CollapseTextNode' >CollapseTextNode</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Action to collapse a node according to its text value.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_CollapseUnverifiedTextNode' HREF='#detail_CollapseUnverifiedTextNode' >CollapseUnverifiedTextNode</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Action to blindly collapse a node according to its text value.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_CtrlClickUnverifiedTextNode' HREF='#detail_CtrlClickUnverifiedTextNode' >CtrlClickUnverifiedTextNode</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Action to blindly CTRL-click a node according to its text value.  Currently, this component function is for Trees only.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_DoubleClickTextNode' HREF='#detail_DoubleClickTextNode' >DoubleClickTextNode</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Action to double-click a node according to its text value.  Currently, this component function 
+                 is for Trees and works differently than documented in TreeViewFunctions (though that 
+                 functionality may be added in the near future).
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_DoubleClickUnverifiedTextNode' HREF='#detail_DoubleClickUnverifiedTextNode' >DoubleClickUnverifiedTextNode</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Action to blindly double-click a node according to its text value.  Currently, this component function 
+                 is for Trees and may work differently than documented in TreeViewFunctions.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A ID="linkdeprecated" NAME='list_Expand' HREF='#detail_Expand' >Expand</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Deprecated For:ExpandTextNode</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ExpandPartialTextNode' HREF='#detail_ExpandPartialTextNode' >ExpandPartialTextNode</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Action to expand a node according to a partial match of text value.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ExpandTextNode' HREF='#detail_ExpandTextNode' >ExpandTextNode</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Action to expand a node according to its text value.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ExpandUnverifiedTextNode' HREF='#detail_ExpandUnverifiedTextNode' >ExpandUnverifiedTextNode</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Action to blindly expand a node according to its text value.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A ID="linkdeprecated" NAME='list_MakeSelection' HREF='#detail_MakeSelection' >MakeSelection</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Deprecated For:SelectTextNode</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_PartialMatchTreeDataToFile' HREF='#detail_PartialMatchTreeDataToFile' >PartialMatchTreeDataToFile</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+             Copy the current contents of a tree[branch] to a file according to a partial match of its text value.
+             </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_RightClickTextNode' HREF='#detail_RightClickTextNode' >RightClickTextNode</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Action to right-click a node according to its text value.  Currently, this component function 
+                 is for Trees and works differently than documented in TreeViewFunctions (though that 
+                 functionality may be added in the near future).
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_RightClickUnverifiedTextNode' HREF='#detail_RightClickUnverifiedTextNode' >RightClickUnverifiedTextNode</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Action to blindly right-click a node according to its text value.  Currently, this component function 
+                 is for Trees and may work differently than documented in TreeViewFunctions.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectAnotherPartialTextNode' HREF='#detail_SelectAnotherPartialTextNode' >SelectAnotherPartialTextNode</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Action to select a node according to a partial match of its text value, in addition to any nodes already selected.
+                 Performs selection as if CTRL key were held down during selection.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectAnotherTextNode' HREF='#detail_SelectAnotherTextNode' >SelectAnotherTextNode</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Action to select a node according to its text value, in addition to any nodes already selected.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectAnotherUnverifiedTextNode' HREF='#detail_SelectAnotherUnverifiedTextNode' >SelectAnotherUnverifiedTextNode</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Action to blindly select a node according to its text value, in addition to any nodes already selected.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectPartialTextNode' HREF='#detail_SelectPartialTextNode' >SelectPartialTextNode</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Action to select a node according to a partial match of its text value.
+                 Performs selection as if CTRL key were held down during selection.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectTextNode' HREF='#detail_SelectTextNode' >SelectTextNode</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Action to select a node according to its text value.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectUnverifiedTextNode' HREF='#detail_SelectUnverifiedTextNode' >SelectUnverifiedTextNode</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Action to blindly select a node according to its text value.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetTreeContainsNode' HREF='#detail_SetTreeContainsNode' >SetTreeContainsNode</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+             		Sets a user-defined variable with the result of whether a tree contains the provided node.
+             	</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetTreeContainsPartialMatch' HREF='#detail_SetTreeContainsPartialMatch' >SetTreeContainsPartialMatch</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+             		Sets a user-defined variable with the result of whether a tree contains the provided node
+             		according to a partial match of the node's text value.
+             	</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ShiftClickUnverifiedTextNode' HREF='#detail_ShiftClickUnverifiedTextNode' >ShiftClickUnverifiedTextNode</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Action to blindly SHIFT-click a node according to its text value. Currently, this component function is for Trees only.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyTreeContainsNode' HREF='#detail_VerifyTreeContainsNode' >VerifyTreeContainsNode</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+             		Verify that a tree contains the provided node.
+             	</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyTreeContainsPartialMatch' HREF='#detail_VerifyTreeContainsPartialMatch' >VerifyTreeContainsPartialMatch</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>
+             	Verify that a tree contains the provided node according to a partial match of the node's text value.
+             	</TD>
+</TR>
+</TABLE>
+<HR/>
+</DIV>
+		<DIV NAME="detail" ID="detail">
+		  <H3><A NAME='detail_CaptureTreeDataToFile'></A>DotNetTreeFunctions::<BIG>CaptureTreeDataToFile</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Copy the current contents of a tree[branch] to a file.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>The search of the path to the node is expected to be a case-sensitive 
+             exact match of each node.  Use 'PartialMatchTreeDataToFile' if you 
+             wish to specify case-insensitive substring matches for tree nodes.             
+             </p>
+             By default, the files will be
+             stored in the active "Test" directory.  If you specify a
+             relative path, the path will be relative to the project
+             directory.  The directory for a full or relative path 
+             must already exist.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>File</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The name of the file used to store the tree data.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             The name of the file used to store the tree data.
+             By default, the files will be
+             stored in the active "Test" directory.  If you specify a
+             relative path, the path will be relative to the project
+             directory.  The directory for a full or relative path 
+             must already exist.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>Branch</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+	                	The full name of the tree branch to capture.
+	                </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+	                	The full name of the tree branch to capture.  If omitted, all 
+	                	branches/nodes are captured.
+		        	<br><br>The search of the path to the node is expected to be a case-sensitive 
+		        	exact match of each node.  Use 'PartialMatchTreeDataToFile' if you 
+		        	wish to specify case-insensitive substring matches for tree nodes.             
+                        </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>IndentMark</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+		        	The character(s) to use in the output file to indent the tree nodes from the 
+		        	parent tree branches.
+		        </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+		         	The character(s) to use in the output file to indent the tree nodes from the 
+		        	parent tree branches.  If omitted, a tab character is used.
+              		</detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>FileEncoding</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Specify a character encoding to be used when saving data to a file.
+			 If it is not specified, the system default file encoding will be used.
+             The encoding should be a valid string supported by Java; if it is not valid,
+             the system default file encoding will be used instead.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>FilterMode</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             (Future) Specify a file filter to use to process the text before comparison.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>FilterOptions</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             (Future) Specify filter options to use with the file filter.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Browser, aTreeView, CaptureTreeDataToFile, aFilename.ext</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Capture the complete nodeset of aTreeView to a file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Data is stored in 
+               [project]\Datapool\Test\aFilename.ext file using tab chars to indent the nodes and branches.
+               Because no Branch was specified, the data for the whole tree is captured.<br>
+               Note the unused reserved fields for FileFilter and FilterOptions were omitted.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Browser, aTree, CaptureTreeDataToFile, myDirectory\aFilename.ext, "Parent Bank-&gt;Branch Banking and Trust", "_"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Capture the data contents from 'Parent Bank-&gt;Branch Banking and Trust' to a file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Data is stored in 
+               [project]\myDirectory\aFilename.ext file using "_" chars to indent the nodes and branches.
+               Because a Branch was specified, only nodes from that branch are captured.<br>
+               Note the unused reserved fields for FileFilter and FilterOptions were omitted.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Browser, aTreeView, CaptureTreeDataToFile, aFilename.ext, , , "UTF-8"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Capture the complete nodeset of aTreeView to a file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Capture the complete nodeset of aTreeView to a file.<BR>
+               Writing file with "UTF-8" encoding.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_ClickTextNode'></A>DotNetTreeFunctions::<BIG>ClickTextNode</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to click a node according to its text value.  Currently, this component function 
+                 is for Trees and works differently than documented in TreeViewFunctions (though that 
+                 functionality may be added in the near future).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to click.
+                 Parent-Child relationships are separated by "-&gt;"
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATree, ClickTextNode, "Parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action clicks the "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ATree, ClickTextNode, "Parent-&gt;Child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action clicks the "Child" node found under "Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_ClickUnverifiedTextNode'></A>DotNetTreeFunctions::<BIG>ClickUnverifiedTextNode</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to blindly click a node according to its text value.  Currently, this component function 
+                 is for Trees and may work differently than documented in TreeViewFunctions.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive full path text of node to click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to click.
+                 Parent-Child relationships are separated by "-&gt;"  If the tree contains 
+                 hidden root nodes then they must be provided.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATree, ClickUnverifiedTextNode, "root-&gt;Parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action blindly clicks the "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The hidden root node is provided as required.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ATree, ClickUnverifiedTextNode, "root-&gt;Parent-&gt;Child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action blindly clicks the "Child" node found under "Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The hidden root node is provided as required.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_Collapse'></A>DotNetTreeFunctions::<SPAN ID="deprecated">Collapse</SPAN>  (deprecated for: <B>CollapseTextNode</B>)   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Use CollapseTextNode instead.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to collapse
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to collapse.
+                 Parent-Child relationships are separated by "-&gt;"
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATree, Collapse, "Parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action collapses the "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ATree, Collapse, "Parent-&gt;Child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action collapses the "Child" node found under "Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_CollapsePartialTextNode'></A>DotNetTreeFunctions::<BIG>CollapsePartialTextNode</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to collapse a node according to a partial match of its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-Insensitive text of node to collapse
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-insensitive text of the node to collapse.
+                 Parent-Child relationships are separated by "-&gt;"
+                 For each level, a text comparison is performed. If the node 
+                 contains the requested substring anywhere in its text, then 
+                 that node is considered a match.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATree, CollapsePartialTextNode, "Parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action collapses the "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ATree, CollapsePartialTextNode, "parent-&gt;child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action collapses the "Child" node found under "Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_CollapseTextNode'></A>DotNetTreeFunctions::<BIG>CollapseTextNode</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to collapse a node according to its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to collapse
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to collapse.
+                 Parent-Child relationships are separated by "-&gt;"
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATree, CollapseTextNode, "Parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action collapses the "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ATree, CollapseTextNode, "Parent-&gt;Child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action collapses the "Child" node found under "Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_CollapseUnverifiedTextNode'></A>DotNetTreeFunctions::<BIG>CollapseUnverifiedTextNode</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to blindly collapse a node according to its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Generally, no pre- or post- node checks are done. If the tree contains 
+                 hidden root nodes the user must provide these.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive full path text of node to collapse
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to collapse.
+                 Parent-Child relationships are separated by "-&gt;" 
+                 If the tree contains hidden root nodes they must be provided.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATree, CollapseUnverifiedTextNode, "root-&gt;Parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action blindly collapses the "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The hidden root node 'root' is provided as required.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ATree, CollapseUnverifiedTextNode, "root-&gt;Parent-&gt;Child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action collapses the "Child" node found under "Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The hidden root node 'root' is provided as required.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_CtrlClickUnverifiedTextNode'></A>DotNetTreeFunctions::<BIG>CtrlClickUnverifiedTextNode</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to blindly CTRL-click a node according to its text value.  Currently, this component function is for Trees only.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to CTRL-click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to CTRL-click.
+                 Parent-Child relationships are separated by "-&gt;"
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATree, CtrlClickUnverifiedTextNode, "Parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action CTRL-clicks the "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ATree, CtrlClickUnverifiedTextNode, "Parent-&gt;Child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action CTRL-clicks the "Child" node found under "Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_DoubleClickTextNode'></A>DotNetTreeFunctions::<BIG>DoubleClickTextNode</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to double-click a node according to its text value.  Currently, this component function 
+                 is for Trees and works differently than documented in TreeViewFunctions (though that 
+                 functionality may be added in the near future).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to double-click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to double-click.
+                 Parent-Child relationships are separated by "-&gt;"
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATree, DoubleClickTextNode, "Parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action double-clicks the "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ATree, DoubleClickTextNode, "Parent-&gt;Child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action double-clicks the "Child" node found under "Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_DoubleClickUnverifiedTextNode'></A>DotNetTreeFunctions::<BIG>DoubleClickUnverifiedTextNode</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to blindly double-click a node according to its text value.  Currently, this component function 
+                 is for Trees and may work differently than documented in TreeViewFunctions.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive full path text of node to double-click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to double-click.
+                 Parent-Child relationships are separated by "-&gt;"  If the tree contains 
+                 hidden root nodes then they must be provided.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATree, DoubleClickUnverifiedTextNode, "root-&gt;Parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action blindly double-clicks the "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The hidden root node is provided as required.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ATree, DoubleClickUnverifiedTextNode, "root-&gt;Parent-&gt;Child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action blindly double-clicks the "Child" node found under "Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The hidden root node is provided as required.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_Expand'></A>DotNetTreeFunctions::<SPAN ID="deprecated">Expand</SPAN>  (deprecated for: <B>ExpandTextNode</B>)   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Use ExpandTextNode instead.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to expand
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to expand.
+                 Parent-Child relationships are separated by "-&gt;"
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATree, Expand, "Parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action expands the "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ATree, Expand, "Parent-&gt;Child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action expands the "Child" node found under "Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_ExpandPartialTextNode'></A>DotNetTreeFunctions::<BIG>ExpandPartialTextNode</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to expand a node according to a partial match of text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-Insensitive text of node to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-insensitive text of the node.
+                 Parent-Child relationships are separated by "-&gt;".
+                 For each level, a text comparison is performed. If the node 
+                 contains the requested substring anywhere in its text, then 
+                 that node is considered a match.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATree, ExpandPartialTextNode, "parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action successfully expands the "My New Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ATree, ExpandPartialTextNode, "parent-&gt;child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action successfully expands the "My Stepchild" node found under "My New Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_ExpandTextNode'></A>DotNetTreeFunctions::<BIG>ExpandTextNode</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to expand a node according to its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to expand
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to expand.
+                 Parent-Child relationships are separated by "-&gt;"
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATree, ExpandTextNode, "Parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action expands the "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ATree, ExpandTextNode, "Parent-&gt;Child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action expands the "Child" node found under "Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_ExpandUnverifiedTextNode'></A>DotNetTreeFunctions::<BIG>ExpandUnverifiedTextNode</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to blindly expand a node according to its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Generally, no pre- or post- node checks are done. If the tree contains 
+                 hidden root nodes the user must provide these.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive full path text of node to expand
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to expand.
+                 Parent-Child relationships are separated by "-&gt;".  If the tree 
+                 contains hidden root nodes the user must provide these.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATree, ExpandUnverifiedTextNode, "root-&gt;Parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action blindly expands the "root-&gt;Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The hidden root node 'root' is provided as required.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ATree, ExpandUnverifiedTextNode, "root-&gt;Parent-&gt;Child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action blindly expands the "Child" node found under "Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The hidden root node 'root' is provided as required.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_MakeSelection'></A>DotNetTreeFunctions::<SPAN ID="deprecated">MakeSelection</SPAN>  (deprecated for: <B>SelectTextNode</B>)   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Use SelectTextNode instead.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to select
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to select.
+                 Parent-Child relationships are separated by "-&gt;"
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATree, MakeSelection, "Parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ATree, MakeSelection, "Parent-&gt;Child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the "Child" node found under "Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_PartialMatchTreeDataToFile'></A>DotNetTreeFunctions::<BIG>PartialMatchTreeDataToFile</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Copy the current contents of a tree[branch] to a file according to a partial match of its text value.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>The search of the path to the node is a case-insensitive 
+             substring match of each node.  Use 'CaptureTreeDataToFile' if you 
+             wish to specify case-sensitive exact matches for tree nodes.             
+             </p>
+             By default, the files will be
+             stored in the active "Test" directory.  If you specify a
+             relative path, the path will be relative to the project
+             directory.  The directory for a full or relative path 
+             must already exist.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>File</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The name of the file used to store the tree data.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             The name of the file used to store the tree data.
+             By default, the files will be
+             stored in the active "Test" directory.  If you specify a
+             relative path, the path will be relative to the project
+             directory.  The directory for a full or relative path 
+             must already exist.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>Branch</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+	             The full name of the tree branch to capture.
+	              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+	             The full name of the tree branch to capture.  If omitted, 
+	             all branches/nodes are captured.
+		     <br><br>The search of the path to the node is a case-insensitive 
+		     substring match of each node.  Use 'CaptureTreeDataToFile' if you 
+		     wish to specify case-sensitive exact matches for tree nodes.             
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>IndentMark</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+			        	The character(s) to use in the output file to indent the tree nodes from the 
+			        	parent tree branches.
+			        </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+			         	The character(s) to use in the output file to indent the tree nodes from the 
+			        	parent tree branches.  If omitted, a tab character is used.
+	              		</detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>FilterMode</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             (Future) Specify a file filter to use to process the text before comparison.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>FilterOptions</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             (Future) Specify filter options to use with the file filter.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Browser, aTreeView, PartialMatchTreeDataToFile, aFilename.ext</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Capture the complete nodeset of aTreeView to a file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Data is stored in 
+               [project]\Datapool\Test\aFilename.ext file using tab chars to indent the nodes and branches.
+               Because no Branch was specified, the data for the whole tree 
+               is captured.<br>
+               Note the unused reserved fields for FileFilter and FilterOptions were omitted.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Browser, aTree, PartialMatchTreeDataToFile, myDirectory\aFilename.ext, "parent-&gt;branch", "_"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Capture the data contents from the first child node of 'parent' containing 'branch' to a file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Thus, this could be a match for 'Parent Bank-&gt;Branch Banking and Trust'<br>
+               Data is stored in 
+               [project]\myDirectory\aFilename.ext file using "_" chars to indent the nodes and branches.  
+               Because a Branch was specified, only nodes from that branch are captured.<br>
+               Note the unused reserved fields for FileFilter and FilterOptions were omitted.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_RightClickTextNode'></A>DotNetTreeFunctions::<BIG>RightClickTextNode</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to right-click a node according to its text value.  Currently, this component function 
+                 is for Trees and works differently than documented in TreeViewFunctions (though that 
+                 functionality may be added in the near future).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to right-click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to right-click.
+                 Parent-Child relationships are separated by "-&gt;"
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATree, RightClickTextNode, "Parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action right-clicks the "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ATree, RightClickTextNode, "Parent-&gt;Child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action right-clicks the "Child" node found under "Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_RightClickUnverifiedTextNode'></A>DotNetTreeFunctions::<BIG>RightClickUnverifiedTextNode</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to blindly right-click a node according to its text value.  Currently, this component function 
+                 is for Trees and may work differently than documented in TreeViewFunctions.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive full path text of node to right-click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to right-click.
+                 Parent-Child relationships are separated by "-&gt;"  If the tree contains 
+                 hidden root nodes then they must be provided.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATree, RightClickUnverifiedTextNode, "root-&gt;Parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action blindly right-clicks the "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The hidden root node is provided as required.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ATree, RightClickUnverifiedTextNode, "root-&gt;Parent-&gt;Child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action blindly right-clicks the "Child" node found under "Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The hidden root node is provided as required.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SelectAnotherPartialTextNode'></A>DotNetTreeFunctions::<BIG>SelectAnotherPartialTextNode</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to select a node according to a partial match of its text value, in addition to any nodes already selected.
+                 Performs selection as if CTRL key were held down during selection.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-Insensitive text of node to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-insensitive text of the node to select.
+                 Parent-Child relationships are separated by "-&gt;"
+                 For each level, a text comparison is performed. If the node 
+                 contains the requested substring anywhere in its text, then 
+                 that node is considered a match.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATree, SelectAnotherPartialTextNode, "parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the "My New Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ATree, SelectAnotherPartialTextNode, "parent-&gt;child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the "My Stepchild" node found under "My New Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SelectAnotherTextNode'></A>DotNetTreeFunctions::<BIG>SelectAnotherTextNode</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to select a node according to its text value, in addition to any nodes already selected.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to select.
+                 Parent-Child relationships are separated by "-&gt;"
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATree, SelectAnotherTextNode, "Parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ATree, SelectAnotherTextNode, "Parent-&gt;Child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the "Child" node found under "Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SelectAnotherUnverifiedTextNode'></A>DotNetTreeFunctions::<BIG>SelectAnotherUnverifiedTextNode</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to blindly select a node according to its text value, in addition to any nodes already selected.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Generally, no pre- or post- node checks are done. If the tree contains 
+                 hidden root nodes the user must provide these.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive full path text of node to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to select.
+                 Parent-Child relationships are separated by "-&gt;"  If the tree contains 
+                 hidden root nodes they must be provided.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATree, SelectAnotherUnverifiedTextNode, "root-&gt;Parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action blindly selects the "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The hidden root node is provided as required.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ATree, SelectAnotherUnverifiedTextNode, "root-&gt;Parent-&gt;Child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action blindly selects the "Child" node found under "Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The hidden root node is provided as required.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SelectPartialTextNode'></A>DotNetTreeFunctions::<BIG>SelectPartialTextNode</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to select a node according to a partial match of its text value.
+                 Performs selection as if CTRL key were held down during selection.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-Insensitive text of node to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-insensitive text of the node to select.
+                 Parent-Child relationships are separated by "-&gt;"
+                 For each level, a text comparison is performed. If the node 
+                 contains the requested substring anywhere in its text, then 
+                 that node is considered a match.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATree, SelectPartialTextNode, "parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the "My New Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ATree, SelectPartialTextNode, "parent-&gt;child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the "My Stepchild" node found under "My New Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SelectTextNode'></A>DotNetTreeFunctions::<BIG>SelectTextNode</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to select a node according to its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to select.
+                 Parent-Child relationships are separated by "-&gt;"
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATree, SelectTextNode, "Parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ATree, SelectTextNode, "Parent-&gt;Child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the "Child" node found under "Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SelectUnverifiedTextNode'></A>DotNetTreeFunctions::<BIG>SelectUnverifiedTextNode</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to blindly select a node according to its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Generally, no pre- or post- node checks are done. If the tree contains 
+                 hidden root nodes the user must provide these.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive full path text of node to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to select.
+                 Parent-Child relationships are separated by "-&gt;" 
+                 If the tree contains hidden root nodes they must be provided.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATree, SelectUnverifiedTextNode, "root-&gt;Parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action blindly selects the "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The hidden root node is provided as required.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ATree, SelectUnverifiedTextNode, "root-&gt;Parent-&gt;Child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action blindly selects the "Child" node found under "Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The hidden root node is provided as required.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SetTreeContainsNode'></A>DotNetTreeFunctions::<BIG>SetTreeContainsNode</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             		Sets a user-defined variable with the result of whether a tree contains the provided node.
+             	</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>The search of the path to the node is expected to be a case-sensitive 
+             		exact match of each node.  Use 'SetTreeContainsPartialMatch' if you 
+             		wish to specify case-insensitive substring matches for tree nodes.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>Node</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             				The name of the node to verify.
+              			</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             				The search of the path to the node is expected to be a case-sensitive 
+	     				exact match of each node.  Use 'SetTreeContainsPartialMatch' if you 
+	     				wish to specify case-insensitive substring matches for tree nodes.
+              			</detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>ResultVar</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+	             			The name of the variable which gets assigned the result.
+	              		</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+	             			The value of 'TRUE' indicates the node was found in the tree, and 'FALSE'
+	             			indicates that the node was not found in the tree.
+	              		</detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Browser, aTreeView, SetTreeContainsNode, "Parent Bank-&gt;Branch Banking and Trust", isFound</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               			Variable isFound will be set to 'TRUE' if the node 'Parent Bank-&gt;Branch Banking and Trust' 
+               			is found in aTreeView.  If not found, isFound will be set to 'FALSE'.
+              			</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SetTreeContainsPartialMatch'></A>DotNetTreeFunctions::<BIG>SetTreeContainsPartialMatch</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             		Sets a user-defined variable with the result of whether a tree contains the provided node
+             		according to a partial match of the node's text value.
+             	</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>The search of the path to the node is expected to be a case-insensitive 
+			substring match of each node.  Use 'SetTreeContainsNode' if you 
+             		wish to specify case-sensitive substring matches for tree nodes.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>Node</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             				The name of the node to verify.
+              			</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             				The search of the path to the node is expected to be a case-insensitive 
+					substring match of each node.  Use 'SetTreeContainsNode' if you 
+             				wish to specify case-sensitive substring matches for tree nodes.
+              			</detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>ResultVar</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+	             			The name of the variable which gets assigned the result.
+	              		</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+	             			The value of 'TRUE' indicates the node was found in the tree, and 'FALSE'
+	             			indicates that the node was not found in the tree.
+	              		</detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Browser, aTreeView, VerifyTreeContainsNode, "parent-&gt;branch", isFound</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+           				Variable isFound will be set to 'TRUE' if a child node of 'parent' containing 
+           				'branch' is found in aTreeView.  If not found, isFound will be set to 'FALSE'.
+				</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+					Thus, this could be a match for 'Parent Bank-&gt;Branch Banking and Trust'.
+              			</detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_ShiftClickUnverifiedTextNode'></A>DotNetTreeFunctions::<BIG>ShiftClickUnverifiedTextNode</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to blindly SHIFT-click a node according to its text value. Currently, this component function is for Trees only.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to SHIFT-click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to SHIFT-click.
+                 Parent-Child relationships are separated by "-&gt;"
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ATree, ShiftClickUnverifiedTextNode, "Parent"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action SHIFT-clicks the "Parent" node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, ATree, ShiftClickUnverifiedTextNode, "Parent-&gt;Child"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action SHIFT-clicks the "Child" node found under "Parent".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_VerifyTreeContainsNode'></A>DotNetTreeFunctions::<BIG>VerifyTreeContainsNode</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             		Verify that a tree contains the provided node.
+             	</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>The search of the path to the node is expected to be a case-sensitive 
+             		exact match of each node.  Use 'VerifyTreeContainsPartialMatch' if you 
+             		wish to specify case-insensitive substring matches for tree nodes.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>Node</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             		The name of the node to verify.
+              	</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             		The search of the path to the node is expected to be a case-sensitive 
+	     		exact match of each node.  Use 'VerifyTreeContainsPartialMatch' if you 
+	     		wish to specify case-insensitive substring matches for tree nodes.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Browser, aTreeView, VerifyTreeContainsNode, "Parent Bank-&gt;Branch Banking and Trust"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               		Verify the node 'Parent Bank-&gt;Branch Banking and Trust' is found in aTreeView.
+              	</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_VerifyTreeContainsPartialMatch'></A>DotNetTreeFunctions::<BIG>VerifyTreeContainsPartialMatch</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             	Verify that a tree contains the provided node according to a partial match of the node's text value.
+             	</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>The search of the path to the node is expected to be a case-insensitive 
+             		substring match of each node.  Use 'VerifyTreeContainsNode' if you 
+             		wish to specify case-sensitive substring matches for tree nodes.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>Node</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             		The name of the node to verify.
+              	</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             		The search of the path to the node is expected to be a case-insensitive 
+			substring match of each node.  Use 'VerifyTreeContainsNode' if you 
+             		wish to specify case-sensitive substring matches for tree nodes.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Browser, aTreeView, VerifyTreeContainsNode, "parent-&gt;branch"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               		Verify that a child node of 'parent' containing 'branch' is found in aTreeView.
+              	</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+			Thus, this could be a match for 'Parent Bank-&gt;Branch Banking and Trust'.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+		</BODY>
+</HTML>
+	

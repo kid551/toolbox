@@ -1,0 +1,83 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_CaptureBodySourceToFile'></A>Selenium HTMLDocumentFunctions::<BIG>CaptureBodySourceToFile</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Captures the HTML source of the BODY tag into a file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Captures the HTML source of the BODY tag into a file.<br>
+                This includes the BODY tag itself, everything inside it, and the closing 
+                /Body tag as well.
+                <p><B>RobotJ (RJ) Specific Notes:</B><br>
+                	1) If your HTML document or browser does not support the 'outerHTML' property 
+                	then you may have to resort to providing internet connection info in the properties 
+                	file mentioned in #2.
+                	<p></p>
+               		2) If you use proxy to connect to internet, proxy.server and proxy.server.port
+               		in the file org.safs.rational.proxyParameter.properties must be set to ensure
+               		the execution of this command.
+               </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>Filename</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Name of the output file to create in the active "Test" directory.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Name of the output file to create in the active "Test" directory.  
+                This is the name only, no path information is expected.  
+                If the file extension is omitted then the default extension 
+                of ".TXT" will be used.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>FileEncoding</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Specify a character encoding to be used when saving data to a file.
+			 If it is not specified, the system default file encoding will be used.
+             The encoding should be a valid string supported by Java; if it is not valid,
+             the system default file encoding will be used instead.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebPage, CaptureBodySourceTofile, OutputFile</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Stores the text within the BODY tag to OutputFile.TXT
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Field  5 : TQ String.  Filename of the output file in the active "Test" directory. 
+                If no extension is provided then .TXT is assumed.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WebBrowser, WebPage, CaptureBodySourceTofile, OutputFile, "UTF-8"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Stores the text within the BODY tag to OutputFile.TXT
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Field  5 : TQ String.  Filename of the output file in the active "Test" directory. 
+                If no extension is provided then .TXT is assumed.<BR>
+                Write the file with "UTF-8" encoding.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

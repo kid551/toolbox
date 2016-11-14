@@ -1,0 +1,112 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_VerifyFuzzyCellTextFind'></A>RobotJ HTMLTableFunctions::<BIG>VerifyFuzzyCellTextFind</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Attempts to verify a particular cell by finding the row based on fuzzy cell values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                "Fuzzy" matches come into play when using header field text 
+                or column1 row text to specify row and column identities.  The 
+                specified column/cell text does NOT have to be an exact match--it is NOT 
+                case-sensitive and can be just a substring of the desired value 
+                in the table.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>BenchValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The case-sensitive expected value for the specified cell.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>
+<B>Var</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The variable which gets assigned the row found.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The variable which gets assigned the row found. If not
+                found then it will get a zero length string
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>Col</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell column # in the row/col specification or fuzzy column header text.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to fuzzy-match any provided value with a field header. 
+                If no match is found, it will expect the value to be a valid 
+                1-based column number.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>ColN</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A 1-based cell column # in the row/col specification or fuzzy column header text.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to fuzzy-match any provided value with a field header. 
+                If no match is found, it will expect the value to be a valid 
+                1-based column number.  This must be accompanied by
+                the next parameter, 'ValueN', and as many of the
+                ColN/ValueN parameter pairs can be supplied as desired
+                in order to match for a row based on cell contents.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>ValueN</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A Value to search for in a cell under the 'ColN' column
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                A Value to search for in a cell under the 'ColN' column
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, VerifyFuzzyCellTextFind, "10/09/2003", Variable, "Da","Ti", "09:58 AM", "Cha","Change #2","Rev", "2"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                Verifies the cell in the row matching the colN/valueN values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  Verifies the "Da" cell in the row fuzzy-matching the colN/valueN
+                  values: "Ti"/"09:58 AM", "Cha"/"Change #2", "Rev"/"2" is equal "10/09/2003".
+                  The variable 'Variable' will be assigned the
+                  matching row number.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

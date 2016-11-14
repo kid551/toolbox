@@ -1,0 +1,54 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_Click'></A>ComboBoxFunctions::<SPAN ID="deprecated">Click</SPAN>  (deprecated for: <B>Generic CLICK</B>)   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+					Attempts to perform a standard Click on the ComboBox
+				</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Attempts to perform a standard Click on the ComboBox. If
+						the combobox list is not exposed then this will expose the list of items. 
+						If the list is already exposed, then this will close the list.
+					</p>
+<p>
+						It must be noted that when you expose the list in a ComboBox, it is
+						no longer a ComboBox. It typically converts to a ComboListBox. This may
+						not be an issue on controls that Robot can recognize with a NAME=method.
+					</p>
+<p>
+						However, if the control is recognized by ObjectIndex or some other means
+						then the original ComboBox may no longer be found on the screen.
+						With this scenario, you need to reference the ComboBox and the
+						ComboListBox in the application map (and associated data files) as two separate
+						items.
+					</p>
+<p>
+						To avoid these potential problems, use the COMBOBOX 'SELECT' command
+						to actually open the list and select the item all with a single command.
+					</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ComboBox, CLICK</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							Used to show or hide the drop down list from the ComboBox object.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+							Used to show or hide the drop down list from the ComboBox object.
+							Use the Select command INSTEAD of Click if you actually want to
+							Select an item in the list.
+						</detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

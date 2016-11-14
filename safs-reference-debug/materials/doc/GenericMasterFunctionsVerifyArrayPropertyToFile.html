@@ -1,0 +1,102 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_VerifyArrayPropertyToFile'></A>GenericMasterFunctions::<BIG>VerifyArrayPropertyToFile</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='WFSupport' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the value of an array property with a benchmark file
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Typically, benchmarks are stored in the Datapool\Bench directory.
+             In that event, only the filename.ext is needed.  There is currently
+             a limit of 32K allowed for this type of comparison.
+             <p>
+             The command will produce a TEST WARNING if the user has configured an 
+             alternate DIFF tool for which we have no means to compare the diff results.
+             If this WARNING is expected, the user should use the "TW" test record type.</p>
+<p>
+             Note: for RobotJ,Suggest to use RFT Inspector to confirm which property should be used. There are two examples:
+				 <ol>
+<li>For Java swing List and ComboBox items can be fetchedusing the '.itemText' property (Note the dot)</li>
+<li>For Html List (type is html.select) items can be fetchedusing the '.text' property (Note the dot)</li>
+</ol>
+</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>PropertyName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The case-sensitive name of the object array property to verify.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>
+<B>BenchmarkFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The name of the file used as the comparison benchmark.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Typically, benchmarks are stored in the Datapool\Bench directory.
+             In that event, only the filename.ext is needed.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>FilterMode</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             (Future) Specify a file filter to use to process the text before comparison.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>[ <B>FilterOptions</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             (Future) Specify filter options to use with the file filter.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, Window, MyListBox, VerifyArrayPropertyToFile, "List", aFilename.ext, "", ""</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Verify the "List" array property of MyListBox with the benchmark file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               The benchmark file is located within the Project at Datapool\Bench\aFilename.ext<br>
+               Note the unused reserved fields for FileFilter and FilterOptions.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, Window, MyListBox, VerifyArrayPropertyToFile, "List", c:\Dir\aFilename.ext</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Verify the "List" property of MyListBox with the benchmark file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               The benchmark file is not located within the Project. It is at c:\Dir\aFilename.ext
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

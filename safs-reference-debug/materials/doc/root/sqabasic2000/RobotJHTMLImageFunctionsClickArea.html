@@ -1,0 +1,73 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_ClickArea'></A>RobotJ HTMLImageFunctions::<BIG>ClickArea</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to perform a Click on a mapped region of an Image (on a webpage).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                RobotJ: The initial implementation actually does this in reverse.  It 
+                expects that the specified object resolves to the HTML.AREA object defined 
+                in the HTML.MAP instead of simply specifying the Image and then an area.  
+                The RobotJ implementation then attempts to locate the Doc and Image that 
+                use the defined area and click on it.<br>
+                No Field #5 parameter is used or needed in this implementation.
+                <p>
+                Future implementations should also\instead support the HTML.IMAGE object 
+                as the target and the area to click as a Field #5 parameter.
+                The parameter would optionally define an App Map reference or could be used 
+                as a literal value.  App Map references might appear as below:
+		</p>
+<pre>
+                Examples:
+
+                [BrowserWin]
+                AnImage=Type=HTMLFrame;HTMLID=top;Type=HTMLImage;Index=1
+                ...                 
+                [AnImage]
+                ANamedRegion=AreaName=TechSupport
+                AnIndexedRegion=AreaIndex=2
+                AnotherRegion=AreaID=Contact
+                </pre></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>[ <B>AppMapSubkey</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                (FUTURE) Name of the AppMap subkey to lookup and use for the image area click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                (FUTURE) Not used by RobotJ at this time.
+                <p>
+                The AppMap could contain the item in any of the following formats:
+                </p><pre>
+                [AnImage]
+                AMappdedRegion=Coords=10,10
+                ANamedRegion=AreaName=TechSupport
+                AnIndexedRegion=AreaIndex=2
+                AnotherRegion=AreaID=Contact
+                </pre><p>
+                Both Fields #3 and #5 would be used to locate the item in the App Map.
+                This routine does not specify an App Map so only the current Map
+                would be used and it is expected to be valid.</p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, ADefinedArea, ClickArea</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A single-click is performed on the the first Image using the defined HTML.AREA.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

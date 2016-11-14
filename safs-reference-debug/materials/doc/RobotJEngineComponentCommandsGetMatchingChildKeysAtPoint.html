@@ -1,0 +1,69 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_GetMatchingChildKeysAtPoint'></A>RobotJ EngineComponentCommands::<BIG>GetMatchingChildKeysAtPoint</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">According to screen location, find the test object at that point and return all matching keys in cache.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                According to screen location, find the test object at that point and return all matching keys in cache. The keys
+                will be separaged by a separator, the separator is determinated dynamically and it may be "," "|" ":" ";" "_" "#" "!"
+            </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>
+<B>WindowKey</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">A string represents the key of window's Test Object.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A string represents the key of window's Test Object. This key is generated
+                        by engine and used to get the Window/Component Test Object from a cache.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>ComponentLocationX</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">A string represents the component's x location on screen.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A string represents the component's x location on screen.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>ComponentLocationY</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">A string represents the component's y location on screen.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A string represents the component's y location on screen.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">E, GetMatchingChildKeysAtPoint, "WindowKey", "358", "598"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">According the screen location(358, 598) find a component at that point, this
+                    	component belongs to the window described by "WindowKey". Finally 
+                    	return all the keys corresponding to that component in the cache.
+                    </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

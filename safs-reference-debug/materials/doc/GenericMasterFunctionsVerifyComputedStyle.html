@@ -1,0 +1,62 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_VerifyComputedStyle'></A>GenericMasterFunctions::<BIG>VerifyComputedStyle</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                Verify a component's 'computed style' against a benchmark file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Verify a component's 'computed style' against a benchmark file.<br>
+                If the comparison fails, a copy of the captured 'computed style' should be stored in 
+                the project's Test directory.  This file, once verified, should be suitable to become a 
+                new benchmark, if needed.
+              </detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN><SPAN CLASS='domainMarker' TITLE='HTML Domain'>HTM</SPAN> : <value xmlns="">'Computed Style' is typically a derived property of the HTML domain.</value><BR/>
+</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>BenchFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                The benchmake file to compare against.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The benchmark file to compare against.<br>
+                The full absolute path to the benchmark file or a relative path.<br>
+                Relative path's should be sought in this order:
+                <p><ol>
+<li>The Project's Bench directory;</li>
+<li>Relative to the Project's Datapool directory;</li>
+<li>Relative to the Project's root directory;</li>
+</ol></p></detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN><SPAN CLASS='domainMarker' TITLE='HTML Domain'>HTM</SPAN> : <value xmlns="">The benchmark file is expected to be in JSON format.</value><BR/>
+</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, VerifyComputedStyle, "ComponentStyle.txt"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               	Capture the COMPONENT's 'computed style' and verify it against the ComponentStyle.txt benchmark file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

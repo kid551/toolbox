@@ -1,0 +1,72 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_SetFileProtections'></A>IOS DDDriverFileCommands::<BIG>SetFileProtections</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+          Change the file attribute for the file name provided to the value of the new file protection provided.
+        </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+          Change the file attribute for the file name provided to the value of the new file protection provided. An integer containing the new attributes for the file. Here is a description of attributes that can be modified: 
+          <p>0 Normal file (Windows PC Only)</p>
+<p>1 Read-only file</p>
+<p>2 Hidden file (Windows PC Only)</p>
+<p>4 System file (Windows PC Only)</p>
+<p>32 Archive - file has changed since last backup (Windows PC Only)</p>
+<p>Note: Java-based support like RJ, TID, SDC currently only support setting one 
+          file protection at a time--0, 1, 2, 3, 32. They do not yet support Integer values OR'd 
+          together to combine settings in a single call.</p>
+<p>Note: On platforms other than windows we currently only support setting the READ-ONLY 
+          attribute.
+          </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>FileName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              The file path and file name of the file change the file attribute.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>FileProtection</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              New value of the attribute of the file to be changed
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">
+            C, SetFileProtections, "Test1.txt" , 1
+          </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              File attribute of the file Project/Datapool/Test1.txt is changed to 1 (read-only)
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">
+            C, SetFileProtections, "C:Test1.txt" , 0
+          </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              File attribute of the file C:Test1.txt is change to 0 (read-write)
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

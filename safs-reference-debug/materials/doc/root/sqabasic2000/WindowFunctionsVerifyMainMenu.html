@@ -1,0 +1,121 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_VerifyMainMenu'></A>WindowFunctions::<BIG>VerifyMainMenu</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='FSupport' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Compares the active windows menu system with a benchmark
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Retrieves the active windows menu system and outputs the full structure 
+                with status to a file.  It then compares that file with the specified 
+                benchmark file and sets pass/fail conditions for the test.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>BenchmarkFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                name.ext of benchmark file on repositiory's Datapool\Bench directory
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>DescriptiveText</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Optional expected descriptive text at start of file (first line of bench).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Optional expected descriptive text at start of file (first line of bench).
+                (If bench has this descriptive text this field is REQUIRED to pass.)
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>TestFile</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                optional name.ext to give current structure in repository's 
+                Datapool\Test directory for compare with benchmark.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                optional name.ext to give current structure in repository's 
+                Datapool\Test directory for compare with benchmark.
+                If no name is given then the bench name is used.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>DiffFile</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Optional name.ext to store difference information
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Optional name.ext to store difference information in repository's Datapool\Dif.
+                If no name is given then the bench name is used.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, VERIFYMAINMENU, "BenchFile.ext"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               The WINDOW menu system is verified against "BenchFile.ext"
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               The filename of the benchmark file to use in the comparison.
+               Currently, this is expected to be in the Project's Datapool\Bench directory.   
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, AnObject, VERIFYMAINMENU, "BenchFile.ext", "Descriptive Text"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The WINDOW menu system is verified against "BenchFile.ext"
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                The case-sensitive descriptive text in the benchmark file preceding the menu structure. 
+                If there is none, then this field should be missing, blank, or "".
+                (If bench has this descriptive text this field is REQUIRED to pass.)
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, AnObject, VERIFYMAINMENU, "BenchFile.ext", "Descriptive Text", "TestFile.ext"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The WINDOW menu system is verified against "BenchFile.ext"
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                TestFile.ext to give the current menu structure output that is to be evaluated against the
+                benchmark.  If this field is missing, blank, or "" then the provided BenchFile.ext will be used.
+                This file is stored in the Project's Datapool\Test directory. 
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, AnObject, VERIFYMAINMENU, "BenchFile.ext", , "TestFile.ext", "DiffFile.ext"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The WINDOW menu system is verified against "BenchFile.ext"
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                "DiffFile.ext" to give the diff file created after the comparison is complete.
+                If this field is missing, blank, or "" then the provided BenchFile.ext will be used.
+                This file is stored in the Project's Datapool\Dif directory.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

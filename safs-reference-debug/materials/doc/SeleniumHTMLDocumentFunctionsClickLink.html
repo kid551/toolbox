@@ -1,0 +1,113 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_ClickLink'></A>Selenium HTMLDocumentFunctions::<BIG>ClickLink</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Performs an HTMLLink Click based on a complete match of text found on 
+                 Links within this HTMLDOCUMENT object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Performs an HTMLLink Click based on a complete match of text found on 
+                Links within this HTMLDOCUMENT object.</p>
+<p>
+                Optionally, the user can also specify a match index to indicate that 
+                the desired Link is the "nth" Link that matches the text criteria.</p>
+<p>
+                The text comparison for the Link is NOT case-sensitive by default.</p>
+<p>
+                Leading and trailing whitespace will be removed from the links as they 
+                are compared unless the link in the HTML itself is quoted.
+                In addition, any Line Feeds and Carriage Returns will be removed.
+                For the link, we use the outerText property to locate the text.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>CompareTextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The text to compare with each Link.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The text to compare with each Link.  By default this comparison is not 
+                case-sensitive.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                Optional match index indicating the desired link is not the first
+                link that matches, but the "nth" link that matches.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Optional match index indicating the desired link is not the first
+                link that matches, but the "nth" link that matches.
+                The index is 1-based.  "1" selects the first matching link,
+                "2" selects the second matching link, etc..
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>CaseSensitive</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                "Case-Sensitive", "CaseSensitive", or "True" will make search case-sensitive.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                "Case-Sensitive", "CaseSensitive", or "True" will make search case-sensitive.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebPage, CLICKLINK, "Yearly Reports"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Performs a single click on the HTMLLink that contains "Yearly Reports" in the document.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Field  5 : TQ String.  The case-insensitive text to match and click
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebPage, CLICKLINK, "Yearly Reports", 1, "CaseSensitive"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Performs a single click on the HTMLLink that contains "Yearly Reports" in the document.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Field  5 : The text to match and click<br>
+                Field [6]: The first link that matches.<br>
+                Field [7]: The search is case-sensitive.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebPage, CLICKLINK, "Yearly Reports", 4</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Performs a single click on the 4th HTMLLink that matches "Yearly Reports" in the document.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Field  5 : TQ String.  The case-insensitive text to match and click<br>
+                Field [6]: TQ String.  The match index to select if more than one link would match 
+                and you don't want the first one
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

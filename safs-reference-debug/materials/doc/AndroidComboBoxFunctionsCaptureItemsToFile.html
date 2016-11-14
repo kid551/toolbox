@@ -1,0 +1,77 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_CaptureItemsToFile'></A>Android ComboBoxFunctions::<BIG>CaptureItemsToFile</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN>:<SPAN CLASS='domainMarker' TITLE='DEV Domain'>DEV</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+					Capture Items To a File specified (if not abs, then to test dir)
+				</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+					Capture Items To a File specified (if not abs, then to test dir)
+				</detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>FileName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							File name (if not absolute, then to test dir)
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+							File name (if not absolute, then to test dir)
+						</detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>FileEncoding</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							Specify a character encoding to be used when saving data to a file.
+							If it is not specified, the system default file encoding will be used.
+							The encoding should be a valid string supported by Java; if it is
+							not valid, the system default file encoding will be used instead.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ComboBox, CaptureItemsToFile , afile.txt
+					</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							Captures all the items in the combo to ...\datapool\test\afile.txt
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+							Captures all the items in the combo to ...\datapool\test\afile.txt
+						</detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ComboBox, CaptureItemsToFile , afile.txt, "UTF-8"
+					</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							Captures all the items in the combo to ...\datapool\test\afile.txt
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+							Captures all the items in the combo to ...\datapool\test\afile.txt
+							<BR>
+							Write the file with encoding "UTF-8".
+						</detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

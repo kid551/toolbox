@@ -1,0 +1,307 @@
+<HTML xmlns="http://www.w3.org/TR/REC-html40"><HEAD>
+<TITLE>HTMLLinkFunctions</TITLE>
+<LINK rel="stylesheet" href="rrafs.css" type="text/css"/>
+<LINK rel="stylesheet" href="bootstrap.css" type="text/css"/>
+</HEAD><BODY><DIV class="container content" NAME="top" ID="top">
+		  <H1>HTMLLinkFunctions</H1>
+		  
+          Last Updated:<script language="JavaScript">document.write(document.lastModified)</script>
+<BR/>
+<BR/>
+<DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+              Actions for working with HTMLLink objects
+           </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+		<DIV NAME="list" ID="list">
+		  <A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE class="table">
+<thead class="thead-inverse">
+<tr>
+<th>Keyword Name</th>
+<th>Supported Engines</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<TR>
+<TD nowrap="true" width="27%"><A ID="linkdeprecated" NAME='list_Click' HREF='#detail_Click' >Click</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Deprecated For:Generic CLICK</TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A ID="linkdeprecated" NAME='list_CompareStoredData' HREF='#detail_CompareStoredData' >CompareStoredData</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Deprecated For:Generic CompareStoredData</TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A ID="linkdeprecated" NAME='list_CompareStoredProperties' HREF='#detail_CompareStoredProperties' >CompareStoredProperties</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>Deprecated For:Generic CompareStoredProperties</TD>
+		  </TR>
+</tbody>
+</TABLE>
+<HR/>
+</DIV>
+		<DIV NAME="detail" ID="detail">
+		  <H3><A NAME='detail_Click'></A>HTMLLinkFunctions::<SPAN ID="deprecated">Click</SPAN>  (deprecated for: <B>Generic CLICK</B>)</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Use Generic CLICK where possible.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Attempts to perform a standard Click on an HTMLLink on a webpage.</p>
+<p>
+                Example:</p>
+<p>
+                BrowserWin SomeLink Click</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, URLLink, CLICK</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A single-click is performed on the URLLINK
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                A single-click is performed on the URLLINK
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_CompareStoredData'></A>HTMLLinkFunctions::<SPAN ID="deprecated">CompareStoredData</SPAN>  (deprecated for: <B>Generic CompareStoredData</B>)</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Performs a HTMLLinkVP CompareData on an HTMLLink object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Performs a HTMLLinkVP CompareData on an HTMLLink object.</p>
+<p>
+                THE BENCHMARK VP MUST ALREADY EXIST AND BE AN ASSET OF THE CURRENTLY
+                RUNNING SCRIPT.</p>
+<p> 
+                Modified VP parameter information can be added to the standard
+                VP=VPName by including the VPName reference in the application map
+                in a section defined for the HTMLLink.  If this is done, the value 
+                retrieved from the application map will be appended to VP=VPName.
+                The required semicolon for this append will be provided by this routine.</p>
+<p>
+                Example 1: Perform a standard HTMLLink CompareData.  To perform
+                a basic CompareData the name "StoredVP" will not exist in the app map:</p>
+<p>
+                The Step File call:</p>
+<p>
+                BrowserWindow AnHTMLLink CompareStoredData StoredVP</p>
+<p>
+                This will produce a CompareData VP with "VP=StoredVP;Wait=2,10".</p>
+<p>
+                The StoredVP baseline MUST already exist as an asset of the
+                currently running script.</p>
+<p>
+                Example 2: Perform a HTMLLink CompareData providing addition 
+                parameter information (such as ExpectedResult=FAIL).  To do this the
+                HTMLLink object must have its own section in the app map and an item
+                with the same name as the StoredVP.  The value of that item will be
+                appended to the standard VP argument with a semicolon.</p>
+<p>
+                Part of App Map:</p>
+<p>
+                [BrowserWindow]
+                BrowserWindow=WindowTag=WEBBrowser
+                AnHTMLLink=&lt;snipped for brevity&gt;;\;Type=HTMLLink;HTMLID=LinkID
+                ...
+                [AnHTMLLink]
+                StoredVP=ExpectedResult=FAIL;Wait=3,30</p>
+<p> 
+                The Step File call:</p>
+<p>
+                BrowserWindow AnHTMLLink CompareStoredData StoredVP</p>
+<p>
+                This will produce a CompareData VP with all the parameters appended
+                like this: "VP=StoredVP;ExpectedResult=FAIL;Wait=3,30".
+                NOTE:When stored parameters are found in the app map then the default Wait= 
+                parameter used in the standard compare is no longer provided.  If you still 
+                need a Wait= parameter, then it must be included in the stored parameters.</p>
+<p>
+                The StoredVP baseline MUST already exist as an asset of the
+                currently running script.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>VPAsset</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Name of the pre-existing VP asset stored in the currently running script.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Name of the pre-existing VP asset stored in the currently running script.
+                If the name also exists in the app map under the component then the
+                additional stored parameters are appended to the VP call.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, URLLink, COMPARESTOREDDATA, "AStoredVP"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action compares stored data on the URLLink object against "AStoredVP".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Field  5 : TQ String. The name of a stored CompareData VP which must exist
+                as an asset of the currently running script. 
+                You can also specify additional VP parameters by including a reference
+                in the application map.</p>
+<p>[URLLink]</p>
+<p>AStoredVP=ExpectedResult=FAIL;Wait=3,30</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_CompareStoredProperties'></A>HTMLLinkFunctions::<SPAN ID="deprecated">CompareStoredProperties</SPAN>  (deprecated for: <B>Generic CompareStoredProperties</B>)</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Performs a HTMLLinkVP CompareProperties on an HTMLLink object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Performs a HTMLLinkVP CompareProperties on an HTMLLink object.</p>
+<p>
+                THE BENCHMARK VP MUST ALREADY EXIST AND BE AN ASSET OF THE CURRENTLY
+                RUNNING SCRIPT.</p>
+<p>
+                Modified VP parameter information can be added to the standard
+                VP=VPName by including the VPName reference in the application map
+                in a section defined for the HTMLLink.  If this is done, the value 
+                retrieved from the application map will be appended to VP=VPName.
+                The required semicolon for this append will be provided by this routine.</p>
+<p>
+                Example 1: Perform a standard HTMLLink CompareProperties.  To perform
+                a basic CompareProperties the name "StoredVP" will not exist in the app map:</p>
+<p>
+                The Step File call:</p>
+<p>    
+                BrowserWindow AnHTMLLink CompareStoredProperties StoredVP</p>
+<p>   
+                This will produce a CompareProperties VP with "VP=StoredVP;Wait=2,10".</p>
+<p>
+                The StoredVP baseline MUST already exist as an asset of the
+                currently running script.</p>
+<p>  
+                Example 2: Perform a HTMLLink CompareProperties providing addition 
+                parameter information (such as ExpectedResult=FAIL).  To do this the
+                HTMLLink object must have its own section in the app map and an item
+                with the same name as the StoredVP.  The value of that item will be
+                appended to the standard VP argument with a semicolon.</p>
+<p>
+                Part of App Map:</p>
+<p>
+                [BrowserWindow]
+                BrowserWindow=WindowTag=WEBBrowser
+                AnHTMLLink=&lt;snipped for brevity&gt;;\;Type=HTMLLink;HTMLID=LinkID
+                ...
+                [AnHTMLLink]
+                StoredVP=ExpectedResult=FAIL;Wait=3,30</p>
+<p>
+                The Step File call:</p>
+<p> 
+                BrowserWindow AnHTMLLink CompareStoredProperties StoredVP</p>
+<p>
+                This will produce a CompareProperties VP with all the parameters appended
+                like this: "VP=StoredVP;ExpectedResult=FAIL;Wait=3,30".
+                NOTE:When stored parameters are found in the app map then the default Wait= 
+                parameter used in the standard compare is no longer provided.  If you still 
+                need a Wait= parameter, then it must be included in the stored parameters.</p>
+<p>
+                The StoredVP baseline MUST already exist as an asset of the
+                currently running script.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>VPAsset</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Name of the pre-existing VP asset stored in the currently running script.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Name of the pre-existing VP asset stored in the currently running script.
+                If the name also exists in the app map under the component then the
+                additional stored parameters are appended to the VP call.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, URLLink, COMPARESTOREDPROPERTIES, "AStoredVP"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action performs a CompareProperties on the WebLink object against "AStoredVP".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Field  5 : TQ String. The name of a stored CompareProperties VP which must
+                exist as an asset of the currently running script.
+                You can also specify additional VP parameters by including a reference in the application map.</p>
+<p>[URLLink]</p>
+<p>AStoredVP=ExpectedResult=FAIL;Wait=3,30</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+		</DIV>
+</BODY>
+</HTML>
+	

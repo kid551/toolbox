@@ -1,0 +1,98 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_VerifyTabOrder'></A>GenericMasterFunctions::<BIG>VerifyTabOrder</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                 Attempts to verify the tab order of the specified object--usually a Window.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>
+  Attempts to verify the tab order of the current object--usually a Window.
+  A file is used to store the correct tab order of the interface. </p><p>
+
+  The file is simply a list of component names in the order we expect to find
+  them as we tab through the interface.  Each line in the file will contain a
+  single component name.  That can be either the real valid Name given to the
+  component by development, or the name for the component from the AppMap.  The
+  AppMap name is highly recommended to reduce maintenance of the tab order file.
+  Blank lines or commented lines are ignored.  Comment lines begin with
+  apostrophe(') or semi-colon(;) characters.</p><p>
+
+  Example file:
+  <ul>
+<li>;Tab Order Benchmark File</li>
+<li>;For ClassicC Login Window</li>
+<li>(blank)</li>
+<li>UserIDComboBox</li>
+<li>PasswordEditBox</li>
+<li>RememberCheckBox</li>
+<li>(blank)</li>
+<li>OKButton</li>
+<li>CancelButton</li>
+</ul>
+  This file would normally be placed in the Datapool\Bench directory.</p><p>
+
+  The function will verify that the object order in the interface is the same
+  object order that is in the file. This is done by checking the FOCUS
+  Property of the current object and using the TAB key for navigation.
+  Thus, navigation by the TAB key must be supported by the application.</p><p>
+
+  The routine will only check the tab order for the number of items found
+  in the tab order benchmark file.  Thus, the user can perform partial tests
+  on different portions of the interface at different times.  Just make sure
+  that the item that currently has the focus is the first item in the tab order
+  benchmark file when invoking this command.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>FileName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                Filename of TabOrder benchmark file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Filename of TabOrder benchmark file.<p>
+                The file is simply a list of component names in the order we expect to find
+                them as we tab through the interface.  Each line in the file will contain a
+                single component name.</p><p>
+                This file would normally be placed in the Datapool\Bench directory.</p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Window, Window, VerifyTabOrder, FileName</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                 Used to verify the taborder of the specified Window.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Used to verify the taborder of the specified Window.
+                 The FileName can include the full path to the file.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Window, Component, VerifyTabOrder, FileName</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                 Used to verify the taborder of the specified component.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Used to verify the taborder of the specified component.
+                 This is for other components that may have embedded child objects of
+                 their own that allow us to test the tab order.  This is likely rare.
+                 The FileName can include the full path in which case that will be used.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

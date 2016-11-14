@@ -1,0 +1,87 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_VerifyMenuItemContains'></A>DotNetMenuFunctions::<BIG>VerifyMenuItemContains</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Attempts to verify the existence of a menuitem found by partial text match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Attempts to verify the existence of a menuitem found by partial text match.
+                The menuitem should be specified in the form "Menu-&gt;Menu-&gt;MenuItem".  
+                (Optional ampersands precede any character in the menuitem that is underlined.)
+                <p>
+                This command differs from the WindowFunction.VerifyMenuItemContains command because 
+                here we are actually seeking a JavaMenu component, not a Window that contains 
+                a menu.  Also, we do not currently verify any state information like the 
+                WindowFunctions.VerifyMenuItemContains command.
+                </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>MenuItemText</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Menu-&gt;MenuItem hierarchy string to identify which menuitem to find.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Menu-&gt;MenuItem hierarchy string to identify which menuitem to find.
+                This menu hierarchy IS case-sensitive<br>
+				TQ String. the case-sensitive menu item path to select.  
+                Ampersands (&amp;) indicating/preceding underlined characters are optional.
+				The text can be any substring of the full text including spaces and any visible shortcut key 
+                combinations displayed in the text of the menu item.  
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>ExpectedStatus</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Expected status string (or part thereof) of the menuitem. 
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Expected status string (or part thereof) to verify.
+				Only "Enabled" "Ungrayed" "Grayed" "Disabled" "Checked" "Unchecked" "Menu With N MenuItems" are supported now.  
+                <br>Ex: "Enabled Checked"         OR  "Grayed UnChecked"    etc.
+                <br>Each item separated by a space will be evaluated separately so 
+                the order of the status items does not matter.
+				Only the state information of interest needs to be specified.  
+                These status items ARE case-insensitive,space-delimited.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, Window, Menu, VerifyMenuItemContains, "Fil-&gt;Sav"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+				Verify that the Menu contains partially path "Fil-&gt;Sav".
+			    For Example: If a path "File-&gt;Save" exists in the Menu, then the verification is ok.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, Window, Menu, VerifyMenuItemContains, "Fil-&gt;Sav","Enabled"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+				Verify that the Menu contains partially path "Fil-&gt;Sav" and it's status is "Enabled".
+			    For Example: If a path "File-&gt;Save" exists in the Menu and it's status is "Enabled", then the verification is ok.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

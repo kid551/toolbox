@@ -1,0 +1,72 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_CallJUnit'></A>TIDComponent DDDriverFlowCommands::<BIG>CallJUnit</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Invoke one or more JUnit tests using the provided Class name(s).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Because JUnit is a testing framework; test_record, test_passes, and test_failure counts within the status counters 
+                 will be updated when possible.
+                 <p>
+                 If properly configured with SAFS RuntimeDataAwareness (dependency injection of SAFS Driver instances) the JUnit 
+                 test has full access to all SAFS services including SAFS App Map data and SAFS Variable storage.
+                 </p>
+<p>JUnit tests can be intermixed with other SAFS tests.</p></detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN><SPAN CLASS='domainMarker' TITLE='HTML Domain'>HTM</SPAN> : <value xmlns="">
+			    All SeleniumPlus actions, command, and libraries are available.  <br>
+			    Access SeleniumPlus actions and commands through the SeleniumPlus static methods and fields.
+			</value><BR/>
+</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>ClassName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The name of one or more Classes to execute.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Class names are in the normal full package.Class format.  
+                 Multiple classes can be separated by SEMI-COLONs, COLONs, COMMAs, or SPACES--
+                 whichever is NOT being used as the test record separator.  
+                 The same separator should be used between all Classes.
+                 <p>The Classes to execute must be findable within the JVM ClassPath.</p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, CallJUnit, "com.sas.spock.tests.SpockExperiment" </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Have JUnit execute the com.sas.spock.tests.SpockExperiment Class.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Test Records, Test Passes, and Test Failures will be added to the overall SAFS Test Status 
+                 upon completion of the JUnit test.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, CallJUnit, "myapp.tests.APITest myapp.tests.RESTTest"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Have JUnit execute 2 different tests.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Test Records, Test Passes, and Test Failures will be added to the overall SAFS Test Status 
+                 upon completion of the JUnit tests.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

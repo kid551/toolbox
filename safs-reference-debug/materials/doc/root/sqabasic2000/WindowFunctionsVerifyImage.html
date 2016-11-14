@@ -1,0 +1,86 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_VerifyImage'></A>WindowFunctions::<BIG>VerifyImage</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Performs a WindowVP CompareImage OR a RegionImageVP on an object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Performs a WindowVP CompareImage OR a RegionImageVP on an object.  
+                The benchmark VP must already exist and be an asset of the currently 
+                running script.</p>
+<p>
+                A RegionImageVP can be accomplished by having the name of the VP as an item 
+                under the component in the application map.  The item's value must be 
+                the coordinate values required by the RegionImageVP (i.e. "65,100,200,250").</p>
+<p>
+                Example 1: Perform a WindowVP CompareImage</p>
+<p>
+                MainWindow SomeWindowObject VerifyImage StoredVP</p>
+<p>
+                (no StoredVP item found in the app map under SomeWindowObject)</p>
+<p>
+                The named VP (StoredVP) must not exist in the application map.  The 
+                entire panel/object of SomeWindowObject will be captured and compared 
+                against the StoredVP baseline which must already exist as an asset of the
+                currently running script.</p>
+<p>
+                Example 2: Perform a RegionImageVP on a particular area of the screen</p>
+<p>
+                MainWindow SomeWindowObject VerifyImage StoredVP</p>
+<p>
+                (StoredVP found as:</p>
+<p> 
+                "65,100,200,250"   OR
+                "Coords=65,100,200,250"</p>
+<p>  
+                in the SomeWindowObject section of the app map)</p>
+<p>
+                The named VP (StoredVP) is found to exist in the application map as a
+                subitem in the SomeWindowObject section of the map.  This causes 
+                the routine to attempt a RegionImageVP using the map's value of the StoredVP 
+                item as the coordinates for the region to capture.  StoredVP is ALSO the 
+                name of the VP which must already exist as an asset of the currently 
+                running script.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>VPAsset</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                TextValue is the name of the pre-existing VP asset stored in the currently running script.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                TextValue is the name of the pre-existing VP asset stored in the currently running script.
+                If the name also exists in the app map under the component then 
+                a RegionImageVP will be attempted.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, VERIFYIMAGE, "AStoredVP"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action performs a WindowVP CompareImage OR a RegionImageVP on the WINDOW object 
+                against "AStoredVP".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                The name of a stored VP which must exist as an asset of the currently running script.  
+                Normally, a straight Robot CompareImage of the entire Window would be performed.
+                However, if the AStoredVP value given exists in the Application Map as a reference
+                under the provided Window object then a RegionImage test will be attempted instead.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

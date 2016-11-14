@@ -1,0 +1,69 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_SelectTabIndex'></A>TabControlFunctions::<BIG>SelectTabIndex</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to select a particular Tab by Index.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Attempts to select a particular Tab by Index.
+                The routine will set the StepDriverTestInfo.statuscode and
+                log any pass/warning/fail info using the StepDriverTestInfo.fac LogFacility.
+                <p>
+                For some engines, like Rational Robot, the user must know whether the indices of 
+                the TabControl are 0-based or 1-based and use the raw index number.  
+                </p>
+<p>
+                For Rational Functional Tester we attempt to enforce that all indices are 
+                1-based whenever possible.  Thus, the first tab would be specified as TabIndex=1 
+                even if the control itself uses 0-based tab indices.
+                </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TabIndex</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Index of the tab to click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                The index of the tab to click.  The user needs to know whether 
+                the TabControl indices are 0-based or 1-based.  SAFS for RFT attempts to 
+                allow the user to use 1-based indices for all controls.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, TabControl, SelectTabIndex, 2</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A single-click is performed on the 2nd tab of a 1-based TabControl.  
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                The 2nd tab of a 1-based TabControl will likely correspond to the 3rd 
+                tab of a 0-based TabControl.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

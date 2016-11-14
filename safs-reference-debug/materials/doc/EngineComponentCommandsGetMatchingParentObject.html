@@ -1,0 +1,63 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_GetMatchingParentObject'></A>EngineComponentCommands::<BIG>GetMatchingParentObject</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get a reference to the toplevel Window\Parent that matches the recognition string provided.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+            	Locate a toplevel Window\Parent matching the recognition string and return a unique 
+            	reference to that component.  If no match is found the engine should return 
+            	"<a href="http://safsdev.sourceforge.net/doc/constant-values.html#org.safs.tools.drivers.DriverConstant.SAFS_NULL" target="_blank">&lt;SAFS_NULL&gt;</a>".
+            <p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>
+<B>Recognition</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Recognition string describing the Window\Parent to find.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                    	Topmost parent windows are usually identified with Type or Class information. The recognition string 
+                    	should uniquely identify the target window or incorrect matches will result.
+                    	<p>
+			For details on Recognition strings see:
+			<a href="http://safsdev.sourceforge.net/doc/org/safs/GuiObjectRecognition.html" target="_blank">Gui Object Recognition</a>;
+			</p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">E, GetMatchingParentObject, "Type=Window;Caption={*caption substring*}"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Locate the first toplevel Window matching the Caption expression.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns a reference to the matching Window or '&lt;SAFS_NULL&gt;' if no match was found. 
+                        The returned reference is what is used in all subsequent attempts to locate child objects 
+                        relative to this toplevel Window\Object.
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

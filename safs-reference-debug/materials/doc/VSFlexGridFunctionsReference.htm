@@ -1,0 +1,359 @@
+<HTML xmlns="http://www.w3.org/TR/REC-html40"><HEAD>
+<TITLE>VSFlexGridFunctions</TITLE>
+<LINK rel="stylesheet" href="rrafs.css" type="text/css"/>
+<LINK rel="stylesheet" href="bootstrap.css" type="text/css"/>
+</HEAD><BODY><DIV class="container content" NAME="top" ID="top">
+		  <H1>VSFlexGridFunctions</H1>
+		  
+          Last Updated:<script language="JavaScript">document.write(document.lastModified)</script>
+<BR/>
+<BR/>
+<DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+              Functions and Actions for VSFlexGrid objects.
+           </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              This serves as an example of a new core library servicing a custom component.
+           </detailed_desc><BR/>
+		</DIV>
+<BR/>
+		<DIV NAME="list" ID="list">
+		  <A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE class="table">
+<thead class="thead-inverse">
+<tr>
+<th>Keyword Name</th>
+<th>Supported Engines</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ClickCell' HREF='#detail_ClickCell' >ClickCell</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Attempts to perform a single Click on a table cell.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectCell' HREF='#detail_SelectCell' >SelectCell</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Attempts to perform a Select on a table cell.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyValuesToFile' HREF='#detail_VerifyValuesToFile' >VerifyValuesToFile</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='WSupport' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+             Verify the string values of a grid block to a file benchmark.
+              </TD>
+		  </TR>
+</tbody>
+</TABLE>
+<HR/>
+</DIV>
+		<DIV NAME="detail" ID="detail">
+		  <H3><A NAME='detail_ClickCell'></A>VSFlexGridFunctions::<BIG>ClickCell</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to perform a single Click on a table cell.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>
+                 The cell to Click is provided in separate row and col 
+                 parameters.  Missing parameters indicate index=1. The 
+                 indexes are 1-based.  That is, the first row is row 1.
+                 The first col is col 1.</p>
+<p>
+                 Logical Cells are those data cells viewable to the 
+                 user.  They do not include hidden or fixed cells. 
+                 Thus, the first top left cell for real grid data 
+                 is considered cell 1,1. </p>
+<p>
+                 The grid will remain in edit mode if edit mode goes 
+                 active. </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>[ <B>row</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The 1-based logical row to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+             If no row is provided then row=1 is assumed.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>col</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The 1-based logical col to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+             If no col is provided then col=1 is assumed.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, AWindow, AGrid, ClickCell, ^row=2, ^col=1</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to Click the first data cell in the second 
+                 data row.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Note, the DDVariables shown are not necessary but are 
+                 shown for clarity.  The grid will remain in edit mode
+                 if active.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SelectCell'></A>VSFlexGridFunctions::<BIG>SelectCell</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to perform a Select on a table cell.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>
+                 The cell to Select is provided in separate row and col 
+                 parameters.  Missing parameters indicate index=1. The 
+                 indexes are 1-based.  That is, the first row is row 1.
+                 The first col is col 1.</p>
+<p>
+                 Logical Cells are those data cells viewable to the 
+                 user.  They do not include hidden or fixed cells. 
+                 Thus, the first top left cell for real grid data 
+                 is considered cell 1,1. </p>
+<p>
+                 We will ESCAPE out of edit mode if edit mode goes 
+                 active. </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>[ <B>row</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The 1-based logical row to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+             If no row is provided then row=1 is assumed.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>col</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The 1-based logical col to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+             If no col is provided then col=1 is assumed.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, AWindow, AGrid, SelectCell, ^row=2, ^col=1</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to Select the first data cell in the second 
+                 data row.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Note, the DDVariables shown are not necessary but are 
+                 shown for clarity.  We will ESCAPE out of edit mode
+                 if active.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_VerifyValuesToFile'></A>VSFlexGridFunctions::<BIG>VerifyValuesToFile</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='WSupport' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             Verify the string values of a grid block to a file benchmark.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Grid rows and cols are considered 1-based.  You can specify a 
+             subset of the grid by providing the optional values for 
+             rowMin, rowMax, colMin, colMax.  The benchmark and the actual 
+             will be stored as TAB delimited files.
+             Typically, benchmarks are stored in the Datapool\Bench directory.  
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>BenchmarkFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The name of the file used as the comparison benchmark.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             The name of the file used as the comparison benchmark.<br>
+             Typically, benchmarks are stored in the Datapool\Bench directory.  
+             In that event, only the filename.ext is needed.  
+             Benchmarks and captures will be TAB delimited files.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>rowMin</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The first row to include in the capture and compare.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             By default, the first row of the grid is used.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>rowMax</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The last row to include in the capture and compare.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             By default, the last row of the entire grid is used.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>colMin</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The first col to include in the capture and compare.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             By default, the first col of the grid is used.  
+             Columns can also be specified by full or partial 
+             column header text.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>colMax</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The last col to include in the capture and compare.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             By default, the last col of the entire grid is used.
+             Columns can also be specified by full or partial 
+             column header text.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, Window, VSFGrid, VerifyGridToFile, "bench.ext"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Verify the entire grid with the provided benchmark.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               The benchmark file is located within the Project at Datapool\Bench\bench.ext<br>
+               The captured file is located within the Project at Datapool\Test\bench.ext<br>
+               The difference file is located within the Project at Datapool\Dif\bench.ext<br>
+               Since no optional block parameters were provided, the entire 
+               grid is captured and compared.  This is NOT recommended for 
+               large grids as this can take much time.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, Window, VSFGrid, VerifyGridToFile, "bench.ext", 1, 5</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Verify only the first 5 rows of the grid against the benchmark.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               The comparison is a straight file compare, so the benchmark must have 
+               the same number of rows and columns as the newly captured data.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, Window, VSFGrid, VerifyGridToFile, "bench.ext", 1, 5, 3, 6</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Verify only the first 5 rows and columns 3 to 6 of the grid against the benchmark.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               The comparison is a straight file compare, so the benchmark must have 
+               the same number of rows and columns as the newly captured data.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, Window, VSFGrid, VerifyGridToFile, "bench.ext", 1, 5, "First Name", "Zip Code"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Verify only the first 5 rows and columns "First Name" to "Zip Code".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               The comparison is a straight file compare, so the benchmark must have 
+               the same number of rows and columns as the newly captured data.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+		</DIV>
+</BODY>
+</HTML>
+	

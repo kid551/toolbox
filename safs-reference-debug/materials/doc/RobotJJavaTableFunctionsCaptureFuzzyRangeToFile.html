@@ -1,0 +1,185 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_CaptureFuzzyRangeToFile'></A>RobotJ JavaTableFunctions::<BIG>CaptureFuzzyRangeToFile</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Saves a range of values to the specified file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                "Fuzzy" matches come into play when using header field text 
+                or column1 row text to specify row and column identities.  The 
+                specified text does NOT have to be an exact match--it is NOT 
+                case-sensitive and can be just a substring of the desired value 
+                in the table.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>FileName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The name of the file to receive the data.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The data will be output as TAB delimited values.
+                  The filename is usually just the short filename.ext 
+                  and as such will be stored in the project's Datapool\Test 
+                  directory.  <br>
+                  If you specify a relative path, the path 
+                  is relative to the project's root directory.  "Datapool" 
+                  is a subdirectory of that root directory.<br>
+                  Any specified full or relative path must already exist.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Row</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell row # in the row/col specification or a unique row 
+                value in column 1.  
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a cell value
+                in column 1.  If no match is found, it will expect the value to be a valid 
+                1-based row number.  This command allows for case-insensitive 
+                substring matches for row text when used in place of an actual row index.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Col</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell column # in the row/col specification or column header text.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a field header. 
+                If no match is found, it will expect the value to be a valid 
+                1-based column number.  This command allows for case-insensitive 
+                substring matches for header text when used in place of an actual column index.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Rows</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The number of rows to capture.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                If there are not enough rows to satisfy the request then we 
+                will obviously only capture up to the last available row.<br>
+                If the parameter is not provided, all subsequent rows from 
+                the specified starting row are captured.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Columns</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The number of columns to capture.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                If there are not enough columns to satisfy the request then we 
+                will obviously only capture up to the last available column.<br>
+                If the parameter is not provided, all subsequent columns from 
+                the specified starting column are captured.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>FileEncoding</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Specify a character encoding to be used when saving data to a file.
+			 If it is not specified, the system default file encoding will be used.
+             The encoding should be a valid string supported by Java; if it is not valid,
+             the system default file encoding will be used instead.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>[ <B>FilterMode</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                (FUTURE) A file filter to use when processing the text values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>[ <B>FilterOptions</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                (FUTURE) Filter options to use with the file filter.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, JavaWin, JTable, CaptureFuzzyRangeToFile, AFileName.txt</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                  Saves the entire table into &lt;project&gt;\Datapool\Test\AFileName.txt
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, JavaWin, JTable, CaptureFuzzyRangeToFile, AFileName.txt, 1 , 1 </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                  Saves the entire table into &lt;project&gt;\Datapool\Test\AFileName.txt
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, JavaWin, JTable, CaptureFuzzyRangeToFile, AFileName.txt, 4, "field5", 2, 5</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                  Saves a 2 rows by 5 columns range of cells starting at cell 4, Field5.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The starting column is determined by fuzzy matching the text "field5" to the 
+                  field headers in the JTable.  The captured table values are saved into 
+                  &lt;project&gt;\Datapool\Test\AFileName.txt
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, JavaWin, JTable, CaptureFuzzyRangeToFile, AFileName.txt, "datum", 5, , 2</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                  Saves a range of all remaining rows by 2 columns wide starting at cell "ADatum", "Field5".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The starting row is determined by seeking the first cell in column 1 in the 
+                  JTable that contains substring "datum".  The "5" also shows up 
+                  as a substring match to the column header "Field5".  So be cautious, here.
+                  No ROWS parameter was provided. Thus, all subsequest rows from the 2 columns are captured.
+                  The values are saved into &lt;project&gt;\Datapool\Test\AFileName.txt
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, JavaWin, JTable, CaptureFuzzyRangeToFile, AFileName.txt, , , , , "UTF-8"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                  Saves the entire table into &lt;project&gt;\Datapool\Test\AFileName.txt
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  Saves the entire table into &lt;project&gt;\Datapool\Test\AFileName.txt<br>
+                  Writing file with "UTF-8" encoding.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

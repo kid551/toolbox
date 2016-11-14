@@ -1,0 +1,54 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_VerifyTreeContainsPartialMatch'></A>DotNetTreeFunctions::<BIG>VerifyTreeContainsPartialMatch</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             	Verify that a tree contains the provided node according to a partial match of the node's text value.
+             	</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>The search of the path to the node is expected to be a case-insensitive 
+             		substring match of each node.  Use 'VerifyTreeContainsNode' if you 
+             		wish to specify case-sensitive substring matches for tree nodes.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>Node</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             		The name of the node to verify.
+              	</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             		The search of the path to the node is expected to be a case-insensitive 
+			substring match of each node.  Use 'VerifyTreeContainsNode' if you 
+             		wish to specify case-sensitive substring matches for tree nodes.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, Browser, aTreeView, VerifyTreeContainsNode, "parent-&gt;branch"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               		Verify that a child node of 'parent' containing 'branch' is found in aTreeView.
+              	</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+			Thus, this could be a match for 'Parent Bank-&gt;Branch Banking and Trust'.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

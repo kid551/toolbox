@@ -1,0 +1,81 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_VerifyMenuItemContains'></A>RobotJ WindowFunctions::<BIG>VerifyMenuItemContains</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Attempts to verify the state information of a menuitem found by partial text match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Attempts to verify the state information of a menuitem found by partial text match.
+                The menuitem should be specified in the form "Menu-&gt;Menu-&gt;MenuItem".  
+                (Optional ampersands precede any character in the menuitem that is underlined.)
+                <p>
+                Note 1: This command differs from JavaMenuFunctions.VerifyMenuItemContains as this 
+                command seeks a Window object that contains a Window's menu.
+                </p>
+<p>
+                Note 2: For RobotJ engine, this command only supports JavaSwing. It may support other clients in the future.
+              	</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>MenuItemText</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Menu-&gt;MenuItem hierarchy string to identify which menuitem to test.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Menu-&gt;MenuItem hierarchy string to identify which menuitem to test.
+                This menu hierarchy IS case-sensitive
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>ExpectedStatus</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Expected status string (or part thereof) to verify. 
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Expected status string (or part thereof) to verify.  
+                Ex: "Enabled Checked"         OR  "Disabled Grayed"    etc.
+                Each item separated by a space will be evaluated separately so 
+                the order of the status items does not matter.  
+                These status items ARE case-sensitive. 
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, VERIFYMENUITEMCONTAINS, "File-&gt;Save","Enabled"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               This action verifies that menuitem "File/Save" is enabled.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Field  5 : TQ String. the case-sensitive menu item path to select.  
+               Ampersands (&amp;) indicating/preceding underlined characters are optional.  
+               The text can be any substring of the full text including spaces and any visible shortcut key 
+               combinations displayed in the text of the menu item. </p>
+<p>Field  6 : QS String.  The case-sensitive, space-delimited, double-quote enclosed
+               status information needing verification.  Only the state information of interest
+               needs to be specified.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

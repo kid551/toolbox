@@ -1,0 +1,59 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_IsMatchingPath'></A>EngineComponentCommands::<BIG>IsMatchingPath</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Determine if there is a matching Path object.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>
+                Normally, this is only valid for components whose subitems, nodes, or 
+                children are found by Path syntax: Root-&gt;Branch-&gt;Leaf.  This is often 
+                the case for Menus, MenuItems, and Tree nodes.</p>
+<p>
+                Returns text "true" if an object matching the provided Path was found.  
+                Returns text "false" if no such object was found.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to a component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows, getChildren, or one of the other 
+                        engine commands that return such references.  The Path sought 
+                        is expected to be relative to this object.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>Path</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">The Path to locate relative to the Component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Path syntax: "Root-&gt;Branch-&gt;Leaf"
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, IsMatchingPath, TheMainMenuReference, "Help-&gt;About"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">See if MenuItem "About" exists in the "Help" menu.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns text "true" or "false".  In this case, we seek to 
+                        find if there is a "Help" menu in the Main Menu and then we check 
+                        to see if there is an "About" menuitem in the Help menu.
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

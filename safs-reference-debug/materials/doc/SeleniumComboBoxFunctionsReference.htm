@@ -1,0 +1,806 @@
+<HTML xmlns="http://www.w3.org/TR/REC-html40"><HEAD>
+<TITLE>Selenium ComboBoxFunctions</TITLE>
+<LINK rel="stylesheet" href="rrafs.css" type="text/css"/>
+<LINK rel="stylesheet" href="bootstrap.css" type="text/css"/>
+</HEAD><BODY><DIV class="container content" NAME="top" ID="top">
+		  <H1>Selenium ComboBoxFunctions</H1>
+		  
+          Last Updated:<script language="JavaScript">document.write(document.lastModified)</script>
+<BR/>
+<BR/>
+<DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+				Actions for working with ComboBox objects
+			</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+		<DIV NAME="list" ID="list">
+		  <A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE class="table">
+<thead class="thead-inverse">
+<tr>
+<th>Keyword Name</th>
+<th>Supported Engines</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_CaptureItemsToFile' HREF='#detail_CaptureItemsToFile' >CaptureItemsToFile</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>
+					Capture Items To a File specified (if not abs, then to test dir)
+				</TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_HideList' HREF='#detail_HideList' >HideList</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>
+					Hide the combo box list (equivalent to an ESC or two ESCs).
+				</TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_Select' HREF='#detail_Select' >Select</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>
+					Select an item by its text value from a combobox.
+				</TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectIndex' HREF='#detail_SelectIndex' >SelectIndex</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>
+					Select an item by its index from a combobox.
+				</TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectPartialMatch' HREF='#detail_SelectPartialMatch' >SelectPartialMatch</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>
+					Select an item via a partial text match in a combobox.
+				</TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectUnverified' HREF='#detail_SelectUnverified' >SelectUnverified</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>
+					Select an item by its text value from a combobox without verifying the
+					selection.
+				</TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectUnverifiedPartialMatch' HREF='#detail_SelectUnverifiedPartialMatch' >SelectUnverifiedPartialMatch</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>
+					Select an item via a partial text match in a combobox without verification.
+				</TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetTextValue' HREF='#detail_SetTextValue' >SetTextValue</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>
+					Set the text of the combobox
+				</TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ShowList' HREF='#detail_ShowList' >ShowList</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>
+					Show the combo box list (expose it).
+				</TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifySelected' HREF='#detail_VerifySelected' >VerifySelected</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>
+					Verify Selected item is equal to specified parameter
+				</TD>
+		  </TR>
+</tbody>
+</TABLE>
+<HR/>
+</DIV>
+		<DIV NAME="detail" ID="detail">
+		  <H3><A NAME='detail_CaptureItemsToFile'></A>Selenium ComboBoxFunctions::<BIG>CaptureItemsToFile</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+					Capture Items To a File specified (if not abs, then to test dir)
+				</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+					Capture Items To a File specified (if not abs, then to test dir)
+				</detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>FileName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							File name (if not absolute, then to test dir)
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+							File name (if not absolute, then to test dir)
+						</detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>FileEncoding</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							Specify a character encoding to be used when saving data to a file.
+							If it is not specified, the system default file encoding will be used.
+							The encoding should be a valid string supported by Java; if it is
+							not valid, the system default file encoding will be used instead.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ComboBox, CaptureItemsToFile , afile.txt
+					</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							Captures all the items in the combo to ...\datapool\test\afile.txt
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+							Captures all the items in the combo to ...\datapool\test\afile.txt
+						</detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ComboBox, CaptureItemsToFile , afile.txt, "UTF-8"
+					</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							Captures all the items in the combo to ...\datapool\test\afile.txt
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+							Captures all the items in the combo to ...\datapool\test\afile.txt
+							<BR>
+							Write the file with encoding "UTF-8".
+						</detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_HideList'></A>Selenium ComboBoxFunctions::<BIG>HideList</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+					Hide the combo box list (equivalent to an ESC or two ESCs).
+				</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>hide the list. This would only be necessary in cases
+						where the state of the combo box is not known ahead of time.
+					</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ComboBox, HideList</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							Hide the combo box list
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_Select'></A>Selenium ComboBoxFunctions::<BIG>Select</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+					Select an item by its text value from a combobox.
+				</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Select an item by its text value from a combobox.
+						This method combines the initial Click required to expose the list
+						of items and then the subsequent selection of a text item from the list.
+					</p>
+<p>
+						The routine will first attempt to see if the item exists in the list
+						and should provide a warning if it cannot find the item or cannot
+						read the list of items. The routine will then attempt the selection.
+					</p>
+<p>
+						After the selection is attempted, the routine tries to verify that the
+						list has the specified item as the selected item. A warning will be
+						issued if the routine cannot read the list. A failure will be issued
+						if the routine CAN read the list and determines that the specified
+						item is NOT the currently selected item.
+					</p>
+<p>Note: RobotJ also uses identical keyword SelectTextItem</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							The case-sensitive item in the drop down list to select.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>[ <B>ForceRefresh</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							Force refreshing to update stale element after selection.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN> : <value xmlns="">First implemented in March 2016 for Selenium2.0 and
+								might not be supported in all engines yet.
+							</value><BR/>
+</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ComboBox, SELECT, "MySelection"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							This action attempts to Click AND Select "MySelection"
+							(case-sensitive) from the ComboBox.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ComboBox, SELECT, "MySelection", "true"
+					</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							This action attempts to Click AND Select "MySelection"
+							(case-sensitive) from the ComboBox, and force refreshing
+							after
+							selection.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SelectIndex'></A>Selenium ComboBoxFunctions::<BIG>SelectIndex</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+					Select an item by its index from a combobox.
+				</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+					Select an item by its index from a combobox.
+					This method combines the initial Click required to expose the list
+					of items and then the subsequent selection of the item from the list.
+					<br>
+					The routine will first attempt to see if the index exists in the list
+					and should provide a warning if it cannot find the item or cannot
+					read the list of items. The routine will then attempt the selection.
+					<br></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>IndexValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							The item index in the drop down list to select.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+							Some combo lists are 0-based (start with 0). Some are 1-based (start with 1).
+							The user will have to determine the index base for their particular combo list.
+							<br>
+							It would appear that HTML Combo lists are 1-based.
+						</detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>ForceRefresh</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							Force refreshing to update stale element after selection.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN> : <value xmlns="">First implemented in March 2016 for Selenium2.0 and
+								might not be supported in all engines yet.
+							</value><BR/>
+</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ComboBox, SELECTINDEX, "1"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							This action attempts to Click AND Select item #1 from the ComboBox list.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ComboBox, SELECTINDEX, "1", "true"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							This action attempts to Click AND Select item #1 from the ComboBox
+							list, and force refreshing after selection.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SelectPartialMatch'></A>Selenium ComboBoxFunctions::<BIG>SelectPartialMatch</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+					Select an item via a partial text match in a combobox.
+				</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Select an item via a partial text match in a combobox.
+						This method combines the initial Click required to expose the list
+						of items and then the subsequent selection of a text item from the
+						list.
+					</p>
+<p>
+						The routine will first attempt to see if the item exists in the list
+						and should provide a warning if it cannot find the item or cannot
+						read the list of items. The routine will then attempt the selection.
+					</p>
+<p>
+						After the selection is attempted, the routine tries to verify that the
+						list has the specified item as the selected item. A warning will be
+						issued if the routine cannot read the list. A failure will be issued
+						if the routine CAN read the list and determines that the specified
+						item is NOT the currently selected item.
+					</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							The case-sensitive substring of an item in the drop down list to select.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>[ <B>ForceRefresh</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							Force refreshing to update stale element after selection.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN> : <value xmlns="">First implemented in March 2016 for Selenium2.0 and might
+								not be supported in all engines yet.
+							</value><BR/>
+</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ComboBox, SelectPartialMatch,
+						"ATextSubstring"
+					</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							This action attempts to Click AND Select the first item containing
+							the substring provided.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ComboBox, SelectPartialMatch, "ATextSubstring", "true"
+					</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							This action attempts to Click AND Select the first item containing
+							the substring provided, and force refreshing after selection.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SelectUnverified'></A>Selenium ComboBoxFunctions::<BIG>SelectUnverified</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+					Select an item by its text value from a combobox without verifying the
+					selection.
+				</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Select an item by its text value from a combobox without
+						verifying the selection.
+						This method combines the initial Click required to expose the list
+						of items and then the subsequent selection of a text item from the list.
+					</p>
+<p>
+						The routine will simply take the specified text and attempt the
+						selection.
+						it will not verify the existence of the item before the attempt, nor
+						will it verify the item is actually selected after the
+						attempt.
+					</p>
+<p>Note: RobotJ also uses identical keyword SelectUnverifiedTextItem
+					</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							The case-sensitive item in the drop down list to select.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>[ <B>ForceRefresh</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							Force refreshing to update stale element after selection.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN> : <value xmlns="">First implemented in March 2016 for Selenium2.0 and
+								might not be supported in all engines yet.
+							</value><BR/>
+</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ComboBox, SELECTUNVERIFIED, "MySelection"
+					</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							This action attempts to Click AND Select "MySelection"
+							(case-sensitive) from the ComboBox.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ComboBox, SELECTUNVERIFIED, "MySelection",
+						"true"
+					</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							This action attempts to Click AND Select "MySelection"
+							(case-sensitive) from the ComboBox, and force refreshing after selection.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SelectUnverifiedPartialMatch'></A>Selenium ComboBoxFunctions::<BIG>SelectUnverifiedPartialMatch</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+					Select an item via a partial text match in a combobox without verification.
+				</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Select an item via a partial text match in a combobox without verification.
+						This method combines the initial Click required to expose the list
+						of items and then the subsequent selection of a text item from the list.
+					</p>
+<p>
+						The routine will first attempt to see if the item exists in the list
+						and should provide a warning if it cannot find the item or
+						cannot read the list of items. The routine will then attempt the selection.
+					</p>
+<p>
+						The routine will not verify the selected-item matches the parameter partial-text.
+					</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							The case-sensitive substring of an item in the drop down list to select.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>[ <B>ForceRefresh</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							Force refreshing to update stale element after selection.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN> : <value xmlns="">First implemented in March 2016 for Selenium2.0 and
+								might not be supported in all engines yet.
+							</value><BR/>
+</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ComboBox, SelectUnverifiedPartialMatch, "ATextSubstring"
+					</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							This action attempts to Click AND Select the first item containing
+							the substring provided.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ComboBox, SelectUnverifiedPartialMatch, "ATextSubstring", "true"
+					</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							This action attempts to Click AND Select the first item containing
+							the substring provided, and force refreshing after selection.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SetTextValue'></A>Selenium ComboBoxFunctions::<BIG>SetTextValue</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+					Set the text of the combobox
+				</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>This action sets the text of the combobox. This version allows
+						the use of special character combinations and substrings to identify
+						specific keyboard keys. These are the same special characters and interpretation
+						used for Robot's InputKeys command and the Windows Scripting Host.
+					</p>
+<p>
+						~^+%{( are primarily the characters that induce special processing.</p>
+<p>
+						The routine verifies we can read the text property, sets the text value
+						and will verify that the property has been set to that value *IF* none
+						of the special characters exist in the provided text value. If those
+						special characters exist, then no post-set verification will occur.
+					</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>[ <B>TextValue</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							The text that will be typed into the ComboBox.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+							TextValue will be the text that will be typed into the Combobox.
+							Quoted text may be used to ensure proper expected value retrieval.
+							There is also no check for a missing field because that would be
+							the same as specifying no text ("")--which is valid.
+						</detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ComboBox, SETTEXTVALUE, "MyPassword"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							"MyPassword" is typed into the Combobox
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_ShowList'></A>Selenium ComboBoxFunctions::<BIG>ShowList</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+					Show the combo box list (expose it).
+				</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>show the list so that the next step can be a click
+						on an item. This would only be necessary in cases
+						where the state of the combo box is not known ahead
+						of time.
+					</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ComboBox, ShowList</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							Show the combo box list
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_VerifySelected'></A>Selenium ComboBoxFunctions::<BIG>VerifySelected</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+					Verify Selected item is equal to specified parameter
+				</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+					Verify Selected item is equal to specified parameter
+				</detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							The case-sensitive substring to compare.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ComboBox, VerifySelected, "ATextSubstring"
+					</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							This action verifies that the selected item is ATextSubstring.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+		</DIV>
+</BODY>
+</HTML>
+	

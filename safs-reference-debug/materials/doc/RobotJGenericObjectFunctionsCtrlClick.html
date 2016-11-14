@@ -1,0 +1,166 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_CtrlClick'></A>RobotJ GenericObjectFunctions::<BIG>CtrlClick</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                A CTRL-click on an object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                By default we should click the center of the object.
+                <p>We can also CTRL-click on any part of an object based on a stored x,y
+                coordinate.  The object containing the coordinate is first given
+                context and then a CTRL-click is generated at the coordinate.  Thus, an item
+                or object can be referenced by name even though it is only recognized
+                via coordinates.</p>
+<p>
+                The coordinate lookup is done with the component name of the record AND
+                Field #5.</p>
+<p>
+                Typical Data Table records:</p>
+<p>
+                (1) t MainWindow MainWindow CtrlClick<br>
+                (2) t MainWindow MainWindow CtrlClick AnObject<br>
+                (3) t MainWindow  ToolItem  CtrlClick PrintTool</p>
+<p>
+                #2 above will contain an AnObject="3,10" entry in the MainWindow section
+                of the Application Map to CTRL-click at x=3, y=10 in the MainWindow. <b>For SE+</b>, the 
+                coordinate can be percentage format, like "20%,30%". This percentage format indicates 
+                the point (20% width of component, 30% height of component) relative to the object.</p>
+<p>
+                #3 above will contain a ToolItem entry in the MainWindow section with
+                normal recognition information for it .  ToolItem will also have it's
+                own section in the Application Map in which there will be an entry like
+                PrintTool="15,30".  This will tell Robot to locate the PrintTool Window
+                object and CTRL-click at the coordinates specified by the reference.
+				</p><p>
+				Engines should also attempt to support coordinates separated by alternate separators.  
+				The most common separators that should be supported would be:
+				<ul>
+<li>"," (comma) Example: "50,200"</li>
+<li>";" (semi-colon) Example: "50;200"</li>
+<li>" " (space) Example: "50 200"</li>
+</ul>
+</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>[ <B>AppMapSubkey</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                (Optional) Name of the AppMap subkey to lookup and use for the CTRL-click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Without this we should click the center of the object.
+                <p>Name of the AppMap subkey to lookup and use for the CTRL-click.
+                We expect the AppMap to contain the item in the format "x,y":</p>
+<p><pre>
+                [ToolItem]
+                PrintTool="33,120"      OR
+                PrintTool="Coords=33,120"
+                </pre></p>
+<p>
+                The results from the lookup are appended to the "Coords=" string
+                used by the GenericObject Ctrl_Click command in Robot (if necessary).
+                So any valid content used with the Ctrl_Click command can be
+                part of this AppMap entry.</p>
+<p>
+                Both Fields #3 and #5 are used to locate the item in the App Map.
+                This routine does not specify an App Map so only the current Map
+                is used and it is expected to be valid.
+				</p><p>
+				Engines should also attempt to support coordinates separated by alternate separators.  
+				The most common separators that should be supported would be:
+				<ul>
+<li>"," (comma) Example: "50,200"</li>
+<li>";" (semi-colon) Example: "50;200"</li>
+<li>" " (space) Example: "50 200"</li>
+</ul>
+</p><p><b>Important Abbot note.</b> Presently, there is no support for AppMapSubkey
+                specification (5th field).
+                </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>AutoScroll</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                (Optional) True|False. If the component will be scrolled into view automatically before clicking. The default value is true.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                If the component is out of view, the click action will not succeed. Normally we will scroll the component into view,
+                and then perform the click action. But sometimes, the component is partially shown and click could work and user does not
+                want the component shift, then we could turn off the auto-scroll ability by setting this parameter to false.<br>
+                If this auto-scroll is turned off, user needs to make sure that component is shown by himself.
+              </detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN> : <value xmlns="">For now, this optional parameter is only supported in Selenium2.0 Engine. </value><BR/>
+</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, CTRLCLICK</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               A CTRL-click will be performed on the center of the object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               A CTRL-click will be performed on the center of the object.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, CTRLCLICK, , False</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               A CTRL-click will be performed on the center of the object. <b>And the object
+               will not be scrolled into view automatically before clicking.</b></short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN> : <value xmlns="">Auto-scroll will be turned off.</value><BR/>
+</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, CTRLCLICK, AnObject</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               A CTRL-click will be performed at a x,y coordinate indicated by the AnObject reference in
+               the Application Map.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Field  5 : TQ String. A reference identified in the Application Map identifying coordinates
+               on which to CTRL-click
+               This example shows AnObject which will be found in the Application Map as a referenced item
+               in the WINDOW section.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AnObject, CTRLCLICK, ASubObject</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               A CTRL-click will be performed at a x,y coordinate indicated by the ASubObject reference in
+               the Application Map.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Field  5 : TQ String. A reference identified in the Application Map identifying coordinates
+               on which to CTRL-click
+               This example shows AnObject as a viable object in the WINDOW but that it also has its own
+               section in the Application Map which contains one or more named references like
+               ASubObject which are used for test.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

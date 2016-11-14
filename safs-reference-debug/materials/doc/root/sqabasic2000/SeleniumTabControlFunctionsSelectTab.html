@@ -1,0 +1,54 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_SelectTab'></A>Selenium TabControlFunctions::<BIG>SelectTab</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to perform a standard SelectTab on a particular Tab on the TabControl
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>
+                Attempts to perform a standard Selection on a particular Tab on the TabControl.
+                The routine will set the StepDriverTestInfo.statuscode and
+                log any pass/warning/fail info using the StepDriverTestInfo.fac LogFacility.</p><p>
+                Note, this routine will call the CLICK function to try 
+                default CLICK processing if it is not able to locate all 
+                the component properties it needs for success.</p><p>
+                This command has been provided for times when it might 
+                work and the other TabControl CLICK alternatives do not.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text on the tab to identify which tab to click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                TextValue is the case-sensitive text on the tab to identify which tab to click.
+                If the provided text value contains ampersands (for hotkey characters) then 
+                ampersands will be retained in the TabControl text for comparisons performed 
+                to identify the correct tab to click.  
+                Otherwise, ampersands are stripped out of the TabControl text to facilitate 
+                these comparisons.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, TabControl, SelectTab, "StatsTab"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A single-click is performed on the "StatsTab" tab located on the TabControl object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

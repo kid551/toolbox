@@ -1,0 +1,1842 @@
+<HTML xmlns="http://www.w3.org/TR/REC-html40"><HEAD>
+<TITLE>RobotJ EngineComponentCommands</TITLE>
+<LINK rel="stylesheet" href="rrafs.css" type="text/css"/>
+</HEAD><BODY><DIV NAME="top" ID="top">
+		  <H3>RobotJ EngineComponentCommands</H3>
+		  <SMALL>Last Updated:<script language="JavaScript">document.write(document.lastModified)</script></SMALL>
+<BR/>
+<BR/>
+<DIV NAME="list" ID="short_desc"><short_desc xmlns="">Engine commands for components.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>
+            These commands are generally for interrogating engines about 
+            the Windows and Components they can find.  These are not normally 
+            used during testing.  (But they can be used during testing like any 
+            other command record.)  
+            </p><p>
+            For example, these commands are heavily 
+            used by 
+            <a href="http://safsdev.sourceforge.net/doc/org/safs/tools/drivers/STAFProcessContainer.html" target="_blank">STAFProcessContainer</a> 
+            during test design time.
+            </p><p>
+            Each engine command has different parameters 
+            as described in its documentation.  For reference, the 
+            first fields of ALL Engine Command test records are defined 
+            below:</p>
+<p>
+            Field #1 -- "E" = ENGINE COMMAND record type specifier.
+            </p><p>
+            Field #2 -- The Engine Command keyword.
+            </p><p>
+            Example:
+            </p><p><code>E, GetTopLevelWindows</code></p><p>
+            Engine Command parameters must be placed in the test record 
+            in the field position specified in the documentation.  
+            Some parameters are optional.  However, the field associated 
+            with that parameter must be honored.  If you wish to skip an 
+            optional parameter you must still provide an empty field for 
+            that parameter.</p>
+<p>
+            Example:</p><code>E, SomeCommand, Value1, Value2, , , Value5</code><p>
+            The above example shows two optional fields after Value2 
+            which are given no value(skipped).</p>
+<p>
+            Engine commands that return a value do so in the 
+            <b>SAFS/Hook/statusinfo</b> variable of SAFSVARS which is populated 
+            via TestRecordData.statusinfo.
+            </p><p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p>
+<p>
+            The TestComplete Engine (TCAFS) also persists these values as SAFS variables.
+            </p><pre>            
+            ^TCAFS.Command    = [command]
+            ^TCAFS.StatusCode = [statuscode string]
+            ^TCAFS.StatusInfo = [statusinfo]
+            ^TCAFS.FullName   = [object.FullName] -- the TestObjects.FullName string--if command returns only 1 reference.
+            ^TCAFS.UID.Count  = [Number of UID References created last]
+            ^TCAFS.UID.1      = [First UID Reference created]
+            ^TCAFS.UID.n      = [UID Reference number n]            
+            </pre>
+<p>
+            The TestRecordData.statuscode is set to 
+            <a href="http://safsdev.sourceforge.net/doc/constant-values.html#org.safs.tools.drivers.DriverConstant.STATUS_NO_SCRIPT_FAILURE" target="_blank">NO_SCRIPT_FAILURE</a> 
+            if the engine supports and processes the command. This is true even if the 
+            command results in an empty, missing, or null return value.  
+            </p><p><a href="http://safsdev.sourceforge.net/doc/constant-values.html#org.safs.tools.drivers.DriverConstant.STATUS_SCRIPT_NOT_EXECUTED" target="_blank">SCRIPT_NOT_EXECUTED</a> 
+            should be returned in TestRecordData.statuscode if the engine does not support 
+            the command.
+            </p>
+<p>
+            Note that the full availablility of all Engine Commands may be  
+            spread across several files.  Together, all of these files define 
+            all the Engine Commands available to the core framework.</p></detailed_desc><BR/>
+		</DIV>
+</DIV>
+<BR/>
+		<DIV NAME="list" ID="list">
+		  <A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE cellspacing="3" border="1" cellpadding="2">
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ClearHighlightedDialog' HREF='#detail_ClearHighlightedDialog' >ClearHighlightedDialog</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Clean the highlight rectangle.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_EnableDomains' HREF='#detail_EnableDomains' >EnableDomains</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Enable searching domains.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetAccessibleName' HREF='#detail_GetAccessibleName' >GetAccessibleName</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Get the AccessibleName of the component, if any.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetCaption' HREF='#detail_GetCaption' >GetCaption</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Get the Caption of a component, if any.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetChildCount' HREF='#detail_GetChildCount' >GetChildCount</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Get the number of children, if any, for the provided container component.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetChildren' HREF='#detail_GetChildren' >GetChildren</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Get references to the children, if any, for the provided container component.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetClassname' HREF='#detail_GetClassname' >GetClassname</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Get the Classname of a component.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetComponentRectangle' HREF='#detail_GetComponentRectangle' >GetComponentRectangle</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Find the component according to Component Test Object's key and get its screen location.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetId' HREF='#detail_GetId' >GetId</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Get the ID of a component, if any.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetLevel' HREF='#detail_GetLevel' >GetLevel</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Get the Z-order of a component--usually a Window.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetMatchingChildKeysAtPoint' HREF='#detail_GetMatchingChildKeysAtPoint' >GetMatchingChildKeysAtPoint</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>According to screen location, find the test object at that point and return all matching keys in cache.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetMatchingChildObjects' HREF='#detail_GetMatchingChildObjects' >GetMatchingChildObjects</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Retrieve an array of child objects that match a recognition string.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetMatchingParentObject' HREF='#detail_GetMatchingParentObject' >GetMatchingParentObject</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Get a reference to the toplevel Window\Parent that matches the recognition string provided.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetMatchingPathObject' HREF='#detail_GetMatchingPathObject' >GetMatchingPathObject</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Get the subitem object\node matching the provided Path.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetName' HREF='#detail_GetName' >GetName</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Get the Name (AccessibleName or Name) of the component, if any. The AccessibleName shall be found first and returned, if any.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetNonAccessibleName' HREF='#detail_GetNonAccessibleName' >GetNonAccessibleName</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Get the non-AccessibleName (Name except for AccessibleName) of the component, if any.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetProperty' HREF='#detail_GetProperty' >GetProperty</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Get the value of a specific property from a component.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetPropertyNames' HREF='#detail_GetPropertyNames' >GetPropertyNames</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Get the names of all available properties for a component.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetSuperClassnames' HREF='#detail_GetSuperClassnames' >GetSuperClassnames</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Get the hierarchy of superclasses for the component.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetText' HREF='#detail_GetText' >GetText</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Get the (text) value of a component, if any.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetTopLevelCount' HREF='#detail_GetTopLevelCount' >GetTopLevelCount</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Get the number of visible top-level items (Windows?) for the engine.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetTopLevelWindows' HREF='#detail_GetTopLevelWindows' >GetTopLevelWindows</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Return references to all known top-level items (Windows).</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetTopWindowHandle' HREF='#detail_GetTopWindowHandle' >GetTopWindowHandle</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Get the Windows native handle of the top window containing the component.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_HighlightMatchingChildObject' HREF='#detail_HighlightMatchingChildObject' >HighlightMatchingChildObject</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Find the component according to Recognition String and highlight it.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_HighlightMatchingChildObjectByKey' HREF='#detail_HighlightMatchingChildObjectByKey' >HighlightMatchingChildObjectByKey</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Find the component according to Window/Component Test Object's key and highlight it.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_IsMatchingPath' HREF='#detail_IsMatchingPath' >IsMatchingPath</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Determine if there is a matching Path object.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_IsShowing' HREF='#detail_IsShowing' >IsShowing</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Is the component visible?</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_IsValid' HREF='#detail_IsValid' >IsValid</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Does the component still exist as a valid object?</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetActiveWindow' HREF='#detail_SetActiveWindow' >SetActiveWindow</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Make the component the active (topmost?) Window or Component.</TD>
+</TR>
+</TABLE>
+<HR/>
+</DIV>
+		<DIV NAME="detail" ID="detail">
+		  <H3><A NAME='detail_ClearHighlightedDialog'></A>RobotJ EngineComponentCommands::<BIG>ClearHighlightedDialog</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Clean the highlight rectangle.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Clean the highlight rectangle. When a component is highlighted, a red rectangle may be drawn by us around
+                that component, this keyword is used to clean that rectangle.
+            </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, ClearHighlightedDialog</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Clean the highlight rectangle of the previous highlighted component.
+                    </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_EnableDomains'></A>RobotJ EngineComponentCommands::<BIG>EnableDomains</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Enable searching domains.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Enable the domains for searching target main window within these domains.
+                Up to now, RobotJ engine supports Java, DotNet, Win, Html, SWT and Flex.
+            </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Domains</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">A string that contains at least one domain.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        More than one domain, if have, are delimited with ',' or ';'.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, EnableDomains, "Java;Html"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Enable Java and Html domains for searching target main window within the two domains.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetAccessibleName'></A>RobotJ EngineComponentCommands::<BIG>GetAccessibleName</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the AccessibleName of the component, if any.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                If no AccessibleName is present the engine should return 
+                "<a href="http://safsdev.sourceforge.net/doc/constant-values.html#org.safs.tools.drivers.DriverConstant.SAFS_NULL" target="_blank">&lt;SAFS_NULL&gt;</a>".
+            <p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows, getMatchingChildObjects, getChildren, 
+                        or one of the other engine commands that return such references.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, GetAccessibleName, TheComponentReference</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the AccessibleName of the TheComponentReference.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns the AccessibleName or "&lt;SAFS_NULL&gt;" if no AccessibleName was available.
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetCaption'></A>RobotJ EngineComponentCommands::<BIG>GetCaption</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the Caption of a component, if any.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Normally, this is only valid for window or child window components.  
+                If no caption is present, or the component does not support captions, the 
+                engine should return "<a href="http://safsdev.sourceforge.net/doc/constant-values.html#org.safs.tools.drivers.DriverConstant.SAFS_NULL" target="_blank">&lt;SAFS_NULL&gt;</a>".
+            <p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows, getMatchingParentObject, 
+                        or one of the other engine commands that return such references.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, GetCaption, TheComponentReference</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the Caption of the TheComponentReference.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns the String caption or "&lt;SAFS_NULL&gt;" if no caption was available.
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetChildCount'></A>RobotJ EngineComponentCommands::<BIG>GetChildCount</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the number of children, if any, for the provided container component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                This is only valid for windows and other containers of child components.
+                If no children are present (or supported) then the returned count should be 0.
+            <p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows, getMatchingParentObject, getMatchingChildObjects, 
+                        or one of the other engine commands that return such references.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, GetChildCount, TheComponentReference</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the count of children contained in TheComponentReference, if any.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns the count of children, or 0 if none exist.
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetChildren'></A>RobotJ EngineComponentCommands::<BIG>GetChildren</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get references to the children, if any, for the provided container component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Normally, this is only valid for windows or other container components.  
+                If no children exist then an empty string is returned.  If children are present then 
+                a single string of separated values is returned.  The first character in the 
+	        returned string defines the delimiter character used to separate child references.
+            <p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows, getMatchingParentObject, getMatchingChildObjects, 
+                        or one of the other engine commands that return such references.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, GetChildren, TheComponentReference</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get references, if any, of the children for TheComponentReference.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns a string containing a delimited list of child references.  The first character 
+                        in the list is the delimiter used to separate subsequent child references.  
+                        If no children exist then the list is simply an empty string.
+                        <p>
+                        Example return string: ",Child1Ref,Child2Ref,Child3Ref"
+                        </p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetClassname'></A>RobotJ EngineComponentCommands::<BIG>GetClassname</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the Classname of a component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                If no classname is returned, or the domain does not support "classes", the 
+                engine should return "<a href="http://safsdev.sourceforge.net/doc/constant-values.html#org.safs.tools.drivers.DriverConstant.SAFS_NULL" target="_blank">&lt;SAFS_NULL&gt;</a>".
+            <p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows, getMatchingParentObject, getChildren, or one of the other 
+                        engine commands that return such references.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, GetClassname, TheComponentReference</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the Classname of the TheComponentReference.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns the classname of the provided reference or "&lt;SAFS_NULL&gt;".
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetComponentRectangle'></A>RobotJ EngineComponentCommands::<BIG>GetComponentRectangle</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Find the component according to Component Test Object's key and get its screen location.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Find the component according to Component Test Object's key and get its screen location. The component's
+                screen location is returned as a string "UpLeftX, UpLeftY, Width, Height". 
+            </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>ComponentKey</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">A string represents the key of component's Test Object.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A string represents the key of component's Test Object. This key is generated
+                        by engine and used to get the Component Test Object from a cache.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, GetComponentRectangle, "ComponentKey"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">According the Component Test Object's Key, find the component from cache and 
+                    	return its screen location.
+                    </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetId'></A>RobotJ EngineComponentCommands::<BIG>GetId</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the ID of a component, if any.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                If no ID is present, or the component does not support IDs, the 
+                engine should return "<a href="http://safsdev.sourceforge.net/doc/constant-values.html#org.safs.tools.drivers.DriverConstant.SAFS_NULL" target="_blank">&lt;SAFS_NULL&gt;</a>".
+            <p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows, getMatchingParentObject, getChildren, or one of the other 
+                        engine commands that return such references.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, GetId, TheComponentReference</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the ID of the TheComponentReference.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns the ID or "&lt;SAFS_NULL&gt;" if no ID was available.
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetLevel'></A>RobotJ EngineComponentCommands::<BIG>GetLevel</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the Z-order of a component--usually a Window.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+	    	Level is generally considered to be the Z-Order information of the object--where in 
+		the Window Z-Order the object (usually a Window) resides.
+		Level is combined with another recognition method when the other method does not uniquely identify 
+		the windows. For example, if there are multiple windows with the same caption, and Caption is the 
+		recognition method being used. The Level qualifier specifies which one of the similarly-identified 
+		windows should be targeted for the action, based on the Windows' Z-Order. The first window is a
+		ssigned "Level=1", the second "Level=2", and so on. Level serves as a clarifier only and is used 		
+		only after all other methods have been attempted.
+		<p>
+		If the Level cannot be determined then the engine should return -1.
+		</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows, getMatchingParentObject, or one of the other 
+                        engine commands that return such references.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, GetLevel, TheComponentReference</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the Level (Z-Order) of the TheComponentReference.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns the 1-based Level or -1 if the Level could not be determined.
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetMatchingChildKeysAtPoint'></A>RobotJ EngineComponentCommands::<BIG>GetMatchingChildKeysAtPoint</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">According to screen location, find the test object at that point and return all matching keys in cache.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                According to screen location, find the test object at that point and return all matching keys in cache. The keys
+                will be separaged by a separator, the separator is determinated dynamically and it may be "," "|" ":" ";" "_" "#" "!"
+            </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>WindowKey</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">A string represents the key of window's Test Object.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A string represents the key of window's Test Object. This key is generated
+                        by engine and used to get the Window/Component Test Object from a cache.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>ComponentLocationX</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">A string represents the component's x location on screen.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A string represents the component's x location on screen.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>ComponentLocationY</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">A string represents the component's y location on screen.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A string represents the component's y location on screen.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, GetMatchingChildKeysAtPoint, "WindowKey", "358", "598"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">According the screen location(358, 598) find a component at that point, this
+                    	component belongs to the window described by "WindowKey". Finally 
+                    	return all the keys corresponding to that component in the cache.
+                    </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetMatchingChildObjects'></A>RobotJ EngineComponentCommands::<BIG>GetMatchingChildObjects</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Retrieve an array of child objects that match a recognition string.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Normally, this is only valid for window or other container components.  
+                If no matching child objects exist then the engine should return 
+                "<a href="http://safsdev.sourceforge.net/doc/constant-values.html#org.safs.tools.drivers.DriverConstant.SAFS_NULL" target="_blank">&lt;SAFS_NULL&gt;</a>".
+                <p>
+                Returns a character delimited string of child references. The first character in the returned string 
+                defines the delimiter used to separate the items. 
+                </p><p>
+                Currently, the engine command processors only support returning the first child matching the recognition string.
+            </p><p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows or getMatchingParentObject, or one of the other 
+                        engine commands that return such references.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>Recognition</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Recognition string describing the children to find.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+			The recognition string is normally considered to be relative to the parent Component 
+			provided.  Thus, information identifying the parent should normally NOT be 
+			part of the provided recognition string.  For details on Recognition strings see:
+			<a href="http://safsdev.sourceforge.net/doc/org/safs/GuiObjectRecognition.html" target="_blank">Gui Object Recognition</a>;
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, GetMatchingChildObjects, TheParentReference, "Type=PushButton;Name=submit_Button"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Attempt to locate a pushbutton named 'submit_Button' in TheParentReference container.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns '&lt;SAFS_NULL&gt;' if no match is found, or a character delimited list of references 
+                        to child pushbuttons named 'submit_Button'.  (Currently, the only implementation we 
+                        have returns only the first matching child in the character delimited list.)
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">E, GetMatchingChildObjects, TheWebBrowser, "Type=HTMLDocument;Index=1;\;Type=HTMLLink;HTMLId=logonLink"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Locate the HTMLLink identified as 'logonLink' in the first HTMLDocument in TheWebBrowser</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Attempts to locate the grandchild HTMLLink in the child HTMLDocument of TheWebBrowser.
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetMatchingParentObject'></A>RobotJ EngineComponentCommands::<BIG>GetMatchingParentObject</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get a reference to the toplevel Window\Parent that matches the recognition string provided.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+            	Locate a toplevel Window\Parent matching the recognition string and return a unique 
+            	reference to that component.  If no match is found the engine should return 
+            	"<a href="http://safsdev.sourceforge.net/doc/constant-values.html#org.safs.tools.drivers.DriverConstant.SAFS_NULL" target="_blank">&lt;SAFS_NULL&gt;</a>".
+            <p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Recognition</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Recognition string describing the Window\Parent to find.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                    	Topmost parent windows are usually identified with Type or Class information. The recognition string 
+                    	should uniquely identify the target window or incorrect matches will result.
+                    	<p>
+			For details on Recognition strings see:
+			<a href="http://safsdev.sourceforge.net/doc/org/safs/GuiObjectRecognition.html" target="_blank">Gui Object Recognition</a>;
+			</p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, GetMatchingParentObject, "Type=Window;Caption={*caption substring*}"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Locate the first toplevel Window matching the Caption expression.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns a reference to the matching Window or '&lt;SAFS_NULL&gt;' if no match was found. 
+                        The returned reference is what is used in all subsequent attempts to locate child objects 
+                        relative to this toplevel Window\Object.
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetMatchingPathObject'></A>RobotJ EngineComponentCommands::<BIG>GetMatchingPathObject</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the subitem object\node matching the provided Path.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Normally, this is only valid for components whose subitems, nodes, or children are located 
+                by Path syntax: Root-&gt;Branch-&gt;Leaf.  This is often the case for Menus, MenuItems, and Tree nodes.
+                <p>
+                If no match is found the engine should return: 
+                "<a href="http://safsdev.sourceforge.net/doc/constant-values.html#org.safs.tools.drivers.DriverConstant.SAFS_NULL" target="_blank">&lt;SAFS_NULL&gt;</a>".
+                </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows, getMatchingParentObject, getMatchingChildObjects, 
+                        getChildren, or one of the other engine commands that return such references.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>Path</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">The Path object\node to locate relative to the Component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Path syntax: "Root-&gt;Branch-&gt;Leaf"
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, GetMatchingPathObject, TheMainMenuReference, "Help-&gt;About"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the reference to MenuItem "Help-&gt;About" from the Main menu.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Searched the Main menu for the Help menu and returns a reference to 
+                        the About menuitem.  If not found, returns '&lt;SAFS_NULL&gt;'.
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">E, GetMatchingPath, SwingAppJTree2Ref, "Last Node-&gt;Branch Nodes-&gt;Child Nodes-&gt;2ListItem1"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the reference to Tree node '2ListItem1'.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Search the SwingAppJTree2Ref for tree node "2ListItem1" along the tree node path 
+                        provided.  If not found, returns '&lt;SAFS_NULL&gt;'.
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetName'></A>RobotJ EngineComponentCommands::<BIG>GetName</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the Name (AccessibleName or Name) of the component, if any. The AccessibleName shall be found first and returned, if any.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                If no Name is present the engine should return 
+                "<a href="http://safsdev.sourceforge.net/doc/constant-values.html#org.safs.tools.drivers.DriverConstant.SAFS_NULL" target="_blank">&lt;SAFS_NULL&gt;</a>".
+            <p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows, getMatchingChildObjects, getChildren, 
+                        or one of the other engine commands that return such references.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, GetName, TheComponentReference</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the Name (AccessibleName or Name) of the TheComponentReference.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns the Name or "&lt;SAFS_NULL&gt;" if no name was available.
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetNonAccessibleName'></A>RobotJ EngineComponentCommands::<BIG>GetNonAccessibleName</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the non-AccessibleName (Name except for AccessibleName) of the component, if any.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                If no non-AccessibleName is present the engine should return 
+                "<a href="http://safsdev.sourceforge.net/doc/constant-values.html#org.safs.tools.drivers.DriverConstant.SAFS_NULL" target="_blank">&lt;SAFS_NULL&gt;</a>".
+            <p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows, getMatchingChildObjects, getChildren, 
+                        or one of the other engine commands that return such references.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, GetNonAccessibleName, TheComponentReference</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the non-AccessibleName (Name except for AccessibleName) of the TheComponentReference.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns the non-AccessibleName or "&lt;SAFS_NULL&gt;" if no non-AccessibleName was available.
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetProperty'></A>RobotJ EngineComponentCommands::<BIG>GetProperty</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the value of a specific property from a component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Retrieves the value of the specified property.  Property names are case-sensitive.
+                If the property name provided is invalid or unsupported the engine should return 
+                "<a href="http://safsdev.sourceforge.net/doc/constant-values.html#org.safs.tools.drivers.DriverConstant.SAFS_NULL" target="_blank">&lt;SAFS_NULL&gt;</a>".
+            <p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows, getMatchingChildObjects, getChildren, 
+                        or one of the other engine commands that return such references.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>Property</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">The property name to retrieve.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+			Property names are case-sensitive.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, GetProperty, TheComponentReference, "Text"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the value of the "Text" property from TheComponentReference.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns the "Text" property value or "&lt;SAFS_NULL&gt;" if "Text" is not a 
+                        valid property name for the component.
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetPropertyNames'></A>RobotJ EngineComponentCommands::<BIG>GetPropertyNames</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the names of all available properties for a component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Returns a delimited string list of case-sensitive property names for the component.  
+                The first character in the string is the delimiter used to separate each 
+                property name in the list.
+            <p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows, getMatchingChildObjects, getChildren, 
+                        or one of the other engine commands that return such references.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, GetPropertyNames, TheComponentReference</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the list of valid property names for TheComponentReference.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns the String of case-sensitive property names as a delimited list.
+                        The first character is the delimiter.
+                        <p>
+                        Example return string: ",Property1,Property2,property3,Property4"
+                        </p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetSuperClassnames'></A>RobotJ EngineComponentCommands::<BIG>GetSuperClassnames</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the hierarchy of superclasses for the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Returns a delimited string list of case-sensitive classnames for the component.  
+                The first character in the string is the delimiter used to separate each 
+                classname in the hierarchy.  
+                <p>If there is no superclass or hierarchy the engine will return a delimited 
+                list of one value--the component's classname.  (Ex: ",Html.BUTTON")
+                </p><p>                
+                When a superclass hierarchy does exist the first value after the delimiter 
+                is the component's classname.  Each delimited value after that goes one higher 
+                in the hierarchy until the topmost superclass has been processed.<br>
+                (Ex: ",CustomButton,java.awt.Button,java.awt.Component,java.lang.Object")
+                </p><p>
+                If the component itself has no classname and no hierarchy (unusual!) then 
+                the engine should simply return an empty, 0-length string.
+                </p>
+<p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows, getMatchingChildObjects, getChildren, 
+                        or one of the other engine commands that return such references.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, GetSuperClassnames, TheComponentReference</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the class hierarchy of TheComponentReference.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns the class hierarchy for TheComponentReference.
+                        <p>
+                        Example 1: ",CustomButton,java.awt.Button,java.awt.Component,java.lang.Object"<br>
+                        Example 2: ",Html.BUTTON"<br>
+                        Example 3: ""
+                        </p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetText'></A>RobotJ EngineComponentCommands::<BIG>GetText</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the (text) value of a component, if any.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                If the component does not have text or any "value" the engine should return 
+                "<a href="http://safsdev.sourceforge.net/doc/constant-values.html#org.safs.tools.drivers.DriverConstant.SAFS_NULL" target="_blank">&lt;SAFS_NULL&gt;</a>".
+            <p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows, getMatchingChildObjects, getChildren, 
+                        or one of the other engine commands that return such references.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, GetText, TheComponentReference</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the text value of the TheComponentReference.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns the text value or "&lt;SAFS_NULL&gt;" if no text was available.
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetTopLevelCount'></A>RobotJ EngineComponentCommands::<BIG>GetTopLevelCount</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the number of visible top-level items (Windows?) for the engine.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Returns the number of visible top-level items, or 0.  Not all engines can see all items. 
+                For example, Selenium only looks for Web clients.  Some engines may only look for 
+                Java clients, etc..  Some engines can see other top-level items that are not 
+                Windows--like Processes, or Threads, etc...
+            <p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p>
+<p>
+            The TestComplete Engine (TCAFS) also persists these values as SAFS variables.
+            </p><pre>            
+            ^TCAFS.Command    = [command]
+            ^TCAFS.StatusCode = [statuscode string]
+            ^TCAFS.StatusInfo = [statusinfo]
+            </pre></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, GetTopLevelCount</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the number of top-level items visible to the engine.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns the count of top-level items or 0 if the engine "sees" no top-level items.
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetTopLevelWindows'></A>RobotJ EngineComponentCommands::<BIG>GetTopLevelWindows</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Return references to all known top-level items (Windows).</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The engine can only return references to those top-level items it has 
+                knowledge of.  Not all engines can see all items. 
+                For example, Selenium only looks for Web clients.  Some engines may only look for 
+                Java clients, etc..  Some engines can see other top-level items that are not 
+                Windows--like Processes, or Threads, etc...
+                <p>
+                The engine's array of objects will be returned as a delimited list of fields. 
+                The first character in the String will identify the separator used between 
+                each reference.  If no top level windows were found then the engine will return 
+                an empty string.
+                </p>
+<p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p>
+<p>
+            The TestComplete Engine (TCAFS) also persists these values as SAFS variables.
+            </p><pre>            
+            ^TCAFS.Command    = [command]
+            ^TCAFS.StatusCode = [statuscode string]
+            ^TCAFS.StatusInfo = [statusinfo]
+            ^TCAFS.UID.Count  = [Number of UID References created last]
+            ^TCAFS.UID.1      = [First UID Reference created]
+            ^TCAFS.UID.n      = [UID Reference number n]            
+            </pre></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, GetTopLevelWindows</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get references to all known top-level items.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Sample return strings:
+                        <p>
+                        Example 1: ",Ref1,Ref2,Ref3"
+                        Example 2: ""
+                        </p><p>
+                        The first character in Example 1 (a comma in this case) signifies that the 
+                        list of references will be separated by commas.  The references 
+                        then follow.
+                        </p><p>
+                        Example 2 shows no top-level items are visible to the engine.
+                        </p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetTopWindowHandle'></A>RobotJ EngineComponentCommands::<BIG>GetTopWindowHandle</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the Windows native handle of the top window containing the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Get the Windows native handle of the top window containing the component. 
+            </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>ComponentKey</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">A string represents the key of component's Test Object.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A string represents the key of component's Test Object. This key is generated
+                        by engine and used to get the Component Test Object from a cache.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, GetTopWindowHandle, "ComponentKey"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">According the Component Key, find the component from cache then find the
+                    	top window object and return the Windows native handle of the top window object.
+                    </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_HighlightMatchingChildObject'></A>RobotJ EngineComponentCommands::<BIG>HighlightMatchingChildObject</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Find the component according to Recognition String and highlight it.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                According to the Window's and Component's Recognition String, find the Component Test Object
+                and highlight it by a red rectangle. 
+            </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>WindowRS</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">A string represents the window's Recognition String.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A string represents the window's Recognition String. The format of Recognition String
+                        may be different for different engine.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>ComponentRS</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">A string represents the component's Recognition String.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A string represents the component's Recognition String. The format of Recognition String
+                        may be different for different engine.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, HighlightMatchingChildObject, "Type=FlexWindow;Name=flexwebdemo.swf", "Type=FlexWindow;Name=flexwebdemo.swf;\;Type=FlexMenuBar;Index=1"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Find a flex menubar object and highlight it.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_HighlightMatchingChildObjectByKey'></A>RobotJ EngineComponentCommands::<BIG>HighlightMatchingChildObjectByKey</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Find the component according to Window/Component Test Object's key and highlight it.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                According to the Window's and Component's Test Object key, get the Component Test Object and highlight it 
+                by a red rectangle. 
+            </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>WindowKey</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">A string represents the key of window's Test Object.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A string represents the key of window's Test Object. This key is generated
+                        by engine and used to get the Window Test Object from a cache.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>ComponentKey</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">A string represents the key of component's Test Object.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A string represents the key of component's Test Object. This key is generated
+                        by engine and used to get the Component Test Object from a cache.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, HighlightMatchingChildObjectByKey, "WindowKey", "ComponentKey"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">According the Test Object's Key, get the Component Test Object from cache and highlight it.
+                    </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_IsMatchingPath'></A>RobotJ EngineComponentCommands::<BIG>IsMatchingPath</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Determine if there is a matching Path object.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>
+                Normally, this is only valid for components whose subitems, nodes, or 
+                children are found by Path syntax: Root-&gt;Branch-&gt;Leaf.  This is often 
+                the case for Menus, MenuItems, and Tree nodes.</p>
+<p>
+                Returns text "true" if an object matching the provided Path was found.  
+                Returns text "false" if no such object was found.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to a component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows, getChildren, or one of the other 
+                        engine commands that return such references.  The Path sought 
+                        is expected to be relative to this object.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>Path</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">The Path to locate relative to the Component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Path syntax: "Root-&gt;Branch-&gt;Leaf"
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, IsMatchingPath, TheMainMenuReference, "Help-&gt;About"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">See if MenuItem "About" exists in the "Help" menu.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns text "true" or "false".  In this case, we seek to 
+                        find if there is a "Help" menu in the Main Menu and then we check 
+                        to see if there is an "About" menuitem in the Help menu.
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_IsShowing'></A>RobotJ EngineComponentCommands::<BIG>IsShowing</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Is the component visible?</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Returns text "true" if the component is set to be visible.
+                Returns text "false" if the component is set to be hidden or 
+                otherwise is not visible.
+            <p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p>
+<p>
+            The TestComplete Engine (TCAFS) also persists these values as SAFS variables.
+            </p><pre>            
+            ^TCAFS.Command    = [command]
+            ^TCAFS.StatusCode = [statuscode string]
+            ^TCAFS.StatusInfo = [statusinfo]
+            ^TCAFS.FullName   = [object.FullName] -- the TestObjects.FullName string--if command returns only 1 reference.
+            </pre></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows, getChildren, or one of the other 
+                        engine commands that return such references.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, IsShowing, TheComponentReference</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Checks the visibility of TheComponentReference.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns text "true" or "false".
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_IsValid'></A>RobotJ EngineComponentCommands::<BIG>IsValid</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Does the component still exist as a valid object?</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Should return text "true" if the component is still valid. 
+                Return text "false" if it is not.
+            <p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p>
+<p>
+            The TestComplete Engine (TCAFS) also persists these values as SAFS variables.
+            </p><pre>            
+            ^TCAFS.Command    = [command]
+            ^TCAFS.StatusCode = [statuscode string]
+            ^TCAFS.StatusInfo = [statusinfo]
+            ^TCAFS.FullName   = [object.FullName] -- the TestObjects.FullName string--if command returns only 1 reference.
+            </pre></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows, getChildren, or one of the other 
+                        engine commands that return such references.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, IsValid, TheComponentReference</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Validate the existence of TheComponentReference.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns text "true" or "false".
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SetActiveWindow'></A>RobotJ EngineComponentCommands::<BIG>SetActiveWindow</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Make the component the active (topmost?) Window or Component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Normally, this is only valid for window or child window components.  
+                There is currently nothing defined to be returned by this command.
+            <p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p>
+<p>
+            The TestComplete Engine (TCAFS) also persists these values as SAFS variables.
+            </p><pre>            
+            ^TCAFS.Command    = [command]
+            ^TCAFS.StatusCode = [statuscode string]
+            ^TCAFS.StatusInfo = [statusinfo]
+            ^TCAFS.FullName   = [object.FullName] -- the TestObjects.FullName string--if command returns only 1 reference.
+            </pre></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows, getChildren, or one of the other 
+                        engine commands that return such references.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, SetActiveWindow, TheComponentReference</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Set TheComponentReference to be the active/topmost Window.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+		</BODY>
+</HTML>
+	

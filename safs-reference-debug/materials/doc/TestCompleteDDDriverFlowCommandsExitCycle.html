@@ -1,0 +1,47 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_ExitCycle'></A>TestComplete DDDriverFlowCommands::<BIG>ExitCycle</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Exit the currently running Step, Suite, and/or Cycle table.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Exit the currently running Step, Suite, and/or Cycle table.<br>
+                 Generally called from Step or Suite Driver to exit or abort the entire 
+                 Cycle test currently running.
+                 <p>
+                 The Step or Suite table containing the command is exited.  If an ExitTable 
+                 processing block has been set by SetExitTableBlock then that block 
+                 will be executed.  Otherwise, the table will immediately exit.  </p>
+<p>
+                 Any Suite and/or Cycle table that invoked the table will also be exited.  
+                 If an ExitTable processing block has been set by SetExitTableBlock for the table 
+                 then that block will be executed.  Otherwise, the table will immediately exit.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">C, ExitCycle</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Exit the current table and the entire Cycle test.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

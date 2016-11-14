@@ -1,0 +1,79 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_SelectMenuItem'></A>WindowFunctions::<BIG>SelectMenuItem</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Attempts to select a particular text string menuitem.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Attempts to select a particular text string menuitem.  The menuitem 
+                should be specified in the form "Menu-&gt;Menu-&gt;MenuItem   CTRL+V" 
+                with the full text, spaces(if any), and keyboard shortcut text (if
+                any).</p>
+<p>
+                Ampersands preceding underlined characters are optional.
+                The routine first verifies that the specified menuitem exists
+                and exits with error if it does not.
+                If it does exist then the selection proceeds using the MenuID retrieved
+                from the found menuitem.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Menu-&gt;MenuItem hierarchy string to identify which menuitem to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Menu-&gt;MenuItem hierarchy string to identify which menuitem to select.
+                NOTE:RC (Robot) can only handle submenus up to 5 levels deep.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, SELECTMENUITEM, "&amp;File-&gt;&amp;Save  Ctrl+S"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               This actions selects the Save menuitem under the File menu pulldown.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Field  5 : TQ String. the full case-sensitive menu item path to select.  
+                Ampersands (&amp;) indicating/preceding underlined characters are optional.
+                The text must include the full text including spaces and any visible shortcut
+                key combinations displayed in the text of the menu item.  The menu does not
+                have to be open to issue the command.  Just issue the command from a normal state.
+                This command only works if the Window implements standard menus.  Use InputKeys
+                or Window Click commands to use non-standard menus or to navigate individual menu panels. 
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, PopupMenu, PopupMenu, SELECTMENUITEM, "Exit"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               This actions selects the Exit menuitem from an exposed File popup menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Field  5 : TQ String. the full case-sensitive menu item path to select.  
+                Ampersands (&amp;) indicating/preceding underlined characters are optional.
+                The text must include the full text including spaces and any visible shortcut
+                key combinations displayed in the text of the menu item.  For a popup menu, the 
+                menu does have to be exposed to be found.  This command only works if the Window 
+                implements standard menus.  Use InputKeys
+                or Window Click commands to use non-standard menus or to navigate individual menu panels. 
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

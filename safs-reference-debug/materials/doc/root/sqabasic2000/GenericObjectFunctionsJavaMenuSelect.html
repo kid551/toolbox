@@ -1,0 +1,78 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_JavaMenuSelect'></A>GenericObjectFunctions::<BIG>JavaMenuSelect</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Select a JAVA Menu Item according to a stored text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Select a JAVA Menu Item according to a stored text value.
+                Until JavaMenu objects are routed elsewhere, we will handle  
+                the menu selection here. 
+                Each menuItem acted upon is given a name in the AppMap under 
+                the name provided for the Menu.</p>
+<p>
+                The menuitem lookup is done with the component\menu name of 
+                the record AND Field #5.</p>
+<p>
+                Typical Data Table records:</p>
+<p>
+                    t JavaWindow MainMenu JavaMenuSelect FileOpen
+                </p><p>
+                The example will contain a FileOpen="Path=File-&gt;Open" entry in 
+                the MainMenu section of the Application Map to select File-&gt;Open 
+                menuItem from the menu of the MainWindow.</p>
+<p>
+                MainMenu will also be an entry in the MainWindow section with 
+                normal recognition information for it.  This will tell Robot to 
+                locate the MainMenu Generic Object prior to the menu selection.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>JavaMenuItem</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Name of the Java menuitem to lookup and use for the selection.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Name of the Java menuitem to lookup and use for the selection.
+                We expect the AppMap to contain the item in the format "Path=Menu-&gt;Item":</p>
+<p>
+                [MainMenu]
+                FileOpen="Path=File-&gt;Open"</p>
+<p>  
+                The full results from the AppMap lookup are used, so any 
+                valid content used with the JavaMenu Click command can be part of 
+                this AppMap entry.</p>
+<p>
+                Both Fields #3 and #5 are used to locate the item in the App Map.
+                This routine does not specify an App Map so only the current Map
+                is used and it is expected to be valid.</p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, MAINMENU, JavaMenuSelect, FileOpen</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               A menu selection will be performed on the menuitem indicated by the FileOpen reference in
+               the Application Map.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Field  5 : TQ String. A reference identified in the Application Map identifying the menuitem 
+               on which to click.
+               This example shows FileOpen which will be found in the Application Map as a referenced item
+               in the MAINMENU section.    
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

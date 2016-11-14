@@ -1,0 +1,63 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_ExtendSelectionToTextItem'></A>ListBoxFunctions::<BIG>ExtendSelectionToTextItem</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Routine to Shift+Click and Verify a selection according to its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                This extends the current selection to include the specified
+		selection and all other items inbetween.<br>
+                NOTE: This may not work in all environments (Java, Web, etc...)
+                <p>
+                For example, in Java, we can usually verify that an item exists 
+                in the list; but we do not seem to be able to verify if a newly 
+                added selection to multiple selections is actually selected.
+                </p>
+<p>
+                So, for Java, we will verify existence in the list, but we cannot 
+                verify the selection was successful--we will skip that last check.
+                </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to select and verify.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListBox, ExtendSelectionToTextItem,  "AParticularUserID"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Selects "AParticularUserID" from the ListBox object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Selects "AParticularUserID" from the ListBox object.
+                 This adds "AParticularUserID" and any items inbetween to
+		 any existing items already selected.<br>
+                 When possible, we will also attempt to verify the added selection
+                 was successful.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

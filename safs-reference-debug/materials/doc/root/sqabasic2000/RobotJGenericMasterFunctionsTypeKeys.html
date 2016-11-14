@@ -1,0 +1,56 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_TypeKeys'></A>RobotJ GenericMasterFunctions::<BIG>TypeKeys</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                Sends keystrokes to whatever has keyboard focus.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Sends keystrokes to whatever has keyboard focus.
+                <p>
+                No attempt is made to locate any specific window or component.  
+                Keystrokes are simply sent to the system.
+                </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                String of keystrokes to send.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                String of keystrokes to send.
+		Note: the TID supports this command using 
+		<a href="http://safsdev.sourceforge.net/doc/org/safs/tools/input/CreateUnicodeMap.html" target="reference" alt="SAFS InputKeys Support Doc">InputKeys Support</a>.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Anything, At All, TYPEKEYS, "%F{ENTER}"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               This action sends "ALT + F" then the ENTER key to the system.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Field  5 : TQ String. case-sensitive text to send.</p>
+<p><pre>Some Special Characters:
+                {Enter}= ENTER key
+                {Tab} = TAB key
+                ^ = CONTROL Key with another key ( "^S" = CONTROL + s)
+                %= ALT  Key with another key ("%F" = ALT + F)
+                + = SHIFT key with another key ("+{Enter}" = SHIFT + ENTER)
+                </pre></p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

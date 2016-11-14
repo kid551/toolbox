@@ -1,0 +1,98 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_LocateScreenImage'></A>Selenium GenericMasterFunctions::<BIG>LocateScreenImage</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Store the location and dimensions of a component.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Store the location and dimensions of a component.
+               The component can be <a href="http://safsdev.sourceforge.net/sqabasic2000/SAFSImageBasedRecognition.htm" target="_blank" alt="SAFS Image-Based Testing Info">SAFS IBT</a>, RJ, Selenium object.<br>
+               The information is stored in a collection of variables using the variable root name provided. 
+               <p>
+               The following variables are set by this command:</p>
+<p>
+<ul>
+               rootname=x y w h [space delimited values]<br>
+               rootname.x=x<br>
+               rootname.y=y<br>
+               rootname.w=w<br>
+               rootname.h=h<br></ul></p></detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN> : <value xmlns="">
+					Currently in IBT, all coordinates are relative to the screen and not to any 
+					parent window location or other client area.
+                </value><BR/>
+</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>VariableName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The root name of the collection of variables to receive the location and dimensions.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>WhomRelativeTo</B> = screen ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             This parameter decides the coordinates stored in VariableName is relative to the screen or the parent window.
+             'screen' means they are relative to the screen; 'parent' means they are relative to the parent window.
+             The parameter is curently available in RJ only. 
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WindowID, WindowID, LocateScreenImage, AVariableName</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Stores the following variable values:<p>
+<ul>
+             AVariableName=x y w h [space delimited values]<br>
+             AVariableName.x=x<br>
+             AVariableName.y=y<br>
+             AVariableName.w=w<br>
+             AVariableName.h=h<br></ul></p></short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, SetVariableValues, ^AVariableName="NextVariableName" <br>
+                  T, WindowID, WindowID, LocateScreenImage, ^AVariableName</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Stores the following variable values:<p>
+<ul>
+             NextVariableName=x y w h [space delimited values]<br>
+             NextVariableName.x=x<br>
+             NextVariableName.y=y<br>
+             NextVariableName.w=w<br>
+             NextVariableName.h=h<br></ul></p></short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, ParentWindow, Component, LocateScreenImage, AVariableName, parent</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             AVariableName stores the coordinates that are relative to the left-top point of the ParentWindow:<p>
+<ul>
+             AVariableName=x y w h [space delimited values]<br>
+             AVariableName.x=x<br>
+             AVariableName.y=y<br>
+             AVariableName.w=w<br>
+             AVariableName.h=h<br></ul></p></short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

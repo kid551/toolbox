@@ -1,0 +1,646 @@
+<HTML xmlns="http://www.w3.org/TR/REC-html40"><HEAD>
+<TITLE>RobotJ JavaMenuFunctions</TITLE>
+<LINK rel="stylesheet" href="rrafs.css" type="text/css"/>
+<LINK rel="stylesheet" href="bootstrap.css" type="text/css"/>
+</HEAD><BODY><DIV class="container content" NAME="top" ID="top">
+		  <H1>RobotJ JavaMenuFunctions</H1>
+		  
+          Last Updated:<script language="JavaScript">document.write(document.lastModified)</script>
+<BR/>
+<BR/>
+<DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+              Actions for working with Java Swing JMenu objects
+           </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+		<DIV NAME="list" ID="list">
+		  <A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE class="table">
+<thead class="thead-inverse">
+<tr>
+<th>Keyword Name</th>
+<th>Supported Engines</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectMenuItem' HREF='#detail_SelectMenuItem' >SelectMenuItem</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Action to select a menuItem according to its text value.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectMenuItemContains' HREF='#detail_SelectMenuItemContains' >SelectMenuItemContains</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Action to select a menuItem according to a partial match of its text value.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectUnverifiedMenuItem' HREF='#detail_SelectUnverifiedMenuItem' >SelectUnverifiedMenuItem</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Action to select a menuItem according to its text value without verification of it's existance.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyMenuItem' HREF='#detail_VerifyMenuItem' >VerifyMenuItem</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+               Attempts to verify the a particular menuitem exists in a menu.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyMenuItemContains' HREF='#detail_VerifyMenuItemContains' >VerifyMenuItemContains</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+               Attempts to verify the existence of a menuitem found by partial text match.
+              </TD>
+		  </TR>
+</tbody>
+</TABLE>
+<HR/>
+</DIV>
+		<DIV NAME="detail" ID="detail">
+		  <H3><A NAME='detail_SelectMenuItem'></A>RobotJ JavaMenuFunctions::<BIG>SelectMenuItem</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to select a menuItem according to its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 In RRAFS, this command will work on both JavaMenu items and JavaPopupMenu items.<br></detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN> : <value xmlns="">
+              		When Field5 is provided, the routine first verifies that the specified menuitem exists 
+              		and exits with error if it does not. If it does exist then the select found menuitem.
+				</value><BR/>
+</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>[ <B>TextValue</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of menuItem to select OR an App Map reference.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the menuitem to select.
+                 Parent-Child relationships are separated by "-&gt;".<br>
+                 Alternatively, the TextValue can be an App Map reference item 
+                 used in conjunction with the Component Name (field #3) that 
+                 allows us to store explicit menu item text in the App Map.
+              </detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN> : <value xmlns="">The textvalue can use wildcast or regex.</value><BR/>
+</DIV>
+		  </LI>
+<LI>[ <B>indexPath</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The index for item of each level. It is 1-based.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The index for item of each level. It is 1-based.
+                 If there are several menuitem in the same level with same text, this
+                 parameter can be used to indicate which one is wanted.
+                 Parent-Child relationships are separated by "-&gt;".<br>
+                 Alternatively, the indexPath can be an App Map reference item 
+                 used in conjunction with the Component Name (field #3) that 
+                 allows us to store explicit indexes in the App Map. 
+              </detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN> : <value xmlns="">This parameter is supported.</value><BR/>
+</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, FileMenu, SelectMenuItem</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the FileMenu menuitem as defined in the AppMap.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                This mode is less desirable as it may not work with compatible engines 
+                made with tools other than Rational Robot.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, FileMenu, SelectMenuItem, "Exit"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the "Exit" menuItem from the FileMenu as defined in the AppMap.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                This mode is less desirable as it may not work with compatible engines 
+                made with tools other than Rational Robot.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AJmenu, SelectMenuItem, "File"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the "File" menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AJMenu, SelectMenuItem, "File-&gt;Exit"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the "Exit" menuitem found in the "File" menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AJmenu, SelectMenuItem, "FileOpen"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the menuItem defined in a "FileOpen" subkey of [AJMenu] 
+                from within the App Map.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AJMenu, SelectMenuItem, "File-&gt;Exit", "1-&gt;2"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the 2th "Exit" menuitem found in the 1th "File" menu of menubar.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AJMenu, SelectMenuItem, "Fil*-&gt;[eE]xit"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                This action selects the "Exit" menuitem found in the "File" menu of menubar.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN> : <value xmlns="">"File" is given as a willcast string "Fil*", "Exit" is given as a regex string "[eE]xit".</value><BR/>
+</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SelectMenuItemContains'></A>RobotJ JavaMenuFunctions::<BIG>SelectMenuItemContains</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to select a menuItem according to a partial match of its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 In RRAFS, this command will work on both JavaMenu items and JavaPopupMenu items.<br></detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN> : <value xmlns="">
+              		When Field5 is provided, the routine first verifies that the specified menuitem exists 
+              		and exits with error if it does not. If it does exist then the select found menuitem.
+				</value><BR/>
+</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>[ <B>TextValue</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-insensitive substring of menuItem to select OR an App Map reference.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Parent-Child relationships are separated by "-&gt;"<br>
+                 Alternatively, the TextValue can be an App Map reference item 
+                 used in conjunction with the Component Name (field #3) that 
+                 allows us to store explicit menu item text in the App Map.<br>
+				 Note: RJ implementation: this field is required.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>indexPath</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The index for item of each level. It is 1-based.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The index for item of each level. It is 1-based.
+                 If there are several menuitem in the same level with same text, this
+                 parameter can be used to indicate which one is wanted.                 
+                 Parent-Child relationships are separated by "-&gt;".<br>
+                 Alternatively, the indexPath can be an App Map reference item 
+                 used in conjunction with the Component Name (field #3) that 
+                 allows us to store explicit indexes in the App Map.
+              </detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN> : <value xmlns="">This parameter is supported.</value><BR/>
+</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, FileMenu, SelectMenuItemContains, "exi"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+				Verify that the FileMenu contains partially path "exi", if exist then select it.
+			    For Example: If a path "Exit CTRL+X" exists in the FileMenu, then select it.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AJMenu, SelectMenuItemContains, "f-&gt;exit"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+				Verify that the AJMenu contains partially path "f-&gt;exit", if exist then select it.
+			    For Example: If a path "File-&gt;Exit CTRL+X" exists in the FileMenu, then select it.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AJMenu, SelectMenuItemContains, "file-&gt;e", "1-&gt;2"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Verify that the AJMenu contains partially path "file-&gt;e" with index as "1-&gt;2", if exist then select it.
+                For Example: If a path "File-&gt;Exit" and "File-&gt;Edit" exists in the MenuBar, as 'File' is the first item found 
+                and 'Edit' is the second item patially matched with 'e' under 'File', so "File-&gt;Edit" is selected.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SelectUnverifiedMenuItem'></A>RobotJ JavaMenuFunctions::<BIG>SelectUnverifiedMenuItem</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to select a menuItem according to its text value without verification of it's existance.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+				  Action to select a menuItem according to its text value without verification of it's existance.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of menuItem to select OR an App Map reference.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the menuitem to select.
+                 Parent-Child relationships are separated by "-&gt;".<br>
+                 Alternatively, the TextValue can be an App Map reference item 
+                 used in conjunction with the Component Name (field #3) that 
+                 allows us to store explicit menu item text in the App Map.<br></detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN> : <value xmlns="">The textvalue can use wildcast or regex.</value><BR/>
+</DIV>
+		  </LI>
+<LI>[ <B>indexPath</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The index for item of each level. It is 1-based.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The index for item of each level. It is 1-based.
+                 If there are several menuitem in the same level with same text, this
+                 parameter can be used to indicate which one is wanted.                 
+                 Parent-Child relationships are separated by "-&gt;".<br>
+                 Alternatively, the indexPath can be an App Map reference item 
+                 used in conjunction with the Component Name (field #3) that 
+                 allows us to store explicit indexes in the App Map.
+              </detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN> : <value xmlns="">This parameter is supported.</value><BR/>
+</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, AJmenu, SelectUnverifiedMenuItem, "File"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the "File" menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AJMenu, SelectUnverifiedMenuItem, "File-&gt;Exit"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the "Exit" menuitem found in the "File" menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AJmenu, SelectUnverifiedMenuItem, "FileOpen"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the menuItem defined in a "FileOpen" subkey of [AJMenu] 
+                from within the App Map.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AJMenu, SelectUnverifiedMenuItem, "file-&gt;edit", "1-&gt;2"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Select path "file-&gt;edit" with index as "1-&gt;2" under AJMenu without verification.
+                For Example: If two pathes "File-&gt;Edit" and "File-&gt;Edit" exist in the AJMenu, then select the second "File-&gt;Exit".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AJMenu, SelectMenuItem, "Fil*-&gt;[eE]xit"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                This action selects the "Exit" menuitem found in the "File" menu of menubar without verification.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN> : <value xmlns=""> "File" is given as a willcast string "Fil*", "Exit" is given as a regex string "[eE]xit".</value><BR/>
+</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_VerifyMenuItem'></A>RobotJ JavaMenuFunctions::<BIG>VerifyMenuItem</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Attempts to verify the a particular menuitem exists in a menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                The menuitem should be specified in the form 
+                "Menu-&gt;Menu-&gt;MenuItem   CTRL+V" with the full text (ampersands optional), 
+                spaces(if any), and keyboard shortcut text (if any).  
+                (The ampersands precede any character in the menuitem that is underlined.)
+                <p>
+                This command differs from the WindowFunction.VerifyMenuItem command because 
+                here we are actually seeking a JavaMenu component, not a Window that contains 
+                a menu.  Also, we do not currently verify any state information like the 
+                WindowFunctions.VerifyMenuItem command.
+                </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>MenuItemText</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Menu-&gt;MenuItem hierarchy string to identify which menuitem to find.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Menu-&gt;MenuItem hierarchy string to identify which menuitem to find.
+                This menu hierarchy IS case-sensitive<br>
+				TQ String. the full case-sensitive menu item path to select.  
+                Ampersands (&amp;) indicating/preceding underlined characters are optional.  
+                The text must include the full text including spaces and any visible shortcut key 
+                combinations displayed in the text of the menu item.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>ExpectedStatus</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Expected status string (or part thereof) of the menuitem. 
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Expected status string (or part thereof) to verify.
+				Only "Enabled" "Ungrayed" "Grayed" "Disabled" "Checked" "Unchecked" "Menu With N MenuItems" are supported now.  
+                <br>Ex: "Enabled Checked"         OR  "Grayed UnChecked"    etc.
+                <br>Each item separated by a space will be evaluated separately so 
+                the order of the status items does not matter.
+				Only the state information of interest needs to be specified.  
+                These status items ARE case-insensitive,space-delimited.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>indexPath</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The index for item of each level. It is 1-based.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The index for item of each level. It is 1-based.
+                 If there are several menuitem in the same level with same text, this
+                 parameter can be used to indicate which one is wanted.                 
+                 Parent-Child relationships are separated by "-&gt;".<br>
+                 Alternatively, the indexPath can be an App Map reference item 
+                 used in conjunction with the Component Name (field #3) that 
+                 allows us to store explicit indexes in the App Map.
+              </detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN> : <value xmlns="">This parameter is supported.</value><BR/>
+</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, JavaWindow, JavaMenu, VerifyMenuItem, "File"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               This action verifies that "File" exists in the menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, JavaWindow, JavaMenu, VerifyMenuItem, "Weird-&gt;CheckBox", "Enabled Checked"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               This action verifies that "Weird-&gt;CheckBox" exists with status "Enabled Checked" in the menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AJMenu, VerifyMenuItem, "file-&gt;edit","Enabled", "1-&gt;2"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Verify that the 2th item 'edit' in 1th item 'file' in menubar exists and its status is 'Enabled'
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_VerifyMenuItemContains'></A>RobotJ JavaMenuFunctions::<BIG>VerifyMenuItemContains</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Attempts to verify the existence of a menuitem found by partial text match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Attempts to verify the existence of a menuitem found by partial text match.
+                The menuitem should be specified in the form "Menu-&gt;Menu-&gt;MenuItem".  
+                (Optional ampersands precede any character in the menuitem that is underlined.)
+                <p>
+                This command differs from the WindowFunction.VerifyMenuItemContains command because 
+                here we are actually seeking a JavaMenu component, not a Window that contains 
+                a menu.  Also, we do not currently verify any state information like the 
+                WindowFunctions.VerifyMenuItemContains command.
+                </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>MenuItemText</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Menu-&gt;MenuItem hierarchy string to identify which menuitem to find.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Menu-&gt;MenuItem hierarchy string to identify which menuitem to find.
+                This menu hierarchy IS case-sensitive<br>
+				TQ String. the case-sensitive menu item path to select.  
+                Ampersands (&amp;) indicating/preceding underlined characters are optional.
+				The text can be any substring of the full text including spaces and any visible shortcut key 
+                combinations displayed in the text of the menu item.  
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>ExpectedStatus</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Expected status string (or part thereof) of the menuitem. 
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Expected status string (or part thereof) to verify.
+				Only "Enabled" "Ungrayed" "Grayed" "Disabled" "Checked" "Unchecked" "Menu With N MenuItems" are supported now.  
+                <br>Ex: "Enabled Checked"         OR  "Grayed UnChecked"    etc.
+                <br>Each item separated by a space will be evaluated separately so 
+                the order of the status items does not matter.
+				Only the state information of interest needs to be specified.  
+                These status items ARE case-insensitive,space-delimited.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>indexPath</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The index for item of each level. It is 1-based.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The index for item of each level. It is 1-based.
+                 If there are several menuitem in the same level with same text, this
+                 parameter can be used to indicate which one is wanted.                 
+                 Parent-Child relationships are separated by "-&gt;".<br>
+                 Alternatively, the indexPath can be an App Map reference item 
+                 used in conjunction with the Component Name (field #3) that 
+                 allows us to store explicit indexes in the App Map.
+              </detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN> : <value xmlns="">This parameter is supported.</value><BR/>
+</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, JavaWindow, JavaMenu, VerifyMenuItemContains, "Fil-&gt;Sav"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+				Verify that the JavaMenu contains partially path "Fil-&gt;Sav".
+			    For Example: If a path "File-&gt;Save" exists in the JavaMenu, then the verification is ok.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, JavaWindow, JavaMenu, VerifyMenuItemContains, "Fil-&gt;Sav","Enabled"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+				Verify that the JavaMenu contains partially path "Fil-&gt;Sav" and it's status is "Enabled".
+			    For Example: If a path "File-&gt;Save" exists in the JavaMenu and it's status is "Enabled", then the verification is ok.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AJMenu, VerifyMenuItemContains, "fi-&gt;e","Enabled", "1-&gt;2"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Verify that the partially matched 2th item 'e' in 1th item 'fi' in menubar exists and its status is 'Enabled'
+                For Example: If two pathes "File-&gt;Edit" and "File-&gt;Exit" exist in the menubar AJMenu, the path
+                "File-&gt;Exit" will be found, and if its status is "Enabled", then the verification is ok.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+		</DIV>
+</BODY>
+</HTML>
+	

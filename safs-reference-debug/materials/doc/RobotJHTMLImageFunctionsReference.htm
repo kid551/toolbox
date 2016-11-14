@@ -1,0 +1,375 @@
+<HTML xmlns="http://www.w3.org/TR/REC-html40"><HEAD>
+<TITLE>RobotJ HTMLImageFunctions</TITLE>
+<LINK rel="stylesheet" href="rrafs.css" type="text/css"/>
+<LINK rel="stylesheet" href="bootstrap.css" type="text/css"/>
+</HEAD><BODY><DIV class="container content" NAME="top" ID="top">
+		  <H1>RobotJ HTMLImageFunctions</H1>
+		  
+          Last Updated:<script language="JavaScript">document.write(document.lastModified)</script>
+<BR/>
+<BR/>
+<DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+              Actions for working with HTMLImage objects
+           </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+		<DIV NAME="list" ID="list">
+		  <A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE class="table">
+<thead class="thead-inverse">
+<tr>
+<th>Keyword Name</th>
+<th>Supported Engines</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ClickArea' HREF='#detail_ClickArea' >ClickArea</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Attempts to perform a Click on a mapped region of an Image (on a webpage).
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SaveHTMLImage' HREF='#detail_SaveHTMLImage' >SaveHTMLImage</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Attempts to Save an HTMLImage on a webpage.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyHTMLImage' HREF='#detail_VerifyHTMLImage' >VerifyHTMLImage</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Attempts to verify an HTMLImage on a webpage to a benchmark file.
+              </TD>
+		  </TR>
+</tbody>
+</TABLE>
+<HR/>
+</DIV>
+		<DIV NAME="detail" ID="detail">
+		  <H3><A NAME='detail_ClickArea'></A>RobotJ HTMLImageFunctions::<BIG>ClickArea</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to perform a Click on a mapped region of an Image (on a webpage).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                RobotJ: The initial implementation actually does this in reverse.  It 
+                expects that the specified object resolves to the HTML.AREA object defined 
+                in the HTML.MAP instead of simply specifying the Image and then an area.  
+                The RobotJ implementation then attempts to locate the Doc and Image that 
+                use the defined area and click on it.<br>
+                No Field #5 parameter is used or needed in this implementation.
+                <p>
+                Future implementations should also\instead support the HTML.IMAGE object 
+                as the target and the area to click as a Field #5 parameter.
+                The parameter would optionally define an App Map reference or could be used 
+                as a literal value.  App Map references might appear as below:
+		</p>
+<pre>
+                Examples:
+
+                [BrowserWin]
+                AnImage=Type=HTMLFrame;HTMLID=top;Type=HTMLImage;Index=1
+                ...                 
+                [AnImage]
+                ANamedRegion=AreaName=TechSupport
+                AnIndexedRegion=AreaIndex=2
+                AnotherRegion=AreaID=Contact
+                </pre></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>[ <B>AppMapSubkey</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                (FUTURE) Name of the AppMap subkey to lookup and use for the image area click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                (FUTURE) Not used by RobotJ at this time.
+                <p>
+                The AppMap could contain the item in any of the following formats:
+                </p><pre>
+                [AnImage]
+                AMappdedRegion=Coords=10,10
+                ANamedRegion=AreaName=TechSupport
+                AnIndexedRegion=AreaIndex=2
+                AnotherRegion=AreaID=Contact
+                </pre><p>
+                Both Fields #3 and #5 would be used to locate the item in the App Map.
+                This routine does not specify an App Map so only the current Map
+                would be used and it is expected to be valid.</p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, ADefinedArea, ClickArea</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A single-click is performed on the the first Image using the defined HTML.AREA.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SaveHTMLImage'></A>RobotJ HTMLImageFunctions::<BIG>SaveHTMLImage</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to Save an HTMLImage on a webpage.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Attempts to perform a right click - save image/picture as command 
+                on the specified image.</p>
+<p>You can also optionally specify an x,y offset into 
+                the image for the right click to occur.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>FileName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Name of the image file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>(Required) Name of the file to use for the image save-as command.
+                  This can be a full or relative path or a simple filename.
+                  A relative path will be stored relative to the Project's root 
+                  directory.  If a simple filename is provided it will be stored 
+                  in the Project's Datapool\Test directory.</p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Coords</B> = 3,3 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The explicit coordinates ("x,y"), or an App Map reference to 
+                pre-defined coordinates.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                We first check to see if the field contains a reference to an 
+                App Map item.  If that cannot be found, we will assume the field 
+                contains explicit coordinates.
+                <p>We expect the coordinates in the format "x,y":</p>
+<pre>
+                [MyImage]
+                TopRight=50,10
+                Center=25,25
+                BottomRight=Coords=50,40 
+                </pre><p>
+                The results from the lookup are appended to the "Coords=" string 
+                used by the Click command in Robot (if necessary).</p>
+<p>
+                Both Fields #3(component name) and #6(coords reference name) 
+                are used to locate the item in the App Map.
+                This routine does not specify an App Map so only the current Map
+                is used and it is expected to be valid.</p>
+<p>If this parameter is not provided, we will use default 
+                coordinates of 3,3 for the right click.</p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, myImage, SaveHTMLImage, ^filename=myImage.jpg</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to Save myImage on the webpage.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Attempts to perform a right click at the default image coordinates,  
+                use the 'save as' menuitem on myImage.  The image is stored as 
+                "myImage.jpg" in the project's Datapool\Test directory.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T  WebBrowser  myImage  SaveHTMLImage  ^filename=c:\images\myImage.jpg ^xy="25,25"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to Save myImage on the webpage.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Attempts to perform a right click at provided image coordinates,  
+                use the 'save as' menuitem on myImage.  The image is stored as 
+                "myImage.jpg" in the c:\images directory.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T  WebBrowser  myImage  SaveHTMLImage  ^filename=images\myImage.jpg  ^xy="Coords=25,25"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to Save myImage on the webpage.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Attempts to perform a right click at the provided image coordinates,  
+                use the 'save as' menuitem on myImage.  The image is stored as 
+                "myImage.jpg" in the &lt;project&gt;\images directory.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T  WebBrowser  myImage  SaveHTMLImage  ^filename=images\myImage.jpg  ^xy="TopRight"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to Save myImage on the webpage.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Attempts to perform a right click at "TopRight" coordinates defined in the app map,  
+                Uses the 'save as' menuitem on the myImage popup menu.  The image is stored as 
+                "myImage.jpg" in the &lt;project&gt;\images directory.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_VerifyHTMLImage'></A>RobotJ HTMLImageFunctions::<BIG>VerifyHTMLImage</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to verify an HTMLImage on a webpage to a benchmark file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Attempts to perform a right click - save image/picture as command 
+                on the specified image and then run a binary file compare of the
+                file to a benchmark file.</p>
+<p>You can also optionally specify an x,y offset into 
+                the image for the right click to occur.</p>
+<p>
+             The command may produce a WARNING if a diff tool for which we 
+             have no means to verify the results is configured for use.  
+             Consequently, if these warnings are expected, the user can use the 
+             "TW" test record type to avoid issuing these warnings.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>BenchmarkFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Name of the Benchmark image file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>(REQUIRED) Name of the file to use for the image save-as command
+                and the benchmark file.  This can also be a full or relative path 
+                suitable for <a href="FileUtilities.htm#findsqafile">FindSQAFile</a>.  
+                If no full path or relative path is given then the benchmark file is 
+                expected to be found in the project's Datapool\Bench directory.</p>
+<p>The captured image will be stored in the project's Datapool\Test
+                project's Datapool/Test directory.  Any comparison difference will 
+                be stored in the project's Datapool\Dif directory.</p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Coords</B> = 3,3 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The explicit coordinates ("x,y") or an App Map reference to 
+                pre-defined coordinates.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                We first check to see if the field contains a reference to an 
+                App Map item.  If that cannot be found, we will assume the field 
+                contains explicit coordinates.
+                <p>We expect the coordinates in the format "x,y":</p>
+<pre>
+                [MyImage]
+                TopLeft=10,10
+                Center=Coords=25,25 
+                </pre><p>
+                The results from the lookup are appended to the "Coords=" string 
+                used by the Click command in Robot (if necessary).</p>
+<p>
+                Both Fields #3(component name) and #6(coords reference name) 
+                are used to locate the item in the App Map.
+                This routine does not specify an App Map so only the current Map
+                is used and it is expected to be valid.</p>
+<p>If this parameter is not provided, we will use default 
+                coordinates of 3,3 for the right click.</p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, myImage, VerifHTMLImage, ^bench=myImage.jpg</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to verify myImage on the webpage to the benchmark file myImage.jpg.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Attempts to perform a right click at the default image coordinates,  
+                use the 'save as' menuitem on myImage, and then run a binary file compare of the
+                file to a benchmark file myImage.jpg.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, myImage, VerifHTMLImage, ^bench=myImage.jpg, ^rightclick="Coords=15,15"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to verify myImage on the webpage to the benchmark file myImage.jpg.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Attempts to perform a right click at the provided image coordinates, 
+                use the 'save as' menuitem on myImage, then run a binary file compare of the
+                file to a benchmark file myImage.jpg.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, myImage, VerifHTMLImage, ^bench=myImage.jpg, ^rightclick=TopLeft</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to verify myImage on the webpage to the benchmark file myImage.jpg.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Attempts to perform a right click at the image coordinates found in 
+                the provided App Map key "TopLeft" under [MyImage].  It will then  
+                use the 'save as' menuitem on myImage, then run a binary file compare of the
+                file to a benchmark file myImage.jpg.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+		</DIV>
+</BODY>
+</HTML>
+	

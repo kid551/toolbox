@@ -1,0 +1,133 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_PinchClose'></A>WindowFunctions::<BIG>PinchClose</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                     Perform a shrinking "zoom out" operation on a touchscreen device supporting the feature.
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                     Perform a shrinking "zoom out" operation on a touchscreen device supporting the feature.
+                     <p>
+                     Effectively shrinks a user-defined rectangular area on the screen.
+                     </p><p>
+                     IOS expects the Window/Component to be the main active Window of the application.
+                     </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>OriginSubKey</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                     The AppMapSubkey that contains the onscreen rectangle for the pinch operation.
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                     Name of the AppMap subkey to lookup and use for OriginRect or the actual 
+                     literal text for the values.
+                     <p>
+                     We expect the rectangle stored in the App Map or the literal text to be specified 
+                     as integer rectangle coordinates and size in pixels: X,Y,Width,Height.
+                     </p><p><pre>
+               [AppWindow]
+               ...
+               Origin1="50,200,25,25"      OR
+               Origin2="Coords=100,75,125,125"
+               ...
+               </pre></p>
+<p>
+		             Engines should attempt to support coordinates separated by alternate separators.  
+		             The most common separators that should be supported would be:
+		             <ul>
+<li>"," (comma) Example: "50,200,25,25"</li>
+<li>";" (semi-colon) Example: "50;200;25;25"</li>
+<li>" " (space) Example: "50 200 25 25"</li>
+</ul>
+</p><p>
+		             If the App Map does not contain the subkey item then the engines should assume 
+		             the value is the literal text of the rectangle coordinate and size values.
+		             </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>ResizeSubKey</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                     Name of the AppMap subkey to lookup for the resize value or the literal text of 
+                     the resize values.
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                     Name of the AppMap subkey to lookup for the resize value or the literal text of 
+                     the resize values.
+                     <p>
+                     We expect the resize value stored in the App Map or the literal text to be specified 
+                     as integer values (in pixels): +/-Width, +/-Height.
+                     </p><p><pre>
+               [AppWindow]
+               ...
+               Resize1="0,-50"   (no width change, but shrink the height by 50 pixels)  
+               Resize2="Coords=-40,0" (shrink width by 40 pixels, with no change in height.)
+               ...
+               </pre></p>
+<p>
+                     These resize offsets can be positive or negative integer values and will be added to 
+                     the existing width and/or height of OrigRect.
+  		             </p><p>
+		             Engines should attempt to support values separated by alternate separators.  
+		             The most common separators that should be supported would be:
+		             <ul>
+<li>"," (comma) Example: "0,50"</li>
+<li>";" (semi-colon) Example: "0;50"</li>
+<li>" " (space) Example: "0 50"</li>
+</ul>
+</p><p>
+		             If the App Map does not contain the subkey item then the engines should assume 
+		             the value is the literal text of the resize values.
+		             </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>Duration</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">The number of seconds to take for the operation.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                     Where supported, the engine should attempt to make the operation take up to N seconds 
+                     in duration.  The default is 1 second.
+                   </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, AppWindow, AppWindow, PinchClose, Origin1, Resize2</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                     Pinch close the window by shrinking the Origin1 rectangle by the amounts specified in Resize2.
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                     Origin1 and Resize2 values are expected to be stored in the [AppWindow] section of the App Map 
+                     since they are not proper literal text values.  The operation will take the default 1 second.
+                   </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, AppWindow, AppWindow, PinchClose, Origin1, "-40;-40", 3</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                     Pinch close the window by shrinking the Origin1 rectangle 40 pixels in 
+                     both width and height.
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                     Origin1 is expected to be stored in the [AppWindow] section of the App Map 
+                     since it is not a proper literal text value. The operation will occur over 3 seconds.
+                   </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

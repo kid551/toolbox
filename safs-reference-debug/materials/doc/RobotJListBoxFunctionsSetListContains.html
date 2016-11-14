@@ -1,0 +1,65 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_SetListContains'></A>RobotJ ListBoxFunctions::<BIG>SetListContains</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+            	Set a variable with the result of checking that a listview contains the provided item.
+			</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+            	The search of the item is expected to be a case-sensitive exact match of the item.  The
+            	   provided variable is set with 'TRUE' if the item is found or 'FALSE' if the item is not found.
+            </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>ItemText</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+						The case-sensitive name of the sought item.
+					</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+						ItemText should contain the case-sensitive text item to find in the list view.
+						A message is sent to the log confirming whether or not the item is found in the list view.
+					</detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>ResultVar</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+						The name of the variable receiving the result.
+					</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+						This variable is set with 'TRUE' if the item is found or 'FALSE' if the item is not found.
+					</detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">
+					T, WINDOW, ListView, SetListContains ,  "AParticularServerName", isFound
+				</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""><p>Variable isFound is set to 'TRUE' if the item "AParticularServerName" is found 
+						   in the ListView object.  If the item is not found, the variable isFound is set
+						   to 'FALSE'.</p></short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

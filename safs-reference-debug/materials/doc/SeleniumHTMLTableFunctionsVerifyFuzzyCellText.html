@@ -1,0 +1,113 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_VerifyFuzzyCellText'></A>Selenium HTMLTableFunctions::<BIG>VerifyFuzzyCellText</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Attempts to verify a particular cell value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                "Fuzzy" matches come into play when using header field text 
+                or column1 row text to specify row and column identities.  The 
+                specified text does NOT have to be an exact match--it is NOT 
+                case-sensitive and can be just a substring of the desired value 
+                in the table.<br>
+                The Benchmark must be exact, however.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>BenchValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The case-sensitive expected value for the specified cell.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>[ <B>Row</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell row # in the row/col specification or a unique row value in column 1.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a cell value
+                in column 1.  If no match is found, it will expect the value to be a valid 
+                1-based row number.  This command allows for case-insensitive substring 
+                matches for row text when used in place of an actual row index.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Col</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell column # in the row/col specification or column header text.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a field header. 
+                If no match is found, it will expect the value to be a valid 
+                1-based column number.  This command allows for case-insensitive substring 
+                matches for header text when used in place of an actual column index.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, VerifyFuzzyCellText, FirstCellValue</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Compares the value of cell 1,1 in WebTable to bench Text "FirstCellValue".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  Default row and column indices substituted for missing parameters.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, VerifyFuzzyCellText, "FirstCellValue", 1 , 1 </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Compares the value of cell 1,1 in WebTable to bench text "FirstCellValue".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, VerifyFuzzyCellText, ABenchValue, 4, "field5"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Compares the value of cell 4, "Field5" in WebTable to bench text "ABenchValue".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The column is determined by case-insensitive comparing the text "field5" to the 
+                  field headers in the WebTable.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WebBrowser, WebTable, VerifyFuzzyCellText, ^ABenchValue, "datum", 5</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Compares the value of cell ADatum,Field5 in WebTable to bench text in variable ^ABenchValue.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The row is determined by seeking the first cell in column 1 in the 
+                  WebTable that contains substring "datum".  The "5" also shows up 
+                  as a substring match to the column header "Field5".  So be cautious, here.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

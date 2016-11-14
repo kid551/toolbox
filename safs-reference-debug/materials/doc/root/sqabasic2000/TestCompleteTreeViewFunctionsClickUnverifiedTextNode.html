@@ -1,0 +1,93 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_ClickUnverifiedTextNode'></A>TestComplete TreeViewFunctions::<BIG>ClickUnverifiedTextNode</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to (almost) blindly click a text node.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 No attempt is made to verify that the node exists 
+                 prior to the selection.  No attempt to verify the node 
+                 has been properly selected after the selection.
+                 <p>
+                 It should be noted that a click requires the full 
+                 hierarchical path to the node to be selected.  Parent 
+                 child branches are delimited with '-&gt;' as in:<br>
+                    Parent-&gt;branch-&gt;leaf </p>
+<p>
+                 We have also made it possible to attempt to select the Nth duplicate 
+                 item with the optional MatchIndex parameter for those trees which we 
+                 can properly process.
+                 </p></detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN> : <value xmlns="">Implementation verifies the existence of the node, does NOT verify if it is selected.</value><BR/>
+</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of the node to be clicked
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the node to be clicked
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p>
+<p>
+                 If the field parameter data does not match one of these two forms then 
+                 the data is ignored and the default(first match) is used.
+                 </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, TreeView, ClickUnverifiedTextNode, "MyParent-&gt;MyBranch-&gt;MyNode"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Single click the first "MyNode" node on the TreeView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, TreeView, ClickUnverifiedTextNode, "MyParent-&gt;MyBranch-&gt;MyNode", "3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Single click the 3rd duplicate "MyNode" node on the TreeView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, TreeView, ClickUnverifiedTextNode, "MyParent-&gt;MyBranch-&gt;MyNode", "Index=3"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Single click the 3rd duplicate "MyNode" node on the TreeView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

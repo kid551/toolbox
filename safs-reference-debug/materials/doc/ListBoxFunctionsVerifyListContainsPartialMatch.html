@@ -1,0 +1,94 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_VerifyListContainsPartialMatch'></A>ListBoxFunctions::<BIG>VerifyListContainsPartialMatch</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Verifies a particular list-item substring exists in the list (somewhere)
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Verifies a particular list-item substring exists in the list (somewhere).  The comparison 
+                can be case-sensitive.  By default, it is not.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 SubString to look for in the list.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 SubString to look for in the list.  
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>CaseSensitive</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+	                 Optional "True" for case-sensitive search
+	              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+	                 Optional "True" for case-sensitive search.<br>
+	                 Robot (others?) also supports "CASE-SENSITIVE" in place of "TRUE" for this parameter.
+	              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ListBox, VerifyListContainsPartialMatch, "Text", "True"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Verifies that the listbox contains somewhere an item containing the substring "Text"
+                 using a case-sensitive comparison.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ListBox, VerifyListContainsPartialMatch, "Text", "Case-Sensitive"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Verifies that the listbox contains somewhere an item containing the substring "Text" 
+                 using a case-sensitive comparison.  The use of "CASE-SENSITIVE" literal text instead of 
+                 "TRUE" initially is implemented in Robot.  Other engines will support this as 
+                 developers can add it.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ListBox, VerifyListContainsPartialMatch, "Text", "False"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Verifies that the listbox contains somewhere an item containing the substring "Text" 
+                 case-insensitive search.  The "False" is not really necessary since the search 
+                 is not case-sensitive by default.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ListBox, VerifyListContainsPartialMatch, "Text"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+	                 Verifies that the listbox contains somewhere an item containing the substring 
+	                 "Text" using a comparison that is not case-sensitive.
+	              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

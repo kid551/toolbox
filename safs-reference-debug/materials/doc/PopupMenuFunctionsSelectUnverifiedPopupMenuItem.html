@@ -1,0 +1,104 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_SelectUnverifiedPopupMenuItem'></A>PopupMenuFunctions::<BIG>SelectUnverifiedPopupMenuItem</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Select a menuItem via its text in the currently active popup menu without verification.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Attempts to select a particular text string menuitem in the currently 
+                active popup menu. This routine performs no verification prior to or
+                following the selection.  This may cause a Rational error if the Popup
+                Menu or selected menu item is not available. 
+                <p>The menuitem should be specified in the form 
+                "Menu-&gt;Menu-&gt;MenuItem   CTRL+V" with the full text, spaces(if any), and 
+                keyboard shortcut text (if any).</p>
+<p>
+                Ampersands preceding underlined characters are optional.
+                </p>
+<p>
+                For RC and Win32 popups: The Window and Component references are not 
+                used and can be anything.  They just cannot be blank.</p>
+<p><b>TC Note:</b>Component can be the object who contains 'popup menu', or it
+                can be the 'context menu' object.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>MenuItemText</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Menu-&gt;MenuItem hierarchy to the menuItem to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Menu-&gt;MenuItem hierarchy string to identify which menuitem to select.<br>
+                NOTE:SQA can only handle submenus up to 5 levels deep.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, Anything, AtAll, SelectUnverifiedPopupMenuItem, "File-&gt;Save   Ctrl+S"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Select the File/Save menuItem from the currently active popup menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Select the File/Save menuItem from the currently active popup menu.<br>
+                The full text must include any spaces and visible shortcut key combos that 
+                are displayed in the text of the menuItem.
+                <p>
+                For RC and Win32 popups: The Window and Component references are not 
+                used and can be anything.  They just cannot be blank.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, Anything, AtAll, SelectUnverifiedPopupMenuItem, "&amp;File-&gt;&amp;Save   Ctrl+S"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Select the File/Save menuItem from the currently active popup menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Select the File/Save menuItem from the currently active popup menu.<br>
+                The full text must include any spaces and visible shortcut key combos that 
+                are displayed in the text of the menuItem.<br>
+                Ampersands (&amp;) indicating/preceding underlined characters are optional.
+                <p>
+                For RC and Win32 popups: The Window and Component references are not 
+                used and can be anything.  They just cannot be blank.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, ParentWindow, popupMenu, SelectUnverifiedPopupMenuItem, "File-&gt;Save"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""><b>RJ Usage:</b> Select the File/Save menuItem from the currently active popup menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, ParentWindow, popupFileMenu, SelectUnverifiedPopupMenuItem, "Save"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""><b>RJ Usage:</b> Select the File/Save menuItem from the currently active popup menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

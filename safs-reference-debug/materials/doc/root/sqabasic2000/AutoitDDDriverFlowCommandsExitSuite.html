@@ -1,0 +1,42 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_ExitSuite'></A>Autoit DDDriverFlowCommands::<BIG>ExitSuite</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Exit the currently running Step and/or Suite table.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Exit the currently running Step and/or Suite table.<br>
+                 Generally only called from Step Driver to exit the current Step 
+                 table AND the Suite that invoked it.  The command should have no 
+                 effect inside a Cycle table.
+                 <p>
+                 The Step or Suite table containing the command is exited.  If an ExitTable 
+                 processing block has been set by SetExitTableBlock then that block 
+                 will be executed.  Otherwise, the table will immediately exit.  </p>
+<p>
+                 If the table containing the command was a Step table, then the Suite that 
+                 called the Step table will also be exited.  If an ExitTable 
+                 processing block has been set by SetExitTableBlock for the Suite,
+                 then that block will be executed.  Otherwise, the Suite will immediately exit.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, ExitSuite</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Exit the current Step and/or Suite table.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

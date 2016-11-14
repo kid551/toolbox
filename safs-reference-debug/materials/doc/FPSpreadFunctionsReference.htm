@@ -1,0 +1,849 @@
+<HTML xmlns="http://www.w3.org/TR/REC-html40"><HEAD>
+<TITLE>FPSpreadFunctions</TITLE>
+<LINK rel="stylesheet" href="rrafs.css" type="text/css"/>
+<LINK rel="stylesheet" href="bootstrap.css" type="text/css"/>
+</HEAD><BODY><DIV class="container content" NAME="top" ID="top">
+		  <H1>FPSpreadFunctions</H1>
+		  
+          Last Updated:<script language="JavaScript">document.write(document.lastModified)</script>
+<BR/>
+<BR/>
+<DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+              Functions and Actions for FarPoint Spread objects.
+           </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              This is not supported by Rational Robot out-of-the-box.  You need
+	      a proxy from one of IBM's 3rd party partners for this to work.
+
+	      This proxy requires at least version 2003.06.15 of Robot.
+           </detailed_desc><BR/>
+		</DIV>
+<BR/>
+		<DIV NAME="list" ID="list">
+		  <A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE class="table">
+<thead class="thead-inverse">
+<tr>
+<th>Keyword Name</th>
+<th>Supported Engines</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_CaptureRangeToFile' HREF='#detail_CaptureRangeToFile' >CaptureRangeToFile</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='WSupport' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+             Capture the grid data to the specified file.  For now,
+	     it can only be used to capture all of the grid data.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ClickCell' HREF='#detail_ClickCell' >ClickCell</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Attempts to perform a single click on a table cell.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_CtrlClickCell' HREF='#detail_CtrlClickCell' >CtrlClickCell</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Attempts to perform a single Ctrl+Click on a table cell.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_DoubleClickCell' HREF='#detail_DoubleClickCell' >DoubleClickCell</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Attempts to perform a double click on a table cell.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_FindRowNumber' HREF='#detail_FindRowNumber' >FindRowNumber</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='WSupport' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+             Search specified columns for the specified text.  Assign the
+	     matching row number to the given variable.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_RightClickCell' HREF='#detail_RightClickCell' >RightClickCell</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Attempts to perform a single right click on a table cell.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ShiftClickCell' HREF='#detail_ShiftClickCell' >ShiftClickCell</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                 Attempts to perform a single SHIFT+Click on a table cell.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyCellText' HREF='#detail_VerifyCellText' >VerifyCellText</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='WSupport' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+             Verify a specific cell's text.
+              </TD>
+		  </TR>
+</tbody>
+</TABLE>
+<HR/>
+</DIV>
+		<DIV NAME="detail" ID="detail">
+		  <H3><A NAME='detail_CaptureRangeToFile'></A>FPSpreadFunctions::<BIG>CaptureRangeToFile</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='WSupport' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             Capture the grid data to the specified file.  For now,
+	     it can only be used to capture all of the grid data.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>CapturedFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The name of the file used to save the captured data.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Typically, the captured file is stored in the Datapool\Test directory.  
+             Captured files will be TAB delimited files.
+	     This action only captures the data, it does not verify it against
+	     a benchmark file.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, Window, FPSpreadGrid, CaptureRangeToFile, "captResult.txt"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               The captured grid data will be saved into "captResult.txt" in the
+	       Datapool\Test directory.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Since no optional block parameters are supported as of yet, the entire 
+               grid is captured and compared.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_ClickCell'></A>FPSpreadFunctions::<BIG>ClickCell</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to perform a single click on a table cell.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>
+                 The cell to click is provided in separate row and col 
+                 parameters.  Missing parameters indicate index=1. The 
+                 indexes are 1-based.  That is, the first row is row 1.
+                 The first col is col 1.</p>
+<p>
+		 The row headers, whether visible or not, are considered
+		 column 0.  The column headers, whether visible or not,
+		 are considered row 0.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>[ <B>row</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The 1-based logical row to click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+             If no row is provided then row=1 is assumed.  Row=0 is used
+	     for column headers.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>col</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The 1-based logical col to click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+             If no col is provided then col=1 is assumed.  Col=0 is used
+	     for row headers.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, AWindow, AGrid, ClickCell</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to click the first data cell in the first
+                 data row.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, AWindow, AGrid, ClickCell, ^row=2, ^col=1</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to click the first data cell in the second 
+                 data row.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Note, the DDVariables shown are not necessary but are 
+                 shown for clarity.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, AWindow, AGrid, ClickCell, ^row=0, ^col=1</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to click the first column header/label.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Note, the DDVariables shown are not necessary but are 
+                 shown for clarity.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_CtrlClickCell'></A>FPSpreadFunctions::<BIG>CtrlClickCell</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to perform a single Ctrl+Click on a table cell.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>
+                 The cell to click is provided in separate row and col 
+                 parameters.  Missing parameters indicate index=1. The 
+                 indexes are 1-based.  That is, the first row is row 1.
+                 The first col is col 1.</p>
+<p>
+		 The row headers, whether visible or not, are considered
+		 column 0.  The column headers, whether visible or not,
+		 are considered row 0.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>[ <B>row</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The 1-based logical row to Ctrl+Click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+             If no row is provided then row=1 is assumed.  Row=0 is used
+	     for column headers.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>col</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The 1-based logical col to Ctrl+Click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+             If no col is provided then col=1 is assumed.  Col=0 is used
+	     for row headers.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, AWindow, AGrid, CtrlClickCell</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to Ctrl+Click the first data cell in the first
+                 data row.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, AWindow, AGrid, CtrlClickCell, ^row=2, ^col=1</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to Ctrl+Click the first data cell in the second 
+                 data row.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Note, the DDVariables shown are not necessary but are 
+                 shown for clarity.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, AWindow, AGrid, CtrlClickCell, ^row=0, ^col=1</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to Ctrl+Click the first column header/label.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Note, the DDVariables shown are not necessary but are 
+                 shown for clarity.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_DoubleClickCell'></A>FPSpreadFunctions::<BIG>DoubleClickCell</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to perform a double click on a table cell.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>
+                 The cell to double click is provided in separate row and col 
+                 parameters.  Missing parameters indicate index=1. The 
+                 indexes are 1-based.  That is, the first row is row 1.
+                 The first col is col 1.</p><p>
+		 The row headers, whether visible or not, are considered
+		 column 0.  The column headers, whether visible or not,
+		 are considered row 0.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>[ <B>row</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The 1-based logical row to double click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+             If no row is provided then row=1 is assumed.  Row=0 is used
+	     for column headers.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>col</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The 1-based logical col to double click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+             If no col is provided then col=1 is assumed.  Col=0 is used
+	     for row headers.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, AWindow, AGrid, DoubleClickCell</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to double click the first data cell in the first
+                 data row.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, AWindow, AGrid, DoubleClickCell, ^row=2, ^col=1</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to double click the first data cell in the second 
+                 data row.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Note, the DDVariables shown are not necessary but are 
+                 shown for clarity.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, AWindow, AGrid, DoubleClickCell, ^row=0, ^col=1</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to double click the first column header/label.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Note, the DDVariables shown are not necessary but are 
+                 shown for clarity.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_FindRowNumber'></A>FPSpreadFunctions::<BIG>FindRowNumber</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='WSupport' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             Search specified columns for the specified text.  Assign the
+	     matching row number to the given variable.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+	     Multiple (column, search text) pairs can be used as parameters
+	     to find the matching row.
+
+             The search column and the search text parameters should have
+	     the same number of parameters and are expected to work in
+	     parallel (the first search text is looked for in the first
+	     column listed).
+
+	     The column name and search text parameters, if more than one,
+	     use the delimiter specified to show the separation in the string.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>rowVarName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The name of the variable to store the row number into.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>startingRow</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The row to use to begin the search.  Defaults to row 1.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>searchColumns</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The string of column names where you want to search.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+             You can have just a single column name, or multiple column
+	     names separated by the specified delimiter.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>searchText</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The string of search strings used to search in each specified
+	     column names.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+             The number of search strings you have should be equal to the
+	     number of search columns that you have.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>DELIMITER</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             Delimiter used by the search columns and search text to separate
+	     the different columns/text.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, AWindow, AGrid, FindRowNumber, "foo", "", "Name", "Bar", "|"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Searches for the word "Bar" starting on row 1, in column
+		 "Name" of the given grid.  The returned row number is
+		 stored in the variable foo.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, AWindow, AGrid, FindRowNumber, "foo", "10", "Name|City", "Bar|Pittsburgh", "|"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Searches for the word "Bar" starting on row 10, in column
+		 "Name" of the given grid.  If found, it continues on the
+		 same row to search for "Pittsburgh" in the column "City".
+		 If that is found, the row number is stored in teh variable
+		 foo.  If either column does not match the search text,
+		 nothing is stored in foo and the next row is considered.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_RightClickCell'></A>FPSpreadFunctions::<BIG>RightClickCell</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to perform a single right click on a table cell.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>
+                 The cell to click is provided in separate row and col 
+                 parameters.  Missing parameters indicate index=1. The 
+                 indexes are 1-based.  That is, the first row is row 1.
+                 The first col is col 1.</p>
+<p>
+		 The row headers, whether visible or not, are considered
+		 column 0.  The column headers, whether visible or not,
+		 are considered row 0.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>[ <B>row</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The 1-based logical row to right click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+             If no row is provided then row=1 is assumed.  Row=0 is used
+	     for column headers.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>col</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The 1-based logical col to right click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+             If no col is provided then col=1 is assumed.  Col=0 is used
+	     for row headers.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, AWindow, AGrid, RightClickCell</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to right click the first data cell in the first
+                 data row.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, AWindow, AGrid, RightClickCell, ^row=2, ^col=1</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to right click the first data cell in the second 
+                 data row.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Note, the DDVariables shown are not necessary but are 
+                 shown for clarity.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, AWindow, AGrid, RightClickCell, ^row=0, ^col=1</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to right click the first column header/label.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Note, the DDVariables shown are not necessary but are 
+                 shown for clarity.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_ShiftClickCell'></A>FPSpreadFunctions::<BIG>ShiftClickCell</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to perform a single SHIFT+Click on a table cell.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>
+                 The cell to click is provided in separate row and col 
+                 parameters.  Missing parameters indicate index=1. The 
+                 indexes are 1-based.  That is, the first row is row 1.
+                 The first col is col 1.</p>
+<p>
+		 The row headers, whether visible or not, are considered
+		 column 0.  The column headers, whether visible or not,
+		 are considered row 0.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>[ <B>row</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The 1-based logical row to SHIFT+Click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+             If no row is provided then row=1 is assumed.  Row=0 is used
+	     for column headers.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>col</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The 1-based logical col to SHIFT+Click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+             If no col is provided then col=1 is assumed.  Col=0 is used
+	     for row headers.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, AWindow, AGrid, ShiftClickCell</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to SHIFT+Click the first data cell in the first
+                 data row.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, AWindow, AGrid, ShiftClickCell, ^row=2, ^col=1</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to SHIFT+Click the first data cell in the second 
+                 data row.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Note, the DDVariables shown are not necessary but are 
+                 shown for clarity.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, AWindow, AGrid, ShiftClickCell, ^row=0, ^col=1</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to SHIFT+Click the first column header/label.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Note, the DDVariables shown are not necessary but are 
+                 shown for clarity.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_VerifyCellText'></A>FPSpreadFunctions::<BIG>VerifyCellText</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='WSupport' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             Verify a specific cell's text.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>ExpectedCellText</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The expected text value of the specified cell.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>row</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The 1-based logical row to verify.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+             If no row is provided then row=1 is assumed.  Row=0 is used
+	     for column headers.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>col</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             The 1-based logical col to verify.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+             If no col is provided then col=1 is assumed.  Col=0 is used
+	     for row headers.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, AWindow, AGrid, VerifyCellText, "foo"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to verify that the first data cell in the first
+                 data row is equal to "foo".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""></detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, AWindow, AGrid, VerifyCellText, "foo", ^row=2, ^col=1</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to verify that the first data cell in the second 
+                 data row is equal to "foo".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Note, the DDVariables shown are not necessary but are 
+                 shown for clarity.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, AWindow, AGrid, VerifyCellText, "foo", ^row=0, ^col=1</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to verify that the first column header/label is
+		 equal to "foo".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Note, the DDVariables shown are not necessary but are 
+                 shown for clarity.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+		</DIV>
+</BODY>
+</HTML>
+	

@@ -1,0 +1,65 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_ExecuteScript'></A>Selenium GenericMasterFunctions::<BIG>ExecuteScript</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                Execute a piece of script on the specified component synchronously.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Execute a piece of script on the specified component synchronously.
+              </detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN><SPAN CLASS='domainMarker' TITLE='HTML Domain'>HTM</SPAN> : <value xmlns="">Execute a piece of javascript on the specified component synchronously.</value><BR/>
+</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>script</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                The script to execute.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The script to execute.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>paramN</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                The paramters passed to script.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The paramters passed to script. You can specify more than one parameter or no parameter.<br>
+			    If the script will return a value, you can get it from variable "__$_SAFS_JAVASCRIPT_RESULT_$__".<br>
+			    Now, only the string result is supported.<br></detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN><SPAN CLASS='domainMarker' TITLE='HTML Domain'>HTM</SPAN> : <value xmlns="">
+		        	The parameters specified here will feed the script's parameters from the 2th place.
+		        	The script's first parameter will be always the component itself.
+		        </value><BR/>
+</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, ExecuteScript, "arguments[0].innerHTML=arguments[1];", "The text to shown on page"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               	This action will set the 'innerHTML' of COMPONENT to "The text to shown on page".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+				arguments[0] is the first parameter of script, it will be repalced by COMPONENT at runtime.
+				arguments[1] is the 2th parameter of script, it will be repalced by "The text to shown on page" at runtime.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

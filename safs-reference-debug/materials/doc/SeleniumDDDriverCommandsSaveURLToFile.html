@@ -1,0 +1,96 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_SaveURLToFile'></A>Selenium DDDriverCommands::<BIG>SaveURLToFile</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Send an HTTP GET request, and save the response into a file.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><value xmlns="">The optional parameters 'HeaderName' and 'HeaderValue' must appear in pair, 
+			         and they can present more than 1 time, which means multiple pair of ('HeaderName', 'HeaderValue')
+					 can be provided.
+			  </value><BR/>
+</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN> : <value xmlns="">The HTTP request will be sent by javascript AJAX.</value><BR/>
+</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>
+<B>URL</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">The URL to request.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>
+<B>File</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">The name of the file holding the response sent back from the server.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+		     The file to save the response from the server. This can be a full path, a relative path, or a file name.
+			 For relative path, it is appended to the project's path to build the full path of the file. 
+			 For file name, the file is saved under the project's test directory (it is Datapool\Test in SAFS or Acturals in SE+).
+			 In any case the parent folder of the file must exist.
+		   </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Timeout</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">The timeout (in seconds) waiting for the response from HTTP server. The default value is 120 seconds.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>[ <B>HeaderName</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">The HTTP request header name.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>[ <B>HeaderValue</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">The value to set for the HTTP request header.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">C, SaveURLToFile, "http://rest.api.url", "reponse.txt", "60"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Send an HTTP "GET" request for url "http://rest.api.url" and wait for response with timeout of 60 seconds,
+				 and the request's result from server will be save to file "reponse.txt" under project's test directory.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">C, SaveURLToFile, "http://rest.api.url?var1=value&amp;var2=value", "result\reponse.txt"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Send an HTTP "GET" request for url "http://rest.api.url?var1=value&amp;var2=value", 
+				 and wait for response with default timeout of 120 seconds,
+				 and the request's result from server will be save to file "reponse.txt" under project's result directory,
+				 the folder 'result' must already exist in the project.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">C, SaveURLToFile, "http://rest.api.url", "c:\test\result\reponse.txt", "", "Accept", "text/*", "Accept-Charset", "UTF-8"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Send an HTTP "GET" request for url "http://rest.api.url" with headers ("Accept","text/*") and ("Accept-Charset","UTF-8"),
+				 and wait for response with default timeout of 120 seconds,
+				 and the request's result from server will be save to file "c:\test\result\reponse.txt".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

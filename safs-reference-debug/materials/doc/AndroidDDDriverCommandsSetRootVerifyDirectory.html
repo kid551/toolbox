@@ -1,0 +1,67 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_SetRootVerifyDirectory'></A>Android DDDriverCommands::<BIG>SetRootVerifyDirectory</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Set/Change the Bench, Test, and Dif directories 
+                 to be subdirectories off of the provided path.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The path must already exist.  If the path is invalid 
+                 the previous settings for Bench, Test, and Dif will
+                 be retained and a FAILURE will be reported.  The Bench, 
+                 Test, and Dif subdirectories must also exist.
+                 <p>         
+                 Any incomplete path will be assumed to be relative 
+                 to the current project directory.  It is important 
+                 to note that the provided path can be valid, yet 
+                 the expected "Bench", "Test", and "Dif" subdirectories 
+                 may not be valid.  In that scenario, no failure 
+                 will be reported, and the previous settings for 
+                 Bench, Test, and Dif will be retained (and logged).</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>
+<B>Path</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The full or project relative path to the root directory for
+                 Bench, Test, and Dif.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">C, SetRootVerifyDirectory, "C:\MyRepo\MyProject\AltPath"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Set the new root directory for Bench, Test, and Dif files.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">C, SetRootDirectory, "AltPath"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Set the new root directory for Bench, Test, and Dif files.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

@@ -1,0 +1,87 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_CallScript'></A>RobotJ DDDriverFlowCommands::<BIG>CallScript</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Invoke a custom script with passed parameters/variables, if desired.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Since the script is executed as a Driver Command and NOT a test; 
+                 test_record, test_passes, and test_failures information within the status counters 
+                 are not updated.
+                 <p>For Rational Robot, if the called script wishes to record 
+                 tests attempted, pass, and failure counts then it must 
+                 do so itself by updating the <a href="ApplicationUtilities.htm#globals">ScriptStatusInfo</a> fields 
+                 accordingly.
+                 </p><p>The name of the script must not include the file extension.
+                 </p><p>Any number of parameters can be passed to the script.
+                 These parameters are passed as DDVariables and\or SAFSVARS variables.
+                 The variables and their values are available to the script and all of SAFS.
+                 These parameters are usually specific to each called script.  The script can also 
+                 set variable values for use by SAFS test tables.
+                 </p><p>With Robot, the script can get/set variable values from the <a href="UsingDDVariables.htm#in_scripts">DDVariableStore</a>.
+                 </p><p>With Rational Functional Tester, the custom script should follow this <a href="../doc/org/safs/rational/Script.html" target="_blank">Script Javadoc</a>.
+                 </p><p>For Apple IOS, consult the <a href="http://safsdev.sourceforge.net/sqabasic2000/SAFSIOSDevelopersGuide.htm#callscript" target="_blank">SAFS IOS Developer's Guide</a>.
+                 </p></detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN><SPAN CLASS='domainMarker' TITLE='HTML Domain'>HTM</SPAN> : <value xmlns="">Selenium 2.0 support executes a SeBuilder JSON Script while supporting PAUSE, STEP, and STEP RETRY of indidividual 
+		Script Steps through the <a href="http://safsdev.sourceforge.net/sqabasic2000/UsingSAFSMonitor.htm" target="_blank">SAFS Monitor</a>.
+		<p>The SAFS Monitor must be enabled and running to take advantage of these modes of execution.</p>
+<p>This implementation does NOT yet support the provision of passing parameters to the SeBuilder script from the 
+		CallScript InputRecord.</p></value><BR/>
+</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>
+<B>ScriptName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The name of the Script to execute.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN><SPAN CLASS='domainMarker' TITLE='HTML Domain'>HTM</SPAN> : <value xmlns="">This can be either a project-relative path or the full absolute path  to the JSON script.  
+		The file path inclucing file extension IS needed to successfully locate the script.</value><BR/>
+</DIV>
+		  </LI>
+<LI>[ <B>ParameterName</B> = AValue ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 One or more parameter values to send to the script--each in their own field.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN><SPAN CLASS='domainMarker' TITLE='HTML Domain'>HTM</SPAN> : <value xmlns="">Not supported at this time in Selenium SeBuilder JSON Scripts.</value><BR/>
+</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">C, CallScript, "MyScript" </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Invoke MyScript which does not require or expect parameters.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">C, CallScript, "AnotherScript", ^FName="John", ^LName="Smith"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Invoke AnotherScript which requires or expects two parameters.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

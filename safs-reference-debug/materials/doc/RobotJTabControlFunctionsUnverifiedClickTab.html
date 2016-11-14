@@ -1,0 +1,61 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_UnverifiedClickTab'></A>RobotJ TabControlFunctions::<BIG>UnverifiedClickTab</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to perform an unverified Click on a particular Tab on the TabControl
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Attempts to perform an unverified Click on a particular Tab on the TabControl.
+                The routine will set the StepDriverTestInfo.statuscode and
+                log any pass/warning/fail info using the StepDriverTestInfo.fac LogFacility.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text* on the tab to identify which tab to click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 TextValue is the case-sensitive text on the tab to identify which tab to click.
+                 *For Sheridan SSActiveTabs this will be treated as an AppMap reference to an item
+                  that contains coordinates in the form of "xcoord,ycoord".  The item will be 
+                  retrieved from the section in the AppMap with the Components name (Field #3).
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, TabControl, UnverifiedClickTab, "StatsTab"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A single-click is performed on the "StatsTab" tab located on the TabControl object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p> 
+                  A single-click is performed on the "StatsTab" tab located on the TabControl object.
+                  For Sheridan SSActiveTabs this click location is determined by coordinates stored 
+                  in the AppMap.  Given the example, the AppMap will contain the following entry:</p>
+<p>
+                  [TabControl]<br>
+                  StatsTab="100, 12"</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

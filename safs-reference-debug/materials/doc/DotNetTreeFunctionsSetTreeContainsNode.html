@@ -1,0 +1,65 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_SetTreeContainsNode'></A>DotNetTreeFunctions::<BIG>SetTreeContainsNode</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             		Sets a user-defined variable with the result of whether a tree contains the provided node.
+             	</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>The search of the path to the node is expected to be a case-sensitive 
+             		exact match of each node.  Use 'SetTreeContainsPartialMatch' if you 
+             		wish to specify case-insensitive substring matches for tree nodes.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>Node</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             				The name of the node to verify.
+              			</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             				The search of the path to the node is expected to be a case-sensitive 
+	     				exact match of each node.  Use 'SetTreeContainsPartialMatch' if you 
+	     				wish to specify case-insensitive substring matches for tree nodes.
+              			</detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>ResultVar</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+	             			The name of the variable which gets assigned the result.
+	              		</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+	             			The value of 'TRUE' indicates the node was found in the tree, and 'FALSE'
+	             			indicates that the node was not found in the tree.
+	              		</detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, Browser, aTreeView, SetTreeContainsNode, "Parent Bank-&gt;Branch Banking and Trust", isFound</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               			Variable isFound will be set to 'TRUE' if the node 'Parent Bank-&gt;Branch Banking and Trust' 
+               			is found in aTreeView.  If not found, isFound will be set to 'FALSE'.
+              			</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

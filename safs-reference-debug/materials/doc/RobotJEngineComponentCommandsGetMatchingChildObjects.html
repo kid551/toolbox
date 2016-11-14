@@ -1,0 +1,87 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_GetMatchingChildObjects'></A>RobotJ EngineComponentCommands::<BIG>GetMatchingChildObjects</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Retrieve an array of child objects that match a recognition string.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Normally, this is only valid for window or other container components.  
+                If no matching child objects exist then the engine should return 
+                "<a href="http://safsdev.sourceforge.net/doc/constant-values.html#org.safs.tools.drivers.DriverConstant.SAFS_NULL" target="_blank">&lt;SAFS_NULL&gt;</a>".
+                <p>
+                Returns a character delimited string of child references. The first character in the returned string 
+                defines the delimiter used to separate the items. 
+                </p><p>
+                Currently, the engine command processors only support returning the first child matching the recognition string.
+            </p><p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows or getMatchingParentObject, or one of the other 
+                        engine commands that return such references.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>Recognition</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Recognition string describing the children to find.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+			The recognition string is normally considered to be relative to the parent Component 
+			provided.  Thus, information identifying the parent should normally NOT be 
+			part of the provided recognition string.  For details on Recognition strings see:
+			<a href="http://safsdev.sourceforge.net/doc/org/safs/GuiObjectRecognition.html" target="_blank">Gui Object Recognition</a>;
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">E, GetMatchingChildObjects, TheParentReference, "Type=PushButton;Name=submit_Button"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Attempt to locate a pushbutton named 'submit_Button' in TheParentReference container.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns '&lt;SAFS_NULL&gt;' if no match is found, or a character delimited list of references 
+                        to child pushbuttons named 'submit_Button'.  (Currently, the only implementation we 
+                        have returns only the first matching child in the character delimited list.)
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">E, GetMatchingChildObjects, TheWebBrowser, "Type=HTMLDocument;Index=1;\;Type=HTMLLink;HTMLId=logonLink"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Locate the HTMLLink identified as 'logonLink' in the first HTMLDocument in TheWebBrowser</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Attempts to locate the grandchild HTMLLink in the child HTMLDocument of TheWebBrowser.
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

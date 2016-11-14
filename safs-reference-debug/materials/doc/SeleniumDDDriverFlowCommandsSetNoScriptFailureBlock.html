@@ -1,0 +1,59 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_SetNoScriptFailureBlock'></A>Selenium DDDriverFlowCommands::<BIG>SetNoScriptFailureBlock</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Set or clear the name of a block to execute when NoScriptFailure occurs.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Set or clear the name of a block to execute when NoScriptFailure occurs.<br>
+                 Status is evaluated after the completion of every record in a table. 
+                 So event the simple logging of message can return NoScriptFailure.
+                 <p>
+                 This block setting is automatically cleared when a jump is executed as 
+                 a result of this condition.  This command is generally used immediately 
+                 before the record you expect to pass or fail.  You can reset this to 
+                 nothing by leaving the BlockID parameter blank or providing an empty
+                 BlockID.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>[ <B>BlockID</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The name of the block to Goto on status NoScriptFailure.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">C, SetNoScriptFailureBlock, "NoError"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Set "NoError" as the block to execute on the next NoScriptFailure.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">C, SetNoScriptFailureBlock, ""</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Continue normal execution on subsequent NoScriptFailure.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

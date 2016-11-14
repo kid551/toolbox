@@ -1,0 +1,1240 @@
+<HTML xmlns="http://www.w3.org/TR/REC-html40"><HEAD>
+<TITLE>TestComplete ListViewFunctions</TITLE>
+<LINK rel="stylesheet" href="rrafs.css" type="text/css"/>
+<LINK rel="stylesheet" href="bootstrap.css" type="text/css"/>
+</HEAD><BODY><DIV class="container content" NAME="top" ID="top">
+		  <H1>TestComplete ListViewFunctions</H1>
+		  
+          Last Updated:<script language="JavaScript">document.write(document.lastModified)</script>
+<BR/>
+<BR/>
+<DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+              Actions for working with ListView objects
+           </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+		<DIV NAME="list" ID="list">
+		  <A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE class="table">
+<thead class="thead-inverse">
+<tr>
+<th>Keyword Name</th>
+<th>Supported Engines</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ActivatePartialMatch' HREF='#detail_ActivatePartialMatch' >ActivatePartialMatch</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Routine to double click an item according to a partial text match.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ActivateTextItem' HREF='#detail_ActivateTextItem' >ActivateTextItem</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Routine to double click an item according to its text value.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ActivateUnverifiedTextItem' HREF='#detail_ActivateUnverifiedTextItem' >ActivateUnverifiedTextItem</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Routine to double click an unverifiable item according to its text value.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_CaptureItemsToFile' HREF='#detail_CaptureItemsToFile' >CaptureItemsToFile</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>
+                Capture Items To a File specified (if not abs, then to test dir)
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ExtendSelectionToTextItem' HREF='#detail_ExtendSelectionToTextItem' >ExtendSelectionToTextItem</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Routine to Shift+Click and Verify a selection according to its text value.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_RightClickTextItem' HREF='#detail_RightClickTextItem' >RightClickTextItem</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                     Routine to RightClick (single click) an item according to its text value.
+                   </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectAnotherPartialMatch' HREF='#detail_SelectAnotherPartialMatch' >SelectAnotherPartialMatch</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Routine for multiple selection to Control+Click on an item according to a partial text match.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectAnotherTextItem' HREF='#detail_SelectAnotherTextItem' >SelectAnotherTextItem</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Routine for multiple selection to Control+Click on an item by its text value.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectIndexItem' HREF='#detail_SelectIndexItem' >SelectIndexItem</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Routine to single click an item according to its Index value.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectPartialMatch' HREF='#detail_SelectPartialMatch' >SelectPartialMatch</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Routine to select (single click) an item according to a partial text match.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectTextItem' HREF='#detail_SelectTextItem' >SelectTextItem</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Routine to select (single click) an item according to its text value.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectUnverifiedTextItem' HREF='#detail_SelectUnverifiedTextItem' >SelectUnverifiedTextItem</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Routine to select (single click) an unverifiable item according to its text value.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetListContains' HREF='#detail_SetListContains' >SetListContains</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>
+            	Set a variable with the result of checking that a listview contains the provided item.
+			</TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyItemUnselected' HREF='#detail_VerifyItemUnselected' >VerifyItemUnselected</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Verifies a particular case-sensitive text item is NOT selected.
+              </TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyListContains' HREF='#detail_VerifyListContains' >VerifyListContains</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD>
+            	Verify that a list view contains the provided item.
+			</TD>
+		  </TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifySelectedItem' HREF='#detail_VerifySelectedItem' >VerifySelectedItem</A></TD>
+<TD width="12%">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+</TD>
+<TD> 
+                Verifies a particular case-sensitive text item is selected
+              </TD>
+		  </TR>
+</tbody>
+</TABLE>
+<HR/>
+</DIV>
+		<DIV NAME="detail" ID="detail">
+		  <H3><A NAME='detail_ActivatePartialMatch'></A>TestComplete ListViewFunctions::<BIG>ActivatePartialMatch</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Routine to double click an item according to a partial text match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>PartialTextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive substring of text item to select
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 PartialTextValue should be a case-sensitive substring of text item to select.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListView, ActivatePartialMatch,  "ATextSubstring"   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Double clicks the first item containing "ATextSubstring" in the ListView.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListView, ActivatePartialMatch ,  "ATextSubstring", "Index=2"   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Double clicks the 2nd item containing "ATextSubstring" in the ListView.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_ActivateTextItem'></A>TestComplete ListViewFunctions::<BIG>ActivateTextItem</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Routine to double click an item according to its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>SelectTextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to select
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 SelectTextValue should contain the case-sensitive text item to select.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListView, ActivateTextItem ,  "AParticularUserID"   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Double clicks "AParticularUserID" from the ListView object
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListView, ActivateTextItem ,  "AParticularUserID", "Index=2"   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Double clicks the 2nd item matching "AParticularUserID" from the ListView object
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_ActivateUnverifiedTextItem'></A>TestComplete ListViewFunctions::<BIG>ActivateUnverifiedTextItem</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Routine to double click an unverifiable item according to its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                An unverifiable item is one whose READ value is not the same as its SET value.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>SelectTextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to select
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 SelectTextValue should contain the case-sensitive text item to select.
+                 The selection will not be verified.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListView, ActivateUnverifiedTextItem ,  "AParticularUserID"   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Double click "AParticularUserID" from the ListView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 The selection will not (cannot) be verified.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListView, ActivateUnverifiedTextItem ,  "AParticularUserID", "Index=3"   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Double click the 3rd item matching "AParticularUserID" from the ListView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 The selection will not (cannot) be verified.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_CaptureItemsToFile'></A>TestComplete ListViewFunctions::<BIG>CaptureItemsToFile</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                Capture Items To a File specified (if not abs, then to test dir)
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Capture Items To a File specified (if not abs, then to test dir)
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>FileName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 File name (if not absolute, then to test dir)
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 File name (if not absolute, then to test dir)
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>FileEncoding</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Specify a character encoding to be used when saving data to a file.
+			 If it is not specified, the system default file encoding will be used.
+             The encoding should be a valid string supported by Java; if it is not valid,
+             the system default file encoding will be used instead.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListBox, CaptureItemsToFile ,  afile.txt   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Captures all the items in the list to ...\datapool\test\afile.txt
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Captures all the items in the list to ...\datapool\test\afile.txt
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListBox, CaptureItemsToFile ,  afile.txt, "UTF-8"   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Captures all the items in the list to ...\datapool\test\afile.txt
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Captures all the items in the list to ...\datapool\test\afile.txt<BR>
+                 Writing file with "UTF-8" encoding.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_ExtendSelectionToTextItem'></A>TestComplete ListViewFunctions::<BIG>ExtendSelectionToTextItem</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Routine to Shift+Click and Verify a selection according to its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                This extends the current selection to include the specified selection and all other items inbetween.<br>
+                NOTE: This may not work in all environments (Java, Web, etc...)
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to select and verify.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListView, ExtendSelectionToTextItem,  "AParticularUserID"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Selects "AParticularUserID" from the ListView object with Shfit key pressedd down.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Selects "AParticularUserID" from the ListView object with Shfit key pressedd down.
+                 This adds "AParticularUserID" and any items inbetween to any existing items already selected.<br>
+                 When possible, we will also attempt to verify the added selection was successful.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_RightClickTextItem'></A>TestComplete ListViewFunctions::<BIG>RightClickTextItem</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                     Routine to RightClick (single click) an item according to its text value.
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>SelectTextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                      Case-sensitive text of node to RightClick
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                      SelectTextValue should contain the case-sensitive text item to RightClick.
+                   </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                      Optional index of the Nth duplicate item to match.
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                      Allows us to match duplicate item N in a list containing duplicate 
+                      entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                      the provided text value.
+                      <p>
+                      The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListView, RightClickTextItem ,  "AParticularUserID"   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                      RightClick "AParticularUserID" from the ListView object
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListView, RightClickTextItem ,  "AParticularUserID", "Index=2"   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                      RightClick the 2nd text item matching "AParticularUserID" from the ListView object
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SelectAnotherPartialMatch'></A>TestComplete ListViewFunctions::<BIG>SelectAnotherPartialMatch</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Routine for multiple selection to Control+Click on an item according to a partial text match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                This adds selected items to items already selected.<br></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>PartialTextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive substring of text item to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>[ <B>MatchIndex</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match. 
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListView, SelectAnotherPartialMatch,  "ASubstring"   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Ctrl+Clicks the first item containing "ASubstring" in the ListView.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Ctrl+Clicks the first item containing "ASubstring" in the ListView.  
+                 This adds to any existing items already selected.<br></detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListView, SelectAnotherPartialMatch,  "ASubstring", "Index=2" </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                      Ctrl+Clicks the 2th item containing "ASubstring" in the ListView.
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SelectAnotherTextItem'></A>TestComplete ListViewFunctions::<BIG>SelectAnotherTextItem</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Routine for multiple selection to Control+Click on an item by its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                This adds selected items to items already selected.<br></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>[ <B>MatchIndex</B> = 1 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match. 
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListView, SelectAnotherTextItem ,  "AParticularUserID"   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Ctrl+Clicks "AParticularUserID" from the ListView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Ctrl+Clicks "AParticularUserID" from the ListView object.  
+                 This adds to any existing items already selected.<br></detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListView, SelectAnotherTextItem ,  "AParticularUserID", "Index=2" </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                      Ctrl+Clicks the 2th item matching "AParticularUserID" from the ListView object.
+                   </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SelectIndexItem'></A>TestComplete ListViewFunctions::<BIG>SelectIndexItem</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Routine to single click an item according to its Index value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                It is important to note that some ListViews index their values
+                differently.  For example, you may need to select an item by 
+                text by using a property whose starting index is 1.  Yet, 
+                if you request to seek an item strictly by index, the starting 
+                index is 0.  So, the test developer may need to evaluate their 
+                ListView object for these differences.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>ItemIndex</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Index of node to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListView, SelectIndexItem ,  4   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Selects the item at Index 4.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                It is important to note that some ListViews index their values
+                differently.  For example, you may need to select an item by 
+                text by using a property whose starting index is 1.  Yet, 
+                if you request to seek an item strictly by index, the starting 
+                index is 0.  So, the test developer may need to evaluate their 
+                ListView object for these differences.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SelectPartialMatch'></A>TestComplete ListViewFunctions::<BIG>SelectPartialMatch</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Routine to select (single click) an item according to a partial text match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>PartialTextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive substring of node to select
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 PartialTextValue should be a case-sensitive substring of text item to select.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListView, SelectPartialMatch ,  "APartialString"   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Selects the first item containing "APartialString" in the ListView.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListView, SelectPartialMatch ,  "APartialString", "Index=2"   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Selects the 2nd text item containing "APartialString" in the ListView.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SelectTextItem'></A>TestComplete ListViewFunctions::<BIG>SelectTextItem</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Routine to select (single click) an item according to its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>SelectTextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to select
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 SelectTextValue should contain the case-sensitive text item to select.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListView, SelectTextItem ,  "AParticularUserID"   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Selects "AParticularUserID" from the ListView object
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListView, SelectTextItem ,  "AParticularUserID", "Index=2"   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Selects the 2nd text item matching "AParticularUserID" from the ListView object
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SelectUnverifiedTextItem'></A>TestComplete ListViewFunctions::<BIG>SelectUnverifiedTextItem</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Routine to select (single click) an unverifiable item according to its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                An unverifiable item is one whose READ value is not the same as its SET value.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>SelectTextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node to select
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 SelectTextValue should contain the case-sensitive text item to select.
+                 The selection will not be verified.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>MatchIndex</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Optional index of the Nth duplicate item to match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Allows us to match duplicate item N in a list containing duplicate 
+                 entries.  For example, match the 2nd (or specified Nth) item whose text matches 
+                 the provided text value.
+                 <p>
+                 The value of the parameter can have 2 forms:<br><ul>
+<li>A numeric value.  Ex: "3"</li>
+<li>Index prefixed value.  Ex: "Index=3"</li>
+</ul>
+</p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListView, SelectUnverifiedTextItem ,  "AParticularUserID"   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Selects "AParticularUserID" from the ListView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 The selection will not (cannot) be verified.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ListView, SelectUnverifiedTextItem ,  "AParticularUserID", "Index=3"   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Selects the 3rd text item matching "AParticularUserID" from the ListView object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 The selection will not (cannot) be verified.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_SetListContains'></A>TestComplete ListViewFunctions::<BIG>SetListContains</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+            	Set a variable with the result of checking that a listview contains the provided item.
+			</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+            	The search of the item is expected to be a case-sensitive exact match of the item.  The
+            	   provided variable is set with 'TRUE' if the item is found or 'FALSE' if the item is not found.
+            </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>ItemText</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+						The case-sensitive name of the sought item.
+					</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+						ItemText should contain the case-sensitive text item to find in the list view.
+						A message is sent to the log confirming whether or not the item is found in the list view.
+					</detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>ResultVar</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+						The name of the variable receiving the result.
+					</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+						This variable is set with 'TRUE' if the item is found or 'FALSE' if the item is not found.
+					</detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">
+					T, WINDOW, ListView, SetListContains ,  "AParticularServerName", isFound
+				</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""><p>Variable isFound is set to 'TRUE' if the item "AParticularServerName" is found 
+						   in the ListView object.  If the item is not found, the variable isFound is set
+						   to 'FALSE'.</p></short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_VerifyItemUnselected'></A>TestComplete ListViewFunctions::<BIG>VerifyItemUnselected</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Verifies a particular case-sensitive text item is NOT selected.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node that will be verified unselected
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 TextValue should contain the case-sensitive text of the item that is expected NOT to be selected.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ListView, VerifyItemUnselected,  "AParticularUserID"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Verifies that "AParticularUserID" is NOT selected in the ListView.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_VerifyListContains'></A>TestComplete ListViewFunctions::<BIG>VerifyListContains</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+            	Verify that a list view contains the provided item.
+			</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+            	The search of the item is expected to be a case-sensitive exact match of the item.
+            </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>ItemText</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+						The case-sensitive name of the item to verify.
+					</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+						ItemText should contain the case-sensitive text item to find in the list view.
+						A message is sent to the log confirming whether or not the item is found in the list view.
+					</detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">
+					T, WINDOW, ListView, VerifyListContains ,  "AParticularServerName"
+				</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+						Verify the item "AParticularServerName" is found in the ListView object.
+					</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+<H3><A NAME='detail_VerifySelectedItem'></A>TestComplete ListViewFunctions::<BIG>VerifySelectedItem</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Verifies a particular case-sensitive text item is selected
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of node that will be verified selected
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 TextValue should contain the case-sensitive text of the item expected to already be selected
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ListView, VerifySelectedItem ,  "AParticularUserID"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Verifies that "AParticularUserID" is selected in the ListView.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+		</DIV>
+</BODY>
+</HTML>
+	

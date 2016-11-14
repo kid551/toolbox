@@ -1,0 +1,88 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_VerifyPopupMenuID'></A>PopupMenuFunctions::<BIG>VerifyPopupMenuID</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='FSupport' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Verify the state of a menuItem via its menuID in the currently active popup menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Verify the state of a particular menuID in the currently 
+                active popup menu.  This is generally used when the menuitem is a bitmap 
+                or other item that does not have text.  This menuID can be retrieved from 
+                the the menu by index or by manual lookup from a menu structure output 
+                from MenuUtilities.
+                <p>
+                The routine first verifies that the specified menuitem exists
+                and exits with error if it does not.</p>
+<p>
+                For RC and Win32 popups: The Window and Component references are not 
+                used and can be anything.  They just cannot be blank.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>MenuItemID</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The Windows menuID of the menuItem to verify.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>StateInfo</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Expected status string (or part thereof) to verify.  
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Expected status string (or part thereof) to verify.  
+                Ex:  "Enabled Checked"  OR  "Disabled Grayed"    etc.
+                Each item separated by a space will be evaluated separately so 
+                the order of the status items does not matter.  
+                These status items (listed below) currently ARE case-sensitive. 
+                <p>
+                "Enabled"     "Grayed"      "BarBreak"                "Bitmap"
+                "Disabled"    "Ungrayed"    "Separator"               "Break"
+                "Checked"     "Hilited"     "Default"                 "Menu With N MenuItems"
+                "Unchecked"   "Unhilited"   "Normal" (not default)
+                </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Anything, AtAll, VerifyPopupMenuID, 1001, "Enabled Menu With 7 MenuItems"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Verify the popup menuItem with menuID 1001 is a "Menu With 7 MenuItems" and is "Enabled" .
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Verify the popup menuItem with menuID 1001 is a "Menu With 7 MenuItems" and is "Enabled" .<br>
+                The Window and Component references are not used and can be anything.
+                They just cannot be blank.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Anything, AtAll, VerifyPopupMenuID, 10400, "Disabled Unchecked"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Verify the popup menuItem with menuID 10400 is "Disabled" and "Unchecked".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Verify the popup menuItem with menuID 10400 is "Disabled" and "Unchecked".
+                <p>
+                The Window and Component references are not used and can be anything.
+                They just cannot be blank.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

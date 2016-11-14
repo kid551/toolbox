@@ -1,0 +1,90 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_SetPosition'></A>RobotJ WindowFunctions::<BIG>SetPosition</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Sends a SetPosition command to the window to set the position, size, and status of the window.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Sends a SetPosition command to the window to set the position, size, 
+                and status of the window.  The position, size, and status information 
+                is stored in the app map as a subitem in the section for the window.
+                The information should be in the format of:</p>
+<p>
+                "0,0,640,480;Status=NORMAL"    OR
+                "Coords=0,0,640,480;Status=NORMAL"</p>
+<p>
+                That example positions the window at 0,0; sizes it to 640 x 480, and
+                sets it's status to NORMAL.  Valid values for STATUS are:</p>
+<p>
+                NORMAL, MINIMIZED, and MAXIMIZED</p>
+<p>
+                The Window SetPosition command has a problem in that it does not want to
+                use the same recognition methods used by the other Window commands (like
+                SetContext).  Particularly, it does not accept the Type=Window portion
+                of these recognition methods.  In addition, if the window is a child
+                window of a parent then it expects the ";ChildWindow" add-on in the 
+                recognition method.  The child may also need the parent as part of its
+                full recognition string like:</p>
+<p>
+                ChildWindow=Type=Window;&lt;parent rec&gt;;\;Caption=&lt;caption&gt;;ChildWindow</p>
+<p>
+                To handle these child windows, we parse the typical recognition method for 
+                our window and attempt to handle these issues.  Once SetContext has 
+                successfully set our window, we then remove any "Type=Window" substring 
+                if present and add the ";ChildWindow" substring if not present.</p>
+<p>
+                To take advantage of this, this routine must be called with the child
+                window as a component of the parent window like below:</p>
+<p>
+                t, ParentWindow, ChildWindow, SetPosition, ChildPositionReference</p>
+<p>
+                If the routine is called like either of the examples below then default
+                processing will occur.  This will merely SetContext on the provided 
+                Window and use "CurrentWindow" as the parameter to SetPosition.</p>
+<p>
+                t, ParentWindow, ParentWindow, SetPosition, ParentPosition<br>
+                t, ChildWindow , ChildWindow , SetPosition, ChildPosition   (normally won't work)</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>PresetReference</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                String specifying a preset reference in the Application for the position, size, and state of the Window.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                String specifying a preset reference in the Application for the position, size, and state of the Window.
+                command.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, SETPOSITION, Preset1</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Preset1 specifies a preset reference in the Application for the position, size, and state of the Window.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Field  5 : TQ String specifying a preset reference in the Application for the position,
+                size, and state of the Window.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

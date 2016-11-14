@@ -1,0 +1,53 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_UseRobotJFunctions'></A>Android DDDriverCommands::<BIG>UseRobotJFunctions</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Enable/Disable the switch to "prefer" RobotJ Hook Component Functions over 
+                 Robot Classic Component Functions.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 If enabled and the RobotJ hooking mechanism is up and running then StepDriver 
+                 will always attempt to execute test records (T) through RobotJ first before 
+                 defaulting to Robot Classic.
+                 <p>
+                 If the RobotJ hook is not fully available, this command will generate and 
+                 log a WARNING.  If the record type is "CW" (Warning allowed), then we 
+                 will issue an appropriate log message, but no WARNING will be counted.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>
+<B>Mode</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The switch status for enabling the use of the RobotJ hook.
+                 Valid values are "ON" and "OFF".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">C, UseRobotJFunctions, ON</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Switch to prefer RobotJ Component Functions over Robot Classic.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

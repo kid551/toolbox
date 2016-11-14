@@ -1,0 +1,71 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_ClickButtonIndex'></A>TestComplete ToolBarFunctions::<BIG>ClickButtonIndex</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN>:<SPAN CLASS='domainMarker' TITLE='NET Domain'>NET</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Click on the icon at a certain position on the ToolBar object, it is 1-based.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Click on the icon at a certain position on the ToolBar object, it is 1-based.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>Index</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Index described which icon to be clicked in the toolbar.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Index described which icon to be clicked in the toolbar.<br><b>RJ Note:</b><ol>
+<li>If the index is bigger than the number of children of toolbar, the last icon will be clicked.</li>
+<li>The tool bar separator is not counted for indexing. If the toolbar contains "button1 | button2", button1 is
+							at index 1, button2 is at index 2, the separator between these two buttons is not counted.</li>
+</ol></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Coordination</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+				A position within the toolbar button, the mouse will be click there. 
+				<br><b>RJ Note:</b> This parameter is special for RJ implementation.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ToolBar, ClickButtonIndex,  3  </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Performs a standard single-click on the third icon on the ToolBar object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Performs a standard single-click on the third icon on the ToolBar object.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns=""> T, WINDOW, ToolBar, ClickButtonIndex,  1, "55;8"   </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Performs a standard single-click on the position (55,8) of the first icon on the ToolBar object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

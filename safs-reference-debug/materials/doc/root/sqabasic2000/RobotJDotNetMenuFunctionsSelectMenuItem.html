@@ -1,0 +1,92 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_SelectMenuItem'></A>RobotJ DotNetMenuFunctions::<BIG>SelectMenuItem</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to select a menuItem according to its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 In RRAFS, this command will work on both JavaMenu items and 
+                 JavaPopupMenu items.<br>
+				 For RJ implementation: When Field5 is provided,
+									the routine first verifies that the specified menuitem exists and exits with error if it does not. 
+									If it does exist then the select found menuitem. 
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>[ <B>TextValue</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-insensitive text of menuItem to select OR an App Map reference.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the menuitem to select.
+                 Parent-Child relationships are separated by "-&gt;".<br>
+                 Alternatively, the TextValue can be an App Map reference item 
+                 used in conjunction with the Component Name (field #3) that 
+                 allows us to store explicit menu item text in the App Map.
+                 <p>
+                 In RRAFS, this command will work on both JavaMenu items and 
+                 JavaPopupMenu items.</p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, FileMenu, SelectMenuItem</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the FileMenu menuitem as defined in the AppMap.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                This mode is less desirable as it may not work with compatible engines 
+                made with tools other than Rational Robot.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, FileMenu, SelectMenuItem, "Exit"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the "Exit" menuItem from the FileMenu as defined in the AppMap.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                This mode is less desirable as it may not work with compatible engines 
+                made with tools other than Rational Robot.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, Amenu, SelectMenuItem, "File"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the "File" menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, AMenu, SelectMenuItem, "File-&gt;Exit"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the "Exit" menuitem found in the "File" menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, Amenu, SelectMenuItem, "FileOpen"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the menuItem defined in a "FileOpen" subkey of [AMenu] 
+                from within the App Map.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

@@ -1,0 +1,101 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_SelectCellContainsTextFind'></A>JavaTableFunctions::<BIG>SelectCellContainsTextFind</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                  Attempts to select a particular cell by finding the row based on cell values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  This is the same as SelectFuzzyCellTextFind.<br>
+                  The row # for the cell is also assigned to a user-defined variable.
+                  The parameter values are not case-sensitive, and can be substrings of the actual 
+                  table values.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>Var</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The variable which gets assigned the row found.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The variable which gets assigned the row found. If not
+                found then it will get a zero length string
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>Col</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The 1-based cell column # or header value, identifying the column for the select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a field header. 
+                If no match is found, it will expect the value to be a valid 1-based column number.
+                <p>
+                These comparisons are not case-sensitive and can be substrings of the actual table text.
+                </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>ColN</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A 1-based cell column #, or header value, identifying the column to locate the VALUEN below.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The routine will first attempt to match any provided value with a field header. 
+                If no match is found, it will expect the value to be a valid 1-based column number.  
+                This must be accompanied by the next parameter, 'ValueN', and as many of the
+                ColN/ValueN parameter pairs can be supplied as desired in order to match for a row 
+                based on cell contents.
+                <p>
+                These comparisons are not case-sensitive and can be substrings of the actual table text.
+                </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>ValueN</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A Value to search for in the 'COLN' column
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The values are not case-sensitive and can be substrings of the actual table text.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, JavaWin, JTable, SelectCellContainsTextFind, Variable, "Date","Time", "09:58 AM", "Change","Change #2","Revision", "2"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                Selects the cell in the first row matching the colN/valueN values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  Selects the "Date" cell in the row matching the colN/valueN
+                  values: "Time"/"09:58 AM", "Change"/"Change #2", "Revision"/"2".
+                  The variable 'Variable' will be assigned the matching row number.
+                  <p>
+                  These comparisons are not case-sensitive and can be substrings of the actual table text.
+                  </p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

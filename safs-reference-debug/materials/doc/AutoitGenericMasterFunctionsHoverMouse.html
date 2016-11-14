@@ -1,0 +1,153 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_HoverMouse'></A>Autoit GenericMasterFunctions::<BIG>HoverMouse</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='AutoIT'>AUT</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Hover the mouse over an object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                By default, hover on the center of the component for 2000 milliseconds.
+                <p>We can also hover on any part of an object based on a stored x,y 
+                coordinate.  The object containing the coordinate is first given 
+                context and then the hover command is generated at the coordinate.  
+                Thus, an item or object can be referenced by name even though it is only 
+                recognized via coordinates.</p>
+<p>
+                The coordinate lookup is done with the component name of the record AND 
+                Field #5.</p>
+<p>
+                Typical Data Table records:</p>
+<p>
+                (1) t MainWindow Component HoverMouse           1000<br>
+                (2) t MainWindow MainWindow HoverMouse AnObject 2000<br>
+                (3) t MainWindow FolderTree HoverMouse Node1 3000</p>
+<p>
+                #1 above will contain a blank as it's 5th field and 1000 as 6th field, 
+                and it will hover at the center of the Component for 1000 milliseconds.</p>
+<p>
+                #2 above will contain an AnObject="3,10" entry in the MainWindow section 
+                of the Application Map to hover at x=3, y=10 in the MainWindow.</p>
+<p>
+                #3 above will contain a FolderTree entry in the MainWindow section with 
+                normal recognition information for it.  FolderTree will also have it's
+                own section in the Application Map in which there will be an entry like 
+                Node1="15,30".  This will tell Robot to locate the FolderTree Generic 
+                object and hover at the coordinates specified by the reference.</p></detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN> : <value xmlns="">
+					This command requires a version of Rational Robot that includes MousePause support (released 
+                	and patched in Robot v2003).  Though not required, you may also choose to enable this 
+                	functionality for Robot Recording (Tools-&gt;GUI Record Options...-&gt;General Tab).
+                </value><BR/>
+</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN> : <value xmlns="">
+					The optional parameter HoverTime doesn't take effect, so don't supply it.
+                </value><BR/>
+</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN> : <value xmlns="">
+					The optional parameter AppMapSubkey doesn't take effect, always hover at the center.
+                </value><BR/>
+</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>[ <B>AppMapSubkey</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                (Optional)Name of the AppMap subkey to lookup and use for the hover.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Without this we should hover on the center of the object.
+                <p>Name of the AppMap subkey to lookup and use for the hover.
+                We expect the AppMap to contain the item in the format "x,y":</p>
+<p>
+                [Component]<br>
+                Node1="33,120"      OR<br>
+                Node1="Coords=33,120"	OR<br>
+                Node1="Icon" (or whatever is appropriate)</p>
+<p>  
+                The results from the lookup are appended to the "Coords=" string 
+                used by the hover command in Robot (if necessary).  So any 
+                valid content used with the hover command can be part of 
+                this AppMap entry.</p>
+<p>
+                Both Fields #3 and #5 are used to locate the item in the App Map.
+                This routine does not specify an App Map so only the current Map
+                is used and it is expected to be valid.</p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>HoverTime</B> = 2000 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+	                (Optional)Number of milliseconds to hover.
+	              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+	                If not specified, the mouse will hover for 2000 milliseconds over the object,
+	              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, HoverMouse</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Hover the mouse over the center of WINDOW for 2000 milliseconds.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Hover the mouse over the center of WINDOW for 2000 milliseconds.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AnObject, HoverMouse, "Coords=200,400"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+	       Hover the mouse over coordinates 200,400 of AnObject for 2000 milliseconds.
+	      </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+	       Hover the mouse over coordinates 200,400 of AnObject for 2000 milliseconds.
+	      </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AnObject, HoverMouse, ASubObject, 1000</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Hover the mouse over an x,y coordinate indicated by the ASubObject reference in
+               the Application Map for 1000 milliseconds.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Field  5 : TQ String. A reference identified in the Application Map identifying coordinates
+               on which to hover.
+               This example shows AnObject as a viable object in the WINDOW but that it also has its own
+               section in the Application Map which contains one or more named references like
+               ASubObject which are used for test.   
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AnObject, HoverMouse, , 3000</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+	       Hover the mouse over the center of AnObject for 3000 milliseconds.
+	      </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+	       Hover the mouse over the center of AnObject for 3000 milliseconds.
+	      </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

@@ -1,0 +1,110 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_SaveHTMLImage'></A>RobotJ HTMLImageFunctions::<BIG>SaveHTMLImage</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to Save an HTMLImage on a webpage.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Attempts to perform a right click - save image/picture as command 
+                on the specified image.</p>
+<p>You can also optionally specify an x,y offset into 
+                the image for the right click to occur.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>FileName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Name of the image file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>(Required) Name of the file to use for the image save-as command.
+                  This can be a full or relative path or a simple filename.
+                  A relative path will be stored relative to the Project's root 
+                  directory.  If a simple filename is provided it will be stored 
+                  in the Project's Datapool\Test directory.</p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>Coords</B> = 3,3 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                The explicit coordinates ("x,y"), or an App Map reference to 
+                pre-defined coordinates.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                We first check to see if the field contains a reference to an 
+                App Map item.  If that cannot be found, we will assume the field 
+                contains explicit coordinates.
+                <p>We expect the coordinates in the format "x,y":</p>
+<pre>
+                [MyImage]
+                TopRight=50,10
+                Center=25,25
+                BottomRight=Coords=50,40 
+                </pre><p>
+                The results from the lookup are appended to the "Coords=" string 
+                used by the Click command in Robot (if necessary).</p>
+<p>
+                Both Fields #3(component name) and #6(coords reference name) 
+                are used to locate the item in the App Map.
+                This routine does not specify an App Map so only the current Map
+                is used and it is expected to be valid.</p>
+<p>If this parameter is not provided, we will use default 
+                coordinates of 3,3 for the right click.</p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WebBrowser, myImage, SaveHTMLImage, ^filename=myImage.jpg</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to Save myImage on the webpage.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Attempts to perform a right click at the default image coordinates,  
+                use the 'save as' menuitem on myImage.  The image is stored as 
+                "myImage.jpg" in the project's Datapool\Test directory.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T  WebBrowser  myImage  SaveHTMLImage  ^filename=c:\images\myImage.jpg ^xy="25,25"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to Save myImage on the webpage.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Attempts to perform a right click at provided image coordinates,  
+                use the 'save as' menuitem on myImage.  The image is stored as 
+                "myImage.jpg" in the c:\images directory.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T  WebBrowser  myImage  SaveHTMLImage  ^filename=images\myImage.jpg  ^xy="Coords=25,25"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to Save myImage on the webpage.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Attempts to perform a right click at the provided image coordinates,  
+                use the 'save as' menuitem on myImage.  The image is stored as 
+                "myImage.jpg" in the &lt;project&gt;\images directory.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T  WebBrowser  myImage  SaveHTMLImage  ^filename=images\myImage.jpg  ^xy="TopRight"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Attempts to Save myImage on the webpage.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Attempts to perform a right click at "TopRight" coordinates defined in the app map,  
+                Uses the 'save as' menuitem on the myImage popup menu.  The image is stored as 
+                "myImage.jpg" in the &lt;project&gt;\images directory.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

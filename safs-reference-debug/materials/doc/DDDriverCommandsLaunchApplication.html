@@ -1,0 +1,231 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_LaunchApplication'></A>DDDriverCommands::<BIG>LaunchApplication</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='WFSupport' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Identify and Launch a specified application
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              For IOS: This command is used to Launch the IOS Instruments testing tool.
+              The user-defined Instrument's tracetemplate is used to launch the required application. 
+              The tester must run the Driver Command <b>UseIOSFunctions</b> set to "ON" before 
+              LaunchApplication or the IOS implementation of the command will not be invoked.
+              <p>For IOS Simulator testing: The Trace Template must be configured to hold all required 
+              information such as:
+              <ul>
+<li>the application to be tested</li>
+<li>the IOS SDK Version to use/simulate</li>
+<li>the location for Instruments output logging</li>
+</ul>
+</p><p>For IOS Device testing: The Trace Template should be configured to hold the same 
+              information. However, at runtime the user still has to (re)specify the device name and 
+              application to run in the LaunchApplication CMDLineParams (see below). In addition, 
+              the devicename and/or appname CANNOT contain certain special characters like an apostrophe or 
+              single-quote (') since this will prevent AppleScript from making their proper selection.
+              </p><p>For Android testing: The AUT information is configured via the test INI file and 
+              the installed APKs.  There are no parameters to provide to the LaunchApplication call when 
+              launching the application to be tested.
+              </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>
+<B>ApplicationID</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 A text ID or name to reference the application
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 A text ID or name to reference the application.  Something to call it 
+                 during possible future references in DDE tables or scripts.  This is 
+                 different than a window ID.  It is what we want to call the App itself.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>ExecutablePath</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The path, filename, and parameters for the executable OR an ApplicationConstant.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 The path and filename to the executable OR an ApplicationConstant.<br>
+                 This can and should include the full command line syntax with application 
+                 specific command line parameters unless the application is unable to 
+                 successfully handle this invocation.
+                 <p>
+                 This ExecutablePath parameter may instead contain a reference to an
+                 ApplicationConstant from the currently active Application Map.  The value 
+                 of the retrieved constant will be used as the ExecutablePath.</p>
+<p>For IOS: This should resolve to the full path to the Instruments 
+                 trace template that will be used to launch the application.</p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>WorkDir</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 A Working Directory for the application (if required)
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 A Working Directory for the application (if required).
+                 Do not provide this if it is not required by the application.
+                 If you DO provide this then the DDE cannot automatically terminate 
+                 the application if things go really bad.
+                 <p>For IOS: This should resolve to be the path to the directory that will 
+                 contain the Instruments output log.</p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>CMDLineParam</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Separate command line parameters for the application (if required).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Command line parameters for the application (if required).
+                 Do not provide this if it is not required by the application.
+                 <p>For RRAFS: Try to include all command line parameters within the ExecutablePath<br>
+                 If you DO provide separate command line paratmeters then the RRAFS DDE 
+                 cannot automatically terminate the application if things go really bad.
+                 </p><p>For IOS Device testing: the device and application must be specified <b>exactly</b> 
+                 as they will appear in the Instruments "Choose Target" configuration menus. The parameters 
+                 should be specified inline as:
+                 </p><p>
+<ul>
+<li>-d [DeviceMenuItem] -app [AppNameMenuItem]</li>
+</ul>
+</p><p>Example: "-d Carls iPad (v5.0) -app UICatalog"
+                 </p><p>For IOS Simulator testing: 
+                 this parameter is not needed and should not contain any -d or -app options.
+                 </p><p>For compatibility with different inputrecord separators, the SAFS/IOS engine supports 
+                 different delimiters to be used with -d and -app. Supported Delimiters are (:;, ).
+                 </p><p>Examples:
+                 </p><p><ul>
+<li>"-d:Carls iPad (v5.0) -app:UICatalog"</li>
+<li>"-d;Carls iPad (v5.0) -app;UICatalog"</li>
+<li>"-d,Carls iPad (v5.0) -app,UICatalog"</li>
+<li>"-d Carls iPad (v5.0) -app UICatalog"</li>
+</ul>
+</p><p>
+                 (Of course, you cannot use a comma delimiter here if the inputrecord itself is comma delimited.)
+                 </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>AppMap</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Filename to the Application Map for the application.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Filename to the Application Map for the application.
+                 You can provide a short filename (no path) if the map file can be found by
+                 the FindSQAFile function.  Typically, the AppMap is placed in the 
+                 project's Datapool directory.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">C, LaunchApplication, NotePad, "notepad.exe c:\sample.txt" </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Launch Notepad with parameters allowing the DDE to terminate Notepad.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">C, LaunchApplication, NotePad, SampleFile </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Launch Notepad using the ApplicationConstant "SampleFile" in the current AppMap.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Launch Notepad using the ApplicationConstant "SampleFile" in the current AppMap.
+                 The SampleFile constant in the AppMap might contain the value:
+                 <code>
+                     "notepad.exe c:\sample.txt"
+                 </code></detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">C, LaunchApplication, MainAUT, "c:\MyApp.EXE", , , MainAppMap.MAP </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Launch MainAUT providing a reference to its AppMap.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Launch MainAUT providing a reference to its AppMap.<br>
+                 No working directory or separate command line parameters are provided.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">C, LaunchApplication, MainAUT, "c:\AppDir\MyApp.EXE", "c:\AppDir\", "-s -e -automation", MainAppMap.MAP </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Launch MainAUT providing a working directory, command line parameters, and a reference to its AppMap.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">C, LaunchApplication, MyIOSApp, MyAppTemplate, TheWorkDir</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Launch an IOS App on the IOS Simulator.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 MyAppTemplate and TheWorkDir are stored in the Application Map in ApplicationConstants and properly 
+                 specify the path to the Trace Template and the path to the Instruments output folder as specified 
+                 in the Trace Template.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">C,LaunchApplication,MyIOSApp, "/Library/safs/samples/UICatalog/UICatalogInstruments.tracetemplate", "/Library/safs/samples/UICatalog/"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Launch an IOS App on the IOS Simulator.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The Trace Template and Output path are specified explicitly (not recommended).
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">C, LaunchApplication, MyIOSApp, MyAppTemplate, TheWorkDir, "-d:iPad2 (v5.0) -app:UICatalog"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Launch an IOS App on the specified IOS Device.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 MyAppTemplate and TheWorkDir are stored in the Application Map in ApplicationConstants and properly 
+                 specify the path to the Trace Template and the path to the Instruments output folder as specified 
+                 in the Trace Template.
+                 <p>The CMDLineParam specifies "-d:Device -app:AppName". The Device and AppName 
+                 pieces must be specified exactly as they will appear in the Instruments Choose Target menus.
+                 </p></detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

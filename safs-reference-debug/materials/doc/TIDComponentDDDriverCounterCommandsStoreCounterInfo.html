@@ -1,0 +1,94 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_StoreCounterInfo'></A>TIDComponent DDDriverCounterCommands::<BIG>StoreCounterInfo</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Store the current values of the named counter into unique DDVariables.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 This enables the framework, scripts, and other applications to retrieve 
+                 the values of these counters at runtime.
+                 <p>Consult <a href="ApplicationUtilities.htm#auvariablestorestatusinfo" target="_blank">ApplicationUtilities</a> 
+                 and <a href="UsingDDVariables.htm" target="_blank">Using DDVariables</a> 
+                 for more information on referencing these DDVariables in your tests.</p>
+                 You must adhere to DDVariable naming conventions when providing this 
+                 DDVariable basename.  Note that no spaces are allowed in DDVariable names.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>
+<B>counterID</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The unique name used to identify the private counter.  
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 These unique names are case-insensitive.  
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>varPrefix</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The unique DDVariable prefix to use for storing counter values.  
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The DDVariable prefix will be used to create several DDVariables 
+                 that will hold the counter information.
+                 <ul>The variables stored:<br><li>VARPREFIX.successes</li>
+<li>VARPREFIX.warnings</li>
+<li>VARPREFIX.general_failures</li>
+<li>VARPREFIX.test_passes</li>
+<li>VARPREFIX.test_warnings</li>
+<li>VARPREFIX.test_failures</li>
+<li>VARPREFIX.test_records</li>
+<li>VARPREFIX.total_records</li>
+<li>VARPREFIX.IO_failures</li>
+<li>VARPREFIX.skipped_records</li>
+<li>VARPREFIX.filename</li>
+<li>VARPREFIX.id</li>
+<li>VARPREFIX.mode</li>
+<li>VARPREFIX.suspended</li>
+</ul>
+<p>Consult <a href="ApplicationUtilities.htm#auvariablestorestatusinfo" target="_blank">ApplicationUtilities</a> 
+                 and <a href="UsingDDVariables.htm" target="_blank">Using DDVariables</a> 
+                 for more information on referencing these DDVariables in your tests.</p>
+                 You must adhere to DDVariable naming conventions when providing this 
+                 DDVariable basename.  Note that no spaces are allowed in DDVariable names.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">C, StoreCounterInfo, ^counter="TestCase 124", ^varPrefix="TestCase124"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Store counter "TestCase 124" counts into several DDVariables prefixed with "TestCase124".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Consult <a href="ApplicationUtilities.htm#auvariablestorestatusinfo" target="_blank">ApplicationUtilities</a> 
+                 and <a href="UsingDDVariables.htm" target="_blank">Using DDVariables</a> 
+                 for more information on referencing these DDVariables in your tests.</p>
+                 You must adhere to DDVariable naming conventions when providing this 
+                 DDVariable basename.  Note that no spaces are allowed in DDVariable names.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

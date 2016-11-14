@@ -1,0 +1,118 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_PartialMatchTreeDataToFile'></A>TreeViewFunctions::<BIG>PartialMatchTreeDataToFile</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Copy the current contents of a tree[branch] to a file according to a partial match of itss text value.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>The search of the path to the node is a case-insensitive 
+             substring match of each node.  Use 'CaptureTreeDataToFile' if you 
+             wish to specify case-sensitive exact matches for tree nodes.             
+             </p>
+             By default, the files will be
+             stored in the active "Test" directory.  If you specify a
+             relative path, the path will be relative to the project
+             directory.  The directory for a full or relative path 
+             must already exist.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>File</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The name of the file used to store the tree data.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             The name of the file used to store the tree data.
+             By default, the files will be
+             stored in the active "Test" directory.  If you specify a
+             relative path, the path will be relative to the project
+             directory.  The directory for a full or relative path 
+             must already exist.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>Branch</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+	             The full name of the tree branch to capture.
+	              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+	             The full name of the tree branch to capture.  If omitted, 
+	             all branches/nodes are captured.
+		     <br><br>The search of the path to the node is a case-insensitive 
+		     substring match of each node.  Use 'CaptureTreeDataToFile' if you 
+		     wish to specify case-sensitive exact matches for tree nodes.             
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>IndentMark</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+			        	The character(s) to use in the output file to indent the tree nodes from the 
+			        	parent tree branches.
+			        </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+			         	The character(s) to use in the output file to indent the tree nodes from the 
+			        	parent tree branches.  If omitted, a tab character is used.
+	              		</detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>FilterMode</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             (Future) Specify a file filter to use to process the text before comparison.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>FilterOptions</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             (Future) Specify filter options to use with the file filter.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Browser, aTreeView, PartialMatchTreeDataToFile, aFilename.ext</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Capture the complete nodeset of aTreeView to a file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Data is stored in 
+               [project]\Datapool\Test\aFilename.ext file using tab chars to indent the nodes and branches.
+               Because no Branch was specified, the data for the whole tree 
+               is captured.<br>
+               Note the unused reserved fields for FileFilter and FilterOptions were omitted.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, Browser, aJavaTree, PartialMatchTreeDataToFile, myDirectory\aFilename.ext, "parent-&gt;branch", "_"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Capture the data contents from the first child node of 'parent' containing 'branch' to a file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Thus, this could be a match for "Parent Bank-&gt;Branch Banking and Trust"<br>
+               Data is stored in 
+               [project]\myDirectory\aFilename.ext file using "_" chars to indent the nodes and branches.  
+               Because a Branch was specified, only nodes from that branch are captured.<br>
+               Note the unused reserved fields for FileFilter and FilterOptions were omitted.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

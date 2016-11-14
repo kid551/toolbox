@@ -1,0 +1,4126 @@
+<HTML xmlns="http://www.w3.org/TR/REC-html40"><HEAD>
+<TITLE>Autoit DDDriverCommands</TITLE>
+<LINK rel="stylesheet" href="rrafs.css" type="text/css"/>
+</HEAD><BODY><DIV NAME="top" ID="top">
+		  <H3>Autoit DDDriverCommands</H3>
+		  <SMALL>Last Updated:<script language="JavaScript">document.write(document.lastModified)</script></SMALL>
+<BR/>
+<BR/>
+<DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Miscellaneous Driver Commands.
+          </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>
+          This keyword library provides Driver Commands that can 
+          be used in any keyword driven test table regardless 
+          of the test tables level--Cycle, Suite, or Step.</p>
+<p>
+          Each different driver command has different parameters 
+          as described in its documentation.  For reference, the 
+          first fields of ALL Driver Command test records are defined 
+          below:</p>
+<dl>
+<dd>Field #1</dd>
+<dt>The "C" = DRIVER COMMAND record type specifier.</dt>
+<dd>Field #2</dd>
+<dt>The Driver Command keyword.</dt>
+</dl>
+<p>
+          Example:</p><code>C , SetApplicationMap , "AppMap.map"</code><p>
+          Driver Command parameters must be placed in the test record 
+          in the field position specified in the documentation.  
+          Some parameters are optional.  However, the field associated 
+          with that parameter must be honored.  If you wish to skip an 
+          optional parameter you must still provide an empty field for 
+          that parameter.</p>
+<p>
+          Example:</p><code>C, LaunchApplication, NOTEPAD, NOTEPAD.EXE, , , "AppMap.map"</code><p>
+          The above example shows two optional fields after NOTEPAD.EXE 
+          which are given no value(skipped).</p>
+<p>
+          Note that the full availablility of all Driver Commands is now 
+          spread across several files.  Together, all of these files provide 
+          all the Driver Commands available to the core framework.</p></detailed_desc><BR/>
+		</DIV>
+</DIV>
+<BR/>
+		<DIV NAME="list" ID="list">
+		  <A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE cellspacing="3" border="1" cellpadding="2">
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_AppMapChaining' HREF='#detail_AppMapChaining' >AppMapChaining</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Enable and Disable support for App Map chaining.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_AppMapResolve' HREF='#detail_AppMapResolve' >AppMapResolve</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Enable and Disable support for embedded DDVariables in App Map strings.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_AssignClipboardVariable' HREF='#detail_AssignClipboardVariable' >AssignClipboardVariable</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Copy the clipboard contents to a DDVariable.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_CallRemote' HREF='#detail_CallRemote' >CallRemote</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Execute a command on an external system / application.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_CaptureMousePositionOnScreen' HREF='#detail_CaptureMousePositionOnScreen' >CaptureMousePositionOnScreen</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Capture the location of the mouse pointer relative to the screen and save the x and y components into variables.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ClearAllVariables' HREF='#detail_ClearAllVariables' >ClearAllVariables</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Clear storage of all DDVariables.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ClearArrayVariables' HREF='#detail_ClearArrayVariables' >ClearArrayVariables</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+              Clear storage of all SAFS variables containing a specific prefix.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_ClearClipboard' HREF='#detail_ClearClipboard' >ClearClipboard</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Clear the contents of the Window's clipboard.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_CloseApplication' HREF='#detail_CloseApplication' >CloseApplication</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Close a named application process launched with LaunchApplication.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_CloseApplicationMap' HREF='#detail_CloseApplicationMap' >CloseApplicationMap</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 By map ID, Close a opened Application Map in map chain.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_CopyVariableValueEx' HREF='#detail_CopyVariableValueEx' >CopyVariableValueEx</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Copy the value of a (dynamic) DDVariable to another.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_Delay' HREF='#detail_Delay' >Delay</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Delay for a specified number of milliseconds.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_Expressions' HREF='#detail_Expressions' >Expressions</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Enable and Disable enhanced expressions.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetAppMapValue' HREF='#detail_GetAppMapValue' >GetAppMapValue</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Assign a DDVariable a value from an App Map.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetMillisBetweenRecords' HREF='#detail_GetMillisBetweenRecords' >GetMillisBetweenRecords</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Get the pause between two records, and assigns the value to a DDVariable. 
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetRegistryKeyValue' HREF='#detail_GetRegistryKeyValue' >GetRegistryKeyValue</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Assign the value of the specified Registry Key to a variable.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetSystemDate' HREF='#detail_GetSystemDate' >GetSystemDate</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Assigns the string value of the system date to a DDVariable. 
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetSystemDateTime' HREF='#detail_GetSystemDateTime' >GetSystemDateTime</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Assigns the string value of the system datetime to a DDVariable. 
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetSystemTime' HREF='#detail_GetSystemTime' >GetSystemTime</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Assigns the string value of the current system time to a DDVariable. 
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_GetVersion' HREF='#detail_GetVersion' >GetVersion</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Get the engine VERSION</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_LaunchApplication' HREF='#detail_LaunchApplication' >LaunchApplication</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Identify and Launch a specified application
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_NotifyAndWait' HREF='#detail_NotifyAndWait' >NotifyAndWait</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Display a user-defined message dialog and wait until dismissed.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_Pause' HREF='#detail_Pause' >Pause</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Pause for a specified number of seconds.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SaveClipboardToFile' HREF='#detail_SaveClipboardToFile' >SaveClipboardToFile</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Save the clipboard contents to a text file.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SendEmail' HREF='#detail_SendEmail' >SendEmail</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Send email notification with attachments.</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetApplicationMap' HREF='#detail_SetApplicationMap' >SetApplicationMap</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Provide the Application Map for the DDE to use
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetBenchDirectory' HREF='#detail_SetBenchDirectory' >SetBenchDirectory</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Set/Change the directory in which the framework will find 
+                 benchmark files by default.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetClipboard' HREF='#detail_SetClipboard' >SetClipboard</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Set the clipboard contents to a string.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetDifDirectory' HREF='#detail_SetDifDirectory' >SetDifDirectory</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Set/Change the directory in which the framework will locate 
+                 file compare differences.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetFocus' HREF='#detail_SetFocus' >SetFocus</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='AutoIT'>AUT</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Give a Window or Window Component input focus.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetImageDebug' HREF='#detail_SetImageDebug' >SetImageDebug</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Enable/Disable verbose debug log output and high-res failure snapshots.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetImageFuzzyMatching' HREF='#detail_SetImageFuzzyMatching' >SetImageFuzzyMatching</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Enable/Disable Image-Based Testing Fuzzy Matching.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetMillisBetweenRecords' HREF='#detail_SetMillisBetweenRecords' >SetMillisBetweenRecords</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Set the pause between two records. 
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetMultipleThreadSearch' HREF='#detail_SetMultipleThreadSearch' >SetMultipleThreadSearch</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Turn on or trun off the multi-thread-search way to search an image.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetProjectDirectory' HREF='#detail_SetProjectDirectory' >SetProjectDirectory</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Set/Change the framework project directory.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetRootVerifyDirectory' HREF='#detail_SetRootVerifyDirectory' >SetRootVerifyDirectory</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Set/Change the Bench, Test, and Dif directories 
+                 to be subdirectories off of the provided path.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetTestDirectory' HREF='#detail_SetTestDirectory' >SetTestDirectory</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Set/Change the directory in which the framework will find 
+                 test files (captured "actuals") by default.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetVariableValueEx' HREF='#detail_SetVariableValueEx' >SetVariableValueEx</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Set the value of a DDVariable </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetVariableValues' HREF='#detail_SetVariableValues' >SetVariableValues</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Preset the value of one or more DDVariables </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_StartWebBrowser' HREF='#detail_StartWebBrowser' >StartWebBrowser</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Launch a new web browser and optionally load a document into it.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_TakeScreenShot' HREF='#detail_TakeScreenShot' >TakeScreenShot</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Take screenshot and save it to a file on test machine.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_UseAbbotFunctions' HREF='#detail_UseAbbotFunctions' >UseAbbotFunctions</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Enable/Disable the switch to "prefer" ABBOT Functions over 
+                 any other engine functions.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_UseDroidFunctions' HREF='#detail_UseDroidFunctions' >UseDroidFunctions</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Enable/Disable the switch to "prefer" Droid Functions over 
+                 the current engine functions (like Robot Classic).
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_UseIOSFunctions' HREF='#detail_UseIOSFunctions' >UseIOSFunctions</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Enable/Disable the switch to "prefer" IOS Functions over 
+                 any other engine functions.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_UseQTPFunctions' HREF='#detail_UseQTPFunctions' >UseQTPFunctions</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Enable/Disable the switch to "prefer" QTP Functions over 
+                 any other engine functions.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_UseRobotJFunctions' HREF='#detail_UseRobotJFunctions' >UseRobotJFunctions</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Enable/Disable the switch to "prefer" RobotJ Hook Component Functions over 
+                 Robot Classic Component Functions.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_UseSAFSFunctions' HREF='#detail_UseSAFSFunctions' >UseSAFSFunctions</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Enable/Disable the switch to "prefer" SAFS (SDC) Functions over 
+                 the current engine functions (like Robot Classic).
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_UseSeleniumFunctions' HREF='#detail_UseSeleniumFunctions' >UseSeleniumFunctions</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Enable/Disable the switch to "prefer" Selenium Functions over 
+                 the current engine functions (like Robot Classic).
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_UseTestCompleteFunctions' HREF='#detail_UseTestCompleteFunctions' >UseTestCompleteFunctions</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Enable/Disable the switch to "prefer" TestComplete (TCAFS) Functions over 
+                 any other engine functions.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyClipboardToFile' HREF='#detail_VerifyClipboardToFile' >VerifyClipboardToFile</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+             Verify the current contents of the Windows clipboard with a benchmark file.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_Version' HREF='#detail_Version' >Version</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD>Specify the table format VERSION</TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_WaitForGUI' HREF='#detail_WaitForGUI' >WaitForGUI</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='AutoIT'>AUT</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Wait for a Window or Window Component to become valid.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_WaitForGUIGone' HREF='#detail_WaitForGUIGone' >WaitForGUIGone</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='AutoIT'>AUT</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Wait for a Window or Window Component to become invalid.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_WaitForRegistryKeyExists' HREF='#detail_WaitForRegistryKeyExists' >WaitForRegistryKeyExists</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Wait for a Registry Key to become valid.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_WaitForRegistryKeyValue' HREF='#detail_WaitForRegistryKeyValue' >WaitForRegistryKeyValue</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                 Wait for a specific Registry KeyValue to match an expected value.
+              </TD>
+</TR>
+</TABLE>
+<HR/>
+</DIV>
+		<DIV NAME="detail" ID="detail">
+		  <H3><A NAME='detail_AppMapChaining'></A>Autoit DDDriverCommands::<BIG>AppMapChaining</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Enable and Disable support for App Map chaining.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+		 The SAFSMAPS service historically looked for values in the 'default' AppMap.  
+		 This is typically the last AppMap that was OPENed.  This service will now lookup 
+		 values in what is called the AppMap 'chain'.  This chain is simply a 
+		 Last-In-First-Out (LIFO) buffer of open AppMaps.  As an AppMap is OPENed it is 
+		 placed at the top of the search chain.  AppMaps already in the chain are moved 
+		 down the chain and searched in a LIFO order.  This allows a primary AppMap to 
+		 be OPENed that might contain many default and shared values while subsequently 
+		 opened AppMaps might have overriding entries, entries that build upon the 
+		 defaults, or contain locale-specific entries for things like NLS testing.
+		 <p>
+		 Support is currently provided via the SAFSMAPS service.
+		 </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Mode</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Enable("ON") or Disable("OFF") this feature.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, AppMapChaining, OFF</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Turn OFF the AppMapChaining feature which is ON by default.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_AppMapResolve'></A>Autoit DDDriverCommands::<BIG>AppMapResolve</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Enable and Disable support for embedded DDVariables in App Map strings.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 When enabled (ON), the App Map processor will resolve DDVariable references when 
+                 they are wrapped in curly braces {^varName} anywhere in the value portion of an 
+                 AppMap entry.  There should be no spaces anywhere between the curly braces or the 
+                 variable will be considered literal text and will not be resolved.
+                 <ul><code>
+		 ;these two items have no section identifier<br>
+		 ;they are part of an initial, unnamed section<br>
+		 AnItem  = A normal static value<br>
+		 NewItem = Another static value<br><br>
+		 [ASection]<br>
+		 AnItem = A normal static value<br>
+		 Item2  = Type=Component;Text={^text}<br>
+		 Item3  = Type=Window;Caption={^caption};\;Type=CheckBox;Text={^text}<br><p>
+		 The syntax for Item2 specifies that the value of the DDVariable ^text should be 
+		 retrieved and embedded in the value provided for Item2.
+		 </p><p>
+		 The syntax for Item3 specifies that the value of the DDVariables ^caption and 
+		 ^text should be retrieved and embedded in the value provided for Item3.
+		 </p></code></ul>
+<p>
+		 Support is currently provided via the SAFSMAPS service.
+		 </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Mode</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Enable("ON") or Disable("OFF") this feature.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, AppMapResolve, OFF</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Turn OFF the AppMapResolve feature which is ON by default.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_AssignClipboardVariable'></A>Autoit DDDriverCommands::<BIG>AssignClipboardVariable</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Copy the clipboard contents to a DDVariable.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Copy the clipboard contents to a DDVariable. 
+                 This command can only copy text contents of the clipboard.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>VarName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The variable to copy the clipboard text into.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 The routine will strip off any leading "^" if it is provided.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, AssignClipboardVariable, "Clipboard" </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Copy the current clipboard text to variable "Clipboard".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, AssignClipboardVariable, "^Clipboard" </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Copy the current clipboard text to variable "Clipboard".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_CallRemote'></A>Autoit DDDriverCommands::<BIG>CallRemote</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Execute a command on an external system / application.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Execute a command on an external system / application. This command presently supports only the STAF protocol.
+               Command syntax, parameters, and values will be dependent upon the protocol specified and 
+               the command issued to the remote (or even local) system.
+            </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Protocol</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              The name of the protocol to use. Presently only 'STAF' is supported.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>SystemName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+			  The name of the system to send the command to.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>ServiceName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              The service name to be called on the external system / application.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>Command</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              The service command to be issued to the external system / application.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>VarName</B> = result ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                 The DDVariable root name to receive the results.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">Variable root name defaults to 'result' if not provided. 
+                 <p>The variables varName.RC and varName.RESULT are defined on completion of the command.</p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>Parameters</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Additional parameters to be passed to the service command.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C CallRemote STAF LOCAL PING PING</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Send the STAF command PING PING to the local system, and assign the result to the result root name variable.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C CallRemote STAF ext-1 HANDLE QUERY myResult ALL</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+	      Send the STAF command HANDLE QUERY ALL to the external system ext-1 and assign the results to the myResult root name variable.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_CaptureMousePositionOnScreen'></A>Autoit DDDriverCommands::<BIG>CaptureMousePositionOnScreen</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Capture the location of the mouse pointer relative to the screen and save the x and y components into variables.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>X_VariableName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The name of the DDVariable to store the X component of the mouse position.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>Y_VariableName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The name of the DDVariable to store the Y component of the mouse position.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Capture the current position of the mouse on the screen.
+		 The X component of the returned coordinate is saved into
+		 the DDVariable given as the first parameter.
+		 The Y component of the returned coordinate is saved into
+		 the DDVariable given as the second parameter.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, CaptureMousePositionOnScreen, xVar, yVar </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Captures the mouse position and stores the coordinates into the variables named "xVar" and "yVar".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, CaptureMousePositionOnScreen, ^xVar="x1", ^yVar="y1" </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Captures the mouse position and stores the coordinates into the variables named "x1" and "y1".                    </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_ClearAllVariables'></A>Autoit DDDriverCommands::<BIG>ClearAllVariables</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Clear storage of all DDVariables.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, ClearAllVariables </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Clear all DDVariables.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_ClearArrayVariables'></A>Autoit DDDriverCommands::<BIG>ClearArrayVariables</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+              Clear storage of all SAFS variables containing a specific prefix.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              Users can use SAFSVARS to store pseudo-arrays simply by adding a numeric suffix to any vaiable name prefix.
+              <p>
+              For example:
+              </p><p>
+              TCAFS.UID.1<br>
+              TCAFS.UID.2<br>
+              TCAFS.UID.3<br></p><p>
+              This command allows you to clear/delete all such SAFSVARS array variables with a specific prefix.
+              </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>ArrayName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The variable name prefix to use for the delete.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, ClearArrayVariables, "TCAFS.UID." </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Clear all SAFS variables starting with the "TCAFS.UID." prefix.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_ClearClipboard'></A>Autoit DDDriverCommands::<BIG>ClearClipboard</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Clear the contents of the Window's clipboard.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, ClearClipboard </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Clear the clipboard contents.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_CloseApplication'></A>Autoit DDDriverCommands::<BIG>CloseApplication</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Close a named application process launched with LaunchApplication.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Currently we can only TERMINATE processes successfully 
+                 providing a TASKID during LaunchApplication.  If we were 
+                 unable to get a TASKID, then we will not be able to 
+                 terminate the task with this command.
+                 <p>For IOS: This simply tries to close any and all instances of the 
+                 running XCode Instruments application that is driving the IOS tests.
+                 </p><p>For Android testing: The AUT information is configured via the test INI file and 
+                 the installed APKs.  There are no parameters to provide to the CloseApplication call when 
+                 closing the application under test.
+              </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>ApplicationID</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The Application ID or reference provided to LaunchApplication
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              For IOS: The ApplicationID can be anything because it is ignored. 
+              The IOS engine simply shuts down all running IOS Instruments applications.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, CloseApplication, NotePad </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Close the application we called Notepad with LaunchApplication.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_CloseApplicationMap'></A>Autoit DDDriverCommands::<BIG>CloseApplicationMap</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 By map ID, Close a opened Application Map in map chain.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 By map ID, Close a opened Application Map in map chain. Closing an App Map releases all resources 
+                 used by the map and removes it from any active App Map chaining.  If the closed App Map 
+                 was the "default" map then the next App Map in the chain becomes the "default" App Map.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>ApplicationMap</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The path and/or filename (ID) of the Application Map to close.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 The path and/or filename (ID) of the Application Map to close.  This must be the same 
+                 path or filename used when the App Map was opened.  The short filename 
+                 without the path can be used if the file can be found via internal search algorithms.  
+                 Typically, the AppMap is located in the project's Datapool directory.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, CloseApplicationMap, NotePad.Map </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Close the Notepad.map App Map in the Datapool directory.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The App Map must have been opened with the same short name information.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, CloseApplicationMap, "C:\SomeDir\NewApp.Map" </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Close the NewApp.map Application Map.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The App Map must have been opened with the same fullpath information.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_CopyVariableValueEx'></A>Autoit DDDriverCommands::<BIG>CopyVariableValueEx</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Copy the value of a (dynamic) DDVariable to another.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Both fields can contain literal strings, DDVariables, or
+                 any expression that evaluates to a valid variable name.  The primary 
+                 purpose of this is to allow for dynamic variable creation via expressions.
+                 That is something that "SetVariableValues" cannot do.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>SourceVariable</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The name of the variable to copy.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>DestinationVariable</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The name of the variable to receive the copy
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C,  CopyVariableValueEx,  srcvar, destvar </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Copy the value of variable srcvar to variable destvar (euivalent to ^destvar=^srcvar)
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C,  CopyVariableValueEx,  ^srcvarname, ^destvarname </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Given ^srcvarname contains "srcvar" and ^destvarname contains "destvar", 
+                 this sets ^destvar to ^srcvar
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C,  CopyVariableValueEx,  ^basename &amp; ^index, destvar </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Any expression that evaluates to a valid DDVariable name may be used.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_Delay'></A>Autoit DDDriverCommands::<BIG>Delay</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Delay for a specified number of milliseconds.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Timeout</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The number of milliseconds to delay.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, Delay, 300</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Delay for 300 milliseconds.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_Expressions'></A>Autoit DDDriverCommands::<BIG>Expressions</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Enable and Disable enhanced expressions.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Enable and Disable enhanced expressions. 
+                 When enabled, records are pre-processed for advanced
+                 expressions (math and string) conversions with DDVariables.
+                 When disabled, records are pre-processed with 
+                 standard DDVariable conversions for backwards compatibility.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Mode</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The status for enhanced expression handling.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, Expressions, ON</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Turn ON enhanced expression handling.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetAppMapValue'></A>Autoit DDDriverCommands::<BIG>GetAppMapValue</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Assign a DDVariable a value from an App Map.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+        Allows the extraction of an App Map item value into a DDVariable.  The user can optionally 
+        provide the App Map ID and Section from which the entry is sought.  The default is to 
+        retrieve the value from the default section in the default App Map.
+       </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>[ <B>AppMapID</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              The ID provided for the AppMap when OPENed.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              If this parameter is left empty then the default or "current" App Map is used.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>Section</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              The Section within the App Map to locate the entry.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              If this parameter is left empty then the default App Map section is used.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>Item</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              The Item within the App Map to retrieve.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              This parameter cannot be left empty.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>varName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              The name of the variable to receive the value.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              This parameter cannot be left empty.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C,  GetAppMapValue,  Classics.MAP,  MainWindow,  FileMenu,  menuRec</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Get the value for FileMenu from the Classics.MAP in the MainWindow section and 
+                 store it in the DDVariable named ^menuRec.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C,  GetAppMapValue, , , FileMenu,  menuRec</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Get the value for FileMenu from the "current" App Map in the default section and 
+                 store it in the DDVariable named ^menuRec.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetMillisBetweenRecords'></A>Autoit DDDriverCommands::<BIG>GetMillisBetweenRecords</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Get the pause between two records, and assigns the value to a DDVariable. 
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Get the pause between two records, and assigns the value to a DDVariable.
+                This time is milli-seconds.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>VariableName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The name of the variable to receive the pause between two records.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 The name of the variable to receive the pause between two records.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, GetMillisBetweenRecords, "millisBetweenRecords"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Get the pause between two records, and assigns to DDVariable ^millisBetweenRecords
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetRegistryKeyValue'></A>Autoit DDDriverCommands::<BIG>GetRegistryKeyValue</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Assign the value of the specified Registry Key to a variable.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">On Windows XP (and higher?) this is accomplished via 
+              the REG.EXE provided by the operating system.  If this program is NOT available 
+              then the Registry commands will not work until another means is implemented--possibly 
+              Windows Scripting Host scripts, etc..
+              <p>If the registry key does not exist then a failure will be recorded and no value--an  
+              empty string--will be assigned to the variable.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Key</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The Registry Key name to seek.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>KeyValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The value name under the parent key to seek.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>VarName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The name of the variable to receive the value of the registry key.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, GetRegistryKeyValue, "HKLM\Software\Adobe\CommonFiles", "AdobeHome", "AdobeHomeVar"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Get the value of the AdobeHome registry key and store it in the ^AdobeHomeVar variable.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">If the registry key does not exist then a failure will be recorded and no value--an  
+              empty string--will be assigned to the variable.</detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetSystemDate'></A>Autoit DDDriverCommands::<BIG>GetSystemDate</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Assigns the string value of the system date to a DDVariable. 
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Assigns the string value of the system date to a DDVariable. 
+                This date is in the format MM-DD-YYYY.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>VariableName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The name of the variable to receive the System Date.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 The name of the variable to receive the System Date.
+                 Note, if you supply the name of the variable and include the leading 
+                 caret (^) symbol then the variable must be enclosed in quotes.
+                 Otherwise, that variable will be used like any other variable and the 
+                 substituted value of that variable will be interpretted as the name 
+                 of the variable you wish to use.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, GetSystemDate, SystemDate</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Assigns system date to DDVariable ^SystemDate
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, GetSystemDate, "SystemDate"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Assigns system date to DDVariable ^SystemDate
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, GetSystemDate, "^SystemDate"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Assigns system date to DDVariable ^SystemDate
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">
+                 C, SetVariableValues, ^SystemDate="TodaysDate" <BR>
+                 C, GetSystemDate, ^SystemDate
+              </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Assigns system date to DDVariable ^TodaysDate
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetSystemDateTime'></A>Autoit DDDriverCommands::<BIG>GetSystemDateTime</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Assigns the string value of the system datetime to a DDVariable. 
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Assigns the string value of the system datetime to a DDVariable. 
+                This date is in the format MM-DD-YYYY HH:MM:SS, it is in AM-PM 12-hours
+                format (1-12) be default; If you set the second parameter 'GetMilitaryTime'
+                to True, the time will be 24-hours military format (0-23). Use military time
+                is recommanded, as am-pm time has confusion without AM or PM
+                (example: 18:00 and 06:00 will be both 06:00)
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>VariableName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The name of the variable to receive the System DateTime.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 The name of the variable to receive the System DateTime.
+                 Note, if you supply the name of the variable and include the leading 
+                 caret (^) symbol then the variable must be enclosed in quotes.
+                 Otherwise, that variable will be used like any other variable and the 
+                 substituted value of that variable will be interpretted as the name 
+                 of the variable you wish to use.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>GetMilitaryTime</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 If true, the converted time is in 24-hours military time format
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 If this is true, the converted time will be in 24-hours military time
+                 format (0-23). If this parameter is omitted, it is false be default,
+                 the converted time will be in AM-PM 12-hours format (1-12).
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, GetSystemDateTime, SystemDate</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Assigns system datetime to DDVariable ^SystemDate, the time will
+                 be in 12-hours format (1-12).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, GetSystemDateTime, "SystemDate"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Assigns system datetime to DDVariable ^SystemDate, the time will
+                 be in 12-hours format (1-12).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, GetSystemDateTime, "^SystemDate"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Assigns system datetime to DDVariable ^SystemDate, the time will
+                 be in 12-hours format (1-12).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">
+                 C, SetVariableValues, ^SystemDate="TodaysDate" <BR>
+                 C, GetSystemDateTime, ^SystemDate
+              </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Assigns system datetime to DDVariable ^TodaysDate, the time will
+                 be in 12-hours format (1-12).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, GetSystemDateTime, SystemMilitaryDate, True</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Assigns system datetime to DDVariable ^SystemMilitaryDate, the time will
+                 be in military format, 24-hours (0-23).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetSystemTime'></A>Autoit DDDriverCommands::<BIG>GetSystemTime</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Assigns the string value of the current system time to a DDVariable. 
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Assigns the string value of the current system time to a DDVariable. 
+                This date is in the format HH:MM:SS, it is in AM-PM 12-hours
+                format (1-12) be default; If you set the second parameter 'GetMilitaryTime'
+                to True, the time will be 24-hours military format (0-23). Use military time
+                is recommanded, as am-pm time has confusion without AM or PM
+                (example: 18:00 and 06:00 will be both 06:00)                
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>VariableName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The name of the variable to receive the System Time.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 The name of the variable to receive the System Time.
+                 Note, if you supply the name of the variable and include the leading 
+                 caret (^) symbol then the variable must be enclosed in quotes.
+                 Otherwise, that variable will be used like any other variable and the 
+                 substituted value of that variable will be interpretted as the name 
+                 of the variable you wish to use.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>GetMilitaryTime</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 If true, the converted time is in 24-hours military time format
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 If this is true, the converted time will be in 24-hours military time
+                 format (0-23). If this parameter is omitted, it is false be default,
+                 the converted time will be in AM-PM 12-hours format (1-12).
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, GetSystemTime, SystemTime</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Assigns system time to DDVariable ^SystemTime, the time will
+                 be in 12-hours format (1-12).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, GetSystemTime, "SystemTime"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Assigns system time to DDVariable ^SystemTime, the time will
+                 be in 12-hours format (1-12).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, GetSystemTime, "^SystemTime"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Assigns system time to DDVariable ^SystemTime, the time will
+                 be in 12-hours format (1-12).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">
+                 C, SetVariableValues, ^SystemTime="CurrentTime" <BR>
+                 C, GetSystemTime, ^SystemTime
+              </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Assigns system time to DDVariable ^CurrentTime, the time will
+                 be in 12-hours format (1-12).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, GetSystemTime, SystemMilitaryTime, True</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Assigns system time to DDVariable ^SystemMilitaryTime, the time will
+                 be in military format, 24-hours (0-23).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_GetVersion'></A>Autoit DDDriverCommands::<BIG>GetVersion</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the engine VERSION</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+        Used to specify the VERSION of the engine.
+       </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Variable</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              A variable to accept the VERSION</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C  Version  var</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 get the version of the engine in variable 'var'
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_LaunchApplication'></A>Autoit DDDriverCommands::<BIG>LaunchApplication</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Identify and Launch a specified application
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              For IOS: This command is used to Launch the IOS Instruments testing tool.
+              The user-defined Instrument's tracetemplate is used to launch the required application. 
+              The tester must run the Driver Command <b>UseIOSFunctions</b> set to "ON" before 
+              LaunchApplication or the IOS implementation of the command will not be invoked.
+              <p>For IOS Simulator testing: The Trace Template must be configured to hold all required 
+              information such as:
+              <ul>
+<li>the application to be tested</li>
+<li>the IOS SDK Version to use/simulate</li>
+<li>the location for Instruments output logging</li>
+</ul>
+</p><p>For IOS Device testing: The Trace Template should be configured to hold the same 
+              information. However, at runtime the user still has to (re)specify the device name and 
+              application to run in the LaunchApplication CMDLineParams (see below). In addition, 
+              the devicename and/or appname CANNOT contain certain special characters like an apostrophe or 
+              single-quote (') since this will prevent AppleScript from making their proper selection.
+              </p><p>For Android testing: The AUT information is configured via the test INI file and 
+              the installed APKs.  There are no parameters to provide to the LaunchApplication call when 
+              launching the application to be tested.
+              </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>ApplicationID</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 A text ID or name to reference the application
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 A text ID or name to reference the application.  Something to call it 
+                 during possible future references in DDE tables or scripts.  This is 
+                 different than a window ID.  It is what we want to call the App itself.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>ExecutablePath</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The path, filename, and parameters for the executable OR an ApplicationConstant.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 The path and filename to the executable OR an ApplicationConstant.<br>
+                 This can and should include the full command line syntax with application 
+                 specific command line parameters unless the application is unable to 
+                 successfully handle this invocation.
+                 <p>
+                 This ExecutablePath parameter may instead contain a reference to an
+                 ApplicationConstant from the currently active Application Map.  The value 
+                 of the retrieved constant will be used as the ExecutablePath.</p>
+<p>For IOS: This should resolve to the full path to the Instruments 
+                 trace template that will be used to launch the application.</p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>WorkDir</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 A Working Directory for the application (if required)
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 A Working Directory for the application (if required).
+                 Do not provide this if it is not required by the application.
+                 If you DO provide this then the DDE cannot automatically terminate 
+                 the application if things go really bad.
+                 <p>For IOS: This should resolve to be the path to the directory that will 
+                 contain the Instruments output log.</p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>CMDLineParam</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Separate command line parameters for the application (if required).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Command line parameters for the application (if required).
+                 Do not provide this if it is not required by the application.
+                 <p>For RRAFS: Try to include all command line parameters within the ExecutablePath<br>
+                 If you DO provide separate command line paratmeters then the RRAFS DDE 
+                 cannot automatically terminate the application if things go really bad.
+                 </p><p>For IOS Device testing: the device and application must be specified <b>exactly</b> 
+                 as they will appear in the Instruments "Choose Target" configuration menus. The parameters 
+                 should be specified inline as:
+                 </p><p>
+<ul>
+<li>-d [DeviceMenuItem] -app [AppNameMenuItem]</li>
+</ul>
+</p><p>Example: "-d Carls iPad (v5.0) -app UICatalog"
+                 </p><p>For IOS Simulator testing: 
+                 this parameter is not needed and should not contain any -d or -app options.
+                 </p><p>For compatibility with different inputrecord separators, the SAFS/IOS engine supports 
+                 different delimiters to be used with -d and -app. Supported Delimiters are (:;, ).
+                 </p><p>Examples:
+                 </p><p><ul>
+<li>"-d:Carls iPad (v5.0) -app:UICatalog"</li>
+<li>"-d;Carls iPad (v5.0) -app;UICatalog"</li>
+<li>"-d,Carls iPad (v5.0) -app,UICatalog"</li>
+<li>"-d Carls iPad (v5.0) -app UICatalog"</li>
+</ul>
+</p><p>
+                 (Of course, you cannot use a comma delimiter here if the inputrecord itself is comma delimited.)
+                 </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>AppMap</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Filename to the Application Map for the application.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Filename to the Application Map for the application.
+                 You can provide a short filename (no path) if the map file can be found by
+                 the FindSQAFile function.  Typically, the AppMap is placed in the 
+                 project's Datapool directory.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, LaunchApplication, NotePad, "notepad.exe c:\sample.txt" </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Launch Notepad with parameters allowing the DDE to terminate Notepad.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, LaunchApplication, NotePad, SampleFile </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Launch Notepad using the ApplicationConstant "SampleFile" in the current AppMap.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Launch Notepad using the ApplicationConstant "SampleFile" in the current AppMap.
+                 The SampleFile constant in the AppMap might contain the value:
+                 <code>
+                     "notepad.exe c:\sample.txt"
+                 </code></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, LaunchApplication, MainAUT, "c:\MyApp.EXE", , , MainAppMap.MAP </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Launch MainAUT providing a reference to its AppMap.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Launch MainAUT providing a reference to its AppMap.<br>
+                 No working directory or separate command line parameters are provided.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, LaunchApplication, MainAUT, "c:\AppDir\MyApp.EXE", "c:\AppDir\", "-s -e -automation", MainAppMap.MAP </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Launch MainAUT providing a working directory, command line parameters, and a reference to its AppMap.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, LaunchApplication, MyIOSApp, MyAppTemplate, TheWorkDir</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Launch an IOS App on the IOS Simulator.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 MyAppTemplate and TheWorkDir are stored in the Application Map in ApplicationConstants and properly 
+                 specify the path to the Trace Template and the path to the Instruments output folder as specified 
+                 in the Trace Template.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C,LaunchApplication,MyIOSApp, "/Library/safs/samples/UICatalog/UICatalogInstruments.tracetemplate", "/Library/safs/samples/UICatalog/"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Launch an IOS App on the IOS Simulator.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The Trace Template and Output path are specified explicitly (not recommended).
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, LaunchApplication, MyIOSApp, MyAppTemplate, TheWorkDir, "-d:iPad2 (v5.0) -app:UICatalog"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Launch an IOS App on the specified IOS Device.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 MyAppTemplate and TheWorkDir are stored in the Application Map in ApplicationConstants and properly 
+                 specify the path to the Trace Template and the path to the Instruments output folder as specified 
+                 in the Trace Template.
+                 <p>The CMDLineParam specifies "-d:Device -app:AppName". The Device and AppName 
+                 pieces must be specified exactly as they will appear in the Instruments Choose Target menus.
+                 </p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_NotifyAndWait'></A>Autoit DDDriverCommands::<BIG>NotifyAndWait</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Display a user-defined message dialog and wait until dismissed.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Display a user-defined message dialog and wait until dismissed.
+                 If prompting the user to perform some action the message should indicate the action 
+                 should be completed BEFORE the dialog is dismissed.  Once the dialog is dismissed 
+                 automated test execution proceeds immediately.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Message</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The text message to be displayed in the dialog.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 The text message to be displayed in the dialog.  The message should not contain the 
+                 inputrecord field separator character nor linefeeds or carriage returns.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>Title</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 A short user-defined title for the dialog.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 A short user-defined title for the dialog. The message should not contain the 
+                 inputrecord field separator character nor linefeeds or carriage returns.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, NotifyAndWait, "Fix the app state and then press OK."</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Show the message using a default title and wait.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, NotifyAndWait, "Fix the app state and then press OK.", "Fix Application"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Show the message using the optional user-specified title and wait.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_Pause'></A>Autoit DDDriverCommands::<BIG>Pause</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Pause for a specified number of seconds.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Timeout</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The number of seconds to Pause.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, Pause, 30</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Pause for 30 seconds.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SaveClipboardToFile'></A>Autoit DDDriverCommands::<BIG>SaveClipboardToFile</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Save the clipboard contents to a text file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Save the clipboard contents to a text file.
+                 <p>
+                 This command can only save text contents of the clipboard. The
+                 length of the clipboard text should not exceed 32,767 characters
+                 due to the inherent size limit of SQABasic's String data type.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>File</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The file to save the clipboard contents to.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 The file to save the clipboard contents to.
+                 This can be a full path, a relative path, or a file name.
+                 For relative path, it is appended to the project's path to
+                 build the full path of the file. For file name, the file
+                 is saved under the project's Datapool\Test directory. In
+                 any case the parent folder of the file must exist.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>Encoding</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The encoding used to write a file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 The encoding used to write a file. If user doesn't specify this
+                 parameter, the "UTF-8" encoding will be used.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, SaveClipboardToFile, C:\Temp\myclipboard.txt </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Saves the current clipboard contents to C:\Temp\myclipboard.txt
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, SaveClipboardToFile, Datapool\myclipboard.txt </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Saves the current clipboard contents to Datapool\myclipboard.txt
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, SaveClipboardToFile, myclipboard.txt </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Saves the current clipboard contents to Datapool\Test\myclipboard.txt
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, SaveClipboardToFile, C:\Temp\myclipboard.txt, "ANSI" </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Saves the current clipboard contents to C:\Temp\myclipboard.txt with "ANSI" encoding
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SendEmail'></A>Autoit DDDriverCommands::<BIG>SendEmail</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Send email notification with attachments.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">Send email notification with attachments.
+                      Mutiple TOs, custom subject line, custom message and attachment are allowed. 
+                      HTML tag pass into message to display message into HTML format.
+                </detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><value xmlns="">Prerequisite: Provide mail setting in <a href="http://safsdev.sourceforge.net/sqabasic2000/JSAFSFrameworkContent.htm#configfile">configuration file (.ini)</a>, 
+                                         you could ask your IT administrator to set them correctly.<br><b>[SAFS_DRIVERCOMMANDS]</b><br><span class="property_key">OUT_MAILSERVER</span>="mail server"<br><span class="property_key">OUT_MAILSERVERPORT</span>=25|465|587<br><span class="property_key">OUT_MAILSERVERPROTOCOL</span>=SMTP|SMTPS|TLS<br><span class="property_key">OUT_MAILUSER</span>=user.name@mail.com<br><span class="property_key">OUT_MAILPASS</span>=user.password<br></value><BR/>
+</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>From</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Email address sending the Email.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">Email address of the user or system sending the email.</detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>To</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Email addresses to receive the email.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">Email addresses to receive the email. Multiple addresses can be specified with semicolon or comma separators--whichever is NOT the field separator for the record.</detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>Subject</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">The Subject of the email.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>Message</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Text or HTML message.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">Text or HTML message can be specified. HTML message requires HTML tag to work properly.  The message cannot contain the field separator for the record.</detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>Attachment</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Email attachment file path</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">Email attachment file path. Multiple filepaths (files) can be specified with semicolons or comma separators--whichever is NOT the field separator for the record.</detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, SendEmail, "TestSuite@company.com", "TestMonitor@company.com", "TestSuite Results Report" ,"PASSED"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Send email indicating a specific TestSuite has PASSED.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, SendEmail, "TestSuite@company.com", "TestMonitor@company.com;bob.cares@company.com", "TestSuite Screenshot" , "Screenshot Feature 2", "fullpath/To/Test/ScreenShotF2.jpg"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Send email to a monitor and Bob and a screenshot. </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SetApplicationMap'></A>Autoit DDDriverCommands::<BIG>SetApplicationMap</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Provide the Application Map for the DDE to use
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Provide the Application Map for the DDE to use.  This command must be used 
+                 prior to ANY other command or script referencing the AppMap can be used.  The 
+                 AppMap can also be set by the DDE initialization script or another script with 
+                 the function AUSetCurrentAppMap.
+              <p>
+              In addition to loading the Application Map, WRAFS will also load the GUI Map file
+              in Winrunner. For this reason, the Application map and GUI Map File must have
+              the same name.
+              </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>ApplicationMap</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The path and/or filename of the Application Map to use
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 The path and/or filename of the Application Map to use.  The short filename 
+                 without the path can be used if the file can be found via FindSQAFile.
+                 Typically, the AppMap is located in the project's Datapool directory.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, SetApplicationMap, NotePad.Map </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Set the Application Map to be Notepad.Map in the Datapool directory.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, SetApplicationMap, "C:\SomeDir\NewApp.Map" </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Set the Application Map to an explicitly pathed Map
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SetBenchDirectory'></A>Autoit DDDriverCommands::<BIG>SetBenchDirectory</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Set/Change the directory in which the framework will find 
+                 benchmark files by default.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The path must already exist.  If the path is invalid 
+                  the previous setting will be retained (and logged).
+                  Any incomplete path will be assumed to be relative 
+                  to the current project directory.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Path</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The full or project relative path to the new directory.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, SetBenchDirectory, "C:\MyRepo\MyProject\AltPath\Bench"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Set the new default location for stored benchmark files.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, SetBenchDirectory, "AltPath\Bench"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Set the new default location for stored benchmark files.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SetClipboard'></A>Autoit DDDriverCommands::<BIG>SetClipboard</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Set the clipboard contents to a string.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Set the clipboard contents to a string.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Str</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The string to set the clipboard contents to.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 The string to set the clipboard contents to.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, SetClipboard, "This should go into the clipboard" </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Sets the current clipboard contents to the string
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SetDifDirectory'></A>Autoit DDDriverCommands::<BIG>SetDifDirectory</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Set/Change the directory in which the framework will locate 
+                 file compare differences.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The path must already exist.  If the path is invalid 
+                  the previous setting will be retained (and logged).
+                  Any incomplete path will be assumed to be relative 
+                  to the current project directory.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Path</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The full or project relative path to the new directory.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, SetDifDirectory, "C:\MyRepo\MyProject\AltPath\Dif"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Set the new default location for file compare differences.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, SetDifDirectory, "AltPath\Dif"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Set the new default location for file compare differences.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SetFocus'></A>Autoit DDDriverCommands::<BIG>SetFocus</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='AutoIT'>AUT</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Give a Window or Window Component input focus.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>WindowID</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 A Window reference from the AppMap
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>ComponentID</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 A reference from the AppMap for the Component within the Window to get input focus.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 A reference from the AppMap for the Component within the Window to get input focus.
+                 If the Window is the item of interest then both the WindowID and 
+                 ComponentID will be the same.
+                 <p>
+                 This only works on Windows or Components that have a valid Windows HANDLE 
+                 (HWND) and can legally receive the focus at the time of the call.</p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, SetFocus, AWindow, AWindow </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Sets the input focus on AWindow.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, SetFocus, AWindow, AComponent </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Sets the input focus on AComponent within AWindow.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SetImageDebug'></A>Autoit DDDriverCommands::<BIG>SetImageDebug</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Enable/Disable verbose debug log output and high-res failure snapshots.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 By default the image-based testing algorithm writes JPG screenshots to the Datapool\Test 
+                 directory when an image search fails to locate the desired image onscreen.  These images 
+                 can help the user know the state of the system at the time of a specific test failure.
+                 <p>
+                 However, these images are not suitable for more advanced debugging purposes such as finding 
+                 out 'why' a target image was not found in the screenshot when it appears it should have been 
+                 found.</p>
+<p>
+                 Enabling image debugging allows the system to output full-resolution BMP images into the 
+                 Datapool\Test directory instead of JPG images.  It also writes more verbose debug information 
+                 into the SAFS Debug Log if the user has the Debug Log running during the test. 
+                 See: <a href="http://safsdev.sourceforge.net/doc/org/safs/Log.html" target="blank">Debug Log Doc</a></p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Mode</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The boolean status for enabling extended image debugging. 
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Valid case-insensitive values to enable are "TRUE", "ON", "YES", "1", and "-1". 
+                 All other values will disable this mode.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, SetImageDebug, ON</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Switch enhanced image debugging features ON.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, SetImageDebug, Nope</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Switch enhanced image debugging features OFF.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SetImageFuzzyMatching'></A>Autoit DDDriverCommands::<BIG>SetImageFuzzyMatching</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Enable/Disable Image-Based Testing Fuzzy Matching.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Allows more robust fuzzy matching on image comparisons during Image-Based Testing.  
+                 Image-Based Testing recognition strings must have a BitTolerance (BT) of less than 
+                 100% specified for an image that is intended to be found with the fuzzy matching algorithm.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Mode</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The boolean status for enabling extended image-based fuzzy matching. 
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Valid case-insensitive values to enable are "TRUE", "ON", "YES", "1", and "-1". 
+                 All other values will disable this mode.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, SetImageFuzzyMatching, ON</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Switch enhanced image fuzzy matching features ON.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, SetImageFuzzyMatching, OFF</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Switch enhanced image matching features OFF.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SetMillisBetweenRecords'></A>Autoit DDDriverCommands::<BIG>SetMillisBetweenRecords</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Set the pause between two records. 
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Set the pause between two records.
+                This time is milli-seconds.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Value</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The value of the pause between two records.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 The value of the pause between two records.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, SetMillisBetweenRecords, 1000</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Set the pause between two records to 1000 milliseconds.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SetMultipleThreadSearch'></A>Autoit DDDriverCommands::<BIG>SetMultipleThreadSearch</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Turn on or trun off the multi-thread-search way to search an image.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Turn on or trun off the multi-thread-search way to search an image.
+                 If set true, program will search an image by multi-thread; If false, program
+                 will use single-thread to search.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>OnOrOff</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Turn on or turn off multi-thread-search. This parameter should be given as "On" or "Off".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, SetProjectDirectory, "On" </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 This lets SAFS to search an image on screen by multi-thread.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SetProjectDirectory'></A>Autoit DDDriverCommands::<BIG>SetProjectDirectory</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Set/Change the framework project directory.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The path must already exist.  If the path is invalid 
+                  the previous setting will be retained (and logged).
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Path</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The full path to the new directory.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, SetProjectDirectory, "C:\MyRepo\MyProject\AltPath"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Set the new default project location.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SetRootVerifyDirectory'></A>Autoit DDDriverCommands::<BIG>SetRootVerifyDirectory</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Set/Change the Bench, Test, and Dif directories 
+                 to be subdirectories off of the provided path.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The path must already exist.  If the path is invalid 
+                 the previous settings for Bench, Test, and Dif will
+                 be retained and a FAILURE will be reported.  The Bench, 
+                 Test, and Dif subdirectories must also exist.
+                 <p>         
+                 Any incomplete path will be assumed to be relative 
+                 to the current project directory.  It is important 
+                 to note that the provided path can be valid, yet 
+                 the expected "Bench", "Test", and "Dif" subdirectories 
+                 may not be valid.  In that scenario, no failure 
+                 will be reported, and the previous settings for 
+                 Bench, Test, and Dif will be retained (and logged).</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Path</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The full or project relative path to the root directory for
+                 Bench, Test, and Dif.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, SetRootVerifyDirectory, "C:\MyRepo\MyProject\AltPath"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Set the new root directory for Bench, Test, and Dif files.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, SetRootDirectory, "AltPath"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Set the new root directory for Bench, Test, and Dif files.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SetTestDirectory'></A>Autoit DDDriverCommands::<BIG>SetTestDirectory</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Set/Change the directory in which the framework will find 
+                 test files (captured "actuals") by default.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  The path must already exist.  If the path is invalid 
+                  the previous setting will be retained (and logged).
+                  Any incomplete path will be assumed to be relative 
+                  to the current project directory.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Path</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The full or project relative path to the new directory.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, SetTestDirectory, "C:\MyRepo\MyProject\AltPath\Test"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Set the new default location for captured test files.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, SetTestDirectory, "AltPath\Test"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Set the new default location for captured test files.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SetVariableValueEx'></A>Autoit DDDriverCommands::<BIG>SetVariableValueEx</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Set the value of a DDVariable </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 The name field can contain literal string, DDVariable, or
+                 any expression that evaluates to a valid variable name. </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>VariableName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The name of the variable
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>VariableValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The value to assign to the variable
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C,  SetVariableValueEx,  var, value </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Set variable var to contain "value" (euivalent to ^var=value)
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C,  SetVariableValueEx,  ^varname, value </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Given ^varname contains "var", set variable var to "value"
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C,  SetVariableValueEx,  ^basename &amp; ^index, value </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Any expression that evaluates to a valid DDVariable name may be used for the name field.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SetVariableValues'></A>Autoit DDDriverCommands::<BIG>SetVariableValues</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Preset the value of one or more DDVariables </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Preset the value of one or more DDVariables.<br>
+                 Each subsequent field can contain one variable expression. 
+                 <i><p>Note: SAFS/DriverCommands and RobotJ actually implement an incompatible 
+                 version of this command.  However, that version is normally never called by 
+                 standard SAFS Drivers.</p>
+<p>The variable handling is actually already done before Driver Commands can 
+                 be called, and true Drivers or Processors do nothing but log success and return "NoScriptFailure".</p>
+<p>The command remains for RobotJ and SAFS/DriverCommands for those people using 
+                 not standard Drivers that do not process expressions before this call.  These are a rare breed, indeed!</p></i></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>VariableName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The name of the variable along with its value assignment
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C,  SetVariableValues,  ^var1=value </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Set variable var1 to contain "value"
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C,  SetVariableValues,  ^var1=value, ^var2=value2, ^var3=^var1  </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Set multiple variable values
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_StartWebBrowser'></A>Autoit DDDriverCommands::<BIG>StartWebBrowser</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Launch a new web browser and optionally load a document into it.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><b>Windows TID, SDC, and RFT Support:</b><br>
+              This command in the above engines now supports using the System default browser. 
+              By default, the System default browser will be used to launch the URL.  (Previous 
+              versions of this command were unfortunately hardcoded to use Internet Explorer only.)
+              <p>
+              In addition, the tester can set a SAFS variable directly or through ApplicationConstants 
+              to provide the full path to an alternate browser executable.  By setting and clearing 
+              this variable the tester can switch between using the System default browser and an 
+              alternate browser dynamically during runtime.
+              </p><p>
+              Variable Name: <b>SAFSWebBrowserPath</b></p>
+<ul><pre><b>Sample SAFS variable usage:</b>	
+
+;Set an alternate browser to use:
+C, SetVariableValues, ^SAFSWebBrowserPath="C:\Program Files\Mozilla Firefox\firefox.exe"
+			
+;Clear to return to System default browser:
+C, SetVariableValues, ^SAFSWebBrowserPath=""
+			
+<b>Sample ApplicationConstants usage:</b>
+			
+;provide a value used for all browser launches
+[ApplicationConstants]
+...
+SAFSWebBrowserPath="C:\Program Files\Mozilla Firefox\firefox.exe"
+</pre>
+</ul>
+		(Note: if the tester ever "sets" or clears the SAFS variable then 
+		     any ApplicationConstants setting is no longer used.)<br><b>Selenium Note:</b>The parameters from 4 are specially for Selenium 2.0 (WebDriver) for now.<br>
+		 					 The parameters from 8 are extra parameter settings for Selenium 2.0 (WebDriver), they appear as pair(key, value),
+		 					 for example #8 is the key, #9 is the value; #10 is the key, #11 is the value; and so on.
+		 					 you can specify extra parameters as many as wanted if they are supported.<br></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>[ <B>URL</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 URL of a web resource to load in the new browser instance.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 This field can be empty which may produce different results in different browsers.  
+                 When using the system default browser on Windows, this empty field will typically 
+                 generate a blank web page, or an "about:blank" page.
+                 <p>
+                 Some browsers, like Internet Explorer, support other URLs like "about:home"--
+                 which will launch the browser and display whatever the Home page is set to.  However, 
+                 not all browsers support this.
+                 </p><p>
+                 For consistency, it is usually necessary to include the full URL syntax--including 
+                 the protocol portion of the URL (http://, https://, ftp://, etc..).
+                 </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>WindowTag</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 A WindowTag or Browser ID to call the new browser instance. </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 This Tag might be used by some test tools to track specific browser instances, 
+                 but not all test tools are able to support this type of browser Tagging.<br><B>SE2</B>The indentifier used to store the webdriver for the opened browser. It can be used to
+		switch between opened browsers or close one of them.
+		</detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>BrowserName</B> = firefox ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""><B>SE2</B>The browser to open. It can be "explorer", "chrome" or "firefox". "firefox" is default.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>timeout</B> = 15 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""><B>SE2</B>Specifies the amount of time the selenium web driver should wait 
+				when searching for an element if it is not immediately present.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>IsRemoteBrowser</B> = true ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""><B>SE2</B>True = use Selenium RemoteDriver.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">True = use Selenium RemoteDriver.  Otherwise, use the FirefoxDriver, 
+		ChromeDriver or InternetExplorerDriver.<br>
+		This parameter is ignored now for SE2 as it always uses a RemoteDriver.
+             </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>ExtraParamKey</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""><B>SE2</B>The extra parameter key. You can use one of 
+				<a href="http://safsdev.sourceforge.net/doc/org/safs/selenium/webdriver/lib/SelectBrowser.html#getExtraParameterKeys()" target="reference" alt="Extra parameter keys">Extra parameter keys</a>.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>ExtraParamValue</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""><B>SE2</B>The value of the extra parameter indicated by ExtraParamKey above.
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, StartWebBrowser </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Launch a new browser with no special ID and no URL to load.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, StartWebBrowser, "", WebBrowser</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Launch a new browser with a WindowTag of WebBrowser and no URL to load.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, StartWebBrowser, "http://aUrl.jsp", WebBrowser</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Launch a new browser with a WindowTag of WebBrowser and a URL to load.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, StartWebBrowser, "http://aUrl.jsp"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""><B>SE2</B>Launch a new firefox browser with a URL to load.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, StartWebBrowser, "http://aUrl.jsp", "", "FirstTestPage", "firefox", 20</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""><B>SE2</B>Launch a new firefox browser with a URL to load, this browser will be stored with ID 'FirstTestPage'
+                 and on this page the search of webelement has a timeout of 20 seconds.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, StartWebBrowser, "http://aUrl.jsp", "", "FirstTestPage", "firefox", 20, "", "KEY_PROXY_SETTING", "proxy-server:80"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""><B>SE2</B>Launch a new firefox browser with a URL to load, this browser will be stored with ID 'FirstTestPage'
+                 and on this page the search of webelement has a timeout of 20 seconds, and the internet proxy server 
+                 has been set to "proxy-server:80" for this browser.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, StartWebBrowser, "http://www.google.com", "", "GoogleMain", "firefox", 20, "", "FirefoxProfile", "myprofile"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""><B>SE2</B>Launch a new firefox browser with custom profile "myprofile" 
+                 (<a href="https://support.mozilla.org/en-US/kb/profile-manager-create-and-remove-firefox-profiles">Create custom profile</a>), Google page will be loaded, 
+                 this browser will be stored with ID 'GoogleMain' and on this page the search of webelement has a timeout of 20 seconds.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, StartWebBrowser, "http://www.google.com", "", "GoogleMain", "chrome", 20, "", "user-data-dir", "c:\chrome_custom_data"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""><B>SE2</B>Launch a new chrome browser with custom data pool "c:\chrome_custom_data" 
+                 (<a href="http://www.chromium.org/developers/creating-and-using-profiles">Create custom data pool</a>), Google page will be loaded, 
+                 this browser will be stored with ID 'GoogleMain' and on this page the search of webelement has a timeout of 20 seconds.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, StartWebBrowser, "http://www.google.com", "", "GoogleMain", "chrome", 20, "", "user-data-dir", "C:\Users\xxx\AppData\Local\Google\Chrome\User Data"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""><B>SE2</B>Launch a new chrome browser with default data pool "C:\Users\xxx\AppData\Local\Google\Chrome\User Data" using the recent chrome user
+                 (chrome://version/, see "Profile Path"), Google page will be loaded, 
+                 this browser will be stored with ID 'GoogleMain' and on this page the search of webelement has a timeout of 20 seconds.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, StartWebBrowser, "http://www.google.com", "", "GoogleMain", "chrome", 20, "", "user-data-dir", "C:\Users\xxx\AppData\Local\Google\Chrome\User Data", "profile-directory", "Profile 1"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""><B>SE2</B>Launch a new chrome browser with default data pool "C:\Users\xxx\AppData\Local\Google\Chrome\User Data" using the first chrome user
+                 (chrome://version/, see "Profile Path"), Google page will be loaded, 
+                 this browser will be stored with ID 'GoogleMain' and on this page the search of webelement has a timeout of 20 seconds.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, StartWebBrowser, "http://www.google.com", "", "GoogleMain", "chrome", 20, "", "excludeSwitches", "disable-component-update; ignore-certificate-errors"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""><B>SE2</B>Launch a new chrome browser with temporary data pool and with option '--disable-component-update' and '--ignore-certificate-errors' excluded,
+                 (chrome://version/, see "Profile Path"), Google page will be loaded, 
+                 this browser will be stored with ID 'GoogleMain' and on this page the search of webelement has a timeout of 20 seconds.<br>
+                 The value "disable-component-update; ignore-certificate-errors" can also be separated by comma if semicolon conflicts with your test-record-separator
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_TakeScreenShot'></A>Autoit DDDriverCommands::<BIG>TakeScreenShot</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Take screenshot and save it to a file on test machine.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Take screenshot and save it to a file on test machine.
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>FileName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The file to store the screeshot. (For Android Engine, the screenshot is device/emulator's)
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 The file to store the screeshot. (For Android Engine, the screenshot is device/emulator's)
+                 It can be a full path name;
+                 If it is only a filename, the image will be stored to sub directory "test" of your project; 
+                 If it is a filename including path-separator, it will be concatanated to the "datapool" of
+                 your project to create a fullpath file.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>Rotatable</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 For other Engine, this parameter will be ignored.
+                 For Android Engine, if the android application is rotatable, you set this parameter to True. The default is True.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 For other Engine, this parameter will be ignored.
+                 For Android Engine, if the android application is rotatable, that is to say the application will adjust its direction
+                 and keep upstraight when you rotate your device. If the android application is rotatable and this
+                 parameter is set to False, the screenshot maybe upside down.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>SubArea</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Optional sbuarea indicating partial image of the screen to capture.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             	  Optional sbuarea indicating partial image of the screen to capture.
+	              The value must be in the format of a
+	              top-left and bottom-right pair, and can be either absolute
+	              coordinates or percentages ("x1,y1,x2,y2" or "x1%,y1%,x2%,y2%").
+	              Coordinates are relative to the screen, i.e. (0,0) and
+	              (0%,0%) are the minimum, and (SCREEN_WIDTH, SCREEN_HEIGHT)
+	              and (100%,100%) are the maximum. Values exceeding the minimun/
+	              maximum are forced to the nearest limiting value. Absolute and
+	              percent values can be mixed, so "0,0,50%,50%" is valid. If this
+	              parameter is omitted, full image of the screen is captured
+	              (equivalent to "0,0,100%,100%").
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, TakeScreenShot, "screenshot.png", Yes </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Get the screenshot and save the image to file YourTestProject\Datapool\Test\screenshot.png
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, TakeScreenShot, "d:\temp\image\screenshot.png", No </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Get the screenshot and save the image to file d:\temp\image\screenshot.png
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, TakeScreenShot, "image\screenshot.png" </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Get the screenshot and save the image to file YourTestProject\Datapool\image\screenshot.png
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, TakeScreenShot, "screenshotPart.png", , "0;0;50%;50%" </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Get part of the screenshot and save the image to file YourTestProject\Datapool\Test\screenshotPart.png
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_UseAbbotFunctions'></A>Autoit DDDriverCommands::<BIG>UseAbbotFunctions</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Enable/Disable the switch to "prefer" ABBOT Functions over 
+                 any other engine functions.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 If enabled, and the ABBOT engine is up and running, the Driver 
+                 will always attempt to execute test records through Abbot first before 
+                 any other.
+                 <p>
+                 If the ABBOT engine is not fully available, this command will generate and 
+                 log a WARNING.  If the record type contains the "W" (Warning allowed) 
+                 modifier then we will issue an appropriate log message, but no WARNING 
+                 will be counted.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Mode</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The switch status for enabling the preference of the engine.
+                 Valid values are "ON" and "OFF".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, UseAbbotFunctions, ON</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Switch to prefer Abbot Functions over any other engine.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_UseDroidFunctions'></A>Autoit DDDriverCommands::<BIG>UseDroidFunctions</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Enable/Disable the switch to "prefer" Droid Functions over 
+                 the current engine functions (like Robot Classic).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 If enabled and the Droid hooking mechanism is up and running the Driver 
+                 will always attempt to execute test records through Droid first before 
+                 defaulting to the current engine (like Robot Classic).
+                 <p>
+                 If the Droid hook is not fully available, this command will generate and 
+                 log a WARNING.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Mode</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The switch status for enabling the use of the Droid hook.
+                 Valid values are "ON" and "OFF".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, UseDroidFunctions, ON</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Switch to prefer Droid Functions over the current engine.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_UseIOSFunctions'></A>Autoit DDDriverCommands::<BIG>UseIOSFunctions</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Enable/Disable the switch to "prefer" IOS Functions over 
+                 any other engine functions.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 If enabled, and the IOS engine is up and running, the Driver 
+                 will always attempt to execute test records through IOS first before 
+                 any other.
+                 <p>
+                 If the IOS engine is not fully available, this command will generate and 
+                 log a WARNING.  If the record type contains the "W" (Warning allowed) 
+                 modifier then we will issue an appropriate log message, but no WARNING 
+                 will be counted.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Mode</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The switch status for enabling the preference of the engine.
+                 Valid values are "ON" and "OFF".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, UseIOSFunctions, ON</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Switch to prefer IOS Functions over any other engine.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_UseQTPFunctions'></A>Autoit DDDriverCommands::<BIG>UseQTPFunctions</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Enable/Disable the switch to "prefer" QTP Functions over 
+                 any other engine functions.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 If enabled, and the QTP engine is up and running, the Driver 
+                 will always attempt to execute test records through QTP first before 
+                 any other.
+                 <p>
+                 If the QTP engine is not fully available, this command will generate and 
+                 log a WARNING.  If the record type contains the "W" (Warning allowed) 
+                 modifier then we will issue an appropriate log message, but no WARNING 
+                 will be counted.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Mode</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The switch status for enabling the preference of the engine.
+                 Valid values are "ON" and "OFF".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, UseQTPFunctions, ON</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Switch to prefer QTP Functions over any other engine.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_UseRobotJFunctions'></A>Autoit DDDriverCommands::<BIG>UseRobotJFunctions</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Enable/Disable the switch to "prefer" RobotJ Hook Component Functions over 
+                 Robot Classic Component Functions.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 If enabled and the RobotJ hooking mechanism is up and running then StepDriver 
+                 will always attempt to execute test records (T) through RobotJ first before 
+                 defaulting to Robot Classic.
+                 <p>
+                 If the RobotJ hook is not fully available, this command will generate and 
+                 log a WARNING.  If the record type is "CW" (Warning allowed), then we 
+                 will issue an appropriate log message, but no WARNING will be counted.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Mode</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The switch status for enabling the use of the RobotJ hook.
+                 Valid values are "ON" and "OFF".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, UseRobotJFunctions, ON</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Switch to prefer RobotJ Component Functions over Robot Classic.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_UseSAFSFunctions'></A>Autoit DDDriverCommands::<BIG>UseSAFSFunctions</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Enable/Disable the switch to "prefer" SAFS (SDC) Functions over 
+                 the current engine functions (like Robot Classic).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 If enabled and the SAFS hooking mechanism is up and running the Driver 
+                 will always attempt to execute test records through SAFS first before 
+                 defaulting to the current engine (like Robot Classic).
+                 <p>
+                 If the SAFS hook is not fully available, this command will generate and 
+                 log a WARNING.  If the record type contains the "W" (Warning allowed) 
+                 modifier then we will issue an appropriate log message, but no WARNING 
+                 will be counted.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Mode</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The switch status for enabling the use of the SAFS hook.
+                 Valid values are "ON" and "OFF".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, UseSAFSFunctions, ON</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Switch to prefer SAFS Functions over the current engine.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_UseSeleniumFunctions'></A>Autoit DDDriverCommands::<BIG>UseSeleniumFunctions</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Enable/Disable the switch to "prefer" Selenium Functions over 
+                 the current engine functions (like Robot Classic).
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 If enabled and the Selenium hooking mechanism is up and running the Driver 
+                 will always attempt to execute test records through Selenium first before 
+                 defaulting to the current engine (like Robot Classic).
+                 <p>
+                 If the Selenium hook is not fully available, this command will generate and 
+                 log a WARNING.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Mode</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The switch status for enabling the use of the Selenium hook.
+                 Valid values are "ON" and "OFF".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, UseSeleniumFunctions, ON</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Switch to prefer Selenium Functions over the current engine.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_UseTestCompleteFunctions'></A>Autoit DDDriverCommands::<BIG>UseTestCompleteFunctions</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Enable/Disable the switch to "prefer" TestComplete (TCAFS) Functions over 
+                 any other engine functions.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 If enabled, and the TCAFS engine is up and running, the Driver 
+                 will always attempt to execute test records through TCAFS first before 
+                 any other.
+                 <p>
+                 If the TCAFS engine is not fully available, this command will generate and 
+                 log a WARNING.  If the record type contains the "W" (Warning allowed) 
+                 modifier then we will issue an appropriate log message, but no WARNING 
+                 will be counted.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Mode</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The switch status for enabling the preference of the engine.
+                 Valid values are "ON" and "OFF".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, UseTestCompleteFunctions, ON</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Switch to prefer TCAFS Functions over any other engine.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_VerifyClipboardToFile'></A>Autoit DDDriverCommands::<BIG>VerifyClipboardToFile</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+             Verify the current contents of the Windows clipboard with a benchmark file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Verify the current contents of the Windows clipboard with a benchmark file.<br>
+             Typically, benchmarks are stored in the Datapool\Bench directory.
+             In that event, only the filename.ext is needed.  There is currently
+             a limit of 32K allowed for this type of comparison.  <br>
+             The Window and Component objects are not validated and have no role.
+             The Window and Component strings can be any text, but they cannot be blank.
+             <p>
+             The command will produce a TEST WARNING if the user has configured an 
+             alternate DIFF tool for which we have no means to compare the diff results.
+             If this WARNING is expected, the user should use the "TW" test record type.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>BenchmarkFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The name of the file used as the comparison benchmark.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             The name of the file used as the comparison benchmark.<br>
+             Typically, benchmarks are stored in the Datapool\Bench directory.
+             In that event, only the filename.ext is needed.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>Encoding</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The encoding used to read a file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 The encoding used to read a file. If user doesn't specify this
+                 parameter, the "UTF-8" encoding will be used.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, VerifyClipboardToFile, myclipboard.txt </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Verifieis the current clipboard contents to benchmark file myclipboard.txt
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, VerifyClipboardToFile, C:\Temp\myclipboard.txt </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Verifieis the current clipboard contents to C:\Temp\myclipboard.txt
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, VerifyClipboardToFile, C:\Temp\myclipboard.txt, "Ansi" </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Verifieis the current clipboard contents to C:\Temp\myclipboard.txt, the file
+                 will be opened with "Ansi" encoding.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_Version'></A>Autoit DDDriverCommands::<BIG>Version</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Specify the table format VERSION</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+        Used to specify the VERSION of the table format.  
+        This is currently not required since there is only one 
+        current version of the table format--1.0.
+       </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Version</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              The VERSION of the table format. Initially "1.0"</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C  Version  1.0</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Specify that the table format is VERSION 1.0
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_WaitForGUI'></A>Autoit DDDriverCommands::<BIG>WaitForGUI</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='AutoIT'>AUT</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Wait for a Window or Window Component to become valid.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>
+		Note: the TID supports this command using 
+		<a href="http://safsdev.sourceforge.net/sqabasic2000/SAFSImageBasedRecognition.htm" target="imagebased" alt="SAFS Image-Based Recognition Doc">Image-Based Testing</a> 
+		techniques and App Map entries.
+		</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>WindowID</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 A Window reference from the AppMap
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>ComponentID</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 A reference from the AppMap for the Component within the Window to wait for.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 A reference from the AppMap for the Component within the Window to wait for.
+                 If the Window is the item of interest then both the WindowID and 
+                 ComponentID will be the same.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>Timeout</B> = 15 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Timeout value in seconds before exiting automatically.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, WaitForGUI, AWindow, AWindow </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Waits up to 30 seconds for AWindow to become valid.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, WaitForGUI, AWindow, AWindow, 10 </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Waits up to 10 seconds for AWindow to become valid.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, WaitForGUI, AWindow, AComponent, 10 </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Waits up to 10 seconds for AComponent within AWindow to become valid.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_WaitForGUIGone'></A>Autoit DDDriverCommands::<BIG>WaitForGUIGone</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='AutoIT'>AUT</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Wait for a Window or Window Component to become invalid.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>
+		Note: the TID supports this command using 
+		<a href="http://safsdev.sourceforge.net/sqabasic2000/SAFSImageBasedRecognition.htm" target="imagebased" alt="SAFS Image-Based Recognition Doc">Image-Based Testing</a> 
+		techniques and App Map entries.
+		</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>WindowID</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 A Window reference from the AppMap
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>ComponentID</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 A reference from the AppMap for the Component within the Window to watch.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 A reference from the AppMap for the Component within the Window to watch.
+                 If the Window is the item of interest then both the WindowID and 
+                 ComponentID will be the same.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>Timeout</B> = 15 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Timeout value in seconds before exiting automatically.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, WaitForGUIGone, AWindow, AWindow </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Waits up to 30 seconds for AWindow to become invalid.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, WaitForGUIGone, AWindow, AWindow, 10 </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Waits up to 10 seconds for AWindow to become invalid.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, WaitForGUIGone, AWindow, AComponent, 10 </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Waits up to 10 seconds for AComponent within AWindow to become invalid.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_WaitForRegistryKeyExists'></A>Autoit DDDriverCommands::<BIG>WaitForRegistryKeyExists</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Wait for a Registry Key to become valid.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">On Windows XP (and higher?) this is accomplished via 
+              the REG.EXE provided by the operating system.  If this program is NOT available 
+              then the Registry commands will not work until another means is implemented--possibly 
+              Windows Scripting Host scripts, etc..
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Key</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The Registry Key name to seek.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>KeyValue</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The value name under the parent key to seek.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The value name under the parent key.  If not provided then we just 
+                 check to see if the provided parent key exists.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>Timeout</B> = 15 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Timeout value in seconds before exiting automatically.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, WaitForRegistryKeyExists, "HKLM\Software\Rational Software\Rational Test\8", "Install Directory", 5</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Waits up to 5 seconds for the Install Directory value key to exist.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, WaitForRegistryKeyExists, "HKLM\Software\Rational Software\Rational Test\8", "", 0</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Checks only once (0 timeout) to see if the provided key exists.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, WaitForRegistryKeyExists, "HKLM\Software\Rational Software\Rational Test\8"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Loops for up to the default 15 seconds for the provided key to exist.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_WaitForRegistryKeyValue'></A>Autoit DDDriverCommands::<BIG>WaitForRegistryKeyValue</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Wait for a specific Registry KeyValue to match an expected value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">On Windows XP (and higher?) this is accomplished via 
+              the REG.EXE provided by the operating system.  If this program is NOT available 
+              then the Registry commands will not work until another means is implemented--possibly 
+              Windows Scripting Host scripts, etc..
+              </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Key</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The Registry Key name to seek
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>KeyValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The value name under the parent key to seek.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The value name under the parent key.  If not provided then we just 
+                 check to see if the provided parent key exists.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>ExpectedValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive value to match with the key value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>Timeout</B> = 15 ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Timeout value in seconds before exiting automatically.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>CaseInsensitive</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Values of "CASE-INSENSITIVE", "CASEINSENSITIVE", and "FALSE" will cause the 
+             comparison of the key value and the expected value to ignore case.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              All engines may not support this parameter at this time.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, WaitForRegistryKeyValue, "HKLM\Software\Adobe\CommonFiles", "UsageCount", "0x1"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Waits up to 15 seconds for the UsageCount key value to contain "0x1".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">The comparison IS case-sensitive</detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, WaitForRegistryKeyValue, "HKLM\Software\Adobe\CommonFiles", "UsageCount", "0x1", 45</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Waits up to 45 seconds for the UsageCount key value to contain "0x1".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">The comparison IS case-sensitive</detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, WaitForRegistryKeyValue, "HKLM\Software\Adobe\CommonFiles", "UsageCount", "0X1", 5, CASEINSENSITIVE</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Waits up to 5 seconds for the UsageCount key value to contain "0x1".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">The comparison IS NOT case-sensitive</detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, WaitForRegistryKeyValue, "HKLM\Software\Adobe\CommonFiles", "UsageCount", "0X1", "", FALSE</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Waits up to 15 seconds for the UsageCount key value to contain "0x1".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">The comparison IS NOT case-sensitive</detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+		</BODY>
+</HTML>
+	

@@ -1,0 +1,179 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_GetGUIImage'></A>GenericMasterFunctions::<BIG>GetGUIImage</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Apple IOS'>IOS</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='AutoIT'>AUT</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Capture the screen shot of a GUI component and save it to a file
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Capture the screen shot of a GUI component and save it to a file.
+               The available formats for the output file are BITMAP (*.bmp) and JPEG
+               (*.jpg). 
+               For RJ and IBT engine, other formats like TIFF (*.tif), GIF (*.gif), 
+               PNG (*.png) and PNM (*.pnm) are also supported.
+               Optionally the user can specify part of the component to capture.
+               <p>
+               The specified GUI component/part must be in the viewing range of its 
+               containing window. If portion of the component is displayed in the 
+               window, only that portion will be captured; if the component falls
+               completely out of the viewing range of the window, the command will 
+               fail. The command makes no attempt to bring the component into view.
+               </p>
+<p><B>Robot Classic (RC) Specific Notes:</B><br>  
+               		1) This command may fail to execute if the user has turned off logging 
+              	 	to TestManager via the Robot tools setting.  You may have to enable 
+               		TestManager logging for the command to successfully execute.<br>
+               		2) This command requires that the TestManager Image Comparator tool is
+               		installed on the test machine. Machines having only the Robot Test Agent
+               		installed will not be able to use this command.<br>
+               		3) Due to a bug in Robot Classic, images captured using the Robot Classic
+			engine may differ in image size and/or file size from those captured using 
+			other supported engines.  Depending on the comparator used, rebenching
+               		your images may be necessary when migrating to another engine.
+               </p>
+<p><B>RobotJ (RJ) and IBT Specific Notes:</B><br>
+               		1)It requires that Java Advanced Imaging (JAI) be installed
+               		on the test machine<BR>
+               		2)It supports to save image in format TIFF (*.tif), GIF (*.gif), PNG (*.png)
+               		and PNM (*.pnm) 
+               </p>
+<p><B>Apple IOS specific Notes:</B><br>
+               UIAutomation captures all screenshots as PNG images, but SAFS copies and stores them 
+               into the image format desired (JPG, BMP, etc.). However, the rootname of the desired 
+               output image name must be unique to avoid UIAutomation generating indexed image names 
+               we will not be looking for.<br>
+               For example, specifying MyImage.JPG and later MyImage.BMP will cause UIAutomation to capture 
+               MyImage.PNG and MyImage1.PNG. When attempting to find MyImage.PNG captured for MyImage.BMP 
+               we will retrieve MyImage.PNG which is NOT the correct image capture for MyImage.BMP.
+               </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>OutputFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Path (with filename) to the output image file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              Path/file name of the output image file.
+              This can be a full path, a relative path or just a file name. If
+              relative, it is appended to the Datapool directory; if only a
+              file name without path, the file will be saved in Datapool\Test
+              directory. The extension of the file must be either .bmp or
+              .jpg. If not, .bmp is appended to this parameter to force a
+              BITMAP export.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>SubArea</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Optional app map subkey indicating partial image of the component to capture.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              Optional app map subkey indicating partial image of the component to capture.
+              Value of this app map reference must be in the format of a
+              top-left and bottom-right pair, and can be either absolute
+              coordinates or percentages ("x1,y1,x2,y2" or "x1%,y1%,x2%,y2%").
+              Coordinates are relative to the component, i.e. (0,0) and
+              (0%,0%) are the minimum, and (COMPONENT_WIDTH, COMPONENT_HEIGHT)
+              and (100%,100%) are the maximum. Values exceeding the minimun/
+              maximum are forced to the nearest limiting value. Absolute and
+              percent values can be mixed, so "0,0,50%,50%" is valid. If this
+              parameter is omitted, full image of the component is captured
+              (equivalent to "0,0,100%,100%").
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>FilteredAreas</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              "<b>Filter=</b>one or multiple areas" to filter the GUI image (or sub image of GUI if the parameter "SubArea" is present)
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              "<b>Filter=</b>one or multiple areas" to filter the GUI image (or sub image of GUI if the parameter "SubArea" is present)<br>
+              The area is in the same format described for the parameter "SubArea".<br>
+              Multiple areas are separated by a space character, such as "subarea1 subarea2 subarea3"<br>
+              The filtered-image will be covered by black color at filtered areas.<br>
+              Do NOT forget the prefix "Filter=", without it this parameter will be ignored.
+             </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, GetGUIImage, "C:\comp.bmp"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Save the full component image to BITMAP file "C:\comp.bmp".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, GetGUIImage, "Datapool\comp.jpg"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Save the full component image to JPEG file "&lt;project&gt;\Datapool\comp.jpg".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, GetGUIImage, "Datapool\Logs\comp.bmp", SUBAREA</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Save specified part of the component image.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              Save specified part of the component image.
+              Depending on the definition of SUBAREA in the app map, the command captures:<br>
+
+              UNDER [COMPONENT] IN APP MAP    PART OF COMPONENT<br>
+              ----------------------------    ---------------------<br>
+              SUBAREA="0,0,10,10"             top-left 10x10 square<br>
+              SUBAREA="0,80%,100%,100%"       bottom fifth<br></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, GetGUIImage, "Datapool\comp.jpg", "", "Filter=0;0;10;10"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Get the component image and filter some parts and save it.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Get the full component image and draw a "10*10 black quare" at the top-left, 
+             then save it to JPEG file "&lt;project&gt;\Datapool\comp.jpg".
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, GetGUIImage, "comp.jpg", "", "FilterMapKey"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Get the component image and filter some parts and save it.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Get the full component image, and draw "10x10 black square" at "top-left" and "10x15 black rectangle" at "60,60"
+             to make a filtered image, and save the filtered image.<br>
+              ----------------------------        Map           ---------------------<br>
+              [COMPONENT]<br>
+              FilterMapKey="Filter=0,0,10,10 60,60,10,15"<br></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

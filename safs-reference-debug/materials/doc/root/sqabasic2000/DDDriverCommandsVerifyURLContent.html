@@ -1,0 +1,84 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_VerifyURLContent'></A>DDDriverCommands::<BIG>VerifyURLContent</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Send an HTTP GET request, and verify the response with the content provided as parameter.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><value xmlns="">The optional parameters 'HeaderName' and 'HeaderValue' must appear in pair, 
+			         and they can present more than 1 time, which means multiple pair of ('HeaderName', 'HeaderValue')
+					 can be provided.
+			  </value><BR/>
+</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN> : <value xmlns="">The HTTP request will be sent by javascript AJAX.</value><BR/>
+</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>URL</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">The URL to request.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>BenchContent</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">The bench content to be compared with the response sent back from the server.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>Timeout</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">The timeout (in seconds) waiting for the response from HTTP server. The default value is 120 seconds.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>HeaderName</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">The HTTP request header name.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>HeaderValue</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">The value to set for the HTTP request header.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, VerifyURLContent, "http://rest.api.url", "some expected response content", "60"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Send an HTTP "GET" request for url "http://rest.api.url", 
+				 and wait for response with timeout of 60 seconds,
+				 and verify request's result from server with the content "some expected response content".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, VerifyURLContent, "http://rest.api.url?var1=value&amp;var2=value", "some expected response content"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Send an HTTP "GET" request for url "http://rest.api.url?var1=value&amp;var2=value", 
+				 and wait for response with default timeout of 120 seconds,
+				 and verify request's result from server with the content "some expected response content".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, VerifyURLContent, "http://rest.api.url", "some expected response content", "60", "Accept", "text/*", "Accept-Charset", "UTF-8"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Send an HTTP "GET" request for url "http://rest.api.url" with headers ("Accept","text/*") and ("Accept-Charset","UTF-8"),
+				 and wait for response with timeout of 60 seconds,
+				 and verify request's result from server with the content "some expected response content".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

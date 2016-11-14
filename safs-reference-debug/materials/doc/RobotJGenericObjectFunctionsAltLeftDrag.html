@@ -1,0 +1,109 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_AltLeftDrag'></A>RobotJ GenericObjectFunctions::<BIG>AltLeftDrag</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                  An ALT left mouse drag is performed on the object based on the stored coordinates.
+                </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>
+                  The coordinate lookup is done with the component name(Field #3) of the record AND 
+                  Field #5.</p>
+<p>
+                  Typical Data Table records:</p>
+<p>
+                  (1) t MainWindow GenericItem AltLeftDrag DragName</p>
+<p>
+                  #1 above will contain a GenericItem entry in the MainWindow section with 
+                  normal recognition information for it .  GenericItem will also have it's
+                  own section in the Application Map in which there will be an entry like:</p>
+<p>
+                  DragName="15,30,60,90"    OR
+                  DragName="Coords=15,30,60,90"</p>
+<p>
+                  This will tell RFT to locate the GenericItem Window object and an ALT left mouse drag
+                  from coordinates 15,30 to 60,90.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>AppMapSubkey</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                  Name of the AppMap subkey to lookup or literal text to use for an ALT left mouse drag.
+                </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Name of the AppMap subkey to lookup and use for an ALT left mouse drag.
+                  We expect the AppMap or literal text to contain the item in the format "x1,y1,x2,y2":</p>
+<p><pre>
+                  [GenericItem]
+                  DragName="3,10,12,20"     OR
+                  DragName="Coords=3,10,12,20"
+                  </pre></p>
+<p>
+                  Both Fields #3 and #5 are used to locate the item in the App Map.
+                  This routine does not specify an App Map so only the current Map
+                  is used and it is expected to be valid.
+                  </p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, ALTLEFTDRAG, AnObject</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 An ALT left mouse drag will be performed based on coordinates indicated by the AnObject reference in
+                 the Application Map.
+                </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Field  5 : TQ String. A reference identified in the Application Map identifying coordinates
+                 on which to drag.
+                 This example shows AnObject which will be found in the Application Map as a referenced item
+                 in the WINDOW section.    
+                </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AnObject, ALTLEFTDRAG, ASubObject</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 An ALT left mouse drag will be performed based on coordinates indicated by the ASubObject reference
+                 in the Application Map.
+                </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Field  5 : TQ String. A reference identified in the Application Map identifying coordinates
+                 on which to drag.
+                 This example shows AnObject as a viable object in the WINDOW but that it also has its own
+                 section in the Application Map which contains one or more named references like
+                 ASubObject which are used for test.   
+                </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AnObject, ALTLEFTDRAG, "Coords=10;20;200;300"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 An ALT left mouse drag will be performed from point 10,20 to 200,300 relative to AnObject.
+                </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Field  5 : TQ String. The item does not exist in the app map so will be 
+                 treated as literal text.  Note we allow semi-colon delimited coordinates 
+                 to support the case when commas are used as field delimiters and cannot be 
+                 used to delimit the X and Y coordinates.
+                </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

@@ -1,0 +1,88 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_SelectUnverified'></A>ComboBoxFunctions::<BIG>SelectUnverified</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium1.0'>SE</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+					Select an item by its text value from a combobox without verifying the
+					selection.
+				</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Select an item by its text value from a combobox without
+						verifying the selection.
+						This method combines the initial Click required to expose the list
+						of items and then the subsequent selection of a text item from the list.
+					</p>
+<p>
+						The routine will simply take the specified text and attempt the
+						selection.
+						it will not verify the existence of the item before the attempt, nor
+						will it verify the item is actually selected after the
+						attempt.
+					</p>
+<p>Note: RobotJ also uses identical keyword SelectUnverifiedTextItem
+					</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							The case-sensitive item in the drop down list to select.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>[ <B>ForceRefresh</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							Force refreshing to update stale element after selection.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN> : <value xmlns="">First implemented in March 2016 for Selenium2.0 and
+								might not be supported in all engines yet.
+							</value><BR/>
+</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, ComboBox, SELECTUNVERIFIED, "MySelection"
+					</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							This action attempts to Click AND Select "MySelection"
+							(case-sensitive) from the ComboBox.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, ComboBox, SELECTUNVERIFIED, "MySelection",
+						"true"
+					</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+							This action attempts to Click AND Select "MySelection"
+							(case-sensitive) from the ComboBox, and force refreshing after selection.
+						</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

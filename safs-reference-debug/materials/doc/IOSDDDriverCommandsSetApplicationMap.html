@@ -1,0 +1,66 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_SetApplicationMap'></A>IOS DDDriverCommands::<BIG>SetApplicationMap</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Provide the Application Map for the DDE to use
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 Provide the Application Map for the DDE to use.  This command must be used 
+                 prior to ANY other command or script referencing the AppMap can be used.  The 
+                 AppMap can also be set by the DDE initialization script or another script with 
+                 the function AUSetCurrentAppMap.
+              <p>
+              In addition to loading the Application Map, WRAFS will also load the GUI Map file
+              in Winrunner. For this reason, the Application map and GUI Map File must have
+              the same name.
+              </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>
+<B>ApplicationMap</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The path and/or filename of the Application Map to use
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                 The path and/or filename of the Application Map to use.  The short filename 
+                 without the path can be used if the file can be found via FindSQAFile.
+                 Typically, the AppMap is located in the project's Datapool directory.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">C, SetApplicationMap, NotePad.Map </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Set the Application Map to be Notepad.Map in the Datapool directory.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">C, SetApplicationMap, "C:\SomeDir\NewApp.Map" </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Set the Application Map to an explicitly pathed Map
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

@@ -1,0 +1,96 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_CopyFile'></A>TestComplete DDDriverFileCommands::<BIG>CopyFile</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+          Copy the specified filename to the target filename.          
+        </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+           For the Java-based engines--RJ, TID, and SDC:
+           <p>
+	   If the filenames provided are not full absolute paths then we will attempt to deduce a full Project-relative or Datapool\Test-relative path from the relative path provided. If the relative path already contains path separators (ex: "\subpath\filename.ext") then we attempt to deduce a fullpath relative to the SAFS Project.  If no path separators exist (ex: "filename.txt") then we attempt to deduce a fullpath relative to the project's Datapool\Test directory.  We do not actually attempt to see if the directories or files exists before executing the command.
+	   </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>FromFileName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              The file path and file name for the file to be copied.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>ToFileName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              The file path and file name to copy the file to.
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">
+            C, CopyFile, "C:/Test/Test1.txt" , "C:/Test/Test2.txt"
+          </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Copy the file C:/Test/Test1.txt to C:/Test/Test2.txt
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              Fullpath filename specs should be supported by all engines.
+            </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">
+            C, CopyFile, "C:/Test/Test1.txt" , "Test2.txt"
+          </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Copy the file C:/Test/Test1.txt to C:/MyProject/Datapool/Test/Test2.txt
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              Supported only by the Java-based engines (RJ, SDC, TID) at this time.
+            </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">
+            C, CopyFile, "Test1.txt" , "Test2.txt"
+          </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Copy the file C:/MyProject/Datapool/Test/Test1.txt to C:/MyProject/Datapool/Test/Test2.txt
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              Supported only by the Java-based engines (RJ, SDC, TID) at this time.
+            </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">
+            C, CopyFile, "Test1.txt" , "/w32/Results/Test1.txt"
+          </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              Copy the file C:/MyProject/Datapool/Test/Test1.txt to C:/MyProject/w32/Results/Test1.txt
+            </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              Supported only by the Java-based engines (RJ, SDC, TID) at this time.
+            </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

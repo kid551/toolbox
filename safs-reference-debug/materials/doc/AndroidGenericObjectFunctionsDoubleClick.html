@@ -1,0 +1,202 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_DoubleClick'></A>Android GenericObjectFunctions::<BIG>DoubleClick</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A double click on an object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                By default we should click the center of the object.
+                <p>We can also double click on any part of an object based on a stored 
+                x,y coordinate.  The object containing the coordinate is first given 
+                context and then a double click is generated at the coordinate.  Thus, 
+                an item or object can be referenced by name even though it is only 
+                recognized via coordinates.</p>
+<p>
+                The coordinate lookup is done with the component name of the record AND 
+                Field #5.</p>
+<p>
+                Typical Data Table records:</p>
+<p>
+                (1) t MainWindow MainWindow DoubleClick<br>
+                (2) t MainWindow MainWindow DoubleClick AnObject<br>
+                (3) t MainWindow FolderTree DoubleClick Node1</p>
+<p>
+                #2 above will contain an AnObject="3,10" entry in the MainWindow section 
+                of the Application Map to double click at x=3, y=10 in the MainWindow. <b>For SE+</b>, the coordinate 
+                can be percentage format, like "20%,30%". This percentage format indicates 
+                the point (20% width of component, 30% height of component) relative to the object.</p>
+<p>
+                #3 above will contain a FolderTree entry in the MainWindow section with 
+                normal recognition information for it .  FolderTree will also have it's
+                own section in the Application Map in which there will be an entry like 
+                Node1="15,30".  This will tell Robot to locate the FolderTree 
+                object and double click at the coordinates specified by the reference.
+  		        </p><p>
+		        Engines should also attempt to support coordinates separated by alternate separators.  
+		        The most common separators that should be supported would be:
+		        <ul>
+<li>"," (comma) Example: "50,200"</li>
+<li>";" (semi-colon) Example: "50;200"</li>
+<li>" " (space) Example: "50 200"</li>
+</ul>
+</p><p>
+		        Note: the TID supports this command using 
+		        <a href="http://safsdev.sourceforge.net/sqabasic2000/SAFSImageBasedRecognition.htm" target="imagebased" alt="SAFS Image-Based Recognition Doc">Image-Based Testing</a> 
+		        techniques and App Map entries as well as literal text coordinates.
+		        </p>
+<p>For IOS: Any optional coordinates MUST be specified as an integer number between 
+		        0-100.  0 represents the extreme left (or top), while 100 represents the extreme 
+		        right (or bottom). IOS does not use absolute coordinates, but relative coordinates 
+		        representing a percentage of the element width or height.
+		        </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>[ <B>AppMapSubkey</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                (Optional) Name of the AppMap subkey to lookup or the literal text to use for the double click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Without this we should click the center of the object.
+                <p>Name of the AppMap subkey to lookup and use for the double click.
+                We expect the AppMap or literal text to contain the item in the format "x,y":</p>
+<p><pre>
+                [FolderTree]
+                Node1="33,120"      OR
+                Node1="Coords=33,120"
+                </pre></p>
+<p>
+                The results from the lookup are appended to the "Coords=" string 
+                used by the GenericObject DBLClick command in Robot (if necessary).  
+                So any valid content used with the DBLClick command can be 
+                part of this AppMap entry.</p>
+<p>
+                Both Fields #3 and #5 are used to locate the item in the App Map.
+                This routine does not specify an App Map so only the current Map
+                is used and it is expected to be valid.</p>
+<p><b>Important Abbot note.</b> Presently, there is no support for AppMapSubkey
+                specification (5th field).
+				</p><p>
+				Engines should also attempt to support coordinates separated by alternate separators.  
+				The most common separators that should be supported would be:
+				<ul>
+<li>"," (comma) Example: "50,200"</li>
+<li>";" (semi-colon) Example: "50;200"</li>
+<li>" " (space) Example: "50 200"</li>
+</ul>
+</p>
+<p><b>Important TID note.</b> The <a href="http://safsdev.sourceforge.net/sqabasic2000/SAFSImageBasedRecognition.htm" target="imagebased" alt="SAFS Image-Based Recognition Doc">TID IBT implementation</a> supports using literal text in 
+                this parameter instead of an AppMapSubKey.  If the value retrieved from 
+                this field is NOT found to exist in the App Map as a Sub Key then it 
+                will be used as literal text as if it HAD been retrieved from the App Map.
+                </p><p>
+                Any coordinates provided for TID IBT are considered relative to the top-left (0,0) of the 
+                image or item found unless PointRelative and\or Hotspot information in the IBT recognition 
+                string change this initial relative point to be somewhere else.
+                </p>
+<p>For IOS: Any optional coordinates MUST be specified as an integer number between 
+		        0-100.  0 represents the extreme left (or top), while 100 represents the extreme 
+		        right (or bottom). IOS does not use absolute coordinates, but relative coordinates 
+		        representing a percentage of the element width or height.
+		        </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>AutoScroll</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                (Optional) True|False. If the component will be scrolled into view automatically before clicking. The default value is true.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                If the component is out of view, the click action will not succeed. Normally we will scroll the component into view,
+                and then perform the click action. But sometimes, the component is partially shown and click could work and user does not
+                want the component shift, then we could turn off the auto-scroll ability by setting this parameter to false.<br>
+                If this auto-scroll is turned off, user needs to make sure that component is shown by himself.
+              </detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN> : <value xmlns="">For now, this optional parameter is only supported in Selenium2.0 Engine. </value><BR/>
+</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, DOUBLECLICK</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               A double click should be performed on the center of the object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               A double click should be performed on the center of the object.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, DOUBLECLICK, , False</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               A double click should be performed on the center of the object. <b>And the object
+               will not be scrolled into view automatically before clicking.</b></short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN> : <value xmlns="">Auto-scroll will be turned off.</value><BR/>
+</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, DOUBLECLICK, AnObject</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               A double click will be performed at a x,y coordinate indicated by the AnObject reference in
+               the Application Map.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Field  5 : TQ String. A reference identified in the Application Map identifying coordinates
+               on which to double-click
+               This example shows AnObject which will be found in the Application Map as a referenced item
+               in the WINDOW section.    
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AnObject, DOUBLECLICK, ASubObject</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               A double click will be performed at a x,y coordinate indicated by the ASubObject reference in
+               the Application Map.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Field  5 : TQ String. A reference identified in the Application Map identifying coordinates
+               on which to double-click
+               This example shows AnObject as a viable object in the WINDOW but that it also has its own
+               section in the Application Map which contains one or more named references like
+               ASubObject which are used for test.   
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AnObject, DOUBLECLICK, "Coords=10;20"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               A double click will be performed at coordinate 10,20 in the object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Field  5 : TQ String. The item does not exist in the app map so will be 
+               treated as literal text.  Note we allow semi-colon delimited coordinates 
+               to support the case when commas are used as field delimiters and cannot be 
+               used to delimit the X and Y coordinates.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

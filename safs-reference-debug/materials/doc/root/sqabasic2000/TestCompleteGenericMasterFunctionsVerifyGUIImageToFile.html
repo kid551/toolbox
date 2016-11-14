@@ -1,0 +1,225 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_VerifyGUIImageToFile'></A>TestComplete GenericMasterFunctions::<BIG>VerifyGUIImageToFile</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='WFSupport' TITLE='SmartBear Test Complete'>TC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Verify the screen shot of a GUI component with a benchmark image file
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               Verify the screen shot of a GUI component with a benchmark image file.<br>
+               The benchmark file must reside in the &lt;project&gt;\Datapool\Bench folder.
+               Only BMP and JPG files can be used as the benchmark. If the extension
+               of the bench file is not BMP or JPG, it is considered a BMP file.  
+               For RJ and IBT engine, other formats like TIFF (*.tif), GIF (*.gif), 
+               PNG (*.png) and PNM (*.pnm) are also supported.
+               Optionally the user can specify part of the component to verify.<br>
+               The specified GUI component/part must be in the viewing range of its 
+               containing window. If portion of the component is displayed in the 
+               window, only that portion will be captured; if the component falls 
+               completely out of the viewing range of the window, the command will 
+               fail. The command makes no attemp to bring the component into view.
+             <p>
+             NOTE: the command may fail to execute if the user has turned off logging 
+             to TestManager via the Robot tools setting.  You may have to enable TestManager
+             logging for the command to successfully execute.</p>
+<p>
+             The command may produce a WARNING if a diff tool for which we 
+             have no means to verify the results is configured for use.  
+             Consequently, if these warnings are expected, the user can use the 
+             "TW" test record type to avoid issuing these warnings.</p>
+<p>
+	    This command requires that TestManager Image Comparator tool is
+	    installed on the machine. Machines having only the Robot Test Agent
+	    installed will not be able to usee this command.
+             </p>
+<p><B>RobotJ (RJ) and IBT Specific Notes:</B><br>
+               		1)It requires that Java Advanced Imaging (JAI) be installed
+               		on the test machine<BR>
+               		2)It supports to save image in format TIFF (*.tif), GIF (*.gif), PNG (*.png)
+               		and PNM (*.pnm) 
+               </p>
+<p><B>Apple IOS specific Notes:</B><br>
+               UIAutomation captures all screenshots as PNG images, but SAFS copies and stores them 
+               into the image format desired (JPG, BMP, etc.). However, the rootname of the desired 
+               output image name must be unique to avoid UIAutomation generating indexed image names 
+               we will not be looking for.<br>
+               For example, specifying MyImage.JPG and later MyImage.BMP will cause UIAutomation to capture 
+               MyImage.PNG and MyImage1.PNG. When attempting to find MyImage.PNG captured for MyImage.BMP 
+               we will retrieve MyImage.PNG which is NOT the correct image capture for MyImage.BMP.
+               </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>BenchmarkFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Name of the benchmark image file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              Name of the benchmark image file.
+              Relative paths suitable for FindSQAFile can be used. Normally,
+              the Benchmark file would reside in the Project's Datapool\Bench
+              directory. A test file with the same name would be created in
+              the Datapool\Test folder. The resulting dif file with .txt
+              extension would be saved under the Datapool\Dif folder. The
+              extension of the benchmark file should be .bmp or .jpg. If not,
+              it is considered a BMP file, i.e. the test file would have a
+              .bmp extension.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>SubArea</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Optional app map subkey indicating partial image of the component to verify.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              Optional app map subkey indicating partial image of the component to verify.
+              Value of this app map reference must be in the format of a
+              top-left and bottom-right pair, and can be either absolute
+              coordinates or percentages ("x1,y1,x2,y2" or "x1%,y1%,x2%,y2%").
+              Coordinates are relative to the component, i.e. (0,0) and
+              (0%,0%) are the minimum, and (COMPONENT_WIDTH, COMPONENT_HEIGHT)
+              and (100%,100%) are the maximum. Values exceeding the minimun/
+              maximum are forced to the nearest limiting value. Absolute and
+              percent values can be mixed, so "0,0,50%,50%" is valid. If this
+              parameter is omitted, full image of the component is captured
+              (equivalent to "0,0,100%,100%").
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>PercentageTolerance</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The percentage of bits need to be matched.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+	            The percentage of bits need to be matched. it is between 0 and 100.<br>
+	            100 means only all bits of images match, the images will be considered matched.<br>
+	            0 means even no bits matche, the images will be considered matched.<br></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>UUIDFlag</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             "UUID=False" to make Test/Actuals Filenames the same as the Benchmark.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              If "UUID=False" is present, and the Engine defaults to appending Universally Unique IDs to 
+              the filenames stored as runtime Test/Actuals, then this setting will prevent the appending of those 
+              UUIDs to the runtime Test/Actual filename. Essentially, the Test/Actual filename will generally be 
+              given the same filename as the benchmark.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>FilteredAreas</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+              "<b>Filter=</b>one or multiple areas" to filter the GUI image (or sub image of GUI if the parameter "SubArea" is present)
+              and it will also be used to filter the bench image before comparing. If there are some differences, the diff image
+              will be made between these 2 filtered images (not the acutal and bench image).
+             </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              "<b>Filter=</b>one or multiple areas" to filter the GUI image (or sub image of GUI if the parameter "SubArea" is present)
+              and it will also be used to filter the bench image before comparing. If there are some differences, the diff image
+              will be made between these 2 filtered images (not the acutal and bench image).<br>
+              The area is in the same format described for the parameter "SubArea".<br>
+              Multiple areas are separated by a space character, such as "subarea1 subarea2 subarea3"<br>
+              The actual-image and bench-image will be covered by black color at filtered areas.<br>
+              Do NOT forget the prefix "Filter=", without it this parameter will be ignored.
+             </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, VerifyGUIImageToFile, "comp.bmp"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the full component image with BITMAP file "&lt;project&gt;\Datapool\Bench\comp.bmp".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, VerifyGUIImageToFile, "comp.bmp", "", "", "UUID=False"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the full component image with BITMAP file "&lt;project&gt;\Datapool\Bench\comp.bmp".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              If the runtime GUIImage is to be saved to the Test/Actuals directory it should NOT have 
+              a Universally Unique ID appended to the filename.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, VerifyGUIImageToFile, "comp.jpg"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the full component image with JPEG file "&lt;project&gt;\Datapool\Bench\comp.jpg"
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, VerifyGUIImageToFile, "comp.jpg", "", 95</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the full component image with JPEG file "&lt;project&gt;\Datapool\Bench\comp.jpg"<br>
+             If 95% of bits match, then the verification will pass.<br></short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, VerifyGUIImageToFile, "comp.bmp", SUBAREA</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify specified part of the component image with a bench file.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              Verify specified part of the component image with a bench file
+              Depending on the definition of SUBAREA in the app map, the command verifies:<br>
+
+              UNDER [COMPONENT] IN APP MAP    PART OF COMPONENT<br>
+              ----------------------------    ---------------------<br>
+              SUBAREA="0,0,10,10"             top-left 10x10 square<br>
+              SUBAREA="0,80%,100%,100%"       bottom fifth<br></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, VerifyGUIImageToFile, "comp.jpg", "", "", "", "Filter=0;0;10;10 60;60;10;15"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Filter specified parts of the component image and of a bench file, and verify 2-filtered images.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Get the full component image, and draw "10x10 black square" at "top-left" and "10x15 black rectangle" at "60,60"
+             to make a filtered image, then get the image of JPEG file "&lt;project&gt;\Datapool\Bench\comp.jpg"
+             and filter it the same way, finally compare these 2 filtered images.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, VerifyGUIImageToFile, "comp.jpg", "", "", "", "FilterMapKey"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Filter specified parts of the component image and of a bench file, and verify 2-filtered images.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+             Get the full component image, and draw "10x10 black square" at "top-left" and "10x15 black rectangle" at "60,60"
+             to make a filtered image, then get the image of JPEG file "&lt;project&gt;\Datapool\Bench\comp.jpg"
+             and filter it the same way, finally compare these 2 filtered images.<br>
+              ----------------------------       Map            ---------------------<br>
+              [COMPONENT]<br>
+              FilterMapKey="Filter=0,0,10,10 60,60,10,15"<br></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

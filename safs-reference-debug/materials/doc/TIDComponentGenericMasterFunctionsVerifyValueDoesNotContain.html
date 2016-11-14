@@ -1,0 +1,98 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_VerifyValueDoesNotContain'></A>TIDComponent GenericMasterFunctions::<BIG>VerifyValueDoesNotContain</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify that a string value does NOT contain a substring
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>Value</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The case-sensitive string value to verify.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  If this string is blank, the compare value should NOT be blank.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>SearchString</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             The case-sensitive value we do NOT want to find in the provided Value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                  If the SearchString is blank, success if Value is NOT blank.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>SuppressValue</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Set to "SUPPRESSVALUE" to prevent the logging of ugly multi-line values.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               The case-insensitive value "SUPPRESSVALUE" instructs the implementation to NOT 
+               log the Value when logging.  This is generally 
+               useful with Values that are exceedingly long, or contain large volumes 
+               of text that will break-up the format or readability of the output log.
+              </detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN> : <SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN> : <value xmlns="">First implemented in May 2014 for TCAFS and might not be supported in all engines yet.</value><BR/>
+</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, Anything, AtAll, VerifyValueDoesNotContain, "someString", "another"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the "someString" Value does NOT contain the substring "another".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, Anything, AtAll, VerifyValueDoesNotContain, ^myVariable, "substr"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the variable ^myVariable does NOT contain the substring "substr".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, Anything, AtAll, VerifyValueDoesNotContain, "someString", ^myVariable</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the string "someString" does NOT contain the substring contained in variable ^myVariable.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, Anything, AtAll, VerifyValueDoesNotContain, "someString", ^myVariable, "SuppressValue"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+             Verify the string "someString" does NOT contain the substring contained in variable ^myVariable.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">The SUPPRESSed Value argument will not be output into any logged messages.</detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

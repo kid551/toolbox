@@ -1,0 +1,67 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_GetStringData'></A>EngineComponentCommands::<BIG>GetStringData</BIG>
+</H3>   <TABLE><TR>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the values, text, or data associated with the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                This is returned as a String containing a delimited list of values forming a 
+                2D array or table of values.  The first character in the string specifies the 
+                delimiter used to separate values.  The first value between delimiters specifies 
+                the number of rows of data.  The second value between delimiters specifies the number of 
+                columns of data.  This is immediately followed by all the values separated by delimiters.
+                <p>
+                Example return string showing a single value (1 row and 1 column): ",1,1,MyValue"
+                </p><p>
+                Missing values are represented simply by two delimiters back-to-back with no value 
+                between them.
+                </p><p>
+                Example return string of 3 rows with 2 columns with missing values in the last two rows:
+                </p><p>
+                ",3,2,a,b,,d,e,"
+                </p><p>
+                Whitespace in a value is retained.  Everything between delimiters is treated as 
+                part of the value.
+                </p><p>
+                If there is no retrievable text or data the engine should return 
+                "<a href="http://safsdev.sourceforge.net/doc/constant-values.html#org.safs.tools.drivers.DriverConstant.SAFS_NULL" target="_blank">&lt;SAFS_NULL&gt;</a>".
+                </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows, getMatchingChildObjects, getChildren, 
+                        or one of the other engine commands that return such references.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">E, GetStringData, TheComponentReference</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the value, text, or data associated with TheComponentReference.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns the data as a delimited list of values or "&lt;SAFS_NULL&gt;" if 
+                        no data is available or supported by the component.
+                    </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

@@ -1,0 +1,108 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_CopyMatchingFiles'></A>TestComplete DDDriverFileCommands::<BIG>CopyMatchingFiles</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+            		Copy multiple files/sub-directories, based on matching the provided pattern, from one directory to another.
+            	</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><b>Note: This is a very powerful DriverCommand, please use with caution!</b></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>FromDirectoryName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                  			The directory name where the files are located.
+                		</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+					The directory name where the files are located. The directory can be a fully-qualified 
+					path or a path that is relative to the SAFS Automation Project Directory.
+                		</detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>ToDirectoryName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+		                	The directory name where the files are copied.
+		                </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+					The directory name where the files are copied. The directory can be a fully-qualified 
+					path or a path that is relative to the SAFS Automation Project Directory. This 
+					directory must already exist prior to execution.
+                		</detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>Pattern</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+					The pattern used to distinguish the files/sub-directories to be copied.
+				</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>FilterMode</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+		                 	The filter mode used for matching the files/sub-directories to be copied.  
+		                 	Default is WILDCARD.
+		              	</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+		                 	Supported filter modes include:<br><table border="1" cellspacing="2">
+<tr bgcolor="#C0C0C0" align="center">
+<td>FilterMode</td>
+<td>Comments</td>
+</tr>
+<tr>
+<td align="center">WILDCARD</td>
+<td>Default.  Includes support for * and ? wildcard characters</td>
+</tr>
+<tr>
+<td align="center">REGEXP</td>
+<td>Includes support for Regular Expression pattern matching</td>
+</tr>
+</table></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">
+                		C, CopyMatchingFiles, "C:\Test", "C\Test2", "file?.*"
+              		</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                  			Copy all of the files and sub-directories that match the file?.* pattern.  By default, the
+                  			WILDCARD FilterMode is used.  As a result, all files/subdirectories in C:\Test that begin
+                  			with "file" followed by exactly one character before a "." followed by zero or more 
+                  			characters are copied to C:\Test2.
+                		</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">
+			      	C, CopyMatchingFiles, "Datapool\Test\MyTestOutput", "C:\MyTestOutput", "file.*\.java", REGEXP
+			</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+			             	Copy all of the files and sub-directories that match the file.*\.java pattern.  Since the 
+			             	REGEXP FilterMode is used, all files/subdirectories in 
+			             	&lt;SAFS_Automation_Project_Dir&gt;\Datapool\Test\MyTestOutput that begin with "file" 
+			             	followed by zero or more characters before a "." followed by "java" are copied to 
+			             	C:\MyTestOutput.
+			       	</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

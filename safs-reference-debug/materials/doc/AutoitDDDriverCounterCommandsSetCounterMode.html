@@ -1,0 +1,88 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_SetCounterMode'></A>Autoit DDDriverCounterCommands::<BIG>SetCounterMode</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Create a new private counter or modify the mode of an existing private counter.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>If counterID is not already an active private counter, then 
+                 this routine will create a new private counter with the provided 
+                 counterID and counting mode.</p>
+<p>If counterID identifies an existing counter, then this routine 
+                 will modify the counting mode of the existing counter.</p>
+<p>See <a href="ApplicationUtilities.htm#ausetstatuscountermode" target="_blank">AUSetStatusCounterMode</a> for more information on private counters.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>
+<B>counterID</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The unique name used to identify this private counter.  
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 These unique names are case-insensitive.  
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>mode</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The counting mode to use for the specified counter.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 Currently supported modes are:
+                 <ul>
+<li>"AllStatusInfo" or "1"</li>
+<li>"StepTestsOnly" or "2"</li>
+</ul>
+                 Consult <a href="ApplicationUtilities.htm#ausetstatuscountermode" target="_blank">AUSetStatusCounterMode</a> 
+                 for more information on private counters.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">C, SetCounterMode, "TestCase 124", "StepTestsOnly"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Create a new counter with the mode or modify the mode of an 
+                 existing counter.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The "TestCase 124" counter will be created and/or modified to 
+                 use the "StepTestsOnly" counting mode.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">C, SetCounterMode, "TestCase 124", "2"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Create a new counter with the mode or modify the mode of an 
+                 existing counter.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The "TestCase 124" counter will be created and/or modified to 
+                 use the "StepTestsOnly" counting mode.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

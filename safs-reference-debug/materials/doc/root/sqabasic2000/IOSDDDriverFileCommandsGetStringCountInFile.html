@@ -1,0 +1,129 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_GetStringCountInFile'></A>IOS DDDriverFileCommands::<BIG>GetStringCountInFile</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                  Count the number of occurrences of a target string in a File.
+               </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                  This command opens and reads a file line by line, then sets a specified DDVariable to the number of times the target string is found in the file. 
+                  String comparisons are case-sensitive by default. The file is assumed to be in the system default encoding unless specified otherwise.
+               </detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>File</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                  The File to be searched.
+               </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               	  This can be a full filepath, a relative path, or a simple filename. A relative path is appended to 
+               	  the Project's path to deduce the full filename. For a simple filename, the filename is appended to the Project's Datapool\Test 
+               	  directory path to deduce the full filename. An error will be logged if the file does not exist, or cannot be read.
+               </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>String</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                  The string to match and count in the file.
+               </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>[ <B>VarName</B> = GetStringCountInFile ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                  The name of the variable to receive the count.
+               </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               	  Optional. This command should automatically clear the variable value to "0" before counting. If no variable name is provided, then 
+               	  a default variable name of 'GetStringCountInFile' will be used.
+               </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>CaseSensitive</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                  Set to 'CaseInsensitive' so comparisons are NOT case-sensitive.  
+               </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               	  Optional. Comparisons are case-sensitive by default.
+               </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>Encoding</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                  Charset encoding string like "UTF-8", etc...
+               </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+               	  Optional. If not specified the default system encoding is assumed.
+               </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">C, GetStringCountInFile, "\tidtest.ini", "SAFS_TEST"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+            	Count the number of times "SAFS_TEST" is found and store in variable "GetStringCountInFile".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              	Open project-relative file at "[project]\tidtest.ini", count the number of times "SAFS_TEST" appears in that file, 
+              	and store the result in the default variable "GetStringCountInFile".  The text comparisons are case-sensitive.  The text in the file 
+              	is assumed to be in the system default encoding when it is read.  
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, GetStringCountInFile, "somefile.txt", "sample text", MyCounter</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+            	Count the number of times "sample text" is found and store in variable "MyCounter".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              	Open project-relative file at "[project]\Datapool\Test\somefile.txt", count the number of times "sample text" appears in that file, 
+              	and store the result in the default variable "MyCounter". The text comparisons are case-sensitive.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, GetStringCountInFile, "somefile.txt", "SamPLe TexT", MyCounter, "CaseInsensitive"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+            	Count the number of times "SamPLe TexT" is found and store in variable "MyCounter".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              	Open project-relative file at "[project]\Datapool\Test\somefile.txt", count the number of times "SamPLe TexT" appears in that file, 
+              	and store the result in the default variable "MyCounter". The text comparisons are NOT case-sensitive.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">C, GetStringCountInFile, "somefile.txt", "SamPLe TexT", MyCounter, "CaseInsensitive", "UTF-8"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+            	Count the number of times "SamPLe TexT" is found and store in variable "MyCounter".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+              	Open project-relative file at "[project]\Datapool\Test\somefile.txt", count the number of times "SamPLe TexT" appears in that file, 
+              	and store the result in the default variable "MyCounter". The text comparisons are NOT case-sensitive.  The text in the file 
+              	is assumed to be UTF-8 encoded when it is read.              	
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

@@ -1,0 +1,134 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_SelectMenuItem'></A>RobotJ JavaMenuFunctions::<BIG>SelectMenuItem</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Action to select a menuItem according to its text value.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 In RRAFS, this command will work on both JavaMenu items and JavaPopupMenu items.<br></detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN> : <value xmlns="">
+              		When Field5 is provided, the routine first verifies that the specified menuitem exists 
+              		and exits with error if it does not. If it does exist then the select found menuitem.
+				</value><BR/>
+</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>[ <B>TextValue</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Case-sensitive text of menuItem to select OR an App Map reference.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 TextValue is the case-sensitive text of the menuitem to select.
+                 Parent-Child relationships are separated by "-&gt;".<br>
+                 Alternatively, the TextValue can be an App Map reference item 
+                 used in conjunction with the Component Name (field #3) that 
+                 allows us to store explicit menu item text in the App Map.
+              </detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN> : <value xmlns="">The textvalue can use wildcast or regex.</value><BR/>
+</DIV>
+		  </LI>
+<LI>[ <B>indexPath</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 The index for item of each level. It is 1-based.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                 The index for item of each level. It is 1-based.
+                 If there are several menuitem in the same level with same text, this
+                 parameter can be used to indicate which one is wanted.
+                 Parent-Child relationships are separated by "-&gt;".<br>
+                 Alternatively, the indexPath can be an App Map reference item 
+                 used in conjunction with the Component Name (field #3) that 
+                 allows us to store explicit indexes in the App Map. 
+              </detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN> : <value xmlns="">This parameter is supported.</value><BR/>
+</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, FileMenu, SelectMenuItem</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the FileMenu menuitem as defined in the AppMap.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                This mode is less desirable as it may not work with compatible engines 
+                made with tools other than Rational Robot.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, FileMenu, SelectMenuItem, "Exit"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the "Exit" menuItem from the FileMenu as defined in the AppMap.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                This mode is less desirable as it may not work with compatible engines 
+                made with tools other than Rational Robot.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AJmenu, SelectMenuItem, "File"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the "File" menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AJMenu, SelectMenuItem, "File-&gt;Exit"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the "Exit" menuitem found in the "File" menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AJmenu, SelectMenuItem, "FileOpen"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the menuItem defined in a "FileOpen" subkey of [AJMenu] 
+                from within the App Map.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AJMenu, SelectMenuItem, "File-&gt;Exit", "1-&gt;2"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action selects the 2th "Exit" menuitem found in the 1th "File" menu of menubar.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AJMenu, SelectMenuItem, "Fil*-&gt;[eE]xit"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                This action selects the "Exit" menuitem found in the "File" menu of menubar.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='SmartBear Test Complete'>TC</SPAN><SPAN CLASS='domainMarker' TITLE='FLEX Domain'>FLX</SPAN> : <value xmlns="">"File" is given as a willcast string "Fil*", "Exit" is given as a regex string "[eE]xit".</value><BR/>
+</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

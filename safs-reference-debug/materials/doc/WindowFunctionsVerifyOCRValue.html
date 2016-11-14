@@ -1,0 +1,153 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_VerifyOCRValue'></A>WindowFunctions::<BIG>VerifyOCRValue</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational Robot Classic'>RC</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Mercury Interactive WinRunner'>WR</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Performs an UNLOGGED WindowVP CompareImage OR a RegionImageVP on an 
+                 object then attempts to retrieve and compare OCR text to the expected 
+                 value provided.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Performs an UNLOGGED WindowVP CompareImage OR a RegionImageVP on an 
+                object then attempts to retrieve and compare OCR text to the expected 
+                value provided.  
+                The benchmark VP must already exist and be an asset of the currently 
+                running script.</p>
+<p>
+                A RegionImageVP can be accomplished by having the name of the VP as an item 
+                under the component in the application map.  The item's value must be 
+                the coordinate values required by the RegionImageVP 
+                (i.e. "Coords=65,100,200,250").</p>
+<p>
+                EXAMPLE 1 : Perform a WindowVP CompareImage before OCR Test</p>
+<p>
+                t, MainWindow, SomeWindowObject, VerifyOCRValue, StoredVP, 1, "Expected Text"</p>
+<p>
+                (no StoredVP item found in the app map under SomeWindowObject)</p>
+<p>
+                The named VP (StoredVP) must not exist in the application map if you 
+                intend to compare the entire window.  The entire panel/object of 
+                SomeWindowObject will be captured and compared against the StoredVP 
+                baseline.  This VP must already exist as an asset of the
+                currently running script.</p>
+<p>
+                EXAMPLE 2 : Perform a RegionImageVP before the OCR test</p>
+<p>
+                t, MainWindow, SomeWindowObject, VerifyOCRValue, StoredVP, DataField, "Expected Text"</p>
+<p>
+                StoredVP found in Application Map like below:</p>
+<p>
+                [SomeWindowObject]
+                SomeWindowObject="Type=Something...."
+                StoredVP="Coords=65,100,200,250"        --- invokes a RegionImageVP
+                ....</p>
+<p>
+                When the named VP (StoredVP) is found to exist in the application map as a
+                subitem in the SomeWindowObject section of the map then a RegionImageVP 
+                will be invoked using the value of the StoredVP item as the coordinates 
+                for the region to capture.</p>
+<p>
+                StoredVP is ALSO the name of the VP which must already exist as an asset 
+                of the currently running script.</p>
+<p>
+                Once the unlogged VP has been completed, we attempt to retrieve the text
+                of a predefined OCR region mask that should exist in the VP.  </p>
+<p>
+                We can use the OCRRegion value provided from the inputrecord to identify 
+                the OCR mask number as needed by the SQAGetOcrRegionText function in Robot.  
+                Example 1 above shows we are looking for OCR region #1.</p>
+<p>
+                The OCRRegion value in the inputrecord can also be a reference in the 
+                Application Map in a section with the same name as the VP as shown below.</p>
+<p>
+                [SomeWindowObject]
+                SomeWindowObject="Type=Something...."
+                StoredVP="Coords=65,100,200,250"
+                ....</p>
+<p>
+                [StoredVP]
+                DataField=1
+                AnotherField=2
+                ....</p>
+<p>
+                Example 2 above shows that we have given region #1 a name of DataField.</p>
+<p>          
+                Once retrieved, the OCR text (if any) is compared against the expected 
+                results provided.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>VPAsset</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               VPTextValue is the name of the pre-existing VP asset stored in the currently running script.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                TextValue is the name of the pre-existing VP asset stored in the currently running script.
+                If the name also exists in the app map under the component then 
+                a RegionImageVP will be invoked instead of a CompareImageVP.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>OCRIntegerValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                IntegerValue is the numeric OCR region mask to get the text from.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                IntegerValue is the numeric OCR region mask to get the text from.  These values are defined
+                in the VP itself and can be viewed in Robot's ImageComparator/Editor.
+                A number can be used directly or a named reference can be used if
+                it is found to exist in the Application Map in a section with the 
+                same name as the VP.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>
+<B>ExpectedTextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Text baseline to compare against the retrieved OCR text.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, LoginWindow, SomeWindowObject, VERIFYOCRVALUE, "AStoredVP", 1, "&lt;Expected Value&gt;"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                This action performs a WindowVP CompareImage OR a RegionImageVP on the
+                window object then attempts to retrieve and compare OCR text to the expected 
+                value provided.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>The name of a stored VP which must exist as an asset of the currently running script.  
+                Normally, a straight Robot CompareImage of the entire Window would be performed.
+                However, if the AStoredVP value given exists in the Application Map as a reference 
+                under the provided Window object then a RegionImage test will be attempted instead.</p>
+<p>The Numeric OCR region Number of the particular OCR text you are trying to compare. 
+                Valid values can be found when viewing the CompareImage or RegionImageVP baseline.
+                A number can be used directly or a named reference can be used if it is found to exist
+                in the Application Map in a Section with the same name as the VP.</p>
+<p>The expected value of the text we wish to compare against the retrieved OCR text.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

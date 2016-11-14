@@ -1,0 +1,720 @@
+<HTML xmlns="http://www.w3.org/TR/REC-html40"><HEAD>
+<TITLE>RobotJ WindowFunctions</TITLE>
+<LINK rel="stylesheet" href="rrafs.css" type="text/css"/>
+</HEAD><BODY><DIV NAME="top" ID="top">
+		  <H3>RobotJ WindowFunctions</H3>
+		  <SMALL>Last Updated:<script language="JavaScript">document.write(document.lastModified)</script></SMALL>
+<BR/>
+<BR/>
+<DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+              Actions for working with Window objects
+           </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</DIV>
+<BR/>
+		<DIV NAME="list" ID="list">
+		  <A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<TABLE cellspacing="3" border="1" cellpadding="2">
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_CloseWindow' HREF='#detail_CloseWindow' >CloseWindow</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Sends a Close command to the active window.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_Maximize' HREF='#detail_Maximize' >Maximize</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Sends a WMaximize command to the active window.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_Minimize' HREF='#detail_Minimize' >Minimize</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Sends a WMinimize command to the active window.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_Restore' HREF='#detail_Restore' >Restore</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Sends a RestorePos command to the active window.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectMenuItem' HREF='#detail_SelectMenuItem' >SelectMenuItem</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Attempts to select a particular text string menuitem.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SelectMenuItemContains' HREF='#detail_SelectMenuItemContains' >SelectMenuItemContains</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Attempts to select a menuitem based on a partial text match.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_SetPosition' HREF='#detail_SetPosition' >SetPosition</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+                Sends a SetPosition command to the window to set the position, size, and status of the window.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyMenuItem' HREF='#detail_VerifyMenuItem' >VerifyMenuItem</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+               Attempts to verify the state information of a particular text string menuitem.
+              </TD>
+</TR>
+<TR>
+<TD nowrap="true" width="27%"><A NAME='list_VerifyMenuItemContains' HREF='#detail_VerifyMenuItemContains' >VerifyMenuItemContains</A></TD><TD width="12%" align="CENTER">
+<TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</TD>
+		  <TD> 
+               Attempts to verify the state information of a menuitem found by partial text match.
+              </TD>
+</TR>
+</TABLE>
+<HR/>
+</DIV>
+		<DIV NAME="detail" ID="detail">
+		  <H3><A NAME='detail_CloseWindow'></A>RobotJ WindowFunctions::<BIG>CloseWindow</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Sends a Close command to the active window.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><note><engines><engine vendor="Rational" tool="Robot" name="Robot" since="20030827" expectFailSupport="NO" expectWarnSupport="NO"><domains><domain name="WIN" expectFailSupport="NO" expectWarnSupport="NO"></domain></domains></engine></engines><value><p>This Window command has a problem in that it does not want to
+                use the same recognition methods used by the other Window commands (like
+                SetContext).  Particularly, it does not accept the Type=Window portion
+                of these recognition methods.  In addition, if the window is a child
+                window of a parent then it expects the ";ChildWindow" add-on in the 
+                recognition method.  The child may also need the parent as part of its
+                full recognition string like:</p>
+<p>
+                ChildWindow=Type=Window;&lt;parent rec&gt;;\;Caption=&lt;caption&gt;;ChildWindow</p>
+<p>
+                To handle these child windows, we parse the typical recognition method for 
+                our window and attempt to handle these issues.  Once SetContext has 
+                successfully set our window, we then remove any "Type=Window" substring 
+                if present and add the ";ChildWindow" substring if not present.</p>
+<p>
+                To take advantage of this, this routine must be called with the child
+                window as a component of the parent window like below:</p>
+<p>
+                t, ParentWindow, ChildWindow, CloseWindow</p>
+<p>
+                If the routine is called like either of the examples below then default
+                processing will occur.  This will merely SetContext on the provided 
+                Window and use "CurrentWindow" as the parameter to the command.</p>
+<p>
+                t, ParentWindow, ParentWindow, CloseWindow<br>
+                t, ChildWindow , ChildWindow , CloseWindow  (normally won't work)</p></value></note><note><engines><engine vendor="OpenQA" tool="Selenium" name="Selenium2.0" since="20140506" expectFailSupport="NO" expectWarnSupport="NO"><domains><domain name="HTML" expectFailSupport="NO" expectWarnSupport="NO"></domain></domains></engine></engines><value>Closes the "current" or "lastUsed" WebDriver associated with the found Window component.</value></note></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, CLOSEWINDOW</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Sends a CloseWindow command to the specified Window
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Sends a CloseWindow command to the specified Window
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_Maximize'></A>RobotJ WindowFunctions::<BIG>Maximize</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Sends a WMaximize command to the active window.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Sends a WMaximize command to the active window.</p>
+<p>
+                This Window command has a problem in that it does not want to
+                use the same recognition methods used by the other Window commands (like
+                SetContext).  Particularly, it does not accept the Type=Window portion
+                of these recognition methods.  In addition, if the window is a child
+                window of a parent then it expects the ";ChildWindow" add-on in the 
+                recognition method.  The child may also need the parent as part of its
+                full recognition string like:</p>
+<p>
+                ChildWindow=Type=Window;&lt;parent rec&gt;;\;Caption=&lt;caption&gt;;ChildWindow</p>
+<p> 
+                To handle these child windows, we parse the typical recognition method for 
+                our window and attempt to handle these issues.  Once SetContext has 
+                successfully set our window, we then remove any "Type=Window" substring 
+                if present and add the ";ChildWindow" substring if not present.</p>
+<p>
+                To take advantage of this, this routine must be called with the child
+                window as a component of the parent window like below:</p>
+<p>
+                t, ParentWindow, ChildWindow, Maximize</p>
+<p>
+                If the routine is called like either of the examples below then default
+                processing will occur.  This will merely SetContext on the provided 
+                Window and use "CurrentWindow" as the parameter to the command.</p>
+<p>
+                t, ParentWindow, ParentWindow, Maximize<br>
+                t, ChildWindow , ChildWindow , Maximize   (normally won't work)</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, MAXIMIZE</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Sends a Maximize command to the specified Window.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Sends a Maximize command to the specified Window.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_Minimize'></A>RobotJ WindowFunctions::<BIG>Minimize</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Sends a WMinimize command to the active window.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Sends a WMinimize command to the active window.</p>
+<p>
+                This Window command has a problem in that it does not want to
+                use the same recognition methods used by the other Window commands (like
+                SetContext).  Particularly, it does not accept the Type=Window portion
+                of these recognition methods.  In addition, if the window is a child
+                window of a parent then it expects the ";ChildWindow" add-on in the 
+                recognition method.  The child may also need the parent as part of its
+                full recognition string like:</p>
+<p>
+                ChildWindow=Type=Window;&lt;parent rec&gt;;\;Caption=&lt;caption&gt;;ChildWindow</p>
+<p>
+                To handle these child windows, we parse the typical recognition method for 
+                our window and attempt to handle these issues.  Once SetContext has 
+                successfully set our window, we then remove any "Type=Window" substring 
+                if present and add the ";ChildWindow" substring if not present.</p>
+<p>
+                To take advantage of this, this routine must be called with the child
+                window as a component of the parent window like below:</p>
+<p>
+                t, ParentWindow, ChildWindow, Minimize</p>
+<p>
+                If the routine is called like either of the examples below then default
+                processing will occur.  This will merely SetContext on the provided 
+                Window and use "CurrentWindow" as the parameter to the command.</p>
+<p>
+                t, ParentWindow, ParentWindow, Minimize<br>
+                t, ChildWindow , ChildWindow , Minimize   (normally won't work)</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, MINIMIZE</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Sends a Minimize command to the specified Window.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Sends a Minimize command to the specified Window.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_Restore'></A>RobotJ WindowFunctions::<BIG>Restore</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Sends a RestorePos command to the active window.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Sends a RestorePos command to the active window.</p>
+<p>
+                This Window command has a problem in that it does not want to
+                use the same recognition methods used by the other Window commands (like
+                SetContext).  Particularly, it does not accept the Type=Window portion
+                of these recognition methods.  In addition, if the window is a child
+                window of a parent then it expects the ";ChildWindow" add-on in the 
+                recognition method.  The child may also need the parent as part of its
+                full recognition string like:</p>
+<p>
+                ChildWindow=Type=Window;&lt;parent rec&gt;;\;Caption=&lt;caption&gt;;ChildWindow</p>
+<p>
+                To handle these child windows, we parse the typical recognition method for 
+                our window and attempt to handle these issues.  Once SetContext has 
+                successfully set our window, we then remove any "Type=Window" substring 
+                if present and add the ";ChildWindow" substring if not present.</p>
+<p>
+                To take advantage of this, this routine must be called with the child
+                window as a component of the parent window like below:</p>
+<p>
+                t, ParentWindow, ChildWindow, Restore</p>
+<p>
+                If the routine is called like either of the examples below then default
+                processing will occur.  This will merely SetContext on the provided 
+                Window and use "CurrentWindow" as the parameter to the command.</p>
+<p>
+                t, ParentWindow, ParentWindow, Restore<br>
+                t, ChildWindow , ChildWindow , Restore      (normally won't work)</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, RESTORE</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Sends a Restore command to the specified Window.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Sends a Restore command to the specified Window.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SelectMenuItem'></A>RobotJ WindowFunctions::<BIG>SelectMenuItem</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Attempts to select a particular text string menuitem.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Attempts to select a particular text string menuitem.  The menuitem 
+                should be specified in the form "Menu-&gt;Menu-&gt;MenuItem   CTRL+V" 
+                with the full text, spaces(if any), and keyboard shortcut text (if
+                any).</p>
+<p>
+                Ampersands preceding underlined characters are optional.
+                The routine first verifies that the specified menuitem exists
+                and exits with error if it does not.
+                If it does exist then the selection proceeds using the MenuID retrieved
+                from the found menuitem.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Menu-&gt;MenuItem hierarchy string to identify which menuitem to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Menu-&gt;MenuItem hierarchy string to identify which menuitem to select.
+                NOTE:RC (Robot) can only handle submenus up to 5 levels deep.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, SELECTMENUITEM, "&amp;File-&gt;&amp;Save  Ctrl+S"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               This actions selects the Save menuitem under the File menu pulldown.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Field  5 : TQ String. the full case-sensitive menu item path to select.  
+                Ampersands (&amp;) indicating/preceding underlined characters are optional.
+                The text must include the full text including spaces and any visible shortcut
+                key combinations displayed in the text of the menu item.  The menu does not
+                have to be open to issue the command.  Just issue the command from a normal state.
+                This command only works if the Window implements standard menus.  Use InputKeys
+                or Window Click commands to use non-standard menus or to navigate individual menu panels. 
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, PopupMenu, PopupMenu, SELECTMENUITEM, "Exit"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               This actions selects the Exit menuitem from an exposed File popup menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Field  5 : TQ String. the full case-sensitive menu item path to select.  
+                Ampersands (&amp;) indicating/preceding underlined characters are optional.
+                The text must include the full text including spaces and any visible shortcut
+                key combinations displayed in the text of the menu item.  For a popup menu, the 
+                menu does have to be exposed to be found.  This command only works if the Window 
+                implements standard menus.  Use InputKeys
+                or Window Click commands to use non-standard menus or to navigate individual menu panels. 
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SelectMenuItemContains'></A>RobotJ WindowFunctions::<BIG>SelectMenuItemContains</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Attempts to select a menuitem based on a partial text match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Attempts to select a menuitem based on a partial text match.  
+                The menuitem should be specified in the form "Menu-&gt;Menu-&gt;MenuItem".
+                Each level in the hierarchy can be represented by partial text.</p>
+<p>
+                Ampersands preceding underlined characters are optional.
+                The routine first verifies that the specified menuitem exists
+                and exits with error if it does not.
+                If it does exist then the selection proceeds using the MenuID retrieved
+                from the found menuitem.</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Menu-&gt;MenuItem hierarchy string to identify which menuitem to select.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Menu-&gt;MenuItem hierarchy string to identify which menuitem to select.
+                NOTE:RC (Robot) can only handle submenus up to 5 levels deep.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, SELECTMENUITEMCONTAINS, "&amp;File-&gt;&amp;Save"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               This actions selects the Save menuitem under the File menu pulldown.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Field  5 : TQ String. the case-sensitive menu item path to select.  
+                Ampersands (&amp;) indicating/preceding underlined characters are optional.
+                The menu does not have to be open to issue the command.  Just issue the command 
+                from a normal state.
+                This command only works if the Window implements standard menus.  Use InputKeys
+                or Window Click commands to use non-standard menus or to navigate individual menu panels. 
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">T, PopupMenu, PopupMenu, SELECTMENUITEMCONTAINS, "x"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               This actions selects the Exit menuitem from an exposed File popup menu.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Field  5 : TQ String. the case-sensitive menu item path to select.  
+                Ampersands (&amp;) indicating/preceding underlined characters are optional.
+                For a popup menu the menu does have to be exposed to be able to select its menuitems.  
+                This command only works if the Window implements standard menus.  Use InputKeys
+                or Window Click commands to use non-standard menus or to navigate individual menu panels. 
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_SetPosition'></A>RobotJ WindowFunctions::<BIG>SetPosition</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Sends a SetPosition command to the window to set the position, size, and status of the window.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Sends a SetPosition command to the window to set the position, size, 
+                and status of the window.  The position, size, and status information 
+                is stored in the app map as a subitem in the section for the window.
+                The information should be in the format of:</p>
+<p>
+                "0,0,640,480;Status=NORMAL"    OR
+                "Coords=0,0,640,480;Status=NORMAL"</p>
+<p>
+                That example positions the window at 0,0; sizes it to 640 x 480, and
+                sets it's status to NORMAL.  Valid values for STATUS are:</p>
+<p>
+                NORMAL, MINIMIZED, and MAXIMIZED</p>
+<p>
+                The Window SetPosition command has a problem in that it does not want to
+                use the same recognition methods used by the other Window commands (like
+                SetContext).  Particularly, it does not accept the Type=Window portion
+                of these recognition methods.  In addition, if the window is a child
+                window of a parent then it expects the ";ChildWindow" add-on in the 
+                recognition method.  The child may also need the parent as part of its
+                full recognition string like:</p>
+<p>
+                ChildWindow=Type=Window;&lt;parent rec&gt;;\;Caption=&lt;caption&gt;;ChildWindow</p>
+<p>
+                To handle these child windows, we parse the typical recognition method for 
+                our window and attempt to handle these issues.  Once SetContext has 
+                successfully set our window, we then remove any "Type=Window" substring 
+                if present and add the ";ChildWindow" substring if not present.</p>
+<p>
+                To take advantage of this, this routine must be called with the child
+                window as a component of the parent window like below:</p>
+<p>
+                t, ParentWindow, ChildWindow, SetPosition, ChildPositionReference</p>
+<p>
+                If the routine is called like either of the examples below then default
+                processing will occur.  This will merely SetContext on the provided 
+                Window and use "CurrentWindow" as the parameter to SetPosition.</p>
+<p>
+                t, ParentWindow, ParentWindow, SetPosition, ParentPosition<br>
+                t, ChildWindow , ChildWindow , SetPosition, ChildPosition   (normally won't work)</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>PresetReference</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                String specifying a preset reference in the Application for the position, size, and state of the Window.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                String specifying a preset reference in the Application for the position, size, and state of the Window.
+                command.
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, SETPOSITION, Preset1</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Preset1 specifies a preset reference in the Application for the position, size, and state of the Window.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Field  5 : TQ String specifying a preset reference in the Application for the position,
+                size, and state of the Window.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_VerifyMenuItem'></A>RobotJ WindowFunctions::<BIG>VerifyMenuItem</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Attempts to verify the state information of a particular text string menuitem.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Attempts to verify the state information of a particular text string 
+                menuitem.  The menuitem should be specified in the form 
+                "Menu-&gt;Menu-&gt;MenuItem   CTRL+V" with the full text (ampersands optional), 
+                spaces(if any), and keyboard shortcut text (if any).  
+                (The ampersands precede any character in the menuitem that is underlined.)
+                <p>
+                Note 1: This command differs from JavaMenuFunctions.VerifyMenuItemContains as this 
+                command seeks a Window object that contains a Window's menu.
+                </p>
+<p>
+                Note 2: For RobotJ engine, this command only supports JavaSwing. It may support other clients in the future.
+              	</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>MenuItemText</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Menu-&gt;MenuItem hierarchy string to identify which menuitem to test.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Menu-&gt;MenuItem hierarchy string to identify which menuitem to test.
+                This menu hierarchy IS case-sensitive
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>ExpectedStatus</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Expected status string (or part thereof) to verify. 
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Expected status string (or part thereof) to verify.  
+                Ex: "Enabled Checked"         OR  "Disabled Grayed"    etc.
+                Each item separated by a space will be evaluated separately so 
+                the order of the status items does not matter.  
+                These status items ARE case-sensitive. 
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, VERIFYMENUITEM, "File","Enabled Menu With 7 MenuItems"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               This action verifies that "File" is enabled and contains 7 menuitems.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Field  5 : TQ String. the full case-sensitive menu item path to select.  
+               Ampersands (&amp;) indicating/preceding underlined characters are optional.  
+               The text must include the full text including spaces and any visible shortcut key 
+               combinations displayed in the text of the menu item. </p>
+<p>Field  6 : QS String.  The case-sensitive, space-delimited, double-quote enclosed
+               status information needing verification.  Only the state information of interest
+               needs to be specified.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+<H3><A NAME='detail_VerifyMenuItemContains'></A>RobotJ WindowFunctions::<BIG>VerifyMenuItemContains</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               Attempts to verify the state information of a menuitem found by partial text match.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+                Attempts to verify the state information of a menuitem found by partial text match.
+                The menuitem should be specified in the form "Menu-&gt;Menu-&gt;MenuItem".  
+                (Optional ampersands precede any character in the menuitem that is underlined.)
+                <p>
+                Note 1: This command differs from JavaMenuFunctions.VerifyMenuItemContains as this 
+                command seeks a Window object that contains a Window's menu.
+                </p>
+<p>
+                Note 2: For RobotJ engine, this command only supports JavaSwing. It may support other clients in the future.
+              	</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>MenuItemText</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Menu-&gt;MenuItem hierarchy string to identify which menuitem to test.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Menu-&gt;MenuItem hierarchy string to identify which menuitem to test.
+                This menu hierarchy IS case-sensitive
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>
+<B>ExpectedStatus</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                Expected status string (or part thereof) to verify. 
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Expected status string (or part thereof) to verify.  
+                Ex: "Enabled Checked"         OR  "Disabled Grayed"    etc.
+                Each item separated by a space will be evaluated separately so 
+                the order of the status items does not matter.  
+                These status items ARE case-sensitive. 
+              </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, VERIFYMENUITEMCONTAINS, "File-&gt;Save","Enabled"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               This action verifies that menuitem "File/Save" is enabled.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Field  5 : TQ String. the case-sensitive menu item path to select.  
+               Ampersands (&amp;) indicating/preceding underlined characters are optional.  
+               The text can be any substring of the full text including spaces and any visible shortcut key 
+               combinations displayed in the text of the menu item. </p>
+<p>Field  6 : QS String.  The case-sensitive, space-delimited, double-quote enclosed
+               status information needing verification.  Only the state information of interest
+               needs to be specified.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+		</BODY>
+</HTML>
+	

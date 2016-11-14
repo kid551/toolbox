@@ -1,0 +1,68 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_GetSuperClassnames'></A>EngineComponentCommands::<BIG>GetSuperClassnames</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Android'>DRD</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the hierarchy of superclasses for the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Returns a delimited string list of case-sensitive classnames for the component.  
+                The first character in the string is the delimiter used to separate each 
+                classname in the hierarchy.  
+                <p>If there is no superclass or hierarchy the engine will return a delimited 
+                list of one value--the component's classname.  (Ex: ",Html.BUTTON")
+                </p><p>                
+                When a superclass hierarchy does exist the first value after the delimiter 
+                is the component's classname.  Each delimited value after that goes one higher 
+                in the hierarchy until the topmost superclass has been processed.<br>
+                (Ex: ",CustomButton,java.awt.Button,java.awt.Component,java.lang.Object")
+                </p><p>
+                If the component itself has no classname and no hierarchy (unusual!) then 
+                the engine should simply return an empty, 0-length string.
+                </p>
+<p>
+            The Android Engine also persists these values as SAFS variables.
+            </p><pre>
+            ^DroidEngine.Command    = [command]
+            ^DroidEngine.StatusCode = [statuscode string]
+            ^DroidEngine.StatusInfo = [statusinfo]
+            </pre><p>
+            See <a href="http://safsdev.sourceforge.net/doc/org/safs/android/DEngineCommandProcessor.html#setStatusVars()" target="_blank">DEngineCommandProcessor.setStatusVars()</a>.
+            </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>Component</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">An object reference or proxy reference to the component.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        A reference to a particular component previously returned from 
+                        a call to getTopLevelWindows, getMatchingChildObjects, getChildren, 
+                        or one of the other engine commands that return such references.
+                    </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">E, GetSuperClassnames, TheComponentReference</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">Get the class hierarchy of TheComponentReference.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                        Returns the class hierarchy for TheComponentReference.
+                        <p>
+                        Example 1: ",CustomButton,java.awt.Button,java.awt.Component,java.lang.Object"<br>
+                        Example 2: ",Html.BUTTON"<br>
+                        Example 3: ""
+                        </p></detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

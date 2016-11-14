@@ -1,0 +1,66 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_DeleteDirectoryContents'></A>TestComplete DDDriverFileCommands::<BIG>DeleteDirectoryContents</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS Driver Commands'>SDC</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+            		Delete the contents (files and sub-directories) of a provided directory and optionally, 
+            		the directory itself.
+            	</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><b>Note: This is a very powerful DriverCommand, please use with caution!</b></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="3" ><LI>
+<B>DirectoryName</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                  			The directory name in which the contents will be deleted.
+                		</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+				        The directory name in which the contents will be deleted. The directory can be a  
+				        fully-qualified path or a path that is relative to the SAFS Automation Project Directory.
+                		</detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/><LI>[ <B>DeleteDir</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+		                	Indicate whether you want to also delete the directory with true or false.  Default is false.
+		                </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">
+                		C, DeleteDirectoryContents, "Datapool\Test"
+              		</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                  			Delete all of the files and sub-directories under directory 
+                  			&lt;SAFS_Automation_Project_Dir&gt;\Datapool\Test. By default, do not also delete 
+                  			&lt;SAFS_Automation_Project_Dir&gt;\Datapool\Test.
+                		</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/><LI>
+<B><usage xmlns="">
+				C, DeleteDirectoryContents, "C:\Test\SubTest", true
+			</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+					Delete all of the files and sub-directories under directory C:\Test\SubTest.  
+					Also delete C:\Test\SubTest.
+				</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	

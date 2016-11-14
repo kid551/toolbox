@@ -1,0 +1,97 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_VerifyURLToFile'></A>Selenium DDDriverCommands::<BIG>VerifyURLToFile</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">Send an HTTP GET request, and verify the response with the content of a file.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><value xmlns="">The optional parameters 'HeaderName' and 'HeaderValue' must appear in pair, 
+			         and they can present more than 1 time, which means multiple pair of ('HeaderName', 'HeaderValue')
+					 can be provided.
+			  </value><BR/>
+</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><SPAN CLASS='Support' TITLE='Selenium2.0'>SE2</SPAN> : <value xmlns="">The HTTP request will be sent by javascript AJAX.</value><BR/>
+</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="3" ><LI>
+<B>URL</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">The URL to request.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>
+<B>BenchFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">The name of the bench file holding the content to be compared with the response sent back from the server.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+		     The bench file can be a full path, a relative path, or a file name.
+			 For relative path, it is appended to the project's path to build the full path of the file. 
+			 For file name, the file is supposed under the project's bench directory (it is Datapool\Bench in SAFS or Benchmarks in SE+).
+			 In any case the parent folder of the file must exist.
+		   </detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<LI>[ <B>Timeout</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">The timeout (in seconds) waiting for the response from HTTP server. The default value is 120 seconds.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>[ <B>HeaderName</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">The HTTP request header name.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<LI>[ <B>HeaderValue</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">The value to set for the HTTP request header.</short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">C, VerifyURLToFile, "http://rest.api.url", "reponse.txt"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Send an HTTP "GET" request for url "http://rest.api.url", 
+				 and wait for response with default timeout of 120 seconds,
+				 and verify request's result from server with the content of file "reponse.txt" under project's bench directory.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">C, VerifyURLToFile, "http://rest.api.url?var1=value&amp;var2=value", "compare\reponse.txt"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Send an HTTP "GET" request for url "http://rest.api.url?var1=value&amp;var2=value", 
+				 and wait for response with default timeout of 120 seconds,
+				 and verify request's result from server with the content of file "reponse.txt" under project's compare directory.
+				 the fodler 'compare' must already exist in the project.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+<LI>
+<B><usage xmlns="">C, VerifyURLToFile, "http://rest.api.url", "c:\test\compare\reponse.txt", "60", "Accept", "text/*", "Accept-Charset", "UTF-8"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                 Send an HTTP "GET" request for url "http://rest.api.url" with headers ("Accept","text/*") and ("Accept-Charset","UTF-8"),
+				 and wait for response with timeout of 60 seconds,
+				 and verify request's result from server with the content of file "c:\test\compare\reponse.txt".
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

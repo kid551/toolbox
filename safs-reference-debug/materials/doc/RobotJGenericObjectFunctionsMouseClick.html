@@ -1,0 +1,193 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_MouseClick'></A>RobotJ GenericObjectFunctions::<BIG>MouseClick</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='Rational RobotJ'>RJ</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                A single click on an object by mouse event. It uses low level mouse event to click on an object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>
+                By default, mouse click on the center of the component.
+                We can also mouse click on any part of an object, or any point relative to an object 
+                based on a provided x,y coordinate or other component-specific parameters.  
+                </p><p>
+                The object to be mouse clicked is first given context and then a mouse click is 
+                generated at the coordinates.  Thus, a subitem or object can be 
+                referenced by name even though it is only recognized via coordinates.
+                </p><p>
+                The coordinate lookup is done with the component name of the record AND 
+                Field #5 or by providing the literal text of the coordinates, where supported.</p>
+<p>
+                Typical Data Table records:</p>
+<p>
+                (1) t MainWindow MainWindow  MouseClick<br>
+                (2) t MainWindow MainWindow  MouseClick AnObject<br>
+                (3) t MainWindow FolderTree  MouseClick Node1<br>
+                (4) t MainWindow MainWindow  MouseClick "50,200"<br>
+                (5) t MainWindow MainWindow  MouseClick "Coords=50,200"</p>
+<p>
+                #2 above will contain an AnObject="3,10" entry in the MainWindow section 
+                of the Application Map to mouse click at x=3, y=10 in the MainWindow.
+                </p><p>
+                #3 above will contain a FolderTree entry in the MainWindow section with 
+                normal recognition information for it.  FolderTree will also have it's
+                own section in the Application Map in which there will be an entry like 
+                Node1="15,30".  This will tell Robot to locate the FolderTree Generic 
+                object and mouse click at the coordinates specified by the reference.
+                </p><p>
+                #4 and #5 above show using literal text instead of an App Map entry to specify 
+                where to mouse click relative to the item.
+                </p><p>
+                Rational Robot no longer requires the AppMapSubKey be provided and will 
+                attempt to use the string as literal text if no AppMapSubKey is found in 
+                the current App Map.  Robot also no longer assumes the AppMapSubKey value 
+                or the literal value is presenting coordinate information.  This allows 
+                components that can accept parameters other than coordinates, like table 
+                row/col values or ImageMap areas to be specified.
+                </p><p>
+                If the value is deduced to contain coordinates, but is not prefixed with 
+                "Coords=" text, then Robot will add the prefix.  Otherwise, the text value 
+                will remain unmodified.
+                </p><p>
+		This is the direction we expect all tools to follow going forward.
+		</p><p>
+		Engines should also attempt to support coordinates separated by alternate separators.  
+		The most common separators that should be supported would be:
+		<ul>
+<li>"," (comma) Example: "50,200"</li>
+<li>";" (semi-colon) Example: "50;200"</li>
+<li>" " (space) Example: "50 200"</li>
+</ul>
+</p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>[ <B>AppMapSubkey</B> =  ]<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+                (Optional)Name of the AppMap subkey to lookup or the literal text to use for the click.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Without this we should click on the center of the object.
+                <p>Name of the AppMap subkey to lookup and use for the click.
+                We expect the AppMap or literal text to contain the item in the format "x,y":</p>
+<pre>
+                [FolderTree]
+                Node1="33,120"      OR
+                Node1="Coords=33,120"
+                ...
+                [AnHTMLImage]
+                AMappdedRegion=Coords=10,10
+                ANamedRegion=AreaName=TechSupport
+                AnIndexedRegion=AreaIndex=2
+                AnotherRegion=AreaID=Contact
+                </pre><p>  
+                The results from the lookup are appended to the "Coords=" string 
+                used by the MouseClick command in Robot (only if necessary).  So any 
+                valid content used with the MouseClick command can be part of 
+                this AppMap entry.</p>
+<p>
+                Both Fields #3 and #5 are used to locate the item in the App Map.
+                This routine does not specify an App Map so only the current Map
+                is used and it is expected to be valid.
+                </p><p>
+                The Rational Robot implementation also supports using literal text in 
+                this parameter instead of an AppMapSubKey.  If the value retrieved from 
+                this field is NOT found to exist in the App Map as a Sub Key then it 
+                will be used as literal text as if it HAD been retrieved from the App Map.
+				</p><p>
+				Engines should also attempt to support coordinates separated by alternate separators.  
+				The most common separators that should be supported would be:
+				<ul>
+<li>"," (comma) Example: "50,200"</li>
+<li>";" (semi-colon) Example: "50;200"</li>
+<li>" " (space) Example: "50 200"</li>
+</ul>
+</p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, MOUSECLICK</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               A single mouse click on the center of the object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               A single click on the center of the object.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, WINDOW, MOUSECLICK, AnObject</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               A single mouse click will be performed at a x,y coordinate indicated by the AnObject reference in
+               the Application Map.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Field  5 : TQ String. A reference identified in the Application Map identifying coordinates
+               on which to click
+               This example shows AnObject which will be found in the Application Map as a referenced item
+               in the WINDOW section.    
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AnObject, MOUSECLICK, ASubObject</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               A single mouse click will be performed at a x,y coordinate indicated by the ASubObject reference in
+               the Application Map.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Field  5 : TQ String. A reference identified in the Application Map identifying coordinates
+               on which to click
+               This example shows AnObject as a viable object in the WINDOW but that it also has its own
+               section in the Application Map which contains one or more named references like
+               ASubObject which are used for test.   
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AnObject, MOUSECLICK, 10;20</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               A single mouse click will be performed at coordinate 10,20 in the object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Field  5 : TQ String. The item does not exist in the app map so will be 
+               treated as literal text.  Note we allow semi-colon delimited coordinates 
+               to support the case when commas are used as field delimiters and cannot be 
+               used to delimit the X and Y coordinates.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<LI>
+<B><usage xmlns="">T, WINDOW, AnObject, MOUSECLICK, "Coords=10;20"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns=""> 
+               A single mouse click will be performed at coordinate 10,20 in the object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""> 
+               Field  5 : TQ String. The item does not exist in the app map so will be 
+               treated as literal text.  Note we allow semi-colon delimited coordinates 
+               to support the case when commas are used as field delimiters and cannot be 
+               used to delimit the X and Y coordinates.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

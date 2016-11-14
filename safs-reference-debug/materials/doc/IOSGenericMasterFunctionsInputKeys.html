@@ -1,0 +1,74 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_InputKeys'></A>IOS GenericMasterFunctions::<BIG>InputKeys</BIG>
+</H3>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                Sends keystrokes to the specified component.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                Sends keystrokes to the specified component.
+                <p>
+                Some engines cannot set keyboard focus to the component.  
+                These engines will require the component already have keyboard focus before 
+                calling this command.
+                </p></detailed_desc><BR/>
+		</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<p><B>Fields: </B><SMALL>[ ]=Optional with Default Value</SMALL></p>
+<code class="safs">
+	  <OL start="5" ><LI>
+<B>TextValue</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                String of keystrokes to send.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                String of keystrokes to send.
+                For RRAFS (RC): consult the documentation on the SQA InputKeys command for
+                syntax information for special characters and keys.  This
+                routine sends the provided string unmodified to the InputKeys
+                command.
+		<p>
+		Note: the TID supports this command using 
+		<a href="http://safsdev.sourceforge.net/doc/org/safs/tools/input/CreateUnicodeMap.html" target="reference" alt="SAFS InputKeys Support Doc">InputKeys Support</a>.
+		</p></detailed_desc><BR/>
+		</DIV>
+		  </LI></OL ></code>
+<br/>
+<p><B>Examples:</B></p>
+<code class="safs"><UL>
+<LI>
+<B><usage xmlns="">T, WINDOW, COMPONENT, INPUTKEYS, "Some Text to Input"</usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               This action sends "Some Text to Input" as keystrokes to the COMPONENT object.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>Field  5 : TQ String. case-sensitive text to send to the specified component.</p>
+<p><pre>Some Special Characters:
+                {Enter}= ENTER key
+                {Tab} = TAB key
+                ^ = CONTROL Key with another key ( "^S" = CONTROL + s)
+                %= ALT  Key with another key ("%F" = ALT + F)
+                + = SHIFT key with another key ("+{Enter}" = SHIFT + ENTER)
+                </pre></p>
+<p>Currently, we pass-thru to the underlying implementation (Rational SQABasic).
+                Any future implementations will also use the same syntax.
+                Note: Only valid for components that accept windows keyboard input</p>
+<p><b>Important Abbot note.</b> Presently, no special character handling is in place.
+                If using the Abbot engine the keys will be sent litterally without interpretation.
+                For example, {TAB} would be sent as those exact characters NOT the <i>tab</i> key.</p></detailed_desc><BR/>
+		</DIV>
+</LI>
+</UL>
+</code>
+<br/>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/>
+</DIV>
+</DIV>
+	

@@ -1,0 +1,74 @@
+<DIV NAME="detail" ID="detail" xmlns="http://www.w3.org/TR/REC-html40"><H3><A NAME='detail_TypeEncryption'></A>IOS GenericMasterFunctions::<BIG>TypeEncryption</BIG>   <TABLE><TR>
+<TD class="borderStyle"><SPAN CLASS='Support' TITLE='SAFS TID Commands'>TID</SPAN></TD>
+</TR></TABLE>
+</H3>
+	  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                Sends secret-text (such as password) to whatever has keyboard focus.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                User needs to provide the path to the "encrypted text" and the path
+                to the "private key".
+              </detailed_desc><BR/>
+		</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><value xmlns="">
+        			This keyword is only for secure machine in which the user/users responsible 
+					for the safety and security of the private key are the only ones with 
+					access to the machine.  The private key should NEVER be stored in 
+					a more public location where unauthorized users may gain access to it.<br></value><BR/>
+</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><value xmlns="">
+        			To generate public key and private key, use following command:<br>
+        			java org.safs.RSA -gen -out outputfile<br>
+        			the outputfile will contain both keys, user should store them separatly in 2
+        			files, keep the private key secret!!!<br></value><BR/>
+</DIV>
+<DIV ID="note_desc"><SPAN CLASS='note'>NOTE:</SPAN><BR/><value xmlns="">
+        			To encrypt the plain-text, use following command:<br>
+        			java org.safs.RSA -encrypt -data data/file -key publickey/file -out outputfile<br>
+        			the outputfile will contain the encrypted text.<br></value><BR/>
+</DIV>
+<BR/>
+<DIV NAME="list" ID="other">
+<B>Fields: [ ]</B>=<SMALL>Optional with Default Value</SMALL><BR/>
+	  <OL start="5" ><LI>
+<B>EncryptedDataFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                The full path of the file where the "encrypted data" is stored.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"/>
+		  </LI>
+<BR/><LI>
+<B>PrivateKeyFile</B>
+<BR/>
+		  <DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+                The full path of the file where the "private key" is stored.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns=""><p>
+                This file should be kept VERY SECRECT, only the authorized users can access it.
+                </p></detailed_desc><BR/>
+		</DIV>
+		  </LI>
+<BR/></OL ><B>Examples:</B><BR/><UL>
+<LI>
+<B><usage xmlns="">T, Anything, At All, TypeEncryption, "C:\safs\passwords\application.pass", "D:\secretPath\private.key" </usage></B>
+<BR/><DIV NAME="list" ID="short_desc"><short_desc xmlns="">
+               Decrypt the data stored in file "C:\safs\passwords\application.pass" and 
+               input the decrypted-data as unmodified keystrokes to the system.
+              </short_desc></DIV>
+<BR/>
+	<DIV NAME="list" ID="detail_desc"><detailed_desc xmlns="">
+                The text will be sent as literal text, unmodified by the command.
+              </detailed_desc><BR/>
+		</DIV>
+</LI>
+<BR/></UL>
+<A href="SAFSReferenceKey.htm" alt="Reference Legend or Key">
+<SMALL><B>[How To Read This Reference]</B></SMALL>
+</A>
+<HR/></DIV>
+</DIV>
+	
