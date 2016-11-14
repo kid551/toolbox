@@ -80,6 +80,9 @@ td {
 	border-color:blue;
 	border-style:solid }
 
+#tr.safsEnginesIcon{
+	padding: 5px;
+}
 
 .Support, .WSupport, .FSupport,
 .WFSupport, .domainMarker {

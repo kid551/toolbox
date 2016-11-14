@@ -42,7 +42,7 @@
           <BR/>
           <BR/>
           <xsl:apply-templates select="/keyword_library/libraryInfo" mode="full_description"/>
-        </DIV>
+        
         
         
         <BR/>
@@ -68,7 +68,7 @@
         
         <xsl:text disable-output-escaping="yes">
 		</xsl:text>
-		
+		</DIV>
       </BODY>
       
     </HTML>
@@ -124,8 +124,8 @@
     	<thead class="thead-inverse">
     		<tr>
 		      <th>Keyword Name</th>
-		      <th>Description</th>
 		      <th>Supported Engines</th>
+		      <th>Description</th>
 		    </tr>
 		</thead>
 		<tbody>
@@ -167,8 +167,12 @@
             <xsl:value-of select="@displayText"/>
             <xsl:text disable-output-escaping="yes">&lt;/A></xsl:text>
           </TD>
-          
-          <TD>
+                    
+          <TD width="12%">
+            <xsl:call-template name="keywordEngineLinks" />            
+          </TD>
+
+		  <TD>
             <xsl:if test="starts-with(@deprecated,'Y')">Deprecated For:<xsl:value-of select="@deprecatedFor"/></xsl:if>
             <xsl:if test="not(starts-with(@deprecated,'Y'))">
               <xsl:value-of select="./description/short_desc"/>
@@ -176,11 +180,7 @@
           </TD>
           
           <xsl:text disable-output-escaping="yes">
-		  </xsl:text>
-		  
-          <TD width="12%">
-            <xsl:call-template name="keywordEngineLinks" />            
-          </TD>               
+		  </xsl:text>		              
           
         </TR>
   </xsl:template>
