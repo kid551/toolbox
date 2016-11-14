@@ -31,9 +31,10 @@
 
           <xsl:apply-templates />
 
-        </DIV>
+        
         <HR/>
         <xsl:call-template name="links"/>
+		</DIV>
       </BODY>
     </HTML>
   </xsl:template>
@@ -116,7 +117,7 @@
 	    <xsl:value-of select="$library/keyword_library/libraryInfo/@name"/>
             <xsl:text disable-output-escaping="yes">&lt;/A></xsl:text>	    
 	    <xsl:call-template name="iconLegendLine"/>
-	    <TABLE col="3" width="100%" cellpadding="2" border="1" >
+	    <TABLE class="table" >
 	    <xsl:apply-templates select="$library/keyword_library/keywords" />	    
 	    </TABLE>
     </xsl:template>        
