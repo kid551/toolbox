@@ -86,6 +86,7 @@ td {
 
 .Support, .WSupport, .FSupport,
 .WFSupport, .domainMarker {
+	border: .2em .6em .2em .6em;
 	font-family: inherit;
 	display: inline;
   	padding: .2em .6em .2em .6em;
@@ -96,8 +97,8 @@ td {
 	text-align: center;
 	white-space: nowrap;
 	vertical-align: baseline;
-	border-radius: .25em;
-	margin:1px;
+	/*border-radius: .25em;*/
+	margin:.2em .6em .2em .6em;
 
   // Add hover effects, but only for links
   a& {
@@ -196,4 +197,8 @@ td {
 .commandline{
     background: black;
     color:#1FFD1D;
+}
+
+ul li {
+    margin-left: 24px;
 }
