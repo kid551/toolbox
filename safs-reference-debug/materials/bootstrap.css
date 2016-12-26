@@ -1190,6 +1190,9 @@ h6,
   background-color: #BED4EB;
   padding: 5px 0 5px 10px;
 }
+h4.safsIdent {
+	background-color: #D8DEE3;
+}
 h1 small,
 h2 small,
 h3 small,
@@ -1602,17 +1605,17 @@ pre code {
 }
 @media (min-width: 768px) {
   .container {
-    width: 750px;
+    width: 100%;
   }
 }
 @media (min-width: 992px) {
   .container {
-    width: 970px;
+    width: 100%;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1300px) {
   .container {
-    width: 1170px;
+    width: 100%;
   }
 }
 .container-fluid {
