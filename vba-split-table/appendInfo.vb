@@ -63,3 +63,14 @@ Sub appendInfoRByR()
     Next
     
 End Sub
+
+
+Sub copyToWorkBook()
+    Dim warehouse As Workbook
+    Dim customer As Workbook
+    
+    Set warehouse = Workbooks("A.xlsm")
+    Set customer = Workbooks("B.xls")
+    
+    warehouse.Sheets(1).Rows(4775).Copy customer.Sheets(1).Cells(3025, 1)
+End Sub
