@@ -12,3 +12,22 @@ Sub appendInfo()
     
     Sheets(1).Range(currRowToLast).Copy Sheets("3¾üÂÌ").Range(stG3Empty)
 End Sub
+
+
+
+Sub getSubName()
+    Dim currCellRow, st1Lst
+    currCellRow = Selection.Row
+    st1Lst = Sheets(1).Range("a65536").End(3).Row
+    
+    ' Get region of current cell to last column "o" cell.
+    currRowToLast = "a" & currCellRow & ":o" & st1Lst
+    
+    Dim cRegion As Range
+    Set cRegion = Sheets(1).Range(currRowToLast)
+        
+    For Each pRow In cRegion.Rows
+        MsgBox "dd " & Right(pRow.Cells(2), 3)
+    Next
+    
+End Sub
