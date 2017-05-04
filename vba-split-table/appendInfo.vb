@@ -44,6 +44,9 @@ Function getColorDict() As Object
     getColorDict.Add "612", "612"
     getColorDict.Add "»ÒÐÓ", "»ÒÐÓ"
     getColorDict.Add "ÇÇÐÛÊ¹ÓÃÑÕÉ«", "ÇÇÐÛÊ¹ÓÃÑÕÉ«"
+    
+    getColorDict.Add "C32", "32×Ü¿â´æ"
+    getColorDict.Add "C16", "16×Ü¿â´æ"
 End Function
 
 Function getLastRowIndx(ByVal sheetName)
@@ -61,15 +64,19 @@ Function getAddedRegion(ByVal sheetName, ByVal lstColIndx) As Range
     Set getAddedRegion = Sheets(sheetName).Range(addedRegionStr)
 End Function
 
+Function copyRowToSheet(ByVal copiedRow, ByVal sheetName)
+    corrSheetStartIndx = "a" & (getLastRowIndx(sheetName) + 1)
+    
+    copiedRow.Copy Sheets(sheetName).Range(corrSheetStartIndx)
+End Function
+
 Sub appendInfoRByR()
     Dim colorDict As Object
     Set colorDict = getColorDict()
     
     For Each iRow In getAddedRegion(1, "o").Rows
-        corrSheetName = colorDict(Right(iRow.Cells(2), 3))
-        corrSheetStartIndx = "a" & (getLastRowIndx(corrSheetName) + 1)
+        Call copyRowToSheet(iRow, colorDict(Right(iRow.Cells(2), 3)))
         
-        iRow.Copy Sheets(corrSheetName).Range(corrSheetStartIndx)
     Next
     
 End Sub
