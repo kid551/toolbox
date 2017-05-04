@@ -22,29 +22,30 @@ Function getColorDict() As Object
     getColorDict.Add "504", "4Ç³¿¨"
 End Function
 
-Function getAddedRegion(ByVal num, ByVal lstColIndx) As Range
+Function getLastRowIndx(ByVal sheetName)
+    ' get the last non-empy row index of column "a"
+    getLastRowIndx = Sheets(sheetName).Range("a65536").End(3).Row
+End Function
+
+Function getAddedRegion(ByVal sheetName, ByVal lstColIndx) As Range
     currRow = Selection.Row
-    sheet1LastRowIndx = Sheets(num).Range("a65536").End(3).Row
+    sheet1LastRowIndx = getLastRowIndx(sheetName)
     
     ' Get region string of current cell to last column "lstCol" cell.
     addedRegionStr = "a" & currRow & ":" & lstColIndx & sheet1LastRowIndx
     
-    ' Dim addedRegion As Range
-    Set getAddedRegion = Sheets(1).Range(addedRegionStr)
+    Set getAddedRegion = Sheets(sheetName).Range(addedRegionStr)
 End Function
 
-Sub getSubName()
+Sub appendInfoRByR()
     Dim colorDict As Object
     Set colorDict = getColorDict()
     
-    Dim addedRegion As Range
-    Set addedRegion = getAddedRegion(1, "o")
-        
-    For Each iRow In addedRegion.Rows
+    For Each iRow In getAddedRegion(1, "o").Rows
         corrSheetName = colorDict(Right(iRow.Cells(2), 3))
-        corrSheetFirstEmpty = (Sheets(corrSheetName).Range("a65536").End(3).Row + 1)
-                
-        iRow.Copy Sheets(corrSheetName).Range("a" & corrSheetFirstEmpty)
+        corrSheetStartIndx = "a" & (getLastRowIndx(corrSheetName) + 1)
+        
+        iRow.Copy Sheets(corrSheetName).Range(corrSheetStartIndx)
     Next
     
 End Sub
