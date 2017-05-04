@@ -13,22 +13,32 @@ Sub appendInfo()
     Sheets(1).Range(currRowToLast).Copy Sheets("3¾üÂÌ").Range(stG3Empty)
 End Sub
 
-Sub getSubName()
-    ' Create color code dictionary
-    Dim colorDict As Object
-    Set colorDict = CreateObject("Scripting.Dictionary")
+
+
+Function getColorDict() As Object
+    Set getColorDict = CreateObject("Scripting.Dictionary")
     
-    colorDict("503") = "3?¨¹?¨¬"
-    colorDict("504") = "4?3?¡§"
-    
+    getColorDict.Add "503", "3¾üÂÌ"
+    getColorDict.Add "504", "4Ç³¿¨"
+End Function
+
+Function getAddedRegion(ByVal num, ByVal lstColIndx) As Range
     currRow = Selection.Row
-    sheet1LastRow = Sheets(1).Range("a65536").End(3).Row
+    sheet1LastRowIndx = Sheets(num).Range("a65536").End(3).Row
     
-    ' Get region string of current cell to last column "o" cell.
-    addedRegionStr = "a" & currRow & ":o" & sheet1LastRow
+    ' Get region string of current cell to last column "lstCol" cell.
+    addedRegionStr = "a" & currRow & ":" & lstColIndx & sheet1LastRowIndx
+    
+    ' Dim addedRegion As Range
+    Set getAddedRegion = Sheets(1).Range(addedRegionStr)
+End Function
+
+Sub getSubName()
+    Dim colorDict As Object
+    Set colorDict = getColorDict()
     
     Dim addedRegion As Range
-    Set addedRegion = Sheets(1).Range(addedRegionStr)
+    Set addedRegion = getAddedRegion(1, "o")
         
     For Each iRow In addedRegion.Rows
         corrSheetName = colorDict(Right(iRow.Cells(2), 3))
