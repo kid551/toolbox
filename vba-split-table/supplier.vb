@@ -8,7 +8,13 @@ Application.DisplayAlerts = False
 Set d = CreateObject("Scripting.Dictionary")
 
 Sheet1.Select
-'Range("A1").CurrentRegion.Sort Key1:=[c1], Order1:=xlAscending, Header:=xlYes   'order by column "bank": [c1]'
+
+'Sample:
+'    Range("A1").CurrentRegion.Sort Key1:=[c1], Order1:=xlAscending, Header:=xlYes   'order by column "bank": [c1]'
+'
+'Comments:
+'    Range("a65536").End(3): the cell from last cell of column "a", i.e. a65536, to the top which is the 
+'    first non-empty cell. So the whole part means: column "a"'s last non-empty cell.
 Range("a3:q" & Range("a65536").End(3).Row).Sort Key1:=[d1], Order1:=xlAscending, Header:=xlNo
 
 'ar = Range([a2], [h65536].End(3)) Choose the area from [a2] to the last non-empty element of column h'
