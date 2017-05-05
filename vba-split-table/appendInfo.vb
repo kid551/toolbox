@@ -98,28 +98,39 @@ End Sub
 Sub copyToWorkBook()
     controlCenterWBName = "控制中心.xlsm"
     controlCenterMainSheetIndx = 1
+    
     ccWHNameCell = "b2"
     ccWHPosCell = "b3"
+    
+    ccCTNameCell = "b5"
     
     ' ***********************
     
     warehouseWBName = Workbooks(controlCenterWBName).Sheets(controlCenterMainSheetIndx).Range(ccWHNameCell)
+    customerWBName = Workbooks(controlCenterWBName).Sheets(controlCenterMainSheetIndx).Range(ccCTNameCell)
     
     Dim warehouse As Workbook
     Set warehouse = Workbooks(warehouseWBName)
     
     Dim customer As Workbook
-    Set customer = Workbooks(warehouseWBName)
+    Set customer = Workbooks(customerWBName)
         
     
     
     whMainSTIndx = 1
     whRowStartIndx = 4775
     ctMainSTIndx = 1
-    ctRowStartIndx = 4777
+    ctRowStartIndx = 3025
     ctColStartIndx = 1
     
-    warehouse.Sheets(whMainSTIndx).Rows(whRowStartIndx).Copy customer.Sheets(ctMainSTIndx).Cells(ctRowStartIndx, ctColStartIndx)
+    Dim copiedRange As Range
+    ' warehouse.Sheets(whMainSTIndx).Rows(whRowStartIndx).Copy customer.Sheets(ctMainSTIndx).Cells(ctRowStartIndx, ctColStartIndx)
+    For Each iRow In warehouse.Sheets(whMainSTIndx).Rows(whRowStartIndx)
+        If iRow.Columns("c") = "售" Then
+            Set copiedRange = Union(iRow.Columns("a:e"), iRow.Columns("h"), iRow.Columns("i"), iRow.Columns("l"))
+            copiedRange.Copy customer.Sheets(ctMainSTIndx).Cells(ctRowStartIndx, ctColStartIndx)
+        End If
+    Next
 End Sub
 
 Sub test()
