@@ -37,8 +37,8 @@ Function getLastRowIndx(ByVal sheetName)
     getLastRowIndx = Sheets(sheetName).Range("a65536").End(3).Row
 End Function
 
-Function getAddedRegion(ByVal sheetName, ByVal lstColIndx) As Range
-    currRow = Selection.Row
+Function getAddedRegion(ByVal sheetName, ByVal lstColIndx, ByVal startRow) As Range
+    currRow = startRow
     sheet1LastRowIndx = getLastRowIndx(sheetName)
     
     ' Get region string of current cell to last column "lstCol" cell.
@@ -54,10 +54,17 @@ Function copyRowToSheet(ByVal copiedRow, ByVal sheetName)
 End Function
 
 Sub appendInfoRByR()
+    Dim controlCenter As Workbook
+    Set controlCenter = Workbooks("¿ØÖÆÖÐÐÄ.xlsm")
+    
+    warehouseWBName = controlCenter.Sheets(1).Range("b2")
+    startPos = controlCenter.Sheets(1).Range("b3")
+    Workbooks(warehouseWBName).Activate
+    
     Dim colorDict As Object
     Set colorDict = getColorDict()
     
-    For Each iRow In getAddedRegion(1, "o").Rows
+    For Each iRow In getAddedRegion(1, "o", startPos).Rows
         Call copyRowToSheet(iRow, colorDict(Right(iRow.Cells(2), 3)))
         Call copyRowToSheet(iRow, colorDict(Left(iRow.Cells(2), 3)))
     Next
@@ -66,11 +73,19 @@ End Sub
 
 
 Sub copyToWorkBook()
+    warehouseWBName = Range("b2")
+    
     Dim warehouse As Workbook
+    Set warehouse = Workbooks(warehouseWBName)
+    
     Dim customer As Workbook
+    Set customer = Workbooks(warehouseWBName)
     
-    Set warehouse = Workbooks("A.xlsm")
-    Set customer = Workbooks("B.xls")
-    
-    warehouse.Sheets(1).Rows(4775).Copy customer.Sheets(1).Cells(3025, 1)
+        
+    warehouse.Sheets(1).Rows(4775).Copy customer.Sheets(1).Cells(4777, 1)
 End Sub
+
+Sub test()
+
+End Sub
+
