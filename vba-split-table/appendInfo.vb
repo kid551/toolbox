@@ -109,7 +109,7 @@ Sub buildSellRow(ByVal copiedRow, ByVal wbName, ByVal sheetName, ByVal unitPrice
     Call copyRowToSheet(copiedRange, wbName, sheetName)
     
     customerCell = "d" & ctRowStartIndx
-    subCTField = getCellContents(wbName, sheetName, customerCell) & "!A1"
+    subCTField = getCellContents(wbName, sheetName, customerCell) & "!A3"
     With Workbooks(wbName).Sheets(sheetName)
         .Hyperlinks.Add .Range(customerCell), Address:="", SubAddress:=subCTField
     End With
