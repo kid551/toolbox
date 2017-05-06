@@ -62,8 +62,8 @@ Function copyRowToSheet(ByVal copiedRow, ByVal targetWBName, ByVal sheetName)
 End Function
 
 Sub appendInfoRByR()
-    controlCenterWBName = "¿ØÖÆÖÐÐÄ.xlsm"
-    controlCenterMainSheetIndx = 1
+    controlCenterWBName = "?????DD?.xlsm"
+    controlCenterMainSheetName = 1
     ccWHNameCell = "b2"
     ccWHPosCell = "b3"
     
@@ -72,8 +72,8 @@ Sub appendInfoRByR()
     Dim controlCenter As Workbook
     Set controlCenter = Workbooks(controlCenterWBName)
     
-    warehouseWBName = controlCenter.Sheets(controlCenterMainSheetIndx).Range(ccWHNameCell)
-    startPos = controlCenter.Sheets(controlCenterMainSheetIndx).Range(ccWHPosCell)
+    warehouseWBName = controlCenter.Sheets(controlCenterMainSheetName).Range(ccWHNameCell)
+    startPos = controlCenter.Sheets(controlCenterMainSheetName).Range(ccWHPosCell)
         
     Dim colorDict As Object
     Set colorDict = getColorDict()
@@ -93,48 +93,42 @@ Sub appendInfoRByR()
     
 End Sub
 
+Function getCellContents(ByVal wbName, ByVal stName, ByVal cPos) As Range
+    Set getCellContents = Workbooks(wbName).Sheets(stName).Range(cPos)
+End Function
 
 Sub copyToWorkBook()
     controlCenterWBName = "?????DD?.xlsm"
-    controlCenterMainSheetIndx = 1
-    
+    controlCenterMainSheetName = 1
     ccWHNameCell = "b2"
     ccWHPosCell = "b3"
-    
     ccCTNameCell = "b5"
     
     ' ***********************
     
-    warehouseWBName = Workbooks(controlCenterWBName).Sheets(controlCenterMainSheetIndx).Range(ccWHNameCell)
-    customerWBName = Workbooks(controlCenterWBName).Sheets(controlCenterMainSheetIndx).Range(ccCTNameCell)
-    
-    Dim warehouse As Workbook
-    Set warehouse = Workbooks(warehouseWBName)
-    
-    Dim customer As Workbook
-    Set customer = Workbooks(customerWBName)
-        
-    
-    
-    whMainSTIndx = 1
-    whRowStartIndx = 4775
-    ctMainSTIndx = 1
-    ctRowStartIndx = 3025
+    warehouseWBName = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccWHNameCell)
+    customerWBName = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccCTNameCell)
+    warehouseStartPos = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccWHPosCell)
+            
+    whMainSTName = 1
+    whLstColIndx = "o"
+    ctMainSTName = 1
     ctColStartIndx = 1
     
+    
     Dim copiedRange As Range
-    ' warehouse.Sheets(whMainSTIndx).Rows(whRowStartIndx).Copy customer.Sheets(ctMainSTIndx).Cells(ctRowStartIndx, ctColStartIndx)
-    For Each iRow In warehouse.Sheets(whMainSTIndx).Rows(whRowStartIndx)
+    For Each iRow In getAddedRegion(warehouseWBName, whMainSTName, whLstColIndx, warehouseStartPos).Rows
         If iRow.Columns("c") = "¨º?" Then
             Set copiedRange = Union(iRow.Columns("a:e"), iRow.Columns("h"), iRow.Columns("i"), iRow.Columns("l"))
-            copiedRange.Copy customer.Sheets(ctMainSTIndx).Cells(ctRowStartIndx, ctColStartIndx)
             
-            
+            ctRowStartIndx = getLastRowIndx(customerWBName, ctMainSTName) + 1
+            Call copyRowToSheet(copiedRange, customerWBName, ctMainSTName)
+                        
             unitPrice = 9.5
-            customer.Sheets(ctMainSTIndx).Cells(ctRowStartIndx, 9) = "=H" & ctRowStartIndx & "*G" & ctRowStartIndx
-            customer.Sheets(ctMainSTIndx).Cells(ctRowStartIndx, 10) = unitPrice
-            customer.Sheets(ctMainSTIndx).Cells(ctRowStartIndx, 11) = "=J" & ctRowStartIndx & "*I" & ctRowStartIndx
-            customer.Sheets(ctMainSTIndx).Cells(ctRowStartIndx, 15) = "=o" & CStr(ctRowStartIndx - 1) & "+K" & ctRowStartIndx & "-M" & ctRowStartIndx & "-N" & ctRowStartIndx
+            Workbooks(customerWBName).Sheets(ctMainSTName).Cells(ctRowStartIndx, 9) = "=H" & ctRowStartIndx & "*G" & ctRowStartIndx
+            Workbooks(customerWBName).Sheets(ctMainSTName).Cells(ctRowStartIndx, 10) = unitPrice
+            Workbooks(customerWBName).Sheets(ctMainSTName).Cells(ctRowStartIndx, 11) = "=J" & ctRowStartIndx & "*I" & ctRowStartIndx
+            Workbooks(customerWBName).Sheets(ctMainSTName).Cells(ctRowStartIndx, 15) = "=o" & CStr(ctRowStartIndx - 1) & "+K" & ctRowStartIndx & "-M" & ctRowStartIndx & "-N" & ctRowStartIndx
                         
         End If
     Next
