@@ -154,9 +154,33 @@ Sub copyToWorkBook()
     MsgBox "??? **?????** ???!"
 End Sub
 
+Sub splitCustomerInfoRByR()
+    controlCenterWBName = "????.xlsm"
+    controlCenterMainSheetName = 1
+    ccCTNameCell = "b5"
+    ccCTPosCell = "b7"
+    
+    ' ***********************
+    
+    Dim controlCenter As Workbook
+    Set controlCenter = Workbooks(controlCenterWBName)
+    
+    customerWBName = controlCenter.Sheets(controlCenterMainSheetName).Range(ccCTNameCell)
+    startPos = controlCenter.Sheets(controlCenterMainSheetName).Range(ccCTPosCell)
+    
+    
+    rowStartPos = 1
+    colEndPos = "o"
+    rowKeyPos = "d"
+    
+    For Each iRow In getAddedRegion(customerWBName, rowStartPos, colEndPos, startPos).Rows
+        Call copyRowToSheet(iRow, customerWBName, iRow.Columns(rowKeyPos).Value)
+    Next
+    
+End Sub
+
 Sub test()
-    With Workbooks("??????????.xls").Sheets(1)
-        .Hyperlinks.Add .Range("d3068"), Address:="", SubAddress:="???!A1"
-    End With
+    cc = Workbooks("??????????.xls").Sheets("??").Range("a65536").End(3).Row
+    MsgBox cc
 End Sub
 
