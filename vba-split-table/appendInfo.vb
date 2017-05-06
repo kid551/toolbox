@@ -1,35 +1,35 @@
 Function getColorDict() As Object
     Set getColorDict = CreateObject("Scripting.Dictionary")
     
-    getColorDict.Add "501", "1????"
-    getColorDict.Add "502", "2??????"
-    getColorDict.Add "503", "3??????"
-    getColorDict.Add "504", "4?3???"
-    getColorDict.Add "505", "5D?????"
-    getColorDict.Add "506", "6?3???"
-    getColorDict.Add "508", "8?????"
-    getColorDict.Add "509", "9??????"
-    getColorDict.Add "510", "10??????"
-    getColorDict.Add "511", "11???2????"
-    getColorDict.Add "512", "12????????"
-    getColorDict.Add "514", "14??????"
+    getColorDict.Add "501", "1??"
+    getColorDict.Add "502", "2??"
+    getColorDict.Add "503", "3??"
+    getColorDict.Add "504", "4??"
+    getColorDict.Add "505", "5??"
+    getColorDict.Add "506", "6??"
+    getColorDict.Add "508", "8??"
+    getColorDict.Add "509", "9??"
+    getColorDict.Add "510", "10??"
+    getColorDict.Add "511", "11???"
+    getColorDict.Add "512", "12???"
+    getColorDict.Add "514", "14??"
     getColorDict.Add "601", "601"
     getColorDict.Add "602", "602"
-    getColorDict.Add "603", "603?????"
-    getColorDict.Add "604", "604????????"
-    getColorDict.Add "605", "605??????"
-    getColorDict.Add "606", "606????????"
-    getColorDict.Add "607", "607??????"
+    getColorDict.Add "603", "603??"
+    getColorDict.Add "604", "604???"
+    getColorDict.Add "605", "605??"
+    getColorDict.Add "606", "606???"
+    getColorDict.Add "607", "607??"
     getColorDict.Add "608", "608"
     getColorDict.Add "609", "609"
     getColorDict.Add "610", "610"
     getColorDict.Add "611", "611"
     getColorDict.Add "612", "612"
-    getColorDict.Add "???D??", "???D??"
-    getColorDict.Add "??D???1????????", "??D???1????????"
+    getColorDict.Add "??", "??"
+    getColorDict.Add "??????", "??????"
     
-    getColorDict.Add "C32", "32?????a???"
-    getColorDict.Add "C16", "16?????a???"
+    getColorDict.Add "C32", "32???"
+    getColorDict.Add "C16", "16???"
 End Function
 
 Function getLastRowIndx(ByVal wbName, ByVal sheetName)
@@ -62,7 +62,7 @@ Function copyRowToSheet(ByVal copiedRow, ByVal targetWBName, ByVal sheetName)
 End Function
 
 Sub appendInfoRByR()
-    controlCenterWBName = "?????DD?.xlsm"
+    controlCenterWBName = "????.xlsm"
     controlCenterMainSheetName = 1
     ccWHNameCell = "b2"
     ccWHPosCell = "b3"
@@ -116,7 +116,7 @@ Sub buildSellRow(ByVal copiedRow, ByVal wbName, ByVal sheetName, ByVal unitPrice
 End Sub
 
 Sub copyToWorkBook()
-    controlCenterWBName = "?????DD?.xlsm"
+    controlCenterWBName = "????.xlsm"
     controlCenterMainSheetName = 1
     
     ccWHNameCell = "b2"
@@ -140,12 +140,12 @@ Sub copyToWorkBook()
     
     
     For Each iRow In getAddedRegion(warehouseWBName, whMainSTName, whLstColIndx, warehouseStartPos).Rows
-        If iRow.Columns("c") = "???" Then
+        If iRow.Columns("c") = "?" Then
             Call buildSellRow(iRow, customerWBName, ctMainSTName, unitPrice)
         End If
     Next
     
-    MsgBox "??DT?? **?????3???2????** ???????????"
+    MsgBox "??? **?????** ???!"
 End Sub
 
 Sub test()
