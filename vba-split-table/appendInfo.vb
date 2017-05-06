@@ -1,35 +1,35 @@
 Function getColorDict() As Object
     Set getColorDict = CreateObject("Scripting.Dictionary")
     
-    getColorDict.Add "501", "1芥黄"
-    getColorDict.Add "502", "2土黄"
-    getColorDict.Add "503", "3军绿"
-    getColorDict.Add "504", "4浅卡"
-    getColorDict.Add "505", "5杏色"
-    getColorDict.Add "506", "6浅灰"
-    getColorDict.Add "508", "8军黄"
-    getColorDict.Add "509", "9深军"
-    getColorDict.Add "510", "10深灰"
-    getColorDict.Add "511", "11深藏青"
-    getColorDict.Add "512", "12深卡其"
-    getColorDict.Add "514", "14米白"
+    getColorDict.Add "501", "1????"
+    getColorDict.Add "502", "2íá??"
+    getColorDict.Add "503", "3?ü?ì"
+    getColorDict.Add "504", "4?3?¨"
+    getColorDict.Add "505", "5Dóé?"
+    getColorDict.Add "506", "6?3?ò"
+    getColorDict.Add "508", "8?ü??"
+    getColorDict.Add "509", "9é??ü"
+    getColorDict.Add "510", "10é??ò"
+    getColorDict.Add "511", "11é?2??à"
+    getColorDict.Add "512", "12é??¨??"
+    getColorDict.Add "514", "14?×°×"
     getColorDict.Add "601", "601"
     getColorDict.Add "602", "602"
-    getColorDict.Add "603", "603卡其"
-    getColorDict.Add "604", "604深卡其"
-    getColorDict.Add "605", "605绿灰"
-    getColorDict.Add "606", "606深卡其"
-    getColorDict.Add "607", "607深灰"
+    getColorDict.Add "603", "603?¨??"
+    getColorDict.Add "604", "604é??¨??"
+    getColorDict.Add "605", "605?ì?ò"
+    getColorDict.Add "606", "606é??¨??"
+    getColorDict.Add "607", "607é??ò"
     getColorDict.Add "608", "608"
     getColorDict.Add "609", "609"
     getColorDict.Add "610", "610"
     getColorDict.Add "611", "611"
     getColorDict.Add "612", "612"
-    getColorDict.Add "灰杏", "灰杏"
-    getColorDict.Add "乔雄使用颜色", "乔雄使用颜色"
+    getColorDict.Add "?òDó", "?òDó"
+    getColorDict.Add "??D?ê1ó???é?", "??D?ê1ó???é?"
     
-    getColorDict.Add "C32", "32总库存"
-    getColorDict.Add "C16", "16总库存"
+    getColorDict.Add "C32", "32×ü?a′?"
+    getColorDict.Add "C16", "16×ü?a′?"
 End Function
 
 Function getLastRowIndx(ByVal sheetName)
@@ -62,7 +62,7 @@ Function copyRowToSheet(ByVal copiedRow, ByVal sheetName)
 End Function
 
 Sub appendInfoRByR()
-    controlCenterWBName = "控制中心.xlsm"
+    controlCenterWBName = "?????DD?.xlsm"
     controlCenterMainSheetIndx = 1
     ccWHNameCell = "b2"
     ccWHPosCell = "b3"
@@ -96,7 +96,7 @@ End Sub
 
 
 Sub copyToWorkBook()
-    controlCenterWBName = "控制中心.xlsm"
+    controlCenterWBName = "?????DD?.xlsm"
     controlCenterMainSheetIndx = 1
     
     ccWHNameCell = "b2"
@@ -126,9 +126,17 @@ Sub copyToWorkBook()
     Dim copiedRange As Range
     ' warehouse.Sheets(whMainSTIndx).Rows(whRowStartIndx).Copy customer.Sheets(ctMainSTIndx).Cells(ctRowStartIndx, ctColStartIndx)
     For Each iRow In warehouse.Sheets(whMainSTIndx).Rows(whRowStartIndx)
-        If iRow.Columns("c") = "售" Then
+        If iRow.Columns("c") = "ê?" Then
             Set copiedRange = Union(iRow.Columns("a:e"), iRow.Columns("h"), iRow.Columns("i"), iRow.Columns("l"))
             copiedRange.Copy customer.Sheets(ctMainSTIndx).Cells(ctRowStartIndx, ctColStartIndx)
+            
+            
+            unitPrice = 9.5
+            customer.Sheets(ctMainSTIndx).Cells(ctRowStartIndx, 9) = "=H" & ctRowStartIndx & "*G" & ctRowStartIndx
+            customer.Sheets(ctMainSTIndx).Cells(ctRowStartIndx, 10) = unitPrice
+            customer.Sheets(ctMainSTIndx).Cells(ctRowStartIndx, 11) = "=J" & ctRowStartIndx & "*I" & ctRowStartIndx
+            customer.Sheets(ctMainSTIndx).Cells(ctRowStartIndx, 15) = "=o" & CStr(ctRowStartIndx - 1) & "+K" & ctRowStartIndx & "-M" & ctRowStartIndx & "-N" & ctRowStartIndx
+                        
         End If
     Next
 End Sub
