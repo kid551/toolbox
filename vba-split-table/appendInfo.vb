@@ -32,37 +32,37 @@ Function getColorDict() As Object
     getColorDict.Add "C16", "16¡Á¨¹?a¡ä?"
 End Function
 
-Function getLastRowIndx(ByVal sheetName)
+Function getLastRowIndx(ByVal wbName, ByVal sheetName)
     ' get the last non-empy row index of column "a"
-    getLastRowIndx = Sheets(sheetName).Range("a65536").End(3).Row
+    getLastRowIndx = Workbooks(wbName).Sheets(sheetName).Range("a65536").End(3).Row
 End Function
 
-Function getAddedRegion(ByVal sheetName, ByVal lstColIndx, ByVal startRow) As Range
+Function getAddedRegion(ByVal wbName, ByVal sheetName, ByVal lstColIndx, ByVal startRow) As Range
     firstColIndx = "a"
     
     ' ***********************
     
     currRow = startRow
-    sheet1LastRowIndx = getLastRowIndx(sheetName)
+    sheet1LastRowIndx = getLastRowIndx(wbName, sheetName)
     
     ' Get region string of current cell to last column "lstCol" cell.
     addedRegionStr = firstColIndx & currRow & ":" & lstColIndx & sheet1LastRowIndx
     
-    Set getAddedRegion = Sheets(sheetName).Range(addedRegionStr)
+    Set getAddedRegion = Workbooks(wbName).Sheets(sheetName).Range(addedRegionStr)
 End Function
 
-Function copyRowToSheet(ByVal copiedRow, ByVal sheetName)
+Function copyRowToSheet(ByVal copiedRow, ByVal targetWBName, ByVal sheetName)
     firstColIndx = "a"
     
     ' ***********************
     
-    corrSheetStartIndx = firstColIndx & (getLastRowIndx(sheetName) + 1)
+    corrSheetStartIndx = firstColIndx & (getLastRowIndx(targetWBName, sheetName) + 1)
     
-    copiedRow.Copy Sheets(sheetName).Range(corrSheetStartIndx)
+    copiedRow.Copy Workbooks(targetWBName).Sheets(sheetName).Range(corrSheetStartIndx)
 End Function
 
 Sub appendInfoRByR()
-    controlCenterWBName = "?????DD?.xlsm"
+    controlCenterWBName = "¿ØÖÆÖÐÐÄ.xlsm"
     controlCenterMainSheetIndx = 1
     ccWHNameCell = "b2"
     ccWHPosCell = "b3"
@@ -74,8 +74,7 @@ Sub appendInfoRByR()
     
     warehouseWBName = controlCenter.Sheets(controlCenterMainSheetIndx).Range(ccWHNameCell)
     startPos = controlCenter.Sheets(controlCenterMainSheetIndx).Range(ccWHPosCell)
-    Workbooks(warehouseWBName).Activate
-    
+        
     Dim colorDict As Object
     Set colorDict = getColorDict()
     
@@ -87,9 +86,9 @@ Sub appendInfoRByR()
     colorCodeOffset = 3
     greighTypeOffset = 3
     
-    For Each iRow In getAddedRegion(rowStartPos, colEndPos, startPos).Rows
-        Call copyRowToSheet(iRow, colorDict(Right(iRow.Cells(rowKeyPos), colorCodeOffset)))
-        Call copyRowToSheet(iRow, colorDict(Left(iRow.Cells(rowKeyPos), greighTypeOffset)))
+    For Each iRow In getAddedRegion(warehouseWBName, rowStartPos, colEndPos, startPos).Rows
+        Call copyRowToSheet(iRow, warehouseWBName, colorDict(Right(iRow.Cells(rowKeyPos), colorCodeOffset)))
+        Call copyRowToSheet(iRow, warehouseWBName, colorDict(Left(iRow.Cells(rowKeyPos), greighTypeOffset)))
     Next
     
 End Sub
