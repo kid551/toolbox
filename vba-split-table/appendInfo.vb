@@ -130,6 +130,7 @@ Sub copyToWorkBook()
     
     ccCTNameCell = "b5"
     ccUnitPriceCell = "b6"
+    ccCTPosCell = "b7"
     
     whMainSTName = 1
     whLstColIndx = "o"
@@ -144,6 +145,9 @@ Sub copyToWorkBook()
     customerWBName = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccCTNameCell)
     unitPrice = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccUnitPriceCell)
     
+    Dim customerStartPos As Range
+    Set customerStartPos = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccCTPosCell)
+    customerStartPos = getLastRowIndx(customerWBName, ctMainSTName) + 1
     
     For Each iRow In getAddedRegion(warehouseWBName, whMainSTName, whLstColIndx, warehouseStartPos).Rows
         If iRow.Columns("c") = "?" Then
@@ -180,7 +184,6 @@ Sub splitCustomerInfoRByR()
 End Sub
 
 Sub test()
-    cc = Workbooks("??????????.xls").Sheets("??").Range("a65536").End(3).Row
-    MsgBox cc
+    Workbooks("????.xlsm").Sheets(1).Range("b8") = 3000
 End Sub
 
