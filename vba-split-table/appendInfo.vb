@@ -80,13 +80,13 @@ Sub appendInfoRByR()
     
     
     
-    rowStartPos = 1
+    colStartPos = 1
     colEndPos = "o"
     rowKeyPos = 2
     colorCodeOffset = 3
     greighTypeOffset = 3
     
-    For Each iRow In getAddedRegion(warehouseWBName, rowStartPos, colEndPos, startPos).Rows
+    For Each iRow In getAddedRegion(warehouseWBName, colStartPos, colEndPos, startPos).Rows
         Call copyRowToSheet(iRow, warehouseWBName, colorDict(Right(iRow.Cells(rowKeyPos), colorCodeOffset)))
         Call copyRowToSheet(iRow, warehouseWBName, colorDict(Left(iRow.Cells(rowKeyPos), greighTypeOffset)))
     Next
@@ -121,7 +121,7 @@ Sub buildSellRow(ByVal copiedRow, ByVal wbName, ByVal sheetName, ByVal unitPrice
     
 End Sub
 
-Sub copyToWorkBook()
+Sub copyToCustomerWorkBook()
     controlCenterWBName = "????.xlsm"
     controlCenterMainSheetName = 1
     
@@ -173,11 +173,11 @@ Sub splitCustomerInfoRByR()
     startPos = controlCenter.Sheets(controlCenterMainSheetName).Range(ccCTPosCell)
     
     
-    rowStartPos = 1
+    colStartPos = 1
     colEndPos = "o"
     rowKeyPos = "d"
     
-    For Each iRow In getAddedRegion(customerWBName, rowStartPos, colEndPos, startPos).Rows
+    For Each iRow In getAddedRegion(customerWBName, colStartPos, colEndPos, startPos).Rows
         Call copyRowToSheet(iRow, customerWBName, iRow.Columns(rowKeyPos).Value)
     Next
     
