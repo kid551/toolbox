@@ -149,6 +149,8 @@ Sub copyToWorkBook()
 End Sub
 
 Sub test()
-
+    With Workbooks("??????????.xls").Sheets(1)
+        .Hyperlinks.Add .Range("d3068"), Address:="", SubAddress:="???!A1"
+    End With
 End Sub
 
