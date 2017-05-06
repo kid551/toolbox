@@ -100,15 +100,20 @@ End Function
 Sub copyToWorkBook()
     controlCenterWBName = "?????DD?.xlsm"
     controlCenterMainSheetName = 1
+    
     ccWHNameCell = "b2"
     ccWHPosCell = "b3"
+    
     ccCTNameCell = "b5"
+    ccUnitPriceCell = "b6"
     
     ' ***********************
     
     warehouseWBName = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccWHNameCell)
-    customerWBName = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccCTNameCell)
     warehouseStartPos = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccWHPosCell)
+    
+    customerWBName = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccCTNameCell)
+    unitPrice = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccUnitPriceCell)
             
     whMainSTName = 1
     whLstColIndx = "o"
@@ -118,13 +123,12 @@ Sub copyToWorkBook()
     
     Dim copiedRange As Range
     For Each iRow In getAddedRegion(warehouseWBName, whMainSTName, whLstColIndx, warehouseStartPos).Rows
-        If iRow.Columns("c") = "¨º?" Then
+        If iRow.Columns("c") = "???" Then
             Set copiedRange = Union(iRow.Columns("a:e"), iRow.Columns("h"), iRow.Columns("i"), iRow.Columns("l"))
             
             ctRowStartIndx = getLastRowIndx(customerWBName, ctMainSTName) + 1
             Call copyRowToSheet(copiedRange, customerWBName, ctMainSTName)
                         
-            unitPrice = 9.5
             Workbooks(customerWBName).Sheets(ctMainSTName).Cells(ctRowStartIndx, 9) = "=H" & ctRowStartIndx & "*G" & ctRowStartIndx
             Workbooks(customerWBName).Sheets(ctMainSTName).Cells(ctRowStartIndx, 10) = unitPrice
             Workbooks(customerWBName).Sheets(ctMainSTName).Cells(ctRowStartIndx, 11) = "=J" & ctRowStartIndx & "*I" & ctRowStartIndx
@@ -132,6 +136,8 @@ Sub copyToWorkBook()
                         
         End If
     Next
+    
+    MsgBox "??DT?? **?????3???2????** ???????????"
 End Sub
 
 Sub test()
