@@ -103,6 +103,7 @@ Sub buildSellRow(ByVal copiedRow, ByVal wbName, ByVal sheetName, ByVal unitPrice
     thirdDomain = "i"
     fourthDomain = "l"
 
+    Dim copiedRange As Range
     Set copiedRange = Union(copiedRow.Columns(firstDomain), copiedRow.Columns(secondDomain), copiedRow.Columns(thirdDomain), copiedRow.Columns(fourthDomain))
     
     ctRowStartIndx = getLastRowIndx(wbName, sheetName) + 1
@@ -184,7 +185,102 @@ Sub splitCustomerInfoRByR()
     
 End Sub
 
+Sub buildSummarySellRow(ByVal copiedRow, ByVal wbName, ByVal sheetName, ByVal unitPrice, ByRef ctDict As Object)
+    firstDomain = "a:d"
+    secondDomain = "l"
+    thirdDomain = "i"
+
+    Dim copiedRange As Range
+    Set copiedRange = copiedRow.Columns(firstDomain)
+    
+    
+    ctKey = copiedRow.Columns("d")
+    If ctDict(ctKey) <> 0 Then
+        ctRowStartIndx = getLastRowIndx(wbName, sheetName)
+    Else
+        ctRowStartIndx = getLastRowIndx(wbName, sheetName) + 1
+    End If
+    
+    
+    Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 1) = copiedRow.Columns("a")
+    Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 2) = copiedRow.Columns("b")
+    Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 3) = copiedRow.Columns("c")
+    Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 4) = copiedRow.Columns("d")
+    
+    
+    customerCell = "d" & ctRowStartIndx
+    subCTField = getCellContents(wbName, sheetName, customerCell) & "!A3"
+    With Workbooks(wbName).Sheets(sheetName)
+        .Hyperlinks.Add .Range(customerCell), Address:="", SubAddress:=subCTField
+    End With
+    
+    
+    If ctDict(ctKey) <> 0 Then
+        Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 5) = Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 5) + copiedRow.Columns(secondDomain)
+        Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 6) = Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 6) + copiedRow.Columns(thirdDomain)
+        ctDict(ctKey) = ctDict(ctKey) + 1
+    Else
+        Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 5) = copiedRow.Columns(secondDomain)
+        Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 6) = copiedRow.Columns(thirdDomain)
+        ctDict(ctKey) = 1
+    End If
+        
+    Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 7) = unitPrice
+    Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 8) = "=G" & ctRowStartIndx & "*F" & ctRowStartIndx
+    Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 10) = "=J" & (ctRowStartIndx - 1) & "+H" & ctRowStartIndx & "-I" & ctRowStartIndx
+        
+End Sub
+
+Sub copyToSummaryCTWB()
+    controlCenterWBName = "????.xlsm"
+    controlCenterMainSheetName = 1
+    
+    ccWHNameCell = "b2"
+    ccWHPosCell = "b3"
+    
+    ccCTSNameCell = "b9"
+    ccUnitPriceCell = "b10"
+    ccCTSPosCell = "b11"
+    
+    whMainSTName = 1
+    whLstColIndx = "o"
+    ctSMainSTName = 1
+    ctSColStartIndx = 1
+    
+    ' ***********************
+    
+    warehouseWBName = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccWHNameCell)
+    warehouseRowStartPos = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccWHPosCell)
+    
+    customerSWBName = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccCTSNameCell)
+    unitPrice = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccUnitPriceCell)
+    
+    ' Record the start position of new added region in "Cell" of "Control Center".
+    Dim customerSStartPos As Range
+    Set customerSStartPos = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccCTSPosCell)
+    customerSStartPos = getLastRowIndx(customerSWBName, ctSMainSTName) + 1
+    
+        
+    Dim customerDict As Object
+    Set customerDict = CreateObject("Scripting.Dictionary")
+    
+    For Each iRow In getAddedRegion(warehouseWBName, whMainSTName, whLstColIndx, warehouseRowStartPos).Rows
+        If iRow.Columns("c") = "?" Then
+            ctt = iRow.Columns("b") & " " & iRow.Columns("d")
+            ctt = iRow.Columns("i")
+            ctt = iRow.Columns("l")
+            Call buildSummarySellRow(iRow, customerSWBName, ctSMainSTName, unitPrice, customerDict)
+            
+        End If
+    Next
+    
+    MsgBox "??? **?????** ???!"
+End Sub
+
 Sub test()
-    Workbooks("????.xlsm").Sheets(1).Range("b8") = 3000
+    Set testDict = CreateObject("Scripting.Dictionary")
+    testDict("?") = testDict("?") + 1
+    testDict("?") = testDict("?") + 1
+    MsgBox testDict.Count
 End Sub
 
