@@ -277,6 +277,20 @@ Sub copyToSummaryCTWB()
     MsgBox "??? **?????** ???!"
 End Sub
 
+Function copyRowToSummarySheet(ByVal copiedRow, ByVal targetWBName, ByVal sheetName)
+    firstColIndx = "a"
+    
+    ' ***********************
+    
+    rowIndx = (getLastRowIndx(targetWBName, sheetName) + 1)
+    corrSheetStartIndx = firstColIndx & rowIndx
+    
+    copiedRow.Copy Workbooks(targetWBName).Sheets(sheetName).Range(corrSheetStartIndx)
+    
+    Workbooks(targetWBName).Sheets(sheetName).Range("g" & rowIndx) = "=F" & rowIndx & "*E" & rowIndx
+    Workbooks(targetWBName).Sheets(sheetName).Range("i" & rowIndx) = "=I" & (rowIndx - 1) & "+G" & rowIndx & "-H" & rowIndx
+End Function
+
 Sub splitCustomerSummaryInfoRByR()
     controlCenterWBName = "????.xlsm"
     controlCenterMainSheetName = 1
@@ -298,7 +312,7 @@ Sub splitCustomerSummaryInfoRByR()
     
     For Each iRow In getAddedRegion(customerSWBName, colStartPos, colEndPos, startSRowPos).Rows
         Set cpRg = Union(iRow.Columns("a:c"), iRow.Columns("e:j"))
-        Call copyRowToSheet(cpRg, customerSWBName, iRow.Columns(rowKeyPos).Value)
+        Call copyRowToSummarySheet(cpRg, customerSWBName, iRow.Columns(rowKeyPos).Value)
     Next
     
 End Sub
