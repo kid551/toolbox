@@ -73,7 +73,7 @@ Sub appendInfoRByR()
     Set controlCenter = Workbooks(controlCenterWBName)
     
     warehouseWBName = controlCenter.Sheets(controlCenterMainSheetName).Range(ccWHNameCell)
-    startPos = controlCenter.Sheets(controlCenterMainSheetName).Range(ccWHPosCell)
+    startRowPos = controlCenter.Sheets(controlCenterMainSheetName).Range(ccWHPosCell)
         
     Dim colorDict As Object
     Set colorDict = getColorDict()
@@ -86,7 +86,7 @@ Sub appendInfoRByR()
     colorCodeOffset = 3
     greighTypeOffset = 3
     
-    For Each iRow In getAddedRegion(warehouseWBName, colStartPos, colEndPos, startPos).Rows
+    For Each iRow In getAddedRegion(warehouseWBName, colStartPos, colEndPos, startRowPos).Rows
         Call copyRowToSheet(iRow, warehouseWBName, colorDict(Right(iRow.Cells(rowKeyPos), colorCodeOffset)))
         Call copyRowToSheet(iRow, warehouseWBName, colorDict(Left(iRow.Cells(rowKeyPos), greighTypeOffset)))
     Next
@@ -140,16 +140,17 @@ Sub copyToCustomerWorkBook()
     ' ***********************
     
     warehouseWBName = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccWHNameCell)
-    warehouseStartPos = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccWHPosCell)
+    warehouseRowStartPos = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccWHPosCell)
     
     customerWBName = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccCTNameCell)
     unitPrice = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccUnitPriceCell)
     
+    ' Record the start position of new added region in "Cell" of "Control Center".
     Dim customerStartPos As Range
     Set customerStartPos = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccCTPosCell)
     customerStartPos = getLastRowIndx(customerWBName, ctMainSTName) + 1
     
-    For Each iRow In getAddedRegion(warehouseWBName, whMainSTName, whLstColIndx, warehouseStartPos).Rows
+    For Each iRow In getAddedRegion(warehouseWBName, whMainSTName, whLstColIndx, warehouseRowStartPos).Rows
         If iRow.Columns("c") = "?" Then
             Call buildSellRow(iRow, customerWBName, ctMainSTName, unitPrice)
         End If
@@ -170,14 +171,14 @@ Sub splitCustomerInfoRByR()
     Set controlCenter = Workbooks(controlCenterWBName)
     
     customerWBName = controlCenter.Sheets(controlCenterMainSheetName).Range(ccCTNameCell)
-    startPos = controlCenter.Sheets(controlCenterMainSheetName).Range(ccCTPosCell)
+    startRowPos = controlCenter.Sheets(controlCenterMainSheetName).Range(ccCTPosCell)
     
     
     colStartPos = 1
     colEndPos = "o"
     rowKeyPos = "d"
     
-    For Each iRow In getAddedRegion(customerWBName, colStartPos, colEndPos, startPos).Rows
+    For Each iRow In getAddedRegion(customerWBName, colStartPos, colEndPos, startRowPos).Rows
         Call copyRowToSheet(iRow, customerWBName, iRow.Columns(rowKeyPos).Value)
     Next
     
