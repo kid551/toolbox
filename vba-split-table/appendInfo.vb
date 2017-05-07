@@ -277,6 +277,32 @@ Sub copyToSummaryCTWB()
     MsgBox "??? **?????** ???!"
 End Sub
 
+Sub splitCustomerSummaryInfoRByR()
+    controlCenterWBName = "????.xlsm"
+    controlCenterMainSheetName = 1
+    ccCTSNameCell = "b9"
+    ccCTSPosCell = "b11"
+    
+    ' ***********************
+    
+    Dim controlCenter As Workbook
+    Set controlCenter = Workbooks(controlCenterWBName)
+    
+    customerSWBName = controlCenter.Sheets(controlCenterMainSheetName).Range(ccCTSNameCell)
+    startSRowPos = controlCenter.Sheets(controlCenterMainSheetName).Range(ccCTSPosCell)
+    
+    
+    colStartPos = 1
+    colEndPos = "j"
+    rowKeyPos = "d"
+    
+    For Each iRow In getAddedRegion(customerSWBName, colStartPos, colEndPos, startSRowPos).Rows
+        Set cpRg = Union(iRow.Columns("a:c"), iRow.Columns("e:j"))
+        Call copyRowToSheet(cpRg, customerSWBName, iRow.Columns(rowKeyPos).Value)
+    Next
+    
+End Sub
+
 Sub test()
     Set testDict = CreateObject("Scripting.Dictionary")
     testDict("?") = testDict("?") + 1
