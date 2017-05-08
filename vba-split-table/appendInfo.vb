@@ -289,6 +289,7 @@ Function copyRowToSummarySheet(ByVal copiedRow, ByVal targetWBName, ByVal sheetN
     
     Workbooks(targetWBName).Sheets(sheetName).Range("g" & rowIndx) = "=F" & rowIndx & "*E" & rowIndx
     Workbooks(targetWBName).Sheets(sheetName).Range("i" & rowIndx) = "=I" & (rowIndx - 1) & "+G" & rowIndx & "-H" & rowIndx
+    
 End Function
 
 Sub splitCustomerSummaryInfoRByR()
@@ -310,9 +311,29 @@ Sub splitCustomerSummaryInfoRByR()
     colEndPos = "j"
     rowKeyPos = "d"
     
+    
+    Dim ctDict As Object
+    Set ctDict = CreateObject("Scripting.Dictionary")
+    
     For Each iRow In getAddedRegion(customerSWBName, colStartPos, colEndPos, startSRowPos).Rows
         Set cpRg = Union(iRow.Columns("a:c"), iRow.Columns("e:j"))
         Call copyRowToSummarySheet(cpRg, customerSWBName, iRow.Columns(rowKeyPos).Value)
+        
+        ctKey = cpRg.Columns("d").Value
+        If ctDict(ctKey) <> 0 Then
+            ctDict(ctKey) = ctDict(ctKey) + 1
+        Else
+            ctDict(ctKey) = 1
+        End If
+    Next
+    
+    For Each iCtKey In ctDict.Keys()
+        rowStartIndx = getLastRowIndx(customerSWBName, iCtKey) + 4
+        
+        Workbooks(customerSWBName).Sheets(iCtKey).Range("b" & rowStartIndx) = "??"
+        Workbooks(customerSWBName).Sheets(iCtKey).Range("d" & rowStartIndx) = "=sum(d4:d" & (rowStartIndx - 4) & ")"
+        Workbooks(customerSWBName).Sheets(iCtKey).Range("e" & rowStartIndx) = "=sum(e4:e" & (rowStartIndx - 4) & ")"
+        Workbooks(customerSWBName).Sheets(iCtKey).Range("g" & rowStartIndx) = "=sum(g4:g" & (rowStartIndx - 4) & ")"
     Next
     
 End Sub
@@ -321,6 +342,12 @@ Sub test()
     Set testDict = CreateObject("Scripting.Dictionary")
     testDict("?") = testDict("?") + 1
     testDict("?") = testDict("?") + 1
-    MsgBox testDict.Count
+    testDict("?") = 4
+    
+    For Each ii In testDict.Keys()
+        MsgBox testDict(ii)
+    Next
+    
+    
 End Sub
 
