@@ -315,11 +315,15 @@ Sub splitCustomerSummaryInfoRByR()
     Dim ctDict As Object
     Set ctDict = CreateObject("Scripting.Dictionary")
     
+    
+    firstDomain = "a:c"
+    secondDomain = "e:j"
+    ctKeyDomain = "d"
     For Each iRow In getAddedRegion(customerSWBName, colStartPos, colEndPos, startSRowPos).Rows
-        Set cpRg = Union(iRow.Columns("a:c"), iRow.Columns("e:j"))
+        Set cpRg = Union(iRow.Columns(firstDomain), iRow.Columns(secondDomain))
         Call copyRowToSummarySheet(cpRg, customerSWBName, iRow.Columns(rowKeyPos).Value)
         
-        ctKey = cpRg.Columns("d").Value
+        ctKey = cpRg.Columns(ctKeyDomain).Value
         If ctDict(ctKey) <> 0 Then
             ctDict(ctKey) = ctDict(ctKey) + 1
         Else
@@ -327,21 +331,24 @@ Sub splitCustomerSummaryInfoRByR()
         End If
     Next
     
+    
+    
     For Each iCtKey In ctDict.Keys()
-        rowStartIndx = getLastRowIndx(customerSWBName, iCtKey) + 4
+        rowGapLines = 3
+        rowStartIndx = getLastRowIndx(customerSWBName, iCtKey) + rowGapLines + 1
         
         ' Clear below contents and formats
-        Workbooks(customerSWBName).Sheets(iCtKey).Range("a" & (rowStartIndx - 3) & ":i" & rowStartIndx).Clear
+        Workbooks(customerSWBName).Sheets(iCtKey).Range("a" & (rowStartIndx - rowGapLines) & ":i" & rowStartIndx).Clear
         
         Workbooks(customerSWBName).Sheets(iCtKey).Range("b" & rowStartIndx) = "??"
         Workbooks(customerSWBName).Sheets(iCtKey).Range("b" & rowStartIndx).HorizontalAlignment = xlCenter
-        Workbooks(customerSWBName).Sheets(iCtKey).Range("d" & rowStartIndx) = "=sum(d4:d" & (rowStartIndx - 4) & ")"
-        Workbooks(customerSWBName).Sheets(iCtKey).Range("e" & rowStartIndx) = "=sum(e4:e" & (rowStartIndx - 4) & ")"
-        Workbooks(customerSWBName).Sheets(iCtKey).Range("g" & rowStartIndx) = "=sum(g4:g" & (rowStartIndx - 4) & ")"
+        Workbooks(customerSWBName).Sheets(iCtKey).Range("d" & rowStartIndx) = "=sum(d4:d" & (rowStartIndx - rowGapLines - 1) & ")"
+        Workbooks(customerSWBName).Sheets(iCtKey).Range("e" & rowStartIndx) = "=sum(e4:e" & (rowStartIndx - rowGapLines - 1) & ")"
+        Workbooks(customerSWBName).Sheets(iCtKey).Range("g" & rowStartIndx) = "=sum(g4:g" & (rowStartIndx - rowGapLines - 1) & ")"
         
         ' Add border lines for added region
         rowOffset = ctDict(iCtKey)
-        filledRange = "a" & (rowStartIndx - 3 - rowOffset) & ":i" & rowStartIndx
+        filledRange = "a" & (rowStartIndx - rowGapLines - rowOffset) & ":i" & rowStartIndx
         Workbooks(customerSWBName).Sheets(iCtKey).Range(filledRange).Borders.LineStyle = 1
     Next
     
