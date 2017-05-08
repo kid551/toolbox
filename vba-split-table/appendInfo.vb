@@ -215,19 +215,25 @@ Sub buildSummarySellRow(ByVal copiedRow, ByVal wbName, ByVal sheetName, ByVal un
     End With
     
     
+    clothCountIndx = 5
+    clothLengthIndx = 6
     If ctDict(ctKey) <> 0 Then
-        Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 5) = Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 5) + copiedRow.Columns(secondDomain)
-        Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 6) = Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 6) + copiedRow.Columns(thirdDomain)
+        Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, clothCountIndx) = Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 5) + copiedRow.Columns(secondDomain)
+        Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, clothLengthIndx) = Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 6) + copiedRow.Columns(thirdDomain)
         ctDict(ctKey) = ctDict(ctKey) + 1
     Else
-        Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 5) = copiedRow.Columns(secondDomain)
-        Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 6) = copiedRow.Columns(thirdDomain)
+        Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, clothCountIndx) = copiedRow.Columns(secondDomain)
+        Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, clothLengthIndx) = copiedRow.Columns(thirdDomain)
         ctDict(ctKey) = 1
     End If
         
-    Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 7) = unitPrice
-    Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 8) = "=G" & ctRowStartIndx & "*F" & ctRowStartIndx
-    Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 10) = "=J" & (ctRowStartIndx - 1) & "+H" & ctRowStartIndx & "-I" & ctRowStartIndx
+            
+    unitPriceIndx = 7
+    totalGrossIndx = 8
+    debtIndx = 10
+    Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, unitPriceIndx) = unitPrice
+    Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, totalGrossIndx) = "=G" & ctRowStartIndx & "*F" & ctRowStartIndx
+    Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, debtIndx) = "=J" & (ctRowStartIndx - 1) & "+H" & ctRowStartIndx & "-I" & ctRowStartIndx
         
 End Sub
 
@@ -266,9 +272,6 @@ Sub copyToSummaryCTWB()
     
     For Each iRow In getAddedRegion(warehouseWBName, whMainSTName, whLstColIndx, warehouseRowStartPos).Rows
         If iRow.Columns("c") = "?" Then
-            ctt = iRow.Columns("b") & " " & iRow.Columns("d")
-            ctt = iRow.Columns("i")
-            ctt = iRow.Columns("l")
             Call buildSummarySellRow(iRow, customerSWBName, ctSMainSTName, unitPrice, customerDict)
             
         End If
@@ -277,7 +280,7 @@ Sub copyToSummaryCTWB()
     MsgBox "??? **?????** ???!"
 End Sub
 
-Function copyRowToSummarySheet(ByVal copiedRow, ByVal targetWBName, ByVal sheetName)
+Function copyRowToSummarySubSheet(ByVal copiedRow, ByVal targetWBName, ByVal sheetName)
     firstColIndx = "a"
     
     ' ***********************
@@ -287,8 +290,10 @@ Function copyRowToSummarySheet(ByVal copiedRow, ByVal targetWBName, ByVal sheetN
     
     copiedRow.Copy Workbooks(targetWBName).Sheets(sheetName).Range(corrSheetStartIndx)
     
-    Workbooks(targetWBName).Sheets(sheetName).Range("g" & rowIndx) = "=F" & rowIndx & "*E" & rowIndx
-    Workbooks(targetWBName).Sheets(sheetName).Range("i" & rowIndx) = "=I" & (rowIndx - 1) & "+G" & rowIndx & "-H" & rowIndx
+    totolGrossIndx = "g"
+    debtIndx = "i"
+    Workbooks(targetWBName).Sheets(sheetName).Range(totolGrossIndx & rowIndx) = "=F" & rowIndx & "*E" & rowIndx
+    Workbooks(targetWBName).Sheets(sheetName).Range(debtIndx & rowIndx) = "=I" & (rowIndx - 1) & "+G" & rowIndx & "-H" & rowIndx
     
 End Function
 
@@ -321,7 +326,7 @@ Sub splitCustomerSummaryInfoRByR()
     ctKeyDomain = "d"
     For Each iRow In getAddedRegion(customerSWBName, colStartPos, colEndPos, startSRowPos).Rows
         Set cpRg = Union(iRow.Columns(firstDomain), iRow.Columns(secondDomain))
-        Call copyRowToSummarySheet(cpRg, customerSWBName, iRow.Columns(rowKeyPos).Value)
+        Call copyRowToSummarySubSheet(cpRg, customerSWBName, iRow.Columns(rowKeyPos).Value)
         
         ctKey = cpRg.Columns(ctKeyDomain).Value
         If ctDict(ctKey) <> 0 Then
@@ -336,22 +341,35 @@ Sub splitCustomerSummaryInfoRByR()
     For Each iCtKey In ctDict.Keys()
         rowGapLines = 3
         rowStartIndx = getLastRowIndx(customerSWBName, iCtKey) + rowGapLines + 1
+        colEndIndx = "i"
         
         ' Clear below contents and formats
-        Workbooks(customerSWBName).Sheets(iCtKey).Range("a" & (rowStartIndx - rowGapLines) & ":i" & rowStartIndx).Clear
+        Workbooks(customerSWBName).Sheets(iCtKey).Range("a" & (rowStartIndx - rowGapLines) & ":" & colEndIndx & rowStartIndx).Clear
         
-        Workbooks(customerSWBName).Sheets(iCtKey).Range("b" & rowStartIndx) = "??"
-        Workbooks(customerSWBName).Sheets(iCtKey).Range("b" & rowStartIndx).HorizontalAlignment = xlCenter
-        Workbooks(customerSWBName).Sheets(iCtKey).Range("d" & rowStartIndx) = "=sum(d4:d" & (rowStartIndx - rowGapLines - 1) & ")"
-        Workbooks(customerSWBName).Sheets(iCtKey).Range("e" & rowStartIndx) = "=sum(e4:e" & (rowStartIndx - rowGapLines - 1) & ")"
-        Workbooks(customerSWBName).Sheets(iCtKey).Range("g" & rowStartIndx) = "=sum(g4:g" & (rowStartIndx - rowGapLines - 1) & ")"
+        
+        totalWordColIndx = "b"
+        Workbooks(customerSWBName).Sheets(iCtKey).Range(totalWordColIndx & rowStartIndx) = "??"
+        Workbooks(customerSWBName).Sheets(iCtKey).Range(totalWordColIndx & rowStartIndx).HorizontalAlignment = xlCenter
+        
+        
+        rowTopIndx = 4
+        clothCountColIndx = "d"
+        clothLengthColIndx = "e"
+        clothGrossAmount = "g"
+        Call sumCellAbove(customerSWBName, iCtKey, clothCountColIndx, rowTopIndx, rowStartIndx, rowGapLines)
+        Call sumCellAbove(customerSWBName, iCtKey, clothLengthColIndx, rowTopIndx, rowStartIndx, rowGapLines)
+        Call sumCellAbove(customerSWBName, iCtKey, clothGrossAmount, rowTopIndx, rowStartIndx, rowGapLines)
         
         ' Add border lines for added region
         rowOffset = ctDict(iCtKey)
-        filledRange = "a" & (rowStartIndx - rowGapLines - rowOffset) & ":i" & rowStartIndx
+        filledRange = "a" & (rowStartIndx - rowGapLines - rowOffset) & ":" & colEndIndx & rowStartIndx
         Workbooks(customerSWBName).Sheets(iCtKey).Range(filledRange).Borders.LineStyle = 1
     Next
     
+End Sub
+
+Sub sumCellAbove(ByVal wbName, ByVal sheetName, ByVal colIndx, ByVal rowTopIndx, ByVal rowStartIndx, ByVal rowGapLines)
+    Workbooks(wbName).Sheets(sheetName).Range(colIndx & rowStartIndx) = "=sum(" & colIndx & rowTopIndx & ":" & colIndx & (rowStartIndx - rowGapLines - 1) & ")"
 End Sub
 
 Sub test()
