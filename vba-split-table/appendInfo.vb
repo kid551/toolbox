@@ -330,24 +330,25 @@ Sub splitCustomerSummaryInfoRByR()
     For Each iCtKey In ctDict.Keys()
         rowStartIndx = getLastRowIndx(customerSWBName, iCtKey) + 4
         
+        ' Clear below contents and formats
+        Workbooks(customerSWBName).Sheets(iCtKey).Range("a" & (rowStartIndx - 3) & ":i" & rowStartIndx).Clear
+        
         Workbooks(customerSWBName).Sheets(iCtKey).Range("b" & rowStartIndx) = "??"
+        Workbooks(customerSWBName).Sheets(iCtKey).Range("b" & rowStartIndx).HorizontalAlignment = xlCenter
         Workbooks(customerSWBName).Sheets(iCtKey).Range("d" & rowStartIndx) = "=sum(d4:d" & (rowStartIndx - 4) & ")"
         Workbooks(customerSWBName).Sheets(iCtKey).Range("e" & rowStartIndx) = "=sum(e4:e" & (rowStartIndx - 4) & ")"
         Workbooks(customerSWBName).Sheets(iCtKey).Range("g" & rowStartIndx) = "=sum(g4:g" & (rowStartIndx - 4) & ")"
+        
+        ' Add border lines for added region
+        rowOffset = ctDict(iCtKey)
+        filledRange = "a" & (rowStartIndx - 3 - rowOffset) & ":i" & rowStartIndx
+        Workbooks(customerSWBName).Sheets(iCtKey).Range(filledRange).Borders.LineStyle = 1
     Next
     
 End Sub
 
 Sub test()
-    Set testDict = CreateObject("Scripting.Dictionary")
-    testDict("?") = testDict("?") + 1
-    testDict("?") = testDict("?") + 1
-    testDict("?") = 4
-    
-    For Each ii In testDict.Keys()
-        MsgBox testDict(ii)
-    Next
-    
+    Workbooks("???????.xlsx").Sheets("??").Range("a24:i28").Borders.LineStyle = 1
     
 End Sub
 
