@@ -193,8 +193,9 @@ Sub buildSummarySellRow(ByVal copiedRow, ByVal wbName, ByVal sheetName, ByVal un
     Dim copiedRange As Range
     Set copiedRange = copiedRow.Columns(firstDomain)
     
-    
-    ctKey = copiedRow.Columns("d")
+    ctGreighDomain = "b"
+    ctCustomerDomain = "d"
+    ctKey = copiedRow.Columns(ctGreighDomain) & " " & copiedRow.Columns(ctCustomerDomain)
     If ctDict(ctKey) <> 0 Then
         ctRowStartIndx = getLastRowIndx(wbName, sheetName)
     Else
