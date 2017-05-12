@@ -13,6 +13,7 @@ Function getColorDict() As Object
     getColorDict.Add "511", "11???"
     getColorDict.Add "512", "12???"
     getColorDict.Add "514", "14??"
+    getColorDict.Add "515", "15??"
     getColorDict.Add "601", "601"
     getColorDict.Add "602", "602"
     getColorDict.Add "603", "603??"
@@ -152,7 +153,7 @@ Sub copyToCustomerWorkBook()
     customerStartPos = getLastRowIndx(customerWBName, ctMainSTName) + 1
     
     For Each iRow In getAddedRegion(warehouseWBName, whMainSTName, whLstColIndx, warehouseRowStartPos).Rows
-        If iRow.Columns("c") = "?" Then
+        If iRow.Columns("c") = "?" Or iRow.Columns("c") = "?" Then
             Call buildSellRow(iRow, customerWBName, ctMainSTName, unitPrice)
         End If
     Next
@@ -373,8 +374,98 @@ Sub sumCellAbove(ByVal wbName, ByVal sheetName, ByVal colIndx, ByVal rowTopIndx,
     Workbooks(wbName).Sheets(sheetName).Range(colIndx & rowStartIndx) = "=sum(" & colIndx & rowTopIndx & ":" & colIndx & (rowStartIndx - rowGapLines - 1) & ")"
 End Sub
 
+
+Sub buildTest(ByVal copiedRow, ByVal wbName, ByVal sheetName, ByVal unitPrice, ByRef ctDict As Object)
+    firstDomain = "a:d"
+    secondDomain = "h"
+    thirdDomain = "g"
+
+    Dim copiedRange As Range
+    Set copiedRange = copiedRow.Columns(firstDomain)
+    
+    ctGreighDomain = "b"
+    ctType = "c"
+    ctCustomerDomain = "d"
+    ctKey = copiedRow.Columns(ctGreighDomain) & " " & ctType & " " & copiedRow.Columns(ctCustomerDomain)
+    If ctDict(ctKey) <> 0 Then
+        ctRowStartIndx = getLastRowIndx(wbName, sheetName)
+    Else
+        ctRowStartIndx = getLastRowIndx(wbName, sheetName) + 1
+    End If
+    
+    copiedRow.Columns("a:d").Copy Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 1)
+    
+    If copiedRow.Columns("c") <> "?" Then
+        Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 9) = copiedRow.Columns("m")
+    End If
+    
+    
+    customerCell = "d" & ctRowStartIndx
+    subCTField = getCellContents(wbName, sheetName, customerCell) & "!A3"
+    With Workbooks(wbName).Sheets(sheetName)
+        .Hyperlinks.Add .Range(customerCell), Address:="", SubAddress:=subCTField
+    End With
+    
+    
+    clothCountIndx = 5
+    clothLengthIndx = 6
+    If ctDict(ctKey) <> 0 Then
+        Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, clothCountIndx) = Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 5) + copiedRow.Columns(secondDomain)
+        Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, clothLengthIndx) = Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 6) + copiedRow.Columns(thirdDomain)
+        ctDict(ctKey) = ctDict(ctKey) + 1
+    Else
+        Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, clothCountIndx) = copiedRow.Columns(secondDomain)
+        Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, clothLengthIndx) = copiedRow.Columns(thirdDomain)
+        ctDict(ctKey) = 1
+    End If
+        
+            
+    unitPriceIndx = 7
+    totalGrossIndx = 8
+    debtIndx = 10
+    Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, unitPriceIndx) = unitPrice
+    Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, totalGrossIndx) = "=G" & ctRowStartIndx & "*F" & ctRowStartIndx
+    Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, debtIndx) = "=J" & (ctRowStartIndx - 1) & "+H" & ctRowStartIndx & "-I" & ctRowStartIndx
+        
+End Sub
+
 Sub test()
-    Workbooks("???????.xlsx").Sheets("??").Range("a24:i28").Borders.LineStyle = 1
+    controlCenterWBName = "????.xlsm"
+    controlCenterMainSheetName = 1
+    
+    ccWHNameCell = "b5"
+    ccWHPosCell = "b7"
+    
+    ccCTSNameCell = "b9"
+    ccUnitPriceCell = "b6"
+    ccCTSPosCell = "b11"
+    
+    whMainSTName = 1
+    whLstColIndx = "o"
+    ctSMainSTName = 1
+    ctSColStartIndx = 1
+    
+    ' ***********************
+    
+    warehouseWBName = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccWHNameCell)
+    warehouseRowStartPos = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccWHPosCell)
+    
+    customerSWBName = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccCTSNameCell)
+    unitPrice = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccUnitPriceCell)
+    
+    ' Record the start position of new added region in "Cell" of "Control Center".
+    Dim customerSStartPos As Range
+    Set customerSStartPos = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccCTSPosCell)
+    customerSStartPos = getLastRowIndx(customerSWBName, ctSMainSTName) + 1
+    
+        
+    Dim customerDict As Object
+    Set customerDict = CreateObject("Scripting.Dictionary")
+    
+    For Each iRow In getAddedRegion(warehouseWBName, whMainSTName, whLstColIndx, warehouseRowStartPos).Rows
+        Call buildTest(iRow, customerSWBName, ctSMainSTName, unitPrice, customerDict)
+        
+    Next
     
 End Sub
 
