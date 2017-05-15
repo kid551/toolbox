@@ -1,3 +1,4 @@
+
 Function getColorDict() As Object
     Set getColorDict = CreateObject("Scripting.Dictionary")
     
@@ -33,6 +34,15 @@ Function getColorDict() As Object
     getColorDict.Add "C16", "16???"
 End Function
 
+
+
+
+' *****************************************************************
+' *
+' * General tool subs/functions library
+' *
+' *****************************************************************
+
 Function getLastRowIndx(ByVal wbName, ByVal sheetName)
     ' get the last non-empy row index of column "a"
     getLastRowIndx = Workbooks(wbName).Sheets(sheetName).Range("a65536").End(3).Row
@@ -61,6 +71,34 @@ Function copyRowToSheet(ByVal copiedRow, ByVal targetWBName, ByVal sheetName)
     
     copiedRow.Copy Workbooks(targetWBName).Sheets(sheetName).Range(corrSheetStartIndx)
 End Function
+
+Function getCellContents(ByVal wbName, ByVal stName, ByVal cPos) As Range
+    Set getCellContents = Workbooks(wbName).Sheets(stName).Range(cPos)
+End Function
+
+Sub bakupFile(ByVal fileName)
+    ' Here we assume the bakuped file is ended with '.xls'
+    preFileName = Replace(fileName, ".xls", "")
+    
+    newDate = Replace(Date, "-", "")
+    newTime = Left(Replace(Time(), ":", ""), 4)
+    timeStamp = newDate & newTime
+    
+    prePath = Application.ActiveWorkbook.Path
+    src = prePath & "\" & fileName
+    dest = prePath & "\bak\" & preFileName & "-" & timeStamp & ".xls"
+    
+    Workbooks(fileName).SaveCopyAs dest
+End Sub
+
+
+
+
+' *****************************************************************
+' *
+' * Split "warehouse" main sheet, and build sub-sheet.
+' *
+' *****************************************************************
 
 Sub appendInfoRByR()
     controlCenterWBName = "????.xlsm"
@@ -96,9 +134,14 @@ Sub appendInfoRByR()
     
 End Sub
 
-Function getCellContents(ByVal wbName, ByVal stName, ByVal cPos) As Range
-    Set getCellContents = Workbooks(wbName).Sheets(stName).Range(cPos)
-End Function
+
+
+
+' *****************************************************************
+' *
+' * Build "customer" sheet by copying from "warehouse".
+' *
+' *****************************************************************
 
 Sub buildSellRow(ByVal copiedRow, ByVal wbName, ByVal sheetName, ByVal unitPrice)
     firstDomain = "a:e"
@@ -164,6 +207,15 @@ Sub copyToCustomerWorkBook()
     MsgBox "??? **?????** ???!"
 End Sub
 
+
+
+
+' *****************************************************************
+' *
+' * Split "customer" main sheet, and build sub-sheet.
+' *
+' *****************************************************************
+
 Sub splitCustomerInfoRByR()
     controlCenterWBName = "????.xlsm"
     controlCenterMainSheetName = 1
@@ -189,6 +241,15 @@ Sub splitCustomerInfoRByR()
     Next
     
 End Sub
+
+
+
+
+' *****************************************************************
+' *
+' * Build "customer summary" main sheet by copying from "customer".
+' *
+' *****************************************************************
 
 Sub buildSummarySellRow(ByVal copiedRow, ByVal wbName, ByVal sheetName, ByVal unitPrice, ByRef ctDict As Object)
     firstDomain = "a:d"
@@ -282,6 +343,15 @@ Sub copyToSummaryCTWB()
     
 End Sub
 
+
+
+
+' *****************************************************************
+' *
+' * Split "customer summary" main sheet, and build sub-sheet.
+' *
+' *****************************************************************
+
 Function copyRowToSummarySubSheet(ByVal copiedRow, ByVal targetWBName, ByVal sheetName)
     firstColIndx = "a"
     
@@ -298,6 +368,10 @@ Function copyRowToSummarySubSheet(ByVal copiedRow, ByVal targetWBName, ByVal she
     Workbooks(targetWBName).Sheets(sheetName).Range(debtIndx & rowIndx) = "=I" & (rowIndx - 1) & "+G" & rowIndx & "-H" & rowIndx
     
 End Function
+
+Sub sumCellAbove(ByVal wbName, ByVal sheetName, ByVal colIndx, ByVal rowTopIndx, ByVal rowStartIndx, ByVal rowGapLines)
+    Workbooks(wbName).Sheets(sheetName).Range(colIndx & rowStartIndx) = "=sum(" & colIndx & rowTopIndx & ":" & colIndx & (rowStartIndx - rowGapLines - 1) & ")"
+End Sub
 
 Sub splitCustomerSummaryInfoRByR()
     controlCenterWBName = "????.xlsm"
@@ -372,26 +446,13 @@ Sub splitCustomerSummaryInfoRByR()
 End Sub
 
 
-Sub sumCellAbove(ByVal wbName, ByVal sheetName, ByVal colIndx, ByVal rowTopIndx, ByVal rowStartIndx, ByVal rowGapLines)
-    Workbooks(wbName).Sheets(sheetName).Range(colIndx & rowStartIndx) = "=sum(" & colIndx & rowTopIndx & ":" & colIndx & (rowStartIndx - rowGapLines - 1) & ")"
-End Sub
 
 
-Sub bakupFile(ByVal fileName)
-    ' Here we assume the bakuped file is ended with '.xls'
-    preFileName = Replace(fileName, ".xls", "")
-    
-    newDate = Replace(Date, "-", "")
-    newTime = Left(Replace(Time(), ":", ""), 4)
-    timeStamp = newDate & newTime
-    
-    prePath = Application.ActiveWorkbook.Path
-    src = prePath & "\" & fileName
-    dest = prePath & "\bak\" & preFileName & "-" & timeStamp & ".xls"
-    
-    Workbooks(fileName).SaveCopyAs dest
-End Sub
-
+' *****************************************************************
+' *
+' * Lab for testing.
+' *
+' *****************************************************************
 
 Sub test()
     newDate = Replace(Date, "-", "")
@@ -405,9 +466,5 @@ Sub test()
     Workbooks("????.xlsm").SaveCopyAs dest
 End Sub
 
-
-Sub Copy_One_File(ByVal source, ByVal dest)
-    FileCopy source, dest
-End Sub
 
 
