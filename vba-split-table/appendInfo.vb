@@ -74,6 +74,8 @@ Sub appendInfoRByR()
     Set controlCenter = Workbooks(controlCenterWBName)
     
     warehouseWBName = controlCenter.Sheets(controlCenterMainSheetName).Range(ccWHNameCell)
+    bakupFile (warehouseWBName)
+    
     startRowPos = controlCenter.Sheets(controlCenterMainSheetName).Range(ccWHPosCell)
         
     Dim colorDict As Object
@@ -146,6 +148,7 @@ Sub copyToCustomerWorkBook()
     
     customerWBName = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccCTNameCell)
     unitPrice = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccUnitPriceCell)
+    bakupFile (customerWBName)
     
     ' Record the start position of new added region in "Cell" of "Control Center".
     Dim customerStartPos As Range
@@ -174,6 +177,7 @@ Sub splitCustomerInfoRByR()
     
     customerWBName = controlCenter.Sheets(controlCenterMainSheetName).Range(ccCTNameCell)
     startRowPos = controlCenter.Sheets(controlCenterMainSheetName).Range(ccCTPosCell)
+    bakupFile (customerWBName)
     
     
     colStartPos = 1
@@ -188,15 +192,16 @@ End Sub
 
 Sub buildSummarySellRow(ByVal copiedRow, ByVal wbName, ByVal sheetName, ByVal unitPrice, ByRef ctDict As Object)
     firstDomain = "a:d"
-    secondDomain = "l"
-    thirdDomain = "i"
+    secondDomain = "h"
+    thirdDomain = "g"
 
     Dim copiedRange As Range
     Set copiedRange = copiedRow.Columns(firstDomain)
     
     ctGreighDomain = "b"
+    ctType = "c"
     ctCustomerDomain = "d"
-    ctKey = copiedRow.Columns(ctGreighDomain) & " " & copiedRow.Columns(ctCustomerDomain)
+    ctKey = copiedRow.Columns(ctGreighDomain) & " " & copiedRow.Columns(ctType) & " " & copiedRow.Columns(ctCustomerDomain)
     If ctDict(ctKey) <> 0 Then
         ctRowStartIndx = getLastRowIndx(wbName, sheetName)
     Else
@@ -204,6 +209,10 @@ Sub buildSummarySellRow(ByVal copiedRow, ByVal wbName, ByVal sheetName, ByVal un
     End If
     
     copiedRow.Columns("a:d").Copy Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 1)
+    
+    If copiedRow.Columns("c") <> "?" Then
+        Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 9) = copiedRow.Columns("m")
+    End If
     
     
     customerCell = "d" & ctRowStartIndx
@@ -224,12 +233,13 @@ Sub buildSummarySellRow(ByVal copiedRow, ByVal wbName, ByVal sheetName, ByVal un
         Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, clothLengthIndx) = copiedRow.Columns(thirdDomain)
         ctDict(ctKey) = 1
     End If
-        
-            
+    
+    
     unitPriceIndx = 7
+    
     totalGrossIndx = 8
     debtIndx = 10
-    Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, unitPriceIndx) = unitPrice
+    copiedRow.Columns("j").Copy Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, unitPriceIndx)
     Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, totalGrossIndx) = "=G" & ctRowStartIndx & "*F" & ctRowStartIndx
     Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, debtIndx) = "=J" & (ctRowStartIndx - 1) & "+H" & ctRowStartIndx & "-I" & ctRowStartIndx
         
@@ -239,25 +249,26 @@ Sub copyToSummaryCTWB()
     controlCenterWBName = "????.xlsm"
     controlCenterMainSheetName = 1
     
-    ccWHNameCell = "b2"
-    ccWHPosCell = "b3"
+    ccCTNameCell = "b5"
+    ccCTPosCell = "b7"
     
     ccCTSNameCell = "b9"
-    ccUnitPriceCell = "b10"
+    ccUnitPriceCell = "b6"
     ccCTSPosCell = "b11"
     
-    whMainSTName = 1
-    whLstColIndx = "o"
+    ctMainSTName = 1
+    ctLstColIndx = "o"
     ctSMainSTName = 1
     ctSColStartIndx = 1
     
     ' ***********************
     
-    warehouseWBName = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccWHNameCell)
-    warehouseRowStartPos = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccWHPosCell)
+    customerWBName = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccCTNameCell)
+    customerRowStartPos = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccCTPosCell)
     
     customerSWBName = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccCTSNameCell)
     unitPrice = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccUnitPriceCell)
+    bakupFile (customerSWBName)
     
     ' Record the start position of new added region in "Cell" of "Control Center".
     Dim customerSStartPos As Range
@@ -268,14 +279,11 @@ Sub copyToSummaryCTWB()
     Dim customerDict As Object
     Set customerDict = CreateObject("Scripting.Dictionary")
     
-    For Each iRow In getAddedRegion(warehouseWBName, whMainSTName, whLstColIndx, warehouseRowStartPos).Rows
-        If iRow.Columns("c") = "?" Then
-            Call buildSummarySellRow(iRow, customerSWBName, ctSMainSTName, unitPrice, customerDict)
-            
-        End If
+    For Each iRow In getAddedRegion(customerWBName, ctMainSTName, ctLstColIndx, customerRowStartPos).Rows
+        Call buildSummarySellRow(iRow, customerSWBName, ctSMainSTName, unitPrice, customerDict)
+        
     Next
     
-    MsgBox "??? **?????** ???!"
 End Sub
 
 Function copyRowToSummarySubSheet(ByVal copiedRow, ByVal targetWBName, ByVal sheetName)
@@ -308,6 +316,7 @@ Sub splitCustomerSummaryInfoRByR()
     
     customerSWBName = controlCenter.Sheets(controlCenterMainSheetName).Range(ccCTSNameCell)
     startSRowPos = controlCenter.Sheets(controlCenterMainSheetName).Range(ccCTSPosCell)
+    bakupFile (customerSWBName)
     
     
     colStartPos = 1
@@ -366,6 +375,7 @@ Sub splitCustomerSummaryInfoRByR()
     
 End Sub
 
+
 Sub sumCellAbove(ByVal wbName, ByVal sheetName, ByVal colIndx, ByVal rowTopIndx, ByVal rowStartIndx, ByVal rowGapLines)
     Workbooks(wbName).Sheets(sheetName).Range(colIndx & rowStartIndx) = "=sum(" & colIndx & rowTopIndx & ":" & colIndx & (rowStartIndx - rowGapLines - 1) & ")"
 End Sub
@@ -403,4 +413,5 @@ End Sub
 Sub Copy_One_File(ByVal source, ByVal dest)
     FileCopy source, dest
 End Sub
+
 
