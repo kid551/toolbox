@@ -371,100 +371,36 @@ Sub sumCellAbove(ByVal wbName, ByVal sheetName, ByVal colIndx, ByVal rowTopIndx,
 End Sub
 
 
-
-
-Sub buildTest(ByVal copiedRow, ByVal wbName, ByVal sheetName, ByVal unitPrice, ByRef ctDict As Object)
-    firstDomain = "a:d"
-    secondDomain = "h"
-    thirdDomain = "g"
-
-    Dim copiedRange As Range
-    Set copiedRange = copiedRow.Columns(firstDomain)
+Sub bakupFile(ByVal fileName)
+    ' Here we assume the bakuped file is ended with '.xls'
+    preFileName = Replace(fileName, ".xls", "")
     
-    ctGreighDomain = "b"
-    ctType = "c"
-    ctCustomerDomain = "d"
-    ctKey = copiedRow.Columns(ctGreighDomain) & " " & copiedRow.Columns(ctType) & " " & copiedRow.Columns(ctCustomerDomain)
-    If ctDict(ctKey) <> 0 Then
-        ctRowStartIndx = getLastRowIndx(wbName, sheetName)
-    Else
-        ctRowStartIndx = getLastRowIndx(wbName, sheetName) + 1
-    End If
+    newDate = Replace(Date, "-", "")
+    newTime = Left(Replace(Time(), ":", ""), 4)
+    timeStamp = newDate & newTime
     
-    copiedRow.Columns("a:d").Copy Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 1)
+    prePath = Application.ActiveWorkbook.Path
+    src = prePath & "\" & fileName
+    dest = prePath & "\bak\" & preFileName & "-" & timeStamp & ".xls"
     
-    If copiedRow.Columns("c") <> "?" Then
-        Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 9) = copiedRow.Columns("m")
-    End If
-    
-    
-    customerCell = "d" & ctRowStartIndx
-    subCTField = getCellContents(wbName, sheetName, customerCell) & "!A3"
-    With Workbooks(wbName).Sheets(sheetName)
-        .Hyperlinks.Add .Range(customerCell), Address:="", SubAddress:=subCTField
-    End With
-    
-    
-    clothCountIndx = 5
-    clothLengthIndx = 6
-    If ctDict(ctKey) <> 0 Then
-        Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, clothCountIndx) = Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 5) + copiedRow.Columns(secondDomain)
-        Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, clothLengthIndx) = Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 6) + copiedRow.Columns(thirdDomain)
-        ctDict(ctKey) = ctDict(ctKey) + 1
-    Else
-        Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, clothCountIndx) = copiedRow.Columns(secondDomain)
-        Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, clothLengthIndx) = copiedRow.Columns(thirdDomain)
-        ctDict(ctKey) = 1
-    End If
-    
-    
-    unitPriceIndx = 7
-	
-    totalGrossIndx = 8
-    debtIndx = 10
-    copiedRow.Columns("j").Copy Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, unitPriceIndx)    
-    Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, totalGrossIndx) = "=G" & ctRowStartIndx & "*F" & ctRowStartIndx
-    Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, debtIndx) = "=J" & (ctRowStartIndx - 1) & "+H" & ctRowStartIndx & "-I" & ctRowStartIndx
-        
+    Workbooks(fileName).SaveCopyAs dest
 End Sub
 
+
 Sub test()
-    controlCenterWBName = "????.xlsm"
-    controlCenterMainSheetName = 1
+    newDate = Replace(Date, "-", "")
+    newTime = Left(Replace(Time(), ":", ""), 4)
+    res = newDate & newTime
     
-    ccWHNameCell = "b5"
-    ccWHPosCell = "b7"
+    prePath = Application.ActiveWorkbook.Path
+    source = prePath & "\????.xlsm"
+    dest = prePath & "\bak\????-" & res & ".xlsm"
     
-    ccCTSNameCell = "b9"
-    ccUnitPriceCell = "b6"
-    ccCTSPosCell = "b11"
-    
-    whMainSTName = 1
-    whLstColIndx = "o"
-    ctSMainSTName = 1
-    ctSColStartIndx = 1
-    
-    ' ***********************
-    
-    warehouseWBName = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccWHNameCell)
-    warehouseRowStartPos = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccWHPosCell)
-    
-    customerSWBName = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccCTSNameCell)
-    unitPrice = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccUnitPriceCell)
-    
-    ' Record the start position of new added region in "Cell" of "Control Center".
-    Dim customerSStartPos As Range
-    Set customerSStartPos = getCellContents(controlCenterWBName, controlCenterMainSheetName, ccCTSPosCell)
-    customerSStartPos = getLastRowIndx(customerSWBName, ctSMainSTName) + 1
-    
-        
-    Dim customerDict As Object
-    Set customerDict = CreateObject("Scripting.Dictionary")
-    
-    For Each iRow In getAddedRegion(warehouseWBName, whMainSTName, whLstColIndx, warehouseRowStartPos).Rows
-        Call buildTest(iRow, customerSWBName, ctSMainSTName, unitPrice, customerDict)
-        
-    Next
-    
+    Workbooks("????.xlsm").SaveCopyAs dest
+End Sub
+
+
+Sub Copy_One_File(ByVal source, ByVal dest)
+    FileCopy source, dest
 End Sub
 
