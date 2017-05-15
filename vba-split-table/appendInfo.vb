@@ -156,7 +156,7 @@ Sub copyToCustomerWorkBook()
     customerStartPos = getLastRowIndx(customerWBName, ctMainSTName) + 1
     
     For Each iRow In getAddedRegion(warehouseWBName, whMainSTName, whLstColIndx, warehouseRowStartPos).Rows
-        If iRow.Columns("c") = "?" Or iRow.Columns("c") = "?" Then
+        If iRow.Columns("c") = "?" Or iRow.Columns("c") = "?" Or iRow.Columns("c") = "?" Then
             Call buildSellRow(iRow, customerWBName, ctMainSTName, unitPrice)
         End If
     Next
@@ -209,11 +209,7 @@ Sub buildSummarySellRow(ByVal copiedRow, ByVal wbName, ByVal sheetName, ByVal un
     End If
     
     copiedRow.Columns("a:d").Copy Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 1)
-    
-    If copiedRow.Columns("c") <> "?" Then
-        Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 9) = copiedRow.Columns("m")
-    End If
-    
+    Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 9) = copiedRow.Columns("m")
     
     customerCell = "d" & ctRowStartIndx
     subCTField = getCellContents(wbName, sheetName, customerCell) & "!A3"
