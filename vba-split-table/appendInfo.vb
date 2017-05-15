@@ -203,11 +203,7 @@ Sub buildSummarySellRow(ByVal copiedRow, ByVal wbName, ByVal sheetName, ByVal un
         ctRowStartIndx = getLastRowIndx(wbName, sheetName) + 1
     End If
     
-    
-    Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 1) = copiedRow.Columns("a")
-    Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 2) = copiedRow.Columns("b")
-    Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 3) = copiedRow.Columns("c")
-    Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 4) = copiedRow.Columns("d")
+    copiedRow.Columns("a:d").Copy Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, 1)
     
     
     customerCell = "d" & ctRowStartIndx
@@ -375,6 +371,8 @@ Sub sumCellAbove(ByVal wbName, ByVal sheetName, ByVal colIndx, ByVal rowTopIndx,
 End Sub
 
 
+
+
 Sub buildTest(ByVal copiedRow, ByVal wbName, ByVal sheetName, ByVal unitPrice, ByRef ctDict As Object)
     firstDomain = "a:d"
     secondDomain = "h"
@@ -386,7 +384,7 @@ Sub buildTest(ByVal copiedRow, ByVal wbName, ByVal sheetName, ByVal unitPrice, B
     ctGreighDomain = "b"
     ctType = "c"
     ctCustomerDomain = "d"
-    ctKey = copiedRow.Columns(ctGreighDomain) & " " & ctType & " " & copiedRow.Columns(ctCustomerDomain)
+    ctKey = copiedRow.Columns(ctGreighDomain) & " " & copiedRow.Columns(ctType) & " " & copiedRow.Columns(ctCustomerDomain)
     If ctDict(ctKey) <> 0 Then
         ctRowStartIndx = getLastRowIndx(wbName, sheetName)
     Else
@@ -418,13 +416,14 @@ Sub buildTest(ByVal copiedRow, ByVal wbName, ByVal sheetName, ByVal unitPrice, B
         Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, clothLengthIndx) = copiedRow.Columns(thirdDomain)
         ctDict(ctKey) = 1
     End If
-        
-            
+    
+    
     unitPriceIndx = 7
+	
     totalGrossIndx = 8
     debtIndx = 10
-    Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, unitPriceIndx) = unitPrice
-    Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, totalGrossIndx) = "=G" & ctRowStartIndx & "*F" & ctRowStartIndx
+    copiedRow.Columns("j").Copy Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, unitPriceIndx)    
+    Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, totalGrossIndx) = "=G" & ctRowStartIndx & "*F" & ctRowStartIndx & "*E" & ctRowStartIndx
     Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, debtIndx) = "=J" & (ctRowStartIndx - 1) & "+H" & ctRowStartIndx & "-I" & ctRowStartIndx
         
 End Sub
