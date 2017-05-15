@@ -423,7 +423,7 @@ Sub buildTest(ByVal copiedRow, ByVal wbName, ByVal sheetName, ByVal unitPrice, B
     totalGrossIndx = 8
     debtIndx = 10
     copiedRow.Columns("j").Copy Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, unitPriceIndx)    
-    Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, totalGrossIndx) = "=G" & ctRowStartIndx & "*F" & ctRowStartIndx & "*E" & ctRowStartIndx
+    Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, totalGrossIndx) = "=G" & ctRowStartIndx & "*F" & ctRowStartIndx
     Workbooks(wbName).Sheets(sheetName).Cells(ctRowStartIndx, debtIndx) = "=J" & (ctRowStartIndx - 1) & "+H" & ctRowStartIndx & "-I" & ctRowStartIndx
         
 End Sub
