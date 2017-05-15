@@ -81,6 +81,7 @@ Sub bakupFile(ByVal fileName)
     preFileName = Replace(fileName, ".xls", "")
     
     newDate = Replace(Date, "-", "")
+    newDate = Replace(newDate, "/", "")
     newTime = Left(Replace(Time(), ":", ""), 4)
     timeStamp = newDate & newTime
     
