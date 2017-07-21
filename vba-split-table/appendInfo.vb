@@ -2,36 +2,36 @@
 Function getColorDict() As Object
     Set getColorDict = CreateObject("Scripting.Dictionary")
     
-    getColorDict.Add "501", "1??"
-    getColorDict.Add "502", "2??"
-    getColorDict.Add "503", "3??"
-    getColorDict.Add "504", "4??"
-    getColorDict.Add "505", "5??"
-    getColorDict.Add "506", "6??"
-    getColorDict.Add "508", "8??"
-    getColorDict.Add "509", "9??"
-    getColorDict.Add "510", "10??"
-    getColorDict.Add "511", "11???"
-    getColorDict.Add "512", "12???"
-    getColorDict.Add "514", "14??"
-    getColorDict.Add "515", "15??"
+    getColorDict.Add "501", "1芥黄"
+    getColorDict.Add "502", "2土黄"
+    getColorDict.Add "503", "3军绿"
+    getColorDict.Add "504", "4浅卡"
+    getColorDict.Add "505", "5杏色"
+    getColorDict.Add "506", "6浅灰"
+    getColorDict.Add "508", "8军黄"
+    getColorDict.Add "509", "9深军"
+    getColorDict.Add "510", "10深灰"
+    getColorDict.Add "511", "11深藏青"
+    getColorDict.Add "512", "12深卡其"
+    getColorDict.Add "514", "14米白"
+    getColorDict.Add "515", "15亮白"
     getColorDict.Add "601", "601"
     getColorDict.Add "602", "602"
-    getColorDict.Add "603", "603??"
-    getColorDict.Add "604", "604???"
-    getColorDict.Add "605", "605??"
-    getColorDict.Add "606", "606???"
-    getColorDict.Add "607", "607??"
+    getColorDict.Add "603", "603卡其"
+    getColorDict.Add "604", "604深卡其"
+    getColorDict.Add "605", "605绿灰"
+    getColorDict.Add "606", "606深卡其"
+    getColorDict.Add "607", "607深灰"
     getColorDict.Add "608", "608"
     getColorDict.Add "609", "609"
     getColorDict.Add "610", "610"
     getColorDict.Add "611", "611"
     getColorDict.Add "612", "612"
-    getColorDict.Add "??", "??"
-    getColorDict.Add "??????", "??????"
+    getColorDict.Add "灰杏", "灰杏"
+    getColorDict.Add "乔雄使用颜色", "乔雄使用颜色"
     
-    getColorDict.Add "C32", "32???"
-    getColorDict.Add "C16", "16???"
+    getColorDict.Add "C32", "32总库存"
+    getColorDict.Add "C16", "16总库存"
 End Function
 
 
@@ -102,7 +102,7 @@ End Sub
 ' *****************************************************************
 
 Sub appendInfoRByR()
-    controlCenterWBName = "????.xlsm"
+    controlCenterWBName = "控制中心.xlsm"
     controlCenterMainSheetName = 1
     ccWHNameCell = "b2"
     ccWHPosCell = "b3"
@@ -170,7 +170,7 @@ Sub buildSellRow(ByVal copiedRow, ByVal wbName, ByVal sheetName, ByVal unitPrice
 End Sub
 
 Sub copyToCustomerWorkBook()
-    controlCenterWBName = "????.xlsm"
+    controlCenterWBName = "控制中心.xlsm"
     controlCenterMainSheetName = 1
     
     ccWHNameCell = "b2"
@@ -200,12 +200,12 @@ Sub copyToCustomerWorkBook()
     customerStartPos = getLastRowIndx(customerWBName, ctMainSTName) + 1
     
     For Each iRow In getAddedRegion(warehouseWBName, whMainSTName, whLstColIndx, warehouseRowStartPos).Rows
-        If iRow.Columns("c") = "?" Or iRow.Columns("c") = "?" Or iRow.Columns("c") = "?" Then
+        If iRow.Columns("c") = "售" Or iRow.Columns("c") = "退" Then
             Call buildSellRow(iRow, customerWBName, ctMainSTName, unitPrice)
         End If
     Next
     
-    MsgBox "??? **?????** ???!"
+    MsgBox "请修改 **非统一布匹** 的单价！"
 End Sub
 
 
@@ -218,7 +218,7 @@ End Sub
 ' *****************************************************************
 
 Sub splitCustomerInfoRByR()
-    controlCenterWBName = "????.xlsm"
+    controlCenterWBName = "控制中心.xlsm"
     controlCenterMainSheetName = 1
     ccCTNameCell = "b5"
     ccCTPosCell = "b7"
@@ -304,7 +304,7 @@ Sub buildSummarySellRow(ByVal copiedRow, ByVal wbName, ByVal sheetName, ByVal un
 End Sub
 
 Sub copyToSummaryCTWB()
-    controlCenterWBName = "????.xlsm"
+    controlCenterWBName = "控制中心.xlsm"
     controlCenterMainSheetName = 1
     
     ccCTNameCell = "b5"
@@ -375,7 +375,7 @@ Sub sumCellAbove(ByVal wbName, ByVal sheetName, ByVal colIndx, ByVal rowTopIndx,
 End Sub
 
 Sub splitCustomerSummaryInfoRByR()
-    controlCenterWBName = "????.xlsm"
+    controlCenterWBName = "控制中心.xlsm"
     controlCenterMainSheetName = 1
     ccCTSNameCell = "b9"
     ccCTSPosCell = "b11"
@@ -426,7 +426,7 @@ Sub splitCustomerSummaryInfoRByR()
         
         
         totalWordColIndx = "b"
-        Workbooks(customerSWBName).Sheets(iCtKey).Range(totalWordColIndx & rowStartIndx) = "??"
+        Workbooks(customerSWBName).Sheets(iCtKey).Range(totalWordColIndx & rowStartIndx) = "合计"
         Workbooks(customerSWBName).Sheets(iCtKey).Range(totalWordColIndx & rowStartIndx).HorizontalAlignment = xlCenter
         
         
@@ -461,10 +461,10 @@ Sub test()
     res = newDate & newTime
     
     prePath = Application.ActiveWorkbook.Path
-    source = prePath & "\????.xlsm"
-    dest = prePath & "\bak\????-" & res & ".xlsm"
+    source = prePath & "\控制中心.xlsm"
+    dest = prePath & "\bak\控制中心-" & res & ".xlsm"
     
-    Workbooks("????.xlsm").SaveCopyAs dest
+    Workbooks("控制中心.xlsm").SaveCopyAs dest
 End Sub
 
 
