@@ -92,6 +92,62 @@ Sub bakupFile(ByVal fileName)
     Workbooks(fileName).SaveCopyAs dest
 End Sub
 
+Public Function printf(mask As String, ParamArray tokens()) As String
+    Dim i As Long
+    
+    For i = 0 To UBound(tokens)
+        mask = Replace(mask, "{" & i & "}", tokens(i))
+    Next
+    
+    printf = mask
+End Function
+
+Function genSearchedLines(searchedRow As Integer, columns()) As String
+    Dim searchedVal As String
+        
+    Dim i As Long
+    
+    For i = 0 To UBound(columns)
+    
+        If i = 0 Then
+            searchedVal = printf("{0}{1}", columns(i), searchedRow)
+        Else
+            searchedVal = searchedVal & printf("&{0}{1}", columns(i), searchedRow)
+        End If
+    Next
+    
+    genSearchedLines = searchedVal
+    
+End Function
+
+Function genSearchedArr(searchedRow As Integer, columns()) As String
+    Dim searchedArr As String
+    
+    Dim i As Long
+    
+    For i = 0 To UBound(columns)
+    
+        If i = 0 Then
+            searchedArr = printf("{0}1:{0}{1}", columns(i), (searchedRow - 1))
+        Else
+            searchedArr = searchedArr & printf("&{0}1:{0}{1}", columns(i), (searchedRow - 1))
+        End If
+    Next
+    
+    genSearchedArr = searchedArr
+    
+End Function
+
+Function getMatchedIndx(searchedSheet As Worksheet, searchColArr(), searchRow As Integer)
+
+    eva_exp = printf("Match({0}, {1}, 0)", _
+                        genSearchedLines(searchRow, searchColArr), _
+                        genSearchedArr(searchRow, searchColArr))
+                            
+    getMatchedIndx = searchedSheet.Evaluate(eva_exp)
+    
+End Function
+
 
 
 
