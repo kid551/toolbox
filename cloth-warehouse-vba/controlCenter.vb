@@ -93,18 +93,18 @@ End Sub
 ' *
 ' ********************************************************************
 
-' Construct the customer row from the warehouse row.
+' Copy the customer row from the warehouse row with some contruction.
 '
 ' The algorithm of this process is:
-'   1. construct the new row's "a:h" columns
-'   2. add hyperlink at column "d"
-'   3. construct the new row's "i, j, k, o" columns
+'   1. construct the new row's "a:h" columns, then copy to target sheet.
+'   2. add hyperlink at column "d" of target sheet.
+'   3. construct the new row's "i, j, k, o" columns, then copy to target sheet.
 '
 ' - copiedRow, the copied row from warehouse
 ' - targetSheet Worksheet, the sheet where to copy content
 ' - unitPrice, the unit price, which will be used in computation
 '
-Sub buildCustomerRow(copiedRow, targetSheet As Worksheet, unitPrice)
+Sub copyCustomerRow(copiedRow, targetSheet As Worksheet, unitPrice)
     ' Construct a new row of columns "a:h" by
     '   merge columns "a:e", "h", "i", "l" of copied row.
     Dim newBuildRange As Range
@@ -132,5 +132,67 @@ Sub buildCustomerRow(copiedRow, targetSheet As Worksheet, unitPrice)
     targetSheet.Range("k" & startRow) = printf("=J{0}*I{1}", startRow, startRow)
     targetSheet.Range("o" & startRow) = printf("=O{0}+K{1}-M{2}-N{3}", startRow - 1, startRow, startRow, startRow)
     
+End Sub
+
+
+
+' Build the customer sheet by copying from warehouse sheet.
+'
+' Attension:
+'     the copy only happen when the "c" column of warehouse main
+'     sheet is "售, 退"
+'
+' The algorithm is:
+'   - get the added region in warehouse
+'   - copy each row of above region with some construction and condition
+'
+Sub buildCustomerWorkBook()
+    ' ========================================================
+    ' = Do the preparation work, build the worksheet accroding
+    ' = to control center main worksheet.
+    ' ========================================================
+    
+    ' Get the warehouse main sheet, which is embedded in
+    ' cell "b2" of control center main sheet
+    Dim warehouseMainSheet As Worksheet
+    Set warehouseMainSheet = Workbooks(getControlCenterCell("b2").Value).Sheets(1)
+    
+    ' Get the start row of added region in warehouse worksheet, which is embedded in
+    ' cell "b3" of control center main sheet
+    warehouseStartRow = getControlCenterCell("b3")
+    
+    ' Get the customer main sheet, which is embedded in
+    ' cell "b5" of control center main sheet
+    Dim customerMainSheet As Worksheet
+    Set customerMainSheet = Workbooks(getControlCenterCell("b5").Value).Sheets(1)
+    
+    bakupFile (getControlCenterCell("b5").Value)
+    
+    ' Get the unit price in customer sheet, which is embedded in
+    ' cell "b6" of control center main sheet
+    unitPrice = getControlCenterCell("b6")
+    
+    ' Record the start row of added region in customer worksheet. Its value will be stored in
+    ' cell "b7" of control center main sheet
+    Dim customerStartRowCell As Range
+    Set customerStartRowCell = getControlCenterCell("b7")
+    ' Assign the value in cell instead of cell "Range", which is different from above line
+    customerStartRowCell = sheetTools.getLastNonEmptyRow(customerMainSheet) + 1
+    
+    
+    ' ========================================================
+    ' = The algorithm meat.
+    ' = Real work start here.
+    ' ========================================================
+    
+    ' The column boundary of warehouse main sheet is "o"
+    For Each iRow In sheetTools.getRegion(warehouseMainSheet, warehouseStartRow, "o").Rows
+        ' Only when the "c" column of warehouse main sheet is "售, 退", the copy can happen
+        If iRow.columns("c") = "售" Or iRow.columns("c") = "退" Then
+            Call copyCustomerRow(iRow, customerMainSheet, unitPrice)
+        End If
+    Next
+    
+    MsgBox "请修改 **非统一布匹** 的单价！"
 End Sub
 
