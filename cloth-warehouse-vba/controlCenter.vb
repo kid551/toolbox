@@ -196,3 +196,36 @@ Sub buildCustomerWorkBook()
     MsgBox "请修改 **非统一布匹** 的单价！"
 End Sub
 
+
+
+' *****************************************************************
+' *
+' * Split the added region of customer's main sheet, and copy each row
+' * to its corresponding worksheet.
+' *
+' * The algorithm is:
+' *     1. get the added region in customer main sheet
+' *     2. copy each row to corresponding sub-sheet
+' *
+' *****************************************************************
+'
+Sub customerMainSheetToSubSheet()
+    ' Get the customer main sheet, which is embedded in
+    ' cell "b5" of control center main sheet
+    Dim customerWorkbook As Workbook
+    Set customerWorkbook = Workbooks(getControlCenterCell("b5").Value)
+    
+    bakupFile (getControlCenterCell("b5").Value)
+    
+    
+    ' - the customer main sheet is "Sheets(1)"
+    ' - the added region in customer main sheet is embedded in "b7"
+    ' - the column boundary of customer main sheet is "o"
+    For Each iRow In sheetTools.getRegion(customerWorkbook.Sheets(1), getControlCenterCell("b7"), "o").Rows
+        ' Get the customer name in column "d", which is also the sub-sheet name, e.g. "张三"
+        customerSubSheetName = iRow.columns("d")
+            
+        Call sheetTools.copyRowToSheet(iRow, customerWorkbook.Sheets(customerSubSheetName))
+    Next
+End Sub
+
