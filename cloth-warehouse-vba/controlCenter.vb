@@ -229,3 +229,120 @@ Sub customerMainSheetToSubSheet()
     Next
 End Sub
 
+
+
+' *****************************************************************
+' *
+' * Build "customer summary" main sheet by copying from "customer".
+' *
+' *****************************************************************
+
+' Determine the "start row" of added region according to if they have
+' same "date, greigh cloth, sell type, customer name"
+'
+' - mergeKey, the dictionary key to determine the merge condition
+' - mergeDict, the merge dictionary, which is used for merge determination
+' - targetSheet, the target sheet where copy the contents
+'
+Function getMergeStartRow(mergeKey, ByRef mergeDict As Object, targetSheet As Worksheet)
+
+    If mergeDict(mergeKey) <> 0 Then
+        ' the item has appeared, thus we need to "begin" at the last non-empty row
+        getMergeStartRow = sheetTools.getLastNonEmptyRow(targetSheet)
+    Else
+        ' the item hasn't appeared, thus we need to start "follow" the last non-empty row
+        getMergeStartRow = sheetTools.getLastNonEmptyRow(targetSheet) + 1
+    End If    
+End Function
+
+' Generate the customer summary row by copying from customer sheet.
+'
+' Attension:
+'     When the four domains "date, greigh cloth, sell type, customer name"
+'     are match, the row should be merged into the same row.
+'
+' The algorithm is:
+'     1. get the start row of added region in target sheet
+'        based on if this item has appeared before.
+'     2. generate the unchanged column "a:d", "g", "i"
+'     3. add corresponding hyperlink to column "d"
+'     4. generate the changed column "e, f, h, j"
+'
+Sub genCustomerSummaryRow(copiedRow, targetSheet As Worksheet, unitPrice, ByRef mergeDict As Object)
+    ' Construct a new row of columns "a:d" from columns "a:d" of copied row.
+    Dim newBuildRange As Range
+    Set newBuildRange = copiedRow.columns("a:d")
+    
+    
+    ' When two rows' all domains of
+    '   - "date", which is embedded in column "a"
+    '   - "greigh cloth", which is embedded in column "b"
+    '   - "sell type", which is embedded in column "c"
+    '   - "customer name", which is embedded in column "d"
+    ' are same, the two rows can be summarized in one row. Thus, we'll
+    ' use the concatenation string of four domains as "key" to determine if merge
+    
+    mergeKey = printf("{0} {1} {2} {3}", copiedRow.columns("a"), _
+                                                        copiedRow.columns("b"), _
+                                                        copiedRow.columns("c"), _
+                                                        copiedRow.columns("d"))
+    startRow = getMergeStartRow(mergeKey, mergeDict, targetSheet)
+        
+    ' ================================================
+    ' = Generate the unchanged column "a:d", "g", "i"
+    ' = in target sheet
+    ' ================================================
+    '
+    ' Copy the columns "a:d" of "copied row" to the start row of target sheet.
+    copiedRow.columns("a:d").Copy targetSheet.Range(printf("{0}{1}", "a", startRow))
+        
+    
+    ' Generate column "g" of target sheet by
+    ' copying the unit price at column "j" of copied row
+    targetSheet.Range(printf("{0}{1}", "g", startRow)) = copiedRow.columns("j")
+       
+    ' Generate column "i" of target sheet by
+    ' copying the payment of column "m" in copied row
+    '
+    targetSheet.Range(printf("{0}{1}", "i", startRow)) = copiedRow.columns("m")
+                                
+    ' Add corresponding hyperlink of customer name, which is embedded in column "d".
+    customerCell = "d" & startRow
+    subCTField = targetSheet.Range(customerCell) & "!A3"
+    With targetSheet
+        .Hyperlinks.Add .Range(customerCell), Address:="", SubAddress:=subCTField
+    End With
+                   
+    ' ================================================
+    ' = Generate the changed column "e, f, h, j"
+    ' = in target sheet
+    ' ================================================
+    
+    ' If the item has appeared:
+    '     sum the "count of cloth", which is at column "e", from column "h" of copied row,
+    '     and "length of cloth", which is at column "f", from column "g" of copied row.
+    '
+    If mergeDict(mergeKey) <> 0 Then
+        ' sum cloth count
+        targetSheet.Range(printf("{0}{1}", "e", startRow)) = _
+                    targetSheet.Range(printf("{0}{1}", "e", startRow)) + copiedRow.columns("h")
+                    
+        ' sum cloth length
+        targetSheet.Range(printf("{0}{1}", "f", startRow)) = _
+                    targetSheet.Range(printf("{0}{1}", "f", startRow)) + copiedRow.columns("g")
+
+        ' sum the counts of same "merge key"
+        mergeDict(mergeKey) = mergeDict(mergeKey) + 1
+    Else
+        targetSheet.Range(printf("{0}{1}", "e", startRow)) = copiedRow.columns("h")
+        targetSheet.Range(printf("{0}{1}", "f", startRow)) = copiedRow.columns("g")
+        mergeDict(mergeKey) = 1
+    End If
+    
+    
+    ' Generate column "h"
+    targetSheet.Range(printf("{0}{1}", "h", startRow)) = printf("=G{0}*F{1}", startRow, startRow)
+    
+    ' Generate column "j"
+    targetSheet.Range(printf("{0}{1}", "j", startRow)) = printf("=J{0}+H{1}-I{2}", startRow - 1, startRow, startRow)
+End Sub
