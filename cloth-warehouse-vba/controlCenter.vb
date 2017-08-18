@@ -78,8 +78,8 @@ Sub warehouseMainSheetToSubSheet()
         ' Get the greigh cloth key of "colorDict", e.g. "C32" or "C16", which is the 3 left part of "specCell"
         greighKey = Left(specCell, 3)
                 
-        Call sheetTools.copyRowToSheet(iRow, warehouseWB.Sheets(colorDict(colorKey)))
-        Call sheetTools.copyRowToSheet(iRow, warehouseWB.Sheets(colorDict(greighKey)))
+        Call sheetTools.appendRowToSheet(iRow, warehouseWB.Sheets(colorDict(colorKey)))
+        Call sheetTools.appendRowToSheet(iRow, warehouseWB.Sheets(colorDict(greighKey)))
     Next
     
 End Sub
@@ -117,7 +117,7 @@ Sub genCustomerRow(copiedRow, targetSheet As Worksheet, unitPrice)
     startRow = sheetTools.getLastNonEmptyRow(targetSheet) + 1
     
     ' Copy new build range after last non-empty row
-    Call sheetTools.copyRowToSheet(newBuildRange, targetSheet)
+    Call sheetTools.appendRowToSheet(newBuildRange, targetSheet)
     
     ' Add corresponding hyperlink of customer name, which is embedded in column "d".
     customerCell = "d" & startRow
@@ -225,7 +225,7 @@ Sub customerMainSheetToSubSheet()
         ' Get the customer name in column "d", which is also the sub-sheet name, e.g. "ÕÅÈý"
         customerSubSheetName = iRow.columns("d")
             
-        Call sheetTools.copyRowToSheet(iRow, customerWorkbook.Sheets(customerSubSheetName))
+        Call sheetTools.appendRowToSheet(iRow, customerWorkbook.Sheets(customerSubSheetName))
     Next
 End Sub
 

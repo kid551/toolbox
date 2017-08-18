@@ -35,7 +35,7 @@ End Function
 ' - copiedRow, the copied row
 ' - targetSheet Worksheet, the target worksheet
 '
-Function copyRowToSheet(copiedRow, targetSheet As Worksheet, Optional col As String = "a")
+Function appendRowToSheet(copiedRow, targetSheet As Worksheet, Optional col As String = "a")
     copiedRow.Copy targetSheet.Range(printf("{0}{1}", col, getLastNonEmptyRow(targetSheet) + 1))
 End Function
 
