@@ -146,7 +146,7 @@ End Sub
 '   - get the added region in warehouse
 '   - copy each row of above region with some construction and condition
 '
-Sub buildCustomerWorkBook()
+Sub buildCustomerWorkbook()
     ' ========================================================
     ' = Do the preparation work, build the worksheet accroding
     ' = to control center main worksheet.
