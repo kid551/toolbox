@@ -93,7 +93,7 @@ End Sub
 ' *
 ' ********************************************************************
 
-' Copy the customer row from the warehouse row with some contruction.
+' Generate the customer row from the warehouse row with some contruction.
 '
 ' The algorithm of this process is:
 '   1. construct the new row's "a:h" columns, then copy to target sheet.
@@ -104,7 +104,7 @@ End Sub
 ' - targetSheet Worksheet, the sheet where to copy content
 ' - unitPrice, the unit price, which will be used in computation
 '
-Sub copyCustomerRow(copiedRow, targetSheet As Worksheet, unitPrice)
+Sub genCustomerRow(copiedRow, targetSheet As Worksheet, unitPrice)
     ' Construct a new row of columns "a:h" by
     '   merge columns "a:e", "h", "i", "l" of copied row.
     Dim newBuildRange As Range
@@ -189,7 +189,7 @@ Sub buildCustomerWorkbook()
     For Each iRow In sheetTools.getRegion(warehouseMainSheet, warehouseStartRow, "o").Rows
         ' Only when the "c" column of warehouse main sheet is " €, ÕÀ", the copy can happen
         If iRow.columns("c") = " €" Or iRow.columns("c") = "ÕÀ" Then
-            Call copyCustomerRow(iRow, customerMainSheet, unitPrice)
+            Call genCustomerRow(iRow, customerMainSheet, unitPrice)
         End If
     Next
     
