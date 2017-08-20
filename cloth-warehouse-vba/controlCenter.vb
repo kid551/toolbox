@@ -400,3 +400,38 @@ Sub buildCustomerSummaryMainSheet()
 End Sub
 
 
+
+' *****************************************************************
+' *
+' * Split "customer summary" main sheet, and build its sub-sheet.
+' *
+' *****************************************************************
+'
+' As the copied row has been cleaned, it can be copied directly in target sheet.
+'
+' The algorithm is:
+'   - build the new range
+'   - append the new build range to target sheet
+'   - recompute column "g"
+'   - recompute column "i"
+'
+Function customerSummaryMainSheetToSubSheet(ByVal copiedRow, targetSheet As Worksheet)
+    ' Construct a new row of columns "a:i" by
+    '   merge columns "a:c", "e:j" of copied row.
+    Dim newBuildRange As Range
+    Set newBuildRange = Union(copiedRow.columns("a:c"), copiedRow.columns("e:j"))
+        
+    startRow = sheetTools.getLastNonEmptyRow(targetSheet) + 1
+    
+    Call sheetTools.appendRowToSheet(newBuildRange, targetSheet)
+        
+    ' Recompute "total gross" at column "g"
+    targetSheet.Range(printf("{0}{1}", "g", startRow)) = _
+            printf("=F{0}*E{1}", startRow, startRow)
+    
+    ' Recompute "debt" at column "i"
+    targetSheet.Range(printf("{0}{1}", "i", startRow)) = _
+            printf("=I{0}+G{1}-H{2}", startRow - 1, startRow, startRow)
+    
+End Function
+
