@@ -346,3 +346,57 @@ Sub genCustomerSummaryRow(copiedRow, targetSheet As Worksheet, unitPrice, ByRef 
     ' Generate column "j"
     targetSheet.Range(printf("{0}{1}", "j", startRow)) = printf("=J{0}+H{1}-I{2}", startRow - 1, startRow, startRow)
 End Sub
+
+
+
+' Build the customer summary workbook from customer main sheet.
+'
+Sub buildCustomerSummaryMainSheet()
+    
+    ' ========================================================
+    ' = Do the preparation work, build the worksheet accroding
+    ' = to control center main worksheet.
+    ' ========================================================
+    
+    ' Get the customer main sheet, which is embedded in
+    ' cell "b5" of control center main sheet
+    Dim customerMainSheet As Worksheet
+    Set customerMainSheet = Workbooks(getControlCenterCell("b5").Value).Sheets(1)
+    
+    ' Get the start row of added region in customer worksheet, which is embedded in
+    ' cell "b7" of control center main sheet.
+    customerStartRow = getControlCenterCell("b7")
+    
+    ' Get customer summary main worksheet, which is embedded in cell "b9"
+    customerSummaryName = getControlCenterCell("b9")
+    Dim customerSummaryMainSheet As Worksheet
+    Set customerSummaryMainSheet = Workbooks(customerSummaryName).Sheets(1)
+    
+    sheetTools.backupFile (customerSummaryName)
+    
+    ' Record values in UI:
+    '     record the start row of added region in customer summary worksheet. Its
+    '     value will be stored in cell "b11" of control center main sheet
+    Dim customerSummaryStartRowCell As Range
+    Set customerSummaryStartRowCell = getControlCenterCell("b11")
+    ' Assign the value in cell instead of cell "Range", which is different from above line
+    customerSummaryStartRowCell = sheetTools.getLastNonEmptyRow(customerSummaryMainSheet) + 1
+           
+    ' The merge dictionary, which is used to distinguish merge condition
+    Dim mergeDict As Object
+    Set mergeDict = CreateObject("Scripting.Dictionary")
+    
+    
+    ' ========================================================
+    ' = The algorithm meat.
+    ' = Real work start here.
+    ' ========================================================
+    
+    ' The column boundary of customer sheet is "o"
+    For Each iRow In getRegion(customerMainSheet, customerStartRow, "o").Rows
+        Call genCustomerSummaryRow(iRow, customerSummaryMainSheet, mergeDict)
+    Next
+    
+End Sub
+
+
