@@ -132,3 +132,22 @@ Function genSearchedArea(searchedRow As Integer, columns()) As String
     genSearchedArea = searchedArea
     
 End Function
+
+
+
+' Get the row index of line which matches the searched row.
+'
+'   - searchedSheet Worksheet, the worksheet to search
+'   - searchColumnArray, the array of columns that will be searched
+'   - searchRow, the row index of searched line
+'
+Function getMatchedIndex(searchedSheet As Worksheet, searchColumnArray(), searchRow As Integer)
+
+    matchExpression = printf("Match({0}, {1}, 0)", _
+                            genSearchedLines(searchRow, searchColumnArray), _
+                            genSearchedArea(searchRow, searchColumnArray))
+                            
+    getMatchedIndex = searchedSheet.Evaluate(matchExpression)
+    
+End Function
+
