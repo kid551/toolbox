@@ -79,3 +79,31 @@ Public Function printf(mask As String, ParamArray tokens()) As String
     
     printf = mask
 End Function
+
+
+
+' Generate the expression of searched line.
+'
+'   - searchedRow Integer, the row index of searched line
+'   - columns(), the columns of searched row
+'
+' For example:
+'     "a12 & b12 & d12 & f12"
+'
+Function genSearchedLines(searchedRow As Integer, columns()) As String
+    Dim searchedExpression As String
+        
+    Dim i As Long
+    For i = 0 To UBound(columns)
+    
+        If i = 0 Then
+            searchedExpression = printf("{0}{1}", columns(i), searchedRow)
+        Else
+            searchedExpression = searchedVal & printf("&{0}{1}", columns(i), searchedRow)
+        End If
+    Next
+    
+    genSearchedLines = searchedExpression
+    
+End Function
+
