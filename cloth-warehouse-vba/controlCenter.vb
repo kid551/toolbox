@@ -58,7 +58,7 @@ End Function
 Sub warehouseMainSheetToSubSheet()
     ' Get warehouse name & its worksheet, where the value is embedded in cell "b2"
     warehouseWBName = getControlCenterCell("b2")
-    sheetTools.bakupFile (warehouseWBName)
+    sheetTools.backupFile (warehouseWBName)
     Dim warehouseWB As Workbook
     Set warehouseWB = Workbooks(warehouseWBName)
     Set colorDict = getColorDict()
@@ -83,7 +83,6 @@ Sub warehouseMainSheetToSubSheet()
     Next
     
 End Sub
-
 
 
 
@@ -166,14 +165,15 @@ Sub buildCustomerMainSheet()
     Dim customerMainSheet As Worksheet
     Set customerMainSheet = Workbooks(getControlCenterCell("b5").Value).Sheets(1)
     
-    bakupFile (getControlCenterCell("b5").Value)
+    backupFile (getControlCenterCell("b5").Value)
     
     ' Get the unit price in customer sheet, which is embedded in
     ' cell "b6" of control center main sheet
     unitPrice = getControlCenterCell("b6")
     
-    ' Record the start row of added region in customer worksheet. Its value will be stored in
-    ' cell "b7" of control center main sheet
+    ' Record values in UI:
+    '     record the start row of added region in customer worksheet. Its
+    '     value will be stored in cell "b7" of control center main sheet
     Dim customerStartRowCell As Range
     Set customerStartRowCell = getControlCenterCell("b7")
     ' Assign the value in cell instead of cell "Range", which is different from above line
@@ -215,7 +215,7 @@ Sub customerMainSheetToSubSheet()
     Dim customerWorkbook As Workbook
     Set customerWorkbook = Workbooks(getControlCenterCell("b5").Value)
     
-    bakupFile (getControlCenterCell("b5").Value)
+    backupFile (getControlCenterCell("b5").Value)
     
     
     ' - the customer main sheet is "Sheets(1)"
@@ -252,10 +252,18 @@ Function getMergeStartRow(mergeKey, ByRef mergeDict As Object, targetSheet As Wo
     Else
         ' the item hasn't appeared, thus we need to start "follow" the last non-empty row
         getMergeStartRow = sheetTools.getLastNonEmptyRow(targetSheet) + 1
-    End If    
+    End If
+    
 End Function
 
-' Generate the customer summary row by copying from customer sheet.
+
+
+' Generate the customer summary row from copied customer sheet row.
+'
+' - copiedRow, the  copied contents row
+' - targetSheet Worksheet, the sheet to which copy contents
+' - unitPrice, the unit price which involves computation
+' - mergeDict Object, the dictionary to distinguish merge conditions
 '
 ' Attension:
 '     When the four domains "date, greigh cloth, sell type, customer name"
@@ -268,7 +276,7 @@ End Function
 '     3. add corresponding hyperlink to column "d"
 '     4. generate the changed column "e, f, h, j"
 '
-Sub genCustomerSummaryRow(copiedRow, targetSheet As Worksheet, unitPrice, ByRef mergeDict As Object)
+Sub genCustomerSummaryRow(copiedRow, targetSheet As Worksheet, ByRef mergeDict As Object)
     ' Construct a new row of columns "a:d" from columns "a:d" of copied row.
     Dim newBuildRange As Range
     Set newBuildRange = copiedRow.columns("a:d")
@@ -345,6 +353,7 @@ Sub genCustomerSummaryRow(copiedRow, targetSheet As Worksheet, unitPrice, ByRef 
     
     ' Generate column "j"
     targetSheet.Range(printf("{0}{1}", "j", startRow)) = printf("=J{0}+H{1}-I{2}", startRow - 1, startRow, startRow)
+        
 End Sub
 
 
@@ -407,7 +416,6 @@ End Sub
 ' *
 ' *****************************************************************
 '
-' As the copied row has been cleaned, it can be copied directly in target sheet.
 '
 ' The algorithm is:
 '   - build the new range
@@ -415,7 +423,7 @@ End Sub
 '   - recompute column "g"
 '   - recompute column "i"
 '
-Function customerSummaryMainSheetToSubSheet(ByVal copiedRow, targetSheet As Worksheet)
+Function genCustomerSummarySubSheetRow(ByVal copiedRow, targetSheet As Worksheet)
     ' Construct a new row of columns "a:i" by
     '   merge columns "a:c", "e:j" of copied row.
     Dim newBuildRange As Range
@@ -434,4 +442,143 @@ Function customerSummaryMainSheetToSubSheet(ByVal copiedRow, targetSheet As Work
             printf("=I{0}+G{1}-H{2}", startRow - 1, startRow, startRow)
     
 End Function
+
+
+
+' Generate the bottom contents of customer summary sub-sheet
+'
+' The algorithm is:
+'
+'     1. find the start row of customer summary sub-sheet
+'     2. clear the contents below start row in row gap lines
+'     3. Assign "合计" literal name
+'     4. Compute the sum at column "d, e, g"
+'     5. Add the border lines for added region
+'
+Sub genCustomerSummarySubSheetBottom(customerSummaryWorkbook As Workbook, customerDict As Object)
+    
+    For Each customerKey In customerDict.Keys()
+        
+        ' ==================
+        ' = Prepration work
+        ' ==================
+        
+        ' Find the sub-sheet based on the customer key in customer dictionary
+        Dim customerSubSheet As Worksheet
+        Set customerSubSheet = customerSummaryWorkbook.Sheets(customerKey)
+        
+        rowGapLines = 3
+        
+        
+        ' ===================================================
+        ' = find the start row of customer summary sub-sheet
+        ' ===================================================
+        
+        ' Here, the region has been added. So, the start row here
+        ' is below the added region
+        '
+        subSheetStartRow = sheetTools.getLastNonEmptyRow(customerSubSheet) + 1
+        
+        ' Clear all contents of row gaps, which is below start row in "rowGapLiens" rows.
+        '   - the boundary column of subsheet is "i"
+              
+        
+        ' =====================================================
+        ' = clear the contents below start row in row gap lines
+        ' =====================================================
+        '
+        customerSubSheet.Range(printf("{0}{1}:{2}{3}", _
+                                        "a", subSheetStartRow, _
+                                        "i", subSheetStartRow + rowGapLines)).Clear
+                                        
+                                        
+        ' ===============================================================
+        ' = Assign "合计" at the cell "b{subSheetStartRow + rowGapLines}"
+        ' ===============================================================
+        '
+        customerSubSheet.Range(printf("{0}{1}", _
+                        "b", subSheetStartRow + rowGapLines)) = "合计"
+        ' Make "合计" align at center
+        customerSubSheet.Range(printf("{0}{1}", _
+                        "b", subSheetStartRow + rowGapLines)).HorizontalAlignment = xlCenter
+        
+        
+        ' =====================================
+        ' = Compute the sum at column "d, e, g"
+        ' =====================================
+        '
+        ' Compute the 3 total items from the "4th"row :
+        '   1. total counts of cloth, which is embedded in column "d"
+        '   2. total length of cloth, which is embedded in column "e"
+        '   3. total gross per customer, which is embedded in column "g"
+        '
+        sumStartRow = 4
+        ' 1. total counts:
+        countColumn = "d"
+        customerSubSheet.Range(printf("{0}{1}", countColumn, subSheetStartRow + rowGapLines)) _
+                    = printf("=Sum({0}{1}:{2}{3})", countColumn, sumStartRow, countColumn, subSheetStartRow - 1)
+        ' 2. total length:
+        lengthColumn = "e"
+        customerSubSheet.Range(printf("{0}{1}", lengthColumn, subSheetStartRow + rowGapLines)) _
+                    = printf("=Sum({0}{1}:{2}{3})", lengthColumn, sumStartRow, lengthColumn, subSheetStartRow - 1)
+        ' 3. total gross:
+        grossColumn = "g"
+        customerSubSheet.Range(printf("{0}{1}", grossColumn, subSheetStartRow + rowGapLines)) _
+                    = printf("=Sum({0}{1}:{2}{3})", grossColumn, sumStartRow, grossColumn, subSheetStartRow - 1)
+        
+        
+        ' ========================================
+        ' = Add the border lines for added region
+        ' ========================================
+        '
+        ' Add the border lines for added region
+        '   - the boundary column of subsheet is "i"
+        numberOfAddedRows = customerDict(customerKey)
+        customerSubSheet.Range(printf("{0}{1}:{2}{3}", _
+                "a", subSheetStartRow - numberOfAddedRows, "i", subSheetStartRow + rowGapLines)).Borders.LineStyle = 1
+                
+    Next
+    
+End Sub
+
+Sub customerSummaryMainSheetToSubSheet()
+    ' Get customer summary main worksheet, which is embedded in cell "b9"
+    customerSummaryName = getControlCenterCell("b9")
+    Dim customerSummaryWorkbook As Workbook
+    Set customerSummaryWorkbook = Workbooks(customerSummaryName)
+    Dim customerSummaryMainSheet As Worksheet
+    Set customerSummaryMainSheet = customerSummaryWorkbook.Sheets(1)
+    
+    ' Get the start row of added region in customer summary worksheet, which is embedded in
+    ' cell "b11" of control center main sheet.
+    customerSummaryStartRow = getControlCenterCell("b11")
+    
+    sheetTools.backupFile (customerSummaryName)
+    
+    Dim customerDict As Object
+    Set customerDict = CreateObject("Scripting.Dictionary")
+    
+    ' Build the customer summary sub-sheet,
+    '   - customer dictionary key is embedded in column "d"
+    '   - the boundary column of added region in customer summary
+    '     main sheet is "j"
+    '
+    For Each iRow In getRegion(customerSummaryMainSheet, customerSummaryStartRow, "j").Rows
+        ' Get the customer key, which is embedded in column "d" of added region row
+        customerKey = iRow.columns("d")
+        
+        Call genCustomerSummarySubSheetRow(iRow, customerSummaryWorkbook.Sheets(customerKey))
+        
+        ' Record the number of items for each customer sub-sheet
+        If customerDict(customerKey) <> 0 Then
+            customerDict(customerKey) = customerDict(customerKey) + 1
+        Else
+            customerDict(customerKey) = 1
+        End If
+    Next
+    
+    ' Generate the "bottom section" of each customer summary sub-sheet
+    Call genCustomerSummarySubSheetBottom(customerSummaryWorkbook, customerDict)
+       
+End Sub
 
