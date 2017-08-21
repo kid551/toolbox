@@ -107,3 +107,28 @@ Function genSearchedLines(searchedRow As Integer, columns()) As String
     
 End Function
 
+
+
+' Generate searched area. By default, the searched area is from the
+' first row to line just before the searched row.
+'
+' For example:
+'     "a1:a10 & b1:b10 & d1:d10 & f1:f10"
+'
+Function genSearchedArea(searchedRow As Integer, columns()) As String
+    Dim searchedArea As String
+    endRow = searchedRow - 1
+    
+    Dim i As Long
+    For i = 0 To UBound(columns)
+    
+        If i = 0 Then
+            searchedArea = printf("{0}1:{0}{1}", columns(i), endRow)
+        Else
+            searchedArea = searchedArea & printf("&{0}1:{0}{1}", columns(i), endRow)
+        End If
+    Next
+    
+    genSearchedArea = searchedArea
+    
+End Function
