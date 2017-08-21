@@ -46,7 +46,7 @@ End Function
 '
 ' - workbookName, the target saved workbook name
 '
-Sub bakupFile(workbookName)
+Sub backupFile(workbookName)
     ' Here we assume the bakuped file is ended with '.xls'
     preFileName = Replace(workbookName, ".xls", "")
     
