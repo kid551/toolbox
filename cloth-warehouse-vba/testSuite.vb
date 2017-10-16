@@ -28,13 +28,13 @@ Sub test2()
     Dim searchColArr()
     searchColArr = Array("a", "b", "c")
 
-
-    resRow = getMatchedIndx(w1, searchColArr, 12)
+ 
+    resRow = getMatchedIndex(w1, searchColArr, 12)
     If IsError(resRow) Then
         MsgBox "Not Found"
         Err.Clear
     Else
-        w1.Rows(resRow).Delete
+        MsgBox resRow
     End If
 End Sub
 
@@ -51,7 +51,7 @@ Sub test1()
     Dim searchColArr()
     searchColArr = Array("b", "e", "f", "g", "h", "i")
     
-    MsgBox getMatchedIndx(w2, searchColArr, 6125)
+    MsgBox getMatchedIndex(w2, searchColArr, 6125)
 End Sub
 
 Sub test()
@@ -63,6 +63,7 @@ Sub test()
         
     ' Application.MATCH(1,INDEX((warehouseWorkbook.Sheets("工作表1").Range("$B$3:$B$6126")="C32X21 133X78 505"),0)+2
     
+    ' Application.MATCH(1,INDEX((B3:B6126="C32X21 133X78 505") * (E$3:$E$6126="聚祥染厂") * ($F$3:$F$6126="17.05.12") * ($G$3:$G$6126=122)*($I$3:$I$6126=129),),0)+2
     
     Set w1 = warehouseWorkbook.Sheets("terry")
     

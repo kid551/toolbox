@@ -99,7 +99,7 @@ Function genSearchedLines(searchedRow As Integer, columns()) As String
         If i = 0 Then
             searchedExpression = printf("{0}{1}", columns(i), searchedRow)
         Else
-            searchedExpression = searchedVal & printf("&{0}{1}", columns(i), searchedRow)
+            searchedExpression = searchedExpression & printf("&{0}{1}", columns(i), searchedRow)
         End If
     Next
     
