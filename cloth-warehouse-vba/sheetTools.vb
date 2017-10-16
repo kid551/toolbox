@@ -151,3 +151,24 @@ Function getMatchedIndex(searchedSheet As Worksheet, searchColumnArray(), search
     
 End Function
 
+
+
+' Compare two sheet's speicific column of last non-empty row
+'
+'   - sheet1 Worksheet, the worksheet to one compared sheet
+'   - col1, the column index of sheet1
+'   - sheet2 Worksheet, the worksheet to another compared sheet
+'   - col2, the column index of sheet2
+'
+Function compareCellOfLastRow(sheet1 As Worksheet, col1 As String, sheet2 As Worksheet, col2 As String) As Boolean
+    cell1 = sheet1.Range(col1 & getLastNonEmptyRow(sheet1))
+    cell2 = sheet2.Range(col2 & getLastNonEmptyRow(sheet2))
+    
+    If cell1 = cell2 Then
+        compareCellOfLastRow = True
+    Else
+        compareCellOfLastRow = False
+    End If
+End Function
+
+
