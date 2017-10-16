@@ -406,6 +406,15 @@ Sub buildCustomerSummaryMainSheet()
         Call genCustomerSummaryRow(iRow, customerSummaryMainSheet, mergeDict)
     Next
     
+    ' ========================================================
+    ' = Check if the summary number equals customer main sheet.
+    ' ========================================================
+    Dim res As Boolean
+    res = sheetTools.compareCellOfLastRow(customerMainSheet, "j", customerSummaryMainSheet, "o")
+    If res = False Then
+        MsgBox '欠款总金额与客户明细表不符合！'
+    End If
+    
 End Sub
 
 
