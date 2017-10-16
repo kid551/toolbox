@@ -412,8 +412,8 @@ Sub buildCustomerSummaryMainSheet()
     res = sheetTools.compareCellOfLastRow(customerMainSheet, "o", customerSummaryMainSheet, "j")
     If res = False Then
         a = MsgBox("【欠款总金额】与【客户明细表自己看】不符合！", vbCritical)
+        End
     End If
-    
 End Sub
 
 
@@ -550,6 +550,11 @@ Sub genCustomerSummarySubSheetBottom(customerSummaryWorkbook As Workbook, custom
 End Sub
 
 Sub customerSummaryMainSheetToSubSheet()
+    ' Get the customer main sheet, which is embedded in
+    ' cell "b5" of control center main sheet
+    Dim customerWorkbook As Workbook
+    Set customerWorkbook = Workbooks(getControlCenterCell("b5").Value)
+    
     ' Get customer summary main worksheet, which is embedded in cell "b9"
     customerSummaryName = getControlCenterCell("b9")
     Dim customerSummaryWorkbook As Workbook
@@ -587,6 +592,22 @@ Sub customerSummaryMainSheetToSubSheet()
     
     ' Generate the "bottom section" of each customer summary sub-sheet
     Call genCustomerSummarySubSheetBottom(customerSummaryWorkbook, customerDict)
+    
+    
+    
+    ' ==================================================================
+    ' = Check if the debts in sub-customer-sheets of "customer workbook"
+    ' = and "customer summary workbook" are the same.
+    ' ==================================================================
+    For Each nameKey In customerDict.Keys
+        res = sheetTools.compareCellOfLastRow(customerWorkbook.Sheets(nameKey), "o", _
+                                              customerSummaryWorkbook.Sheets(nameKey), "i")
+        
+        If res = False Then
+            a = MsgBox("两个【" & nameKey & "】分表不符合！", vbCritical)
+            End
+        End If
+    Next
        
 End Sub
 
