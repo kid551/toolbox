@@ -161,8 +161,8 @@ End Function
 '   - col2, the column index of sheet2
 '
 Function compareCellOfLastRow(sheet1 As Worksheet, col1 As String, sheet2 As Worksheet, col2 As String) As Boolean
-    cell1 = sheet1.Range(col1 & getLastNonEmptyRow(sheet1))
-    cell2 = sheet2.Range(col2 & getLastNonEmptyRow(sheet2))
+    cell1 = Round(sheet1.Range(col1 & getLastNonEmptyRow(sheet1)), 2)
+    cell2 = Round(sheet2.Range(col2 & getLastNonEmptyRow(sheet2)), 2)
     
     If cell1 = cell2 Then
         compareCellOfLastRow = True

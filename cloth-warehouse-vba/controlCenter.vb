@@ -409,10 +409,9 @@ Sub buildCustomerSummaryMainSheet()
     ' ========================================================
     ' = Check if the summary number equals customer main sheet.
     ' ========================================================
-    Dim res As Boolean
-    res = sheetTools.compareCellOfLastRow(customerMainSheet, "j", customerSummaryMainSheet, "o")
+    res = sheetTools.compareCellOfLastRow(customerMainSheet, "o", customerSummaryMainSheet, "j")
     If res = False Then
-        MsgBox '欠款总金额与客户明细表不符合！'
+        a = MsgBox("【欠款总金额】与【客户明细表自己看】不符合！", vbCritical)
     End If
     
 End Sub
