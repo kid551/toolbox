@@ -41,6 +41,32 @@ End Function
 
 
 
+' Check if folder exists
+'
+Function FolderExists(ByVal path As String) As Boolean
+    FolderExists = False
+    
+    Dim fso As Object
+    Set fso = CreateObject("Scripting.FileSystemObject")
+    
+    If fso.FolderExists(path) Then
+        FolderExists = True
+    End If
+    
+End Function
+
+
+
+' Create a new folder if there's not existing one
+'
+Function CreateFolder(ByVal path As String) As Boolean
+    If Not FolderExists(path) Then
+        MkDir (path)
+    End If
+End Function
+
+
+
 ' Save the target workbook file to ".\bak" directory, and
 ' append timestamp to the name of target file.
 '
@@ -56,9 +82,12 @@ Sub backupFile(workbookName)
     newTime = Left(Replace(Time(), ":", ""), 4)
     timeStamp = newDate & newTime
     
-    currentDir = Application.ActiveWorkbook.Path
-    src = currentDir & "\" & fileName
-    dest = currentDir & "\bak\" & preFileName & "-" & timeStamp & ".xls"
+    currentDir = Application.ActiveWorkbook.path
+    
+    destFolder = currentDir & "\bak"
+    CreateFolder (destFolder)
+    
+    dest = destFolder & "\" & preFileName & "-" & timeStamp & ".xls"
     
     Workbooks(workbookName).SaveCopyAs dest
 End Sub
