@@ -605,7 +605,6 @@ Sub customerSummaryMainSheetToSubSheet()
         
         If res = False Then
             a = MsgBox("两个【" & nameKey & "】分表不符合！", vbCritical)
-            End
         End If
     Next
        
