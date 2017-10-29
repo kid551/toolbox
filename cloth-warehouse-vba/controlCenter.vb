@@ -610,3 +610,36 @@ Sub customerSummaryMainSheetToSubSheet()
        
 End Sub
 
+
+' Get the summarized details of warehouse
+'
+' 1. Iterate all sheets in warehouse workbook
+' 2. Get the name of eacah sheet
+' 3. Get the last remaining length of each color
+'
+Sub getRemainLengthDetails()
+    Dim warehouseWorkbook As Workbook
+    Dim shimoWorkbook As Workbook
+    Set warehouseWorkbook = Workbooks("常熟出入库存表.xls")
+    Set shimoWorkbook = Workbooks("石墨笔记.xlsx")
+        
+    Dim mainShimoWorksheet As Worksheet
+    Set mainShimoWorksheet = shimoWorkbook.Sheets(1)
+    
+    Call sheetTools.getWorkbookSummary(warehouseWorkbook, "o", mainShimoWorksheet)
+    
+End Sub
+
+Sub getRemainCustomerDebts()
+    Dim customerWorkbook As Workbook
+    Dim shimoWorkbook As Workbook
+    Set customerWorkbook = Workbooks("常熟客户明细表自己看.xls")
+    Set shimoWorkbook = Workbooks("石墨笔记.xlsx")
+    
+    Dim customerShimoWorksheet As Worksheet
+    Set customerShimoWorksheet = shimoWorkbook.Sheets(2)
+    
+    Call sheetTools.getWorkbookSummary(customerWorkbook, "o", customerShimoWorksheet)
+    
+End Sub
+
