@@ -201,3 +201,40 @@ Function compareCellOfLastRow(sheet1 As Worksheet, col1 As String, sheet2 As Wor
 End Function
 
 
+
+' Copy one specified column of every sheet in one workbook, to the target sheet.
+' And the first column of target sheet stores the name of copied sheet.
+'
+' - copiedWorkbook Workbook, the specified workbook to be copied;
+' - copiedCol, the copied column index
+' - targetSheet Worksheet, the sheet copy things to.
+'
+Sub getWorkbookSummary(copiedWorkbook As Workbook, copiedCol As String, targetSheet As Worksheet)
+    Dim iSheet As Worksheet
+    
+    For indx = 2 To copiedWorkbook.Sheets.Count
+        ' Iterate each sheet in copiedWorkbook
+        Set iSheet = copiedWorkbook.Sheets(indx)
+        
+        ' Get the copied column value
+        copiedRow = sheetTools.getLastNonEmptyRow(iSheet, copiedCol)
+        copiedVal = iSheet.Range(copiedCol & copiedRow)
+        
+        If Left(copiedVal, 1) = "(" Then
+            copiedVal = Replace(copiedVal, "(", "")
+            copiedVal = Replace(copiedVal, ")", "")
+        End If
+        
+        If Round(copiedVal, 2) <> 0 Then
+            startRow = sheetTools.getLastNonEmptyRow(targetSheet) + 1
+            targetSheet.Range("b" & startRow) = Round(copiedVal, 2)
+            
+            ' Copy the sheet name to the first row of target sheet.
+            targetSheet.Range("a" & startRow) = iSheet.Name
+            
+        End If
+        
+    Next
+End Sub
+
+
