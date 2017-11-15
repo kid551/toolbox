@@ -75,7 +75,7 @@ Sub test()
     reg2 = warehouseWorkbook.Sheets("terry").Range("b5:b9").Address(False, False)
     reg3 = warehouseWorkbook.Sheets("terry").Range("c5:c9").Address(False, False)
     
-    eva_express = printf("Match({0}&{1}&{2}, {3}&{4}&{5}, 0)", c1, c2, c3, reg1, reg2, reg3)
+    eva_express = stringFormat("Match({0}&{1}&{2}, {3}&{4}&{5}, 0)", c1, c2, c3, reg1, reg2, reg3)
     
     cc = Evaluate(eva_express)
     
@@ -83,3 +83,4 @@ Sub test()
     
     
 End Sub
+

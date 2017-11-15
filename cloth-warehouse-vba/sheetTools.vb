@@ -25,7 +25,7 @@ End Function
 ' - endColumn, the bottom-right point's column index
 '
 Function getRegion(wSheet As Worksheet, startRow, endColumn) As Range
-    Set getRegion = wSheet.Range(printf("a{0}:{1}{2}", startRow, endColumn, getLastNonEmptyRow(wSheet)))
+    Set getRegion = wSheet.Range(stringFormat("a{0}:{1}{2}", startRow, endColumn, getLastNonEmptyRow(wSheet)))
 End Function
 
 
@@ -36,7 +36,7 @@ End Function
 ' - targetSheet Worksheet, the target worksheet
 '
 Function appendRowToSheet(copiedRow, targetSheet As Worksheet, Optional col As String = "a")
-    copiedRow.Copy targetSheet.Range(printf("{0}{1}", col, getLastNonEmptyRow(targetSheet) + 1))
+    copiedRow.Copy targetSheet.Range(stringFormat("{0}{1}", col, getLastNonEmptyRow(targetSheet) + 1))
 End Function
 
 
@@ -94,19 +94,19 @@ End Sub
 
 
 
-' Implement formatting feature of C language "printf()" method
+' Implement formatting feature of C language "stringFormat()" method
 '
 ' - mask, the formatting string, which can contain "{0}", "{1}" etc,.
 ' - tokens, the parameters that will be replaced in "{0}", "{1}" etc,.
 '
-Public Function printf(mask As String, ParamArray tokens()) As String
+Public Function stringFormat(mask As String, ParamArray tokens()) As String
     Dim i As Long
     
     For i = 0 To UBound(tokens)
         mask = Replace(mask, "{" & i & "}", tokens(i))
     Next
     
-    printf = mask
+    stringFormat = mask
 End Function
 
 
@@ -126,9 +126,9 @@ Function genSearchedLines(searchedRow As Integer, columns()) As String
     For i = 0 To UBound(columns)
     
         If i = 0 Then
-            searchedExpression = printf("{0}{1}", columns(i), searchedRow)
+            searchedExpression = stringFormat("{0}{1}", columns(i), searchedRow)
         Else
-            searchedExpression = searchedExpression & printf("&{0}{1}", columns(i), searchedRow)
+            searchedExpression = searchedExpression & stringFormat("&{0}{1}", columns(i), searchedRow)
         End If
     Next
     
@@ -152,9 +152,9 @@ Function genSearchedArea(searchedRow As Integer, columns()) As String
     For i = 0 To UBound(columns)
     
         If i = 0 Then
-            searchedArea = printf("{0}1:{0}{1}", columns(i), endRow)
+            searchedArea = stringFormat("{0}1:{0}{1}", columns(i), endRow)
         Else
-            searchedArea = searchedArea & printf("&{0}1:{0}{1}", columns(i), endRow)
+            searchedArea = searchedArea & stringFormat("&{0}1:{0}{1}", columns(i), endRow)
         End If
     Next
     
@@ -172,7 +172,7 @@ End Function
 '
 Function getMatchedIndex(searchedSheet As Worksheet, searchColumnArray(), searchRow As Integer)
 
-    matchExpression = printf("Match({0}, {1}, 0)", _
+    matchExpression = stringFormat("Match({0}, {1}, 0)", _
                             genSearchedLines(searchRow, searchColumnArray), _
                             genSearchedArea(searchRow, searchColumnArray))
                             
@@ -236,5 +236,7 @@ Sub getWorkbookSummary(copiedWorkbook As Workbook, copiedCol As String, targetSh
         
     Next
 End Sub
+
+
 
 

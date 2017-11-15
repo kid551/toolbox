@@ -126,10 +126,10 @@ Sub genCustomerRow(copiedRow, targetSheet As Worksheet, unitPrice)
     End With
 
     ' construct the "i, j, k, o" columns
-    targetSheet.Range("i" & startRow) = printf("=H{0}*G{1}", startRow, startRow)
+    targetSheet.Range("i" & startRow) = stringFormat("=H{0}*G{1}", startRow, startRow)
     targetSheet.Range("j" & startRow) = unitPrice
-    targetSheet.Range("k" & startRow) = printf("=J{0}*I{1}", startRow, startRow)
-    targetSheet.Range("o" & startRow) = printf("=O{0}+K{1}-M{2}-N{3}", startRow - 1, startRow, startRow, startRow)
+    targetSheet.Range("k" & startRow) = stringFormat("=J{0}*I{1}", startRow, startRow)
+    targetSheet.Range("o" & startRow) = stringFormat("=O{0}+K{1}-M{2}-N{3}", startRow - 1, startRow, startRow, startRow)
     
 End Sub
 
@@ -290,7 +290,7 @@ Sub genCustomerSummaryRow(copiedRow, targetSheet As Worksheet, ByRef mergeDict A
     ' are same, the two rows can be summarized in one row. Thus, we'll
     ' use the concatenation string of four domains as "key" to determine if merge
     
-    mergeKey = printf("{0} {1} {2} {3}", copiedRow.columns("a"), _
+    mergeKey = stringFormat("{0} {1} {2} {3}", copiedRow.columns("a"), _
                                                         copiedRow.columns("b"), _
                                                         copiedRow.columns("c"), _
                                                         copiedRow.columns("d"))
@@ -302,17 +302,17 @@ Sub genCustomerSummaryRow(copiedRow, targetSheet As Worksheet, ByRef mergeDict A
     ' ================================================
     '
     ' Copy the columns "a:d" of "copied row" to the start row of target sheet.
-    copiedRow.columns("a:d").Copy targetSheet.Range(printf("{0}{1}", "a", startRow))
+    copiedRow.columns("a:d").Copy targetSheet.Range(stringFormat("{0}{1}", "a", startRow))
         
     
     ' Generate column "g" of target sheet by
     ' copying the unit price at column "j" of copied row
-    targetSheet.Range(printf("{0}{1}", "g", startRow)) = copiedRow.columns("j")
+    targetSheet.Range(stringFormat("{0}{1}", "g", startRow)) = copiedRow.columns("j")
        
     ' Generate column "i" of target sheet by
     ' copying the payment of column "m" in copied row
     '
-    targetSheet.Range(printf("{0}{1}", "i", startRow)) = copiedRow.columns("m")
+    targetSheet.Range(stringFormat("{0}{1}", "i", startRow)) = copiedRow.columns("m")
                                 
     ' Add corresponding hyperlink of customer name, which is embedded in column "d".
     customerCell = "d" & startRow
@@ -332,27 +332,27 @@ Sub genCustomerSummaryRow(copiedRow, targetSheet As Worksheet, ByRef mergeDict A
     '
     If mergeDict(mergeKey) <> 0 Then
         ' sum cloth count
-        targetSheet.Range(printf("{0}{1}", "e", startRow)) = _
-                    targetSheet.Range(printf("{0}{1}", "e", startRow)) + copiedRow.columns("h")
+        targetSheet.Range(stringFormat("{0}{1}", "e", startRow)) = _
+                    targetSheet.Range(stringFormat("{0}{1}", "e", startRow)) + copiedRow.columns("h")
                     
         ' sum cloth length
-        targetSheet.Range(printf("{0}{1}", "f", startRow)) = _
-                    targetSheet.Range(printf("{0}{1}", "f", startRow)) + copiedRow.columns("g")
+        targetSheet.Range(stringFormat("{0}{1}", "f", startRow)) = _
+                    targetSheet.Range(stringFormat("{0}{1}", "f", startRow)) + copiedRow.columns("g")
 
         ' sum the counts of same "merge key"
         mergeDict(mergeKey) = mergeDict(mergeKey) + 1
     Else
-        targetSheet.Range(printf("{0}{1}", "e", startRow)) = copiedRow.columns("h")
-        targetSheet.Range(printf("{0}{1}", "f", startRow)) = copiedRow.columns("g")
+        targetSheet.Range(stringFormat("{0}{1}", "e", startRow)) = copiedRow.columns("h")
+        targetSheet.Range(stringFormat("{0}{1}", "f", startRow)) = copiedRow.columns("g")
         mergeDict(mergeKey) = 1
     End If
     
     
     ' Generate column "h"
-    targetSheet.Range(printf("{0}{1}", "h", startRow)) = printf("=G{0}*F{1}", startRow, startRow)
+    targetSheet.Range(stringFormat("{0}{1}", "h", startRow)) = stringFormat("=G{0}*F{1}", startRow, startRow)
     
     ' Generate column "j"
-    targetSheet.Range(printf("{0}{1}", "j", startRow)) = printf("=J{0}+H{1}-I{2}", startRow - 1, startRow, startRow)
+    targetSheet.Range(stringFormat("{0}{1}", "j", startRow)) = stringFormat("=J{0}+H{1}-I{2}", startRow - 1, startRow, startRow)
         
 End Sub
 
@@ -442,12 +442,12 @@ Function genCustomerSummarySubSheetRow(ByVal copiedRow, targetSheet As Worksheet
     Call sheetTools.appendRowToSheet(newBuildRange, targetSheet)
         
     ' Recompute "total gross" at column "g"
-    targetSheet.Range(printf("{0}{1}", "g", startRow)) = _
-            printf("=F{0}*E{1}", startRow, startRow)
+    targetSheet.Range(stringFormat("{0}{1}", "g", startRow)) = _
+            stringFormat("=F{0}*E{1}", startRow, startRow)
     
     ' Recompute "debt" at column "i"
-    targetSheet.Range(printf("{0}{1}", "i", startRow)) = _
-            printf("=I{0}+G{1}-H{2}", startRow - 1, startRow, startRow)
+    targetSheet.Range(stringFormat("{0}{1}", "i", startRow)) = _
+            stringFormat("=I{0}+G{1}-H{2}", startRow - 1, startRow, startRow)
     
 End Function
 
@@ -495,7 +495,7 @@ Sub genCustomerSummarySubSheetBottom(customerSummaryWorkbook As Workbook, custom
         ' = clear the contents below start row in row gap lines
         ' =====================================================
         '
-        customerSubSheet.Range(printf("{0}{1}:{2}{3}", _
+        customerSubSheet.Range(stringFormat("{0}{1}:{2}{3}", _
                                         "a", subSheetStartRow, _
                                         "i", subSheetStartRow + rowGapLines)).Clear
                                         
@@ -504,10 +504,10 @@ Sub genCustomerSummarySubSheetBottom(customerSummaryWorkbook As Workbook, custom
         ' = Assign "合计" at the cell "b{subSheetStartRow + rowGapLines}"
         ' ===============================================================
         '
-        customerSubSheet.Range(printf("{0}{1}", _
+        customerSubSheet.Range(stringFormat("{0}{1}", _
                         "b", subSheetStartRow + rowGapLines)) = "合计"
         ' Make "合计" align at center
-        customerSubSheet.Range(printf("{0}{1}", _
+        customerSubSheet.Range(stringFormat("{0}{1}", _
                         "b", subSheetStartRow + rowGapLines)).HorizontalAlignment = xlCenter
         
         
@@ -523,16 +523,16 @@ Sub genCustomerSummarySubSheetBottom(customerSummaryWorkbook As Workbook, custom
         sumStartRow = 4
         ' 1. total counts:
         countColumn = "d"
-        customerSubSheet.Range(printf("{0}{1}", countColumn, subSheetStartRow + rowGapLines)) _
-                    = printf("=Sum({0}{1}:{2}{3})", countColumn, sumStartRow, countColumn, subSheetStartRow - 1)
+        customerSubSheet.Range(stringFormat("{0}{1}", countColumn, subSheetStartRow + rowGapLines)) _
+                    = stringFormat("=Sum({0}{1}:{2}{3})", countColumn, sumStartRow, countColumn, subSheetStartRow - 1)
         ' 2. total length:
         lengthColumn = "e"
-        customerSubSheet.Range(printf("{0}{1}", lengthColumn, subSheetStartRow + rowGapLines)) _
-                    = printf("=Sum({0}{1}:{2}{3})", lengthColumn, sumStartRow, lengthColumn, subSheetStartRow - 1)
+        customerSubSheet.Range(stringFormat("{0}{1}", lengthColumn, subSheetStartRow + rowGapLines)) _
+                    = stringFormat("=Sum({0}{1}:{2}{3})", lengthColumn, sumStartRow, lengthColumn, subSheetStartRow - 1)
         ' 3. total gross:
         grossColumn = "g"
-        customerSubSheet.Range(printf("{0}{1}", grossColumn, subSheetStartRow + rowGapLines)) _
-                    = printf("=Sum({0}{1}:{2}{3})", grossColumn, sumStartRow, grossColumn, subSheetStartRow - 1)
+        customerSubSheet.Range(stringFormat("{0}{1}", grossColumn, subSheetStartRow + rowGapLines)) _
+                    = stringFormat("=Sum({0}{1}:{2}{3})", grossColumn, sumStartRow, grossColumn, subSheetStartRow - 1)
         
         
         ' ========================================
@@ -542,7 +542,7 @@ Sub genCustomerSummarySubSheetBottom(customerSummaryWorkbook As Workbook, custom
         ' Add the border lines for added region
         '   - the boundary column of subsheet is "i"
         numberOfAddedRows = customerDict(customerKey)
-        customerSubSheet.Range(printf("{0}{1}:{2}{3}", _
+        customerSubSheet.Range(stringFormat("{0}{1}:{2}{3}", _
                 "a", subSheetStartRow - numberOfAddedRows, "i", subSheetStartRow + rowGapLines)).Borders.LineStyle = 1
                 
     Next
@@ -642,4 +642,6 @@ Sub getRemainCustomerDebts()
     Call sheetTools.getWorkbookSummary(customerWorkbook, "o", customerShimoWorksheet)
     
 End Sub
+
+
 
