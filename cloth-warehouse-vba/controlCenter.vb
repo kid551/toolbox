@@ -627,6 +627,7 @@ Sub getRemainLengthDetails()
     Set mainShimoWorksheet = shimoWorkbook.Sheets(1)
     
     Call sheetTools.getWorkbookSummary(warehouseWorkbook, "o", mainShimoWorksheet)
+    Call sheetTools.getWorkbookSummary(warehouseWorkbook, "n", mainShimoWorksheet)
     
 End Sub
 
