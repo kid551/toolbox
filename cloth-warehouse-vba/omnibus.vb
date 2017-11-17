@@ -27,7 +27,7 @@ Function concatenateTwoRanges(r1 As Range, r2 As Range) As Range
     r2.Copy virtualCPB.Cells(1, getLastColIndex(virtualCPB) + 1)
     
     ' Get first row range.
-    Set constructRange = virtualCPB.Range( _
+    Set concatenateTwoRanges = virtualCPB.Range( _
                             virtualCPB.Cells(1, 1), _
                             virtualCPB.Cells(1, getLastColIndex(virtualCPB)) _
                                           )
