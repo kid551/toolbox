@@ -16,18 +16,28 @@ Function getLastColIndex(wSheet As Worksheet, Optional row As Integer = 1) As In
     getLastColIndex = wSheet.Cells(row, wSheet.columns.Count).End(xlToLeft).Column    
 End Function
 
-' Construct virtual clipboard in a temporary sheet.
-Function concatenateTwoRanges(r1 As Range, r2 As Range) As Range
-    
+' arr() is an array of ranges you want to range.
+'
+' For example, you can call this method like this:
+'
+'   <======
+'   Dim arrE() As Variant
+'     arrE = Array(w1.Cells(1, 5), w1.Cells(1, 3), w1.Cells(1, 2), w1.Cells(1, 1))
+'   concatenateCells(arrE).Copy w1.Range("a15")
+'   ======>
+'
+Function concatenateCells(arr() As Variant)
     Dim virtualCPB As Worksheet
     Set virtualCPB = Workbooks("控制中心.xlsm").Sheets("virtualCPB")
     virtualCPB.Rows(1).Delete
     
-    r1.Copy virtualCPB.Cells(1, 1)
-    r2.Copy virtualCPB.Cells(1, getLastColIndex(virtualCPB) + 1)
+    pos = 1
+    For i = 0 To UBound(arr)
+        arr(i).Copy virtualCPB.Cells(1, pos)
+        pos = getLastColIndex(virtualCPB) + 1
+    Next
     
-    ' Get first row range.
-    Set concatenateTwoRanges = virtualCPB.Range( _
+    Set concatenateCells = virtualCPB.Range( _
                             virtualCPB.Cells(1, 1), _
                             virtualCPB.Cells(1, getLastColIndex(virtualCPB)) _
                                           )
