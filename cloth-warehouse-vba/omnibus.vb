@@ -17,7 +17,7 @@ Function getLastColIndex(wSheet As Worksheet, Optional row As Integer = 1) As In
 End Function
 
 ' Construct virtual clipboard in a temporary sheet.
-Function constructRange(r1 As Range, r2 As Range) As Range
+Function concatenateTwoRanges(r1 As Range, r2 As Range) As Range
     
     Dim virtualCPB As Worksheet
     Set virtualCPB = Workbooks("控制中心.xlsm").Sheets("virtualCPB")
