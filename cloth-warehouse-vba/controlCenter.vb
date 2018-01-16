@@ -29,9 +29,20 @@ Function getColorDict() As Object
     getColorDict.Add "612", "612"
     getColorDict.Add "灰杏", "灰杏"
     getColorDict.Add "乔雄使用颜色", "乔雄使用颜色"
+    getColorDict.Add "15", "西裤15"
+    getColorDict.Add "21", "西裤21"
+    getColorDict.Add "22", "西裤22"
+    getColorDict.Add "25", "西裤25"
+    getColorDict.Add "31", "西裤31"
+    getColorDict.Add "32", "西裤32"
+    getColorDict.Add "28-1", "西裤28-1"
+    getColorDict.Add "28-2", "西裤28-2"
+    getColorDict.Add "38-1", "西裤38-1"
+    getColorDict.Add "38-2", "西裤38-2"
     
-    getColorDict.Add "C32", "32总库存"
-    getColorDict.Add "C16", "16总库存"
+    getColorDict.Add "C32X21", "32总库存"
+    getColorDict.Add "C16X7", "16总库存"
+    getColorDict.Add "T95C5", "T95C5总库存"
 End Function
 
 
@@ -72,12 +83,16 @@ Sub warehouseMainSheetToSubSheet()
         ' Get cloth specification, e.g. "C32X21 133X78 504", which embedded in column "b"
         specCell = iRow.columns("b")
         
-        ' Get the color key of "colorDict", e.g. "504", which is the 3 right part of "specCell"
-        colorKey = Right(specCell, 3)
         
-        ' Get the greigh cloth key of "colorDict", e.g. "C32" or "C16", which is the 3 left part of "specCell"
-        greighKey = Left(specCell, 3)
-                
+        Dim Arrc
+        Arrc = Split(specCell, " ")
+        
+        ' Get the color key of "colorDict", e.g. "504", which last right part of "specCell"
+        colorKey = Arrc(UBound(Arrc))
+        
+        ' Get the greigh cloth key of "colorDict", e.g. "C32X21" or "C16X7", which is first left part of "specCell"
+        greighKey = Arrc(0)
+        
         Call sheetTools.appendRowToSheet(iRow, warehouseWB.Sheets(colorDict(colorKey)))
         Call sheetTools.appendRowToSheet(iRow, warehouseWB.Sheets(colorDict(greighKey)))
     Next
