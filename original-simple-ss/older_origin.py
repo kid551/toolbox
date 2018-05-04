@@ -1,8 +1,12 @@
+# Original comments:
+#     参考自RFC1928: http://xiaoxia.org/?p=2672
+#     直接运行这个程序就给本机建立了一个"socks5的代理服务器"。
+
 import socket, sys, select, SocketServer, struct, time
 
 class ThreadingTCPServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
     pass
-    
+
 class Socks5Server(SocketServer.StreamRequestHandler):
     def handle_tcp(self, sock, remote):
         fdset = [sock, remote]
