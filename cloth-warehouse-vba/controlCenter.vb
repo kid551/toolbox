@@ -154,7 +154,7 @@ End Sub
 '
 ' Attension:
 '     the copy only happen when the "c" column of warehouse main
-'     sheet is "售, 退"
+'     sheet is "售, 退","转销"
 '
 ' The algorithm is:
 '   - get the added region in warehouse
@@ -202,8 +202,8 @@ Sub buildCustomerMainSheet()
     
     ' The column boundary of warehouse main sheet is "o"
     For Each iRow In sheetTools.getRegion(warehouseMainSheet, warehouseStartRow, "o").Rows
-        ' Only when the "c" column of warehouse main sheet is "售, 退", the copy can happen
-        If iRow.columns("c") = "售" Or iRow.columns("c") = "退" Then
+        ' Only when the "c" column of warehouse main sheet is "售, 退","转销", the copy can happen
+        If iRow.columns("c") = "售" Or iRow.columns("c") = "退" Or iRow.columns("c") = "转销" Then
             Call genCustomerRow(iRow, customerMainSheet, unitPrice)
         End If
     Next
