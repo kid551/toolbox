@@ -67,6 +67,9 @@ End Function
 ' **********************************************************************
 '
 Sub warehouseMainSheetToSubSheet()
+    sheetTools.CreateDebuglog
+    sheetTools.logging ("<<< 创建'出入库分表' >>>")
+    
     ' Get warehouse name & its worksheet, where the value is embedded in cell "b2"
     warehouseWBName = getControlCenterCell("b2")
     sheetTools.backupFile (warehouseWBName)
@@ -83,6 +86,10 @@ Sub warehouseMainSheetToSubSheet()
         ' Get cloth specification, e.g. "C32X21 133X78 504", which embedded in column "b"
         specCell = iRow.columns("b")
         
+        sheetTools.logging (sheetTools.stringFormat("================= Line number: {0} ================= ", _
+                                    iRow.Row))
+        sheetTools.logging (sheetTools.stringFormat("坯布规格：{0}", specCell))
+        sheetTools.logging (sheetTools.stringFormat("客户：{0}", iRow.columns("d")))
         
         Dim Arrc
         Arrc = Split(specCell, " ")
@@ -161,6 +168,9 @@ End Sub
 '   - copy each row of above region with some construction and condition
 '
 Sub buildCustomerMainSheet()
+    sheetTools.CreateDebuglog
+    sheetTools.logging ("<<< 创建'客户明细表' >>>")
+    
     ' ========================================================
     ' = Do the preparation work, build the worksheet accroding
     ' = to control center main worksheet.
@@ -202,6 +212,12 @@ Sub buildCustomerMainSheet()
     
     ' The column boundary of warehouse main sheet is "o"
     For Each iRow In sheetTools.getRegion(warehouseMainSheet, warehouseStartRow, "o").Rows
+        sheetTools.logging (sheetTools.stringFormat("================= Line number: {0} ================= ", _
+                                iRow.Row))
+        sheetTools.logging (sheetTools.stringFormat("出售类型:{0}", iRow.columns("c")))
+        sheetTools.logging (sheetTools.stringFormat("坯布规格：{0}", iRow.columns("b")))
+        sheetTools.logging (sheetTools.stringFormat("客户：{0}", iRow.columns("d")))
+        
         ' Only when the "c" column of warehouse main sheet is "售, 退","转销", the copy can happen
         If iRow.columns("c") = "售" Or iRow.columns("c") = "退" Or iRow.columns("c") = "转销" Then
             Call genCustomerRow(iRow, customerMainSheet, unitPrice)
@@ -225,6 +241,9 @@ End Sub
 ' *****************************************************************
 '
 Sub customerMainSheetToSubSheet()
+    sheetTools.CreateDebuglog
+    sheetTools.logging ("<<< 创建'客户明细'分表 >>>")
+    
     ' Get the customer main sheet, which is embedded in
     ' cell "b5" of control center main sheet
     Dim customerWorkbook As Workbook
@@ -239,6 +258,10 @@ Sub customerMainSheetToSubSheet()
     For Each iRow In sheetTools.getRegion(customerWorkbook.Sheets(1), getControlCenterCell("b7"), "o").Rows
         ' Get the customer name in column "d", which is also the sub-sheet name, e.g. "张三"
         customerSubSheetName = iRow.columns("d")
+        
+        sheetTools.logging (sheetTools.stringFormat("================= Line number: {0} ================= ", _
+                                iRow.Row))
+        sheetTools.logging (sheetTools.stringFormat("客户：{0}", iRow.columns("d")))
             
         Call sheetTools.appendRowToSheet(iRow, customerWorkbook.Sheets(customerSubSheetName))
     Next
@@ -376,6 +399,8 @@ End Sub
 ' Build the customer summary workbook from customer main sheet.
 '
 Sub buildCustomerSummaryMainSheet()
+    sheetTools.CreateDebuglog
+    sheetTools.logging ("<<< 创建'客户汇总表' >>>")
     
     ' ========================================================
     ' = Do the preparation work, build the worksheet accroding
@@ -418,6 +443,9 @@ Sub buildCustomerSummaryMainSheet()
     
     ' The column boundary of customer sheet is "o"
     For Each iRow In getRegion(customerMainSheet, customerStartRow, "o").Rows
+        sheetTools.logging (sheetTools.stringFormat("================= Line number: {0} ================= ", _
+                                iRow.Row))
+                                
         Call genCustomerSummaryRow(iRow, customerSummaryMainSheet, mergeDict)
     Next
     
@@ -565,6 +593,9 @@ Sub genCustomerSummarySubSheetBottom(customerSummaryWorkbook As Workbook, custom
 End Sub
 
 Sub customerSummaryMainSheetToSubSheet()
+    sheetTools.CreateDebuglog
+    sheetTools.logging ("<<< 创建'客户汇总'分表 >>>")
+    
     ' Get the customer main sheet, which is embedded in
     ' cell "b5" of control center main sheet
     Dim customerWorkbook As Workbook
@@ -594,6 +625,11 @@ Sub customerSummaryMainSheetToSubSheet()
     For Each iRow In getRegion(customerSummaryMainSheet, customerSummaryStartRow, "j").Rows
         ' Get the customer key, which is embedded in column "d" of added region row
         customerKey = iRow.columns("d")
+        
+        sheetTools.logging (sheetTools.stringFormat("================= Line number: {0} ================= ", _
+                                iRow.Row))
+        
+        sheetTools.logging (sheetTools.stringFormat("客户：{0}", iRow.columns("d")))
         
         Call genCustomerSummarySubSheetRow(iRow, customerSummaryWorkbook.Sheets(customerKey))
         
@@ -633,6 +669,9 @@ End Sub
 ' 3. Get the last remaining length of each color
 '
 Sub getRemainLengthDetails()
+    sheetTools.CreateDebuglog
+    sheetTools.logging ("<<< 创建'库存汇总表' >>>")
+    
     Dim warehouseWorkbook As Workbook
     Dim shimoWorkbook As Workbook
     Set warehouseWorkbook = Workbooks("常熟出入库存表.xls")
@@ -647,6 +686,9 @@ Sub getRemainLengthDetails()
 End Sub
 
 Sub getRemainCustomerDebts()
+    sheetTools.CreateDebuglog
+    sheetTools.logging ("<<< 创建'客户汇总表' >>>")
+    
     Dim customerWorkbook As Workbook
     Dim shimoWorkbook As Workbook
     Set customerWorkbook = Workbooks("常熟客户明细表自己看.xls")
