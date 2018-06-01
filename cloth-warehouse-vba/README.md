@@ -6,7 +6,7 @@ Directly use of *macro script* in data workbook will cause long time of loading 
 
 Below is one example of a GUI sheet in a separate workbook with Chinese characters:
 
-![ExcelGUI](.\ExcelGUI.png)
+<img src="./ExcelGUI.png" alt="GUI sheet example" />
 
 Each button binds one function in *controlCenter.vb*. The relationships(from left to right, and from top to bottom) are:
 
