@@ -67,6 +67,45 @@ End Function
 
 
 
+' Create or override a new 'debuglog.txt' file
+'
+Sub CreateDebuglog()
+    Set fs = CreateObject("Scripting.FileSystemObject")
+    Set fp_debuglog = fs.CreateTextFile(Application.ActiveWorkbook.path _
+                                    & "\debuglog.txt", True)
+    fp_debuglog.Close
+End Sub
+
+
+
+' Append the log message to 'debuglog.txt'
+'
+Function logging(msg As String)
+    Dim FilePath As String
+    Dim msgHeader As String
+    FilePath = Application.ActiveWorkbook.path _
+                                    & "\debuglog.txt"
+                                    
+    msgHeader = sheetTools.stringFormat("[{0} {1}] ", Date, Time())
+    Open FilePath For Append As #1
+    Print #1, msgHeader & msg
+    Close #1
+End Function
+
+
+
+' Merge the "YYYY-MM-DD" and "HHMMSS" into time stamp
+'
+Function getTimeStamp() As String
+    newDate = Replace(Date, "-", "")
+    newDate = Replace(newDate, "/", "")
+    newTime = Left(Replace(Time(), ":", ""), 4)
+    
+    getTimeStamp = newDate & newTime
+End Function
+
+
+
 ' Save the target workbook file to ".\bak" directory, and
 ' append timestamp to the name of target file.
 '
@@ -77,10 +116,7 @@ Sub backupFile(workbookName)
     preFileName = Replace(workbookName, ".xls", "")
     
     ' Merge the "YYYY-MM-DD" and "HHMMSS" into time stamp
-    newDate = Replace(Date, "-", "")
-    newDate = Replace(newDate, "/", "")
-    newTime = Left(Replace(Time(), ":", ""), 4)
-    timeStamp = newDate & newTime
+    timeStamp = getTimeStamp()
     
     currentDir = Application.ActiveWorkbook.path
     
@@ -189,9 +225,9 @@ End Function
 '   - sheet2 Worksheet, the worksheet to another compared sheet
 '   - col2, the column index of sheet2
 '
-Function compareCellOfLastRow(sheet1 As Worksheet, col1 As String, sheet2 As Worksheet, col2 As String) As Boolean
+Function compareCellOfLastRow(sheet1 As Worksheet, col1 As String, Sheet2 As Worksheet, col2 As String) As Boolean
     cell1 = Round(sheet1.Range(col1 & getLastNonEmptyRow(sheet1)), 2)
-    cell2 = Round(sheet2.Range(col2 & getLastNonEmptyRow(sheet2)), 2)
+    cell2 = Round(Sheet2.Range(col2 & getLastNonEmptyRow(Sheet2)), 2)
     
     If cell1 = cell2 Then
         compareCellOfLastRow = True
