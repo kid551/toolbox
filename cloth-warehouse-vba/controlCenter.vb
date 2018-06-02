@@ -83,13 +83,13 @@ Sub warehouseMainSheetToSubSheet()
     ' - the column boundary of copied region is "o"
     '
     For Each iRow In sheetTools.getRegion(warehouseWB.Sheets(1), getControlCenterCell("b3"), "o").Rows
-        ' Get cloth specification, e.g. "C32X21 133X78 504", which embedded in column "b"
-        specCell = iRow.columns("b")
-        
         sheetTools.logging (sheetTools.stringFormat("================= Line number: {0} ================= ", _
                                     iRow.Row))
         sheetTools.logging (sheetTools.stringFormat("坯布规格：{0}", specCell))
         sheetTools.logging (sheetTools.stringFormat("客户：{0}", iRow.columns("d")))
+        
+        ' Get cloth specification, e.g. "C32X21 133X78 504", which embedded in column "b"
+        specCell = iRow.columns("b")
         
         Dim Arrc
         Arrc = Split(specCell, " ")
@@ -256,12 +256,12 @@ Sub customerMainSheetToSubSheet()
     ' - the added region in customer main sheet is embedded in "b7"
     ' - the column boundary of customer main sheet is "o"
     For Each iRow In sheetTools.getRegion(customerWorkbook.Sheets(1), getControlCenterCell("b7"), "o").Rows
-        ' Get the customer name in column "d", which is also the sub-sheet name, e.g. "张三"
-        customerSubSheetName = iRow.columns("d")
-        
         sheetTools.logging (sheetTools.stringFormat("================= Line number: {0} ================= ", _
                                 iRow.Row))
         sheetTools.logging (sheetTools.stringFormat("客户：{0}", iRow.columns("d")))
+        
+        ' Get the customer name in column "d", which is also the sub-sheet name, e.g. "张三"
+        customerSubSheetName = iRow.columns("d")
             
         Call sheetTools.appendRowToSheet(iRow, customerWorkbook.Sheets(customerSubSheetName))
     Next
@@ -623,13 +623,13 @@ Sub customerSummaryMainSheetToSubSheet()
     '     main sheet is "j"
     '
     For Each iRow In getRegion(customerSummaryMainSheet, customerSummaryStartRow, "j").Rows
-        ' Get the customer key, which is embedded in column "d" of added region row
-        customerKey = iRow.columns("d")
-        
         sheetTools.logging (sheetTools.stringFormat("================= Line number: {0} ================= ", _
                                 iRow.Row))
         
         sheetTools.logging (sheetTools.stringFormat("客户：{0}", iRow.columns("d")))
+        
+        ' Get the customer key, which is embedded in column "d" of added region row
+        customerKey = iRow.columns("d")
         
         Call genCustomerSummarySubSheetRow(iRow, customerSummaryWorkbook.Sheets(customerKey))
         
@@ -700,6 +700,8 @@ Sub getRemainCustomerDebts()
     Call sheetTools.getWorkbookSummary(customerWorkbook, "o", customerShimoWorksheet)
     
 End Sub
+
+
 
 
 
