@@ -85,7 +85,7 @@ Sub warehouseMainSheetToSubSheet()
     For Each iRow In sheetTools.getRegion(warehouseWB.Sheets(1), getControlCenterCell("b3"), "o").Rows
         sheetTools.logging (sheetTools.stringFormat("================= Line number: {0} ================= ", _
                                     iRow.Row))
-        sheetTools.logging (sheetTools.stringFormat("坯布规格：{0}", specCell))
+        sheetTools.logging (sheetTools.stringFormat("坯布规格：{0}", iRow.columns("b")))
         sheetTools.logging (sheetTools.stringFormat("客户：{0}", iRow.columns("d")))
         
         ' Get cloth specification, e.g. "C32X21 133X78 504", which embedded in column "b"
