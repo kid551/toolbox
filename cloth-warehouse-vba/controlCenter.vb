@@ -67,6 +67,7 @@ End Function
 ' **********************************************************************
 '
 Sub warehouseMainSheetToSubSheet()
+    Dim dbgmsg As String
     sheetTools.CreateDebuglog
     sheetTools.logging ("<<< 创建'出入库分表' >>>")
     
@@ -100,10 +101,17 @@ Sub warehouseMainSheetToSubSheet()
         ' Get the greigh cloth key of "colorDict", e.g. "C32X21" or "C16X7", which is first left part of "specCell"
         greighKey = Arrc(0)
         
+        dbgmsg = colorKey
+        On Error GoTo NotFound
         Call sheetTools.appendRowToSheet(iRow, warehouseWB.Sheets(colorDict(colorKey)))
+        
+        dbgmsg = greighKey
+        On Error GoTo NotFound
         Call sheetTools.appendRowToSheet(iRow, warehouseWB.Sheets(colorDict(greighKey)))
     Next
     
+NotFound:
+    MsgBox sheetTools.stringFormat("无法找到 【{0}】 这个规格！", dbgmsg)
 End Sub
 
 
@@ -241,6 +249,8 @@ End Sub
 ' *****************************************************************
 '
 Sub customerMainSheetToSubSheet()
+    Dim dbgmsg As String
+    
     sheetTools.CreateDebuglog
     sheetTools.logging ("<<< 创建'客户明细'分表 >>>")
     
@@ -262,9 +272,15 @@ Sub customerMainSheetToSubSheet()
         
         ' Get the customer name in column "d", which is also the sub-sheet name, e.g. "张三"
         customerSubSheetName = iRow.columns("d")
-            
+        
+        
+        dbgmsg = customerSubSheetName
+        On Error GoTo NotFound
         Call sheetTools.appendRowToSheet(iRow, customerWorkbook.Sheets(customerSubSheetName))
     Next
+    
+NotFound:
+    MsgBox sheetTools.stringFormat("无法找到 【{0}】 这个客户的工作表！", dbgmsg)
 End Sub
 
 
@@ -593,6 +609,8 @@ Sub genCustomerSummarySubSheetBottom(customerSummaryWorkbook As Workbook, custom
 End Sub
 
 Sub customerSummaryMainSheetToSubSheet()
+    Dim dbgmsg As String
+    
     sheetTools.CreateDebuglog
     sheetTools.logging ("<<< 创建'客户汇总'分表 >>>")
     
@@ -630,7 +648,9 @@ Sub customerSummaryMainSheetToSubSheet()
         
         ' Get the customer key, which is embedded in column "d" of added region row
         customerKey = iRow.columns("d")
-        
+                
+        dbgmsg = customerKey
+        On Error GoTo NotFound
         Call genCustomerSummarySubSheetRow(iRow, customerSummaryWorkbook.Sheets(customerKey))
         
         ' Record the number of items for each customer sub-sheet
@@ -658,7 +678,9 @@ Sub customerSummaryMainSheetToSubSheet()
             a = MsgBox("两个【" & nameKey & "】分表不符合！", vbCritical)
         End If
     Next
-       
+    
+NotFound:
+    MsgBox sheetTools.stringFormat("无法找到 【{0}】 这个客户！", dbgmsg)
 End Sub
 
 
