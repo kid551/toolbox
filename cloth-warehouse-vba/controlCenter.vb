@@ -678,6 +678,8 @@ Sub customerSummaryMainSheetToSubSheet()
     ' Get customer summary main worksheet, which is embedded in cell "b9"
     customerSummaryName = getControlCenterCell("b9")
     Dim customerSummaryWorkbook As Workbook
+    dbgmsg = customerSummaryName
+    On Error GoTo NotFoundWB
     Set customerSummaryWorkbook = Workbooks(customerSummaryName)
     Dim customerSummaryMainSheet As Worksheet
     Set customerSummaryMainSheet = customerSummaryWorkbook.Sheets(1)
