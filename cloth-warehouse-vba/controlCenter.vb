@@ -114,13 +114,14 @@ Sub warehouseMainSheetToSubSheet()
         Call sheetTools.appendRowToSheet(iRow, warehouseWB.Sheets(colorDict(greighKey)))
     Next
         
-    End
+    GoTo ExitFlag
 NotFoundWB:
     MsgBox sheetTools.stringFormat("无法找到 【{0}】 这个文件！", dbgmsg)
     End
 NotFound:
     MsgBox sheetTools.stringFormat("无法找到 【{0}】 这个规格！", dbgmsg)
     End
+ExitFlag:
 End Sub
 
 
@@ -305,10 +306,11 @@ Sub customerMainSheetToSubSheet()
         Call sheetTools.appendRowToSheet(iRow, customerWorkbook.Sheets(customerSubSheetName))
     Next
     
-    End
+    GoTo ExitFlag
 NotFound:
     MsgBox sheetTools.stringFormat("无法找到 【{0}】 这个客户的工作表！", dbgmsg)
     End
+ExitFlag:
 End Sub
 
 
@@ -707,10 +709,11 @@ Sub customerSummaryMainSheetToSubSheet()
         End If
     Next
     
-    End
+    GoTo ExitFlag
 NotFound:
     MsgBox sheetTools.stringFormat("无法找到 【{0}】 这个客户！", dbgmsg)
     End
+ExitFlag:
 End Sub
 
 

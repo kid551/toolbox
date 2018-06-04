@@ -131,10 +131,13 @@ Sub backupFile(workbookName)
     On Error GoTo NotFoundWB
     Workbooks(workbookName).SaveCopyAs dest
     
-    End
+    GoTo ExitFlag
+    
 NotFoundWB:
     MsgBox sheetTools.stringFormat("无法找到 【{0}】 这个文件！", dbgmsg)
     End
+    
+ExitFlag:
 End Sub
 
 
