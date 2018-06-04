@@ -134,7 +134,7 @@ Sub backupFile(workbookName)
     GoTo ExitFlag
     
 NotFoundWB:
-    MsgBox sheetTools.stringFormat("无法找到 【{0}】 这个文件！", dbgmsg)
+    a = MsgBox(sheetTools.stringFormat("无法找到 【{0}】 这个文件！", dbgmsg), vbCritical)
     End
     
 ExitFlag:

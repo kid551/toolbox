@@ -116,10 +116,10 @@ Sub warehouseMainSheetToSubSheet()
         
     GoTo ExitFlag
 NotFoundWB:
-    MsgBox sheetTools.stringFormat("无法找到 【{0}】 这个文件！", dbgmsg)
+    a = MsgBox(sheetTools.stringFormat("无法找到 【{0}】 这个文件！", dbgmsg), vbCritical)
     End
 NotFound:
-    MsgBox sheetTools.stringFormat("无法找到 【{0}】 这个规格！", dbgmsg)
+    a = MsgBox(sheetTools.stringFormat("无法找到 【{0}】 这个规格！", dbgmsg), vbCritical)
     End
 ExitFlag:
 End Sub
@@ -256,7 +256,7 @@ Sub buildCustomerMainSheet()
     
     GoTo ExitFlag:
 NotFoundWB:
-    MsgBox sheetTools.stringFormat("无法找到 【{0}】 这个文件！", dbgmsg)
+    a = MsgBox(sheetTools.stringFormat("无法找到 【{0}】 这个文件！", dbgmsg), vbCritical)
     End
     
 ExitFlag:
@@ -312,10 +312,10 @@ Sub customerMainSheetToSubSheet()
     
     GoTo ExitFlag
 NotFoundWB:
-    MsgBox sheetTools.stringFormat("无法找到 【{0}】 这个文件！", dbgmsg)
+    a = MsgBox(sheetTools.stringFormat("无法找到 【{0}】 这个文件！", dbgmsg), vbCritical)
     End
 NotFound:
-    MsgBox sheetTools.stringFormat("无法找到 【{0}】 这个客户的工作表！", dbgmsg)
+    a = MsgBox(sheetTools.stringFormat("无法找到 【{0}】 这个客户的工作表！", dbgmsg), vbCritical)
     End
 ExitFlag:
 End Sub
@@ -522,7 +522,7 @@ Sub buildCustomerSummaryMainSheet()
     GoTo ExitFlag
     
 NotFoundWB:
-    MsgBox sheetTools.stringFormat("无法找到 【{0}】 这个文件！", dbgmsg)
+    a = MsgBox(sheetTools.stringFormat("无法找到 【{0}】 这个文件！", dbgmsg), vbCritical)
     End
 ExitFlag:
 End Sub
@@ -739,10 +739,10 @@ Sub customerSummaryMainSheetToSubSheet()
     
     GoTo ExitFlag
 NotFoundWB:
-    MsgBox sheetTools.stringFormat("无法找到 【{0}】 这个文件！", dbgmsg)
+    a = MsgBox(sheetTools.stringFormat("无法找到 【{0}】 这个文件！", dbgmsg), vbCritical)
     End
 NotFound:
-    MsgBox sheetTools.stringFormat("无法找到 【{0}】 这个客户！", dbgmsg)
+    a = MsgBox(sheetTools.stringFormat("无法找到 【{0}】 这个客户！", dbgmsg), vbCritical)
     End
 ExitFlag:
 End Sub
