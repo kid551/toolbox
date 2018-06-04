@@ -185,6 +185,8 @@ End Sub
 '   - copy each row of above region with some construction and condition
 '
 Sub buildCustomerMainSheet()
+    Dim dbgmsg As String
+    
     sheetTools.CreateDebuglog
     sheetTools.logging ("<<< 创建'客户明细表' >>>")
     
@@ -196,7 +198,11 @@ Sub buildCustomerMainSheet()
     ' Get the warehouse main sheet, which is embedded in
     ' cell "b2" of control center main sheet
     Dim warehouseMainSheet As Worksheet
-    Set warehouseMainSheet = Workbooks(getControlCenterCell("b2").Value).Sheets(1)
+    Dim warehouseMainSheetName As String
+    warehouseMainSheetName = getControlCenterCell("b2").Value
+    dbgmsg = warehouseMainSheetName
+    On Error GoTo NotFoundWB
+    Set warehouseMainSheet = Workbooks(warehouseMainSheetName).Sheets(1)
     
     ' Get the start row of added region in warehouse worksheet, which is embedded in
     ' cell "b3" of control center main sheet
@@ -205,9 +211,13 @@ Sub buildCustomerMainSheet()
     ' Get the customer main sheet, which is embedded in
     ' cell "b5" of control center main sheet
     Dim customerMainSheet As Worksheet
-    Set customerMainSheet = Workbooks(getControlCenterCell("b5").Value).Sheets(1)
+    Dim customerMainSheetName As String
+    customerMainSheetName = getControlCenterCell("b5").Value
+    dbgmsg = customerMainSheetName
+    On Error GoTo NotFoundWB
+    Set customerMainSheet = Workbooks(customerMainSheetName).Sheets(1)
     
-    backupFile (getControlCenterCell("b5").Value)
+    backupFile (customerMainSheetName)
     
     ' Get the unit price in customer sheet, which is embedded in
     ' cell "b6" of control center main sheet
@@ -242,6 +252,13 @@ Sub buildCustomerMainSheet()
     Next
     
     MsgBox "请修改 **非统一布匹** 的单价！"
+    
+    GoTo ExitFlag:
+NotFoundWB:
+    MsgBox sheetTools.stringFormat("无法找到 【{0}】 这个文件！", dbgmsg)
+    End
+    
+ExitFlag:
 End Sub
 
 
