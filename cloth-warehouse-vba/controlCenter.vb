@@ -68,6 +68,7 @@ End Function
 '
 Sub warehouseMainSheetToSubSheet()
     Dim dbgmsg As String
+    
     sheetTools.CreateDebuglog
     sheetTools.logging ("<<< 创建'出入库分表' >>>")
     
@@ -75,6 +76,9 @@ Sub warehouseMainSheetToSubSheet()
     warehouseWBName = getControlCenterCell("b2")
     sheetTools.backupFile (warehouseWBName)
     Dim warehouseWB As Workbook
+    
+    dbgmsg = warehouseWBName
+    On Error GoTo NotFoundWB
     Set warehouseWB = Workbooks(warehouseWBName)
     Set colorDict = getColorDict()
     
@@ -109,7 +113,10 @@ Sub warehouseMainSheetToSubSheet()
         On Error GoTo NotFound
         Call sheetTools.appendRowToSheet(iRow, warehouseWB.Sheets(colorDict(greighKey)))
     Next
-    
+        
+    End
+NotFoundWB:
+    MsgBox sheetTools.stringFormat("无法找到 【{0}】 这个文件！", dbgmsg)
     End
 NotFound:
     MsgBox sheetTools.stringFormat("无法找到 【{0}】 这个规格！", dbgmsg)
