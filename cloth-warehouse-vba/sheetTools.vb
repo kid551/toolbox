@@ -112,6 +112,8 @@ End Function
 ' - workbookName, the target saved workbook name
 '
 Sub backupFile(workbookName)
+    Dim dbgmsg As String
+    
     ' Here we assume the bakuped file is ended with '.xls'
     preFileName = Replace(workbookName, ".xls", "")
     
@@ -125,7 +127,14 @@ Sub backupFile(workbookName)
     
     dest = destFolder & "\" & preFileName & "-" & timeStamp & ".xls"
     
+    dbgmsg = workbookName
+    On Error GoTo NotFoundWB
     Workbooks(workbookName).SaveCopyAs dest
+    
+    End
+NotFoundWB:
+    MsgBox sheetTools.stringFormat("无法找到 【{0}】 这个文件！", dbgmsg)
+    End
 End Sub
 
 
