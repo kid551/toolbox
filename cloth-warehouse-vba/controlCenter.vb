@@ -696,7 +696,7 @@ Sub getRemainLengthDetails()
     
     Dim warehouseWorkbook As Workbook
     Dim shimoWorkbook As Workbook
-    Set warehouseWorkbook = Workbooks("常熟出入库存表.xlsx")
+    Set warehouseWorkbook = Workbooks("常熟出入库存表.xls")
     Set shimoWorkbook = Workbooks("石墨笔记.xlsx")
         
     Dim mainShimoWorksheet As Worksheet
@@ -713,7 +713,7 @@ Sub getRemainCustomerDebts()
     
     Dim customerWorkbook As Workbook
     Dim shimoWorkbook As Workbook
-    Set customerWorkbook = Workbooks("常熟客户明细表自己看.xlsx")
+    Set customerWorkbook = Workbooks("常熟客户明细表自己看.xls")
     Set shimoWorkbook = Workbooks("石墨笔记.xlsx")
     
     Dim customerShimoWorksheet As Worksheet
