@@ -110,8 +110,10 @@ Sub warehouseMainSheetToSubSheet()
         Call sheetTools.appendRowToSheet(iRow, warehouseWB.Sheets(colorDict(greighKey)))
     Next
     
+    End
 NotFound:
     MsgBox sheetTools.stringFormat("无法找到 【{0}】 这个规格！", dbgmsg)
+    End
 End Sub
 
 
@@ -279,8 +281,10 @@ Sub customerMainSheetToSubSheet()
         Call sheetTools.appendRowToSheet(iRow, customerWorkbook.Sheets(customerSubSheetName))
     Next
     
+    End
 NotFound:
     MsgBox sheetTools.stringFormat("无法找到 【{0}】 这个客户的工作表！", dbgmsg)
+    End
 End Sub
 
 
@@ -679,8 +683,10 @@ Sub customerSummaryMainSheetToSubSheet()
         End If
     Next
     
+    End
 NotFound:
     MsgBox sheetTools.stringFormat("无法找到 【{0}】 这个客户！", dbgmsg)
+    End
 End Sub
 
 
