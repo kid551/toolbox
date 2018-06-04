@@ -452,6 +452,8 @@ End Sub
 ' Build the customer summary workbook from customer main sheet.
 '
 Sub buildCustomerSummaryMainSheet()
+    Dim dbgmsg As String
+    
     sheetTools.CreateDebuglog
     sheetTools.logging ("<<< 创建'客户汇总表' >>>")
     
@@ -463,7 +465,11 @@ Sub buildCustomerSummaryMainSheet()
     ' Get the customer main sheet, which is embedded in
     ' cell "b5" of control center main sheet
     Dim customerMainSheet As Worksheet
-    Set customerMainSheet = Workbooks(getControlCenterCell("b5").Value).Sheets(1)
+    Dim customerMainSheetName As String
+    customerMainSheetName = getControlCenterCell("b5").Value
+    dbgmsg = customerMainSheetName
+    On Error GoTo NotFoundWB
+    Set customerMainSheet = Workbooks(customerMainSheetName).Sheets(1)
     
     ' Get the start row of added region in customer worksheet, which is embedded in
     ' cell "b7" of control center main sheet.
@@ -472,6 +478,8 @@ Sub buildCustomerSummaryMainSheet()
     ' Get customer summary main worksheet, which is embedded in cell "b9"
     customerSummaryName = getControlCenterCell("b9")
     Dim customerSummaryMainSheet As Worksheet
+    dbgmsg = customerSummaryName
+    On Error GoTo NotFoundWB
     Set customerSummaryMainSheet = Workbooks(customerSummaryName).Sheets(1)
     
     sheetTools.backupFile (customerSummaryName)
@@ -510,6 +518,13 @@ Sub buildCustomerSummaryMainSheet()
         a = MsgBox("【欠款总金额】与【客户明细表自己看】不符合！", vbCritical)
         End
     End If
+    
+    GoTo ExitFlag
+    
+NotFoundWB:
+    MsgBox sheetTools.stringFormat("无法找到 【{0}】 这个文件！", dbgmsg)
+    End
+ExitFlag:
 End Sub
 
 
