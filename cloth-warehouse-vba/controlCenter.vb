@@ -284,7 +284,11 @@ Sub customerMainSheetToSubSheet()
     ' Get the customer main sheet, which is embedded in
     ' cell "b5" of control center main sheet
     Dim customerWorkbook As Workbook
-    Set customerWorkbook = Workbooks(getControlCenterCell("b5").Value)
+    Dim customerWorkbookName As String
+    customerWorkbookName = getControlCenterCell("b5").Value
+    dbgmsg = customerWorkbookName
+    On Error GoTo NotFoundWB
+    Set customerWorkbook = Workbooks(customerWorkbookName)
     
     backupFile (getControlCenterCell("b5").Value)
     
@@ -307,6 +311,9 @@ Sub customerMainSheetToSubSheet()
     Next
     
     GoTo ExitFlag
+NotFoundWB:
+    MsgBox sheetTools.stringFormat("无法找到 【{0}】 这个文件！", dbgmsg)
+    End
 NotFound:
     MsgBox sheetTools.stringFormat("无法找到 【{0}】 这个客户的工作表！", dbgmsg)
     End
